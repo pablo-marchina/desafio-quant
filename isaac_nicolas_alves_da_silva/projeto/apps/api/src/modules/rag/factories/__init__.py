@@ -1,0 +1,1 @@
+"""Factories do modulo RAG."""

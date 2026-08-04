@@ -1,0 +1,38 @@
+# Fase 2 - Deep Extraction + preparacao LangGraph.
+# Instalar ALEM do requirements.txt:
+#   pip install -r requirements.txt -r requirements-phase2.txt
+#
+# crawl4ai (fallback SPA) ja esta em requirements-ai.txt.
+
+# LangGraph / tool decoration
+langchain-core>=0.2
+langchain-text-splitters>=0.2
+
+# Tipagem estrita do payload de extracao
+pydantic>=2.5
+
+# Extracao de metadados estruturados (JSON-LD, OpenGraph)
+extruct>=0.14
+
+# Extracao de texto principal do HTML
+trafilatura>=1.9
+
+# Validacao de robots.txt
+robotexclusionrulesparser>=1.7
+
+# Provedores de busca para URL Discovery
+tavily-python>=0.3
+google-search-results>=2.4
+
+# Vetorizacao (Fase 2 → Qdrant)
+qdrant-client>=1.9.0
+sentence-transformers>=2.2.0
+torch>=2.0.0
+
+# Classificador LLM (Fase 3)
+openai>=1.0.0
+google-generativeai>=0.5.0
+
+# RAG Agent (Fase 3 – Agente 2)
+cohere>=5.0.0
+rank-bm25>=0.2.0

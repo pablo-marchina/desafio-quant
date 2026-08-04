@@ -1,0 +1,194 @@
+# Keywords Configuration — signal detection patterns for scoring pipeline
+# Status: CALIBRATED
+# Last calibration: 2026-06-01
+
+# Keywords per gap type for heuristic gap detection
+gap_keyword_dict:
+  external_api_dependency:
+    - gpt
+    - openai
+    - api dependency
+    - api wrapper
+    - llm api
+  high_inference_cost:
+    - high volume inference
+    - inference cost
+    - gpu cost
+    - expensive inference
+  high_latency:
+    - low latency
+    - real-time
+    - throughput
+    - latency
+  agent_governance_gap:
+    - agent
+    - autonomous
+    - multi-agent
+    - ai agent
+    - agentic
+  privacy_or_controlled_deployment_gap:
+    - privacy
+    - on-prem
+    - controlled deployment
+    - data residency
+  ai_cybersecurity_need:
+    - cybersecurity
+    - threat detection
+    - security
+  healthcare_compliance_need:
+    - healthcare
+    - compliance
+    - hipaa
+  robotics_need:
+    - robot
+    - robotics
+  simulation_need:
+    - simulation
+    - digital twin
+  computer_vision_need:
+    - computer vision
+    - image
+    - video
+  voice_need:
+    - voice
+    - speech
+    - audio
+  slow_data_pipeline:
+    - data pipeline
+    - data processing
+    - etl
+  heavy_tabular_processing:
+    - tabular
+    - structured data
+  model_evaluation_gap:
+    - evaluation
+    - model eval
+    - benchmark
+  observability_gap:
+    - monitoring
+    - observability
+    - telemetry
+
+# Regex-based signal boosts for detect_ai_native_signals
+# Each entry: pattern (regex), label (human-readable), boost (0.0-1.0)
+knowledge_base_signal_boosts:
+  - pattern: "\\bAI\\b"
+    label: "Mentions AI/Artificial Intelligence"
+    boost: 0.15
+  - pattern: "\\bIA\\b"
+    label: "Mentions IA (Inteligência Artificial)"
+    boost: 0.15
+  - pattern: "\\binteligência artificial\\b"
+    label: "Mentions Inteligência Artificial"
+    boost: 0.15
+  - pattern: "\\binteligencia artificial\\b"
+    label: "Mentions Inteligência Artificial"
+    boost: 0.15
+  - pattern: "\\bmachine learning\\b"
+    label: "Mentions Machine Learning"
+    boost: 0.15
+  - pattern: "\\baprendizado de máquina\\b"
+    label: "Mentions Aprendizado de Máquina"
+    boost: 0.15
+  - pattern: "\\bLLM\\b"
+    label: "Mentions LLM (Large Language Model)"
+    boost: 0.20
+  - pattern: "\\blarge language model"
+    label: "Mentions Large Language Model"
+    boost: 0.20
+  - pattern: "\\bgenerative AI\\b"
+    label: "Mentions Generative AI"
+    boost: 0.20
+  - pattern: "\\bIA generativa\\b"
+    label: "Mentions IA Generativa"
+    boost: 0.20
+  - pattern: "\\bdeep learning\\b"
+    label: "Mentions Deep Learning"
+    boost: 0.15
+  - pattern: "\\bcomputer vision\\b"
+    label: "Mentions Computer Vision"
+    boost: 0.15
+  - pattern: "\\bvisão computacional\\b"
+    label: "Mentions Visão Computacional"
+    boost: 0.15
+  - pattern: "\\bNLP\\b"
+    label: "Mentions NLP"
+    boost: 0.15
+  - pattern: "\\bprocessamento de linguagem natural\\b"
+    label: "Mentions PLN"
+    boost: 0.15
+  - pattern: "\\bneural network"
+    label: "Mentions Neural Networks"
+    boost: 0.15
+  - pattern: "\\bredes neurais\\b"
+    label: "Mentions Redes Neurais"
+    boost: 0.15
+  - pattern: "\\bmodel serving\\b"
+    label: "Mentions Model Serving"
+    boost: 0.20
+  - pattern: "\\binference\\b"
+    label: "Mentions Inference"
+    boost: 0.15
+  - pattern: "\\bGPU\\b"
+    label: "Mentions GPU"
+    boost: 0.20
+  - pattern: "\\btensorflow\\b"
+    label: "Mentions TensorFlow"
+    boost: 0.10
+  - pattern: "\\bpytorch\\b"
+    label: "Mentions PyTorch"
+    boost: 0.10
+  - pattern: "\\btransformers?\\b"
+    label: "Mentions Transformer Architecture"
+    boost: 0.15
+  - pattern: "\\bautomação inteligente\\b"
+    label: "Mentions Intelligent Automation"
+    boost: 0.10
+  - pattern: "\\bintelligent automation\\b"
+    label: "Mentions Intelligent Automation"
+    boost: 0.10
+  - pattern: "\\bTriton\\b"
+    label: "Mentions NVIDIA Triton Inference Server"
+    boost: 0.25
+  - pattern: "\\bTensorRT\\b"
+    label: "Mentions NVIDIA TensorRT"
+    boost: 0.25
+  - pattern: "\\bRAPIDS\\b"
+    label: "Mentions NVIDIA RAPIDS"
+    boost: 0.25
+  - pattern: "\\bNeMo\\b"
+    label: "Mentions NVIDIA NeMo"
+    boost: 0.25
+  - pattern: "\\bcuda\\b"
+    label: "Mentions CUDA"
+    boost: 0.20
+  - pattern: "\\bAPI Catalog\\b"
+    label: "Mentions NVIDIA API Catalog"
+    boost: 0.25
+  - pattern: "\\bNVIDIA NIM\\b"
+    label: "Mentions NVIDIA NIM"
+    boost: 0.25
+  - pattern: "\\bcuDF\\b"
+    label: "Mentions RAPIDS cuDF"
+    boost: 0.20
+  - pattern: "\\bcuML\\b"
+    label: "Mentions RAPIDS cuML"
+    boost: 0.20
+  - pattern: "\\bdata science\\b"
+    label: "Mentions Data Science"
+    boost: 0.05
+  - pattern: "\\bciência de dados\\b"
+    label: "Mentions Ciência de Dados"
+    boost: 0.05
+
+# NVIDIA-specific technology keywords (for has_nvidia_tech)
+nvidia_keyword_boosts:
+  NVIDIA TensorRT: 0.25
+  NVIDIA Triton Inference Server: 0.25
+  NVIDIA RAPIDS: 0.25
+  NVIDIA NeMo: 0.25
+  CUDA: 0.20
+  NVIDIA API Catalog: 0.25
+  NVIDIA NIM: 0.25
+  RAPIDS cuDF: 0.20
+  RAPIDS cuML: 0.20

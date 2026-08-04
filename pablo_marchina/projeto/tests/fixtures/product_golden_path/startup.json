@@ -1,0 +1,52 @@
+{
+  "name": "Golden Path AI",
+  "website": "https://goldenpath-ai.example.com",
+  "sector": "AI Infrastructure",
+  "description": "AI-native infrastructure platform that trains proprietary latency prediction models, serves production LLM inference on NVIDIA GPUs, monitors model quality with guardrails, runs privacy controls, and optimizes TensorRT/Triton deployments for enterprise customers.",
+  "product_summary": "Managed GPU inference with autoscaling, custom model optimization, governance, observability, Kubernetes deployment, Kafka/Spark streaming infrastructure, feature stores, and NVIDIA Triton/TensorRT acceleration for production AI workloads.",
+  "tags": ["golden-path", "acceptance-test"],
+  "evidence": [
+    {
+      "claim": "Operates production LLM inference with autoscaling, latency monitoring, and model quality guardrails",
+      "source_url": "https://gp.example.com/platform",
+      "source_type": "official_site",
+      "quote_or_evidence": "Platform runs production LLM inference workloads with autoscaling, p95 latency monitoring, model evaluation, observability dashboards, and guardrails for enterprise deployments.",
+      "confidence": "high"
+    },
+    {
+      "claim": "Uses NVIDIA A100 GPUs, CUDA, TensorRT, and Triton Inference Server for model serving",
+      "source_url": "https://gp.example.com/tech-stack",
+      "source_type": "official_site",
+      "quote_or_evidence": "The serving stack includes NVIDIA A100 GPUs, CUDA kernels, TensorRT optimization, Triton Inference Server, PyTorch, Kubernetes, and Docker for production model serving.",
+      "confidence": "high"
+    },
+    {
+      "claim": "500+ enterprise customers use the product in production",
+      "source_url": "https://gp.example.com/customers",
+      "source_type": "official_site",
+      "quote_or_evidence": "Serving 500+ enterprise customers with production inference traffic and real-time usage feedback loops.",
+      "confidence": "high"
+    },
+    {
+      "claim": "Proprietary telemetry data trains custom optimization models",
+      "source_url": "https://gp.example.com/research",
+      "source_type": "official_site",
+      "quote_or_evidence": "The platform trains proprietary latency and cost optimization models using anonymized request telemetry, feature stores, Kafka/Spark streaming infrastructure, and feedback data from production deployments.",
+      "confidence": "high"
+    },
+    {
+      "claim": "Governance and privacy controls are built into production deployments",
+      "source_url": "https://gp.example.com/security",
+      "source_type": "official_site",
+      "quote_or_evidence": "Enterprise deployments include privacy controls, audit logs, model governance, evaluation gates, data protection workflows, and controlled Kubernetes deployment policies.",
+      "confidence": "high"
+    },
+    {
+      "claim": "Raised Series A funding to expand GPU inference infrastructure",
+      "source_url": "https://gp.example.com/news/series-a",
+      "source_type": "news",
+      "quote_or_evidence": "Golden Path AI raised Series A funding to expand its NVIDIA GPU inference infrastructure for enterprise AI workloads.",
+      "confidence": "high"
+    }
+  ]
+}

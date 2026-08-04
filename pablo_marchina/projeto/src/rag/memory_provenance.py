@@ -1,0 +1,39 @@
+"""memory provenance
+
+Hypothesis: Evaluate whether memory provenance improves final product output without paid dependency.
+Category: 8.43 Memory and Negative Learning
+Expected runtime use: candidate_or_supporting_governance
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from src.rag.schemas import RetrievedContext
+
+
+class MemoryProvenance:
+    """memory provenance"""
+
+    def __init__(self, config: Any | None = None) -> None:
+        self.config = config or {}
+
+    def run(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        return self._apply(contexts, **kwargs)
+
+    def _apply(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        if not getattr(self, "_provenance", None):
+            self._provenance: dict[str, list[str]] = {}
+
+        for ctx in contexts:
+            if ctx.chunk_id not in self._provenance:
+                self._provenance[ctx.chunk_id] = []
+
+            src_chain = self._provenance[ctx.chunk_id]
+
+            if ctx.source_id not in src_chain:
+                src_chain.append(ctx.source_id)
+
+                ctx.relevance_score = min(1.0, ctx.relevance_score + 0.02 * len(src_chain))
+
+        return contexts

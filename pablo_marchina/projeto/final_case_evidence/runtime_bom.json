@@ -1,0 +1,43 @@
+{
+  "component_count": 3,
+  "components": [
+    {
+      "benchmark_ref": "final_case_evidence/benchmark_manifest.json",
+      "category": "Runtime core",
+      "component_id": "runtime.fastapi",
+      "configuration_ref": ".env.example",
+      "decision_ref": "final_case_evidence/decision_ledger.csv",
+      "name": "FastAPI",
+      "owner": "product",
+      "runtime_role": "product_api",
+      "status": "PROMOTED_TO_RUNTIME",
+      "version_or_source": "pyproject.toml"
+    },
+    {
+      "benchmark_ref": "final_case_evidence/benchmark_manifest.json",
+      "category": "Runtime core",
+      "component_id": "runtime.postgresql",
+      "configuration_ref": ".env.example",
+      "decision_ref": "final_case_evidence/decision_ledger.csv",
+      "name": "PostgreSQL",
+      "owner": "product",
+      "runtime_role": "product_database",
+      "status": "PROMOTED_TO_RUNTIME",
+      "version_or_source": "PRODUCT_DB_URL"
+    },
+    {
+      "benchmark_ref": "final_case_evidence/benchmark_manifest.json",
+      "category": "Runtime core",
+      "component_id": "runtime.qdrant",
+      "configuration_ref": ".env.example",
+      "decision_ref": "final_case_evidence/decision_ledger.csv",
+      "name": "Qdrant",
+      "owner": "product",
+      "runtime_role": "rag_vector_store",
+      "status": "PROMOTED_TO_RUNTIME",
+      "version_or_source": "QDRANT_URL"
+    }
+  ],
+  "report_id": "runtime_bom",
+  "status": "PASS"
+}

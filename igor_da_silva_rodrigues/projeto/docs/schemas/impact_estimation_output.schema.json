@@ -1,0 +1,153 @@
+{
+  "$defs": {
+    "TechnicalImpact": {
+      "additionalProperties": true,
+      "properties": {
+        "latencia": {
+          "minLength": 1,
+          "title": "Latencia",
+          "type": "string"
+        },
+        "custo": {
+          "minLength": 1,
+          "title": "Custo",
+          "type": "string"
+        },
+        "vazao": {
+          "minLength": 1,
+          "title": "Vazao",
+          "type": "string"
+        },
+        "escalabilidade": {
+          "minLength": 1,
+          "title": "Escalabilidade",
+          "type": "string"
+        },
+        "governanca_seguranca": {
+          "minLength": 1,
+          "title": "Governanca Seguranca",
+          "type": "string"
+        }
+      },
+      "required": [
+        "latencia",
+        "custo",
+        "vazao",
+        "escalabilidade",
+        "governanca_seguranca"
+      ],
+      "title": "TechnicalImpact",
+      "type": "object"
+    },
+    "TechnologyImpactEstimate": {
+      "additionalProperties": true,
+      "properties": {
+        "tecnologia": {
+          "enum": [
+            "NIM",
+            "Triton",
+            "TensorRT-LLM",
+            "NeMo",
+            "RAPIDS",
+            "CUDA",
+            "Riva",
+            "Omniverse",
+            "Clara",
+            "Isaac",
+            "Morpheus",
+            "AI Enterprise",
+            "Inception"
+          ],
+          "title": "Tecnologia",
+          "type": "string"
+        },
+        "impacto_tecnico": {
+          "$ref": "#/$defs/TechnicalImpact"
+        },
+        "impacto_negocio": {
+          "minLength": 1,
+          "title": "Impacto Negocio",
+          "type": "string"
+        },
+        "fontes_evidencia": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Fontes Evidencia",
+          "type": "array"
+        },
+        "confianca": {
+          "enum": [
+            "alta",
+            "media",
+            "baixa"
+          ],
+          "title": "Confianca",
+          "type": "string"
+        },
+        "premissas": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Premissas",
+          "type": "array"
+        }
+      },
+      "required": [
+        "tecnologia",
+        "impacto_tecnico",
+        "impacto_negocio",
+        "confianca"
+      ],
+      "title": "TechnologyImpactEstimate",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "estimativas_impacto": {
+      "items": {
+        "$ref": "#/$defs/TechnologyImpactEstimate"
+      },
+      "title": "Estimativas Impacto",
+      "type": "array"
+    },
+    "indice_impacto_agregado": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Indice Impacto Agregado",
+      "type": "integer"
+    },
+    "kpis_sugeridos": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Kpis Sugeridos",
+      "type": "array"
+    },
+    "incertezas": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Incertezas",
+      "type": "array"
+    },
+    "resumo_executivo": {
+      "minLength": 1,
+      "title": "Resumo Executivo",
+      "type": "string"
+    }
+  },
+  "required": [
+    "startup",
+    "indice_impacto_agregado",
+    "resumo_executivo"
+  ],
+  "title": "ImpactEstimationOutput",
+  "type": "object"
+}

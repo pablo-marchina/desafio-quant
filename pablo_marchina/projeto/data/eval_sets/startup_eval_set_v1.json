@@ -1,0 +1,20 @@
+[
+  {
+    "id": "placeholder-001",
+    "startup_name": "Fictional Health AI",
+    "query": "Assess AI-native maturity and possible NVIDIA fit.",
+    "ground_truth_notes": "Placeholder example only. Replace with manually curated cases.",
+    "expected_ai_native_level": "ai_native",
+    "expected_gaps": ["healthcare_compliance_need", "high_inference_cost"],
+    "expected_recommendations": ["NVIDIA Clara", "TensorRT-LLM"]
+  },
+  {
+    "id": "placeholder-002",
+    "startup_name": "Fictional VoiceOps",
+    "query": "Assess technical maturity and recommendation opportunities.",
+    "ground_truth_notes": "Placeholder example only. Replace with manually curated cases.",
+    "expected_ai_native_level": "ai_enabled",
+    "expected_gaps": ["voice_need"],
+    "expected_recommendations": ["NVIDIA Riva"]
+  }
+]

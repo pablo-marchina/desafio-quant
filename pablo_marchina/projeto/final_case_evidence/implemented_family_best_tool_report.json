@@ -1,0 +1,947 @@
+{
+  "conclusion": "Implemented families have positive local product-spike evidence, but global best is not guaranteed.",
+  "current_best_with_evidence_count": 6,
+  "families": [
+    {
+      "alternative_terms": [
+        "query rewriting",
+        "query transformation",
+        "query expansion",
+        "multi-query retrieval",
+        "HyDE",
+        "RAG Fusion",
+        "Reciprocal Rank Fusion",
+        "hybrid retrieval"
+      ],
+      "baseline_score": 0.575,
+      "candidate_score": 1.0,
+      "case_count": 2,
+      "catalog_alternative_count": 8,
+      "catalog_alternatives_needing_direct_benchmark": [
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.3 Vector/search/retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "Hybrid retrieval",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "HyDE",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "query rewriting",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "Reciprocal Rank Fusion",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "multi-query retrieval",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "query expansion",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "graph + vector hybrid retrieval",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.45 Failure Transparency and Completeness Control",
+          "direct_benchmark_outcome": null,
+          "name": "out-of-scope query rewriting",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        }
+      ],
+      "conclusion": "Current implementation improved output quality in local product-spike benchmarks, but cataloged alternatives still need direct family benchmarks before claiming global best.",
+      "current_component": "src/rag/query_rewriting.py",
+      "current_component_exists": true,
+      "direct_alternative_gap_count": 8,
+      "display_name": "Query rewriting and multi-query retrieval",
+      "external_or_free_alternative_count": 0,
+      "family_id": "query_rewriting_multiquery",
+      "global_best_guarantee": false,
+      "product_spike_decision": "PROMOTE_TO_PRODUCT_SPIKE",
+      "product_spike_report": "query_rewriting_product_spike_report.json",
+      "product_spike_status": "PASS",
+      "quality_delta": 0.425,
+      "regression_count": 0,
+      "status": "BEST_WITH_CURRENT_EVIDENCE_NEEDS_DIRECT_ALTERNATIVE_BENCHMARK",
+      "untested_free_alternative_count": 0,
+      "untested_free_alternatives": []
+    },
+    {
+      "alternative_terms": [
+        "decision theoretic ranking",
+        "value of information",
+        "expected information gain",
+        "missing evidence prediction",
+        "learning to rank",
+        "next best action"
+      ],
+      "baseline_score": 0.0476,
+      "candidate_score": 1.0,
+      "case_count": 3,
+      "catalog_alternative_count": 3,
+      "catalog_alternatives_needing_direct_benchmark": [
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.10 Recommendation, ranking and scoring",
+          "direct_benchmark_outcome": null,
+          "name": "missing evidence prediction",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.18 Sourcing and crawling",
+          "direct_benchmark_outcome": null,
+          "name": "Expected information gain sourcing",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.18 Sourcing and crawling",
+          "direct_benchmark_outcome": null,
+          "name": "Value of information sourcing",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        }
+      ],
+      "conclusion": "Current implementation improved output quality in local product-spike benchmarks, but cataloged alternatives still need direct family benchmarks before claiming global best.",
+      "current_component": "src/recommendation/next_action_enrichment.py",
+      "current_component_exists": true,
+      "direct_alternative_gap_count": 3,
+      "display_name": "Recommendation specificity and next action",
+      "external_or_free_alternative_count": 0,
+      "family_id": "recommendation_specificity_next_action",
+      "global_best_guarantee": false,
+      "product_spike_decision": "PROMOTE_TO_PRODUCT_SPIKE",
+      "product_spike_report": "next_action_enrichment_product_spike_report.json",
+      "product_spike_status": "PASS",
+      "quality_delta": 0.9524,
+      "regression_count": 0,
+      "status": "BEST_WITH_CURRENT_EVIDENCE_NEEDS_DIRECT_ALTERNATIVE_BENCHMARK",
+      "untested_free_alternative_count": 0,
+      "untested_free_alternatives": []
+    },
+    {
+      "alternative_terms": [
+        "GraphRAG",
+        "Knowledge Graph",
+        "Neo4j",
+        "Memgraph",
+        "NetworkX",
+        "LlamaIndex PropertyGraphIndex",
+        "graph retrieval",
+        "entity graph"
+      ],
+      "baseline_score": 0.2,
+      "candidate_score": 1.0,
+      "case_count": 2,
+      "catalog_alternative_count": 47,
+      "catalog_alternatives_needing_direct_benchmark": [
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.4 Graph and GraphRAG",
+          "direct_benchmark_outcome": null,
+          "name": "DRIFT-like search",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.4 Graph and GraphRAG",
+          "direct_benchmark_outcome": null,
+          "name": "GraphRAG global search",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.4 Graph and GraphRAG",
+          "direct_benchmark_outcome": null,
+          "name": "GraphRAG local search",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.4 Graph and GraphRAG",
+          "direct_benchmark_outcome": null,
+          "name": "NetworkX",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.4 Graph and GraphRAG",
+          "direct_benchmark_outcome": null,
+          "name": "Temporal GraphRAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.4 Graph and GraphRAG",
+          "direct_benchmark_outcome": null,
+          "name": "Temporal Knowledge Graph",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.9 Graph intelligence",
+          "direct_benchmark_outcome": null,
+          "name": "knowledge graph construction",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "Microsoft GraphRAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "LightRAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "HippoRAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "KAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "LazyGraphRAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "entity-centric retrieval",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "relationship-aware retrieval",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "community summaries",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "graph + vector hybrid retrieval",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "graph consistency checker",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "entity resolution",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "ontology-guided graph construction",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "schema-guided graph extraction",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "graph provenance tracking",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "domain ontology",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "startup evaluation ontology",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "NVIDIA opportunity ontology",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "direct_benchmark_outcome": null,
+          "name": "capability taxonomy",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        }
+      ],
+      "conclusion": "Current implementation improved output quality in local product-spike benchmarks, but cataloged alternatives still need direct family benchmarks before claiming global best.",
+      "current_component": "src/rag/evidence_graph.py",
+      "current_component_exists": true,
+      "direct_alternative_gap_count": 47,
+      "display_name": "GraphRAG and evidence graph",
+      "external_or_free_alternative_count": 0,
+      "family_id": "graphrag_evidence_graph",
+      "global_best_guarantee": false,
+      "product_spike_decision": "PROMOTE_TO_PRODUCT_SPIKE",
+      "product_spike_report": "graphrag_evidence_graph_product_spike_report.json",
+      "product_spike_status": "PASS",
+      "quality_delta": 0.8,
+      "regression_count": 0,
+      "status": "BEST_WITH_CURRENT_EVIDENCE_NEEDS_DIRECT_ALTERNATIVE_BENCHMARK",
+      "untested_free_alternative_count": 0,
+      "untested_free_alternatives": []
+    },
+    {
+      "alternative_terms": [
+        "counter-evidence",
+        "contradiction detection",
+        "claim verification",
+        "knowledge conflict resolution",
+        "Corrective RAG",
+        "Self-RAG",
+        "skeptical RAG"
+      ],
+      "baseline_score": 0.1725,
+      "candidate_score": 0.865,
+      "case_count": 2,
+      "catalog_alternative_count": 61,
+      "catalog_alternatives_needing_direct_benchmark": [
+        {
+          "benchmark": "agent trajectory eval + groundedness/claim verification eval",
+          "category": "Agentic RAG / Tool-Using Agents",
+          "direct_benchmark_outcome": null,
+          "name": "ReAct",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "counter-evidence retrieval",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "corrective RAG / CRAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "self-RAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.5 RAG/retrieval techniques",
+          "direct_benchmark_outcome": null,
+          "name": "skeptical RAG",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "claim verification",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "contradiction detection",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "knowledge conflict resolution",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "claim extraction",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "claim-evidence matrix",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "NLI-based verifier",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "source-supported claim filter",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "unsupported-claim deletion",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "contradicted-claim flag",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "claim confidence score",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "citation-per-claim requirement",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "answer-to-evidence alignment",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "grounded revision loop",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "citation repair loop",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "LongTracer-style hallucination detection",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "retromorphic testing",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "hierarchical claim verification",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "local-to-global verification",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "claim span mapping",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.33 Claim Verification and Groundedness",
+          "direct_benchmark_outcome": null,
+          "name": "entailed / contradicted / baseless labels",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        }
+      ],
+      "conclusion": "Current implementation improved output quality in local product-spike benchmarks, but cataloged alternatives still need direct family benchmarks before claiming global best.",
+      "current_component": "src/rag/counter_evidence.py",
+      "current_component_exists": true,
+      "direct_alternative_gap_count": 61,
+      "display_name": "Counter-evidence retrieval and contradiction handling",
+      "external_or_free_alternative_count": 0,
+      "family_id": "counter_evidence_retrieval",
+      "global_best_guarantee": false,
+      "product_spike_decision": "PROMOTE_TO_PRODUCT_SPIKE",
+      "product_spike_report": "counter_evidence_product_spike_report.json",
+      "product_spike_status": "PASS",
+      "quality_delta": 0.6925,
+      "regression_count": 0,
+      "status": "BEST_WITH_CURRENT_EVIDENCE_NEEDS_DIRECT_ALTERNATIVE_BENCHMARK",
+      "untested_free_alternative_count": 0,
+      "untested_free_alternatives": []
+    },
+    {
+      "alternative_terms": [
+        "source trust",
+        "source quality",
+        "freshness-aware retrieval",
+        "freshness-aware reranking",
+        "source-trust-aware reranking",
+        "data rights",
+        "source compliance"
+      ],
+      "baseline_score": 0.35,
+      "candidate_score": 0.95,
+      "case_count": 2,
+      "catalog_alternative_count": 6,
+      "catalog_alternatives_needing_direct_benchmark": [
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.18 Sourcing and crawling",
+          "direct_benchmark_outcome": null,
+          "name": "Data rights registry",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.18 Sourcing and crawling",
+          "direct_benchmark_outcome": null,
+          "name": "Source compliance registry",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.18 Sourcing and crawling",
+          "direct_benchmark_outcome": null,
+          "name": "Source trust scoring service",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.6 Reranking",
+          "direct_benchmark_outcome": null,
+          "name": "freshness-aware reranking",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.6 Reranking",
+          "direct_benchmark_outcome": null,
+          "name": "source-trust-aware reranking",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.42 Security, Guardrails and Red Teaming",
+          "direct_benchmark_outcome": null,
+          "name": "source trust attack simulation",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        }
+      ],
+      "conclusion": "Current implementation improved output quality in local product-spike benchmarks, but cataloged alternatives still need direct family benchmarks before claiming global best.",
+      "current_component": "src/rag/source_quality.py",
+      "current_component_exists": true,
+      "direct_alternative_gap_count": 6,
+      "display_name": "Source trust, quality, and freshness",
+      "external_or_free_alternative_count": 0,
+      "family_id": "source_quality_trust_freshness",
+      "global_best_guarantee": false,
+      "product_spike_decision": "PROMOTE_TO_PRODUCT_SPIKE",
+      "product_spike_report": "source_quality_product_spike_report.json",
+      "product_spike_status": "PASS",
+      "quality_delta": 0.6,
+      "regression_count": 0,
+      "status": "BEST_WITH_CURRENT_EVIDENCE_NEEDS_DIRECT_ALTERNATIVE_BENCHMARK",
+      "untested_free_alternative_count": 0,
+      "untested_free_alternatives": []
+    },
+    {
+      "alternative_terms": [
+        "evidence sufficiency",
+        "answerability detection",
+        "abstention",
+        "selective prediction",
+        "uncertainty estimation",
+        "unsupported claim control"
+      ],
+      "baseline_score": 0.2915,
+      "candidate_score": 0.8334,
+      "case_count": 3,
+      "catalog_alternative_count": 28,
+      "catalog_alternatives_needing_direct_benchmark": [
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "abstention / refusal policy",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "answerability detection",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "bayesian model averaging",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "claim decomposition",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "claim verification",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "claim-evidence alignment",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "confidence calibration",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "conformal prediction",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "conformal risk control",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "contradiction detection",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "data sufficiency score",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "ensemble of evaluators",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "entailment-based verification",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "evidence coverage score",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "evidence extraction before generation",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "evidence sufficiency classifier",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "factual consistency scoring",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "hallucination detection p\u00f3s-gera\u00e7\u00e3o",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "knowledge conflict resolution",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "model disagreement detection",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "selective prediction",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "source diversity enforcement",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "stepwise evidence accumulation",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "scripts/run_benchmark.py",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "direct_benchmark_outcome": null,
+          "name": "uncertainty estimation",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "BENCHMARKED"
+        },
+        {
+          "benchmark": "TBD_BY_IMPLEMENTATION; not required for catalog inclusion per user rule",
+          "category": "8.34 Verifier-Guided and Corrective RAG",
+          "direct_benchmark_outcome": null,
+          "name": "low-confidence abstention",
+          "reason": "Catalog candidate was not directly compared against the implemented family output.",
+          "status": "DOCUMENTED_CANDIDATE"
+        }
+      ],
+      "conclusion": "Current implementation improved output quality in local product-spike benchmarks, but cataloged alternatives still need direct family benchmarks before claiming global best.",
+      "current_component": "src/rag/evidence_sufficiency.py",
+      "current_component_exists": true,
+      "direct_alternative_gap_count": 28,
+      "display_name": "Evidence sufficiency and abstention",
+      "external_or_free_alternative_count": 0,
+      "family_id": "evidence_sufficiency_abstention",
+      "global_best_guarantee": false,
+      "product_spike_decision": "PROMOTE_TO_PRODUCT_SPIKE",
+      "product_spike_report": "evidence_sufficiency_product_spike_report.json",
+      "product_spike_status": "PASS",
+      "quality_delta": 0.5419,
+      "regression_count": 0,
+      "status": "BEST_WITH_CURRENT_EVIDENCE_NEEDS_DIRECT_ALTERNATIVE_BENCHMARK",
+      "untested_free_alternative_count": 0,
+      "untested_free_alternatives": []
+    }
+  ],
+  "family_count": 6,
+  "generated_at": "2026-07-01T05:58:38.237937+00:00",
+  "global_best_guarantee": false,
+  "missing_current_evidence_count": 0,
+  "needs_direct_alternative_benchmark_count": 6,
+  "report_id": "implemented_family_best_tool_report",
+  "status": "PASS"
+}

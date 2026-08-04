@@ -1,0 +1,8 @@
+{
+  "failures": [],
+  "generated_at": "2026-07-01T05:58:10.842808+00:00",
+  "registry": "/mnt/data/nvidia_final_impl/data/free_external_tool_registry.csv",
+  "report_id": "free_external_tool_registry_report",
+  "status": "PASS",
+  "tool_count": 5
+}

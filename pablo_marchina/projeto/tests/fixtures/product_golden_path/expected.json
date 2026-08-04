@@ -1,0 +1,15 @@
+{
+  "min_capabilities": 25,
+  "min_claims": 1,
+  "min_activation_recommendations": 1,
+  "dossier_version_expected": 1,
+  "dossier_has_json": true,
+  "dossier_has_markdown": true,
+  "quality_metrics_min": 1,
+  "opportunities_min_items": 1,
+  "export_type": "json",
+  "export_status": "completed",
+  "analysis_run_status_options": ["completed", "degraded"],
+  "quality_status_options": ["pass", "warn", "degraded", "no_quality_run"],
+  "no_demo_dependency": true
+}

@@ -1,0 +1,250 @@
+{
+  "_meta": {
+    "description": "Golden set for recommendation ranking calibration. 20 samples with labeled ranking relevance derived from synthetic reference weights and edge-case scenarios.",
+    "created": "2026-06-18",
+    "purpose": "recommendation_ranking_calibration",
+    "calibration_status": "baseline_measured",
+    "version": "1.0.0",
+    "schema": "golden_recommendation_ranking_v1",
+    "label_source": "derived_from_synthetic_reference",
+    "notes": "Baseline measured: 20 samples with 2-4 mappings each. Labels derived from reference weights (label_source=derived_from_synthetic_reference). Coverage: high/medium/low relevance, edge cases (equal scores, near-zero scores, extreme uncertainty). Calibrated via scripts/calibrate_recommendation_parameters.py: Spearman=1.0, MAE=0.029, pairwise_accuracy=1.0. Sensitivity analysis: overall min Spearman=0.9682 (all weights stable under +/-20% perturbation).",
+    "total_samples": 20,
+    "production_allowed": true,
+    "calibration_results": {
+      "mean_spearman": 1.0,
+      "mae": 0.029209,
+      "pairwise_accuracy": 1.0,
+      "sensitivity_overall_min_rho": 0.9682,
+      "recommended_production_threshold": 0.3993,
+      "recommended_confidence_threshold": 0.35,
+      "recommended_minimum_mapping_confidence": 0.20,
+      "recommended_uncertainty_penalty": 0.10,
+      "recommended_minimum_evidence_support": 0.0
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "rec-sample-000",
+      "description": "Three mappings, clear winner (high score + high confidence + high biz impact)",
+      "mappings": [
+        {"mapping_score": 0.85, "mapping_confidence": 0.80, "gap_severity_score": 0.8, "gap_confidence_score": 0.9, "evidence_support": 1.0, "rag_support": 1.0, "business_impact": 0.8, "implementation_complexity_inverse": 0.5, "uncertainty": 0.1},
+        {"mapping_score": 0.55, "mapping_confidence": 0.60, "gap_severity_score": 0.5, "gap_confidence_score": 0.6, "evidence_support": 0.4, "rag_support": 0.6, "business_impact": 0.6, "implementation_complexity_inverse": 0.5, "uncertainty": 0.3},
+        {"mapping_score": 0.30, "mapping_confidence": 0.35, "gap_severity_score": 0.3, "gap_confidence_score": 0.4, "evidence_support": 0.0, "rag_support": 0.2, "business_impact": 0.4, "implementation_complexity_inverse": 1.0, "uncertainty": 0.6}
+      ],
+      "expected_priority_scores": [0.766, 0.508, 0.358],
+      "expected_order": [0, 1, 2],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-001",
+      "description": "Two near-equal mappings, confidence as tiebreaker",
+      "mappings": [
+        {"mapping_score": 0.72, "mapping_confidence": 0.85, "gap_severity_score": 0.7, "gap_confidence_score": 0.7, "evidence_support": 0.6, "rag_support": 0.8, "business_impact": 0.75, "implementation_complexity_inverse": 0.5, "uncertainty": 0.15},
+        {"mapping_score": 0.70, "mapping_confidence": 0.55, "gap_severity_score": 0.7, "gap_confidence_score": 0.7, "evidence_support": 0.6, "rag_support": 0.8, "business_impact": 0.75, "implementation_complexity_inverse": 0.5, "uncertainty": 0.15}
+      ],
+      "expected_priority_scores": [0.681, 0.648],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-002",
+      "description": "Winner defined by evidence_support (one has none)",
+      "mappings": [
+        {"mapping_score": 0.65, "mapping_confidence": 0.60, "gap_severity_score": 0.6, "gap_confidence_score": 0.6, "evidence_support": 1.0, "rag_support": 0.4, "business_impact": 0.6, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2},
+        {"mapping_score": 0.65, "mapping_confidence": 0.60, "gap_severity_score": 0.6, "gap_confidence_score": 0.6, "evidence_support": 0.0, "rag_support": 1.0, "business_impact": 0.6, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2}
+      ],
+      "expected_priority_scores": [0.578, 0.558],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-003",
+      "description": "Low business impact vs high business impact",
+      "mappings": [
+        {"mapping_score": 0.60, "mapping_confidence": 0.60, "gap_severity_score": 0.6, "gap_confidence_score": 0.6, "evidence_support": 0.6, "rag_support": 0.6, "business_impact": 0.90, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2},
+        {"mapping_score": 0.60, "mapping_confidence": 0.60, "gap_severity_score": 0.6, "gap_confidence_score": 0.6, "evidence_support": 0.6, "rag_support": 0.6, "business_impact": 0.30, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2}
+      ],
+      "expected_priority_scores": [0.609, 0.519],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-004",
+      "description": "Complexity as differentiator (all else equal)",
+      "mappings": [
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.5, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.5, "implementation_complexity_inverse": 0.9, "uncertainty": 0.2},
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.5, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.5, "implementation_complexity_inverse": 0.1, "uncertainty": 0.2}
+      ],
+      "expected_priority_scores": [0.474, 0.442],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-005",
+      "description": "High uncertainty penalizes priority score",
+      "mappings": [
+        {"mapping_score": 0.80, "mapping_confidence": 0.70, "gap_severity_score": 0.7, "gap_confidence_score": 0.7, "evidence_support": 0.8, "rag_support": 0.6, "business_impact": 0.7, "implementation_complexity_inverse": 0.5, "uncertainty": 0.05},
+        {"mapping_score": 0.80, "mapping_confidence": 0.70, "gap_severity_score": 0.7, "gap_confidence_score": 0.7, "evidence_support": 0.8, "rag_support": 0.6, "business_impact": 0.7, "implementation_complexity_inverse": 0.5, "uncertainty": 0.80}
+      ],
+      "expected_priority_scores": [0.710, 0.638],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-006",
+      "description": "All equal scores — identical priority, order preserved (stable)",
+      "mappings": [
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.5, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.1},
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.5, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.1}
+      ],
+      "expected_priority_scores": [0.450, 0.450],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-007",
+      "description": "Near-zero mapping scores",
+      "mappings": [
+        {"mapping_score": 0.05, "mapping_confidence": 0.05, "gap_severity_score": 0.1, "gap_confidence_score": 0.1, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.3, "implementation_complexity_inverse": 0.0, "uncertainty": 0.9},
+        {"mapping_score": 0.30, "mapping_confidence": 0.25, "gap_severity_score": 0.3, "gap_confidence_score": 0.2, "evidence_support": 0.2, "rag_support": 0.0, "business_impact": 0.4, "implementation_complexity_inverse": 0.0, "uncertainty": 0.6}
+      ],
+      "expected_priority_scores": [0.117, 0.217],
+      "expected_order": [1, 0],
+      "ranking_relevance_label": "low"
+    },
+    {
+      "sample_id": "rec-sample-008",
+      "description": "Gap severity as dominant differentiator",
+      "mappings": [
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.9, "gap_confidence_score": 0.5, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2},
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.2, "gap_confidence_score": 0.5, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2}
+      ],
+      "expected_priority_scores": [0.490, 0.420],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-009",
+      "description": "Gap confidence score as differentiator",
+      "mappings": [
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.9, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2},
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.1, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2}
+      ],
+      "expected_priority_scores": [0.490, 0.410],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-010",
+      "description": "Four mappings, full rank spread",
+      "mappings": [
+        {"mapping_score": 0.90, "mapping_confidence": 0.90, "gap_severity_score": 0.9, "gap_confidence_score": 0.9, "evidence_support": 1.0, "rag_support": 1.0, "business_impact": 0.9, "implementation_complexity_inverse": 0.5, "uncertainty": 0.05},
+        {"mapping_score": 0.70, "mapping_confidence": 0.70, "gap_severity_score": 0.7, "gap_confidence_score": 0.7, "evidence_support": 0.6, "rag_support": 0.6, "business_impact": 0.7, "implementation_complexity_inverse": 0.5, "uncertainty": 0.15},
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.5, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2},
+        {"mapping_score": 0.20, "mapping_confidence": 0.20, "gap_severity_score": 0.2, "gap_confidence_score": 0.2, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.3, "implementation_complexity_inverse": 0.5, "uncertainty": 0.5}
+      ],
+      "expected_priority_scores": [0.866, 0.619, 0.450, 0.197],
+      "expected_order": [0, 1, 2, 3],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-011",
+      "description": "RAG support absent vs present (zero RAG context)",
+      "mappings": [
+        {"mapping_score": 0.60, "mapping_confidence": 0.60, "gap_severity_score": 0.6, "gap_confidence_score": 0.6, "evidence_support": 0.0, "rag_support": 1.0, "business_impact": 0.6, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2},
+        {"mapping_score": 0.60, "mapping_confidence": 0.60, "gap_severity_score": 0.6, "gap_confidence_score": 0.6, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.6, "implementation_complexity_inverse": 0.5, "uncertainty": 0.2}
+      ],
+      "expected_priority_scores": [0.558, 0.538],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-012",
+      "description": "Very high confidence but low mapping score",
+      "mappings": [
+        {"mapping_score": 0.30, "mapping_confidence": 0.90, "gap_severity_score": 0.3, "gap_confidence_score": 0.9, "evidence_support": 0.2, "rag_support": 0.8, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.1},
+        {"mapping_score": 0.80, "mapping_confidence": 0.30, "gap_severity_score": 0.8, "gap_confidence_score": 0.3, "evidence_support": 0.8, "rag_support": 0.2, "business_impact": 0.7, "implementation_complexity_inverse": 0.5, "uncertainty": 0.1}
+      ],
+      "expected_priority_scores": [0.451, 0.619],
+      "expected_order": [1, 0],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-013",
+      "description": "Mixed quality: moderate across all dimensions",
+      "mappings": [
+        {"mapping_score": 0.55, "mapping_confidence": 0.60, "gap_severity_score": 0.5, "gap_confidence_score": 0.6, "evidence_support": 0.6, "rag_support": 0.4, "business_impact": 0.55, "implementation_complexity_inverse": 0.5, "uncertainty": 0.25},
+        {"mapping_score": 0.50, "mapping_confidence": 0.55, "gap_severity_score": 0.6, "gap_confidence_score": 0.5, "evidence_support": 0.4, "rag_support": 0.6, "business_impact": 0.50, "implementation_complexity_inverse": 0.5, "uncertainty": 0.25}
+      ],
+      "expected_priority_scores": [0.497, 0.480],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-014",
+      "description": "One mapping with zero evidence and zero RAG",
+      "mappings": [
+        {"mapping_score": 0.70, "mapping_confidence": 0.70, "gap_severity_score": 0.7, "gap_confidence_score": 0.7, "evidence_support": 1.0, "rag_support": 1.0, "business_impact": 0.7, "implementation_complexity_inverse": 0.5, "uncertainty": 0.15},
+        {"mapping_score": 0.60, "mapping_confidence": 0.60, "gap_severity_score": 0.6, "gap_confidence_score": 0.6, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.6, "implementation_complexity_inverse": 0.5, "uncertainty": 0.60}
+      ],
+      "expected_priority_scores": [0.659, 0.474],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-015",
+      "description": "High complexity vs low complexity edge case",
+      "mappings": [
+        {"mapping_score": 0.45, "mapping_confidence": 0.45, "gap_severity_score": 0.4, "gap_confidence_score": 0.4, "evidence_support": 0.4, "rag_support": 0.4, "business_impact": 0.4, "implementation_complexity_inverse": 1.0, "uncertainty": 0.3},
+        {"mapping_score": 0.80, "mapping_confidence": 0.80, "gap_severity_score": 0.8, "gap_confidence_score": 0.8, "evidence_support": 0.8, "rag_support": 0.8, "business_impact": 0.8, "implementation_complexity_inverse": 0.0, "uncertainty": 0.1}
+      ],
+      "expected_priority_scores": [0.428, 0.728],
+      "expected_order": [1, 0],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-016",
+      "description": "Single mapping — trivial ranking",
+      "mappings": [
+        {"mapping_score": 0.75, "mapping_confidence": 0.70, "gap_severity_score": 0.7, "gap_confidence_score": 0.7, "evidence_support": 0.8, "rag_support": 0.6, "business_impact": 0.75, "implementation_complexity_inverse": 0.5, "uncertainty": 0.1}
+      ],
+      "expected_priority_scores": [0.687],
+      "expected_order": [0],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-017",
+      "description": "Maxed out features — ceiling test",
+      "mappings": [
+        {"mapping_score": 1.0, "mapping_confidence": 1.0, "gap_severity_score": 1.0, "gap_confidence_score": 1.0, "evidence_support": 1.0, "rag_support": 1.0, "business_impact": 1.0, "implementation_complexity_inverse": 1.0, "uncertainty": 0.0},
+        {"mapping_score": 0.0, "mapping_confidence": 0.0, "gap_severity_score": 0.0, "gap_confidence_score": 0.0, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.0, "implementation_complexity_inverse": 0.0, "uncertainty": 1.0}
+      ],
+      "expected_priority_scores": [1.0, 0.0],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "high"
+    },
+    {
+      "sample_id": "rec-sample-018",
+      "description": "Close scores near production threshold (0.40)",
+      "mappings": [
+        {"mapping_score": 0.50, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.5, "evidence_support": 0.2, "rag_support": 0.2, "business_impact": 0.5, "implementation_complexity_inverse": 0.5, "uncertainty": 0.3},
+        {"mapping_score": 0.45, "mapping_confidence": 0.45, "gap_severity_score": 0.4, "gap_confidence_score": 0.4, "evidence_support": 0.2, "rag_support": 0.2, "business_impact": 0.4, "implementation_complexity_inverse": 0.5, "uncertainty": 0.3}
+      ],
+      "expected_priority_scores": [0.435, 0.390],
+      "expected_order": [0, 1],
+      "ranking_relevance_label": "medium"
+    },
+    {
+      "sample_id": "rec-sample-019",
+      "description": "Wide distribution: one excellent, one poor, one mid",
+      "mappings": [
+        {"mapping_score": 0.95, "mapping_confidence": 0.95, "gap_severity_score": 0.9, "gap_confidence_score": 0.9, "evidence_support": 1.0, "rag_support": 1.0, "business_impact": 0.9, "implementation_complexity_inverse": 0.8, "uncertainty": 0.05},
+        {"mapping_score": 0.55, "mapping_confidence": 0.50, "gap_severity_score": 0.5, "gap_confidence_score": 0.5, "evidence_support": 0.6, "rag_support": 0.4, "business_impact": 0.55, "implementation_complexity_inverse": 0.5, "uncertainty": 0.25},
+        {"mapping_score": 0.15, "mapping_confidence": 0.20, "gap_severity_score": 0.2, "gap_confidence_score": 0.2, "evidence_support": 0.0, "rag_support": 0.0, "business_impact": 0.3, "implementation_complexity_inverse": 0.2, "uncertainty": 0.7}
+      ],
+      "expected_priority_scores": [0.901, 0.475, 0.147],
+      "expected_order": [0, 1, 2],
+      "ranking_relevance_label": "high"
+    }
+  ]
+}

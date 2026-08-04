@@ -1,0 +1,6 @@
+{
+  "generated_at": "2026-07-01T05:57:51.032146+00:00",
+  "report_id": "source_quality_live_report",
+  "required_command": "python scripts/run_source_quality_final_benchmark.py",
+  "status": "PENDING_LIVE_SOURCE_REVIEW"
+}

@@ -1,0 +1,12 @@
+{
+  "applies": false,
+  "command": "not_applicable_no_release_container_image",
+  "findings_count": 0,
+  "finished_at": "2026-07-01T05:58:08.502416+00:00",
+  "reason": "The final source release does not publish a container image.",
+  "report_id": "container_scan_report",
+  "started_at": "2026-07-01T05:58:08.502398+00:00",
+  "status": "PASS",
+  "tool": "release_policy",
+  "version": "not_applicable"
+}

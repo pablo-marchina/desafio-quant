@@ -1,0 +1,185 @@
+{
+  "$defs": {
+    "CollectedPage": {
+      "additionalProperties": true,
+      "properties": {
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "titulo_pagina": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Titulo Pagina"
+        },
+        "conteudo_markdown": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Conteudo Markdown"
+        },
+        "conteudo_textual": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Conteudo Textual"
+        },
+        "metadados": {
+          "additionalProperties": true,
+          "title": "Metadados",
+          "type": "object"
+        },
+        "extrator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extrator"
+        }
+      },
+      "required": [
+        "url"
+      ],
+      "title": "CollectedPage",
+      "type": "object"
+    },
+    "SearchResult": {
+      "additionalProperties": true,
+      "properties": {
+        "titulo": {
+          "minLength": 1,
+          "title": "Titulo",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "snippet": {
+          "minLength": 1,
+          "title": "Snippet",
+          "type": "string"
+        },
+        "potencial_alto": {
+          "default": false,
+          "title": "Potencial Alto",
+          "type": "boolean"
+        },
+        "provedor_busca": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Provedor Busca"
+        }
+      },
+      "required": [
+        "titulo",
+        "url",
+        "snippet"
+      ],
+      "title": "SearchResult",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "timestamp_coleta": {
+      "title": "Timestamp Coleta",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "completo",
+        "parcial",
+        "falha"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "metricas": {
+      "additionalProperties": true,
+      "title": "Metricas",
+      "type": "object"
+    },
+    "resultados": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Resultados",
+      "type": "array"
+    },
+    "resultados_buscas": {
+      "items": {
+        "$ref": "#/$defs/SearchResult"
+      },
+      "title": "Resultados Buscas",
+      "type": "array"
+    },
+    "paginas_completas": {
+      "items": {
+        "$ref": "#/$defs/CollectedPage"
+      },
+      "title": "Paginas Completas",
+      "type": "array"
+    },
+    "varredura_complementar": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Varredura Complementar",
+      "type": "array"
+    },
+    "erros": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Erros",
+      "type": "array"
+    }
+  },
+  "required": [
+    "startup",
+    "timestamp_coleta",
+    "status"
+  ],
+  "title": "ScraperOutput",
+  "type": "object"
+}

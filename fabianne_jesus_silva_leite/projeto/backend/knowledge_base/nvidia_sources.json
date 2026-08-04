@@ -1,0 +1,155 @@
+[
+  {
+    "technology_id": "nvidia_inception",
+    "technology_name": "NVIDIA Inception",
+    "title": "NVIDIA Inception for Startups",
+    "source_url": "https://developer.nvidia.com/developer-program",
+    "source_type": "official_program_page",
+    "tags": ["startups", "community", "go-to-market", "technical-support"],
+    "enabled": true
+  },
+  {
+    "technology_id": "nvidia_nim",
+    "technology_name": "NVIDIA NIM",
+    "title": "NVIDIA NIM Documentation",
+    "source_url": "https://docs.nvidia.com/nim/index.html",
+    "source_type": "official_documentation",
+    "tags": ["deployment", "inference", "microservices", "production", "foundation-models"],
+    "enabled": true
+  },
+  {
+    "technology_id": "triton_inference_server",
+    "technology_name": "NVIDIA Triton Inference Server",
+    "title": "NVIDIA Triton Inference Server Documentation",
+    "source_url": "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html",
+    "source_type": "official_documentation",
+    "tags": ["serving", "inference", "deployment", "models", "production"],
+    "enabled": true
+  },
+  {
+    "technology_id": "tensorrt_llm",
+    "technology_name": "NVIDIA TensorRT-LLM",
+    "title": "NVIDIA TensorRT-LLM Documentation",
+    "source_url": "https://docs.nvidia.com/tensorrt-llm/index.html",
+    "source_type": "official_documentation",
+    "tags": ["llm", "inference", "latency", "throughput", "optimization", "tokens"],
+    "enabled": true
+  },
+  {
+    "technology_id": "nemo_guardrails",
+    "technology_name": "NVIDIA NeMo Guardrails",
+    "title": "NVIDIA NeMo Guardrails Documentation",
+    "source_url": "https://docs.nvidia.com/nemo/guardrails/home",
+    "source_type": "official_documentation",
+    "tags": ["governance", "safety", "guardrails", "agents", "validation"],
+    "enabled": true
+  },
+  {
+    "technology_id": "nemo_retriever",
+    "technology_name": "NVIDIA NeMo Retriever",
+    "title": "NVIDIA NeMo Retriever Documentation",
+    "source_url": "https://docs.nvidia.com/nemo/retriever/index.html",
+    "source_type": "official_documentation",
+    "tags": ["rag", "retrieval", "embedding", "reranking", "documents"],
+    "enabled": true
+  },
+  {
+    "technology_id": "rapids_cudf",
+    "technology_name": "NVIDIA RAPIDS cuDF",
+    "title": "cuDF Documentation",
+    "source_url": "https://docs.rapids.ai/api/cudf/stable/",
+    "source_type": "official_documentation",
+    "tags": ["dataframes", "data", "gpu", "tabular-data", "etl"],
+    "enabled": true
+  },
+  {
+    "technology_id": "nvidia_ai_enterprise",
+    "technology_name": "NVIDIA AI Enterprise",
+    "title": "NVIDIA AI Enterprise Documentation",
+    "source_url": "https://docs.nvidia.com/ai-enterprise/index.html",
+    "source_type": "official_documentation",
+    "tags": ["enterprise", "production", "security", "governance", "deployment"],
+    "enabled": true
+  },
+  {
+    "technology_id": "nvidia_api_catalog",
+    "technology_name": "NVIDIA API Catalog",
+    "title": "NVIDIA Build API Catalog",
+    "source_url": "https://build.nvidia.com/explore/discover",
+    "source_type": "official_catalog",
+    "tags": ["models", "apis", "experimentation", "nim"],
+    "enabled": false
+  },
+  {
+    "technology_id": "nemo_framework",
+    "technology_name": "NVIDIA NeMo Framework",
+    "title": "NVIDIA NeMo Framework Documentation",
+    "source_url": "https://docs.nvidia.com/nemo-framework/index.html",
+    "source_type": "official_documentation",
+    "tags": ["training", "customization", "evaluation", "llm", "speech"],
+    "enabled": false
+  },
+  {
+    "technology_id": "rapids_cuml",
+    "technology_name": "NVIDIA RAPIDS cuML",
+    "title": "cuML Documentation",
+    "source_url": "https://docs.rapids.ai/api/cuml/stable/",
+    "source_type": "official_documentation",
+    "tags": ["machine-learning", "gpu", "tabular-data", "data-science"],
+    "enabled": false
+  },
+  {
+    "technology_id": "cuda_toolkit",
+    "technology_name": "NVIDIA CUDA Toolkit",
+    "title": "CUDA Toolkit Documentation",
+    "source_url": "https://docs.nvidia.com/cuda/",
+    "source_type": "official_documentation",
+    "tags": ["gpu", "parallel-computing", "optimization", "infrastructure"],
+    "enabled": false
+  },
+  {
+    "technology_id": "nvidia_riva",
+    "technology_name": "NVIDIA Riva",
+    "title": "NVIDIA Riva Documentation",
+    "source_url": "https://docs.nvidia.com/deeplearning/riva/user-guide/docs/index.html",
+    "source_type": "official_documentation",
+    "tags": ["speech", "asr", "tts", "voice", "real-time"],
+    "enabled": false
+  },
+  {
+    "technology_id": "nvidia_omniverse",
+    "technology_name": "NVIDIA Omniverse",
+    "title": "NVIDIA Omniverse Documentation",
+    "source_url": "https://docs.omniverse.nvidia.com/ov/latest/index.html",
+    "source_type": "official_documentation",
+    "tags": ["3d", "simulation", "digital-twin", "physical-ai"],
+    "enabled": false
+  },
+  {
+    "technology_id": "nvidia_isaac",
+    "technology_name": "NVIDIA Isaac",
+    "title": "NVIDIA Isaac Sim Documentation",
+    "source_url": "https://docs.nvidia.com/learning/physical-ai/getting-started-with-isaac-sim/latest/index.html",
+    "source_type": "official_documentation",
+    "tags": ["robotics", "simulation", "autonomy", "physical-ai"],
+    "enabled": false
+  },
+  {
+    "technology_id": "nvidia_clara",
+    "technology_name": "NVIDIA Clara",
+    "title": "NVIDIA Clara Documentation",
+    "source_url": "https://docs.nvidia.com/clara/index.html",
+    "source_type": "official_documentation",
+    "tags": ["healthcare", "medical-imaging", "life-sciences"],
+    "enabled": false
+  },
+  {
+    "technology_id": "nvidia_morpheus",
+    "technology_name": "NVIDIA Morpheus",
+    "title": "NVIDIA Morpheus Documentation",
+    "source_url": "https://docs.nvidia.com/morpheus/index.html",
+    "source_type": "official_documentation",
+    "tags": ["cybersecurity", "fraud", "anomaly-detection", "security"],
+    "enabled": false
+  }
+]

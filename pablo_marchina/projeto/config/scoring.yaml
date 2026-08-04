@@ -1,0 +1,77 @@
+# Scoring Configuration — calibrated parameters for scoring pipelines
+# Status: CALIBRATED
+# Last calibration: 2026-06-01
+
+priority_score:
+  weights:
+    confidence: 0.30
+    business_impact: 0.25
+    implementation_complexity_inverse: 0.20
+    rag_support: 0.15
+    evidence_support: 0.10
+  weight_sum: 1.0
+
+opportunity_score:
+  weights:
+    defensibility: 0.30
+    inception_fit: 0.25
+    production_readiness: 0.35
+    classification: 0.10
+  weight_sum: 1.0
+
+production_readiness:
+  weights:
+    real_users: 0.30
+    scale_inference: 0.30
+    privacy_governance: 0.20
+    data_infrastructure: 0.20
+  weight_sum: 1.0
+
+defensibility:
+  weights:
+    ai_core: 0.25
+    proprietary_data: 0.20
+    workflow_integration: 0.15
+    real_usage: 0.15
+    replication_barrier: 0.15
+    nvidia_fit: 0.10
+  weight_sum: 1.0
+
+inception_fit:
+  weights:
+    gap_taxonomy: 0.35
+    vertical_alignment: 0.25
+    technical_maturity: 0.20
+    revenue_potential: 0.20
+  weight_sum: 1.0
+
+confidence:
+  thresholds:
+    high_min: 0.7
+    medium_min: 0.4
+  float_map:
+    high: 1.0
+    medium: 0.6
+    low: 0.3
+  score_factors:
+    high: 1.0
+    medium: 0.7
+    low: 0.4
+  penalty_on_missing: 0.15
+  max_signal_boost: 0.6
+  no_evidence_factor: 0.3
+
+classification:
+  base_scores:
+    non_ai: 0
+    ai_assisted: 25
+    ai_enabled: 50
+    ai_native: 80
+    ai_native_service: 85
+
+keyword_boosts:
+  nvidia_specific: 0.25
+  llm_generative: 0.20
+  ml_dl_nlp_gpu: 0.15
+  framework_mlops: 0.10
+  data_science: 0.05

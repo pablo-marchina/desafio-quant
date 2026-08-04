@@ -1,0 +1,14 @@
+{
+  "cases": [
+    "tool_abuse",
+    "secret_leakage"
+  ],
+  "command": "/opt/pyvenv/bin/python -m pytest tests/security -q",
+  "generated_at": "2026-07-01T05:57:58.856166+00:00",
+  "remediation": "",
+  "report_id": "tool_abuse_test_report",
+  "returncode": 0,
+  "status": "PASS",
+  "stderr_tail": "",
+  "stdout_tail": "...........                                                              [100%]\n11 passed in 0.08s\n"
+}

@@ -1,0 +1,35 @@
+# ── Web scraping ──────────────────────────────────────────────────────────────
+beautifulsoup4==4.14.3
+playwright==1.60.0
+# Após instalar: NODE_OPTIONS=--use-system-ca playwright install chromium
+requests==2.34.2
+httpx==0.28.1
+urllib3==2.7.0
+
+# ── Banco de dados ────────────────────────────────────────────────────────────
+supabase==2.31.0
+
+# ── Busca vetorial (RAG) ──────────────────────────────────────────────────────
+qdrant-client==1.18.0
+sentence-transformers==5.6.0
+
+# ── LLMs e orquestração ───────────────────────────────────────────────────────
+google-genai==2.9.0
+openai==2.44.0
+langchain-core==1.4.0
+langchain-groq==1.1.2
+langgraph==1.2.2
+
+# ── NLP ───────────────────────────────────────────────────────────────────────
+spacy==3.8.14
+# Modelo português (instalar separadamente):
+# python -m spacy download pt_core_news_sm
+tiktoken==0.13.0
+
+# ── Dados e utilitários ───────────────────────────────────────────────────────
+pandas==3.0.3
+python-dotenv==1.2.2
+tenacity==9.1.4
+
+# ── Dashboard (Streamlit) ─────────────────────────────────────────────────────
+streamlit==1.57.0

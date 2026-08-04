@@ -1,0 +1,34 @@
+"""known hallucination patterns
+
+Hypothesis: Evaluate whether known hallucination patterns improves final product output without paid dependency.
+Category: 8.43 Memory and Negative Learning
+Expected runtime use: candidate_or_supporting_governance
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from src.rag.schemas import RetrievedContext
+
+
+class KnownHallucinationPatterns:
+    """known hallucination patterns"""
+
+    def __init__(self, config: Any | None = None) -> None:
+        self.config = config or {}
+
+    def run(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        return self._apply(contexts, **kwargs)
+
+    def _apply(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        patterns = [
+                    "as of my", "i don't have", "it is possible that", "may have",
+                    "could potentially", "might be", "typically", "often",
+                    "in many cases", "it depends", "generally speaking",
+                ]
+                for ctx in contexts:
+                    hallucination_score = sum(1 for p in patterns if p.lower() in ctx.content.lower())
+                    if hallucination_score:
+                        ctx.relevance_score = max(0.0, ctx.relevance_score - hallucination_score * 0.05)
+        return contexts

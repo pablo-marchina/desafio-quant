@@ -1,0 +1,6 @@
+# Fase 4 - Dashboard Streamlit.
+# Instalar ALEM do requirements.txt + requirements-phase2.txt:
+#   pip install -r requirements.txt -r requirements-phase2.txt -r requirements-dashboard.txt
+streamlit>=1.36
+plotly>=5.18.0
+pandas>=2.0.0

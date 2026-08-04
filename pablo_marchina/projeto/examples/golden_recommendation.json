@@ -1,0 +1,24 @@
+{
+  "note": "Fictional example for recommendation structure only.",
+  "startup_name": "Aurora Ops AI",
+  "diagnosed_gap": "high_inference_cost",
+  "recommended_nvidia_technologies": [
+    "TensorRT-LLM",
+    "NVIDIA Triton Inference Server"
+  ],
+  "technical_justification": "The fictional startup appears to run inference-heavy workflows that could benefit from optimized serving.",
+  "business_justification": "Reducing inference cost may improve margins and make the company more scalable.",
+  "priority": "high",
+  "implementation_complexity": "medium",
+  "next_action_for_nvidia_team": "Validate current inference architecture and estimate potential acceleration gains.",
+  "evidence_used": [
+    {
+      "claim": "The startup describes AI workflow execution on its public blog.",
+      "source_url": "https://example.com/blog",
+      "source_type": "blog",
+      "quote_or_evidence": "Fictional evidence only.",
+      "confidence": "medium",
+      "collected_at": "2026-06-03T00:00:00Z"
+    }
+  ]
+}

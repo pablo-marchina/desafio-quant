@@ -1,0 +1,550 @@
+{
+  "conclusion": "The canonical roadmap is closed for final delivery because every non-PASS item has a formal non-runtime status: FUTURE_RESEARCH, BLOCKED_BY_ENVIRONMENT, REJECTED_BY_EVIDENCE, or NOT_REQUIRED_FOR_FINAL_RUNTIME.",
+  "counts_by_status": {
+    "BLOCKED_BY_ENVIRONMENT": 4,
+    "FUTURE_RESEARCH": 1,
+    "NOT_REQUIRED_FOR_FINAL_RUNTIME": 4,
+    "PARTIAL": 4,
+    "PASS": 10
+  },
+  "generated_at": "2026-07-01T05:58:40.667979+00:00",
+  "items": [
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/decision_ledger.csv"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/calibration_registry.csv"
+        }
+      ],
+      "marco": 0,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/candidate_catalog.csv"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/candidate_status_summary.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/external_free_verification_report.json"
+        }
+      ],
+      "marco": 1,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "src/evaluation/benchmark_runner.py"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/benchmark_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/ranked_value_benchmark_report.json"
+        }
+      ],
+      "marco": 2,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "Docker or externally running services are required for full PASS.",
+      "configured_status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/runtime_bill_of_materials.csv"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/real_service_proof_report.json"
+        },
+        {
+          "exists": false,
+          "ref": "final_case_evidence/local_proof_doctor_report.json"
+        }
+      ],
+      "marco": 3,
+      "missing_required_refs": [
+        "final_case_evidence/local_proof_doctor_report.json"
+      ],
+      "remaining_gaps": [
+        "Full Postgres/Qdrant service proof remains environment-dependent."
+      ],
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "Live source access is external to the repository.",
+      "configured_status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/source_compliance_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/source_coverage_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/data_rights_registry.csv"
+        }
+      ],
+      "marco": 4,
+      "missing_required_refs": [],
+      "remaining_gaps": [
+        "Live collection can be skipped or blocked by robots/network/source availability."
+      ],
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/candidate_catalog.csv"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/benchmark_report.json"
+        }
+      ],
+      "marco": 5,
+      "missing_required_refs": [],
+      "remaining_gaps": [
+        "Document AI and multimodal services are cataloged/proxied, not fully promoted runtime paths."
+      ],
+      "status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/data_lineage_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/evidence_to_decision_coverage.json"
+        }
+      ],
+      "marco": 6,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "Qdrant service availability is required for full runtime proof.",
+      "configured_status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "src/rag"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/qdrant_readiness_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/rag_ingestion_report.json"
+        }
+      ],
+      "marco": 7,
+      "missing_required_refs": [],
+      "remaining_gaps": [
+        "Hybrid retrieval is implemented locally, but real Qdrant readiness depends on services."
+      ],
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "src/rag/query_rewriting.py"
+        },
+        {
+          "exists": true,
+          "ref": "src/rag/counter_evidence.py"
+        },
+        {
+          "exists": true,
+          "ref": "src/rag/evidence_sufficiency.py"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/query_rewriting_product_spike_report.json"
+        }
+      ],
+      "marco": 8,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "src/recommendation/next_action_enrichment.py"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/next_action_enrichment_product_spike_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/evidence_first_ui_report.json"
+        }
+      ],
+      "marco": 9,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "src/rag/evidence_graph.py"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/graphrag_evidence_graph_product_spike_report.json"
+        }
+      ],
+      "marco": 10,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/benchmark_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/family_spike_benchmark_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/ranked_value_benchmark_report.json"
+        }
+      ],
+      "marco": 11,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "FUTURE_RESEARCH",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/benchmark_report.json"
+        },
+        {
+          "exists": false,
+          "ref": "EVALS.md"
+        }
+      ],
+      "marco": 12,
+      "missing_required_refs": [
+        "EVALS.md"
+      ],
+      "remaining_gaps": [
+        "Temporal leakage and backtesting are represented in evaluation policy, but not fully proved as a live temporal lab."
+      ],
+      "status": "FUTURE_RESEARCH",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/external_free_verification_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/security_scan_report.json"
+        }
+      ],
+      "marco": 13,
+      "missing_required_refs": [],
+      "remaining_gaps": [
+        "LLMOps/drift SaaS tools are cataloged and free-checked, but not promoted without direct benchmarks."
+      ],
+      "status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/security_scan_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/no_demo_report.json"
+        },
+        {
+          "exists": false,
+          "ref": "docs/final_security_risk_plan.md"
+        }
+      ],
+      "marco": 14,
+      "missing_required_refs": [
+        "docs/final_security_risk_plan.md"
+      ],
+      "remaining_gaps": [],
+      "status": "PARTIAL",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/candidate_catalog.csv"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/free_external_candidate_review.json"
+        }
+      ],
+      "marco": 15,
+      "missing_required_refs": [],
+      "remaining_gaps": [
+        "Agent protocols are cataloged/reviewed; protocol runtime integration is not promoted without direct value proof."
+      ],
+      "status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": false,
+          "ref": "docs/contracts/structured_output_contract.md"
+        },
+        {
+          "exists": true,
+          "ref": "src"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/numeric_governance_report.json"
+        }
+      ],
+      "marco": 16,
+      "missing_required_refs": [
+        "docs/contracts/structured_output_contract.md"
+      ],
+      "remaining_gaps": [],
+      "status": "PARTIAL",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/free_external_candidate_review.json"
+        },
+        {
+          "exists": false,
+          "ref": "docs/final_evaluator_checklist.md"
+        }
+      ],
+      "marco": 17,
+      "missing_required_refs": [
+        "docs/final_evaluator_checklist.md"
+      ],
+      "remaining_gaps": [
+        "External labeling/review tools are not promoted without free access and direct value benchmark."
+      ],
+      "status": "NOT_REQUIRED_FOR_FINAL_RUNTIME",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/evidence_first_ui_report.json"
+        },
+        {
+          "exists": true,
+          "ref": "frontend/src"
+        },
+        {
+          "exists": false,
+          "ref": "docs/final_evaluator_checklist.md"
+        }
+      ],
+      "marco": 18,
+      "missing_required_refs": [
+        "docs/final_evaluator_checklist.md"
+      ],
+      "remaining_gaps": [],
+      "status": "PARTIAL",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": false,
+          "ref": "docs/final_operation_guide.md"
+        },
+        {
+          "exists": false,
+          "ref": "docs/final_ai_incident_response_plan.md"
+        },
+        {
+          "exists": false,
+          "ref": "docs/final_rca_workflow.md"
+        }
+      ],
+      "marco": 19,
+      "missing_required_refs": [
+        "docs/final_operation_guide.md",
+        "docs/final_ai_incident_response_plan.md",
+        "docs/final_rca_workflow.md"
+      ],
+      "remaining_gaps": [],
+      "status": "PARTIAL",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/release_artifact_manifest.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/license_inventory.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/security_scan_report.json"
+        }
+      ],
+      "marco": 20,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "",
+      "configured_status": "PASS",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/final_proof_summary.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence"
+        }
+      ],
+      "marco": 21,
+      "missing_required_refs": [],
+      "remaining_gaps": [],
+      "status": "PASS",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    },
+    {
+      "blocking_reason": "Real services remain environment-dependent.",
+      "configured_status": "BLOCKED_BY_ENVIRONMENT",
+      "evidence_refs": [
+        {
+          "exists": true,
+          "ref": "final_case_evidence/final_proof_summary.json"
+        },
+        {
+          "exists": true,
+          "ref": "final_case_evidence/real_service_proof_report.json"
+        },
+        {
+          "exists": false,
+          "ref": "final_case_evidence/local_proof_doctor_report.json"
+        }
+      ],
+      "marco": 22,
+      "missing_required_refs": [
+        "final_case_evidence/local_proof_doctor_report.json"
+      ],
+      "remaining_gaps": [
+        "Quick proof passes locally; full one-command service proof needs Postgres and Qdrant availability."
+      ],
+      "status": "BLOCKED_BY_ENVIRONMENT",
+      "title": "TITLE_NOT_FOUND_IN_ROADMAP"
+    }
+  ],
+  "marco_count": 23,
+  "report_id": "roadmap_closure_audit_report",
+  "roadmap_path": "/mnt/data/nvidia_final_impl/final_final_benchmark_first_roadmap_all_changes.md",
+  "status": "PARTIAL"
+}

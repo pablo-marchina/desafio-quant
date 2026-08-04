@@ -1,0 +1,14 @@
+{
+  "https://example.com/startup-ai-platform": {
+    "markdown": "Example startup uses AI agents and proprietary operational workflows to automate customer support.",
+    "metadata": {
+      "status_code": 200
+    }
+  },
+  "https://news.example.com/example-ai-platform": {
+    "content": "The company reports LLM-based automation, evaluation pipelines, and production AI workflows.",
+    "metadata": {
+      "status_code": 200
+    }
+  }
+}

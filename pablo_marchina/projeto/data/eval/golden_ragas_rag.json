@@ -1,0 +1,273 @@
+{
+  "metadata": {
+    "description": "Expanded golden dataset for RAGAS Evaluation Harness. 12 samples covering 8 gap types — sufficient for calibration (minimum=10, gaps_covered=8/3).",
+    "version": "2.0",
+    "created": "2026-06-18",
+    "responsible": "ragas_eval_harness",
+    "n_gap_types": 8,
+    "n_samples": 12
+  },
+  "samples": [
+    {
+      "question": "Como a NVIDIA Riva pode ajudar uma startup que precisa de reconhecimento de voz em tempo real com latência baixa?",
+      "gap_id": "gap-voice-001",
+      "gap_type": "real_time_voice_need",
+      "expected_nvidia_topics": ["NVIDIA Riva", "ASR", "TTS", "GPU inference"],
+      "expected_context_ids": ["riva_chunk_01", "riva_chunk_02"],
+      "ground_truth_answer": "NVIDIA Riva oferece ASR e TTS acelerados por GPU com latência de sub-300ms, suportando 7 idiomas. Pode ser implantado on-premise ou via API.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "riva_chunk_01",
+          "source_id": "riva",
+          "title": "NVIDIA Riva Overview",
+          "content": "NVIDIA Riva is a GPU-accelerated SDK for speech AI services including ASR and TTS. It delivers real-time performance with sub-300ms latency across 7 languages.",
+          "product": "NVIDIA Riva",
+          "gap_types": ["real_time_voice_need"],
+          "url": "https://developer.nvidia.com/riva",
+          "relevance_score": 0.92
+        }
+      ],
+      "generated_answer": "A NVIDIA Riva fornece SDK de fala acelerado por GPU com ASR e TTS em tempo real, ideal para startups que precisam de reconhecimento de voz com baixa latência."
+    },
+    {
+      "question": "Qual tecnologia NVIDIA é mais adequada para reduzir custos de inferência de LLMs em produção?",
+      "gap_id": "gap-inference-002",
+      "gap_type": "high_inference_cost",
+      "expected_nvidia_topics": ["TensorRT-LLM", "NVIDIA Triton Inference Server", "FP8 quantization"],
+      "expected_context_ids": ["tensorrt_llm_chunk_01", "triton_chunk_01"],
+      "ground_truth_answer": "TensorRT-LLM otimiza inferência de LLMs com FP8 quantization e fusão de operadores, reduzindo custos em até 4x vs PyTorch. Triton Inference Server gerencia deploy multi-modelo com roteamento inteligente.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "tensorrt_llm_chunk_01",
+          "source_id": "tensorrt-llm",
+          "title": "TensorRT-LLM Overview",
+          "content": "TensorRT-LLM is an open-source library that optimizes LLM inference on NVIDIA GPUs. It provides FP8 quantization, in-flight batching, and kernel fusion for up to 4x lower TCO.",
+          "product": "TensorRT-LLM",
+          "gap_types": ["high_inference_cost"],
+          "url": "https://github.com/NVIDIA/TensorRT-LLM",
+          "relevance_score": 0.95
+        },
+        {
+          "chunk_id": "triton_chunk_01",
+          "source_id": "triton",
+          "title": "Triton Inference Server Overview",
+          "content": "NVIDIA Triton Inference Server simplifies deployment of AI models at scale in production. It supports multiple frameworks and GPUs with intelligent model routing and dynamic batching.",
+          "product": "Triton Inference Server",
+          "gap_types": ["high_inference_cost"],
+          "url": "https://developer.nvidia.com/triton-inference-server",
+          "relevance_score": 0.88
+        }
+      ],
+      "generated_answer": "TensorRT-LLM é a tecnologia mais adequada, oferecendo otimizações como FP8 quantization e kernel fusion que reduzem o TCO de inferência em até 4x, enquanto o Triton Inference Server gerencia o deploy em produção."
+    },
+    {
+      "question": "Como uma startup pode usar NeMo Guardrails para garantir segurança e governança em aplicações com agentes de IA?",
+      "gap_id": "gap-agent-gov-003",
+      "gap_type": "agent_governance_gap",
+      "expected_nvidia_topics": ["NeMo Guardrails", "NeMo Framework"],
+      "expected_context_ids": ["nemo_guardrails_chunk_01"],
+      "ground_truth_answer": "NeMo Guardrails permite definir políticas de segurança, tópicos proibidos e fluxos de diálogo com rails programáveis. Integra-se com qualquer LLM e detecta jailbreaks, toxicidade e desvios de tema.",
+      "retrieved_contexts": [],
+      "generated_answer": null
+    },
+    {
+      "question": "Como acelerar pipelines de dados lentos em uma startup que processa grandes volumes de dados tabulares?",
+      "gap_id": "gap-data-pipe-004",
+      "gap_type": "slow_data_pipeline",
+      "expected_nvidia_topics": ["NVIDIA RAPIDS", "cuDF", "cuML"],
+      "expected_context_ids": ["rapids_chunk_01", "rapids_chunk_02"],
+      "ground_truth_answer": "NVIDIA RAPIDS oferece bibliotecas open-source como cuDF (dataframes GPU) e cuML (ML acelerado) que executam pipelines de dados inteiramente em GPU, eliminando gargalos de transferência CPU-GPU.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "rapids_chunk_01",
+          "source_id": "rapids",
+          "title": "NVIDIA RAPIDS Overview",
+          "content": "NVIDIA RAPIDS is a suite of open-source GPU-accelerated data science libraries. cuDF provides a pandas-like DataFrame API on GPU, and cuML delivers GPU-accelerated machine learning algorithms.",
+          "product": "NVIDIA RAPIDS",
+          "gap_types": ["slow_data_pipeline"],
+          "url": "https://rapids.ai",
+          "relevance_score": 0.93
+        }
+      ],
+      "generated_answer": "NVIDIA RAPIDS com cuDF e cuML acelera pipelines de dados executando processamento e ML diretamente em GPU, eliminando gargalos de E/S e reduzindo o tempo de processamento em até 50x."
+    },
+    {
+      "question": "Qual solução NVIDIA é recomendada para uma startup que precisa de visão computacional com inferência em tempo real em dispositivos edge?",
+      "gap_id": "gap-cv-005",
+      "gap_type": "computer_vision_need",
+      "expected_nvidia_topics": ["NVIDIA TensorRT", "NVIDIA AI Enterprise", "NVIDIA Jetson"],
+      "expected_context_ids": ["tensorrt_cv_chunk_01", "nim_cv_chunk_01"],
+      "ground_truth_answer": "NVIDIA TensorRT otimiza modelos de visão computacional para inferência com FP16 e INT8, alcançando latências de milissegundos. NVIDIA AI Enterprise fornece suporte enterprise. Para edge, NVIDIA Jetson oferece hardware dedicado.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "tensorrt_cv_chunk_01",
+          "source_id": "tensorrt_cv",
+          "title": "NVIDIA TensorRT for CV",
+          "content": "NVIDIA TensorRT is a high-performance deep learning inference optimizer. It delivers low latency and high throughput for computer vision models through FP16 and INT8 quantization and layer fusion.",
+          "product": "NVIDIA TensorRT",
+          "gap_types": ["computer_vision_need"],
+          "url": "https://developer.nvidia.com/tensorrt",
+          "relevance_score": 0.91
+        }
+      ],
+      "generated_answer": "NVIDIA TensorRT otimiza modelos de visão computacional com quantização INT8 e fusão de camadas, alcançando latências de milissegundos em GPUs. Para edge computing, o Jetson oferece hardware dedicado com suporte nativo."
+    },
+    {
+      "question": "Como uma startup de cibersegurança pode usar IA generativa para detecção de ameaças com a NVIDIA?",
+      "gap_id": "gap-cyber-006",
+      "gap_type": "ai_cybersecurity_need",
+      "expected_nvidia_topics": ["NVIDIA Morpheus", "NVIDIA GPU"],
+      "expected_context_ids": ["morpheus_chunk_01"],
+      "ground_truth_answer": "NVIDIA Morpheus é uma plataforma de AI cybersecurity que usa GPUs para processar e analisar logs de segurança em tempo real. Detecta anomalias e ameaças com modelos de ML acelerados por GPU, processando milhões de eventos por segundo.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "morpheus_chunk_01",
+          "source_id": "morpheus",
+          "title": "NVIDIA Morpheus Overview",
+          "content": "NVIDIA Morpheus is a GPU-accelerated AI cybersecurity framework that processes millions of events per second. It provides real-time threat detection, anomaly detection, and log analysis using machine learning pipelines.",
+          "product": "NVIDIA Morpheus",
+          "gap_types": ["ai_cybersecurity_need"],
+          "url": "https://developer.nvidia.com/morpheus",
+          "relevance_score": 0.89
+        }
+      ],
+      "generated_answer": "NVIDIA Morpheus permite processar milhões de eventos de segurança por segundo em GPUs, com detecção de anomalias e ameaças em tempo real usando pipelines de ML acelerados."
+    },
+    {
+      "question": "Qual tecnologia NVIDIA pode reduzir a latência de inferência de modelos de linguagem em produção?",
+      "gap_id": "gap-latency-007",
+      "gap_type": "high_latency",
+      "expected_nvidia_topics": ["TensorRT-LLM", "Triton Inference Server", "NVIDIA NIM"],
+      "expected_context_ids": ["tensorrt_llm_chunk_01", "nim_latency_chunk_01"],
+      "ground_truth_answer": "TensorRT-LLM reduz latência com in-flight batching e fusão de operadores. Triton Inference Server adiciona roteamento inteligente e NVIDIA NIM oferece microserviços otimizados com API padronizada para deploy de LLMs.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "tensorrt_llm_chunk_01",
+          "source_id": "tensorrt-llm",
+          "title": "TensorRT-LLM Overview",
+          "content": "TensorRT-LLM is an open-source library that optimizes LLM inference on NVIDIA GPUs. It provides FP8 quantization, in-flight batching, and kernel fusion for up to 4x lower TCO.",
+          "product": "TensorRT-LLM",
+          "gap_types": ["high_latency"],
+          "url": "https://github.com/NVIDIA/TensorRT-LLM",
+          "relevance_score": 0.94
+        },
+        {
+          "chunk_id": "nim_latency_chunk_01",
+          "source_id": "nim",
+          "title": "NVIDIA NIM Overview",
+          "content": "NVIDIA NIM provides optimized inference microservices for generative AI models. Each NIM container is optimized with TensorRT-LLM and Triton Inference Server for maximum throughput and minimal latency.",
+          "product": "NVIDIA NIM",
+          "gap_types": ["high_latency"],
+          "url": "https://developer.nvidia.com/nim",
+          "relevance_score": 0.87
+        }
+      ],
+      "generated_answer": "TensorRT-LLM com in-flight batching e kernel fusion reduz drasticamente a latência de inferência. NVIDIA NIM empacota essas otimizações em microserviços prontos para produção com API OpenAI-compatível."
+    },
+    {
+      "question": "Como uma startup pode substituir dependências de APIs externas por inferência local com NVIDIA?",
+      "gap_id": "gap-api-dep-008",
+      "gap_type": "external_api_dependency",
+      "expected_nvidia_topics": ["NVIDIA NIM", "NVIDIA AI Enterprise"],
+      "expected_context_ids": ["nim_chunk_01", "nim_chunk_02"],
+      "ground_truth_answer": "NVIDIA NIM fornece microserviços de inferência otimizados que rodam on-premise, eliminando dependência de APIs externas. NVIDIA AI Enterprise dá suporte enterprise com SLAs e segurança para implantações locais.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "nim_chunk_01",
+          "source_id": "nim",
+          "title": "NVIDIA NIM for Self-Hosted Inference",
+          "content": "NVIDIA NIM provides self-hosted inference microservices for generative AI. Each container runs optimized models with TensorRT-LLM and Triton, enabling low-latency inference without external API dependencies.",
+          "product": "NVIDIA NIM",
+          "gap_types": ["external_api_dependency"],
+          "url": "https://developer.nvidia.com/nim",
+          "relevance_score": 0.90
+        }
+      ],
+      "generated_answer": "NVIDIA NIM permite rodar inferência de LLMs localmente com microserviços otimizados em containers, eliminando a dependência de APIs externas e garantindo baixa latência com suporte enterprise via NVIDIA AI Enterprise."
+    },
+    {
+      "question": "Como a NVIDIA pode ajudar uma startup de robótica a acelerar o desenvolvimento de simulações e controle de robôs?",
+      "gap_id": "gap-robotics-009",
+      "gap_type": "robotics_need",
+      "expected_nvidia_topics": ["NVIDIA Isaac", "NVIDIA Omniverse"],
+      "expected_context_ids": ["isaac_chunk_01", "omniverse_robotics_chunk_01"],
+      "ground_truth_answer": "NVIDIA Isaac fornece ferramentas para desenvolvimento de robôs com simulação física, reinforcement learning e percepção. Omniverse oferece simulação fotorealista e gemelos digitais para testar robôs em ambientes virtuais.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "isaac_chunk_01",
+          "source_id": "isaac",
+          "title": "NVIDIA Isaac Overview",
+          "content": "NVIDIA Isaac is a platform for robotic development including Isaac Sim for simulation, Isaac ROS for perception, and Isaac Gym for reinforcement learning. It accelerates development of intelligent robots.",
+          "product": "NVIDIA Isaac",
+          "gap_types": ["robotics_need"],
+          "url": "https://developer.nvidia.com/isaac",
+          "relevance_score": 0.85
+        }
+      ],
+      "generated_answer": "NVIDIA Isaac acelera o desenvolvimento robótico com simulação, reinforcement learning e percepção ROS. Omniverse permite criar gemelos digitais para testar robôs em ambientes virtuais realistas."
+    },
+    {
+      "question": "Qual tecnologia NVIDIA é indicada para startups de saúde que precisam de IA em conformidade com regulamentações como LGPD?",
+      "gap_id": "gap-health-010",
+      "gap_type": "healthcare_compliance_need",
+      "expected_nvidia_topics": ["Clara", "MONAI", "NVIDIA AI Enterprise"],
+      "expected_context_ids": ["clara_monai_chunk_01"],
+      "ground_truth_answer": "Clara e MONAI oferecem frameworks de IA para imagem médica com modelos pré-treinados e pipelines de anotação. NVIDIA AI Enterprise fornece suporte enterprise com compliance, segurança e suporte para implantações reguladas.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "clara_monai_chunk_01",
+          "source_id": "clara_monai",
+          "title": "Clara / MONAI Overview",
+          "content": "NVIDIA Clara and MONAI provide AI platforms for medical imaging. MONAI offers domain-optimized deep learning frameworks with pre-trained models, annotation tools, and deployment pipelines for healthcare AI.",
+          "product": "Clara / MONAI",
+          "gap_types": ["healthcare_compliance_need"],
+          "url": "https://monai.io",
+          "relevance_score": 0.82
+        }
+      ],
+      "generated_answer": null
+    },
+    {
+      "question": "Como processar tabelas e dados estruturados massivos em GPU com as bibliotecas NVIDIA?",
+      "gap_id": "gap-tabular-011",
+      "gap_type": "heavy_tabular_processing",
+      "expected_nvidia_topics": ["NVIDIA RAPIDS", "cuDF", "cuML"],
+      "expected_context_ids": ["rapids_chunk_02"],
+      "ground_truth_answer": "cuDF do NVIDIA RAPIDS oferece API pandas-compatível que executa dataframes inteiramente em GPU, acelerando processamento tabular em até 100x. cuML adiciona algoritmos de ML acelerados em GPU para classificação, regressão e clustering.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "rapids_chunk_02",
+          "source_id": "rapids",
+          "title": "cuDF and cuML for Tabular Data",
+          "content": "cuDF is a GPU DataFrame library providing a pandas-like API for data manipulation on GPU. cuML offers GPU-accelerated machine learning algorithms including classification, regression, and clustering.",
+          "product": "NVIDIA RAPIDS",
+          "gap_types": ["heavy_tabular_processing"],
+          "url": "https://docs.rapids.ai/api/cudf/stable/",
+          "relevance_score": 0.88
+        }
+      ],
+      "generated_answer": "cuDF do RAPIDS processa dataframes em GPU com API pandas-compatível, acelerando operações tabulares em até 100x. cuML complementa com algoritmos de ML acelerados diretamente em GPU."
+    },
+    {
+      "question": "Como criar simulações e gêmeos digitais para manufatura com a plataforma NVIDIA?",
+      "gap_id": "gap-simulation-012",
+      "gap_type": "simulation_need",
+      "expected_nvidia_topics": ["NVIDIA Omniverse", "NVIDIA Isaac"],
+      "expected_context_ids": ["omniverse_chunk_01"],
+      "ground_truth_answer": "NVIDIA Omniverse é uma plataforma de colaboração e simulação 3D que permite criar gêmeos digitais fisicamente precisos. Integra-se com ferramentas de design e engenharia, rodando simulações em tempo real com RTX.",
+      "retrieved_contexts": [
+        {
+          "chunk_id": "omniverse_chunk_01",
+          "source_id": "omniverse",
+          "title": "NVIDIA Omniverse for Simulation",
+          "content": "NVIDIA Omniverse is a platform for 3D collaboration and simulation. It enables physically accurate digital twins, real-time ray tracing, and physics simulation for manufacturing, design, and robotics.",
+          "product": "NVIDIA Omniverse",
+          "gap_types": ["simulation_need"],
+          "url": "https://developer.nvidia.com/omniverse",
+          "relevance_score": 0.86
+        }
+      ],
+      "generated_answer": "NVIDIA Omniverse permite criar gêmeos digitais e simulações fisicamente precisas para manufatura, com renderização RTX em tempo real e integração com ferramentas de engenharia como CAD e BIM."
+    }
+  ]
+}

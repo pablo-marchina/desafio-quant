@@ -1,0 +1,4 @@
+interface:
+  display_name: "Windows PowerShell Repo Hygiene"
+  short_description: "Safer Windows edits, tests, and git hygiene"
+  default_prompt: "Use $windows-powershell-repo-hygiene to make safe PowerShell edits, validate tests, and keep git clean."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "LangGraph NVIDIA Radar"
+  short_description: "Build the LangGraph agent pipeline"
+  default_prompt: "Use $langgraph-nvidia-startup-radar to design or implement the NVIDIA Startup AI Radar multiagent pipeline."

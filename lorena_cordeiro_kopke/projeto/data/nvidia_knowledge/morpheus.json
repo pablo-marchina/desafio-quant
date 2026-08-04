@@ -1,0 +1,11 @@
+{
+  "url": "https://developer.nvidia.com/morpheus-cybersecurity",
+  "fonte": "developer.nvidia.com",
+  "titulo": "NVIDIA Morpheus — Framework de Cibersegurança com IA Acelerada por GPU",
+  "categoria": "produto",
+  "familia": "inferencia",
+  "tecnologia": "Morpheus",
+  "setores": ["geral", "financas"],
+  "ia_tipos": ["deteccao de anomalias", "classificacao", "NLP", "geracao de conteudo"],
+  "texto": "NVIDIA Morpheus é um framework de IA end-to-end acelerado por GPU para filtrar, processar e classificar grandes volumes de dados de cibersegurança em streaming. O objetivo é reduzir o tempo e o custo de identificação, captura e resposta a ameaças em data centers, nuvem e edge.\n\nO framework incorpora IA generativa para ampliar as capacidades de analistas de segurança: automatiza análise e respostas em tempo real, gera dados sintéticos para treinar modelos de IA que identificam riscos com mais precisão, e executa cenários what-if para antecipar vetores de ataque.\n\nOs casos de uso documentados incluem detecção de spear phishing — um dos ataques cibernéticos mais custosos para organizações, difícil de defender pela escassez de dados de treino — e digital fingerprinting, que constrói uma impressão digital de cada usuário e dispositivo na rede para detectar anomalias comportamentais à medida que o volume de conexões cresce.\n\nMorpheus é especialmente relevante para startups que constroem produtos de cibersegurança baseados em IA, plataformas de detecção de fraude em tempo real ou soluções de monitoramento de redes corporativas — setores onde o volume de dados de streaming inviabiliza análise por métodos tradicionais e a latência de detecção é crítica."
+}

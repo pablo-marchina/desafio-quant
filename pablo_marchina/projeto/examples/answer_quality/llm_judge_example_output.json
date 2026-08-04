@@ -1,0 +1,60 @@
+{
+  "report_version": "1.0",
+  "generated_at": "2026-06-11T00:00:00+00:00",
+  "provider": {
+    "provider_name": "null",
+    "enabled": false,
+    "model_name": "null-offline-deterministic",
+    "temperature": 0.0,
+    "timeout_seconds": 60,
+    "max_cases": 1,
+    "metadata": {
+      "experimental": "true",
+      "ci_gate": "false"
+    }
+  },
+  "input_source": "examples/answer_quality/golden_answer_quality_cases.json",
+  "total_cases": 1,
+  "completed_cases": 1,
+  "skipped_cases": 0,
+  "error_cases": 0,
+  "results": [
+    {
+      "case_id": "high_fit_supported_answer",
+      "provider_name": "null",
+      "model_name": "null-offline-deterministic",
+      "score": {
+        "faithfulness_score": 0.85,
+        "answer_relevancy_score": 0.82,
+        "groundedness_score": 0.84,
+        "completeness_score": 0.8,
+        "uncertainty_honesty_score": 0.88,
+        "executive_usefulness_score": 0.81,
+        "judge_confidence": 1.0,
+        "judge_rationale": "NullLLMJudgeProvider produced deterministic offline scores for plumbing and report validation only; no semantic model was called.",
+        "judge_flags": [
+          "null_provider",
+          "offline",
+          "not_semantic"
+        ]
+      },
+      "prompt_version": "optional-llm-judge-v1",
+      "raw_response": null,
+      "errors": [],
+      "status": "COMPLETED"
+    }
+  ],
+  "summary": {
+    "completed_cases": 1,
+    "mean_faithfulness_score": 0.85,
+    "mean_answer_relevancy_score": 0.82,
+    "mean_groundedness_score": 0.84,
+    "mean_completeness_score": 0.8,
+    "mean_uncertainty_honesty_score": 0.88,
+    "mean_executive_usefulness_score": 0.81,
+    "mean_judge_confidence": 1.0,
+    "mean_score": 0.8333,
+    "status": "INFO"
+  },
+  "is_ci_gate": false
+}

@@ -1,0 +1,51 @@
+"""memory poisoning monitor
+
+Hypothesis: Evaluate whether memory poisoning monitor improves final product output without paid dependency.
+Category: 8.43 Memory and Negative Learning
+Expected runtime use: candidate_or_supporting_governance
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from src.rag.schemas import RetrievedContext
+
+
+class MemoryPoisoningMonitor:
+    """memory poisoning monitor"""
+
+    def __init__(self, config: Any | None = None) -> None:
+        self.config = config or {}
+
+    def run(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        return self._apply(contexts, **kwargs)
+
+    def _apply(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        if not getattr(self, "_baseline_scores", None):
+            self._baseline_scores: dict[str, list[float]] = {}
+
+        anomalies = []
+
+        for ctx in contexts:
+            key = ctx.chunk_id
+
+            if key not in self._baseline_scores:
+                self._baseline_scores[key] = []
+
+            self._baseline_scores[key].append(ctx.relevance_score)
+
+            scores = self._baseline_scores[key]
+
+            if len(scores) >= 3:
+                avg = sum(scores[-3:]) / 3
+
+                if abs(ctx.relevance_score - avg) > 0.4:
+                    anomalies.append(ctx.chunk_id)
+
+                    ctx.relevance_score = avg
+
+        if anomalies and self.config.get("alert_on_poison", False):
+            pass
+
+        return contexts

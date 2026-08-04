@@ -1,0 +1,196 @@
+{
+  "$defs": {
+    "PrioritizedTechnology": {
+      "additionalProperties": true,
+      "properties": {
+        "tecnologia": {
+          "enum": [
+            "NIM",
+            "Triton",
+            "TensorRT-LLM",
+            "NeMo",
+            "RAPIDS",
+            "CUDA",
+            "Riva",
+            "Omniverse",
+            "Clara",
+            "Isaac",
+            "Morpheus",
+            "AI Enterprise",
+            "Inception"
+          ],
+          "title": "Tecnologia",
+          "type": "string"
+        },
+        "ordem": {
+          "minimum": 1,
+          "title": "Ordem",
+          "type": "integer"
+        },
+        "fase": {
+          "enum": [
+            "curto_prazo",
+            "medio_prazo",
+            "longo_prazo"
+          ],
+          "title": "Fase",
+          "type": "string"
+        },
+        "problema_resolvido": {
+          "minLength": 1,
+          "title": "Problema Resolvido",
+          "type": "string"
+        },
+        "beneficio": {
+          "minLength": 1,
+          "title": "Beneficio",
+          "type": "string"
+        },
+        "dependencias": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Dependencias",
+          "type": "array"
+        },
+        "riscos": {
+          "minLength": 1,
+          "title": "Riscos",
+          "type": "string"
+        },
+        "complexidade": {
+          "enum": [
+            "baixa",
+            "media",
+            "alta"
+          ],
+          "title": "Complexidade",
+          "type": "string"
+        },
+        "fontes_evidencia": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Fontes Evidencia",
+          "type": "array"
+        }
+      },
+      "required": [
+        "tecnologia",
+        "ordem",
+        "fase",
+        "problema_resolvido",
+        "beneficio",
+        "riscos",
+        "complexidade"
+      ],
+      "title": "PrioritizedTechnology",
+      "type": "object"
+    },
+    "RefinedRecommendation": {
+      "additionalProperties": true,
+      "properties": {
+        "tecnologias_priorizadas": {
+          "items": {
+            "$ref": "#/$defs/PrioritizedTechnology"
+          },
+          "title": "Tecnologias Priorizadas",
+          "type": "array"
+        },
+        "roadmap": {
+          "additionalProperties": {
+            "$ref": "#/$defs/RoadmapPhase"
+          },
+          "propertyNames": {
+            "enum": [
+              "curto_prazo",
+              "medio_prazo",
+              "longo_prazo"
+            ]
+          },
+          "title": "Roadmap",
+          "type": "object"
+        },
+        "fit_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Fit Score",
+          "type": "number"
+        },
+        "alertas": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alertas",
+          "type": "array"
+        },
+        "perguntas_startup": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Perguntas Startup",
+          "type": "array"
+        }
+      },
+      "required": [
+        "roadmap",
+        "fit_score"
+      ],
+      "title": "RefinedRecommendation",
+      "type": "object"
+    },
+    "RoadmapPhase": {
+      "additionalProperties": true,
+      "properties": {
+        "tecnologias": {
+          "items": {
+            "enum": [
+              "NIM",
+              "Triton",
+              "TensorRT-LLM",
+              "NeMo",
+              "RAPIDS",
+              "CUDA",
+              "Riva",
+              "Omniverse",
+              "Clara",
+              "Isaac",
+              "Morpheus",
+              "AI Enterprise",
+              "Inception"
+            ],
+            "type": "string"
+          },
+          "title": "Tecnologias",
+          "type": "array"
+        },
+        "acoes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Acoes",
+          "type": "array"
+        }
+      },
+      "title": "RoadmapPhase",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "recomendacao_refinada": {
+      "$ref": "#/$defs/RefinedRecommendation"
+    }
+  },
+  "required": [
+    "startup",
+    "recomendacao_refinada"
+  ],
+  "title": "RecommendationRefinementOutput",
+  "type": "object"
+}

@@ -1,0 +1,199 @@
+{
+  "$defs": {
+    "DiscardedEvidence": {
+      "additionalProperties": true,
+      "properties": {
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "motivo": {
+          "minLength": 1,
+          "title": "Motivo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "motivo"
+      ],
+      "title": "DiscardedEvidence",
+      "type": "object"
+    },
+    "EvidenceSummary": {
+      "additionalProperties": true,
+      "properties": {
+        "tecnologias_detectadas": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tecnologias Detectadas",
+          "type": "array"
+        },
+        "fontes_corroboradas": {
+          "minimum": 0,
+          "title": "Fontes Corroboradas",
+          "type": "integer"
+        },
+        "afirmacoes_chave": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Afirmacoes Chave",
+          "type": "array"
+        },
+        "nota_geral_qualidade_evidencias": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Nota Geral Qualidade Evidencias",
+          "type": "number"
+        }
+      },
+      "required": [
+        "fontes_corroboradas",
+        "nota_geral_qualidade_evidencias"
+      ],
+      "title": "EvidenceSummary",
+      "type": "object"
+    },
+    "ValidatedEvidence": {
+      "additionalProperties": true,
+      "properties": {
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "dominio": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Dominio"
+        },
+        "tipo_fonte": {
+          "enum": [
+            "oficial",
+            "imprensa",
+            "ecossistema",
+            "social",
+            "outro"
+          ],
+          "title": "Tipo Fonte",
+          "type": "string"
+        },
+        "credibilidade_fonte": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Credibilidade Fonte",
+          "type": "number"
+        },
+        "trecho_evidencia": {
+          "default": "",
+          "title": "Trecho Evidencia",
+          "type": "string"
+        },
+        "score_confianca": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Score Confianca",
+          "type": "number"
+        },
+        "classificacao": {
+          "enum": [
+            "alta",
+            "media",
+            "baixa"
+          ],
+          "title": "Classificacao",
+          "type": "string"
+        },
+        "mencao_forte": {
+          "title": "Mencao Forte",
+          "type": "boolean"
+        },
+        "contem_evidencia_ia": {
+          "title": "Contem Evidencia Ia",
+          "type": "boolean"
+        },
+        "declaracao_propria": {
+          "title": "Declaracao Propria",
+          "type": "boolean"
+        },
+        "tecnologias_detectadas": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tecnologias Detectadas",
+          "type": "array"
+        },
+        "corroborada": {
+          "default": false,
+          "title": "Corroborada",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "url",
+        "tipo_fonte",
+        "credibilidade_fonte",
+        "score_confianca",
+        "classificacao",
+        "mencao_forte",
+        "contem_evidencia_ia",
+        "declaracao_propria"
+      ],
+      "title": "ValidatedEvidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "evidencias_validadas": {
+      "items": {
+        "$ref": "#/$defs/ValidatedEvidence"
+      },
+      "title": "Evidencias Validadas",
+      "type": "array"
+    },
+    "evidencias_medias": {
+      "items": {
+        "$ref": "#/$defs/ValidatedEvidence"
+      },
+      "title": "Evidencias Medias",
+      "type": "array"
+    },
+    "evidencias_descartadas": {
+      "items": {
+        "$ref": "#/$defs/DiscardedEvidence"
+      },
+      "title": "Evidencias Descartadas",
+      "type": "array"
+    },
+    "resumo_consolidado": {
+      "$ref": "#/$defs/EvidenceSummary"
+    },
+    "erros_validacao": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Erros Validacao",
+      "type": "array"
+    }
+  },
+  "required": [
+    "startup",
+    "resumo_consolidado"
+  ],
+  "title": "EvidenceValidationOutput",
+  "type": "object"
+}

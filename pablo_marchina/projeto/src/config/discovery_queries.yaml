@@ -1,0 +1,13 @@
+version: "1.0"
+queries:
+  - category: "brazilian_ai_startups"
+    terms:
+      - "Brazilian AI startup 2025"
+      - "startup de IA Brasil 2025"
+      - "inteligência artificial startup Brasil"
+      - "AI-native startup Brazil"
+      - "brazilian generative AI startup"
+      - "startup brasileira de inteligência artificial"
+    country: "Brazil"
+    sector: "AI"
+    max_results: 50

@@ -1,0 +1,37 @@
+# Bancos de apoio do NVIDIA Startup AI Radar (Postgres + Qdrant servidor).
+# O app (CLI, ingest, Streamlit) continua rodando na .venv local, apontando para
+# localhost. Para subir:  docker compose up -d
+#
+# Depois, no .env:
+#   DATABASE_URL=postgresql+psycopg://radar:radar@localhost:5432/radar
+#   QDRANT_URL=http://localhost:6333
+services:
+  postgres:
+    image: postgres:16
+    container_name: radar-postgres
+    environment:
+      POSTGRES_USER: radar
+      POSTGRES_PASSWORD: radar
+      POSTGRES_DB: radar
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U radar -d radar"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: radar-qdrant
+    ports:
+      - "6333:6333"   # HTTP / REST
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrantdata:/qdrant/storage
+
+volumes:
+  pgdata:
+  qdrantdata:

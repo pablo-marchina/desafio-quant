@@ -1,0 +1,27 @@
+{
+  "status": "PASS_WITH_EXTERNAL_SERVICE_LIMITATIONS",
+  "implemented_focus_areas": [
+    "single central runtime pipeline configuration",
+    "source planner official-source correction",
+    "adaptive LangGraph request_more_evidence loop",
+    "allowlist-driven NVIDIA RAG corpus",
+    "Triton reranker runtime alignment",
+    "recommendation engine evidence/RAG gates",
+    "frontend decision cockpit with full information display"
+  ],
+  "checks": {
+    "product_configuration": "PASS",
+    "single_runtime_pipeline": "PASS",
+    "no_mock_runtime": "PASS",
+    "no_demo_dependency": "PASS",
+    "rag_corpus_coverage": "PASS",
+    "focused_python_tests": "176 passed, 1 warning",
+    "frontend_static_audit": "PASS",
+    "frontend_npm_ci": "PASS",
+    "frontend_npm_build": "PASS"
+  },
+  "not_executed_in_sandbox": [
+    "live PostgreSQL + Qdrant + Triton end-to-end run",
+    "full pytest run across entire repository due interactive runtime constraints"
+  ]
+}

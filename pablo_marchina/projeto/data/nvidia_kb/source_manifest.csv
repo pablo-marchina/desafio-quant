@@ -1,0 +1,17 @@
+title,url,category,technology,source_type,priority,last_checked
+NVIDIA Inception,https://www.nvidia.com/en-us/startups/,program,NVIDIA Inception,official_site,high,
+NVIDIA NIM,https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/,inference,NVIDIA NIM,official_site,high,
+NVIDIA NeMo,https://www.nvidia.com/en-us/ai-data-science/products/nemo/,foundation-models,NVIDIA NeMo,official_site,high,
+NeMo Guardrails,,governance,NeMo Guardrails,official_site,high,TODO: verify official source
+NVIDIA Triton Inference Server,https://developer.nvidia.com/triton-inference-server,inference,NVIDIA Triton Inference Server,official_site,high,
+TensorRT-LLM,https://developer.nvidia.com/tensorrt,optimization,TensorRT-LLM,official_site,high,
+NVIDIA RAPIDS,https://rapids.ai/,data,NVIDIA RAPIDS,official_site,medium,
+cuDF,https://rapids.ai/cudf-pandas/,data,cuDF,official_site,medium,
+cuML,https://rapids.ai/cuml/,ml,cuML,official_site,medium,
+CUDA,https://developer.nvidia.com/cuda-zone,platform,CUDA,official_site,high,
+NVIDIA Riva,https://www.nvidia.com/en-us/ai-data-science/products/riva/,speech,NVIDIA Riva,official_site,medium,
+NVIDIA Omniverse,https://www.nvidia.com/en-us/omniverse/,simulation,NVIDIA Omniverse,official_site,medium,
+NVIDIA Isaac,https://developer.nvidia.com/isaac,robotics,NVIDIA Isaac,official_site,medium,
+NVIDIA Clara,,healthcare,NVIDIA Clara,official_site,medium,TODO: verify official source
+NVIDIA Morpheus,https://developer.nvidia.com/nvidia-morpheus,cybersecurity,NVIDIA Morpheus,official_site,medium,
+NVIDIA AI Enterprise,https://www.nvidia.com/en-us/data-center/products/ai-enterprise/,platform,NVIDIA AI Enterprise,official_site,high,

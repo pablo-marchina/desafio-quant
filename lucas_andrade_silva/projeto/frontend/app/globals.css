@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 215 40% 4%;
+    --foreground: 210 20% 96%;
+    --card: 215 29% 7%;
+    --card-foreground: 210 20% 96%;
+    --border: 214 22% 13%;
+    --muted: 214 18% 13%;
+    --muted-foreground: 214 10% 60%;
+    --primary: 82 100% 36%;
+    --primary-foreground: 215 40% 4%;
+    --destructive: 3 90% 61%;
+    --warning: 44 100% 50%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    background-image:
+      radial-gradient(circle at 70% -10%, rgba(118, 185, 0, 0.045), transparent 25rem),
+      linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+    background-size: auto, 100% 4rem;
+  }
+
+  ::selection {
+    background: rgba(118, 185, 0, 0.3);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-primary/60;
+  }
+}

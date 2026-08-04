@@ -1,0 +1,28 @@
+{
+  "batch_id": "7cbf2fb4-a197-413c-bd7e-c23be2803e43",
+  "generated_at": "2026-06-29T15:06:54.863188+00:00",
+  "automatic_status": "approved",
+  "gates": {
+    "all_items_completed": true,
+    "all_runs_clean_and_traceable": true,
+    "all_runs_have_sources_and_evidence": true,
+    "all_required_artifacts_present": true,
+    "all_ai_recommendations_grounded": true,
+    "no_blocking_quality_issues": true
+  },
+  "metrics": {
+    "items": 50,
+    "completed_items": 50,
+    "pipeline_runs": 50,
+    "sources": 2735,
+    "evidences": 2774,
+    "recommendation_citations": 162,
+    "briefings": 50,
+    "external_api_failures": 100,
+    "blocking_issues": 0
+  },
+  "issues": [],
+  "warnings": [
+    "external_api_failures_detected"
+  ]
+}

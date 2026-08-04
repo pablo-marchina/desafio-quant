@@ -1,0 +1,30 @@
+name: "cross_encoder"
+backend: "python"
+
+# The HTTP client sends explicit [1] query and [N, 1] document tensors.
+# Disabling Triton's implicit batching keeps the model contract identical to
+# src/rag/triton_reranker.py and models/cross_encoder/1/model.py.
+max_batch_size: 0
+
+input [
+  {
+    name: "query"
+    data_type: TYPE_STRING
+    dims: [1]
+  },
+  {
+    name: "documents"
+    data_type: TYPE_STRING
+    dims: [-1, 1]
+  }
+]
+
+output [
+  {
+    name: "scores"
+    data_type: TYPE_FP32
+    dims: [-1]
+  }
+]
+
+instance_group [{ kind: KIND_CPU count: 1 }]

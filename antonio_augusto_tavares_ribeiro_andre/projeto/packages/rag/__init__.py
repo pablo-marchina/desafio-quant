@@ -1,0 +1,161 @@
+"""RAG NVIDIA com reranking (F3).
+
+Ingest -> chunk semântico -> embeddings (NeMo Retriever nv-embedqa) -> Qdrant (dense+sparse/BM25)
+-> busca híbrida -> Reranker (interface plugável; default NeMo NIM, Cohere só na F7) -> citações.
+
+Ingestão das fontes do §10 (F3.1): `from packages.rag import ingest, load_kb_sources`.
+Transcrição dos vídeos do §10.1 (F3.1b): `from packages.rag import transcribe, Transcriber`.
+Chunking semântico (F3.2): `from packages.rag import chunk_kb, Chunk`.
+Embeddings nv-embedqa (F3.3): `from packages.rag import embed_kb, get_embedder, Embedder`.
+Indexação Qdrant dense+sparse/BM25 (F3.4): `from packages.rag import build_index, BM25Encoder`.
+Busca híbrida dense+lexical com fusão RRF (F3.5): `from packages.rag import build_retriever`.
+Reranking NeMo NIM plugável (F3.6): `from packages.rag import rerank, get_reranker, Reranker`.
+"""
+
+from .chunk import (
+    Chunk,
+    chunk_document,
+    chunk_documents,
+    chunk_kb,
+    normalize_text,
+)
+from .embed import (
+    DEFAULT_OFFLINE_DIM,
+    NV_EMBEDQA_DIM,
+    EmbeddedChunk,
+    Embedder,
+    EmbedderUnavailable,
+    HashingEmbedder,
+    NVEmbedQA,
+    embed_chunks,
+    embed_kb,
+    embed_query,
+    get_embedder,
+)
+from .index import (
+    BM25_B,
+    BM25_K1,
+    DENSE_VECTOR,
+    KB_COLLECTION,
+    SPARSE_INDEX_SPACE,
+    SPARSE_VECTOR,
+    BM25Encoder,
+    IndexedChunk,
+    IndexUnavailable,
+    InMemoryVectorIndex,
+    QdrantVectorIndex,
+    SparseVector,
+    VectorIndex,
+    build_index,
+    get_index,
+    index_chunks,
+)
+from .ingest import (
+    KBDocument,
+    KBSection,
+    KBSource,
+    KBSourceType,
+    covered_techs,
+    ingest,
+    load_kb_sources,
+)
+from .rerank import (
+    CohereReranker,
+    LexicalReranker,
+    NeMoReranker,
+    RerankedChunk,
+    Reranker,
+    RerankerUnavailable,
+    get_reranker,
+    rerank,
+)
+from .retrieve import (
+    DEFAULT_LIMIT,
+    DEFAULT_PREFETCH,
+    RRF_K,
+    HybridRetriever,
+    RetrievedChunk,
+    build_retriever,
+    hybrid_search,
+)
+from .transcribe import (
+    DEFAULT_PREFERENCE,
+    RivaTranscriber,
+    Transcriber,
+    TranscriberUnavailable,
+    Transcript,
+    TranscriptSegment,
+    WhisperTranscriber,
+    YouTubeCaptionTranscriber,
+    build_transcriber_chain,
+    transcribe,
+    transcript_to_markdown,
+)
+
+__all__ = [
+    "KBSource",
+    "KBDocument",
+    "KBSection",
+    "KBSourceType",
+    "load_kb_sources",
+    "ingest",
+    "covered_techs",
+    "Chunk",
+    "normalize_text",
+    "chunk_document",
+    "chunk_documents",
+    "chunk_kb",
+    "NV_EMBEDQA_DIM",
+    "DEFAULT_OFFLINE_DIM",
+    "Embedder",
+    "EmbedderUnavailable",
+    "EmbeddedChunk",
+    "HashingEmbedder",
+    "NVEmbedQA",
+    "get_embedder",
+    "embed_chunks",
+    "embed_query",
+    "embed_kb",
+    "KB_COLLECTION",
+    "DENSE_VECTOR",
+    "SPARSE_VECTOR",
+    "SPARSE_INDEX_SPACE",
+    "BM25_K1",
+    "BM25_B",
+    "IndexUnavailable",
+    "SparseVector",
+    "BM25Encoder",
+    "IndexedChunk",
+    "VectorIndex",
+    "InMemoryVectorIndex",
+    "QdrantVectorIndex",
+    "get_index",
+    "index_chunks",
+    "build_index",
+    "DEFAULT_LIMIT",
+    "DEFAULT_PREFETCH",
+    "RRF_K",
+    "RetrievedChunk",
+    "HybridRetriever",
+    "hybrid_search",
+    "build_retriever",
+    "RerankerUnavailable",
+    "Reranker",
+    "RerankedChunk",
+    "LexicalReranker",
+    "NeMoReranker",
+    "CohereReranker",
+    "get_reranker",
+    "rerank",
+    "DEFAULT_PREFERENCE",
+    "TranscriberUnavailable",
+    "TranscriptSegment",
+    "Transcript",
+    "Transcriber",
+    "RivaTranscriber",
+    "YouTubeCaptionTranscriber",
+    "WhisperTranscriber",
+    "build_transcriber_chain",
+    "transcribe",
+    "transcript_to_markdown",
+]

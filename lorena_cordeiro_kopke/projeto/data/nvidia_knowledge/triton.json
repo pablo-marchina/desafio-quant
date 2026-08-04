@@ -1,0 +1,11 @@
+{
+  "url": "https://developer.nvidia.com/dynamo-triton",
+  "fonte": "developer.nvidia.com",
+  "titulo": "NVIDIA Dynamo-Triton — Servidor de Inferência Multi-Framework",
+  "categoria": "produto",
+  "familia": "inferencia",
+  "tecnologia": "Dynamo-Triton",
+  "setores": ["geral"],
+  "ia_tipos": ["LLM", "visão computacional", "classificacao", "series temporais", "NLP"],
+  "texto": "NVIDIA Dynamo-Triton, anteriormente conhecido como NVIDIA Triton Inference Server, é um servidor de inferência open-source para deploy de modelos de IA em produção. Suporta os principais frameworks do mercado — TensorRT, PyTorch, ONNX, OpenVINO, Python e RAPIDS FIL — em uma única plataforma de serving.\n\nO servidor entrega alta performance com dynamic batching, execução concorrente de modelos e configurações otimizadas por hardware. Suporta workloads de inferência em tempo real, processamento em batch, pipelines ensemble e streaming de áudio e vídeo. Roda em GPUs NVIDIA, aceleradores de terceiros, CPUs x86 e ARM, o que garante flexibilidade de infraestrutura.\n\nDynamo-Triton é compatível com workflows de DevOps e MLOps: integra com Kubernetes para escala horizontal e com Prometheus para monitoramento de métricas de inferência. Funciona em ambientes cloud e on-premises e, como parte do NVIDIA AI Enterprise, oferece APIs estáveis, suporte certificado e ambiente seguro para produção.\n\nPara casos de uso específicos de LLMs, a NVIDIA oferece o NVIDIA Dynamo, otimizado para inferência de grandes modelos de linguagem com serving desagregado, prefix caching e key-value caching para armazenamento. O Dynamo complementa o Dynamo-Triton com otimizações específicas para LLM em deploy multi-modo.\n\nDynamo-Triton é especialmente relevante para startups que precisam servir múltiplos modelos de diferentes frameworks em produção com controle fino de performance, latência e throughput, sem estar presas a um único provider de serving ou framework de treino."
+}

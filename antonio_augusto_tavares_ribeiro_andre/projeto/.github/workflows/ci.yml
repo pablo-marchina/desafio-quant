@@ -1,0 +1,37 @@
+name: CI
+
+# CI leve (F0.10): lint + testes em todo push/PR. Sem GPU, sem segredos — os testes
+# que tocariam a rede (smoke Nemotron) usam skipif e o tracing Langfuse vira no-op
+# quando as chaves não estão setadas. Jobs de GPU rodam local/sob demanda, fora daqui.
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Instala deps de CI
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-ci.txt
+
+      - name: Lint (ruff)
+        run: ruff check packages tests apps migrations
+
+      - name: Testes (pytest)
+        run: python -m pytest
+
+      # Smoke RAGAS sustenta o princípio "RAGAS no CI" (ARQUITETURA §8). Ligado na F3.9:
+      # avalia o RAG offline (espinha verde — sem GPU/credencial) nas 4 métricas RAGAS e
+      # confere o baseline versionado (data/eval/rag/baseline.json); drift sem regravar falha.
+      - name: Smoke RAGAS (F3.9)
+        run: python -m packages.eval.ragas --check

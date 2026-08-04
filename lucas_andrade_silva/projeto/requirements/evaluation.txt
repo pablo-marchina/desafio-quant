@@ -1,0 +1,7 @@
+-r embedding.txt
+ragas>=0.2.0,<0.4.0
+datasets>=2.19.0,<4.0.0
+langchain<1.0.0
+langchain-community<0.4.0
+langchain-core<1.0.0
+langchain-openai<1.0.0

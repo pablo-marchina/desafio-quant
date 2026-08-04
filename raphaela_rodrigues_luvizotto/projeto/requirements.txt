@@ -1,0 +1,32 @@
+# --- LLM e agentes ---
+groq==0.11.0
+httpx<0.28
+langgraph==0.2.39
+langchain==0.3.7
+langchain-groq==0.2.1
+langchain-core==0.3.15
+
+# --- Scraping (Dia 1, simples) ---
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==5.3.0
+trafilatura==1.12.2
+
+# --- RAG / embeddings (a partir do Dia 4, mas instalado desde já) ---
+sentence-transformers==3.2.1
+chromadb==0.5.23
+cohere==5.11.4
+
+# --- Banco estruturado ---
+psycopg2-binary==2.9.10
+sqlalchemy==2.0.36
+
+# --- Utilitários ---
+python-dotenv==1.0.1
+pydantic==2.9.2
+tenacity==9.0.0
+
+# --- Interface web (Dia 6, instalado quando chegar a hora) ---
+fastapi==0.115.5
+uvicorn==0.32.0
+# streamlit==1.40.0

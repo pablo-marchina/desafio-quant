@@ -1,0 +1,209 @@
+﻿{
+    "dataset_id":  "golden_startups_br20",
+    "dataset_version":  "0.1.0",
+    "submitted_at":  "2026-06-29T20:34:40.3186626-03:00",
+    "api_base_url":  "http://127.0.0.1:8000",
+    "dry_run":  false,
+    "results":  [
+                    {
+                        "dataset_item_id":  "br-ai-native-001",
+                        "name":  "Dadosfera",
+                        "website_url":  "https://dadosfera.com.br/",
+                        "expected_ai_maturity":  "ai_native",
+                        "submitted":  true,
+                        "job_id":  "199ada95-1aee-49bb-8f27-3e82ec7056bf",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-native-002",
+                        "name":  "NeuralMind",
+                        "website_url":  "https://www.neuralmind.ai/",
+                        "expected_ai_maturity":  "ai_native",
+                        "submitted":  true,
+                        "job_id":  "2e829b9a-0a5a-4205-a46b-e62caeb792ea",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-native-003",
+                        "name":  "Nama",
+                        "website_url":  "https://www.nama.ai/",
+                        "expected_ai_maturity":  "ai_native",
+                        "submitted":  true,
+                        "job_id":  "5cd215db-a5a3-4b6b-bff9-ce95471a2e68",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-native-004",
+                        "name":  "Aquarela Analytics",
+                        "website_url":  "https://www.aquare.la/",
+                        "expected_ai_maturity":  "ai_native",
+                        "submitted":  true,
+                        "job_id":  "c39e3790-4e30-435a-b4aa-bded154834e7",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-native-005",
+                        "name":  "Deep Legal",
+                        "website_url":  "https://www.deeplegal.com.br/",
+                        "expected_ai_maturity":  "ai_native",
+                        "submitted":  true,
+                        "job_id":  "e8d9f36a-4bc3-4a4c-b821-0e48447c77a2",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-native-006",
+                        "name":  "TRAIVE",
+                        "website_url":  "https://www.traivefinance.com/",
+                        "expected_ai_maturity":  "ai_native",
+                        "submitted":  true,
+                        "job_id":  "a7b7ea31-8820-4728-8ffb-eaeafc46712f",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-native-007",
+                        "name":  "Agrotools",
+                        "website_url":  "https://agrotools.com.br/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "dd907452-88aa-4430-bafb-6f3fa79b6055",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-native-008",
+                        "name":  "Cortex",
+                        "website_url":  "https://www.cortex-intelligence.com/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "659ec715-e426-478c-a0c4-fb420f66f732",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-enabled-001",
+                        "name":  "Unico",
+                        "website_url":  "https://www.unico.io/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "bf9d08d3-8a0b-4fa3-a2e7-52cad53e3ee8",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-enabled-002",
+                        "name":  "CloudWalk",
+                        "website_url":  "https://www.cloudwalk.io/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "0a103287-62ba-42f5-989a-a6bc8cd20ace",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-enabled-003",
+                        "name":  "Jusbrasil",
+                        "website_url":  "https://www.jusbrasil.com.br/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "6fe60134-2e52-45d9-b596-9458a694e707",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-enabled-004",
+                        "name":  "Loggi",
+                        "website_url":  "https://www.loggi.com/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "f3aedd32-203a-47ed-bd99-309de980bd35",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-enabled-005",
+                        "name":  "iFood",
+                        "website_url":  "https://www.ifood.com.br/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "f6bd7777-2e21-4417-bd60-c819b485dd30",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-enabled-006",
+                        "name":  "QuintoAndar",
+                        "website_url":  "https://www.quintoandar.com.br/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "2fdad248-4e4b-4998-90d3-6099ccb7ab2c",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-ai-enabled-007",
+                        "name":  "Zenvia",
+                        "website_url":  "https://www.zenvia.com/",
+                        "expected_ai_maturity":  "ai_enabled",
+                        "submitted":  true,
+                        "job_id":  "6d75d832-c57b-4d1e-93f3-035ce89e5362",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-control-001",
+                        "name":  "Asaas",
+                        "website_url":  "https://www.asaas.com/",
+                        "expected_ai_maturity":  "non_ai",
+                        "submitted":  true,
+                        "job_id":  "0f3933f3-c04f-448d-9f4d-5a7f32ecd8eb",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-control-002",
+                        "name":  "Olist",
+                        "website_url":  "https://olist.com/",
+                        "expected_ai_maturity":  "non_ai",
+                        "submitted":  true,
+                        "job_id":  "039b20e2-0e97-4c6f-9b1a-6cdc6f1ef33b",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-control-003",
+                        "name":  "Conta Azul",
+                        "website_url":  "https://contaazul.com/",
+                        "expected_ai_maturity":  "non_ai",
+                        "submitted":  true,
+                        "job_id":  "9d850957-b91a-4497-9ccb-82209165e3dc",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-control-004",
+                        "name":  "Sympla",
+                        "website_url":  "https://www.sympla.com.br/",
+                        "expected_ai_maturity":  "non_ai",
+                        "submitted":  true,
+                        "job_id":  "9e65e92f-06b1-41ab-92c4-e0cd37344954",
+                        "status":  "pending",
+                        "error":  null
+                    },
+                    {
+                        "dataset_item_id":  "br-control-005",
+                        "name":  "Buser",
+                        "website_url":  "https://www.buser.com.br/",
+                        "expected_ai_maturity":  "non_ai",
+                        "submitted":  true,
+                        "job_id":  "925cc017-4ca3-4189-a953-e32a6cd6551c",
+                        "status":  "pending",
+                        "error":  null
+                    }
+                ]
+}

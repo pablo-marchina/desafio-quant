@@ -1,0 +1,886 @@
+sources:
+- source_id: abstartups_ecosystem
+  source_name: ABStartups — Associação Brasileira
+  source_category: ecosystem_directory
+  base_url: https://abstartups.com.br
+  allowed_paths:
+  - /startups
+  - /associadas
+  - /ecossistema
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - association_member
+  expected_claim_types:
+  - ecosystem_presence
+  source_quality_prior: 0.55
+  notes: Brazilian Startup Association member directory.
+  production_enabled: true
+- source_id: ace_startups_portfolio
+  source_name: Ace Startups — Portfolio
+  source_category: ecosystem_directory
+  base_url: https://acestartups.com.br
+  allowed_paths:
+  - /portfolio
+  disallowed_paths:
+  - /login
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - accelerator_portfolio
+  expected_claim_types:
+  - acceleration
+  - ecosystem_presence
+  source_quality_prior: 0.6
+  notes: Ace Startups accelerator portfolio page.
+  production_enabled: true
+- source_id: anjos_brasil_ecosystem
+  source_name: Anjos do Brasil — Rede de Investidores
+  source_category: ecosystem_directory
+  base_url: https://anjosdobrasil.net
+  allowed_paths:
+  - /startups
+  - /portfolio
+  - /investidores
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - angel_investment
+  expected_claim_types:
+  - funding
+  - ecosystem_presence
+  notes: Angel investment network with startup portfolio.
+  production_enabled: true
+- source_id: bossa_invest_portfolio
+  source_name: Bossa Invest — Portfolio
+  source_category: ecosystem_directory
+  base_url: https://bossainvest.com.br
+  allowed_paths:
+  - /portfolio
+  disallowed_paths:
+  - /login
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - vc_portfolio
+  expected_claim_types:
+  - funding
+  - ecosystem_presence
+  source_quality_prior: 0.55
+  notes: Bossa Invest VC portfolio page.
+  production_enabled: true
+- source_id: brazil_journal_news
+  source_name: Brazil Journal — Negócios
+  source_category: funding_news
+  base_url: https://braziljournal.com
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /cadastro
+  paywall_risk: medium
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 0.28
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - funding_round
+  - investment_news
+  expected_claim_types:
+  - funding
+  - valuation
+  - investor_relation
+  source_quality_prior: 0.6
+  notes: Brazilian business news covering VC, startups, and M&A.
+  production_enabled: true
+- source_id: clara_monai
+  source_name: Clara / MONAI
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.nvidia.com/clara/
+  notes: Healthcare AI and medical imaging.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: cubo_ecosystem
+  source_name: Cubo — Hub de Inovação
+  source_category: ecosystem_directory
+  base_url: https://cubo.network
+  allowed_paths:
+  - /startups
+  - /ecossistema
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - innovation_hub
+  expected_claim_types:
+  - ecosystem_presence
+  - acceleration
+  source_quality_prior: 0.6
+  notes: Cubo Itaú — largest innovation hub in Latin America.
+  production_enabled: true
+- source_id: cudf
+  source_name: cuDF — GPU DataFrame
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.rapids.ai/api/cudf/stable/
+  notes: GPU-accelerated DataFrame library with pandas-like API.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: cuml
+  source_name: cuML — GPU Machine Learning
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.rapids.ai/api/cuml/stable/
+  notes: GPU-accelerated ML algorithms (XGBoost, RF, clustering, etc.).
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: darwin_ecosystem
+  source_name: Darwin Startups — Aceleradora
+  source_category: ecosystem_directory
+  base_url: https://darwinstartups.com
+  allowed_paths:
+  - /startups
+  - /portfolio
+  - /programas
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - accelerator_portfolio
+  expected_claim_types:
+  - acceleration
+  - ecosystem_presence
+  source_quality_prior: 0.55
+  notes: Darwin Startups accelerator portfolio.
+  production_enabled: true
+- source_id: distrito_startup_programs
+  source_name: Distrito — Startup Programs
+  source_category: ecosystem_directory
+  base_url: https://distrito.me
+  allowed_paths:
+  - /programas
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - accelerator_program
+  expected_claim_types:
+  - ecosystem_presence
+  - acceleration
+  source_quality_prior: 0.6
+  notes: Distrito startup programs and participant listings.
+  production_enabled: true
+- source_id: endeavor_ecosystem
+  source_name: Endeavor — Escala de Startups
+  source_category: ecosystem_directory
+  base_url: https://endeavor.org.br
+  allowed_paths:
+  - /startups
+  - /escala
+  - /empreendedores
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - scale_up_program
+  expected_claim_types:
+  - ecosystem_presence
+  - acceleration
+  source_quality_prior: 0.7
+  notes: Endeavor Brazil — high-impact entrepreneurship network.
+  production_enabled: true
+- source_id: exame_news
+  source_name: Exame — Negócios & Startups
+  source_category: funding_news
+  base_url: https://exame.com
+  allowed_paths:
+  - /negocios
+  - /startups
+  disallowed_paths:
+  - /login
+  - /newsletter
+  - /assine
+  paywall_risk: medium
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 0.28
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - funding_round
+  - investment_news
+  expected_claim_types:
+  - funding
+  - valuation
+  - investor_relation
+  source_quality_prior: 0.6
+  notes: Major Brazilian business news outlet. May have soft paywall.
+  production_enabled: true
+- source_id: github_api_search
+  source_name: GitHub API Repository Search
+  source_category: github_or_code
+  base_url: https://api.github.com
+  allowed_paths:
+  - /search/repositories
+  - /repos/*
+  disallowed_paths:
+  - /user
+  - /users/*/repos
+  requires_api_key: true
+  required_capability: github_token
+  terms_review_required: true
+  rate_limit_policy_id: github_api
+  collector_type: api
+  parser_type: json
+  calibrated_priority_score: 1.24
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - code_repository
+  - open_source_contributions
+  expected_claim_types:
+  - tech_stack
+  - open_source_usage
+  source_quality_prior: 0.8
+  notes: GitHub search API for startup repositories. Requires GITHUB_TOKEN.
+  production_enabled: true
+- source_id: inovativa_startups
+  source_name: Inovativa — Startups
+  source_category: ecosystem_directory
+  base_url: https://inovativa.com.br
+  allowed_paths:
+  - /startups
+  disallowed_paths:
+  - /login
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - accelerator_cohort
+  expected_claim_types:
+  - acceleration
+  - ecosystem_presence
+  source_quality_prior: 0.55
+  notes: Inovativa accelerator cohort listings.
+  production_enabled: true
+- source_id: isaac
+  source_name: NVIDIA Isaac
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.isaac.robot.nvidia.com/
+  notes: Robotics development platform.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: latitud_ecosystem
+  source_name: Latitud — Ecossistema LatAm
+  source_category: ecosystem_directory
+  base_url: https://latitud.com
+  allowed_paths:
+  - /startups
+  - /ecosystem
+  disallowed_paths:
+  - /login
+  - /signup
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - latam_ecosystem
+  expected_claim_types:
+  - ecosystem_presence
+  - acceleration
+  notes: Latin American startup ecosystem platform.
+  production_enabled: true
+- source_id: liga_ventures_ecosystem
+  source_name: Liga Ventures — Corporate Innovation
+  source_category: ecosystem_directory
+  base_url: https://ligaventures.com
+  allowed_paths:
+  - /startups
+  - /portfolio
+  - /programas
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - corporate_innovation
+  expected_claim_types:
+  - ecosystem_presence
+  - acceleration
+  source_quality_prior: 0.6
+  notes: Liga Ventures — corporate innovation and open startup platform.
+  production_enabled: true
+- source_id: linkedin_company_profiles
+  source_name: LinkedIn Company Profiles
+  source_category: jobs
+  base_url: https://www.linkedin.com
+  allowed_paths:
+  - /company/*
+  requires_login: true
+  paywall_risk: medium
+  terms_review_required: true
+  rate_limit_policy_id: search_engine
+  collector_type: optional_playwright
+  calibrated_priority_score: 0.32
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - team_size
+  - employee_roles
+  - funding_announcements
+  expected_claim_types:
+  - team_expertise
+  - growth_signals
+  source_quality_prior: 0.6
+  notes: 'LinkedIn company pages. Blocked for production: requires login.'
+  production_enabled: false
+- source_id: meio_mensagem_media
+  source_name: Meio & Mensagem — Marketing & Startups
+  source_category: media
+  base_url: https://meioemensagem.com.br
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /assine
+  paywall_risk: medium
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 1.79
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - business_news
+  - innovation_coverage
+  expected_claim_types:
+  - ecosystem_presence
+  - media_attention
+  notes: Brazilian marketing and innovation media outlet.
+  production_enabled: true
+- source_id: mobile_time_media
+  source_name: Mobile Time — Tecnologia Móvel
+  source_category: media
+  base_url: https://mobiletime.com.br
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /cadastro
+  paywall_risk: low
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 1.79
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - tech_news
+  - innovation_coverage
+  expected_claim_types:
+  - ecosystem_presence
+  - media_attention
+  notes: Brazilian mobile technology and startup news.
+  production_enabled: true
+- source_id: morpheus
+  source_name: NVIDIA Morpheus
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.nvidia.com/morpheus/
+  notes: AI-powered cybersecurity.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nemo
+  source_name: NVIDIA NeMo
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.nvidia.com/nemo/
+  notes: Full NeMo framework — LLM training, customization, guardrails.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nemo_guardrails
+  source_name: NeMo Guardrails
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.nvidia.com/nemo/guardrails/
+  notes: AI agent governance with NeMo Guardrails.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: neofeed_news
+  source_name: Neofeed — Negócios & Startups
+  source_category: funding_news
+  base_url: https://neofeed.com.br
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /cadastro
+  paywall_risk: low
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 0.28
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - funding_round
+  - investment_news
+  expected_claim_types:
+  - funding
+  - valuation
+  - investor_relation
+  source_quality_prior: 0.55
+  notes: Brazilian business news covering startups and VC.
+  production_enabled: true
+- source_id: nim
+  source_name: NVIDIA NIM
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.nvidia.com/nim/
+  notes: Main NIM deployment guide. Covers inference optimization, model serving.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nvidia_api_catalog
+  source_name: NVIDIA API Catalog
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://developer.nvidia.com/api-catalog
+  collector_type: playwright
+  notes: Catalog of all NVIDIA APIs and SDKs for developer integration.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nvidia_blueprint_ai_agents
+  source_name: Build AI Agents with NVIDIA AI Blueprints
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://developer.nvidia.com/blog/build-ai-agents-with-nvidia-ai-blueprints/
+  notes: Blueprints for building agentic AI workflows.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nvidia_deep_learning_essentials
+  source_name: Deep Learning Essentials — NVIDIA Developer
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://www.youtube.com/playlist?list=PLZHx5heVfcEvfTH0wE_oRTyDoLfrFzDRF
+  collector_type: youtube
+  notes: Playlist covering deep learning fundamentals and NVIDIA tools.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nvidia_developer_program
+  source_name: NVIDIA Developer Program
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://developer.nvidia.com
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  terms_review_required: true
+  rate_limit_policy_id: nvidia_eco
+  calibrated_priority_score: 1.07
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - nvidia_tech_usage
+  - developer_program
+  expected_claim_types:
+  - nvidia_fit
+  - nvidia_technology_usage
+  source_quality_prior: 0.8
+  notes: NVIDIA developer pages for technology documentation and programs.
+  production_enabled: true
+- source_id: nvidia_developer_showcase
+  source_name: NVIDIA Developer Showcase
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://www.youtube.com/@NVIDIA-Developer/videos
+  collector_type: youtube
+  notes: Developer channel with tutorials and technical deep dives.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nvidia_gtc_keynote_2025
+  source_name: GTC 2025 Keynote — Jensen Huang
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://www.youtube.com/watch?v=Y2Fg6T1d4Wo
+  collector_type: youtube
+  notes: Annual GTC keynote with strategic roadmap announcements.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nvidia_inception_directory
+  source_name: NVIDIA Inception Program Directory
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://www.nvidia.com
+  allowed_paths:
+  - /en-us/startups
+  - /en-us/inception
+  - /partners
+  disallowed_paths:
+  - /login
+  - /signup
+  terms_review_required: true
+  rate_limit_policy_id: nvidia_eco
+  calibrated_priority_score: 1.07
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - nvidia_partnership
+  - inception_membership
+  expected_claim_types:
+  - nvidia_fit
+  - nvidia_technology_usage
+  source_quality_prior: 0.85
+  notes: NVIDIA public pages for startup and partner ecosystem.
+  production_enabled: true
+- source_id: nvidia_whitepaper_inference
+  source_name: NVIDIA Solutions for Generative AI Inference
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://developer.nvidia.com/blog/nvidia-solutions-for-generative-ai-inference/
+  notes: Official blog post covering inference optimization strategies.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: nvidia_whitepaper_rag
+  source_name: Build Enterprise RAG Systems with NVIDIA NIM
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://developer.nvidia.com/blog/build-enterprise-rag-systems-with-nvidia-inference-microservices/
+  notes: Enterprise RAG architecture using NIM microservices.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: omniverse
+  source_name: NVIDIA Omniverse
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.omniverse.nvidia.com/
+  notes: 3D simulation and digital twins.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: open_startups_ecosystem
+  source_name: 100 Open Startups — Ranking
+  source_category: ecosystem_directory
+  base_url: https://100openstartups.com
+  allowed_paths:
+  - /startups
+  - /ranking
+  - /open-startups
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - open_innovation
+  expected_claim_types:
+  - ecosystem_presence
+  - open_innovation
+  source_quality_prior: 0.6
+  notes: Annual ranking of open innovation startups in Brazil.
+  production_enabled: true
+- source_id: pgn_news
+  source_name: PEGN — Pequenas Empresas & Startups
+  source_category: funding_news
+  base_url: https://pgn.com.br
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /assine
+  paywall_risk: medium
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 0.28
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - funding_round
+  - startup_ecosystem
+  expected_claim_types:
+  - funding
+  - ecosystem_presence
+  source_quality_prior: 0.55
+  notes: PEGN — small business and startup news (Globo group).
+  production_enabled: true
+- source_id: pipeline_capital_news
+  source_name: Pipeline Capital — VC & Investimentos
+  source_category: funding_news
+  base_url: https://pipelinecapital.com.br
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /cadastro
+  paywall_risk: low
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 0.28
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - funding_round
+  - investment_news
+  expected_claim_types:
+  - funding
+  - valuation
+  - investor_relation
+  source_quality_prior: 0.55
+  notes: Brazilian VC and startup investment news.
+  production_enabled: true
+- source_id: rapids
+  source_name: NVIDIA RAPIDS
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.rapids.ai/
+  notes: GPU-accelerated data science.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: riva
+  source_name: NVIDIA Riva
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.nvidia.com/deeplearning/riva/
+  notes: Speech AI SDK documentation.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: startse_media
+  source_name: StartSe — Startup & Innovation Media
+  source_category: media
+  base_url: https://startse.com
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /cadastro
+  paywall_risk: low
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 1.79
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_news
+  - innovation_coverage
+  expected_claim_types:
+  - ecosystem_presence
+  - media_attention
+  notes: Brazilian startup and innovation media outlet.
+  production_enabled: true
+- source_id: startup_careers_page
+  source_name: Startup Careers / Jobs Page
+  source_category: jobs
+  base_url: ''
+  allowed_paths:
+  - /careers
+  - /jobs
+  - /join-us
+  - /trabalhe-conosco
+  disallowed_paths:
+  - /login
+  - /apply/*
+  calibrated_priority_score: 0.32
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - job_listings
+  - hiring_signals
+  expected_claim_types:
+  - talent_acquisition
+  - growth_signals
+  notes: Per-startup careers/jobs page. Paths probed at runtime.
+  production_enabled: true
+- source_id: startup_docs_site
+  source_name: Startup Technical Documentation
+  source_category: technical_docs
+  base_url: ''
+  allowed_paths:
+  - /docs
+  - /documentation
+  - /developers
+  - /api
+  disallowed_paths:
+  - /login
+  - /admin
+  calibrated_priority_score: 0.52
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - api_docs
+  - technical_blog
+  - architecture
+  expected_claim_types:
+  - tech_stack
+  - product_capability
+  - ai_adoption
+  source_quality_prior: 0.7
+  notes: Per-startup documentation site. Probed at runtime.
+  production_enabled: true
+- source_id: startup_official_website
+  source_name: Startup Official Website
+  source_category: official_website
+  base_url: ''
+  allowed_paths:
+  - /about
+  - /team
+  - /company
+  - /
+  - /blog
+  disallowed_paths:
+  - /login
+  - /admin
+  - /wp-admin
+  calibrated_priority_score: 1.75
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - ai_native_signal
+  - team_info
+  - product_description
+  expected_claim_types:
+  - ai_adoption
+  - team_expertise
+  - product_capability
+  source_quality_prior: 0.9
+  notes: Per-startup official website. Base URL provided at runtime.
+  production_enabled: true
+- source_id: startupi_news
+  source_name: Startupi — Ecossistema de Startups
+  source_category: funding_news
+  base_url: https://startupi.com.br
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /cadastro
+  paywall_risk: low
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 0.28
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - funding_round
+  - startup_ecosystem
+  expected_claim_types:
+  - funding
+  - ecosystem_presence
+  notes: Brazilian startup ecosystem news and coverage.
+  production_enabled: true
+- source_id: startups_br_news
+  source_name: Startups.com.br — Ecossistema
+  source_category: funding_news
+  base_url: https://startups.com.br
+  allowed_paths:
+  - /*
+  disallowed_paths:
+  - /login
+  - /cadastro
+  paywall_risk: low
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 0.28
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - funding_round
+  - startup_ecosystem
+  expected_claim_types:
+  - funding
+  - ecosystem_presence
+  source_quality_prior: 0.55
+  notes: Brazilian startup ecosystem news and interviews.
+  production_enabled: true
+- source_id: tensorrt_llm
+  source_name: TensorRT-LLM
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://nvidia.github.io/TensorRT-LLM/
+  notes: LLM optimization toolkit documentation.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: triton
+  source_name: Triton Inference Server
+  source_category: nvidia_or_partner_ecosystem
+  base_url: https://docs.nvidia.com/deeplearning/triton-inference-server/
+  notes: Multi-framework inference serving.
+  production_enabled: true
+  calibrated_priority_score: 0.85
+  rate_limit_policy_id: nvidia_eco
+- source_id: valor_economico
+  source_name: Valor Econômico — Empresas & Startups
+  source_category: media
+  base_url: https://valor.globo.com
+  allowed_paths:
+  - /empresas
+  - /startups
+  disallowed_paths:
+  - /login
+  - /assine
+  - /newsletter
+  paywall_risk: high
+  terms_review_required: true
+  rate_limit_policy_id: news_site
+  calibrated_priority_score: 1.79
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - business_news
+  - market_analysis
+  expected_claim_types:
+  - funding
+  - valuation
+  - market_position
+  source_quality_prior: 0.65
+  notes: Major Brazilian financial newspaper. High paywall risk.
+  production_enabled: true
+- source_id: wow_aceleradora_ecosystem
+  source_name: WOW Aceleradora — Portfolio
+  source_category: ecosystem_directory
+  base_url: https://wow.aceleradora
+  allowed_paths:
+  - /startups
+  - /portfolio
+  disallowed_paths:
+  - /login
+  - /cadastro
+  terms_review_required: true
+  rate_limit_policy_id: directory_listing
+  calibrated_priority_score: 0.86
+  priority_calibration_decision_id: scraping.source_priority
+  expected_evidence_types:
+  - startup_listing
+  - accelerator_portfolio
+  expected_claim_types:
+  - acceleration
+  - ecosystem_presence
+  notes: WOW Aceleradora startup portfolio.
+  production_enabled: true

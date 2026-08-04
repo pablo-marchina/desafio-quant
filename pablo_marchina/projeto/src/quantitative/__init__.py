@@ -1,0 +1,50 @@
+"""Parâmetros quantitativos centralizados do projeto.
+
+TODO: Migrar estes valores para um arquivo de configuração (YAML/TOML)
+      com Pydantic validation em versão futura. Por ora, estão aqui
+      com documentação explícita de origem/rationale de cada valor.
+"""
+
+from src.quantitative.params import (
+    CLASSIFICATION_TO_BASE_SCORE,
+    CONFIDENCE_FLOAT_MAP,
+    CONFIDENCE_SCORE_FACTORS,
+    CONFIDENCE_THRESHOLDS,
+    DISCOVERY_CONFIDENCE_WEIGHTS,
+    DISCOVERY_MAX_SOURCES,
+    DISCOVERY_RATE_LIMIT,
+    GAP_BUSINESS_IMPACT_MAP,
+    GAP_KEYWORD_DICT,
+    KNOWLEDGE_BASE_SIGNAL_BOOSTS,
+    MAX_SEARCH_DEPTH,
+    NVIDIA_KEYWORD_BOOSTS,
+    OPPORTUNITY_SCORE_WEIGHTS,
+    PRIORITY_SCORE_WEIGHTS,
+    PRODUCTION_READINESS_WEIGHTS,
+    QUALITY_GATE_THRESHOLDS,
+    SOURCE_QUALITY_SCORES,
+    WORKFLOW_THRESHOLDS,
+    validate_all_weight_sets,
+)
+
+__all__ = [
+    "CLASSIFICATION_TO_BASE_SCORE",
+    "CONFIDENCE_FLOAT_MAP",
+    "CONFIDENCE_SCORE_FACTORS",
+    "CONFIDENCE_THRESHOLDS",
+    "DISCOVERY_CONFIDENCE_WEIGHTS",
+    "DISCOVERY_MAX_SOURCES",
+    "DISCOVERY_RATE_LIMIT",
+    "GAP_BUSINESS_IMPACT_MAP",
+    "GAP_KEYWORD_DICT",
+    "KNOWLEDGE_BASE_SIGNAL_BOOSTS",
+    "MAX_SEARCH_DEPTH",
+    "NVIDIA_KEYWORD_BOOSTS",
+    "OPPORTUNITY_SCORE_WEIGHTS",
+    "PRIORITY_SCORE_WEIGHTS",
+    "PRODUCTION_READINESS_WEIGHTS",
+    "QUALITY_GATE_THRESHOLDS",
+    "SOURCE_QUALITY_SCORES",
+    "WORKFLOW_THRESHOLDS",
+    "validate_all_weight_sets",
+]

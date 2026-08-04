@@ -1,0 +1,68 @@
+services:
+  caddy:
+    image: caddy:2.11.4-alpine
+    environment:
+      DOMAIN: ${DOMAIN:?DOMAIN obrigatorio}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  api:
+    image: ${BACKEND_IMAGE:?BACKEND_IMAGE com tag SHA obrigatoria}
+    env_file: ${BACKEND_ENV_FILE:?BACKEND_ENV_FILE obrigatorio}
+    environment:
+      ENVIRONMENT: production
+      ALLOW_LEGACY_API_KEY: "false"
+      QDRANT_URL: http://qdrant:6333
+      SEARXNG_BASE_URL: http://searxng:8080
+    command: ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--proxy-headers"]
+    expose: ["8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    depends_on: [qdrant, searxng]
+    restart: unless-stopped
+
+  worker:
+    image: ${BACKEND_IMAGE:?BACKEND_IMAGE com tag SHA obrigatoria}
+    env_file: ${BACKEND_ENV_FILE:?BACKEND_ENV_FILE obrigatorio}
+    environment:
+      ENVIRONMENT: production
+      QDRANT_URL: http://qdrant:6333
+      SEARXNG_BASE_URL: http://searxng:8080
+    command: ["python", "scripts/run_batch_worker.py", "--poll-seconds", "5"]
+    depends_on: [qdrant, searxng]
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    expose: ["6333", "6334"]
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+  searxng:
+    image: searxng/searxng:latest
+    expose: ["8080"]
+    environment:
+      SEARXNG_BASE_URL: http://searxng:8080/
+      SEARXNG_SECRET: ${SEARXNG_SECRET:?SEARXNG_SECRET obrigatorio}
+      SEARXNG_LIMITER: "false"
+    volumes:
+      - ../searxng/settings.yml:/etc/searxng/settings.yml:ro
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
+  caddy_config:
+  qdrant_data:

@@ -1,0 +1,2 @@
+FROM nvcr.io/nvidia/tritonserver:24.06-py3
+RUN pip install --no-cache-dir "sentence-transformers>=3.0.0" "numpy>=1.24.0"

@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  product-governance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install Python package
+        run: python -m pip install --upgrade pip && python -m pip install -e ".[dev]"
+      - name: Install and audit frontend dependencies
+        working-directory: frontend
+        run: |
+          npm ci
+          npm audit --audit-level=high
+      - name: Repository artifact gate
+        run: python scripts/check_no_tracked_runtime_artifacts.py
+      - name: Runtime gates
+        run: |
+          python scripts/check_single_runtime_pipeline.py
+          python scripts/check_no_mock_runtime.py
+          python scripts/build_runtime_usage_inventory.py --output final_case_evidence/runtime_usage_inventory.csv
+          python scripts/build_best_case_runtime_report.py --inventory final_case_evidence/runtime_usage_inventory.csv --output final_case_evidence/best_case_runtime_report.json
+          python scripts/audit_nvidia_corpus_freshness.py --fail-on-stale --fail-on-expired
+      - name: Lint release-critical code
+        run: |
+          ruff check \
+            src/api/main.py \
+            src/api/workflow_routes.py \
+            src/database/session.py \
+            src/orchestration/runner.py \
+            src/orchestration/service.py \
+            src/orchestration/worker.py \
+            src/repositories/workflow.py \
+            src/services/product/health_executor.py \
+            scripts/bootstrap_nvidia_corpus.py \
+            scripts/refresh_nvidia_corpus_metadata.py \
+            tests/unit/test_extractor_evidence_contract.py \
+            tests/unit/test_hybrid_retrieval_gap_taxonomy.py \
+            tests/unit/test_runtime_gap_evidence_integration.py \
+            tests/unit/test_tensorrt_corpus_source.py \
+            tests/unit/test_product_checkpointer_url.py \
+            tests/unit/test_rag_ingestion_release_calibration.py \
+            tests/unit/test_workflow_queue.py \
+            tests/unit/test_health_executor_release.py
+      - name: Focused tests
+        run: |
+          pytest -q \
+            tests/unit/test_best_case_runtime_report.py \
+            tests/unit/test_runtime_usage_inventory.py \
+            tests/unit/test_ai_native_model.py \
+            tests/unit/test_probabilistic_workflow_scoring.py \
+            tests/unit/test_rag_technique_registry.py \
+            tests/unit/test_rag_ingestion.py \
+            tests/unit/test_rag_ingestion_release_calibration.py \
+            tests/unit/test_rag_retrieval_intent.py \
+            tests/unit/test_adaptive_source_planner.py \
+            tests/unit/test_manual_seed_entity_signal.py \
+            tests/unit/test_workload_classifier.py \
+            tests/unit/test_radar_relevant_gaps.py \
+            tests/unit/test_activation_playbook_matcher.py \
+            tests/unit/test_radar_dashboard_runtime_gate.py \
+            tests/unit/test_extractor_evidence_contract.py \
+            tests/unit/test_hybrid_retrieval_gap_taxonomy.py \
+            tests/unit/test_runtime_gap_evidence_integration.py \
+            tests/unit/test_tensorrt_corpus_source.py \
+            tests/unit/test_product_checkpointer_url.py \
+            tests/unit/test_workflow_queue.py \
+            tests/unit/test_health_executor_release.py \
+            tests/evals/test_recommendation_baseline.py \
+            tests/acceptance/test_no_mock_in_production.py
+      - name: Verify Alembic upgrade and schema head
+        run: |
+          rm -f data/product/product.db
+          python -m alembic upgrade head
+          APP_MODE=test PRODUCT_DB_URL=sqlite:///data/product/product.db python - <<'PY'
+          from src.database.session import assert_product_schema_current, build_product_database
+          runtime = build_product_database("sqlite:///data/product/product.db")
+          assert_product_schema_current(runtime.engine)
+          print("Alembic schema is current")
+          PY
+      - name: Validate production Compose model
+        run: |
+          cp .env.example .env
+          docker compose config --quiet
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build

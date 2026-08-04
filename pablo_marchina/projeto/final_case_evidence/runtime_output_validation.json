@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "validated_commit": "83e82a8b8959228ee17c46f2d856f21e9526aad2",
+  "checks": {
+    "python_compile": "passed",
+    "undefined_names": "passed",
+    "runtime_regression_tests": "passed",
+    "docker_compose_config": "passed",
+    "frontend_production_build": "passed"
+  },
+  "scope": "source, regression, compose and frontend build validation; local live services require the release verification PowerShell script"
+}

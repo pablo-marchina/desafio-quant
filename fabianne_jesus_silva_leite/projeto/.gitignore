@@ -1,0 +1,24 @@
+# Ambiente virtual e segredos
+backend/.venv/
+.venv/
+.env
+.env.local
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+service-account*.json
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Frontend, para depois
+node_modules/
+dist/
+
+backend/knowledge_base/raw/
+backend/knowledge_base/processed/
+backend/knowledge_base/qdrant/

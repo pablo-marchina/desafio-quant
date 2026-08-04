@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "description": "Expected outputs for golden pipeline eval cases — Epic 17",
+    "pipeline_version": "Epic 16 baseline (tuned with actual outputs)",
+    "created": "2026-06-10"
+  },
+  "cases": {
+    "startup_high_fit": {
+      "motion_in": ["lack_evidence_more_research"],
+      "min_score": 10,
+      "max_score": 25,
+      "expected_gaps": ["healthcare_compliance_need", "high_latency", "computer_vision_need"],
+      "brief_min_sections": 5,
+      "has_approach_now": false
+    },
+    "startup_weak_evidence": {
+      "motion_in": ["not_recommended"],
+      "min_score": 0,
+      "max_score": 25,
+      "expected_gaps": [],
+      "brief_min_sections": 3,
+      "has_approach_now": false
+    },
+    "startup_non_ai": {
+      "motion_in": ["not_recommended"],
+      "min_score": 0,
+      "max_score": 20,
+      "expected_gaps": [],
+      "brief_min_sections": 3,
+      "has_approach_now": false
+    },
+    "startup_no_rag_context": {
+      "motion_in": ["lack_evidence_more_research"],
+      "min_score": 20,
+      "max_score": 40,
+      "expected_gaps": ["high_inference_cost", "high_latency"],
+      "brief_min_sections": 3
+    },
+    "startup_rag_supported": {
+      "motion_in": ["lack_evidence_more_research"],
+      "min_score": 5,
+      "max_score": 15,
+      "expected_gaps": ["high_inference_cost"],
+      "brief_min_sections": 3,
+      "rag_does_not_alter_motion": true,
+      "rag_context_in_brief": true,
+      "rag_context_not_in_evidence_used": true
+    },
+    "startup_validate_manually": {
+      "motion_in": ["lack_evidence_more_research", "not_recommended"],
+      "min_score": 0,
+      "max_score": 40,
+      "expected_gaps": [],
+      "brief_min_sections": 3,
+      "has_approach_now": false
+    },
+    "startup_monitor_or_discard": {
+      "motion_in": ["lack_evidence_more_research", "not_recommended", "monitor_and_nurture"],
+      "min_score": 0,
+      "max_score": 30,
+      "expected_gaps": ["high_latency"],
+      "brief_min_sections": 3,
+      "has_approach_now": false
+    }
+  }
+}

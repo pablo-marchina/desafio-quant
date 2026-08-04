@@ -1,0 +1,9 @@
+git status.env
+__pycache__/
+*.pyc
+.qdrant_local/
+qdrant_local/
+*.json
+!sources.json
+!categorias_gap.json
+.env

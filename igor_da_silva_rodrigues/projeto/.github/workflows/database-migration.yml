@@ -1,0 +1,27 @@
+name: Database Migration
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  migrate:
+    name: Aplicar migration aprovada
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Instalar cliente PostgreSQL
+        run: pip install "psycopg[binary]>=3.2,<4" "python-dotenv>=1,<2"
+      - name: Aplicar migration idempotente
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: python scripts/apply_supabase_migration.py

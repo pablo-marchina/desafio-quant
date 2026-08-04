@@ -1,0 +1,11 @@
+{
+  "url": "https://developer.nvidia.com/topics/ai/generative-ai/riva",
+  "fonte": "developer.nvidia.com",
+  "titulo": "NVIDIA Riva — Microservices de Fala e Tradução com Nemotron Speech",
+  "categoria": "produto",
+  "familia": "inferencia",
+  "tecnologia": "Nemotron Speech",
+  "setores": ["geral"],
+  "ia_tipos": ["NLP", "geracao de conteudo", "LLM"],
+  "texto": "NVIDIA Riva é a biblioteca de inferência otimizada para os modelos da família Nemotron Speech — uma coleção de modelos open-source acelerados por GPU para reconhecimento automático de fala (ASR), síntese de fala (TTS), tradução automática neural (NMT) e speech-to-speech em aproximadamente 40 idiomas.\n\nOs modelos são totalmente containerizados e otimizados para performance em tempo real e alto throughput offline, rodando em cloud, data centers, edge e dispositivos embarcados. A escala horizontal suporta centenas e milhares de streams paralelos simultaneamente.\n\nO ASR cobre idiomas como árabe, inglês, francês, alemão, hindi, italiano, japonês, coreano, mandarim, português, russo e espanhol — com modelos pré-treinados em milhares de horas de áudio em supercomputadores NVIDIA. O TTS é customizável em inglês, alemão, italiano, mandarim e espanhol, permitindo ajustar voz e entonação. A tradução neural suporta até 32 idiomas em pipelines text-to-text, speech-to-text ou speech-to-speech.\n\nOs modelos são fine-tunáveis em datasets customizados para domínios específicos — como vocabulário técnico de saúde, jurídico ou financeiro — acelerando o desenvolvimento de aplicações de voz especializadas. O acesso para prototipagem é gratuito via build.nvidia.com com endpoints gerenciados pela NVIDIA, e o deploy em produção é feito via NVIDIA AI Enterprise.\n\nRiva é especialmente relevante para startups que constroem agentes de IA com interface de voz, assistentes de atendimento ao cliente por telefone ou chatbots de voz multilíngues — onde fala está se tornando a interface primária de interação com agentes de IA."
+}

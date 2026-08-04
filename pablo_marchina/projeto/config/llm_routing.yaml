@@ -1,0 +1,83 @@
+# LLM Routing Configuration
+# Each task maps to a model/provider with explicit rationale and cost.
+# Decision doc: docs/architecture/llm_model_decision.md
+# Powered by LiteLLM (litellm) — unified API across all providers.
+# Provider prefix: provider/model (e.g., openai/gpt-4o, gemini/gemini-2.0-flash)
+
+routing:
+  structured_extraction:
+    provider: openai
+    model: gpt-4o-mini
+    rationale: Best JSON/schema adherence at lowest cost
+    max_tokens: 4096
+    temperature: 0.1
+    fallback_provider: ollama
+    fallback_model: llama3.1:8b
+    cost_per_1k_input: 0.00015
+    cost_per_1k_output: 0.00060
+
+  briefing_synthesis:
+    provider: openai
+    model: gpt-4o
+    rationale: Highest quality for final product output
+    max_tokens: 8192
+    temperature: 0.3
+    fallback_provider: google
+    fallback_model: gemini-2.0-flash
+    cost_per_1k_input: 0.00250
+    cost_per_1k_output: 0.01000
+
+  llm_judge:
+    provider: openai
+    model: gpt-4o-mini
+    rationale: Calibrated against human review for factual accuracy
+    max_tokens: 2048
+    temperature: 0.0
+    fallback_provider: groq
+    fallback_model: mixtral-8x7b-32768
+    cost_per_1k_input: 0.00015
+    cost_per_1k_output: 0.00060
+
+  query_rewriting:
+    provider: openai
+    model: gpt-4o-mini
+    rationale: Cheap + fast for query expansion
+    max_tokens: 1024
+    temperature: 0.3
+    fallback_provider: deepseek
+    fallback_model: deepseek-chat
+    cost_per_1k_input: 0.00015
+    cost_per_1k_output: 0.00060
+
+  nvidia_assisted:
+    provider: nvidia
+    model: llama-3.1-8b-instruct
+    rationale: First-party NVIDIA NIM via litellm; matches current NvidiaClient
+    max_tokens: 4096
+    temperature: 0.2
+    fallback_provider: ollama
+    fallback_model: llama3.1:8b
+    cost_per_1k_input: 0.0
+    cost_per_1k_output: 0.0
+
+  fallback_offline:
+    provider: ollama
+    model: llama3.1:8b
+    rationale: No API key needed, runs locally
+    max_tokens: 4096
+    temperature: 0.3
+    fallback_provider: null
+    fallback_model: null
+    cost_per_1k_input: 0.0
+    cost_per_1k_output: 0.0
+
+  simple_classification:
+    provider: deterministic
+    model: heuristic
+    rationale: No LLM needed for rule-based classification
+    max_tokens: 0
+    temperature: 0.0
+    fallback_provider: null
+    fallback_model: null
+    cost_per_1k_input: 0.0
+    cost_per_1k_output: 0.0

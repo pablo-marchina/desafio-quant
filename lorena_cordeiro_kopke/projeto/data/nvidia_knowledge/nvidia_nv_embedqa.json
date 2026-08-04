@@ -1,0 +1,11 @@
+{
+  "url": "https://build.nvidia.com/nvidia/nv-embedqa-e5-v5",
+  "fonte": "build.nvidia.com",
+  "titulo": "NV-EmbedQA — Modelo de Embedding NVIDIA para Busca Semântica e RAG",
+  "categoria": "produto",
+  "familia": "inferencia",
+  "tecnologia": "NV-EmbedQA",
+  "setores": ["geral"],
+  "ia_tipos": ["busca semantica", "NLP", "LLM", "recomendacao"],
+  "texto": "NV-EmbedQA é o modelo de embedding desenvolvido pela NVIDIA, otimizado especificamente para tarefas de recuperação de informação, busca semântica e RAG (Retrieval-Augmented Generation). Ele converte textos em vetores densos de alta dimensão que capturam significado semântico, permitindo que sistemas encontrem documentos relevantes por similaridade de conteúdo em vez de correspondência exata de palavras-chave.\n\nO modelo suporta contextos de até 512 tokens por chunk e foi treinado para maximizar a precisão em cenários de pergunta-resposta — o caso de uso central de sistemas RAG. Isso significa que quando uma startup usa NV-EmbedQA para indexar sua base de conhecimento e depois busca por uma query de usuário, o modelo entende a intenção semântica da pergunta e retorna os trechos mais relevantes mesmo quando as palavras exatas da pergunta não aparecem nos documentos indexados.\n\nPara startups construindo produtos de busca semântica, assistentes com base de conhecimento, chatbots com acesso a documentos internos ou sistemas de recomendação baseados em conteúdo, o NV-EmbedQA oferece uma alternativa ao uso de embeddings de OpenAI ou modelos genéricos open-source, com a vantagem de estar integrado ao ecossistema NVIDIA e disponível como NIM para deploy self-hosted. Isso é especialmente relevante para startups em setores como jurídico, saúde ou finanças, onde os documentos a serem indexados são sensíveis e não podem ser enviados para APIs externas.\n\nO modelo está disponível via NVIDIA API Catalog para uso imediato sem infraestrutura e como NIM para deploy em GPU NVIDIA própria ou alugada. A API retorna vetores compatíveis com qualquer banco vetorial — Qdrant, Pinecone, Weaviate, pgvector — e pode ser combinada com modelos de reranking do catálogo NVIDIA para melhorar ainda mais a precisão do pipeline de recuperação. Startups membros do NVIDIA Inception têm acesso a créditos de API para experimentar o NV-EmbedQA antes de decidir sobre infraestrutura própria."
+}

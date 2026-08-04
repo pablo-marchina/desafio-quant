@@ -1,0 +1,197 @@
+{
+  "$defs": {
+    "SearchQuery": {
+      "additionalProperties": true,
+      "properties": {
+        "consulta": {
+          "minLength": 1,
+          "title": "Consulta",
+          "type": "string"
+        },
+        "objetivo": {
+          "minLength": 1,
+          "title": "Objetivo",
+          "type": "string"
+        },
+        "camada": {
+          "maximum": 7,
+          "minimum": 1,
+          "title": "Camada",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "consulta",
+        "objetivo",
+        "camada"
+      ],
+      "title": "SearchQuery",
+      "type": "object"
+    },
+    "SearchTask": {
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "tipo": {
+          "enum": [
+            "busca_web",
+            "busca_site",
+            "acesso_direto",
+            "feed_rss",
+            "api_get"
+          ],
+          "title": "Tipo",
+          "type": "string"
+        },
+        "consulta": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Consulta"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "extrator": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Extrator"
+        },
+        "max_resultados": {
+          "anyOf": [
+            {
+              "maximum": 50,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Max Resultados"
+        },
+        "camada": {
+          "anyOf": [
+            {
+              "maximum": 7,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Camada"
+        },
+        "objetivo": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Objetivo"
+        }
+      },
+      "required": [
+        "id",
+        "tipo"
+      ],
+      "title": "SearchTask",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "site_oficial": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Site Oficial"
+    },
+    "hipotese_maturidade": {
+      "minLength": 1,
+      "title": "Hipotese Maturidade",
+      "type": "string"
+    },
+    "plano_consultas": {
+      "items": {
+        "$ref": "#/$defs/SearchQuery"
+      },
+      "title": "Plano Consultas",
+      "type": "array"
+    },
+    "tarefas": {
+      "items": {
+        "$ref": "#/$defs/SearchTask"
+      },
+      "title": "Tarefas",
+      "type": "array"
+    },
+    "fontes_prioritarias": {
+      "items": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "type": "object"
+      },
+      "title": "Fontes Prioritarias",
+      "type": "array"
+    },
+    "observacoes": {
+      "default": "",
+      "title": "Observacoes",
+      "type": "string"
+    }
+  },
+  "required": [
+    "startup",
+    "hipotese_maturidade",
+    "plano_consultas",
+    "tarefas"
+  ],
+  "title": "SearchPlanOutput",
+  "type": "object"
+}

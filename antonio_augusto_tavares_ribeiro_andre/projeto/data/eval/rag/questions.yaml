@@ -1,0 +1,93 @@
+# Conjunto de perguntas NVIDIA para avaliação RAGAS do RAG (F3.9).
+#
+# Cada pergunta é respondível pela base de conhecimento curada (F3.1) e tem uma resposta de
+# referência (`ground_truth`) ancorada no texto dos snapshots de data/knowledge_base/docs/ —
+# o vocabulário casa de propósito com os chunks (F3.2) para as métricas lexicais (faithfulness,
+# context recall/precision) terem sinal. `reference_techs` lista as techs que a recuperação
+# deveria trazer (rastreabilidade da cobertura, F3.8). Offline e versionado, como o eval set
+# rotulado (F1.12) — o loader é packages/eval/ragas.py (load_rag_questions).
+#
+# Chave de topo `questions:` (NÃO `entries:`) para o loader do eval set de classificação
+# (packages/eval/dataset.py, que varre data/eval/*.yaml por `entries`) ignorar este arquivo;
+# de toda forma ele vive em data/eval/rag/ (subpasta), fora do glob não-recursivo daquele loader.
+questions:
+  - id: q-nim-graduacao
+    question: >-
+      O que é o NVIDIA NIM e como ele ajuda uma startup a migrar de APIs externas de
+      inferência para self-hosted na própria GPU?
+    ground_truth: >-
+      NVIDIA NIM é um conjunto de microsserviços de inferência empacotados como contêineres
+      prontos para produção, expondo cada modelo atrás de uma API compatível com OpenAI com o
+      motor otimizado por TensorRT-LLM e Triton. O mesmo contêiner roda em nuvem, data center
+      ou GPU local, então a startup gradua de API gerenciada para self-hosted, reduzindo custo
+      por token e latência com mínima mudança de código.
+    reference_techs: ["NVIDIA NIM"]
+
+  - id: q-nemo-customizacao
+    question: >-
+      Como o NVIDIA NeMo permite customizar modelos generativos com os dados proprietários
+      da startup?
+    ground_truth: >-
+      O NVIDIA NeMo é a plataforma end-to-end para construir, customizar e operar modelos de
+      IA generativa. O NeMo Customizer faz fine-tuning com técnicas como LoRA e PEFT para
+      adaptar modelos ao domínio proprietário, transformando o dado próprio em moat de produto;
+      a plataforma cobre também curadoria de dados, recuperação (RAG), guardrails e avaliação.
+    reference_techs: ["NVIDIA NeMo"]
+
+  - id: q-guardrails-governanca
+    question: >-
+      Quais tecnologias NVIDIA impõem trilhos de segurança e avaliação de qualidade para
+      governança em aplicações de LLM?
+    ground_truth: >-
+      O NeMo Guardrails adiciona trilhos programáveis de tópico, segurança e anti-jailbreak a
+      aplicações de LLM, ancorando as respostas em fontes recuperadas. O NeMo Evaluator faz a
+      avaliação sistemática de qualidade de modelos e pipelines de RAG, com métricas como
+      faithfulness, precisão e recall de contexto e relevância da resposta. Juntos sustentam a
+      governança de IA recomendada para produção.
+    reference_techs: ["NeMo Guardrails", "NVIDIA NeMo"]
+
+  - id: q-serving-inferencia
+    question: >-
+      Que tecnologias NVIDIA otimizam e servem modelos de inferência em produção com alto
+      throughput e baixa latência?
+    ground_truth: >-
+      O NVIDIA Triton Inference Server serve modelos de qualquer framework em produção com
+      batching dinâmico e execução concorrente para maximizar throughput sem estourar a
+      latência. O TensorRT-LLM otimiza e compila a inferência de LLM com kernels otimizados,
+      quantização e in-flight batching, elevando tokens por segundo e reduzindo o custo por
+      token. O NVIDIA NIM empacota esse motor otimizado em microsserviços prontos para produção.
+    reference_techs: ["NVIDIA Triton Inference Server", "TensorRT-LLM", "NVIDIA NIM"]
+
+  - id: q-riva-fala
+    question: >-
+      Qual tecnologia NVIDIA oferece reconhecimento de fala (ASR) e síntese de voz (TTS) para
+      aplicações de voz e call center?
+    ground_truth: >-
+      O NVIDIA Riva é o conjunto de microsserviços para IA de fala em produção, com
+      reconhecimento de fala (ASR), síntese de voz (TTS) e tradução, multilíngue e com baixa
+      latência, servido via NIM. É a recomendação típica para startups de voz, call center e
+      transcrição, combinando Riva com NIM para servir a inferência com custo controlado.
+    reference_techs: ["NVIDIA Riva"]
+
+  - id: q-monai-saude
+    question: >-
+      Qual tecnologia NVIDIA é indicada para startups de saúde que trabalham com imagem médica
+      e diagnóstico?
+    ground_truth: >-
+      MONAI (Medical Open Network for AI) é o framework open-source baseado em PyTorch para
+      deep learning em imagem médica, co-liderado pela NVIDIA, com blocos de domínio para
+      radiologia e patologia, anotação assistida por IA (MONAI Label), implantação clínica
+      (MONAI Deploy) e aprendizado federado. Combina com NVIDIA Clara, a plataforma de saúde,
+      e com NIM para servir os modelos.
+    reference_techs: ["MONAI", "NVIDIA Clara"]
+
+  - id: q-inception-startups
+    question: >-
+      O que o programa NVIDIA Inception oferece para startups de IA?
+    ground_truth: >-
+      O NVIDIA Inception é o programa global e gratuito, sem participação acionária, para
+      startups que constroem produtos sobre IA. Oferece créditos em nuvem e descontos em GPUs e
+      software, capacitação técnica (Deep Learning Institute, SDKs, NIMs e early access a NeMo,
+      Triton, TensorRT-LLM, RAPIDS e Riva), além de go-to-market e conexão com investidores via
+      Inception VC Alliance, com tiers por maturidade da empresa.
+    reference_techs: ["NVIDIA Inception"]

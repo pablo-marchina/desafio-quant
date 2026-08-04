@@ -1,0 +1,47 @@
+# =====================================================================
+# NVISION — Infra local mínima para o MVP (ux.md §7.8)
+# Sobe apenas os dois bancos que o projeto exige:
+#   - PostgreSQL: dados estruturados de startups
+#   - Qdrant:     banco vetorial do RAG NVIDIA
+#
+# A aplicação (FastAPI + frontend) roda fora do compose durante o
+# desenvolvimento para iteração rápida. Kubernetes/Celery estão
+# explicitamente fora de escopo (ux.md §11).
+#
+#   docker compose up -d      # sobe os bancos
+#   docker compose down       # derruba (mantém os volumes)
+# =====================================================================
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: nvision_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-nvision}
+      POSTGRES_USER: ${POSTGRES_USER:-nvision}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nvision}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # Schema inicial aplicado automaticamente na primeira subida
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nvision}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: nvision_qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"   # REST API
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+volumes:
+  postgres_data:
+  qdrant_storage:

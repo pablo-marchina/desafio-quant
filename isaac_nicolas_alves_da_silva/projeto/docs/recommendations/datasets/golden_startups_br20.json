@@ -1,0 +1,223 @@
+{
+  "dataset_id": "golden_startups_br20",
+  "version": "0.1.0",
+  "created_at": "2026-06-29",
+  "country_focus": "BR",
+  "label_scope": "public product positioning",
+  "objective": "Create a first real Brazilian startup dataset to calibrate AI maturity, NVIDIA recommendation fit, confidence, and briefing explanations.",
+  "notes": [
+    "Expected labels are seed labels for human review, not final truth.",
+    "The backend should run URL ingestion for each primary website.",
+    "After the run, review AI maturity, evidence quality, top recommendations, confidence, and briefing content.",
+    "Non-AI items are controls: they should not receive strong technical NVIDIA recommendations unless strong evidence is found."
+  ],
+  "run_policy": {
+    "endpoint": "POST /url-ingestion/jobs",
+    "source_type": "startup_evidence",
+    "recommended_batch_size": 5,
+    "wait_between_submissions_seconds": 2,
+    "requires_worker": true
+  },
+  "items": [
+    {
+      "id": "br-ai-native-001",
+      "name": "Dadosfera",
+      "website_url": "https://dadosfera.com.br/",
+      "expected_ai_maturity": "ai_native",
+      "segment": "data platform",
+      "why_in_dataset": "Brazilian data and AI platform; useful to test Portuguese AI signals, agent wording, analytics and data stack recommendations.",
+      "expected_nvidia_fit": ["rapids", "cudf", "cuml", "nvidia-ai-enterprise"],
+      "review_focus": ["analytics workload", "Portuguese AI wording", "false positives around agent/agentes"]
+    },
+    {
+      "id": "br-ai-native-002",
+      "name": "NeuralMind",
+      "website_url": "https://www.neuralmind.ai/",
+      "expected_ai_maturity": "ai_native",
+      "segment": "NLP and document AI",
+      "why_in_dataset": "AI-first company focused on language/document intelligence; should test LLM/NLP fit.",
+      "expected_nvidia_fit": ["nvidia-nim", "nvidia-nemo", "tensorrt-llm", "nemo-guardrails"],
+      "review_focus": ["NLP workload", "LLM evidence", "technical source depth"]
+    },
+    {
+      "id": "br-ai-native-003",
+      "name": "Nama",
+      "website_url": "https://www.nama.ai/",
+      "expected_ai_maturity": "ai_native",
+      "segment": "conversational AI",
+      "why_in_dataset": "Conversational AI product; useful to test assistant, chatbot, agent and guardrails recommendations.",
+      "expected_nvidia_fit": ["nvidia-nim", "nemo-guardrails", "nvidia-nemo"],
+      "review_focus": ["assistant vs agent", "guardrails fit", "API-only vs own model"]
+    },
+    {
+      "id": "br-ai-native-004",
+      "name": "Aquarela Analytics",
+      "website_url": "https://www.aquare.la/",
+      "expected_ai_maturity": "ai_native",
+      "segment": "advanced analytics",
+      "why_in_dataset": "Analytics and AI company; useful to test RAPIDS/cuDF/cuML vs generic AI Enterprise fit.",
+      "expected_nvidia_fit": ["rapids", "cudf", "cuml", "nvidia-ai-enterprise"],
+      "review_focus": ["tabular analytics", "data science evidence", "GPU need inference"]
+    },
+    {
+      "id": "br-ai-native-005",
+      "name": "Deep Legal",
+      "website_url": "https://www.deeplegal.com.br/",
+      "expected_ai_maturity": "ai_native",
+      "segment": "legal analytics",
+      "why_in_dataset": "Legal intelligence and analytics product; good for testing legal-domain AI evidence and confidence.",
+      "expected_nvidia_fit": ["rapids", "cuml", "nvidia-nim", "nvidia-ai-enterprise"],
+      "review_focus": ["legal analytics", "AI-enabled vs AI-native boundary", "business evidence"]
+    },
+    {
+      "id": "br-ai-native-006",
+      "name": "TRAIVE",
+      "website_url": "https://www.traivefinance.com/",
+      "expected_ai_maturity": "ai_native",
+      "segment": "agri-fintech AI",
+      "why_in_dataset": "Credit and risk intelligence for agribusiness; useful for analytics, risk models and data evidence.",
+      "expected_nvidia_fit": ["rapids", "cuml", "nvidia-ai-enterprise"],
+      "review_focus": ["risk model evidence", "analytics workload", "independent validation"]
+    },
+    {
+      "id": "br-ai-native-007",
+      "name": "Agrotools",
+      "website_url": "https://agrotools.com.br/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "agri intelligence",
+      "why_in_dataset": "Data/geospatial intelligence for agribusiness; useful to test analytics and possible AI-enabled classification.",
+      "expected_nvidia_fit": ["rapids", "cuml", "nvidia-ai-enterprise"],
+      "review_focus": ["geospatial/data signals", "AI-native vs AI-enabled", "source specificity"]
+    },
+    {
+      "id": "br-ai-native-008",
+      "name": "Cortex",
+      "website_url": "https://www.cortex-intelligence.com/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "sales intelligence",
+      "why_in_dataset": "Business intelligence and data platform; useful as a hard case for analytics vs generic AI claims.",
+      "expected_nvidia_fit": ["rapids", "nvidia-ai-enterprise"],
+      "review_focus": ["AI marketing vs technical evidence", "analytics recommendations", "confidence cap"]
+    },
+    {
+      "id": "br-ai-enabled-001",
+      "name": "Unico",
+      "website_url": "https://www.unico.io/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "digital identity",
+      "why_in_dataset": "Identity and biometrics product; should test AI-enabled classification and possible computer vision evidence.",
+      "expected_nvidia_fit": ["tensorrt", "triton-inference-server", "nvidia-ai-enterprise"],
+      "review_focus": ["biometrics evidence", "vision workload", "strong recommendation threshold"]
+    },
+    {
+      "id": "br-ai-enabled-002",
+      "name": "CloudWalk",
+      "website_url": "https://www.cloudwalk.io/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "fintech payments",
+      "why_in_dataset": "Brazilian fintech with technology-heavy positioning; useful to test whether AI evidence is real or inferred.",
+      "expected_nvidia_fit": ["nvidia-ai-enterprise", "rapids"],
+      "review_focus": ["fintech risk analytics", "avoid overclassifying as AI-native", "source depth"]
+    },
+    {
+      "id": "br-ai-enabled-003",
+      "name": "Jusbrasil",
+      "website_url": "https://www.jusbrasil.com.br/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "legaltech",
+      "why_in_dataset": "Large legal platform with AI features; good to test AI-enabled product claims and legal assistant evidence.",
+      "expected_nvidia_fit": ["nvidia-nim", "nemo-guardrails", "nvidia-ai-enterprise"],
+      "review_focus": ["AI feature vs core product", "guardrails", "RAG/search evidence"]
+    },
+    {
+      "id": "br-ai-enabled-004",
+      "name": "Loggi",
+      "website_url": "https://www.loggi.com/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "logistics",
+      "why_in_dataset": "Logistics platform likely to have optimization/data signals; useful to avoid LLM bias.",
+      "expected_nvidia_fit": ["rapids", "cuml", "nvidia-ai-enterprise"],
+      "review_focus": ["optimization vs AI", "analytics workload", "non-LLM recommendations"]
+    },
+    {
+      "id": "br-ai-enabled-005",
+      "name": "iFood",
+      "website_url": "https://www.ifood.com.br/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "food delivery marketplace",
+      "why_in_dataset": "Large digital platform; useful to test recommendation and analytics signals without assuming AI-native.",
+      "expected_nvidia_fit": ["rapids", "cuml", "nvidia-ai-enterprise"],
+      "review_focus": ["recommendation/analytics", "scale signal", "avoid generic LLM fit"]
+    },
+    {
+      "id": "br-ai-enabled-006",
+      "name": "QuintoAndar",
+      "website_url": "https://www.quintoandar.com.br/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "real estate marketplace",
+      "why_in_dataset": "Marketplace with data/automation signals; useful as an AI-enabled or weak-AI boundary case.",
+      "expected_nvidia_fit": ["rapids", "nvidia-ai-enterprise"],
+      "review_focus": ["marketplace analytics", "weak AI signals", "false positive control"]
+    },
+    {
+      "id": "br-ai-enabled-007",
+      "name": "Zenvia",
+      "website_url": "https://www.zenvia.com/",
+      "expected_ai_maturity": "ai_enabled",
+      "segment": "customer communications",
+      "why_in_dataset": "Customer communication platform with automation/AI assistant potential; useful for NIM/Guardrails fit.",
+      "expected_nvidia_fit": ["nvidia-nim", "nemo-guardrails", "nvidia-ai-enterprise"],
+      "review_focus": ["conversational AI", "customer service automation", "API vs own model"]
+    },
+    {
+      "id": "br-control-001",
+      "name": "Asaas",
+      "website_url": "https://www.asaas.com/",
+      "expected_ai_maturity": "non_ai",
+      "segment": "fintech billing",
+      "why_in_dataset": "Control company: digital fintech product but not obviously AI-first from public positioning.",
+      "expected_nvidia_fit": [],
+      "review_focus": ["false positive prevention", "fintech does not imply AI", "strong rec should be absent"]
+    },
+    {
+      "id": "br-control-002",
+      "name": "Olist",
+      "website_url": "https://olist.com/",
+      "expected_ai_maturity": "non_ai",
+      "segment": "commerce enablement",
+      "why_in_dataset": "Control company: marketplace/ecommerce enablement; useful to catch generic automation false positives.",
+      "expected_nvidia_fit": [],
+      "review_focus": ["commerce automation vs AI", "false positive prevention", "confidence cap"]
+    },
+    {
+      "id": "br-control-003",
+      "name": "Conta Azul",
+      "website_url": "https://contaazul.com/",
+      "expected_ai_maturity": "non_ai",
+      "segment": "SMB accounting SaaS",
+      "why_in_dataset": "Control SaaS; should not get technical NVIDIA recommendations without clear AI evidence.",
+      "expected_nvidia_fit": [],
+      "review_focus": ["SaaS is not AI", "avoid workflow automation false positives", "non-AI label"]
+    },
+    {
+      "id": "br-control-004",
+      "name": "Sympla",
+      "website_url": "https://www.sympla.com.br/",
+      "expected_ai_maturity": "non_ai",
+      "segment": "events marketplace",
+      "why_in_dataset": "Control marketplace; useful to test that consumer marketplaces do not receive AI infra recommendations.",
+      "expected_nvidia_fit": [],
+      "review_focus": ["marketplace false positives", "no technical NVIDIA recs", "briefing restraint"]
+    },
+    {
+      "id": "br-control-005",
+      "name": "Buser",
+      "website_url": "https://www.buser.com.br/",
+      "expected_ai_maturity": "non_ai",
+      "segment": "mobility marketplace",
+      "why_in_dataset": "Control mobility platform; useful for logistics/marketplace false positive checks.",
+      "expected_nvidia_fit": [],
+      "review_focus": ["mobility does not imply AI", "analytics-only if evidence exists", "avoid strong recs"]
+    }
+  ]
+}

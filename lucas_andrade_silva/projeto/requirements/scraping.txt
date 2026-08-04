@@ -1,0 +1,15 @@
+-r base.txt
+firecrawl-py==4.28.2
+feedparser
+psycopg2-binary
+langchain-openai
+langchain-text-splitters==1.1.2
+lxml==6.1.1
+lxml-html-clean==0.4.5
+trafilatura==2.1.0
+beautifulsoup4
+ddgs
+requests
+playwright
+pypdf
+supabase

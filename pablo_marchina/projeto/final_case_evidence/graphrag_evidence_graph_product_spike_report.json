@@ -1,0 +1,498 @@
+{
+  "baseline_score": 0.2,
+  "candidate_score": 1.0,
+  "case_count": 2,
+  "cases": [
+    {
+      "baseline_output": {
+        "alternatives_lost": [],
+        "gap_type": "high_latency",
+        "graph_completeness_score": 0.0,
+        "lineage_paths": [],
+        "provenance_coverage": 1.0,
+        "source_ids": [
+          "triton",
+          "triton_performance"
+        ],
+        "technology": "Triton Inference Server"
+      },
+      "baseline_score": 0.2,
+      "candidate_output": {
+        "alternatives_lost": [
+          {
+            "alternative": "Generic autoscaling",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "triton_latency",
+              "triton_perf_analyzer"
+            ],
+            "lost_to": "Triton Inference Server",
+            "reason": "Generic autoscaling remains unpromoted because no local evidence path beats the source-backed Triton Inference Server path in this spike."
+          },
+          {
+            "alternative": "Custom model server",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "triton_latency",
+              "triton_perf_analyzer"
+            ],
+            "lost_to": "Triton Inference Server",
+            "reason": "Custom model server remains unpromoted because no local evidence path beats the source-backed Triton Inference Server path in this spike."
+          }
+        ],
+        "graph_completeness_score": 1.0,
+        "lineage_paths": [
+          [
+            "source:triton_latency",
+            "gap:high_latency",
+            "technology:triton_inference_server"
+          ],
+          [
+            "source:triton_perf_analyzer",
+            "gap:high_latency",
+            "technology:triton_inference_server"
+          ]
+        ],
+        "lineage_summary": "2 lineage path(s), 2 source node(s), 2 alternative(s) lost.",
+        "provenance_coverage": 1.0
+      },
+      "candidate_score": 1.0,
+      "case_id": "latency_triton_lineage",
+      "description": "Latency recommendation should expose source-gap-technology lineage and losing alternatives.",
+      "graph": {
+        "alternatives_lost": [
+          {
+            "alternative": "Generic autoscaling",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "triton_latency",
+              "triton_perf_analyzer"
+            ],
+            "lost_to": "Triton Inference Server",
+            "reason": "Generic autoscaling remains unpromoted because no local evidence path beats the source-backed Triton Inference Server path in this spike."
+          },
+          {
+            "alternative": "Custom model server",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "triton_latency",
+              "triton_perf_analyzer"
+            ],
+            "lost_to": "Triton Inference Server",
+            "reason": "Custom model server remains unpromoted because no local evidence path beats the source-backed Triton Inference Server path in this spike."
+          }
+        ],
+        "edges": [
+          {
+            "confidence": 1.0,
+            "evidence_ids": [
+              "triton_latency"
+            ],
+            "reason": "triton links evidence to gap high_latency.",
+            "relation": "supports_gap",
+            "source": "source:triton_latency",
+            "target": "gap:high_latency"
+          },
+          {
+            "confidence": 1.0,
+            "evidence_ids": [
+              "triton_latency"
+            ],
+            "reason": "triton links evidence to technology Triton Inference Server.",
+            "relation": "supports_technology",
+            "source": "source:triton_latency",
+            "target": "technology:triton_inference_server"
+          },
+          {
+            "confidence": 0.98,
+            "evidence_ids": [
+              "triton_perf_analyzer"
+            ],
+            "reason": "triton_performance links evidence to gap high_latency.",
+            "relation": "supports_gap",
+            "source": "source:triton_perf_analyzer",
+            "target": "gap:high_latency"
+          },
+          {
+            "confidence": 0.98,
+            "evidence_ids": [
+              "triton_perf_analyzer"
+            ],
+            "reason": "triton_performance links evidence to technology Triton Inference Server.",
+            "relation": "supports_technology",
+            "source": "source:triton_perf_analyzer",
+            "target": "technology:triton_inference_server"
+          },
+          {
+            "confidence": 0.99,
+            "evidence_ids": [
+              "triton_latency",
+              "triton_perf_analyzer"
+            ],
+            "reason": "At least one source supports both the diagnosed gap and the NVIDIA technology.",
+            "relation": "maps_gap_to_technology",
+            "source": "gap:high_latency",
+            "target": "technology:triton_inference_server"
+          },
+          {
+            "confidence": 0.75,
+            "evidence_ids": [
+              "triton_latency",
+              "triton_perf_analyzer"
+            ],
+            "reason": "Generic autoscaling remains unpromoted because no local evidence path beats the source-backed Triton Inference Server path in this spike.",
+            "relation": "lost_to",
+            "source": "alternative:generic_autoscaling",
+            "target": "technology:triton_inference_server"
+          },
+          {
+            "confidence": 0.75,
+            "evidence_ids": [
+              "triton_latency",
+              "triton_perf_analyzer"
+            ],
+            "reason": "Custom model server remains unpromoted because no local evidence path beats the source-backed Triton Inference Server path in this spike.",
+            "relation": "lost_to",
+            "source": "alternative:custom_model_server",
+            "target": "technology:triton_inference_server"
+          }
+        ],
+        "lineage_paths": [
+          [
+            "source:triton_latency",
+            "gap:high_latency",
+            "technology:triton_inference_server"
+          ],
+          [
+            "source:triton_perf_analyzer",
+            "gap:high_latency",
+            "technology:triton_inference_server"
+          ]
+        ],
+        "metrics": {
+          "alternatives_lost_count": 2,
+          "edge_count": 7,
+          "graph_completeness_score": 1.0,
+          "lineage_path_count": 2,
+          "provenance_coverage": 1.0,
+          "source_count": 2
+        },
+        "nodes": [
+          {
+            "label": "high_latency",
+            "metadata": {},
+            "node_id": "gap:high_latency",
+            "node_type": "gap"
+          },
+          {
+            "label": "Triton Inference Server",
+            "metadata": {},
+            "node_id": "technology:triton_inference_server",
+            "node_type": "technology"
+          },
+          {
+            "label": "Triton Inference Server",
+            "metadata": {
+              "chunk_id": "triton_latency",
+              "gap_types": [
+                "high_latency",
+                "high_inference_cost"
+              ],
+              "is_active": true,
+              "product": "Triton Inference Server",
+              "relevance_score": 0.86,
+              "source_id": "triton",
+              "url": "https://docs.nvidia.com/triton/"
+            },
+            "node_id": "source:triton_latency",
+            "node_type": "source"
+          },
+          {
+            "label": "Triton Performance Analyzer",
+            "metadata": {
+              "chunk_id": "triton_perf_analyzer",
+              "gap_types": [
+                "high_latency"
+              ],
+              "is_active": true,
+              "product": "Triton Inference Server",
+              "relevance_score": 0.78,
+              "source_id": "triton_performance",
+              "url": "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/perf_analyzer/"
+            },
+            "node_id": "source:triton_perf_analyzer",
+            "node_type": "source"
+          },
+          {
+            "label": "Generic autoscaling",
+            "metadata": {
+              "lost_to": "Triton Inference Server"
+            },
+            "node_id": "alternative:generic_autoscaling",
+            "node_type": "alternative"
+          },
+          {
+            "label": "Custom model server",
+            "metadata": {
+              "lost_to": "Triton Inference Server"
+            },
+            "node_id": "alternative:custom_model_server",
+            "node_type": "alternative"
+          }
+        ],
+        "warnings": []
+      },
+      "quality_delta": 0.8
+    },
+    {
+      "baseline_output": {
+        "alternatives_lost": [],
+        "gap_type": "external_api_dependency",
+        "graph_completeness_score": 0.0,
+        "lineage_paths": [],
+        "provenance_coverage": 1.0,
+        "source_ids": [
+          "nim",
+          "nim_operations"
+        ],
+        "technology": "NVIDIA NIM"
+      },
+      "baseline_score": 0.2,
+      "candidate_output": {
+        "alternatives_lost": [
+          {
+            "alternative": "Third-party hosted endpoint",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "nim_endpoint",
+              "nim_observability"
+            ],
+            "lost_to": "NVIDIA NIM",
+            "reason": "Third-party hosted endpoint remains unpromoted because no local evidence path beats the source-backed NVIDIA NIM path in this spike."
+          },
+          {
+            "alternative": "Unmanaged OSS endpoint",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "nim_endpoint",
+              "nim_observability"
+            ],
+            "lost_to": "NVIDIA NIM",
+            "reason": "Unmanaged OSS endpoint remains unpromoted because no local evidence path beats the source-backed NVIDIA NIM path in this spike."
+          }
+        ],
+        "graph_completeness_score": 1.0,
+        "lineage_paths": [
+          [
+            "source:nim_endpoint",
+            "gap:external_api_dependency",
+            "technology:nvidia_nim"
+          ],
+          [
+            "source:nim_observability",
+            "gap:external_api_dependency",
+            "technology:nvidia_nim"
+          ]
+        ],
+        "lineage_summary": "2 lineage path(s), 2 source node(s), 2 alternative(s) lost.",
+        "provenance_coverage": 1.0
+      },
+      "candidate_score": 1.0,
+      "case_id": "api_dependency_nim_lineage",
+      "description": "External API dependency recommendation should show NIM evidence and alternatives lost.",
+      "graph": {
+        "alternatives_lost": [
+          {
+            "alternative": "Third-party hosted endpoint",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "nim_endpoint",
+              "nim_observability"
+            ],
+            "lost_to": "NVIDIA NIM",
+            "reason": "Third-party hosted endpoint remains unpromoted because no local evidence path beats the source-backed NVIDIA NIM path in this spike."
+          },
+          {
+            "alternative": "Unmanaged OSS endpoint",
+            "confidence": 0.75,
+            "evidence_ids": [
+              "nim_endpoint",
+              "nim_observability"
+            ],
+            "lost_to": "NVIDIA NIM",
+            "reason": "Unmanaged OSS endpoint remains unpromoted because no local evidence path beats the source-backed NVIDIA NIM path in this spike."
+          }
+        ],
+        "edges": [
+          {
+            "confidence": 1.0,
+            "evidence_ids": [
+              "nim_endpoint"
+            ],
+            "reason": "nim links evidence to gap external_api_dependency.",
+            "relation": "supports_gap",
+            "source": "source:nim_endpoint",
+            "target": "gap:external_api_dependency"
+          },
+          {
+            "confidence": 1.0,
+            "evidence_ids": [
+              "nim_endpoint"
+            ],
+            "reason": "nim links evidence to technology NVIDIA NIM.",
+            "relation": "supports_technology",
+            "source": "source:nim_endpoint",
+            "target": "technology:nvidia_nim"
+          },
+          {
+            "confidence": 0.94,
+            "evidence_ids": [
+              "nim_observability"
+            ],
+            "reason": "nim_operations links evidence to gap external_api_dependency.",
+            "relation": "supports_gap",
+            "source": "source:nim_observability",
+            "target": "gap:external_api_dependency"
+          },
+          {
+            "confidence": 0.94,
+            "evidence_ids": [
+              "nim_observability"
+            ],
+            "reason": "nim_operations links evidence to technology NVIDIA NIM.",
+            "relation": "supports_technology",
+            "source": "source:nim_observability",
+            "target": "technology:nvidia_nim"
+          },
+          {
+            "confidence": 0.97,
+            "evidence_ids": [
+              "nim_endpoint",
+              "nim_observability"
+            ],
+            "reason": "At least one source supports both the diagnosed gap and the NVIDIA technology.",
+            "relation": "maps_gap_to_technology",
+            "source": "gap:external_api_dependency",
+            "target": "technology:nvidia_nim"
+          },
+          {
+            "confidence": 0.75,
+            "evidence_ids": [
+              "nim_endpoint",
+              "nim_observability"
+            ],
+            "reason": "Third-party hosted endpoint remains unpromoted because no local evidence path beats the source-backed NVIDIA NIM path in this spike.",
+            "relation": "lost_to",
+            "source": "alternative:third-party_hosted_endpoint",
+            "target": "technology:nvidia_nim"
+          },
+          {
+            "confidence": 0.75,
+            "evidence_ids": [
+              "nim_endpoint",
+              "nim_observability"
+            ],
+            "reason": "Unmanaged OSS endpoint remains unpromoted because no local evidence path beats the source-backed NVIDIA NIM path in this spike.",
+            "relation": "lost_to",
+            "source": "alternative:unmanaged_oss_endpoint",
+            "target": "technology:nvidia_nim"
+          }
+        ],
+        "lineage_paths": [
+          [
+            "source:nim_endpoint",
+            "gap:external_api_dependency",
+            "technology:nvidia_nim"
+          ],
+          [
+            "source:nim_observability",
+            "gap:external_api_dependency",
+            "technology:nvidia_nim"
+          ]
+        ],
+        "metrics": {
+          "alternatives_lost_count": 2,
+          "edge_count": 7,
+          "graph_completeness_score": 1.0,
+          "lineage_path_count": 2,
+          "provenance_coverage": 1.0,
+          "source_count": 2
+        },
+        "nodes": [
+          {
+            "label": "external_api_dependency",
+            "metadata": {},
+            "node_id": "gap:external_api_dependency",
+            "node_type": "gap"
+          },
+          {
+            "label": "NVIDIA NIM",
+            "metadata": {},
+            "node_id": "technology:nvidia_nim",
+            "node_type": "technology"
+          },
+          {
+            "label": "NVIDIA NIM",
+            "metadata": {
+              "chunk_id": "nim_endpoint",
+              "gap_types": [
+                "external_api_dependency",
+                "high_inference_cost"
+              ],
+              "is_active": true,
+              "product": "NVIDIA NIM",
+              "relevance_score": 0.83,
+              "source_id": "nim",
+              "url": "https://docs.nvidia.com/nim/"
+            },
+            "node_id": "source:nim_endpoint",
+            "node_type": "source"
+          },
+          {
+            "label": "NVIDIA NIM Operations",
+            "metadata": {
+              "chunk_id": "nim_observability",
+              "gap_types": [
+                "external_api_dependency",
+                "observability_gap"
+              ],
+              "is_active": true,
+              "product": "NVIDIA NIM",
+              "relevance_score": 0.74,
+              "source_id": "nim_operations",
+              "url": "https://docs.nvidia.com/nim/"
+            },
+            "node_id": "source:nim_observability",
+            "node_type": "source"
+          },
+          {
+            "label": "Third-party hosted endpoint",
+            "metadata": {
+              "lost_to": "NVIDIA NIM"
+            },
+            "node_id": "alternative:third-party_hosted_endpoint",
+            "node_type": "alternative"
+          },
+          {
+            "label": "Unmanaged OSS endpoint",
+            "metadata": {
+              "lost_to": "NVIDIA NIM"
+            },
+            "node_id": "alternative:unmanaged_oss_endpoint",
+            "node_type": "alternative"
+          }
+        ],
+        "warnings": []
+      },
+      "quality_delta": 0.8
+    }
+  ],
+  "decision": "PROMOTE_TO_PRODUCT_SPIKE",
+  "generated_at": "2026-07-01T05:58:30.305521+00:00",
+  "methodology": "Compares baseline evidence summaries against deterministic source-gap-technology evidence graphs. This justifies product spike work, not default runtime adoption.",
+  "min_delta": 0.2,
+  "quality_delta": 0.8,
+  "regression_count": 0,
+  "report_id": "graphrag_evidence_graph_product_spike_report",
+  "status": "PASS"
+}

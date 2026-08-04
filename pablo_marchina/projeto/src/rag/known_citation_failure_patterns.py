@@ -1,0 +1,43 @@
+"""known citation failure patterns
+
+Hypothesis: Evaluate whether known citation failure patterns improves final product output without paid dependency.
+Category: 8.43 Memory and Negative Learning
+Expected runtime use: candidate_or_supporting_governance
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from src.rag.schemas import RetrievedContext
+
+
+class KnownCitationFailurePatterns:
+    """known citation failure patterns"""
+
+    def __init__(self, config: Any | None = None) -> None:
+        self.config = config or {}
+
+    def run(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        return self._apply(contexts, **kwargs)
+
+    def _apply(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        patterns = [
+            "according to",
+            "source says",
+            "as reported by",
+            "citation needed",
+            "reference missing",
+            "unverified source",
+        ]
+
+        for ctx in contexts:
+            fail_count = sum(1 for p in patterns if p.lower() in ctx.content.lower())
+
+            if fail_count:
+                ctx.relevance_score = max(0.0, ctx.relevance_score - fail_count * 0.08)
+
+            if not ctx.url and not ctx.source_id:
+                ctx.relevance_score = max(0.0, ctx.relevance_score - 0.1)
+
+        return contexts

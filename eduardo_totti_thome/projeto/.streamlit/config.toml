@@ -1,0 +1,8 @@
+# Tema NVIDIA (verde da marca + fundo escuro) para o Streamlit.
+[theme]
+base = "dark"
+primaryColor = "#76B900"              # verde NVIDIA (botões, acentos, widgets)
+backgroundColor = "#0B0B0B"           # fundo quase preto
+secondaryBackgroundColor = "#1A1A1A"  # cards, inputs, expanders, sidebar
+textColor = "#EDEDED"
+font = "sans serif"

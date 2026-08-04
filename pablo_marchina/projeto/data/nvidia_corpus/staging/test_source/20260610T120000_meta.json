@@ -1,0 +1,7 @@
+{
+  "source_id": "test_source",
+  "url": "https://example.com/doc",
+  "fetch_time": "2026-06-10T12:00:00",
+  "content_hash": "9473fdd0d880a43c21b7778d34872157",
+  "sync_run_id": "test_run"
+}

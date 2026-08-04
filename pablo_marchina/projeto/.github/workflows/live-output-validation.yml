@@ -1,0 +1,129 @@
+name: Live Output Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-real-companies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    services:
+      postgres:
+        image: postgres:16.4
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: startup_radar
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d startup_radar"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      qdrant:
+        image: qdrant/qdrant:v1.12.1
+        ports:
+          - 6333:6333
+    env:
+      APP_MODE: product
+      LOG_LEVEL: INFO
+      PRODUCT_DB_URL: postgresql+psycopg://postgres:postgres@localhost:5432/startup_radar
+      LANGGRAPH_CHECKPOINTER: postgres
+      LANGGRAPH_POSTGRES_URL: postgresql://postgres:postgres@localhost:5432/startup_radar
+      AGENT_ORCHESTRATION_ENABLED: "true"
+      RAG_REQUIRED_FOR_PRODUCT: "true"
+      RAG_VECTOR_BACKEND: qdrant
+      RAG_RETRIEVAL_MODE: hybrid_with_rerank
+      RAG_EMBEDDING_MODEL: sentence-transformers/all-MiniLM-L6-v2
+      QDRANT_URL: http://localhost:6333
+      QDRANT_COLLECTION: nvidia_corpus_live_validation
+      QDRANT_VECTOR_SIZE: "384"
+      QDRANT_MIN_POINTS: "10"
+      BM25_ENABLED: "true"
+      GRAPHRAG_ENABLED: "true"
+      RERANKER_PROVIDER: local_cross_encoder
+      RERANKER_MODEL: cross-encoder/ms-marco-MiniLM-L-6-v2
+      TRITON_RERANKER_ENABLED: "false"
+      TRITON_RERANKER_REQUIRED: "false"
+      TRITON_RERANKER_URL: http://localhost:8100/v2/models/cross_encoder/infer
+      CORS_ALLOWED_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      VITE_API_BASE_URL: http://localhost:8000
+      SCRAPING_MIN_RAW_EVIDENCE: "3"
+      SCRAPING_MIN_DISTINCT_SOURCES: "3"
+      SCRAPING_MIN_SOURCE_CATEGORIES: "2"
+      SCRAPING_MIN_OFFICIAL_SOURCES: "1"
+      SCRAPING_MAX_ERROR_RATE: "0.25"
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install runtime dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Apply database migrations
+        run: alembic upgrade head
+
+      - name: Ingest governed NVIDIA corpus with real embeddings
+        run: |
+          python scripts/ingest_nvidia_corpus.py \
+            --recreate-collection \
+            --require-real-embeddings \
+            --fail-on-validation-error \
+            --report-path final_case_evidence/live_corpus_ingestion.json
+
+      - name: Execute live public-evidence company validation
+        run: python scripts/validate_live_outputs_persisted.py
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Install Chromium
+        working-directory: frontend
+        run: npx playwright install --with-deps chromium
+
+      - name: Start real API and frontend
+        run: |
+          python -m uvicorn src.api.main:app --host 127.0.0.1 --port 8000 > final_case_evidence/live_api.log 2>&1 &
+          (cd frontend && npm run dev -- --host 127.0.0.1 > ../final_case_evidence/live_frontend.log 2>&1) &
+          for i in $(seq 1 60); do
+            curl -fsS http://127.0.0.1:8000/product/readiness >/dev/null && curl -fsS http://127.0.0.1:5173 >/dev/null && exit 0
+            sleep 2
+          done
+          echo "API/frontend did not become ready" >&2
+          cat final_case_evidence/live_api.log || true
+          cat final_case_evidence/live_frontend.log || true
+          exit 1
+
+      - name: Validate actual persisted output in Chromium
+        working-directory: frontend
+        env:
+          LIVE_VALIDATION_REPORT: ../final_case_evidence/live_output_validation_report.json
+          PLAYWRIGHT_REUSE_EXISTING_SERVERS: "true"
+        run: npx playwright test test_live_output_ui.spec.ts
+
+      - name: Upload live validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-output-validation
+          path: |
+            final_case_evidence/live_output_validation_report.json
+            final_case_evidence/live_corpus_ingestion.json
+            final_case_evidence/live_api.log
+            final_case_evidence/live_frontend.log
+            frontend/playwright-report
+          if-no-files-found: warn

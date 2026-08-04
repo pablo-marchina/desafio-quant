@@ -1,0 +1,90 @@
+{
+  "_meta": {
+    "description": "Expected chunk IDs per golden query for RAG Evaluation — Epic 12",
+    "corpus_version": "data/nvidia_corpus/ — 10 sources, 50 chunks",
+    "created": "2026-06-09"
+  },
+  "expected_chunks": {
+    "inference_cost_all": [
+      "nim_000", "nim_001", "nim_002", "nim_003", "nim_004",
+      "tensorrt_llm_000", "tensorrt_llm_001", "tensorrt_llm_002", "tensorrt_llm_003", "tensorrt_llm_004",
+      "triton_000", "triton_001", "triton_002", "triton_003", "triton_004"
+    ],
+    "inference_cost_tensorrt": [
+      "tensorrt_llm_000", "tensorrt_llm_001", "tensorrt_llm_002", "tensorrt_llm_003", "tensorrt_llm_004"
+    ],
+    "inference_cost_triton": [
+      "triton_000", "triton_001", "triton_002", "triton_003", "triton_004"
+    ],
+    "latency_all": [
+      "nim_000", "nim_001", "nim_002", "nim_003", "nim_004",
+      "tensorrt_llm_000", "tensorrt_llm_001", "tensorrt_llm_002", "tensorrt_llm_003", "tensorrt_llm_004",
+      "triton_000", "triton_001", "triton_002", "triton_003", "triton_004"
+    ],
+    "latency_tensorrt": [
+      "tensorrt_llm_000", "tensorrt_llm_001", "tensorrt_llm_002", "tensorrt_llm_003", "tensorrt_llm_004"
+    ],
+    "agent_governance": [
+      "nemo_guardrails_000", "nemo_guardrails_001", "nemo_guardrails_002", "nemo_guardrails_003", "nemo_guardrails_004"
+    ],
+    "data_pipeline": [
+      "rapids_000", "rapids_001", "rapids_002", "rapids_003", "rapids_004"
+    ],
+    "tabular_heavy": [
+      "rapids_000", "rapids_001", "rapids_002", "rapids_003", "rapids_004"
+    ],
+    "voice_ai": [
+      "riva_000", "riva_001", "riva_002", "riva_003", "riva_004"
+    ],
+    "external_api": [
+      "nim_000", "nim_001", "nim_002", "nim_003", "nim_004"
+    ],
+    "simulation": [
+      "omniverse_000", "omniverse_001", "omniverse_002", "omniverse_003", "omniverse_004"
+    ],
+    "robotics": [
+      "isaac_000", "isaac_001", "isaac_002", "isaac_003", "isaac_004"
+    ],
+    "healthcare": [
+      "clara_monai_000", "clara_monai_001", "clara_monai_002", "clara_monai_003", "clara_monai_004"
+    ],
+    "cybersecurity": [
+      "morpheus_000", "morpheus_001", "morpheus_002", "morpheus_003", "morpheus_004"
+    ],
+    "unknown_gap": [],
+    "empty_query": [],
+    "kw_inference": [
+      "nim_001", "nim_002", "nim_003", "nim_004",
+      "tensorrt_llm_001", "tensorrt_llm_002", "tensorrt_llm_003", "tensorrt_llm_004",
+      "triton_000", "triton_001", "triton_002", "triton_003", "triton_004"
+    ],
+    "kw_production": [
+      "nim_004",
+      "riva_004",
+      "tensorrt_llm_002", "tensorrt_llm_004",
+      "triton_002", "triton_003", "triton_004"
+    ],
+    "kw_open_source": [
+      "clara_monai_002",
+      "nemo_guardrails_002",
+      "rapids_002",
+      "tensorrt_llm_002"
+    ],
+    "kw_latency": [
+      "nim_001", "nim_004",
+      "riva_004",
+      "tensorrt_llm_001", "tensorrt_llm_002", "tensorrt_llm_003", "tensorrt_llm_004",
+      "triton_001", "triton_002", "triton_004"
+    ],
+    "kw_model": [
+      "clara_monai_004",
+      "isaac_002",
+      "nim_002",
+      "omniverse_004",
+      "rapids_004",
+      "riva_002", "riva_004",
+      "tensorrt_llm_002", "tensorrt_llm_004",
+      "triton_002", "triton_003", "triton_004"
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+# Quantitative Parameters Registry
+# Each parameter must have: name, path, value, unit, objective, hypothesis,
+# source/experiment, dataset, metric optimized, baseline, result,
+# sensitivity, allowed_range, decision, owner, calibration_date, status
+
+parameters:
+  - name: confidence_float_map
+    path: src/quantitative/params.py
+    value: "{high: 1.0, medium: 0.6, low: 0.3}"
+    unit: float
+    objective: Map confidence enum to numeric values for scoring
+    hypothesis: Equal intervals of 0.3 between levels provide fair differentiation
+    source: Heuristic choice
+    dataset: N/A
+    metric_optimized: N/A
+    baseline: N/A
+    result: Used across all confidence-weighted scores
+    sensitivity: medium
+    allowed_range: "high: [0.8-1.0], medium: [0.5-0.8], low: [0.1-0.5]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: confidence_score_factors
+    path: src/quantitative/params.py
+    value: "{high: 1.0, medium: 0.7, low: 0.4}"
+    unit: float
+    objective: Confidence factor for scoring with ConfidenceLevel enum
+    hypothesis: Medium=0.7 is slightly above default, low=0.4 for minimum
+    source: Derived empirically from initial experiments
+    dataset: N/A
+    metric_optimized: N/A
+    baseline: CONFIDENCE_FLOAT_MAP
+    result: Used in scoring modules
+    sensitivity: medium
+    allowed_range: "medium: [0.5-0.8], low: [0.3-0.5]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: confidence_thresholds
+    path: src/quantitative/params.py
+    value: "{high_min: 0.7, medium_min: 0.4}"
+    unit: float
+    objective: Classify confidence scores into high/medium/low buckets
+    hypothesis: ">=0.7 is high, >=0.4 is medium, <0.4 is low"
+    source: Common convention in scoring systems
+    dataset: N/A
+    metric_optimized: classification_accuracy
+    baseline: N/A
+    result: Standard classification thresholds
+    sensitivity: high
+    allowed_range: "high_min: [0.6-0.8], medium_min: [0.3-0.5]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: classification_to_base_score
+    path: src/quantitative/params.py
+    value: "{non_ai: 0, ai_assisted: 25, ai_enabled: 50, ai_native: 80, ai_native_service: 85}"
+    unit: score (0-100)
+    objective: Map AI-native classification level to base score
+    hypothesis: Regular gaps of 25-30 between levels, cap at 85 for other dimensions
+    source: Derived heuristically
+    dataset: golden_startup_scoring_baseline.json
+    metric_optimized: score_distribution
+    baseline: Even spacing (0, 25, 50, 75, 100)
+    result: AI-natives get 80, non-AI get 0
+    sensitivity: high
+    allowed_range: "ai_native: [70-85], ai_native_service: [80-90]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: priority_score_weights
+    path: src/quantitative/params.py
+    value: "{confidence: 0.30, business_impact: 0.25, complexity_inverse: 0.20, rag_support: 0.15, evidence_support: 0.10}"
+    unit: weight (sum=1.0)
+    objective: Weight components for NVIDIA recommendation priority scoring
+    hypothesis: Confidence should dominate, evidence least important
+    source: Heuristic determination
+    dataset: golden_recommendation_baseline.json
+    metric_optimized: recommendation_ranking_quality
+    baseline: Equal weights (0.20 each)
+    result: Weighted priority scoring
+    sensitivity: high
+    allowed_range: "confidence: [0.25-0.35], each ±0.05"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: opportunity_score_weights
+    path: src/quantitative/params.py
+    value: "{defensibility: 0.30, inception_fit: 0.25, production_readiness: 0.35, classification: 0.10}"
+    unit: weight (sum=1.0)
+    objective: Weight dimensions for composite opportunity scoring
+    hypothesis: Production readiness dominates, classification is baseline
+    source: Adjusted during golden dataset validation
+    dataset: golden_startup_scoring_baseline.json
+    metric_optimized: opportunity_ranking_correlation
+    baseline: Equal weights (0.25 each)
+    result: Production-ready startups score higher
+    sensitivity: high
+    allowed_range: "production_readiness: [0.30-0.40], each ±0.05"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: production_readiness_weights
+    path: src/quantitative/params.py
+    value: "{real_users: 0.30, scale_inference: 0.30, privacy_governance: 0.20, data_infrastructure: 0.20}"
+    unit: weight (sum=1.0)
+    objective: Weight sub-dimensions of production readiness
+    hypothesis: Real users and scale are equally important
+    source: Domain expert discussion (NVIDIA team)
+    dataset: golden_startup_scoring_baseline.json
+    metric_optimized: readiness_accuracy
+    baseline: Equal weights (0.25 each)
+    result: Production readiness scoring
+    sensitivity: medium
+    allowed_range: "real_users: [0.25-0.35], scale_inference: [0.25-0.35]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: ai_native_keyword_boosts
+    path: src/quantitative/params.py
+    value: "{nvidia_specific: 0.25, llm_generative: 0.20, ml_dl_nlp_gpu: 0.15, framework_mlops: 0.10, data_science: 0.05}"
+    unit: float (boost)
+    objective: Boost signal strength by keyword category
+    hypothesis: NVIDIA-specific keywords are strongest signals
+    source: Heuristic calibration
+    dataset: N/A
+    metric_optimized: signal_detection_accuracy
+    baseline: Uniform 0.15
+    result: Categorized keyword boosting
+    sensitivity: medium
+    allowed_range: "nvidia: [0.20-0.30], llm: [0.15-0.25]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: max_signal_boost
+    path: src/quantitative/params.py
+    value: "0.6"
+    unit: float (cap)
+    objective: Cap total keyword contribution to confidence score
+    hypothesis: No single source should dominate via keywords alone
+    source: Heuristic
+    dataset: N/A
+    metric_optimized: score_distribution
+    baseline: N/A (no cap)
+    result: Prevents keyword dominance
+    sensitivity: medium
+    allowed_range: "[0.4-0.8]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: discovery_rate_limit
+    path: src/quantitative/params.py
+    value: "{requests_per_second: 2, concurrent_requests: 1}"
+    unit: requests/sec
+    objective: Rate limiting for polite crawling
+    hypothesis: 2 req/s with 1 concurrent is conservative
+    source: Standard polite crawling policy
+    dataset: N/A
+    metric_optimized: block_rate, collection_success_rate
+    baseline: 1 req/s
+    result: Conservative rate limiting
+    sensitivity: low
+    allowed_range: "rps: [1-5], concurrent: [1-3]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: source_quality_scores
+    path: src/quantitative/params.py
+    value: "{official_site: 1.0, news: 0.8, founder_profile: 0.7, blog: 0.6, job_post: 0.5, directory: 0.4}"
+    unit: score (0-1)
+    objective: Score source types by reliability
+    hypothesis: Official sites are most reliable, directories least
+    source: Heuristic based on relative reliability
+    dataset: golden_scraping_baseline.json
+    metric_optimized: source_reliability_correlation
+    baseline: Uniform 0.5
+    result: Source quality scoring
+    sensitivity: medium
+    allowed_range: "official: [0.9-1.0], news: [0.7-0.9]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: gap_business_impact_map
+    path: src/quantitative/params.py
+    value: "{privacy: 0.9, inference_cost: 0.8, governance: 0.8, latency: 0.7, ...}"
+    unit: score (0-1)
+    objective: Map gap types to business impact scores
+    hypothesis: Privacy gaps have highest impact, model evaluation lowest
+    source: Heuristic NVIDIA prioritization
+    dataset: golden_recommendation_baseline.json
+    metric_optimized: recommendation_accuracy
+    baseline: Uniform 0.5
+    result: Prioritized gap scoring
+    sensitivity: high
+    allowed_range: "each ±0.1"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: confidence_penalty_on_missing
+    path: src/quantitative/params.py
+    value: "0.15"
+    unit: float (penalty)
+    objective: Penalize composite score when data is missing
+    hypothesis: 15% penalty is noticeable but not crippling
+    source: Heuristic
+    dataset: golden_startup_scoring_baseline.json
+    metric_optimized: score_robustness
+    baseline: 0.0 (no penalty)
+    result: Missing data penalized by 15%
+    sensitivity: medium
+    allowed_range: "[0.1-0.25]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED
+
+  - name: no_evidence_factor
+    path: src/quantitative/params.py
+    value: "0.3"
+    unit: float (multiplier)
+    objective: Reduce inception fit when no evidence is available
+    hypothesis: 30% of base score when evidence is missing
+    source: Heuristic
+    dataset: golden_startup_scoring_baseline.json
+    metric_optimized: score_calibration
+    baseline: 0.5
+    result: Evidence gaps reduce score to 30%
+    sensitivity: medium
+    allowed_range: "[0.2-0.5]"
+    decision: CALIBRATED
+    owner: project-team
+    calibration_date: "2026-06-01"
+    status: CALIBRATED

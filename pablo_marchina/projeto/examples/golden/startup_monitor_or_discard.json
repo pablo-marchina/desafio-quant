@@ -1,0 +1,24 @@
+{
+  "case_id": "startup_monitor_or_discard",
+  "description": "Low AI signals, little evidence, no customers — expects monitor_and_nurture or not_recommended.",
+  "profile": {
+    "sector": "Technology",
+    "ai_signals": ["AI signal: chatbot"],
+    "tech_stack": ["Node.js", "MongoDB"],
+    "description": "Early-stage startup building a simple chatbot for customer service.",
+    "product_summary": "Customer service chatbot.",
+    "customers": [],
+    "funding": []
+  },
+  "evidence": [
+    {"claim": "Building customer service chatbot", "confidence": "low"}
+  ],
+  "expected": {
+    "motion_in": ["lack_evidence_more_research", "not_recommended", "monitor_and_nurture"],
+    "min_score": 0,
+    "max_score": 30,
+    "expected_gaps": ["high_latency"],
+    "brief_min_sections": 3,
+    "has_approach_now": false
+  }
+}

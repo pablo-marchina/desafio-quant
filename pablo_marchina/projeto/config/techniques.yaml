@@ -1,0 +1,83 @@
+# Hybrid technique groups for the RAG enhancement pipeline.
+# Groups run in dependency order; techniques within a group run in deterministic dependency order.
+
+mode: hybrid
+
+groups:
+  - name: retrieval
+    parallel: false
+    depends_on: []
+    techniques:
+      - name: adaptive_rag
+        enabled: true
+      - name: hyde
+        enabled: true
+      - name: multi_query
+        enabled: true
+      - name: fusion_retrieval
+        enabled: true
+      - name: bm25
+        enabled: true
+      - name: graphrag_runtime
+        enabled: true
+      - name: query_intent
+        enabled: true
+
+  - name: reranking
+    parallel: false
+    depends_on: [retrieval]
+    techniques:
+      - name: colbert_reranking
+        enabled: true
+      - name: cross_encoder
+        enabled: true
+      - name: listwise_reranking
+        enabled: true
+      - name: llm_reranking
+        enabled: true
+      - name: neural_reranking
+        enabled: true
+      - name: pointwise_reranking
+        enabled: true
+      - name: triton_reranker
+        enabled: true
+
+  - name: post_processing
+    parallel: false
+    depends_on: [reranking]
+    techniques:
+      - name: self_rag
+        enabled: true
+      - name: source_trust
+        enabled: true
+      - name: factual_consistency
+        enabled: true
+      - name: hallucination_detection
+        enabled: true
+      - name: contradiction_detection
+        enabled: true
+      - name: uncertainty_estimation
+        enabled: true
+      - name: confidence_calibration
+        enabled: true
+      - name: contextual_compression
+        enabled: true
+      - name: semantic_chunking
+        enabled: true
+
+  - name: reflection
+    parallel: false
+    depends_on: [post_processing]
+    techniques:
+      - name: multi_hop_graph
+        enabled: true
+      - name: structured_outputs
+        enabled: true
+      - name: graph_consistency
+        enabled: true
+      - name: truth_maintenance
+        enabled: true
+      - name: case_based_reasoning
+        enabled: true
+
+saturation_techniques_default: false

@@ -1,0 +1,106 @@
+{
+  "$defs": {
+    "DetectedTechnologies": {
+      "additionalProperties": true,
+      "properties": {
+        "frameworks": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Frameworks",
+          "type": "array"
+        },
+        "modelos_apis": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Modelos Apis",
+          "type": "array"
+        },
+        "infraestrutura": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Infraestrutura",
+          "type": "array"
+        },
+        "ferramentas_mlops": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ferramentas Mlops",
+          "type": "array"
+        }
+      },
+      "title": "DetectedTechnologies",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "classificacao": {
+      "enum": [
+        "AI-native",
+        "AI-enabled",
+        "API-consumer",
+        "Non-AI"
+      ],
+      "title": "Classificacao",
+      "type": "string"
+    },
+    "nivel_maturidade": {
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Nivel Maturidade",
+      "type": "integer"
+    },
+    "confianca_classificacao": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confianca Classificacao",
+      "type": "number"
+    },
+    "justificativa": {
+      "minLength": 1,
+      "title": "Justificativa",
+      "type": "string"
+    },
+    "tecnologias_utilizadas": {
+      "$ref": "#/$defs/DetectedTechnologies"
+    },
+    "necessidades_limitacoes": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Necessidades Limitacoes",
+      "type": "array"
+    },
+    "sugestao_inicial_stack_nvidia": {
+      "default": "",
+      "title": "Sugestao Inicial Stack Nvidia",
+      "type": "string"
+    },
+    "evidencias_suporte": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidencias Suporte",
+      "type": "array"
+    }
+  },
+  "required": [
+    "startup",
+    "classificacao",
+    "nivel_maturidade",
+    "confianca_classificacao",
+    "justificativa",
+    "tecnologias_utilizadas"
+  ],
+  "title": "AIMaturityOutput",
+  "type": "object"
+}

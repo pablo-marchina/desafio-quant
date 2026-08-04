@@ -1,0 +1,563 @@
+2026-06-29T20:40:40.404839-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T20:40:40.406821-0300 | INFO | Setor alvo: healthtech
+2026-06-29T20:40:40.416768-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T20:41:34.688392-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T20:41:34.688792-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T20:43:14.069233-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T20:43:14.069830-0300 | INFO | Setor alvo: healthtech
+2026-06-29T20:43:14.076489-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T20:44:19.599233-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T20:44:19.599433-0300 | INFO | Resumo: 6 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:04:42.655193-0300 | INFO | Processando setor: HealthTech (healthtech)
+2026-06-29T22:04:42.657085-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:04:42.657509-0300 | INFO | Setor alvo: healthtech
+2026-06-29T22:04:42.667069-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:05:59.422359-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:05:59.422564-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:05:59.422648-0300 | INFO | Processando setor: FinTech (fintech)
+2026-06-29T22:05:59.422814-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:05:59.422914-0300 | INFO | Setor alvo: fintech
+2026-06-29T22:05:59.427363-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:07:03.911675-0300 | ERROR | Falha na execução do pipeline: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:07:03.911923-0300 | ERROR | Erro no setor fintech: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:07:03.912001-0300 | INFO | Processando setor: AgriTech (agritech)
+2026-06-29T22:07:03.912043-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:07:03.912077-0300 | INFO | Setor alvo: agritech
+2026-06-29T22:07:03.915751-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:08:46.731896-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:08:46.732087-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:08:46.732173-0300 | INFO | Processando setor: EdTech (edtech)
+2026-06-29T22:08:46.732214-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:08:46.732249-0300 | INFO | Setor alvo: edtech
+2026-06-29T22:08:46.735627-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:09:35.893456-0300 | ERROR | Falha na execução do pipeline: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:09:35.893634-0300 | ERROR | Erro no setor edtech: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:09:35.893685-0300 | INFO | Processando setor: LegalTech (legaltech)
+2026-06-29T22:09:35.893721-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:09:35.893753-0300 | INFO | Setor alvo: legaltech
+2026-06-29T22:09:35.896821-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:10:56.503878-0300 | ERROR | Falha na execução do pipeline: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:10:56.504056-0300 | ERROR | Erro no setor legaltech: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:10:56.504107-0300 | INFO | Processando setor: RetailTech (retailtech)
+2026-06-29T22:10:56.504144-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:10:56.504176-0300 | INFO | Setor alvo: retailtech
+2026-06-29T22:10:56.507397-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:11:18.758637-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:11:18.758945-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:11:18.759184-0300 | INFO | Processando setor: Manufatura/Indústria 4.0 (industria4)
+2026-06-29T22:11:18.759274-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:11:18.759333-0300 | INFO | Setor alvo: industria4
+2026-06-29T22:11:18.763129-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:12:03.992201-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:12:03.992361-0300 | INFO | Resumo: 5 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:12:03.992443-0300 | INFO | Processando setor: Logística/Supply Chain (logistica)
+2026-06-29T22:12:03.992482-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:12:03.992514-0300 | INFO | Setor alvo: logistica
+2026-06-29T22:12:03.995514-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:12:54.895962-0300 | ERROR | Falha na execução do pipeline: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:12:54.896149-0300 | ERROR | Erro no setor logistica: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:12:54.896200-0300 | INFO | Processando setor: Cibersegurança (cybersecurity)
+2026-06-29T22:12:54.896240-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:12:54.896274-0300 | INFO | Setor alvo: cybersecurity
+2026-06-29T22:12:54.900278-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:13:48.720177-0300 | ERROR | Falha na execução do pipeline: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:13:48.720406-0300 | ERROR | Erro no setor cybersecurity: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:13:48.720493-0300 | INFO | Processando setor: Energia/CleanTech (energia)
+2026-06-29T22:13:48.720545-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:13:48.720610-0300 | INFO | Setor alvo: energia
+2026-06-29T22:13:48.724425-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:14:38.287192-0300 | ERROR | Falha na execução do pipeline: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:14:38.287621-0300 | ERROR | Erro no setor energia: Incorrect number of bindings supplied. The current statement uses 5, and there are 4 supplied.
+2026-06-29T22:14:38.287825-0300 | INFO | Processando setor: Mídia/Entretenimento (midia)
+2026-06-29T22:14:38.287953-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:14:38.288068-0300 | INFO | Setor alvo: midia
+2026-06-29T22:14:38.296808-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:15:20.572998-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:15:20.573802-0300 | INFO | Setor alvo: fintech
+2026-06-29T22:15:20.580690-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:19:33.490013-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:19:33.490305-0300 | INFO | Resumo: 24 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-29T22:22:31.085313-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:22:31.086818-0300 | INFO | Setor alvo: fintech
+2026-06-29T22:22:31.094310-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:23:46.072817-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:23:46.073450-0300 | INFO | Resumo: 4 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:24:42.936425-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:24:42.938111-0300 | INFO | Setor alvo: fintech
+2026-06-29T22:24:42.956916-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:26:07.725152-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:26:07.725638-0300 | INFO | Resumo: 7 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:26:45.397946-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:26:45.399833-0300 | INFO | Setor alvo: fintech
+2026-06-29T22:26:45.423165-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:30:30.518324-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:30:30.518891-0300 | INFO | Resumo: 15 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-29T22:31:19.888359-0300 | INFO | Processando setor: HealthTech (healthtech)
+2026-06-29T22:31:19.889356-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:31:19.889583-0300 | INFO | Setor alvo: healthtech
+2026-06-29T22:31:19.904445-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:32:54.972104-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:32:54.972749-0300 | INFO | Resumo: 4 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:32:54.973133-0300 | INFO | Processando setor: FinTech (fintech)
+2026-06-29T22:32:54.973361-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:32:54.973476-0300 | INFO | Setor alvo: fintech
+2026-06-29T22:32:54.985861-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:34:51.852530-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:34:51.853351-0300 | INFO | Resumo: 8 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:34:51.853680-0300 | INFO | Processando setor: AgriTech (agritech)
+2026-06-29T22:34:51.853825-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:34:51.853979-0300 | INFO | Setor alvo: agritech
+2026-06-29T22:34:51.862752-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:41:03.689911-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:41:03.690191-0300 | INFO | Resumo: 24 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-29T22:41:03.690405-0300 | INFO | Processando setor: EdTech (edtech)
+2026-06-29T22:41:03.690486-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:41:03.690544-0300 | INFO | Setor alvo: edtech
+2026-06-29T22:41:03.696016-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:43:11.386818-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:43:11.387049-0300 | INFO | Resumo: 6 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-29T22:43:11.387221-0300 | INFO | Processando setor: LegalTech (legaltech)
+2026-06-29T22:43:11.387294-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:43:11.387355-0300 | INFO | Setor alvo: legaltech
+2026-06-29T22:43:11.391880-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:44:57.271473-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:44:57.271655-0300 | INFO | Resumo: 8 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-29T22:44:57.271774-0300 | INFO | Processando setor: RetailTech (retailtech)
+2026-06-29T22:44:57.271822-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:44:57.271861-0300 | INFO | Setor alvo: retailtech
+2026-06-29T22:44:57.275278-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:45:31.056275-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:45:31.056461-0300 | INFO | Resumo: 1 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:45:31.056552-0300 | INFO | Processando setor: Manufatura/Indústria 4.0 (industria4)
+2026-06-29T22:45:31.056606-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:45:31.056645-0300 | INFO | Setor alvo: industria4
+2026-06-29T22:45:31.060329-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:48:46.003128-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:48:46.003751-0300 | INFO | Resumo: 14 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:48:46.004055-0300 | INFO | Processando setor: Logística/Supply Chain (logistica)
+2026-06-29T22:48:46.004171-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:48:46.004252-0300 | INFO | Setor alvo: logistica
+2026-06-29T22:48:46.009449-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:50:08.358307-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:50:08.358642-0300 | INFO | Resumo: 6 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-29T22:50:08.358798-0300 | INFO | Processando setor: Cibersegurança (cybersecurity)
+2026-06-29T22:50:08.358909-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:50:08.359005-0300 | INFO | Setor alvo: cybersecurity
+2026-06-29T22:50:08.365675-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:53:40.476440-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:53:40.476649-0300 | INFO | Resumo: 10 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-29T22:53:40.476861-0300 | INFO | Processando setor: Energia/CleanTech (energia)
+2026-06-29T22:53:40.476922-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:53:40.476960-0300 | INFO | Setor alvo: energia
+2026-06-29T22:53:40.480822-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:54:31.334715-0300 | ERROR | Falha na execução do pipeline: Error binding parameter 2: type 'list' is not supported
+2026-06-29T22:54:31.334932-0300 | ERROR | Erro no setor energia: Error binding parameter 2: type 'list' is not supported
+2026-06-29T22:54:31.335001-0300 | INFO | Processando setor: Mídia/Entretenimento (midia)
+2026-06-29T22:54:31.335051-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:54:31.335093-0300 | INFO | Setor alvo: midia
+2026-06-29T22:54:31.338820-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:57:17.119456-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:57:17.119876-0300 | INFO | Resumo: 8 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-29T22:57:17.120195-0300 | INFO | Processando setor: Construção/PropTech (proptech)
+2026-06-29T22:57:17.120358-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-29T22:57:17.120478-0300 | INFO | Setor alvo: proptech
+2026-06-29T22:57:17.129085-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-29T22:59:55.444443-0300 | INFO | Pipeline executado com sucesso
+2026-06-29T22:59:55.444875-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T00:58:09.161488-0300 | INFO | Processando setor: HealthTech (healthtech)
+2026-06-30T00:58:09.162244-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T00:58:09.162447-0300 | INFO | Setor alvo: healthtech
+2026-06-30T00:58:09.171071-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T00:58:32.350161-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T00:58:32.350459-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T00:58:32.350737-0300 | INFO | Processando setor: FinTech (fintech)
+2026-06-30T00:58:32.350896-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T00:58:32.351070-0300 | INFO | Setor alvo: fintech
+2026-06-30T00:58:32.358209-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T01:05:38.360186-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T01:05:38.360980-0300 | INFO | Resumo: 13 startups coletadas, 3 briefings gerados, 0 erros
+2026-06-30T01:05:38.361792-0300 | INFO | Processando setor: AgriTech (agritech)
+2026-06-30T01:05:38.362435-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T01:05:38.362974-0300 | INFO | Setor alvo: agritech
+2026-06-30T01:05:38.379741-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T01:10:49.596003-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T01:10:49.596786-0300 | INFO | Resumo: 14 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-30T01:10:49.597760-0300 | INFO | Processando setor: EdTech (edtech)
+2026-06-30T01:10:49.598504-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T01:10:49.599065-0300 | INFO | Setor alvo: edtech
+2026-06-30T01:10:49.613738-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:31:07.210676-0300 | INFO | Processando setor: HealthTech (healthtech)
+2026-06-30T07:31:07.219612-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:31:07.220401-0300 | INFO | Setor alvo: healthtech
+2026-06-30T07:31:07.235816-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:31:28.649982-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:31:28.650363-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T07:31:28.650677-0300 | INFO | Processando setor: FinTech (fintech)
+2026-06-30T07:31:28.650905-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:31:28.651125-0300 | INFO | Setor alvo: fintech
+2026-06-30T07:31:28.658253-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:31:52.287616-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:31:52.287961-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T07:31:52.288296-0300 | INFO | Processando setor: AgriTech (agritech)
+2026-06-30T07:31:52.288736-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:31:52.288974-0300 | INFO | Setor alvo: agritech
+2026-06-30T07:31:52.294252-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:32:54.863524-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:32:54.863944-0300 | INFO | Resumo: 5 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T07:32:54.864637-0300 | INFO | Processando setor: EdTech (edtech)
+2026-06-30T07:32:54.864937-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:32:54.865198-0300 | INFO | Setor alvo: edtech
+2026-06-30T07:32:54.871153-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:33:17.111379-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:33:17.112037-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T07:33:17.112740-0300 | INFO | Processando setor: LegalTech (legaltech)
+2026-06-30T07:33:17.113091-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:33:17.113587-0300 | INFO | Setor alvo: legaltech
+2026-06-30T07:33:17.121901-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:36:12.468535-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:36:12.468859-0300 | INFO | Resumo: 9 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-30T07:36:12.469196-0300 | INFO | Processando setor: RetailTech (retailtech)
+2026-06-30T07:36:12.469410-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:36:12.469559-0300 | INFO | Setor alvo: retailtech
+2026-06-30T07:36:12.473698-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:38:34.908305-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:38:34.908784-0300 | INFO | Resumo: 15 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T07:38:34.909123-0300 | INFO | Processando setor: Manufatura/Indústria 4.0 (industria4)
+2026-06-30T07:38:34.909409-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:38:34.909608-0300 | INFO | Setor alvo: industria4
+2026-06-30T07:38:34.919834-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:38:58.370991-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:38:58.371900-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T07:38:58.372838-0300 | INFO | Processando setor: Logística/Supply Chain (logistica)
+2026-06-30T07:38:58.373985-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:38:58.375395-0300 | INFO | Setor alvo: logistica
+2026-06-30T07:38:58.392367-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:41:08.741188-0300 | ERROR | Falha na execução do pipeline: 'list' object has no attribute 'get'
+2026-06-30T07:41:08.742374-0300 | ERROR | Erro no setor logistica: 'list' object has no attribute 'get'
+2026-06-30T07:41:08.743044-0300 | INFO | Processando setor: Cibersegurança (cybersecurity)
+2026-06-30T07:41:08.743693-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:41:08.744251-0300 | INFO | Setor alvo: cybersecurity
+2026-06-30T07:41:08.763937-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:42:00.439392-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:42:00.440003-0300 | INFO | Resumo: 3 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T07:42:00.440437-0300 | INFO | Processando setor: Energia/CleanTech (energia)
+2026-06-30T07:42:00.440799-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:42:00.441104-0300 | INFO | Setor alvo: energia
+2026-06-30T07:42:00.448919-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:45:27.229335-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:45:27.229639-0300 | INFO | Resumo: 15 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-30T07:45:27.230153-0300 | INFO | Processando setor: Mídia/Entretenimento (midia)
+2026-06-30T07:45:27.230484-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:45:27.230714-0300 | INFO | Setor alvo: midia
+2026-06-30T07:45:27.238872-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:47:32.438831-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:47:32.439157-0300 | INFO | Resumo: 10 startups coletadas, 1 briefings gerados, 0 erros
+2026-06-30T07:47:32.439352-0300 | INFO | Processando setor: Construção/PropTech (proptech)
+2026-06-30T07:47:32.439447-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T07:47:32.439734-0300 | INFO | Setor alvo: proptech
+2026-06-30T07:47:32.443696-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T07:49:39.284815-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T07:49:39.285475-0300 | INFO | Resumo: 12 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T12:11:58.723637-0300 | INFO | Processando setor: HealthTech (healthtech)
+2026-06-30T12:11:58.724992-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:11:58.725466-0300 | INFO | Setor alvo: healthtech
+2026-06-30T12:11:58.731110-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:16:21.462175-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:16:21.462989-0300 | INFO | Resumo: 20 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T12:16:21.463551-0300 | INFO | Processando setor: FinTech (fintech)
+2026-06-30T12:16:21.463983-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:16:21.464562-0300 | INFO | Setor alvo: fintech
+2026-06-30T12:16:21.480808-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:20:42.273511-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:20:42.274156-0300 | INFO | Resumo: 28 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T12:20:42.274921-0300 | INFO | Processando setor: AgriTech (agritech)
+2026-06-30T12:20:42.275420-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:20:42.275902-0300 | INFO | Setor alvo: agritech
+2026-06-30T12:20:42.290737-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:27:24.000665-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:27:24.001451-0300 | INFO | Resumo: 24 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T12:27:24.001876-0300 | INFO | Processando setor: EdTech (edtech)
+2026-06-30T12:27:24.002429-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:27:24.002939-0300 | INFO | Setor alvo: edtech
+2026-06-30T12:27:24.022402-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:30:47.150265-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:30:47.151955-0300 | INFO | Resumo: 30 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T12:30:47.153323-0300 | INFO | Processando setor: LegalTech (legaltech)
+2026-06-30T12:30:47.160450-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:30:47.162253-0300 | INFO | Setor alvo: legaltech
+2026-06-30T12:30:47.196360-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:43:55.609412-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:43:55.609726-0300 | INFO | Resumo: 34 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T12:43:55.610074-0300 | INFO | Processando setor: RetailTech (retailtech)
+2026-06-30T12:43:55.610258-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:43:55.611208-0300 | INFO | Setor alvo: retailtech
+2026-06-30T12:43:55.616444-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:46:58.915585-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:46:58.916267-0300 | INFO | Resumo: 20 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T12:46:58.917020-0300 | INFO | Processando setor: Manufatura/Indústria 4.0 (industria4)
+2026-06-30T12:46:58.921603-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:46:58.922603-0300 | INFO | Setor alvo: industria4
+2026-06-30T12:46:58.937273-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:47:32.072152-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:47:32.089057-0300 | INFO | Resumo: 2 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T12:47:32.090015-0300 | INFO | Processando setor: Logística/Supply Chain (logistica)
+2026-06-30T12:47:32.090564-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:47:32.090919-0300 | INFO | Setor alvo: logistica
+2026-06-30T12:47:32.098868-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:58:11.970247-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:58:11.970561-0300 | INFO | Resumo: 14 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T12:58:11.970864-0300 | INFO | Processando setor: Cibersegurança (cybersecurity)
+2026-06-30T12:58:11.971022-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:58:11.971120-0300 | INFO | Setor alvo: cybersecurity
+2026-06-30T12:58:11.976622-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T12:58:48.202129-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T12:58:48.202594-0300 | INFO | Resumo: 4 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T12:58:48.202913-0300 | INFO | Processando setor: Energia/CleanTech (energia)
+2026-06-30T12:58:48.203247-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T12:58:48.203804-0300 | INFO | Setor alvo: energia
+2026-06-30T12:58:48.214591-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T13:08:26.209467-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T13:08:26.209767-0300 | INFO | Resumo: 30 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T13:08:26.210145-0300 | INFO | Processando setor: Mídia/Entretenimento (midia)
+2026-06-30T13:08:26.210293-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T13:08:26.210420-0300 | INFO | Setor alvo: midia
+2026-06-30T13:08:26.216127-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T13:15:44.028441-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T13:15:44.028788-0300 | INFO | Resumo: 28 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T13:15:44.029163-0300 | INFO | Processando setor: Construção/PropTech (proptech)
+2026-06-30T13:15:44.029361-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T13:15:44.029673-0300 | INFO | Setor alvo: proptech
+2026-06-30T13:15:44.034638-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T13:19:59.594732-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T13:19:59.595254-0300 | INFO | Resumo: 28 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T13:29:38.020571-0300 | INFO | Processando setor: HealthTech (healthtech)
+2026-06-30T13:29:38.022331-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T13:29:38.022858-0300 | INFO | Setor alvo: healthtech
+2026-06-30T13:29:38.044897-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T13:42:51.919394-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T13:42:51.923631-0300 | INFO | Resumo: 18 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T13:42:51.925790-0300 | INFO | Processando setor: FinTech (fintech)
+2026-06-30T13:42:51.927235-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T13:42:51.929249-0300 | INFO | Setor alvo: fintech
+2026-06-30T13:42:51.965751-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T13:44:08.714733-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T13:44:08.716730-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T13:44:08.719958-0300 | INFO | Processando setor: AgriTech (agritech)
+2026-06-30T13:44:08.721802-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T13:44:08.723031-0300 | INFO | Setor alvo: agritech
+2026-06-30T13:44:08.756748-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T13:53:54.293432-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T13:53:54.294662-0300 | INFO | Resumo: 28 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T13:53:54.295520-0300 | INFO | Processando setor: EdTech (edtech)
+2026-06-30T13:53:54.296327-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T13:53:54.297018-0300 | INFO | Setor alvo: edtech
+2026-06-30T13:53:54.327702-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T13:56:36.710377-0300 | ERROR | Falha na execução do pipeline: 'list' object has no attribute 'lower'
+2026-06-30T13:56:36.711591-0300 | ERROR | Erro no setor edtech: 'list' object has no attribute 'lower'
+2026-06-30T13:56:36.712427-0300 | INFO | Processando setor: LegalTech (legaltech)
+2026-06-30T13:56:36.713082-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T13:56:36.713699-0300 | INFO | Setor alvo: legaltech
+2026-06-30T13:56:36.735313-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:04:39.031862-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T14:04:39.033503-0300 | INFO | Resumo: 32 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T14:04:39.034713-0300 | INFO | Processando setor: RetailTech (retailtech)
+2026-06-30T14:04:39.035631-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T14:04:39.036312-0300 | INFO | Setor alvo: retailtech
+2026-06-30T14:04:39.057513-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:07:15.206761-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T14:07:15.210432-0300 | INFO | Resumo: 4 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T14:07:15.211627-0300 | INFO | Processando setor: Manufatura/Indústria 4.0 (industria4)
+2026-06-30T14:07:15.212189-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T14:07:15.212604-0300 | INFO | Setor alvo: industria4
+2026-06-30T14:07:15.229200-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:07:48.979315-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T14:07:48.980493-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T14:07:48.982043-0300 | INFO | Processando setor: Logística/Supply Chain (logistica)
+2026-06-30T14:07:48.984444-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T14:07:48.985844-0300 | INFO | Setor alvo: logistica
+2026-06-30T14:07:49.014802-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:10:01.293233-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T14:10:01.293638-0300 | INFO | Resumo: 16 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T14:10:01.293945-0300 | INFO | Processando setor: Cibersegurança (cybersecurity)
+2026-06-30T14:10:01.294098-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T14:10:01.294256-0300 | INFO | Setor alvo: cybersecurity
+2026-06-30T14:10:01.298870-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:12:51.898155-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T14:12:51.898417-0300 | INFO | Resumo: 16 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T14:12:51.898631-0300 | INFO | Processando setor: Energia/CleanTech (energia)
+2026-06-30T14:12:51.898724-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T14:12:51.898801-0300 | INFO | Setor alvo: energia
+2026-06-30T14:12:51.902710-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:20:47.580883-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T14:20:47.581095-0300 | INFO | Resumo: 18 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T14:20:47.581175-0300 | INFO | Processando setor: Mídia/Entretenimento (midia)
+2026-06-30T14:20:47.581249-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T14:20:47.581503-0300 | INFO | Setor alvo: midia
+2026-06-30T14:20:47.586689-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:29:04.098445-0300 | ERROR | Falha na execução do pipeline: 'list' object has no attribute 'lower'
+2026-06-30T14:29:04.098952-0300 | ERROR | Erro no setor midia: 'list' object has no attribute 'lower'
+2026-06-30T14:29:04.099076-0300 | INFO | Processando setor: Construção/PropTech (proptech)
+2026-06-30T14:29:04.099146-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T14:29:04.099284-0300 | INFO | Setor alvo: proptech
+2026-06-30T14:29:04.102835-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T14:30:14.844377-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T14:30:14.844769-0300 | INFO | Resumo: 14 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T17:40:23.730731-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T17:40:23.731524-0300 | INFO | Setor alvo: agritech
+2026-06-30T17:40:23.738972-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T17:43:04.322485-0300 | ERROR | Falha na execução do pipeline: 'list' object has no attribute 'lower'
+2026-06-30T17:46:10.846120-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T17:46:10.847061-0300 | INFO | Setor alvo: fintech
+2026-06-30T17:46:10.852706-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T17:48:10.663961-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T17:48:10.664465-0300 | INFO | Resumo: 16 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T18:52:26.936294-0300 | INFO | Processando setor: HealthTech (healthtech)
+2026-06-30T18:52:26.937004-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T18:52:26.937138-0300 | INFO | Setor alvo: healthtech
+2026-06-30T18:52:26.941931-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T18:55:47.445565-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T18:55:47.445868-0300 | INFO | Resumo: 22 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T18:55:47.446395-0300 | INFO | Processando setor: FinTech (fintech)
+2026-06-30T18:55:47.446741-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T18:55:47.446942-0300 | INFO | Setor alvo: fintech
+2026-06-30T18:55:47.452498-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T18:59:10.975608-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T18:59:10.975890-0300 | INFO | Resumo: 12 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T18:59:10.976094-0300 | INFO | Processando setor: AgriTech (agritech)
+2026-06-30T18:59:10.976200-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T18:59:10.976332-0300 | INFO | Setor alvo: agritech
+2026-06-30T18:59:10.980231-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:03:28.160349-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:03:28.160640-0300 | INFO | Resumo: 20 startups coletadas, 4 briefings gerados, 0 erros
+2026-06-30T19:03:28.160916-0300 | INFO | Processando setor: EdTech (edtech)
+2026-06-30T19:03:28.161101-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:03:28.161259-0300 | INFO | Setor alvo: edtech
+2026-06-30T19:03:28.165124-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:06:05.207847-0300 | ERROR | Falha na execução do pipeline: 'list' object has no attribute 'get'
+2026-06-30T19:06:05.208291-0300 | ERROR | Erro no setor edtech: 'list' object has no attribute 'get'
+2026-06-30T19:06:05.208553-0300 | INFO | Processando setor: LegalTech (legaltech)
+2026-06-30T19:06:05.208909-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:06:05.209349-0300 | INFO | Setor alvo: legaltech
+2026-06-30T19:06:05.225279-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:15:38.339594-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:15:38.340213-0300 | INFO | Resumo: 30 startups coletadas, 4 briefings gerados, 0 erros
+2026-06-30T19:15:38.340609-0300 | INFO | Processando setor: RetailTech (retailtech)
+2026-06-30T19:15:38.340868-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:15:38.341074-0300 | INFO | Setor alvo: retailtech
+2026-06-30T19:15:38.347488-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:20:29.094563-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:20:29.094890-0300 | INFO | Resumo: 16 startups coletadas, 2 briefings gerados, 0 erros
+2026-06-30T19:20:29.095263-0300 | INFO | Processando setor: Manufatura/Indústria 4.0 (industria4)
+2026-06-30T19:20:29.095493-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:20:29.095637-0300 | INFO | Setor alvo: industria4
+2026-06-30T19:20:29.099718-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:26:21.176680-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:26:21.176935-0300 | INFO | Resumo: 34 startups coletadas, 4 briefings gerados, 0 erros
+2026-06-30T19:26:21.177212-0300 | INFO | Processando setor: Logística/Supply Chain (logistica)
+2026-06-30T19:26:21.177335-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:26:21.177420-0300 | INFO | Setor alvo: logistica
+2026-06-30T19:26:21.181273-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:26:44.723812-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:26:44.724208-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T19:26:44.724474-0300 | INFO | Processando setor: Cibersegurança (cybersecurity)
+2026-06-30T19:26:44.724647-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:26:44.724804-0300 | INFO | Setor alvo: cybersecurity
+2026-06-30T19:26:44.729545-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:28:33.199688-0300 | ERROR | Falha na execução do pipeline: 'list' object has no attribute 'get'
+2026-06-30T19:28:33.200260-0300 | ERROR | Erro no setor cybersecurity: 'list' object has no attribute 'get'
+2026-06-30T19:28:33.200432-0300 | INFO | Processando setor: Energia/CleanTech (energia)
+2026-06-30T19:28:33.200538-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:28:33.200954-0300 | INFO | Setor alvo: energia
+2026-06-30T19:28:33.204933-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:28:58.848638-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:28:58.848968-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T19:28:58.849342-0300 | INFO | Processando setor: Mídia/Entretenimento (midia)
+2026-06-30T19:28:58.849644-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:28:58.849882-0300 | INFO | Setor alvo: midia
+2026-06-30T19:28:58.853770-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:29:21.005414-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:29:21.005824-0300 | INFO | Resumo: 0 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T19:29:21.006208-0300 | INFO | Processando setor: Construção/PropTech (proptech)
+2026-06-30T19:29:21.006357-0300 | INFO | Iniciando pipeline NVIDIA Startup AI Radar
+2026-06-30T19:29:21.006460-0300 | INFO | Setor alvo: proptech
+2026-06-30T19:29:21.010258-0300 | INFO | Grafo LangGraph compilado com sucesso
+2026-06-30T19:35:18.028709-0300 | INFO | Pipeline executado com sucesso
+2026-06-30T19:35:18.029632-0300 | INFO | Resumo: 34 startups coletadas, 0 briefings gerados, 0 erros
+2026-06-30T21:27:50.869101-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T21:27:50.877451-0300 | INFO | Startups sem classificação: 13
+2026-06-30T21:27:50.884159-0300 | INFO | Startups com classificação mas sem recomendação: 41
+2026-06-30T21:27:50.884365-0300 | INFO | Total a processar: 54
+2026-06-30T21:38:12.176009-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T21:38:12.186701-0300 | INFO | Startups sem classificação: 5
+2026-06-30T21:38:12.193028-0300 | INFO | Startups com classificação mas sem recomendação: 11
+2026-06-30T21:38:12.193223-0300 | INFO | Total a processar: 16
+2026-06-30T21:49:04.442196-0300 | INFO | Validadas: 16, válidas: 16
+2026-06-30T21:51:33.927169-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T21:51:33.961910-0300 | INFO | Startups sem classificação: 5
+2026-06-30T21:51:33.982907-0300 | INFO | Startups com classificação mas sem recomendação: 11
+2026-06-30T21:51:33.983288-0300 | INFO | Total a processar: 16
+2026-06-30T21:57:51.209915-0300 | INFO | Validadas: 16, válidas: 16
+2026-06-30T22:23:27.071257-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T22:23:27.082258-0300 | INFO | Startups sem classificação: 5
+2026-06-30T22:23:27.091348-0300 | INFO | Startups com classificação mas sem recomendação: 11
+2026-06-30T22:23:27.091643-0300 | INFO | Total a processar: 16
+2026-06-30T22:33:04.347625-0300 | INFO | Validadas: 16, válidas: 16
+2026-06-30T22:48:13.201703-0300 | INFO | Resumo: 13 briefings gerados
+2026-06-30T22:48:13.230197-0300 | INFO | Backfill concluído: 13 briefings
+2026-06-30T22:50:59.615718-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T22:50:59.635467-0300 | INFO | Startups sem classificação: 5
+2026-06-30T22:50:59.642584-0300 | INFO | Startups com classificação mas sem recomendação: 11
+2026-06-30T22:50:59.642796-0300 | INFO | Total a processar: 16
+2026-06-30T22:58:40.322426-0300 | WARNING | Nenhuma startup classificada
+2026-06-30T22:58:40.322735-0300 | INFO | Backfill concluído: 0 briefings
+2026-06-30T22:59:17.955789-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T22:59:17.968193-0300 | INFO | Startups sem classificação: 5
+2026-06-30T22:59:17.968526-0300 | INFO | Classificando 5 startups...
+2026-06-30T23:01:38.771194-0300 | WARNING | Nenhuma startup classificada (limite Cohere?)
+2026-06-30T23:01:38.796222-0300 | INFO | Startups com classificação mas sem recomendação: 11
+2026-06-30T23:01:38.960299-0300 | INFO | Total a processar: 11
+2026-06-30T23:04:53.615935-0300 | INFO | Validadas: 11, válidas: 11
+2026-06-30T23:15:35.057533-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T23:15:35.081270-0300 | INFO | Startups sem classificação: 5
+2026-06-30T23:15:35.081470-0300 | INFO | Classificando 5 startups...
+2026-06-30T23:16:25.449529-0300 | INFO | Startups com classificação mas sem recomendação: 16
+2026-06-30T23:16:25.547264-0300 | INFO | Total a processar: 21
+2026-06-30T23:22:59.305737-0300 | INFO | Validadas: 21, válidas: 21
+2026-06-30T23:26:14.656166-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T23:26:14.668154-0300 | INFO | Startups sem classificação: 0
+2026-06-30T23:26:14.680968-0300 | INFO | Startups com classificação mas sem recomendação: 16
+2026-06-30T23:26:14.825552-0300 | INFO | Total a processar: 16
+2026-06-30T23:31:41.125018-0300 | INFO | Validadas: 16, válidas: 16
+2026-06-30T23:32:59.622113-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-06-30T23:32:59.660115-0300 | INFO | Startups sem classificação: 0
+2026-06-30T23:32:59.682479-0300 | INFO | Startups com classificação mas sem recomendação: 16
+2026-06-30T23:32:59.963098-0300 | INFO | Total a processar: 16
+2026-06-30T23:36:50.764468-0300 | INFO | Validadas: 16, válidas: 16
+2026-07-01T00:11:05.514869-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-07-01T00:11:05.538518-0300 | INFO | Startups sem classificação: 8
+2026-07-01T00:11:05.538721-0300 | INFO | Classificando 8 startups...
+2026-07-01T00:11:55.468321-0300 | INFO | Startups com classificação mas sem recomendação: 50
+2026-07-01T00:11:56.291350-0300 | INFO | Total a processar: 58
+2026-07-01T00:31:16.050124-0300 | INFO | Validadas: 58, válidas: 58
+2026-07-01T01:11:31.282361-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-07-01T01:11:31.288301-0300 | INFO | Startups sem classificação: 0
+2026-07-01T01:11:31.296268-0300 | INFO | Startups com classificação mas sem recomendação: 46
+2026-07-01T01:11:31.530006-0300 | INFO | Total a processar: 46
+2026-07-01T01:26:55.565436-0300 | INFO | Validadas: 46, válidas: 46
+2026-07-01T01:57:16.748820-0300 | INFO | Resumo: 46 briefings gerados
+2026-07-01T01:57:16.749527-0300 | INFO | Backfill concluído: 46 briefings
+2026-07-01T01:58:22.621067-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-07-01T01:58:22.630471-0300 | INFO | Startups sem classificação: 0
+2026-07-01T01:58:22.638055-0300 | INFO | Startups com classificação mas sem recomendação: 46
+2026-07-01T01:58:22.928235-0300 | INFO | Total a processar: 46
+2026-07-01T02:17:03.304175-0300 | INFO | Validadas: 46, válidas: 46
+2026-07-01T02:45:44.217880-0300 | INFO | Resumo: 46 briefings gerados
+2026-07-01T02:45:44.219471-0300 | INFO | Backfill concluído: 46 briefings
+2026-07-01T02:46:50.461355-0300 | INFO | Modo --skip-scraping: carregando startups do banco sem classificação/recomendação
+2026-07-01T02:46:50.472539-0300 | INFO | Startups sem classificação: 0
+2026-07-01T02:46:50.480381-0300 | INFO | Startups com classificação mas sem recomendação: 0
+2026-07-01T02:46:50.487617-0300 | INFO | Startups com recomendação mas sem briefing: 8
+2026-07-01T02:46:50.487825-0300 | INFO | Processando 8 startups com recomendação mas sem briefing...
+2026-07-01T02:46:51.102696-0300 | INFO | Briefings extras: 8
+2026-07-01T02:46:51.102880-0300 | INFO | Resumo: 8 briefings gerados
+2026-07-01T02:46:51.102951-0300 | INFO | Backfill concluído: 8 briefings

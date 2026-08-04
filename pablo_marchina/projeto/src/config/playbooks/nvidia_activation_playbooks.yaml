@@ -1,0 +1,500 @@
+playbooks:
+  - playbook_id: inference_cost_optimization
+    name: Inference Cost Optimization
+    description: Otimizar custo de inferência LLM usando NVIDIA NIM, Triton e TensorRT-LLM
+    target_gap_types:
+      - high_inference_cost
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NVIDIA NIM
+      - Triton Inference Server
+      - TensorRT-LLM
+    technical_experiment:
+      title: LLM Inference Cost Benchmark
+      hypothesis: Migrating from general-purpose GPU inference to NVIDIA NIM/Triton reduces per-request cost by at least 40%
+      description: Run a benchmark comparing current inference cost and latency against a NIM-optimized endpoint using the same model and workload profile
+      duration: 2-4 weeks
+    success_metrics:
+      - p95 latency (ms)
+      - throughput (requests/s)
+      - cost per request ($)
+      - tokens/s
+    recommended_motion: technical_workshop
+    prerequisites:
+      - Access to NVIDIA NIM early access program
+      - Model checkpoint in a supported format (TensorRT-LLM, ONNX)
+      - Representative production workload trace for benchmarking
+    evidence_requirements:
+      - Evidence of high GPU/compute inference costs
+      - Evidence of LLM-based product usage with production traffic
+    risks:
+      - Model may require conversion to TensorRT-LLM format, which can take 1-2 weeks
+      - Benchmark results may vary by workload characteristics and model architecture
+      - NIM API may not support all custom model architectures
+    expected_value: 40-60% reduction in inference cost
+    implementation_complexity: medium
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: latency_optimization
+    name: Latency Optimization
+    description: Reduzir latência de inferência usando Triton Inference Server, TensorRT e NIM
+    target_gap_types:
+      - high_latency
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - Triton Inference Server
+      - TensorRT
+      - TensorRT-LLM
+      - NVIDIA NIM
+    technical_experiment:
+      title: Endpoint Latency Optimization
+      hypothesis: Deploying the model behind Triton Inference Server with dynamic batching reduces p95 latency by at least 50%
+      description: Compare current endpoint latency against a Triton-optimized deployment with dynamic batching, model concurrency, and INT8/FP8 quantization
+      duration: 2-4 weeks
+    success_metrics:
+      - p95 latency (ms)
+      - p99 latency (ms)
+      - throughput (requests/s)
+      - error rate (%)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - Access to Triton Inference Server
+      - Model in a framework supported by TensorRT (PyTorch, ONNX, TF)
+      - Latency-sensitive production use case
+    evidence_requirements:
+      - Evidence of high latency in production inference
+      - Evidence of real-time or near-real-time requirements
+    risks:
+      - Quantization may cause slight accuracy degradation (typically <1%)
+      - Dynamic batching adds latency for low-traffic periods
+      - Model may need refactoring for TensorRT compatibility
+    expected_value: 50-70% reduction in p95 latency
+    implementation_complexity: medium
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: agent_governance
+    name: Agent Governance
+    description: Implementar guardrails e governança para agentes autônomos usando NeMo Guardrails
+    target_gap_types:
+      - agent_governance_gap
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NeMo Guardrails
+      - NVIDIA NeMo
+    technical_experiment:
+      title: Agent Safety Evaluation
+      hypothesis: NeMo Guardrails can block at least 80% of unsafe or out-of-scope agent actions without increasing false positive rate beyond 5%
+      description: Deploy NeMo Guardrails in front of the existing agent pipeline, evaluate on a test suite of safe and unsafe action prompts
+      duration: 3-6 weeks
+    success_metrics:
+      - violation rate (%)
+      - blocked unsafe actions (%)
+      - false positive rate (%)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - Existing agent or multi-agent system in production or development
+      - Defined safety policy or acceptable-use boundaries
+      - Access to NeMo Guardrails
+    evidence_requirements:
+      - Evidence of autonomous agent behavior in production
+      - Evidence of missing safety controls or moderation
+    risks:
+      - Guardrails may need tuning to avoid blocking legitimate agent actions
+      - Colang policy language requires learning curve
+      - Performance overhead of guardrail evaluation
+    expected_value: 80-95% reduction in unsafe agent actions
+    implementation_complexity: high
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: data_pipeline_acceleration
+    name: Data Pipeline Acceleration
+    description: Acelerar pipelines de dados tabulares usando RAPIDS cuDF e cuML
+    target_gap_types:
+      - slow_data_pipeline
+      - heavy_tabular_processing
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NVIDIA RAPIDS
+      - cuDF
+      - cuML
+    technical_experiment:
+      title: Tabular Pipeline GPU Acceleration
+      hypothesis: Porting the ETL and feature engineering pipeline from pandas to cuDF reduces end-to-end runtime by at least 60%
+      description: Identify the most expensive tabular processing steps, reimplement using cuDF/cuML, and compare runtime and resource utilization
+      duration: 3-6 weeks
+    success_metrics:
+      - pipeline runtime (minutes)
+      - throughput (rows/s)
+      - cost reduction ($)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - NVIDIA GPU with compute capability 7.0+
+      - Tabular data pipeline using pandas, NumPy, or scikit-learn
+      - RAPIDS-compatible environment (Linux or WSL2 recommended)
+    evidence_requirements:
+      - Evidence of slow data processing or ETL bottlenecks
+      - Evidence of large tabular datasets
+    risks:
+      - cuDF API is similar but not identical to pandas; some code changes required
+      - Not all pandas operations are supported in cuDF
+      - GPU memory may limit dataset size; out-of-core processing may be needed
+    expected_value: 60-80% reduction in pipeline runtime
+    implementation_complexity: medium
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: computer_vision_acceleration
+    name: Computer Vision Acceleration
+    description: Otimizar inferência de visão computacional com TensorRT e Triton
+    target_gap_types:
+      - computer_vision_need
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - TensorRT
+      - Triton Inference Server
+      - NVIDIA AI Enterprise
+    technical_experiment:
+      title: CV Inference Optimization
+      hypothesis: Optimizing the CV model with TensorRT INT8 quantization increases FPS by at least 3x without significant accuracy loss
+      description: Convert the CV model to TensorRT, apply INT8 or FP16 quantization, and benchmark FPS, latency, and accuracy against the baseline
+      duration: 2-4 weeks
+    success_metrics:
+      - FPS (frames/s)
+      - p95 latency (ms)
+      - accuracy delta (%)
+      - model size reduction (%)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - CV model in a supported framework (PyTorch, ONNX, TensorFlow)
+      - NVIDIA GPU with TensorRT support
+      - Representative dataset for accuracy validation
+    evidence_requirements:
+      - Evidence of computer vision inference in production
+      - Evidence of performance bottlenecks or high latency
+    risks:
+      - INT8 quantization may cause accuracy degradation for some model architectures
+      - TensorRT graph optimization may fail for custom ops
+      - Triton deployment adds operational complexity
+    expected_value: 3-5x FPS improvement
+    implementation_complexity: medium
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: voice_ai
+    name: Voice AI Acceleration
+    description: Acelerar pipelines de voz com NVIDIA Riva e NIM
+    target_gap_types:
+      - voice_need
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NVIDIA Riva
+      - NVIDIA NIM
+    technical_experiment:
+      title: ASR/TTS Pipeline Benchmark
+      hypothesis: Replacing the current ASR/TTS pipeline with NVIDIA Riva reduces Word Error Rate by at least 20% and latency by 50%
+      description: Benchmark the current voice pipeline against NVIDIA Riva on a test set of domain-specific audio samples
+      duration: 2-4 weeks
+    success_metrics:
+      - Word Error Rate (WER)
+      - latency (ms)
+      - throughput (audio files/s)
+      - Real-Time Factor (RTF)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - Existing ASR/TTS pipeline or voice processing use case
+      - NVIDIA GPU with at least 16 GB VRAM
+      - Sample dataset of domain-specific audio
+    evidence_requirements:
+      - Evidence of voice or speech processing workload
+      - Evidence of accuracy or latency issues
+    risks:
+      - Riva may require custom language model training for domain-specific vocabulary
+      - Riva customization requires NVIDIA AI Enterprise license
+      - Migration effort for custom voice pipelines
+    expected_value: 20-40% WER reduction, 50% latency reduction
+    implementation_complexity: medium
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: simulation_digital_twins
+    name: Simulation & Digital Twins
+    description: Criar protótipos de simulação e digital twins com NVIDIA Omniverse
+    target_gap_types:
+      - simulation_need
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NVIDIA Omniverse
+    technical_experiment:
+      title: Digital Twin Prototype
+      hypothesis: Building a simulation prototype in Omniverse reduces time-to-simulation by at least 60% compared to custom simulation environments
+      description: Develop a proof-of-concept digital twin or simulation scenario using Omniverse USD pipeline and RTX rendering
+      duration: 4-8 weeks
+    success_metrics:
+      - time-to-simulation (weeks)
+      - fidelity score
+      - iteration speed (iterations/day)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - NVIDIA RTX GPU
+      - 3D assets or CAD models of the environment
+      - Omniverse license (free tier available)
+    evidence_requirements:
+      - Evidence of simulation or digital twin use case
+      - Evidence of need for physically accurate simulation
+    risks:
+      - Omniverse has a steep learning curve for USD and Kit extensions
+      - High-fidelity simulation requires significant GPU resources
+      - Integration with existing simulation pipelines may require custom connectors
+    expected_value: 60% faster time-to-simulation
+    implementation_complexity: high
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: robotics
+    name: Robotics Simulation & Validation
+    description: Acelerar desenvolvimento robótico com NVIDIA Isaac e Omniverse
+    target_gap_types:
+      - robotics_need
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NVIDIA Isaac
+      - NVIDIA Omniverse
+    technical_experiment:
+      title: Robotics Simulation Validation
+      hypothesis: Using Isaac Sim for policy validation reduces real-world testing cycles by at least 50%
+      description: Set up a robot model in Isaac Sim, run simulation-based policy validation, and measure simulation-to-reality transfer readiness
+      duration: 4-8 weeks
+    success_metrics:
+      - simulation success rate (%)
+      - policy transfer readiness (%)
+      - real-world testing cycles reduction (%)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - Robot hardware specification and URDF model
+      - Existing control or RL policy
+      - RTX GPU for Omniverse
+    evidence_requirements:
+      - Evidence of robotics development or research
+      - Evidence of simulation or validation bottlenecks
+    risks:
+      - Isaac Sim may not support all robot hardware configurations
+      - Sim-to-real gap may require additional calibration
+      - GPU requirements for high-fidelity simulation
+    expected_value: 50% reduction in real-world testing cycles
+    implementation_complexity: high
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: cybersecurity_ai
+    name: Cybersecurity AI Acceleration
+    description: Acelerar pipelines de cibersegurança com NVIDIA Morpheus
+    target_gap_types:
+      - ai_cybersecurity_need
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NVIDIA Morpheus
+    technical_experiment:
+      title: Cybersecurity Detection Pipeline
+      hypothesis: Accelerating the cybersecurity detection pipeline with Morpheus GPU processing reduces detection latency by at least 10x
+      description: Deploy Morpheus pipeline for log analysis, threat detection, or anomaly detection and measure performance improvement
+      duration: 4-8 weeks
+    success_metrics:
+      - detection latency (ms)
+      - false positive rate (%)
+      - throughput (events/s)
+      - detection coverage (%)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - Cybersecurity data pipeline (logs, network flows, or telemetry)
+      - GPU-accelerated server
+      - Morpheus SDK access
+    evidence_requirements:
+      - Evidence of AI-based cybersecurity workload
+      - Evidence of throughput or latency bottlenecks
+    risks:
+      - Morpheus requires specific data formats (JSON, CSV, Parquet)
+      - Pipeline integration may require custom pre-processing stages
+      - GPU memory may limit batch sizes for very large datasets
+    expected_value: 10x reduction in detection latency
+    implementation_complexity: high
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'
+
+  - playbook_id: private_controlled_deployment
+    name: Private & Controlled Deployment
+    description: Implementar deploy controlado de workloads de IA com NVIDIA AI Enterprise e NIM
+    target_gap_types:
+      - privacy_or_controlled_deployment
+    target_claim_types:
+      - gap_claim
+      - nvidia_fit_claim
+    nvidia_technologies:
+      - NVIDIA AI Enterprise
+      - NVIDIA NIM
+    technical_experiment:
+      title: Controlled AI Deployment Pilot
+      hypothesis: Deploying the AI workload using NVIDIA NIM on-premise meets governance requirements while maintaining inference performance within 10% of cloud baseline
+      description: Set up a controlled deployment of the AI service using NIM microservices on-premise or in a VPC, measure governance coverage and performance
+      duration: 4-8 weeks
+    success_metrics:
+      - deployment time (days)
+      - governance coverage (%)
+      - operational risk reduction (%)
+      - inference performance delta (% vs cloud)
+    recommended_motion: technical_workshop
+    prerequisites:
+      - NVIDIA AI Enterprise license (NVIDIA AI Enterprise)
+      - On-premise or VPC infrastructure with NVIDIA GPUs
+      - Compliance requirements documentation (LGPD, HIPAA, SOC2)
+    evidence_requirements:
+      - Evidence of data residency or controlled deployment requirements
+      - Evidence of regulatory compliance needs
+    risks:
+      - On-premise deployment requires infrastructure investment
+      - NIM microservices may require container orchestration (Kubernetes)
+      - Performance may vary compared to cloud deployment
+    expected_value: Controlled deployment with full governance coverage
+    implementation_complexity: high
+    confidence_rules:
+      requires_gap_match: true
+      evidence_coverage_boost: true
+      unsupported_claim_penalty: true
+      min_evidence_coverage: 0.3
+    output_template:
+      section_title: Recommended Activation Playbook
+      fields:
+        - playbook_name
+        - technical_experiment
+        - success_metrics
+        - risks
+        - next_step
+    version: '1.0'

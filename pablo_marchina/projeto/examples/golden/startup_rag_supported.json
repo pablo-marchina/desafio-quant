@@ -1,0 +1,27 @@
+{
+  "case_id": "startup_rag_supported",
+  "description": "AI company with diagnosed gaps and RAG corpus — expects motion unchanged by RAG, supporting context present in brief.",
+  "profile": {
+    "sector": "AI",
+    "ai_signals": ["inference", "cost optimization", "GPU"],
+    "tech_stack": ["PyTorch", "Docker"],
+    "description": "An AI company with inference needs and GPU-accelerated workloads in production.",
+    "product_summary": "AI inference product for GPU-accelerated workloads.",
+    "customers": ["Customer X"],
+    "funding": ["Series A $5M"]
+  },
+  "evidence": [
+    {"claim": "AI inference platform with GPU acceleration", "confidence": "medium"},
+    {"claim": "Production AI workloads", "confidence": "medium"}
+  ],
+  "expected": {
+    "motion_in": ["lack_evidence_more_research"],
+    "min_score": 5,
+    "max_score": 15,
+    "expected_gaps": ["high_inference_cost"],
+    "brief_min_sections": 3,
+    "rag_does_not_alter_motion": true,
+    "rag_context_in_brief": true,
+    "rag_context_not_in_evidence_used": true
+  }
+}

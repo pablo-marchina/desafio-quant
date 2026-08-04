@@ -1,0 +1,38 @@
+{
+  "status": "STATIC_BUILD_AND_TARGETED_TESTS_PASS_LIVE_SERVICES_REQUIRED_FOR_FINAL_DELIVERY",
+  "generated_at": "2026-06-30T23:00:00-03:00",
+  "single_runtime_pipeline": "POST /workflows/product-runs",
+  "rag_runtime_mode": "bm25_graphrag_qdrant_triton_rerank",
+  "rag_runtime_components": {
+    "bm25": "src.rag.sparse_retrieval.SparseRetriever active in hybrid_retrieve",
+    "dense_qdrant": "src.rag.semantic_retrieval.semantic_retrieve active in hybrid_retrieve",
+    "graphrag": "src.rag.graphrag_runtime.graphrag_expand active in hybrid_retrieve and technique runner",
+    "triton_reranker": "src.rag.triton_reranker.triton_rerank_contexts active in QdrantRagService"
+  },
+  "env_example_present": true,
+  "documentation_scope": "README plus four delivery docs; documentation describes current system, not version changes",
+  "required_live_services": [
+    "PostgreSQL",
+    "Qdrant",
+    "NVIDIA Triton reranker endpoint",
+    "BAAI/bge-m3 embedding runtime"
+  ],
+  "sandbox_validation": [
+    "python -m compileall -q src",
+    "pytest targeted RAG tests",
+    "frontend typecheck/build must be run after npm ci"
+  ],
+  "not_executed_in_sandbox": [
+    "live PostgreSQL workflow",
+    "live Qdrant ingestion",
+    "live Triton reranker inference",
+    "external API providers"
+  ],
+  "sandbox_validation_results": {
+    "compileall": "PASS",
+    "frontend_ci_typecheck_build": "PASS",
+    "targeted_rag_tests": "59 passed, 1 warning",
+    "targeted_scraping_recommendation_workflow_tests": "233 passed, 1 warning",
+    "technique_runner": "28 configured technique executions succeeded in local dummy check, including bm25, graphrag_runtime, and triton_reranker fallback metadata in dev mode"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "gate": "make check-final-release-zip",
+  "generated_at": "2026-07-01T05:57:49.798515+00:00",
+  "required_command": "make package-final-release",
+  "status": "PENDING_PACKAGE_FINAL_RELEASE"
+}

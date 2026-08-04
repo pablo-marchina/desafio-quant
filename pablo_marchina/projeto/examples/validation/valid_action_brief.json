@@ -1,0 +1,95 @@
+{
+  "startup_name": "Nexus AI Labs",
+  "website": "https://example.com",
+  "sector": "HealthTech",
+  "one_line_summary": "AI healthcare platform.",
+  "verdict": "promising",
+  "final_priority_score": 72.5,
+  "recommended_motion": "monitor_and_nurture",
+  "confidence": "high",
+  "sections": [
+    {"title": "Executive Summary", "content": "Summary.", "items": []},
+    {"title": "Why This Startup Matters", "content": "Why it matters.", "items": []},
+    {"title": "AI-Native Maturity", "content": "Maturity.", "items": []},
+    {"title": "Scores Overview", "content": "Scores.", "items": []},
+    {"title": "Production AI Gaps", "content": "Gaps.", "items": []},
+    {"title": "NVIDIA Fit", "content": "Fit.", "items": []},
+    {"title": "Recommended NVIDIA Technologies", "content": "NVIDIA TensorRT.", "items": []},
+    {"title": "Recommended Motion", "content": "Monitor and nurture.", "items": []},
+    {
+      "title": "Evidence",
+      "content": "Evidence.",
+      "items": [
+        {
+          "claim": "Startup uses computer vision models in production.",
+          "tag": "fact",
+          "confidence": "high",
+          "source_url": "https://example.com/evidence",
+          "source_type": "official_site"
+        }
+      ]
+    },
+    {"title": "Next Action", "content": "Validate workload.", "items": []}
+  ],
+  "ai_native_classification": {"level": "ai_native", "confidence": "high"},
+  "defensibility_score": {"total_score": 70.0},
+  "inception_fit_score": {"total_score": 75.0},
+  "production_readiness_score": {"total_score": 68.0},
+  "composite_score": {"final_score": 72.5},
+  "diagnosed_gaps": [
+    {
+      "gap": "computer_vision_need",
+      "detected": true,
+      "confidence": "high",
+      "evidence_tag": "fact",
+      "reasoning": "Computer vision workload detected."
+    }
+  ],
+  "nvidia_technology_candidates": [
+    {
+      "technology_name": "NVIDIA TensorRT",
+      "addresses_gap": "computer_vision_need",
+      "justification": "Optimizes vision inference."
+    }
+  ],
+  "recommendations": [
+    {
+      "diagnosed_gap": "computer_vision_need",
+      "detected": true,
+      "recommended_nvidia_technologies": ["NVIDIA TensorRT"],
+      "technical_justification": "Vision inference optimization.",
+      "business_justification": "Lower latency.",
+      "priority": "high",
+      "implementation_complexity": "medium",
+      "suggested_experiment": null,
+      "action": "approach_now",
+      "next_action_for_nvidia_team": "Validate workload.",
+      "evidence_used": [
+        {
+          "claim": "Startup uses computer vision models in production.",
+          "source_url": "https://example.com/evidence",
+          "source_type": "official_site",
+          "quote_or_evidence": "The company states it uses computer vision models in production.",
+          "confidence": "high",
+          "evidence_kind": "fact",
+          "collected_at": "2026-06-11T00:00:00Z"
+        }
+      ],
+      "missing_evidence": [],
+      "confidence": "high"
+    }
+  ],
+  "evidence_used": [
+    {
+      "claim": "Startup uses computer vision models in production.",
+      "tag": "fact",
+      "confidence": "high",
+      "source_url": "https://example.com/evidence",
+      "source_type": "official_site"
+    }
+  ],
+  "missing_evidence": [],
+  "uncertainties": [],
+  "next_action_for_nvidia_team": "Validate workload.",
+  "reasoning": "Evidence-backed recommendation."
+}

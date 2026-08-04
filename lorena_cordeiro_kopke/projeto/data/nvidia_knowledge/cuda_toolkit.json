@@ -1,0 +1,11 @@
+{
+  "url": "https://developer.nvidia.com/cuda/toolkit",
+  "fonte": "developer.nvidia.com",
+  "titulo": "NVIDIA CUDA Toolkit — Ambiente de Desenvolvimento para Aplicações GPU-Aceleradas",
+  "categoria": "conceito",
+  "familia": "treinamento",
+  "tecnologia": "CUDA",
+  "setores": ["geral"],
+  "ia_tipos": ["LLM", "visão computacional", "classificacao"],
+  "texto": "O NVIDIA CUDA Toolkit é o ambiente de desenvolvimento base para criar aplicações de alto desempenho aceleradas por GPU. Inclui bibliotecas aceleradas por GPU, ferramentas de debugging e otimização, um compilador C/C++ e uma biblioteca de runtime. Com ele, é possível desenvolver, otimizar e fazer deploy de aplicações em sistemas embarcados, workstations, data centers, plataformas cloud e supercomputadores.\n\nO CUDA 13.2 introduz CUDA Tile C++, que permite escrever kernels em C++ usando o modelo de programação por tiles — uma abstração que facilita a exploração da hierarquia de memória da GPU sem exigir conhecimento de baixo nível de CUDA puro. O cuTile Python traz o mesmo modelo de programação para Python, com suporte a construções como closures e recursão. O suporte a Tile foi estendido às arquiteturas Ampere e Ada nessa versão.\n\nO CUDA Toolkit unificou o ecossistema ARM em um único toolkit, permitindo deploy contínuo desde data centers até dispositivos edge sem toolchains separadas.\n\nCUDA é a fundação sobre a qual toda a stack de IA da NVIDIA é construída — frameworks como PyTorch, TensorFlow, TensorRT-LLM e cuDF dependem do CUDA para executar operações paralelizadas na GPU. Para startups que desenvolvem modelos customizados ou precisam otimizar kernels críticos de inferência ou treinamento, o CUDA Toolkit é o ponto de entrada para obter o máximo de performance das GPUs NVIDIA."
+}

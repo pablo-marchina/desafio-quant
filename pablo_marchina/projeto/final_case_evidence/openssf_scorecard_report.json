@@ -1,0 +1,173 @@
+{
+  "checks": [
+    {
+      "check_id": "ci_workflow_present",
+      "critical": true,
+      "details": {
+        "exists": true,
+        "path": ".github/workflows/ci.yml"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "python_lock_or_project_metadata",
+      "critical": true,
+      "details": {
+        "exists": true,
+        "path": "pyproject.toml"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "frontend_lockfile_present",
+      "critical": true,
+      "details": {
+        "exists": true,
+        "path": "frontend/package-lock.json"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "security_policy_present",
+      "critical": false,
+      "details": {
+        "exists": true,
+        "path": "SECURITY.md"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "license_declared",
+      "critical": false,
+      "details": {
+        "exists": false,
+        "path": "LICENSE"
+      },
+      "passed": false,
+      "score": 0.0,
+      "weight": 0.5
+    },
+    {
+      "check_id": "report.secret_scan_report.json",
+      "critical": true,
+      "details": {
+        "allowed_statuses": [
+          "PASS"
+        ],
+        "report": "secret_scan_report.json",
+        "status": "PASS"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "report.dependency_vulnerability_report.json",
+      "critical": true,
+      "details": {
+        "allowed_statuses": [
+          "PASS"
+        ],
+        "report": "dependency_vulnerability_report.json",
+        "status": "BLOCKED_BY_ENVIRONMENT"
+      },
+      "passed": false,
+      "score": 0.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "report.sast_report.json",
+      "critical": true,
+      "details": {
+        "allowed_statuses": [
+          "PASS",
+          "WARN"
+        ],
+        "report": "sast_report.json",
+        "status": "BLOCKED_BY_ENVIRONMENT"
+      },
+      "passed": false,
+      "score": 0.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "report.sbom_report.json",
+      "critical": true,
+      "details": {
+        "allowed_statuses": [
+          "PASS"
+        ],
+        "report": "sbom_report.json",
+        "status": "BLOCKED_BY_ENVIRONMENT"
+      },
+      "passed": false,
+      "score": 0.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "report.container_scan_report.json",
+      "critical": true,
+      "details": {
+        "allowed_statuses": [
+          "PASS"
+        ],
+        "report": "container_scan_report.json",
+        "status": "PASS"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "no_committed_env_file",
+      "critical": true,
+      "details": {
+        "git_tracked": false,
+        "path": ".env"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "no_frontend_node_modules",
+      "critical": true,
+      "details": {
+        "git_tracked": false,
+        "path": "frontend/node_modules"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    },
+    {
+      "check_id": "no_local_product_db",
+      "critical": true,
+      "details": {
+        "git_tracked": false,
+        "path": "data/product/product.db"
+      },
+      "passed": true,
+      "score": 1.0,
+      "weight": 1.0
+    }
+  ],
+  "critical_failure_count": 3,
+  "generated_at": "2026-07-01T05:58:09.709615+00:00",
+  "note": "Local quantitative release scorecard used because the official OpenSSF scorecard binary is unavailable.",
+  "report_id": "openssf_scorecard_report",
+  "score": 0.72,
+  "score_percent": 72.0,
+  "status": "FAIL",
+  "tool": "local-openssf-style-scorecard",
+  "version": "1.0",
+  "warning_count": 1
+}

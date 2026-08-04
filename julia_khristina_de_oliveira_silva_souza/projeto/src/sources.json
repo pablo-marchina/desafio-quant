@@ -1,0 +1,105 @@
+[
+  {
+    "tech": "NVIDIA Inception",
+    "category": "programa_startups",
+    "urls": ["https://www.nvidia.com/en-us/startups/"]
+  },
+  {
+    "tech": "NVIDIA NIM Microservices",
+    "category": "inferencia_deploy",
+    "urls": ["https://www.nvidia.com/en-us/ai-data-science/products/nim-microservices/"]
+  },
+  {
+    "tech": "NVIDIA API Catalog",
+    "category": "inferencia_deploy",
+    "urls": ["https://build.nvidia.com/"]
+  },
+  {
+    "tech": "NVIDIA Triton Inference Server",
+    "category": "inferencia_deploy",
+    "urls": ["https://docs.nvidia.com/deeplearning/triton-inference-server/"]
+  },
+  {
+    "tech": "NVIDIA TensorRT-LLM",
+    "category": "latencia_inferencia",
+    "urls": ["https://developer.nvidia.com/tensorrt-llm"]
+  },
+  {
+    "tech": "NVIDIA NeMo",
+    "category": "customizacao_modelos",
+    "urls": ["https://www.nvidia.com/en-us/ai-data-science/products/nemo/"]
+  },
+  {
+    "tech": "NeMo Guardrails",
+    "category": "governanca_agentes",
+    "urls": ["https://github.com/NVIDIA/NeMo-Guardrails"]
+  },
+  {
+    "tech": "NVIDIA RAPIDS",
+    "category": "dados_tabulares",
+    "urls": ["https://rapids.ai/"]
+  },
+  {
+    "tech": "cuDF",
+    "category": "dados_tabulares",
+    "urls": ["https://docs.rapids.ai/api/cudf/stable/"]
+  },
+  {
+    "tech": "cuML",
+    "category": "dados_tabulares",
+    "urls": ["https://docs.rapids.ai/api/cuml/stable/"]
+  },
+  {
+    "tech": "NVIDIA CUDA Toolkit",
+    "category": "infraestrutura_gpu",
+    "urls": ["https://developer.nvidia.com/cuda-toolkit"]
+  },
+  {
+    "tech": "NVIDIA Riva",
+    "category": "voz",
+    "urls": ["https://developer.nvidia.com/riva"]
+  },
+  {
+    "tech": "NVIDIA Omniverse",
+    "category": "robotica_simulacao",
+    "urls": ["https://www.nvidia.com/en-us/omniverse/"]
+  },
+  {
+    "tech": "NVIDIA Isaac",
+    "category": "robotica_simulacao",
+    "urls": ["https://developer.nvidia.com/isaac"]
+  },
+  {
+    "tech": "NVIDIA Clara",
+    "category": "saude",
+    "urls": ["https://www.nvidia.com/en-us/clara/"]
+  },
+  {
+    "tech": "NVIDIA Morpheus",
+    "category": "cybersecurity",
+    "urls": ["https://developer.nvidia.com/morpheus-cybersecurity"]
+  },
+  {
+    "tech": "NVIDIA AI Enterprise",
+    "category": "plataforma_enterprise",
+    "urls": ["https://www.nvidia.com/en-us/data-center/products/ai-enterprise/"]
+  },
+  {
+    "tech": "Sequoia Capital - AI Services",
+    "category": "contexto_estrategico",
+    "type": "contexto",
+    "urls": ["https://sequoiacap.com/article/services-the-new-software/"]
+  },
+  {
+    "tech": "Emergence Capital - AI-Native Services Playbook",
+    "category": "contexto_estrategico",
+    "type": "contexto",
+    "urls": ["https://www.emcap.com/thoughts/the-ai-native-services-playbook"]
+  },
+  {
+    "tech": "NVIDIA AI 5-Layer Cake",
+    "category": "contexto_estrategico",
+    "type": "contexto",
+    "urls": ["https://blogs.nvidia.com/blog/ai-5-layer-cake/"]
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "status": "STATIC_RAG_RUNTIME_WIRED_LIVE_QDRANT_TRITON_REQUIRED",
+  "mode": "bm25_graphrag_qdrant_triton_rerank",
+  "bm25_active": true,
+  "graphrag_active": true,
+  "qdrant_dense_active": true,
+  "triton_reranker_active_in_code": true,
+  "triton_required_in_product": true,
+  "expected_embedding_model": "BAAI/bge-m3",
+  "expected_vector_size": 1024,
+  "corpus_sources_declared": "data/nvidia_corpus/sources.yaml",
+  "live_upsert_points": "NOT_EXECUTED_IN_SANDBOX"
+}

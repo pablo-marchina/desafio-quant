@@ -1,0 +1,16 @@
+{
+  "note": "Fictional example for schema illustration only.",
+  "startup_name": "Aurora Ops AI",
+  "website": "https://example.com",
+  "country": "Brazil",
+  "sector": "Operations SaaS",
+  "description": "A fictional startup used as a golden profile example.",
+  "product_summary": "Provides AI-assisted operational workflows for industrial teams.",
+  "ai_signals": ["Official blog mentions AI copilots for workflow execution."],
+  "customers": ["Fictional Enterprise A"],
+  "founders": ["Founder Example"],
+  "funding_signals": ["Placeholder funding note"],
+  "tech_stack_signals": ["Inference workloads mentioned in public engineering content"],
+  "sources": [],
+  "confidence_score": 0.78
+}

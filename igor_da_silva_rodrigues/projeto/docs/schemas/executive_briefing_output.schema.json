@@ -1,0 +1,22 @@
+{
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "markdown": {
+      "maxLength": 12000,
+      "minLength": 1,
+      "title": "Markdown",
+      "type": "string"
+    }
+  },
+  "required": [
+    "startup",
+    "markdown"
+  ],
+  "title": "ExecutiveBriefingOutput",
+  "type": "object"
+}

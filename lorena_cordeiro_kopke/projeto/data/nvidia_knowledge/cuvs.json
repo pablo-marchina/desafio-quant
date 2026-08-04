@@ -1,0 +1,11 @@
+{
+  "url": "https://rapids.ai/cuvs/",
+  "fonte": "rapids.ai",
+  "titulo": "RAPIDS cuVS — Busca Vetorial de Alta Performance Acelerada por GPU",
+  "categoria": "produto",
+  "familia": "dados",
+  "tecnologia": "cuVS",
+  "setores": ["geral"],
+  "ia_tipos": ["busca semantica", "recomendacao", "LLM", "classificacao"],
+  "texto": "RAPIDS cuVS é a biblioteca de busca vetorial acelerada por GPU do ecossistema RAPIDS. Implementa índices de approximate nearest neighbor (ANN) de alta performance — incluindo IVF-Flat, IVF-PQ e CAGRA (grafo hierárquico otimizado para GPU) — para busca de similaridade em coleções de vetores de alta dimensionalidade, com throughput e latência muito superiores aos de bibliotecas CPU como FAISS em modo CPU.\n\nO problema que o cuVS resolve é escala de busca vetorial: pipelines de RAG, sistemas de recomendação e buscadores semânticos que funcionam bem com milhões de vetores em FAISS CPU começam a enfrentar latência inaceitável ou custo de infraestrutura proibitivo ao passar para dezenas ou centenas de milhões de vetores. O cuVS usa paralelismo de GPU para manter latência de busca em dezenas de milissegundos mesmo nessa escala, com throughput de milhares de queries por segundo.\n\nOs casos de uso diretos para startups são: bases de conhecimento e RAG em escala para produtos de IA generativa que indexam grandes corpora de documentos; sistemas de recomendação de produtos, conteúdo ou usuários baseados em embeddings; busca por similaridade de imagens ou vídeos em plataformas de e-commerce, mídia e segurança; e deduplicação de registros em datasets grandes via similaridade de embedding.\n\nO cuVS serve como backend de busca vetorial para bancos de dados como Milvus e Qdrant quando configurados para usar GPU, acelerando diretamente a camada de retrieval de pipelines RAG sem mudança de API. Ele integra com cuDF para construção de índices a partir de DataFrames em GPU e com NIM para pipelines de embedding + busca inteiramente em GPU.\n\nStartups que constroem produtos baseados em busca semântica, recomendação por embedding ou RAG com bases de dados grandes — e que começam a sentir a latência ou o custo de infraestrutura da busca vetorial crescer — encontram no cuVS a camada de aceleração que mantém o produto responsivo em escala sem multiplicar o número de réplicas de serviço."
+}

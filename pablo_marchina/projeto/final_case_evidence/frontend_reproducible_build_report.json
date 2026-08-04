@@ -1,0 +1,7 @@
+{
+  "artifact": "frontend/dist/index.html",
+  "generated_at": "2026-07-01T05:57:51.032146+00:00",
+  "required_command": "npm ci && npm run build",
+  "status": "PASS",
+  "validated_command": "npm ci && npm run build"
+}

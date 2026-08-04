@@ -1,0 +1,19 @@
+# Config de ferramentas do TAPI (lint + testes). O empacotamento é flat (packages/, apps/);
+# este arquivo NÃO declara [project] de propósito — só configura ruff e pytest p/ o CI (F0.10).
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = [".venv", "migrations/versions"]
+
+[tool.ruff.lint]
+# Conjunto enxuto e de alto sinal: erros (E/F/W), imports (I), bugbear (B), pyupgrade (UP).
+select = ["E", "F", "W", "I", "B", "UP"]
+# UP042: `class X(str, Enum)` é o padrão intencional do F0.5 (serialização string no
+# Pydantic/SQLModel, já testada) — não migramos p/ StrEnum só por estilo.
+ignore = ["UP042"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]      # permite `import packages...` rodando pytest da raiz
+testpaths = ["tests"]
+addopts = "-q"

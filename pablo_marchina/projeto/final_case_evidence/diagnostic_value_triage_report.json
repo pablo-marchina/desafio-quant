@@ -1,0 +1,648 @@
+{
+  "baseline_quality_score": 0.5869,
+  "case_count": 7,
+  "case_scores": [
+    {
+      "baseline_quality_score": 0.5868,
+      "case_id": "query_vocab_gap",
+      "improvement_opportunity": "Improve retrieval robustness when the same need is phrased differently.",
+      "name": "Different vocabulary hides the right NVIDIA evidence",
+      "target_families": [
+        "query_rewriting_multiquery"
+      ]
+    },
+    {
+      "baseline_quality_score": 0.5724,
+      "case_id": "multi_hop_gap_to_product",
+      "improvement_opportunity": "Improve explainability of why one NVIDIA path wins over adjacent options.",
+      "name": "Multi-hop gap-to-product reasoning is underspecified",
+      "target_families": [
+        "graphrag_evidence_graph"
+      ]
+    },
+    {
+      "baseline_quality_score": 0.5503,
+      "case_id": "negative_signal_conflict",
+      "improvement_opportunity": "Improve confidence calibration and evaluator trust when evidence conflicts.",
+      "name": "Negative signals should change confidence",
+      "target_families": [
+        "counter_evidence_retrieval",
+        "evidence_sufficiency_abstention"
+      ]
+    },
+    {
+      "baseline_quality_score": 0.5897,
+      "case_id": "stale_low_trust_sources",
+      "improvement_opportunity": "Improve trust by preferring stronger and fresher evidence without changing the claim.",
+      "name": "Stale or weak sources compete with stronger evidence",
+      "target_families": [
+        "source_trust_freshness_ranking"
+      ]
+    },
+    {
+      "baseline_quality_score": 0.5213,
+      "case_id": "insufficient_evidence_recommendation",
+      "improvement_opportunity": "Improve trust by separating hypothesis from supported recommendation.",
+      "name": "Recommendation should abstain when support is thin",
+      "target_families": [
+        "evidence_sufficiency_abstention"
+      ]
+    },
+    {
+      "baseline_quality_score": 0.5805,
+      "case_id": "generic_next_action",
+      "improvement_opportunity": "Improve actionability and evaluator confidence in the proposed next step.",
+      "name": "Next action is too generic to execute",
+      "target_families": [
+        "recommendation_specificity_next_action"
+      ]
+    },
+    {
+      "baseline_quality_score": 0.7071,
+      "case_id": "same_quality_lower_cost",
+      "improvement_opportunity": "Improve the product as a whole even when answer quality is already acceptable.",
+      "name": "Same quality should become cheaper and more reliable",
+      "target_families": [
+        "cost_latency_reliability_controls"
+      ]
+    }
+  ],
+  "family_decisions": [
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.105,
+      "affected_cases": [
+        "negative_signal_conflict"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Counter-evidence retrieval and contradiction checks",
+      "family_id": "counter_evidence_retrieval",
+      "matching_candidates": [
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__counter-evidence-retrieval",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "counter-evidence retrieval",
+          "priority_score": 265
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__corrective-rag-crag",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "corrective RAG / CRAG",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__skeptical-rag",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "skeptical RAG",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "maximal__8-34-verifier-guided-and-corrective-rag__crag-retrieval-evaluator",
+          "category": "8.34 Verifier-Guided and Corrective RAG",
+          "executable": true,
+          "name": "CRAG retrieval evaluator",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "maximal__8-33-claim-verification-and-groundedness__ragognizer-style-detection",
+          "category": "8.33 Claim Verification and Groundedness",
+          "executable": true,
+          "name": "RAGognizer-style detection",
+          "priority_score": 165
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.6019,
+      "quality_delta": 0.015,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.3981,
+      "technology_examples": [
+        "counter-evidence retrieval",
+        "skeptical RAG",
+        "CRAG",
+        "claim verification"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0991,
+      "affected_cases": [
+        "multi_hop_gap_to_product"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "GraphRAG / evidence graph expansion",
+      "family_id": "graphrag_evidence_graph",
+      "matching_candidates": [
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__claim-to-recommendation-edges",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "claim-to-recommendation edges",
+          "priority_score": 375
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__claim-graph",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "claim graph",
+          "priority_score": 285
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__contradiction-edges",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "contradiction edges",
+          "priority_score": 285
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__evidence-graph",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "evidence graph",
+          "priority_score": 285
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__evidence-taxonomy",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "evidence taxonomy",
+          "priority_score": 285
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.601,
+      "quality_delta": 0.0142,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.399,
+      "technology_examples": [
+        "GraphRAG",
+        "knowledge graph",
+        "evidence graph",
+        "multi-hop graph"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0955,
+      "affected_cases": [
+        "query_vocab_gap"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Query rewriting and multi-query expansion",
+      "family_id": "query_rewriting_multiquery",
+      "matching_candidates": [
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__hyde",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "HyDE",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__multi-query-retrieval",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "multi-query retrieval",
+          "priority_score": 175
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__query-expansion",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "query expansion",
+          "priority_score": 175
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__query-rewriting",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "query rewriting",
+          "priority_score": 175
+        },
+        {
+          "candidate_id": "maximal__8-45-failure-transparency-and-completeness-control__out-of-scope-query-rewriting",
+          "category": "8.45 Failure Transparency and Completeness Control",
+          "executable": true,
+          "name": "out-of-scope query rewriting",
+          "priority_score": 125
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.6005,
+      "quality_delta": 0.0136,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.3995,
+      "technology_examples": [
+        "query rewriting",
+        "query expansion",
+        "multi-query retrieval",
+        "HyDE"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0937,
+      "affected_cases": [
+        "generic_next_action"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Recommendation specificity and next-best-action enrichment",
+      "family_id": "recommendation_specificity_next_action",
+      "matching_candidates": [],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.6003,
+      "quality_delta": 0.0134,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.3997,
+      "technology_examples": [
+        "value-of-information",
+        "recommendation ranking",
+        "technical experiment templates"
+      ]
+    },
+    {
+      "affected_case_count": 2,
+      "affected_case_quality_delta": 0.0928,
+      "affected_cases": [
+        "negative_signal_conflict",
+        "insufficient_evidence_recommendation"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Evidence sufficiency and abstention gate",
+      "family_id": "evidence_sufficiency_abstention",
+      "matching_candidates": [
+        {
+          "candidate_id": "8-7-evidence-verification-uncertainty-and-abstention__factual-consistency-scoring",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "executable": true,
+          "name": "factual consistency scoring",
+          "priority_score": 205
+        },
+        {
+          "candidate_id": "8-7-evidence-verification-uncertainty-and-abstention__bayesian-model-averaging",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "executable": true,
+          "name": "bayesian model averaging",
+          "priority_score": 165
+        },
+        {
+          "candidate_id": "8-7-evidence-verification-uncertainty-and-abstention__evidence-coverage-score",
+          "category": "8.7 Evidence, verification, uncertainty and abstention",
+          "executable": true,
+          "name": "evidence coverage score",
+          "priority_score": 165
+        },
+        {
+          "candidate_id": "maximal__8-34-verifier-guided-and-corrective-rag__low-confidence-abstention",
+          "category": "8.34 Verifier-Guided and Corrective RAG",
+          "executable": true,
+          "name": "low-confidence abstention",
+          "priority_score": 165
+        },
+        {
+          "candidate_id": "maximal__8-45-failure-transparency-and-completeness-control__answerability-after-retrieval",
+          "category": "8.45 Failure Transparency and Completeness Control",
+          "executable": true,
+          "name": "answerability-after-retrieval",
+          "priority_score": 165
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.6134,
+      "quality_delta": 0.0265,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.3866,
+      "technology_examples": [
+        "answerability",
+        "abstention",
+        "uncertainty gating",
+        "evidence verification"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0797,
+      "affected_cases": [
+        "stale_low_trust_sources"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Source trust and freshness ranking",
+      "family_id": "source_trust_freshness_ranking",
+      "matching_candidates": [
+        {
+          "candidate_id": "8-6-reranking__source-trust-aware-reranking",
+          "category": "8.6 Reranking",
+          "executable": true,
+          "name": "source-trust-aware reranking",
+          "priority_score": 280
+        },
+        {
+          "candidate_id": "8-6-reranking__freshness-aware-reranking",
+          "category": "8.6 Reranking",
+          "executable": true,
+          "name": "freshness-aware reranking",
+          "priority_score": 210
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.5983,
+      "quality_delta": 0.0114,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.4017,
+      "technology_examples": [
+        "source-trust-aware reranking",
+        "freshness-aware reranking",
+        "provenance scoring"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0246,
+      "affected_cases": [
+        "same_quality_lower_cost"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "NO_MEASURED_HEADROOM",
+      "display_name": "Cost, latency, and reliability controls",
+      "family_id": "cost_latency_reliability_controls",
+      "matching_candidates": [
+        {
+          "candidate_id": "8-14-observability-llmops-and-experiment-tracking__grafana",
+          "category": "8.14 Observability, LLMOps and experiment tracking",
+          "executable": true,
+          "name": "Grafana",
+          "priority_score": 45
+        },
+        {
+          "candidate_id": "8-14-observability-llmops-and-experiment-tracking__jaeger",
+          "category": "8.14 Observability, LLMOps and experiment tracking",
+          "executable": true,
+          "name": "Jaeger",
+          "priority_score": 45
+        },
+        {
+          "candidate_id": "8-14-observability-llmops-and-experiment-tracking__loki",
+          "category": "8.14 Observability, LLMOps and experiment tracking",
+          "executable": true,
+          "name": "Loki",
+          "priority_score": 45
+        },
+        {
+          "candidate_id": "8-14-observability-llmops-and-experiment-tracking__openinference",
+          "category": "8.14 Observability, LLMOps and experiment tracking",
+          "executable": true,
+          "name": "OpenInference",
+          "priority_score": 45
+        },
+        {
+          "candidate_id": "8-14-observability-llmops-and-experiment-tracking__opentelemetry",
+          "category": "8.14 Observability, LLMOps and experiment tracking",
+          "executable": true,
+          "name": "OpenTelemetry",
+          "priority_score": 45
+        }
+      ],
+      "next_step": "Do not implement now; keep monitoring with stronger diagnostic cases or real failures.",
+      "oracle_quality_score": 0.5904,
+      "quality_delta": 0.0035,
+      "rationale": "Oracle lift is below the minimum value delta; implementation is not justified yet.",
+      "residual_headroom": 0.4096,
+      "technology_examples": [
+        "token budgeter",
+        "context packer",
+        "caching",
+        "observability"
+      ]
+    }
+  ],
+  "generated_at": "2026-07-01T05:58:25.269986+00:00",
+  "methodology": "This is a pre-implementation oracle triage. It measures marginal system-value lift across output quality, robustness, auditability, and efficiency, then estimates which technology families deserve a spike. It is not a runtime adoption benchmark.",
+  "min_oracle_delta": 0.025,
+  "quality_weights": {
+    "alternatives_lost_rationale": 0.05,
+    "contradiction_handling": 0.09,
+    "evaluator_auditability": 0.06,
+    "evidence_sufficiency": 0.15,
+    "lineage_traceability": 0.07,
+    "next_action_quality": 0.09,
+    "operational_efficiency": 0.03,
+    "recommendation_specificity": 0.11,
+    "robustness_to_query_variance": 0.07,
+    "source_trust_freshness": 0.09,
+    "uncertainty_calibration": 0.08,
+    "unsupported_claim_control": 0.11
+  },
+  "recommended_spikes": [
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.105,
+      "affected_cases": [
+        "negative_signal_conflict"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Counter-evidence retrieval and contradiction checks",
+      "family_id": "counter_evidence_retrieval",
+      "matching_candidates": [
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__counter-evidence-retrieval",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "counter-evidence retrieval",
+          "priority_score": 265
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__corrective-rag-crag",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "corrective RAG / CRAG",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__skeptical-rag",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "skeptical RAG",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "maximal__8-34-verifier-guided-and-corrective-rag__crag-retrieval-evaluator",
+          "category": "8.34 Verifier-Guided and Corrective RAG",
+          "executable": true,
+          "name": "CRAG retrieval evaluator",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "maximal__8-33-claim-verification-and-groundedness__ragognizer-style-detection",
+          "category": "8.33 Claim Verification and Groundedness",
+          "executable": true,
+          "name": "RAGognizer-style detection",
+          "priority_score": 165
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.6019,
+      "quality_delta": 0.015,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.3981,
+      "technology_examples": [
+        "counter-evidence retrieval",
+        "skeptical RAG",
+        "CRAG",
+        "claim verification"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0991,
+      "affected_cases": [
+        "multi_hop_gap_to_product"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "GraphRAG / evidence graph expansion",
+      "family_id": "graphrag_evidence_graph",
+      "matching_candidates": [
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__claim-to-recommendation-edges",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "claim-to-recommendation edges",
+          "priority_score": 375
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__claim-graph",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "claim graph",
+          "priority_score": 285
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__contradiction-edges",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "contradiction edges",
+          "priority_score": 285
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__evidence-graph",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "evidence graph",
+          "priority_score": 285
+        },
+        {
+          "candidate_id": "maximal__8-36-advanced-graphrag-and-ontology-guided-retrieval__evidence-taxonomy",
+          "category": "8.36 Advanced GraphRAG and Ontology-Guided Retrieval",
+          "executable": true,
+          "name": "evidence taxonomy",
+          "priority_score": 285
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.601,
+      "quality_delta": 0.0142,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.399,
+      "technology_examples": [
+        "GraphRAG",
+        "knowledge graph",
+        "evidence graph",
+        "multi-hop graph"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0955,
+      "affected_cases": [
+        "query_vocab_gap"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Query rewriting and multi-query expansion",
+      "family_id": "query_rewriting_multiquery",
+      "matching_candidates": [
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__hyde",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "HyDE",
+          "priority_score": 180
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__multi-query-retrieval",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "multi-query retrieval",
+          "priority_score": 175
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__query-expansion",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "query expansion",
+          "priority_score": 175
+        },
+        {
+          "candidate_id": "8-5-rag-retrieval-techniques__query-rewriting",
+          "category": "8.5 RAG/retrieval techniques",
+          "executable": true,
+          "name": "query rewriting",
+          "priority_score": 175
+        },
+        {
+          "candidate_id": "maximal__8-45-failure-transparency-and-completeness-control__out-of-scope-query-rewriting",
+          "category": "8.45 Failure Transparency and Completeness Control",
+          "executable": true,
+          "name": "out-of-scope query rewriting",
+          "priority_score": 125
+        }
+      ],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.6005,
+      "quality_delta": 0.0136,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.3995,
+      "technology_examples": [
+        "query rewriting",
+        "query expansion",
+        "multi-query retrieval",
+        "HyDE"
+      ]
+    },
+    {
+      "affected_case_count": 1,
+      "affected_case_quality_delta": 0.0937,
+      "affected_cases": [
+        "generic_next_action"
+      ],
+      "baseline_quality_score": 0.5869,
+      "decision": "SPIKE_CANDIDATE",
+      "display_name": "Recommendation specificity and next-best-action enrichment",
+      "family_id": "recommendation_specificity_next_action",
+      "matching_candidates": [],
+      "next_step": "Build the smallest disposable spike that targets the affected diagnostic cases, then run a real quality benchmark before product promotion.",
+      "oracle_quality_score": 0.6003,
+      "quality_delta": 0.0134,
+      "rationale": "Oracle lift shows measurable marginal system-value for this family.",
+      "residual_headroom": 0.3997,
+      "technology_examples": [
+        "value-of-information",
+        "recommendation ranking",
+        "technical experiment templates"
+      ]
+    }
+  ],
+  "report_id": "diagnostic_value_triage_report",
+  "spike_candidate_count": 6,
+  "top_spike_family": "counter_evidence_retrieval"
+}

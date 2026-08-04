@@ -1,0 +1,371 @@
+{
+  "configuration_only": false,
+  "generated_at": "2026-07-01T07:34:26.057150+00:00",
+  "next_actions": [
+    "Docker is not required for this run because PostgreSQL and Qdrant are already reachable."
+  ],
+  "product_configuration": {
+    "checks": [
+      {
+        "check_id": "env.app_mode",
+        "reason": "APP_MODE is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.product_db_url",
+        "reason": "PRODUCT_DB_URL is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.rag_vector_backend",
+        "reason": "RAG_VECTOR_BACKEND is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.rag_required_for_product",
+        "reason": "RAG_REQUIRED_FOR_PRODUCT is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.rag_embedding_model",
+        "reason": "RAG_EMBEDDING_MODEL is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.qdrant_url",
+        "reason": "QDRANT_URL is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.qdrant_collection",
+        "reason": "QDRANT_COLLECTION is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.qdrant_vector_size",
+        "reason": "QDRANT_VECTOR_SIZE is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.agent_orchestration_enabled",
+        "reason": "AGENT_ORCHESTRATION_ENABLED is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "env.langgraph_checkpointer",
+        "reason": "LANGGRAPH_CHECKPOINTER is set",
+        "status": "PASS"
+      },
+      {
+        "check_id": "database.postgresql_required",
+        "reason": "APP_MODE=product requires PRODUCT_DB_URL to be PostgreSQL.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rag.qdrant_required",
+        "reason": "APP_MODE=product requires RAG_VECTOR_BACKEND=qdrant.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rag.required_for_recommendations",
+        "reason": "APP_MODE=product requires RAG_REQUIRED_FOR_PRODUCT=true.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "runtime.no_demo_or_mock",
+        "reason": "Product runtime cannot enable demo or mock providers.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "runtime.agent_orchestration_required",
+        "reason": "APP_MODE=product requires AGENT_ORCHESTRATION_ENABLED=true.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "runtime.langgraph_postgres_checkpointer_required",
+        "reason": "APP_MODE=product requires LANGGRAPH_CHECKPOINTER=postgres.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rag.hybrid_retrieval_required",
+        "reason": "APP_MODE=product requires hybrid RAG retrieval.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rag.reranker_required",
+        "reason": "APP_MODE=product requires a non-mock reranker provider.",
+        "status": "PASS"
+      },
+      {
+        "check_id": "rag.triton_reranker_endpoint_required",
+        "reason": "APP_MODE=product with RERANKER_PROVIDER=triton requires TRITON_RERANKER_URL.",
+        "status": "PASS"
+      }
+    ],
+    "failure_count": 0,
+    "report_id": "product_configuration_report",
+    "status": "PASS"
+  },
+  "report_id": "product_doctor_report",
+  "service_doctor": {
+    "blocking_checks": [],
+    "can_retry_without_code_changes": true,
+    "checks": [
+      {
+        "check_id": "python_version",
+        "component": "Python",
+        "details": {
+          "required": ">=3.11",
+          "version": "3.11.9"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "node_version",
+        "component": "Node.js",
+        "details": {
+          "command": "node --version",
+          "returncode": 0,
+          "stderr_tail": "",
+          "stdout_tail": "v24.15.0\n"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "frontend_package_manager",
+        "component": "Frontend package manager",
+        "details": {
+          "detected": [
+            "npm"
+          ],
+          "package_json": "C:\\Users\\Inteli\\Documents\\Projetos\\academy-nvidia-final-product-v11-implemented-runtime-cockpit\\frontend\\package.json"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "langgraph_import",
+        "component": "LangGraph",
+        "details": {
+          "installed": true,
+          "module": "langgraph"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "qdrant_client_import",
+        "component": "Qdrant client",
+        "details": {
+          "installed": true,
+          "module": "qdrant_client"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "postgres_driver_import",
+        "component": "PostgreSQL driver",
+        "details": {
+          "installed": true,
+          "module": "psycopg2"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "playwright_browsers",
+        "component": "Playwright",
+        "details": {
+          "installed_paths": [
+            "C:\\Users\\Inteli\\AppData\\Local\\ms-playwright"
+          ]
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "docker_config",
+        "component": "Docker",
+        "details": {
+          "exists": true,
+          "path": "C:\\Users\\Inteli\\.docker\\config.json"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "docker_cli",
+        "component": "Docker",
+        "details": {
+          "command": "docker version --format {{json .}}",
+          "returncode": 0,
+          "stderr_tail": "",
+          "stdout_tail": "{\"Client\":{\"Version\":\"29.2.1\",\"ApiVersion\":\"1.53\",\"DefaultAPIVersion\":\"1.53\",\"GitCommit\":\"a5c7197\",\"GoVersion\":\"go1.25.6\",\"Os\":\"windows\",\"Arch\":\"amd64\",\"BuildTime\":\"Mon Feb  2 17:20:16 2026\",\"Context\":\"desktop-linux\"},\"Server\":{\"Platform\":{\"Name\":\"Docker Desktop 4.65.0 (221669)\"},\"Version\":\"29.2.1\",\"ApiVersion\":\"1.53\",\"MinAPIVersion\":\"1.44\",\"Os\":\"linux\",\"Arch\":\"amd64\",\"Components\":[{\"Name\":\"Engine\",\"Version\":\"29.2.1\",\"Details\":{\"ApiVersion\":\"1.53\",\"Arch\":\"amd64\",\"BuildTime\":\"Mon Feb  2 17:17:24 2026\",\"Experimental\":\"false\",\"GitCommit\":\"6bc6209\",\"GoVersion\":\"go1.25.6\",\"KernelVersion\":\"6.6.87.2-microsoft-standard-WSL2\",\"MinAPIVersion\":\"1.44\",\"Os\":\"linux\"}},{\"Name\":\"containerd\",\"Version\":\"v2.2.1\",\"Details\":{\"GitCommit\":\"dea7da592f5d1d2b7755e3a161be07f43fad8f75\"}},{\"Name\":\"runc\",\"Version\":\"1.3.4\",\"Details\":{\"GitCommit\":\"v1.3.4-0-gd6d73eb8\"}},{\"Name\":\"docker-init\",\"Version\":\"0.19.0\",\"Details\":{\"GitCommit\":\"de40ad0\"}}],\"GitCommit\":\"6bc6209\",\"GoVersion\":\"go1.25.6\",\"KernelVersion\":\"6.6.87.2-microsoft-standard-WSL2\",\"BuildTime\":\"2026-02-02T17:17:24.000000000+00:00\"}}\n"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "docker_compose",
+        "component": "Docker Compose",
+        "details": {
+          "command": "docker compose config --services",
+          "returncode": 0,
+          "stderr_tail": "",
+          "stdout_tail": "qdrant\ntriton-reranker\npostgres\n"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "env_configuration",
+        "component": "Configuration",
+        "details": {
+          "database_url": "postgresql+psycopg2://***:***@localhost:5432/startup_radar",
+          "defaults_used": [],
+          "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+          "qdrant_collection": "nvidia_corpus",
+          "qdrant_url": "http://localhost:6333"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "postgres_port",
+        "component": "PostgreSQL TCP port",
+        "details": {
+          "host": "localhost",
+          "open": true,
+          "port": 5432
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "postgres_connection",
+        "component": "PostgreSQL",
+        "details": {
+          "database_url": "postgresql+psycopg2://***:***@localhost:5432/startup_radar",
+          "roundtrip_scalar": 1
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "qdrant_port",
+        "component": "Qdrant HTTP port",
+        "details": {
+          "host": "localhost",
+          "open": true,
+          "port": 6333
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "qdrant_service",
+        "component": "Qdrant",
+        "details": {
+          "qdrant_url": "http://localhost:6333",
+          "raw_status": "ok"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "qdrant_collection",
+        "component": "Qdrant",
+        "details": {
+          "collection": "nvidia_corpus",
+          "points_count": 48,
+          "qdrant_url": "http://localhost:6333",
+          "vectors_count": null
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "alembic_configuration",
+        "component": "Alembic",
+        "details": {
+          "alembic_ini": "C:\\Users\\Inteli\\Documents\\Projetos\\academy-nvidia-final-product-v11-implemented-runtime-cockpit\\alembic.ini",
+          "script_location": "C:\\Users\\Inteli\\Documents\\Projetos\\academy-nvidia-final-product-v11-implemented-runtime-cockpit\\migrations",
+          "versions_dir": "C:\\Users\\Inteli\\Documents\\Projetos\\academy-nvidia-final-product-v11-implemented-runtime-cockpit\\migrations\\versions"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "nvidia_corpus",
+        "component": "RAG Corpus",
+        "details": {
+          "markdown_documents": 23,
+          "sources_yaml": "C:\\Users\\Inteli\\Documents\\Projetos\\academy-nvidia-final-product-v11-implemented-runtime-cockpit\\data\\nvidia_corpus\\sources.yaml"
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      },
+      {
+        "check_id": "embedding_provider",
+        "component": "RAG Embeddings",
+        "details": {
+          "cache_hint": "C:\\Users\\Inteli\\.cache\\huggingface\\hub\\models--sentence-transformers--all-MiniLM-L6-v2",
+          "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+          "sentence_transformers_installed": true
+        },
+        "errors": [],
+        "remediation": [],
+        "status": "PASS"
+      }
+    ],
+    "effective_service_route": "external_services",
+    "environment_fix_required": false,
+    "exact_commands": [
+      "set PRODUCT_DB_URL=postgresql://postgres:postgres@localhost:5432/startup_radar",
+      "set QDRANT_URL=http://localhost:6333",
+      "set QDRANT_COLLECTION=nvidia_corpus",
+      "python scripts/local_proof_doctor.py",
+      "python scripts/prove_final_product.py --full --skip-live"
+    ],
+    "generated_at": "2026-07-01T07:34:26.056073+00:00",
+    "human_summary": "Doctor passed via external_services. The full proof can be retried without code changes.",
+    "next_actions": [
+      "Docker is not required for this run because PostgreSQL and Qdrant are already reachable."
+    ],
+    "recommended_route": "Use already-running PostgreSQL and Qdrant via env vars, then run full proof.",
+    "report_id": "local_proof_doctor_report",
+    "settings": {
+      "database_url": "postgresql+psycopg2://***:***@localhost:5432/startup_radar",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "external_services_ok": true,
+      "qdrant_collection": "nvidia_corpus",
+      "qdrant_url": "http://localhost:6333",
+      "require_docker_compose": false,
+      "timeout_seconds": 5
+    },
+    "status": "PASS",
+    "warnings": []
+  },
+  "status": "PASS"
+}

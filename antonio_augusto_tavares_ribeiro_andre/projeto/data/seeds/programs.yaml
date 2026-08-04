@@ -1,0 +1,91 @@
+# Descoberta — aceleradoras, programas, editais e comunidade (entry points de sourcing).
+# Apoiam o cohort builder (F1.14) e a narrativa de comunidade do Inception (§11). São páginas
+# públicas de programas; tratar como descoberta (listar portfólios/cohorts) respeitando robots.
+sources:
+  - id: nvidia-inception
+    name: NVIDIA Inception
+    url: https://www.nvidia.com/en-us/startups/
+    type: program
+    country: GLOBAL
+    policy: allow
+    robots: allow
+    tos_scraping: permitted
+    legal_basis: "Programa-alvo do case; página pública de membros/portfólio."
+    notes: "Destino do briefing; útil p/ ver startups já no ecossistema NVIDIA."
+
+  - id: startup-brasil
+    name: Startup Brasil (MCTI)
+    url: https://www.startupbrasil.org.br
+    type: program
+    country: BR
+    policy: allow
+    robots: allow
+    tos_scraping: permitted
+    legal_basis: "Programa público federal; portfólio de aceleradas é informação pública."
+    notes: "Lista de startups aceleradas — boa semente BR."
+
+  - id: bndes-garagem
+    name: BNDES Garagem
+    url: https://www.bndes.gov.br/garagem
+    type: program
+    country: BR
+    policy: allow
+    robots: allow
+    tos_scraping: permitted
+    legal_basis: "Programa público; cohorts divulgadas publicamente."
+    notes: "Empresas selecionadas por ciclo."
+
+  - id: fapesp-pipe
+    name: FAPESP PIPE
+    url: https://fapesp.br/pipe
+    type: program
+    country: BR
+    policy: allow
+    robots: allow
+    tos_scraping: permitted
+    legal_basis: "Fomento público; projetos/empresas apoiadas são públicos."
+    notes: "Forte sinal de profundidade técnica (P&D)."
+
+  - id: finep
+    name: Finep
+    url: https://www.finep.gov.br
+    type: program
+    country: BR
+    policy: allow
+    robots: unknown
+    tos_scraping: unknown
+    legal_basis: "Agência pública de inovação; chamadas/editais públicos."
+    notes: "Editais e empresas financiadas."
+
+  - id: google-for-startups-br
+    name: Google for Startups Brasil
+    url: https://startup.google.com/programs/
+    type: program
+    country: BR
+    policy: allow
+    robots: allow
+    tos_scraping: unknown
+    legal_basis: "Programa privado; cohorts divulgadas publicamente."
+    notes: "Foco frequente em IA — bom recorte AI-native."
+
+  - id: ace-startups
+    name: ACE Startups
+    url: https://acestartups.com.br
+    type: program
+    country: BR
+    policy: allow
+    robots: allow
+    tos_scraping: unknown
+    legal_basis: "Aceleradora privada; portfólio público."
+    notes: "Portfólio de aceleradas BR."
+
+  - id: darwin-startups
+    name: Darwin Startups
+    url: https://darwinstartups.com
+    type: program
+    country: BR
+    policy: allow
+    robots: allow
+    tos_scraping: unknown
+    legal_basis: "Aceleradora privada; portfólio público."
+    notes: "Cohorts com empresas em estágio inicial."

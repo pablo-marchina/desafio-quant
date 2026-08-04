@@ -1,0 +1,213 @@
+"""Avaliação (F3.9, F7).
+
+RAGAS (faithfulness, answer relevancy, context precision/recall), eval set de
+classificação/AIMI, e comparativo de reranker NeMo vs Cohere (somente na F7).
+
+Eval set rotulado (classificação + AIMI esperado, F1.12) — consumido por F6.4/F7.2:
+`from packages.eval import load_eval_set, LabeledStartup, by_classification, by_region`.
+
+Avaliação RAGAS do RAG (F3.9) — espinha verde offline + juiz LLM plugável (F7.3):
+`from packages.eval import evaluate_rag, get_evaluator, load_baseline`.
+
+Aderência ao §5.5 da recomendação (F4.8) — os 7 exemplos do brief como ground-truth do
+recommender (consolidada na F7.2):
+`from packages.eval import evaluate_recommendation_cases, SECTION_55_CASES`.
+"""
+
+from .aimi_correlation import (
+    SPEARMAN_THRESHOLD,
+    AIMICorrelationReport,
+    EntryScore,
+    evaluate_aimi_correlation,
+    predicted_aimi,
+    profile_for,
+    spearman,
+)
+from .briefing_faithfulness import (
+    FAITHFULNESS_THRESHOLD,
+    NARRATIVE_FIELDS,
+    BriefingFaithfulnessReport,
+    EntryFaithfulness,
+    briefing_contexts,
+    briefing_faithfulness,
+    briefing_for,
+    briefing_narrative,
+    evaluate_briefing_faithfulness,
+)
+from .classification_metrics import (
+    MACRO_F1_THRESHOLD,
+    ClassificationReport,
+    ClassMetrics,
+    EntryPrediction,
+    Predictor,
+    accuracy,
+    class_prf,
+    confusion_matrix,
+    evaluate_classification,
+    llm_predicted_class,
+    macro_f1,
+    predicted_class,
+)
+from .dataset import (
+    EVAL_DIR,
+    ExpectedPillars,
+    ExpectedTech,
+    LabeledStartup,
+    by_classification,
+    by_region,
+    class_distribution,
+    load_eval_set,
+)
+from .ragas import (
+    BASELINE_FILE,
+    CONTEXT_RECALL_GATE,
+    FAITHFULNESS_GATE,
+    QUESTIONS_FILE,
+    ContextCitation,
+    LexicalRagasMetrics,
+    RagasGate,
+    RagasJudge,
+    RagasMetrics,
+    RagasReport,
+    RagasUnavailable,
+    RagEvaluator,
+    RagQuestion,
+    RagSample,
+    RagSampleResult,
+    answer_relevancy,
+    build_sample,
+    compose_extractive_answer,
+    consolidate,
+    context_precision,
+    context_recall,
+    evaluate_rag,
+    faithfulness,
+    get_evaluator,
+    load_baseline,
+    load_rag_questions,
+    write_baseline,
+)
+from .recommend_cases import (
+    SECTION_55_CASES,
+    CaseResult,
+    RecommendationCase,
+    RecommendationEvalReport,
+    evaluate_recommendation_cases,
+    full_recall_retrieval,
+    run_case,
+)
+from .recommendation_metrics import (
+    PRF_THRESHOLD,
+    RECALL_ALTA_THRESHOLD,
+    EntryRecResult,
+    RecommendationMetricsReport,
+    RegionMetrics,
+    aimi_from_labels,
+    evaluate_entry,
+    evaluate_recommendation_metrics,
+    is_in_scope,
+    recommended_for,
+)
+from .reranker_comparison import (
+    COST_PER_1K_QUERIES_USD,
+    RerankerComparisonReport,
+    RerankerRow,
+    candidate_rerankers,
+    compare_rerankers,
+    measure_reranker,
+)
+
+__all__ = [
+    "EVAL_DIR",
+    "ExpectedPillars",
+    "ExpectedTech",
+    "LabeledStartup",
+    "load_eval_set",
+    "by_classification",
+    "by_region",
+    "class_distribution",
+    "QUESTIONS_FILE",
+    "BASELINE_FILE",
+    "RagasUnavailable",
+    "faithfulness",
+    "answer_relevancy",
+    "context_precision",
+    "context_recall",
+    "RagQuestion",
+    "ContextCitation",
+    "RagSample",
+    "RagasMetrics",
+    "RagSampleResult",
+    "RagasReport",
+    "RagasGate",
+    "FAITHFULNESS_GATE",
+    "CONTEXT_RECALL_GATE",
+    "RagEvaluator",
+    "LexicalRagasMetrics",
+    "RagasJudge",
+    "get_evaluator",
+    "compose_extractive_answer",
+    "build_sample",
+    "load_rag_questions",
+    "evaluate_rag",
+    "consolidate",
+    "write_baseline",
+    "load_baseline",
+    # aderência ao §5.5 da recomendação (F4.8) — consolidada na F7.2
+    "RecommendationCase",
+    "SECTION_55_CASES",
+    "full_recall_retrieval",
+    "CaseResult",
+    "RecommendationEvalReport",
+    "run_case",
+    "evaluate_recommendation_cases",
+    # correlação do índice AIMI com os rótulos (F6.4) — consolidada na F7.2
+    "SPEARMAN_THRESHOLD",
+    "profile_for",
+    "predicted_aimi",
+    "spearman",
+    "EntryScore",
+    "AIMICorrelationReport",
+    "evaluate_aimi_correlation",
+    # métricas de classificação: accuracy + macro-F1 vs rótulos (F7.2)
+    "MACRO_F1_THRESHOLD",
+    "Predictor",
+    "predicted_class",
+    "llm_predicted_class",
+    "confusion_matrix",
+    "class_prf",
+    "accuracy",
+    "macro_f1",
+    "ClassMetrics",
+    "EntryPrediction",
+    "ClassificationReport",
+    "evaluate_classification",
+    # métricas de recomendação: precision/recall de techs NVIDIA vs rótulos (F7.2b) + recall@ALTA (F7.7)
+    "PRF_THRESHOLD",
+    "RECALL_ALTA_THRESHOLD",
+    "aimi_from_labels",
+    "recommended_for",
+    "is_in_scope",
+    "evaluate_entry",
+    "EntryRecResult",
+    "RegionMetrics",
+    "RecommendationMetricsReport",
+    "evaluate_recommendation_metrics",
+    # faithfulness do briefing: fidelidade do texto final às fontes citadas (F7.2c)
+    "FAITHFULNESS_THRESHOLD",
+    "NARRATIVE_FIELDS",
+    "briefing_narrative",
+    "briefing_contexts",
+    "briefing_faithfulness",
+    "briefing_for",
+    "EntryFaithfulness",
+    "BriefingFaithfulnessReport",
+    "evaluate_briefing_faithfulness",
+    # comparativo de reranker: NeMo Retriever x Cohere Rerank (F7.4)
+    "COST_PER_1K_QUERIES_USD",
+    "RerankerRow",
+    "RerankerComparisonReport",
+    "candidate_rerankers",
+    "measure_reranker",
+    "compare_rerankers",
+]

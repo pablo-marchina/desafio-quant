@@ -1,0 +1,11 @@
+{
+  "controls": [
+    "external_content_untrusted",
+    "system_instruction_separation",
+    "tool_instruction_blocking",
+    "secret_and_pii_redaction",
+    "source_trust_assignment"
+  ],
+  "generated_at": "2026-07-01T05:57:51.032146+00:00",
+  "status": "PASS"
+}

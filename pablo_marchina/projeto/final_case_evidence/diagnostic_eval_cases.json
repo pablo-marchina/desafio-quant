@@ -1,0 +1,190 @@
+{
+  "cases": [
+    {
+      "baseline_scores": {
+        "alternatives_lost_rationale": 0.58,
+        "contradiction_handling": 0.64,
+        "evaluator_auditability": 0.6,
+        "evidence_sufficiency": 0.48,
+        "lineage_traceability": 0.64,
+        "next_action_quality": 0.62,
+        "operational_efficiency": 0.64,
+        "recommendation_specificity": 0.58,
+        "robustness_to_query_variance": 0.22,
+        "source_trust_freshness": 0.68,
+        "uncertainty_calibration": 0.66,
+        "unsupported_claim_control": 0.72
+      },
+      "case_id": "query_vocab_gap",
+      "description": "The startup describes model-serving needs using business terms while the corpus uses GPU inference and deployment vocabulary.",
+      "expected_user_value": "More specific recommendations when evidence is present but phrased differently.",
+      "improvement_opportunity": "Improve retrieval robustness when the same need is phrased differently.",
+      "name": "Different vocabulary hides the right NVIDIA evidence",
+      "target_families": [
+        "query_rewriting_multiquery"
+      ]
+    },
+    {
+      "baseline_scores": {
+        "alternatives_lost_rationale": 0.26,
+        "contradiction_handling": 0.64,
+        "evaluator_auditability": 0.34,
+        "evidence_sufficiency": 0.56,
+        "lineage_traceability": 0.3,
+        "next_action_quality": 0.68,
+        "operational_efficiency": 0.64,
+        "recommendation_specificity": 0.54,
+        "robustness_to_query_variance": 0.62,
+        "source_trust_freshness": 0.68,
+        "uncertainty_calibration": 0.66,
+        "unsupported_claim_control": 0.72
+      },
+      "case_id": "multi_hop_gap_to_product",
+      "description": "The output finds a technical gap and a NVIDIA product separately, but does not connect source, gap, capability, and rejected alternatives.",
+      "expected_user_value": "Clearer why this NVIDIA path wins over adjacent options.",
+      "improvement_opportunity": "Improve explainability of why one NVIDIA path wins over adjacent options.",
+      "name": "Multi-hop gap-to-product reasoning is underspecified",
+      "target_families": [
+        "graphrag_evidence_graph"
+      ]
+    },
+    {
+      "baseline_scores": {
+        "alternatives_lost_rationale": 0.58,
+        "contradiction_handling": 0.18,
+        "evaluator_auditability": 0.44,
+        "evidence_sufficiency": 0.58,
+        "lineage_traceability": 0.65,
+        "next_action_quality": 0.68,
+        "operational_efficiency": 0.64,
+        "recommendation_specificity": 0.7,
+        "robustness_to_query_variance": 0.62,
+        "source_trust_freshness": 0.68,
+        "uncertainty_calibration": 0.42,
+        "unsupported_claim_control": 0.46
+      },
+      "case_id": "negative_signal_conflict",
+      "description": "The startup has positive AI claims, but evidence also indicates immature infra, stale hiring, or conflicting customer-scale claims.",
+      "expected_user_value": "Lower false confidence and fewer unsupported recommendations.",
+      "improvement_opportunity": "Improve confidence calibration and evaluator trust when evidence conflicts.",
+      "name": "Negative signals should change confidence",
+      "target_families": [
+        "counter_evidence_retrieval",
+        "evidence_sufficiency_abstention"
+      ]
+    },
+    {
+      "baseline_scores": {
+        "alternatives_lost_rationale": 0.58,
+        "contradiction_handling": 0.64,
+        "evaluator_auditability": 0.5,
+        "evidence_sufficiency": 0.6,
+        "lineage_traceability": 0.58,
+        "next_action_quality": 0.68,
+        "operational_efficiency": 0.64,
+        "recommendation_specificity": 0.7,
+        "robustness_to_query_variance": 0.62,
+        "source_trust_freshness": 0.25,
+        "uncertainty_calibration": 0.5,
+        "unsupported_claim_control": 0.72
+      },
+      "case_id": "stale_low_trust_sources",
+      "description": "The output includes older blog/social evidence when official or fresher technical sources should dominate the support set.",
+      "expected_user_value": "Higher trust in claims and recommendations because stronger sources are favored.",
+      "improvement_opportunity": "Improve trust by preferring stronger and fresher evidence without changing the claim.",
+      "name": "Stale or weak sources compete with stronger evidence",
+      "target_families": [
+        "source_trust_freshness_ranking"
+      ]
+    },
+    {
+      "baseline_scores": {
+        "alternatives_lost_rationale": 0.58,
+        "contradiction_handling": 0.64,
+        "evaluator_auditability": 0.46,
+        "evidence_sufficiency": 0.34,
+        "lineage_traceability": 0.65,
+        "next_action_quality": 0.68,
+        "operational_efficiency": 0.64,
+        "recommendation_specificity": 0.5,
+        "robustness_to_query_variance": 0.62,
+        "source_trust_freshness": 0.68,
+        "uncertainty_calibration": 0.36,
+        "unsupported_claim_control": 0.38
+      },
+      "case_id": "insufficient_evidence_recommendation",
+      "description": "A recommendation is technically plausible, but persisted evidence and RAG support are not enough to present it as proven.",
+      "expected_user_value": "Avoids overclaiming and gives evaluators a trustworthy missing-evidence list.",
+      "improvement_opportunity": "Improve trust by separating hypothesis from supported recommendation.",
+      "name": "Recommendation should abstain when support is thin",
+      "target_families": [
+        "evidence_sufficiency_abstention"
+      ]
+    },
+    {
+      "baseline_scores": {
+        "alternatives_lost_rationale": 0.4,
+        "contradiction_handling": 0.64,
+        "evaluator_auditability": 0.52,
+        "evidence_sufficiency": 0.66,
+        "lineage_traceability": 0.65,
+        "next_action_quality": 0.28,
+        "operational_efficiency": 0.64,
+        "recommendation_specificity": 0.42,
+        "robustness_to_query_variance": 0.62,
+        "source_trust_freshness": 0.68,
+        "uncertainty_calibration": 0.66,
+        "unsupported_claim_control": 0.72
+      },
+      "case_id": "generic_next_action",
+      "description": "The recommendation points to a NVIDIA capability, but the next step does not specify a measurable technical experiment or success criterion.",
+      "expected_user_value": "Turns a recommendation into an executable technical experiment.",
+      "improvement_opportunity": "Improve actionability and evaluator confidence in the proposed next step.",
+      "name": "Next action is too generic to execute",
+      "target_families": [
+        "recommendation_specificity_next_action"
+      ]
+    },
+    {
+      "baseline_scores": {
+        "alternatives_lost_rationale": 0.58,
+        "contradiction_handling": 0.64,
+        "evaluator_auditability": 0.62,
+        "evidence_sufficiency": 0.82,
+        "lineage_traceability": 0.65,
+        "next_action_quality": 0.78,
+        "operational_efficiency": 0.32,
+        "recommendation_specificity": 0.8,
+        "robustness_to_query_variance": 0.58,
+        "source_trust_freshness": 0.68,
+        "uncertainty_calibration": 0.66,
+        "unsupported_claim_control": 0.84
+      },
+      "case_id": "same_quality_lower_cost",
+      "description": "The visible output can already be strong, but the system still benefits if context packing, budget controls, caching, or observability preserve quality with lower cost and fewer runtime surprises.",
+      "expected_user_value": "Keeps the answer useful while reducing cost, latency, and operational risk.",
+      "improvement_opportunity": "Improve the product as a whole even when answer quality is already acceptable.",
+      "name": "Same quality should become cheaper and more reliable",
+      "target_families": [
+        "cost_latency_reliability_controls"
+      ]
+    }
+  ],
+  "generated_at": "2026-07-01T05:58:25.261389+00:00",
+  "purpose": "Cases expose marginal system-value opportunity before any technology family is implemented in product.",
+  "quality_weights": {
+    "alternatives_lost_rationale": 0.05,
+    "contradiction_handling": 0.09,
+    "evaluator_auditability": 0.06,
+    "evidence_sufficiency": 0.15,
+    "lineage_traceability": 0.07,
+    "next_action_quality": 0.09,
+    "operational_efficiency": 0.03,
+    "recommendation_specificity": 0.11,
+    "robustness_to_query_variance": 0.07,
+    "source_trust_freshness": 0.09,
+    "uncertainty_calibration": 0.08,
+    "unsupported_claim_control": 0.11
+  },
+  "report_id": "diagnostic_eval_cases"
+}

@@ -1,0 +1,70 @@
+"""Recommendation engine — deterministic gap-based NVIDIA technology recommendations."""
+
+from src.recommendation.next_action_enrichment import (
+    EnrichedNextAction,
+    NextActionEnrichmentConfig,
+    enrich_next_action,
+    score_next_action,
+)
+from src.recommendation.nvidia_technology_mapping import (
+    GAP_TECHNOLOGY_CANDIDATES,
+    GOLDEN_MAPPING_SAMPLES,
+    GOLDEN_SET_STATUS,
+    REQUIRED_MAPPING_DECISIONS,
+    NvidiaMappingCalibrationMetrics,
+    NvidiaMappingConfidenceFeatures,
+    NvidiaMappingFeatures,
+    NvidiaMappingMetrics,
+    NvidiaMappingStatus,
+    NvidiaTechnologyMappingRecord,
+    build_nvidia_technology_mappings,
+    compute_mapping_metrics,
+    extract_mapping_features,
+)
+from src.recommendation.recommendation_engine import (
+    REQUIRED_RECOMMENDATION_DECISIONS,
+    NvidiaRecommendationMetrics,
+    NvidiaRecommendationRecord,
+    RecommendationRankingStatus,
+    build_recommendations,
+    compute_recommendation_metrics,
+    rank_recommendations_from_mappings,
+)
+from src.recommendation.schemas import (
+    PerGapRecommendation,
+    RecommendationResult,
+    RecommendedNextAction,
+    SuggestedTechnicalExperiment,
+)
+
+__all__ = [
+    "build_recommendations",
+    "PerGapRecommendation",
+    "RecommendationResult",
+    "RecommendedNextAction",
+    "SuggestedTechnicalExperiment",
+    "NvidiaTechnologyMappingRecord",
+    "NvidiaMappingFeatures",
+    "NvidiaMappingConfidenceFeatures",
+    "NvidiaMappingMetrics",
+    "NvidiaMappingCalibrationMetrics",
+    "NvidiaMappingStatus",
+    "NvidiaRecommendationRecord",
+    "NvidiaRecommendationMetrics",
+    "RecommendationRankingStatus",
+    "EnrichedNextAction",
+    "NextActionEnrichmentConfig",
+    "GoldenMappingSample",
+    "GAP_TECHNOLOGY_CANDIDATES",
+    "REQUIRED_MAPPING_DECISIONS",
+    "REQUIRED_RECOMMENDATION_DECISIONS",
+    "GOLDEN_MAPPING_SAMPLES",
+    "GOLDEN_SET_STATUS",
+    "build_nvidia_technology_mappings",
+    "compute_mapping_metrics",
+    "extract_mapping_features",
+    "rank_recommendations_from_mappings",
+    "compute_recommendation_metrics",
+    "enrich_next_action",
+    "score_next_action",
+]

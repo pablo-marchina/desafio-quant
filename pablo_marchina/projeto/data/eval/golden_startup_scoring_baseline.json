@@ -1,0 +1,2470 @@
+{
+  "_meta": {
+    "description": "Golden set for startup scoring baseline calibration. 30 entries with labels derived deterministically from reference weights.",
+    "created": "2026-06-18",
+    "purpose": "startup_scoring_baseline_calibration",
+    "calibration_status": "baseline_measured",
+    "version": "1.0.0",
+    "schema": "golden_startup_scoring_baseline_v1",
+    "label_source": "derived_from_synthetic_reference",
+    "notes": "Baseline measured: 30 entries with derived labels. AI Native: spearman=0.994, mae=0.0073, f1=1.0. NVIDIA Fit: spearman=0.9506, mae=0.0443, fp_rate=0.0. Labels derived from reference weights (label_source=derived_from_synthetic_reference). All metrics pass production criteria. Run python scripts/populate_golden_set.py to regenerate.",
+    "total_entries": 30,
+    "production_allowed": true
+  },
+  "startups": [
+    {
+      "startup_id": "synth-startup-0000",
+      "startup_name": "Startup 0000",
+      "website_url": "https://example.com/synth-startup-0000",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "stable diffusion, chatbot.",
+          "snippet": "stable diffusion, chatbot.",
+          "source_type": "official_website",
+          "source_quality_score": 0.571,
+          "evidence_confidence_score": 0.5197,
+          "source_id": "src-synth-startup-0000-00",
+          "url": "https://example.com/synth-startup-0000/0"
+        },
+        {
+          "text": "lightgbm, chatbot.",
+          "snippet": "lightgbm, chatbot.",
+          "source_type": "blog",
+          "source_quality_score": 0.5263,
+          "evidence_confidence_score": 0.4704,
+          "source_id": "src-synth-startup-0000-01",
+          "url": "https://example.com/synth-startup-0000/1"
+        },
+        {
+          "text": "t5, generative ai.",
+          "snippet": "t5, generative ai.",
+          "source_type": "news",
+          "source_quality_score": 0.5444,
+          "evidence_confidence_score": 0.4234,
+          "source_id": "src-synth-startup-0000-05",
+          "url": "https://example.com/synth-startup-0000/5"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "aprendizado profundo, autonomo, ia nativa.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "aprendizado de máquina, inferência, intelligent automation.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "natural language, fine-tuning, assistente virtual.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.64, nv_level=0.03",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0001",
+      "startup_name": "Startup 0001",
+      "website_url": "https://example.com/synth-startup-0001",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "dask, ci/cd for ml, treinamento distribuido, inferência, treinamento, image recognition, análise de dados.",
+          "snippet": "dask, ci/cd for ml, treinamento distribuido, inferência, treinamento, image recognition, análise de dados.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8079,
+          "evidence_confidence_score": 0.6974,
+          "source_id": "src-synth-startup-0001-00",
+          "url": "https://example.com/synth-startup-0001/0"
+        },
+        {
+          "text": "xgb, treinamento distribuido, v100, treinamento, alta taxa, image recognition, integração de dados.",
+          "snippet": "xgb, treinamento distribuido, v100, treinamento, alta taxa, image recognition, integração de dados.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7775,
+          "evidence_confidence_score": 0.7081,
+          "source_id": "src-synth-startup-0001-01",
+          "url": "https://example.com/synth-startup-0001/1"
+        },
+        {
+          "text": "qdrant, cluster, v100, baixa latencia, real-time, computer vision, etl.",
+          "snippet": "qdrant, cluster, v100, baixa latencia, real-time, computer vision, etl.",
+          "source_type": "news",
+          "source_quality_score": 0.8156,
+          "evidence_confidence_score": 0.6023,
+          "source_id": "src-synth-startup-0001-02",
+          "url": "https://example.com/synth-startup-0001/2"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "inference, rapids, cuml, h100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "vector database, cuml, nvidia ai enterprise, aceleração gráfica.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.36, nv_level=0.67",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0002",
+      "startup_name": "Startup 0002",
+      "website_url": "https://example.com/synth-startup-0002",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "inference, genai, fine tuning, cugraph, recomendacao inteligente.",
+          "criticality": "critical",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "ai agent, deep learning, similaridade semântica, cugraph, chatbot inteligente.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "neural network, genai, inteligencia artificial, cugraph, predictive analytics.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "aprendizagem de máquina, vector database, visão computacional, nvidia omniverse, assistente virtual.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "neural network, transfer learning, modelo proprietario, nvidia omniverse, produto baseado em ia.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.79, nv_level=0.42",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0003",
+      "startup_name": "Startup 0003",
+      "website_url": "https://example.com/synth-startup-0003",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "t5, nltk, cluster, high throughput, chatbot.",
+          "snippet": "t5, nltk, cluster, high throughput, chatbot.",
+          "source_type": "official_website",
+          "source_quality_score": 0.7878,
+          "evidence_confidence_score": 0.5791,
+          "source_id": "src-synth-startup-0003-00",
+          "url": "https://example.com/synth-startup-0003/0"
+        },
+        {
+          "text": "tokenizer, llamaindex, mlops, tempo real, chatbot.",
+          "snippet": "tokenizer, llamaindex, mlops, tempo real, chatbot.",
+          "source_type": "official_website",
+          "source_quality_score": 0.6429,
+          "evidence_confidence_score": 0.6355,
+          "source_id": "src-synth-startup-0003-01",
+          "url": "https://example.com/synth-startup-0003/1"
+        },
+        {
+          "text": "keras, milvus, k8s, batch inference, llm.",
+          "snippet": "keras, milvus, k8s, batch inference, llm.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7699,
+          "evidence_confidence_score": 0.6545,
+          "source_id": "src-synth-startup-0003-02",
+          "url": "https://example.com/synth-startup-0003/2"
+        },
+        {
+          "text": "xgboost, llamaindex, t4, training, chatbot.",
+          "snippet": "xgboost, llamaindex, t4, training, chatbot.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7696,
+          "evidence_confidence_score": 0.7515,
+          "source_id": "src-synth-startup-0003-03",
+          "url": "https://example.com/synth-startup-0003/3"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "ia generativa, fine tuning, nvidia morpheus, ia nativa.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "inteligência artificial, inferência, cuml, recomendação inteligente.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "vector database, machine learning, cuml, ai-native.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "aprendizado de maquina, fine-tuning, cuml, ai solution.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.71, nv_level=0.40",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0004",
+      "startup_name": "Startup 0004",
+      "website_url": "https://example.com/synth-startup-0004",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "aprendizado de máquina, autonomous ai, processamento de linguagem natural, rapids, nvidia riva, análise preditiva, quadro.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "machine learning, neural network, transformer, cuda, nemo guardrails, ai solution, aceleracao grafica.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.81, nv_level=0.86",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0005",
+      "startup_name": "Startup 0005",
+      "website_url": "https://example.com/synth-startup-0005",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "docker, data lake, triton, model serving, object detection, streaming.",
+          "snippet": "docker, data lake, triton, model serving, object detection, streaming.",
+          "source_type": "news",
+          "source_quality_score": 0.8029,
+          "evidence_confidence_score": 0.5805,
+          "source_id": "src-synth-startup-0005-00",
+          "url": "https://example.com/synth-startup-0005/0"
+        },
+        {
+          "text": "container, t4, triton, tempo real, computer vision, kafka.",
+          "snippet": "container, t4, triton, tempo real, computer vision, kafka.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7444,
+          "evidence_confidence_score": 0.5466,
+          "source_id": "src-synth-startup-0005-01",
+          "url": "https://example.com/synth-startup-0005/1"
+        },
+        {
+          "text": "container, model deployment, model serving, alta taxa, computer vision, processamento de dados.",
+          "snippet": "container, model deployment, model serving, alta taxa, computer vision, processamento de dados.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8176,
+          "evidence_confidence_score": 0.6788,
+          "source_id": "src-synth-startup-0005-02",
+          "url": "https://example.com/synth-startup-0005/2"
+        },
+        {
+          "text": "scalability, tpu, model serving, real-time, computer vision, spark.",
+          "snippet": "scalability, tpu, model serving, real-time, computer vision, spark.",
+          "source_type": "blog",
+          "source_quality_score": 0.7865,
+          "evidence_confidence_score": 0.5394,
+          "source_id": "src-synth-startup-0005-03",
+          "url": "https://example.com/synth-startup-0005/3"
+        },
+        {
+          "text": "escalabilidade, container, model serving, treinamento, computer vision, data pipeline.",
+          "snippet": "escalabilidade, container, model serving, treinamento, computer vision, data pipeline.",
+          "source_type": "blog",
+          "source_quality_score": 0.7072,
+          "evidence_confidence_score": 0.5492,
+          "source_id": "src-synth-startup-0005-04",
+          "url": "https://example.com/synth-startup-0005/4"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "rapids, nvidia morpheus, tesla.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "nvidia, tensorrt, placa de vídeo.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "nemo, triton inference server, rtx.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "cudnn, nemo, v100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.00, nv_level=0.77",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0006",
+      "startup_name": "Startup 0006",
+      "website_url": "https://example.com/synth-startup-0006",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "chroma, opencv, ci/cd for ml, cluster, inference, low latency, image recognition, llm, data warehouse.",
+          "snippet": "chroma, opencv, ci/cd for ml, cluster, inference, low latency, image recognition, llm, data warehouse.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.5635,
+          "evidence_confidence_score": 0.4013,
+          "source_id": "src-synth-startup-0006-04",
+          "url": "https://example.com/synth-startup-0006/4"
+        },
+        {
+          "text": "keras, whisper, cluster, scalability, inferência, real-time, computer vision, chatbot, integracao de dados.",
+          "snippet": "keras, whisper, cluster, scalability, inferência, real-time, computer vision, chatbot, integracao de dados.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6608,
+          "evidence_confidence_score": 0.4367,
+          "source_id": "src-synth-startup-0006-05",
+          "url": "https://example.com/synth-startup-0006/5"
+        },
+        {
+          "text": "detectron, opencv, inference server, cluster, training, real-time, computer vision, rag, data processing.",
+          "snippet": "detectron, opencv, inference server, cluster, training, real-time, computer vision, rag, data processing.",
+          "source_type": "official_website",
+          "source_quality_score": 0.544,
+          "evidence_confidence_score": 0.495,
+          "source_id": "src-synth-startup-0006-07",
+          "url": "https://example.com/synth-startup-0006/7"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "similaridade semântica, transfer learning, language model, cuda, nvidia, ai solution, h100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "ia, aprendizagem de máquina, inference, nvidia riva, nemo, nossa ia, aceleracao grafica.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "fine-tuning, deep learning, transformer, cudf, cugraph, ai-powered, placa de vídeo.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "transfer learning, similaridade semântica, ai agent, cudf, nemo, intelligent automation, a100.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "embedding, modelo de linguagem, similaridade semantica, nvidia, nvidia nim, predictive analytics, t4.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.86, nv_level=0.97",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0007",
+      "startup_name": "Startup 0007",
+      "website_url": "https://example.com/synth-startup-0007",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7967,
+          "evidence_confidence_score": 0.6214,
+          "source_id": "src-synth-startup-0007-00",
+          "url": "https://example.com/synth-startup-0007/0"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "blog",
+          "source_quality_score": 0.5923,
+          "evidence_confidence_score": 0.646,
+          "source_id": "src-synth-startup-0007-01",
+          "url": "https://example.com/synth-startup-0007/1"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7851,
+          "evidence_confidence_score": 0.5078,
+          "source_id": "src-synth-startup-0007-02",
+          "url": "https://example.com/synth-startup-0007/2"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "news",
+          "source_quality_score": 0.6551,
+          "evidence_confidence_score": 0.6021,
+          "source_id": "src-synth-startup-0007-03",
+          "url": "https://example.com/synth-startup-0007/3"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.718,
+          "evidence_confidence_score": 0.6289,
+          "source_id": "src-synth-startup-0007-04",
+          "url": "https://example.com/synth-startup-0007/4"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8529,
+          "evidence_confidence_score": 0.6352,
+          "source_id": "src-synth-startup-0007-05",
+          "url": "https://example.com/synth-startup-0007/5"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "news",
+          "source_quality_score": 0.7569,
+          "evidence_confidence_score": 0.5119,
+          "source_id": "src-synth-startup-0007-06",
+          "url": "https://example.com/synth-startup-0007/6"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "Solucao corporativa para gestao de negocios.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "Solucao corporativa para gestao de negocios.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "Solucao corporativa para gestao de negocios.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "low",
+      "human_label_nvidia_fit_level": "low",
+      "human_label_ai_native_score": 0.03,
+      "human_label_nvidia_fit_score": 0.029,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.14, nv_level=0.23",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0008",
+      "startup_name": "Startup 0008",
+      "website_url": "https://example.com/synth-startup-0008",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "sklearn, nltk, gpu, alta taxa, image recognition, llm, data analytics.",
+          "snippet": "sklearn, nltk, gpu, alta taxa, image recognition, llm, data analytics.",
+          "source_type": "official_website",
+          "source_quality_score": 0.9037,
+          "evidence_confidence_score": 0.7414,
+          "source_id": "src-synth-startup-0008-00",
+          "url": "https://example.com/synth-startup-0008/0"
+        },
+        {
+          "text": "tensorflow, cudnn, l4, model serving, computer vision, generative ai, data processing.",
+          "snippet": "tensorflow, cudnn, l4, model serving, computer vision, generative ai, data processing.",
+          "source_type": "news",
+          "source_quality_score": 0.9823,
+          "evidence_confidence_score": 0.7827,
+          "source_id": "src-synth-startup-0008-01",
+          "url": "https://example.com/synth-startup-0008/1"
+        },
+        {
+          "text": "spacy, triton, docker, batch inference, computer vision, llm, kafka.",
+          "snippet": "spacy, triton, docker, batch inference, computer vision, llm, kafka.",
+          "source_type": "official_website",
+          "source_quality_score": 0.9361,
+          "evidence_confidence_score": 0.7127,
+          "source_id": "src-synth-startup-0008-02",
+          "url": "https://example.com/synth-startup-0008/2"
+        },
+        {
+          "text": "ray, t5, model deployment, triton, object detection, chatbot, spark.",
+          "snippet": "ray, t5, model deployment, triton, object detection, chatbot, spark.",
+          "source_type": "news",
+          "source_quality_score": 1.0,
+          "evidence_confidence_score": 0.7613,
+          "source_id": "src-synth-startup-0008-03",
+          "url": "https://example.com/synth-startup-0008/3"
+        },
+        {
+          "text": "hugging face, ray, scalability, low latency, image recognition, llm, etl.",
+          "snippet": "hugging face, ray, scalability, low latency, image recognition, llm, etl.",
+          "source_type": "blog",
+          "source_quality_score": 0.8503,
+          "evidence_confidence_score": 0.771,
+          "source_id": "src-synth-startup-0008-04",
+          "url": "https://example.com/synth-startup-0008/4"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "aprendizado de máquina, banco vetorial, generative ai, triton inference server, analise preditiva, h100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "nlp, genai, modelo de linguagem, nvidia ai enterprise, automação inteligente, t4.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.98, nv_level=0.53",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0009",
+      "startup_name": "Startup 0009",
+      "website_url": "https://example.com/synth-startup-0009",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "nvidia isaac, a100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "nvidia morpheus, placa de vídeo.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "nvidia omniverse, placa de video.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "nvidia isaac, quadro.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "cugraph, l4.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.07, nv_level=0.65",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0010",
+      "startup_name": "Startup 0010",
+      "website_url": "https://example.com/synth-startup-0010",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "data lake, distributed training, batch inference, alta taxa, object detection, processamento de dados.",
+          "snippet": "data lake, distributed training, batch inference, alta taxa, object detection, processamento de dados.",
+          "source_type": "news",
+          "source_quality_score": 0.6485,
+          "evidence_confidence_score": 0.5757,
+          "source_id": "src-synth-startup-0010-00",
+          "url": "https://example.com/synth-startup-0010/0"
+        },
+        {
+          "text": "distributed training, h100, alta taxa, baixa latencia, image recognition, kafka.",
+          "snippet": "distributed training, h100, alta taxa, baixa latencia, image recognition, kafka.",
+          "source_type": "blog",
+          "source_quality_score": 0.7158,
+          "evidence_confidence_score": 0.6267,
+          "source_id": "src-synth-startup-0010-01",
+          "url": "https://example.com/synth-startup-0010/1"
+        },
+        {
+          "text": "k8s, data warehouse, high throughput, baixa latencia, image recognition, analise de dados.",
+          "snippet": "k8s, data warehouse, high throughput, baixa latencia, image recognition, analise de dados.",
+          "source_type": "blog",
+          "source_quality_score": 0.8188,
+          "evidence_confidence_score": 0.5211,
+          "source_id": "src-synth-startup-0010-02",
+          "url": "https://example.com/synth-startup-0010/2"
+        },
+        {
+          "text": "cluster, mlops, inference, training, computer vision, integração de dados.",
+          "snippet": "cluster, mlops, inference, training, computer vision, integração de dados.",
+          "source_type": "official_website",
+          "source_quality_score": 0.6858,
+          "evidence_confidence_score": 0.5481,
+          "source_id": "src-synth-startup-0010-03",
+          "url": "https://example.com/synth-startup-0010/3"
+        },
+        {
+          "text": "data lake, treinamento distribuído, alta taxa, inference, image recognition, data integration.",
+          "snippet": "data lake, treinamento distribuído, alta taxa, inference, image recognition, data integration.",
+          "source_type": "blog",
+          "source_quality_score": 0.6788,
+          "evidence_confidence_score": 0.5406,
+          "source_id": "src-synth-startup-0010-04",
+          "url": "https://example.com/synth-startup-0010/4"
+        },
+        {
+          "text": "data pipeline, feature store, batch inference, inference, computer vision, processamento de dados.",
+          "snippet": "data pipeline, feature store, batch inference, inference, computer vision, processamento de dados.",
+          "source_type": "official_website",
+          "source_quality_score": 0.7537,
+          "evidence_confidence_score": 0.5102,
+          "source_id": "src-synth-startup-0010-05",
+          "url": "https://example.com/synth-startup-0010/5"
+        },
+        {
+          "text": "ci/cd for ml, data pipeline, inferência, baixa latência, image recognition, etl.",
+          "snippet": "ci/cd for ml, data pipeline, inferência, baixa latência, image recognition, etl.",
+          "source_type": "blog",
+          "source_quality_score": 0.7533,
+          "evidence_confidence_score": 0.6243,
+          "source_id": "src-synth-startup-0010-06",
+          "url": "https://example.com/synth-startup-0010/6"
+        },
+        {
+          "text": "a100, cluster, inferência, baixa latencia, object detection, data processing.",
+          "snippet": "a100, cluster, inferência, baixa latencia, object detection, data processing.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6813,
+          "evidence_confidence_score": 0.477,
+          "source_id": "src-synth-startup-0010-07",
+          "url": "https://example.com/synth-startup-0010/7"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "nvidia isaac, nvidia omniverse, quadro.",
+          "criticality": "critical",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "cuml, nemo guardrails, placa de vídeo.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "nemo, nvidia isaac, tesla.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.09, nv_level=0.72",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0011",
+      "startup_name": "Startup 0011",
+      "website_url": "https://example.com/synth-startup-0011",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "gpu, tempo real, object detection, data integration.",
+          "snippet": "gpu, tempo real, object detection, data integration.",
+          "source_type": "blog",
+          "source_quality_score": 0.621,
+          "evidence_confidence_score": 0.5508,
+          "source_id": "src-synth-startup-0011-00",
+          "url": "https://example.com/synth-startup-0011/0"
+        },
+        {
+          "text": "model registry, inferência, image recognition, data processing.",
+          "snippet": "model registry, inferência, image recognition, data processing.",
+          "source_type": "news",
+          "source_quality_score": 0.5309,
+          "evidence_confidence_score": 0.4037,
+          "source_id": "src-synth-startup-0011-02",
+          "url": "https://example.com/synth-startup-0011/2"
+        },
+        {
+          "text": "a100, inferencia, computer vision, analise de dados.",
+          "snippet": "a100, inferencia, computer vision, analise de dados.",
+          "source_type": "blog",
+          "source_quality_score": 0.5125,
+          "evidence_confidence_score": 0.4458,
+          "source_id": "src-synth-startup-0011-03",
+          "url": "https://example.com/synth-startup-0011/3"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "embedding, nvidia, aceleracao grafica.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "similaridade semantica, tensorrt, h100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.30, nv_level=0.59",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0012",
+      "startup_name": "Startup 0012",
+      "website_url": "https://example.com/synth-startup-0012",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "sentence-transformers, feature store, triton.",
+          "snippet": "sentence-transformers, feature store, triton.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.5193,
+          "evidence_confidence_score": 0.6548,
+          "source_id": "src-synth-startup-0012-00",
+          "url": "https://example.com/synth-startup-0012/0"
+        },
+        {
+          "text": "gemma, escalabilidade, real-time.",
+          "snippet": "gemma, escalabilidade, real-time.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6557,
+          "evidence_confidence_score": 0.4407,
+          "source_id": "src-synth-startup-0012-01",
+          "url": "https://example.com/synth-startup-0012/1"
+        },
+        {
+          "text": "weaviate, distributed training, low latency.",
+          "snippet": "weaviate, distributed training, low latency.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6048,
+          "evidence_confidence_score": 0.4755,
+          "source_id": "src-synth-startup-0012-02",
+          "url": "https://example.com/synth-startup-0012/2"
+        },
+        {
+          "text": "opencv, treinamento distribuído, low latency.",
+          "snippet": "opencv, treinamento distribuído, low latency.",
+          "source_type": "official_website",
+          "source_quality_score": 0.7053,
+          "evidence_confidence_score": 0.4167,
+          "source_id": "src-synth-startup-0012-03",
+          "url": "https://example.com/synth-startup-0012/3"
+        },
+        {
+          "text": "spacy, a100, batch inference.",
+          "snippet": "spacy, a100, batch inference.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.5667,
+          "evidence_confidence_score": 0.4836,
+          "source_id": "src-synth-startup-0012-04",
+          "url": "https://example.com/synth-startup-0012/4"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "computer vision, nvidia omniverse.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "inference, cudnn.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "inference, cugraph.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "similaridade semântica, cuda.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "computer vision, cudnn.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.44, nv_level=0.47",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0013",
+      "startup_name": "Startup 0013",
+      "website_url": "https://example.com/synth-startup-0013",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "nltk, cudnn, chatbot.",
+          "snippet": "nltk, cudnn, chatbot.",
+          "source_type": "news",
+          "source_quality_score": 0.6274,
+          "evidence_confidence_score": 0.543,
+          "source_id": "src-synth-startup-0013-00",
+          "url": "https://example.com/synth-startup-0013/0"
+        },
+        {
+          "text": "scikit-learn, mlflow, chatbot.",
+          "snippet": "scikit-learn, mlflow, chatbot.",
+          "source_type": "blog",
+          "source_quality_score": 0.6267,
+          "evidence_confidence_score": 0.6509,
+          "source_id": "src-synth-startup-0013-01",
+          "url": "https://example.com/synth-startup-0013/1"
+        },
+        {
+          "text": "pytorch, kubeflow, rag.",
+          "snippet": "pytorch, kubeflow, rag.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7571,
+          "evidence_confidence_score": 0.4943,
+          "source_id": "src-synth-startup-0013-02",
+          "url": "https://example.com/synth-startup-0013/2"
+        },
+        {
+          "text": "xgb, haystack, chatbot.",
+          "snippet": "xgb, haystack, chatbot.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.645,
+          "evidence_confidence_score": 0.6245,
+          "source_id": "src-synth-startup-0013-03",
+          "url": "https://example.com/synth-startup-0013/3"
+        },
+        {
+          "text": "spacy, dask, generative ai.",
+          "snippet": "spacy, dask, generative ai.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7607,
+          "evidence_confidence_score": 0.5563,
+          "source_id": "src-synth-startup-0013-04",
+          "url": "https://example.com/synth-startup-0013/4"
+        },
+        {
+          "text": "cuda, langchain, llm.",
+          "snippet": "cuda, langchain, llm.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6645,
+          "evidence_confidence_score": 0.6234,
+          "source_id": "src-synth-startup-0013-05",
+          "url": "https://example.com/synth-startup-0013/5"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "ia generativa, semantic similarity, retrieval augmented, ia nativa.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "processamento de linguagem natural, agente de ia, neural network, saas com ia.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "aprendizado de máquina, natural language, deep learning, analise preditiva.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "deep learning, retrieval augmented, agente de ia, saas com ia.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.76, nv_level=0.20",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0014",
+      "startup_name": "Startup 0014",
+      "website_url": "https://example.com/synth-startup-0014",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "nltk, container, training, object detection, big data.",
+          "snippet": "nltk, container, training, object detection, big data.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7594,
+          "evidence_confidence_score": 0.5864,
+          "source_id": "src-synth-startup-0014-00",
+          "url": "https://example.com/synth-startup-0014/0"
+        },
+        {
+          "text": "dask, inference server, alta taxa, object detection, integração de dados.",
+          "snippet": "dask, inference server, alta taxa, object detection, integração de dados.",
+          "source_type": "blog",
+          "source_quality_score": 0.8808,
+          "evidence_confidence_score": 0.6862,
+          "source_id": "src-synth-startup-0014-01",
+          "url": "https://example.com/synth-startup-0014/1"
+        },
+        {
+          "text": "cuda, k8s, inferência, object detection, data warehouse.",
+          "snippet": "cuda, k8s, inferência, object detection, data warehouse.",
+          "source_type": "official_website",
+          "source_quality_score": 0.8595,
+          "evidence_confidence_score": 0.5877,
+          "source_id": "src-synth-startup-0014-02",
+          "url": "https://example.com/synth-startup-0014/2"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "retrieval augmented, cudnn, h100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "aprendizagem de máquina, nvidia morpheus, a100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "ai agent, triton inference server, rtx.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.39, nv_level=0.66",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0015",
+      "startup_name": "Startup 0015",
+      "website_url": "https://example.com/synth-startup-0015",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "falcon, model deployment, cluster, real-time, baixa latência, computer vision, data processing.",
+          "snippet": "falcon, model deployment, cluster, real-time, baixa latência, computer vision, data processing.",
+          "source_type": "blog",
+          "source_quality_score": 0.8375,
+          "evidence_confidence_score": 0.7286,
+          "source_id": "src-synth-startup-0015-00",
+          "url": "https://example.com/synth-startup-0015/0"
+        },
+        {
+          "text": "tokenizer, gpu, container, real-time, training, image recognition, integração de dados.",
+          "snippet": "tokenizer, gpu, container, real-time, training, image recognition, integração de dados.",
+          "source_type": "blog",
+          "source_quality_score": 0.9441,
+          "evidence_confidence_score": 0.7718,
+          "source_id": "src-synth-startup-0015-01",
+          "url": "https://example.com/synth-startup-0015/1"
+        },
+        {
+          "text": "llama, treinamento distribuído, inference server, tempo real, alta taxa, object detection, vector database.",
+          "snippet": "llama, treinamento distribuído, inference server, tempo real, alta taxa, object detection, vector database.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.9269,
+          "evidence_confidence_score": 0.6845,
+          "source_id": "src-synth-startup-0015-02",
+          "url": "https://example.com/synth-startup-0015/2"
+        },
+        {
+          "text": "nltk, h100, cluster, tempo real, baixa latência, object detection, analise de dados.",
+          "snippet": "nltk, h100, cluster, tempo real, baixa latência, object detection, analise de dados.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.9637,
+          "evidence_confidence_score": 0.7152,
+          "source_id": "src-synth-startup-0015-03",
+          "url": "https://example.com/synth-startup-0015/3"
+        },
+        {
+          "text": "mlflow, gpu, data warehouse, model serving, low latency, image recognition, etl.",
+          "snippet": "mlflow, gpu, data warehouse, model serving, low latency, image recognition, etl.",
+          "source_type": "blog",
+          "source_quality_score": 1.0,
+          "evidence_confidence_score": 0.6647,
+          "source_id": "src-synth-startup-0015-04",
+          "url": "https://example.com/synth-startup-0015/4"
+        },
+        {
+          "text": "cuda, model serving, container, batch inference, treinamento, image recognition, spark.",
+          "snippet": "cuda, model serving, container, batch inference, treinamento, image recognition, spark.",
+          "source_type": "news",
+          "source_quality_score": 0.8096,
+          "evidence_confidence_score": 0.6553,
+          "source_id": "src-synth-startup-0015-05",
+          "url": "https://example.com/synth-startup-0015/5"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "modelo de linguagem, cudnn, nvidia nim, l4.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "fine tuning, nvidia riva, rapids, h100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.44, nv_level=0.69",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0016",
+      "startup_name": "Startup 0016",
+      "website_url": "https://example.com/synth-startup-0016",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "milvus, scalability, container, baixa latencia, batch inference, computer vision, chatbot, data pipeline.",
+          "snippet": "milvus, scalability, container, baixa latencia, batch inference, computer vision, chatbot, data pipeline.",
+          "source_type": "blog",
+          "source_quality_score": 0.7518,
+          "evidence_confidence_score": 0.6351,
+          "source_id": "src-synth-startup-0016-00",
+          "url": "https://example.com/synth-startup-0016/0"
+        },
+        {
+          "text": "triton, data warehouse, ci/cd for ml, model serving, low latency, object detection, llm, data processing.",
+          "snippet": "triton, data warehouse, ci/cd for ml, model serving, low latency, object detection, llm, data processing.",
+          "source_type": "blog",
+          "source_quality_score": 0.646,
+          "evidence_confidence_score": 0.6193,
+          "source_id": "src-synth-startup-0016-01",
+          "url": "https://example.com/synth-startup-0016/1"
+        },
+        {
+          "text": "falcon, cluster, inference server, inferência, low latency, object detection, rag, banco de dados vetorial.",
+          "snippet": "falcon, cluster, inference server, inferência, low latency, object detection, rag, banco de dados vetorial.",
+          "source_type": "official_website",
+          "source_quality_score": 0.7736,
+          "evidence_confidence_score": 0.6166,
+          "source_id": "src-synth-startup-0016-02",
+          "url": "https://example.com/synth-startup-0016/2"
+        },
+        {
+          "text": "ray, data pipeline, h100, inferência, treinamento, image recognition, generative ai, big data.",
+          "snippet": "ray, data pipeline, h100, inferência, treinamento, image recognition, generative ai, big data.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6413,
+          "evidence_confidence_score": 0.6301,
+          "source_id": "src-synth-startup-0016-03",
+          "url": "https://example.com/synth-startup-0016/3"
+        },
+        {
+          "text": "llama, k8s, v100, triton, tempo real, image recognition, llm, data integration.",
+          "snippet": "llama, k8s, v100, triton, tempo real, image recognition, llm, data integration.",
+          "source_type": "blog",
+          "source_quality_score": 0.6141,
+          "evidence_confidence_score": 0.5101,
+          "source_id": "src-synth-startup-0016-04",
+          "url": "https://example.com/synth-startup-0016/4"
+        },
+        {
+          "text": "jax, kubernetes, mlops, treinamento, real-time, object detection, generative ai, data analytics.",
+          "snippet": "jax, kubernetes, mlops, treinamento, real-time, object detection, generative ai, data analytics.",
+          "source_type": "blog",
+          "source_quality_score": 0.8542,
+          "evidence_confidence_score": 0.6577,
+          "source_id": "src-synth-startup-0016-05",
+          "url": "https://example.com/synth-startup-0016/5"
+        },
+        {
+          "text": "keras, ci/cd for ml, treinamento distribuido, treinamento, inferência, object detection, llm, spark.",
+          "snippet": "keras, ci/cd for ml, treinamento distribuido, treinamento, inferência, object detection, llm, spark.",
+          "source_type": "official_website",
+          "source_quality_score": 0.6876,
+          "evidence_confidence_score": 0.5415,
+          "source_id": "src-synth-startup-0016-06",
+          "url": "https://example.com/synth-startup-0016/6"
+        },
+        {
+          "text": "keras, container, distributed training, treinamento, inference, image recognition, generative ai, data lake.",
+          "snippet": "keras, container, distributed training, treinamento, inference, image recognition, generative ai, data lake.",
+          "source_type": "news",
+          "source_quality_score": 0.8044,
+          "evidence_confidence_score": 0.5375,
+          "source_id": "src-synth-startup-0016-07",
+          "url": "https://example.com/synth-startup-0016/7"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "modelo próprio, ia generativa, cudnn, nemo, nossa ia, h100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "autonomo, diffusion, rapids, cudf, plataforma de ia, aceleracao grafica.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "fine tuning, fine-tuning, cugraph, rapids, ai solution, aceleração gráfica.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "visao computacional, autonomo, nvidia ai enterprise, nvidia, analise preditiva, a100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.63, nv_level=0.90",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0017",
+      "startup_name": "Startup 0017",
+      "website_url": "https://example.com/synth-startup-0017",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "dask, tensorflow, generative ai.",
+          "snippet": "dask, tensorflow, generative ai.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8219,
+          "evidence_confidence_score": 0.6918,
+          "source_id": "src-synth-startup-0017-00",
+          "url": "https://example.com/synth-startup-0017/0"
+        },
+        {
+          "text": "detectron, transformers, llm.",
+          "snippet": "detectron, transformers, llm.",
+          "source_type": "official_website",
+          "source_quality_score": 0.6886,
+          "evidence_confidence_score": 0.6762,
+          "source_id": "src-synth-startup-0017-01",
+          "url": "https://example.com/synth-startup-0017/1"
+        },
+        {
+          "text": "haystack, yolo, generative ai.",
+          "snippet": "haystack, yolo, generative ai.",
+          "source_type": "blog",
+          "source_quality_score": 0.8483,
+          "evidence_confidence_score": 0.6547,
+          "source_id": "src-synth-startup-0017-02",
+          "url": "https://example.com/synth-startup-0017/2"
+        },
+        {
+          "text": "spacy, sentence-transformers, llm.",
+          "snippet": "spacy, sentence-transformers, llm.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.9107,
+          "evidence_confidence_score": 0.6863,
+          "source_id": "src-synth-startup-0017-03",
+          "url": "https://example.com/synth-startup-0017/3"
+        },
+        {
+          "text": "llamaindex, hugging face, chatbot.",
+          "snippet": "llamaindex, hugging face, chatbot.",
+          "source_type": "official_website",
+          "source_quality_score": 0.8056,
+          "evidence_confidence_score": 0.5976,
+          "source_id": "src-synth-startup-0017-04",
+          "url": "https://example.com/synth-startup-0017/4"
+        },
+        {
+          "text": "dask, mistral, generative ai.",
+          "snippet": "dask, mistral, generative ai.",
+          "source_type": "blog",
+          "source_quality_score": 0.8847,
+          "evidence_confidence_score": 0.68,
+          "source_id": "src-synth-startup-0017-05",
+          "url": "https://example.com/synth-startup-0017/5"
+        },
+        {
+          "text": "chroma, mistral, rag.",
+          "snippet": "chroma, mistral, rag.",
+          "source_type": "official_website",
+          "source_quality_score": 0.7214,
+          "evidence_confidence_score": 0.6842,
+          "source_id": "src-synth-startup-0017-06",
+          "url": "https://example.com/synth-startup-0017/6"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "computer vision, deep learning, aprendizado profundo, recomendacao inteligente.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "similaridade semantica, inteligência artificial, aprendizado profundo, produto baseado em ia.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 0.969,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.81, nv_level=0.23",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0018",
+      "startup_name": "Startup 0018",
+      "website_url": "https://example.com/synth-startup-0018",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "llamaindex, hugging face, rag.",
+          "snippet": "llamaindex, hugging face, rag.",
+          "source_type": "blog",
+          "source_quality_score": 0.7987,
+          "evidence_confidence_score": 0.5373,
+          "source_id": "src-synth-startup-0018-00",
+          "url": "https://example.com/synth-startup-0018/0"
+        },
+        {
+          "text": "tokenizer, transformers, chatbot.",
+          "snippet": "tokenizer, transformers, chatbot.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6884,
+          "evidence_confidence_score": 0.6787,
+          "source_id": "src-synth-startup-0018-01",
+          "url": "https://example.com/synth-startup-0018/1"
+        },
+        {
+          "text": "keras, kubeflow, rag.",
+          "snippet": "keras, kubeflow, rag.",
+          "source_type": "news",
+          "source_quality_score": 0.6975,
+          "evidence_confidence_score": 0.6713,
+          "source_id": "src-synth-startup-0018-02",
+          "url": "https://example.com/synth-startup-0018/2"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "generative ai, ia generativa, natural language, intelligent automation.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "diffusion, ai agent, aprendizagem de máquina, ai saas.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "gpt, deep learning, similaridade semântica, análise preditiva.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "medium",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 0.529,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.79, nv_level=0.11",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0019",
+      "startup_name": "Startup 0019",
+      "website_url": "https://example.com/synth-startup-0019",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "distributed training, batch inference.",
+          "snippet": "distributed training, batch inference.",
+          "source_type": "technical_docs",
+          "source_quality_score": 1.0,
+          "evidence_confidence_score": 0.6974,
+          "source_id": "src-synth-startup-0019-00",
+          "url": "https://example.com/synth-startup-0019/0"
+        },
+        {
+          "text": "a100, inference.",
+          "snippet": "a100, inference.",
+          "source_type": "official_website",
+          "source_quality_score": 0.8539,
+          "evidence_confidence_score": 0.5328,
+          "source_id": "src-synth-startup-0019-01",
+          "url": "https://example.com/synth-startup-0019/1"
+        },
+        {
+          "text": "k8s, baixa latencia.",
+          "snippet": "k8s, baixa latencia.",
+          "source_type": "blog",
+          "source_quality_score": 0.8841,
+          "evidence_confidence_score": 0.7539,
+          "source_id": "src-synth-startup-0019-02",
+          "url": "https://example.com/synth-startup-0019/2"
+        },
+        {
+          "text": "t4, batch inference.",
+          "snippet": "t4, batch inference.",
+          "source_type": "official_website",
+          "source_quality_score": 0.8392,
+          "evidence_confidence_score": 0.742,
+          "source_id": "src-synth-startup-0019-03",
+          "url": "https://example.com/synth-startup-0019/3"
+        },
+        {
+          "text": "tpu, inference.",
+          "snippet": "tpu, inference.",
+          "source_type": "official_website",
+          "source_quality_score": 0.927,
+          "evidence_confidence_score": 0.7623,
+          "source_id": "src-synth-startup-0019-04",
+          "url": "https://example.com/synth-startup-0019/4"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "nemo.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "cuml.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "cuda.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "cugraph.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.15, nv_level=0.48",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0020",
+      "startup_name": "Startup 0020",
+      "website_url": "https://example.com/synth-startup-0020",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "model registry, inference, computer vision, big data.",
+          "snippet": "model registry, inference, computer vision, big data.",
+          "source_type": "blog",
+          "source_quality_score": 0.6105,
+          "evidence_confidence_score": 0.5249,
+          "source_id": "src-synth-startup-0020-00",
+          "url": "https://example.com/synth-startup-0020/0"
+        },
+        {
+          "text": "a100, tempo real, image recognition, etl.",
+          "snippet": "a100, tempo real, image recognition, etl.",
+          "source_type": "official_website",
+          "source_quality_score": 0.5854,
+          "evidence_confidence_score": 0.5597,
+          "source_id": "src-synth-startup-0020-01",
+          "url": "https://example.com/synth-startup-0020/1"
+        },
+        {
+          "text": "scalability, batch inference, image recognition, banco de dados vetorial.",
+          "snippet": "scalability, batch inference, image recognition, banco de dados vetorial.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.5545,
+          "evidence_confidence_score": 0.4917,
+          "source_id": "src-synth-startup-0020-02",
+          "url": "https://example.com/synth-startup-0020/2"
+        },
+        {
+          "text": "treinamento distribuído, inferência, object detection, data pipeline.",
+          "snippet": "treinamento distribuído, inferência, object detection, data pipeline.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7151,
+          "evidence_confidence_score": 0.5259,
+          "source_id": "src-synth-startup-0020-03",
+          "url": "https://example.com/synth-startup-0020/3"
+        },
+        {
+          "text": "escalabilidade, alta taxa, object detection, data lake.",
+          "snippet": "escalabilidade, alta taxa, object detection, data lake.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6322,
+          "evidence_confidence_score": 0.5447,
+          "source_id": "src-synth-startup-0020-04",
+          "url": "https://example.com/synth-startup-0020/4"
+        },
+        {
+          "text": "data warehouse, tempo real, image recognition, data lake.",
+          "snippet": "data warehouse, tempo real, image recognition, data lake.",
+          "source_type": "blog",
+          "source_quality_score": 0.6124,
+          "evidence_confidence_score": 0.5652,
+          "source_id": "src-synth-startup-0020-05",
+          "url": "https://example.com/synth-startup-0020/5"
+        },
+        {
+          "text": "cluster, batch inference, computer vision, data lake.",
+          "snippet": "cluster, batch inference, computer vision, data lake.",
+          "source_type": "news",
+          "source_quality_score": 0.6278,
+          "evidence_confidence_score": 0.5317,
+          "source_id": "src-synth-startup-0020-06",
+          "url": "https://example.com/synth-startup-0020/6"
+        },
+        {
+          "text": "docker, batch inference, object detection, streaming.",
+          "snippet": "docker, batch inference, object detection, streaming.",
+          "source_type": "news",
+          "source_quality_score": 0.671,
+          "evidence_confidence_score": 0.5673,
+          "source_id": "src-synth-startup-0020-07",
+          "url": "https://example.com/synth-startup-0020/7"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "diffusion, cugraph, v100.",
+          "criticality": "critical",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "generative ai, nvidia, t4.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "fine tuning, nvidia nim, gpu.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "machine learning, cuda, v100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "aprendizado profundo, cugraph, t4.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.27, nv_level=0.66",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0021",
+      "startup_name": "Startup 0021",
+      "website_url": "https://example.com/synth-startup-0021",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "blog",
+          "source_quality_score": 0.6451,
+          "evidence_confidence_score": 0.697,
+          "source_id": "src-synth-startup-0021-00",
+          "url": "https://example.com/synth-startup-0021/0"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "news",
+          "source_quality_score": 0.8915,
+          "evidence_confidence_score": 0.5905,
+          "source_id": "src-synth-startup-0021-01",
+          "url": "https://example.com/synth-startup-0021/1"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "blog",
+          "source_quality_score": 0.7339,
+          "evidence_confidence_score": 0.679,
+          "source_id": "src-synth-startup-0021-02",
+          "url": "https://example.com/synth-startup-0021/2"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "blog",
+          "source_quality_score": 0.8483,
+          "evidence_confidence_score": 0.5771,
+          "source_id": "src-synth-startup-0021-03",
+          "url": "https://example.com/synth-startup-0021/3"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7486,
+          "evidence_confidence_score": 0.6516,
+          "source_id": "src-synth-startup-0021-04",
+          "url": "https://example.com/synth-startup-0021/4"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "blog",
+          "source_quality_score": 0.8921,
+          "evidence_confidence_score": 0.6675,
+          "source_id": "src-synth-startup-0021-05",
+          "url": "https://example.com/synth-startup-0021/5"
+        },
+        {
+          "text": "Empresa provedora de servicos web.",
+          "snippet": "Empresa provedora de servicos web.",
+          "source_type": "official_website",
+          "source_quality_score": 0.9592,
+          "evidence_confidence_score": 0.7096,
+          "source_id": "src-synth-startup-0021-06",
+          "url": "https://example.com/synth-startup-0021/6"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "Solucao corporativa para gestao de negocios.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "Solucao corporativa para gestao de negocios.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "low",
+      "human_label_nvidia_fit_level": "low",
+      "human_label_ai_native_score": 0.03,
+      "human_label_nvidia_fit_score": 0.029,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.17, nv_level=0.15",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0022",
+      "startup_name": "Startup 0022",
+      "website_url": "https://example.com/synth-startup-0022",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "cudnn, kubernetes, real-time, object detection, generative ai, data analytics.",
+          "snippet": "cudnn, kubernetes, real-time, object detection, generative ai, data analytics.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.609,
+          "evidence_confidence_score": 0.5587,
+          "source_id": "src-synth-startup-0022-00",
+          "url": "https://example.com/synth-startup-0022/0"
+        },
+        {
+          "text": "weaviate, model deployment, baixa latência, computer vision, rag, data lake.",
+          "snippet": "weaviate, model deployment, baixa latência, computer vision, rag, data lake.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6054,
+          "evidence_confidence_score": 0.5908,
+          "source_id": "src-synth-startup-0022-01",
+          "url": "https://example.com/synth-startup-0022/1"
+        },
+        {
+          "text": "kubeflow, treinamento distribuido, alta taxa, image recognition, generative ai, análise de dados.",
+          "snippet": "kubeflow, treinamento distribuido, alta taxa, image recognition, generative ai, análise de dados.",
+          "source_type": "blog",
+          "source_quality_score": 0.7574,
+          "evidence_confidence_score": 0.567,
+          "source_id": "src-synth-startup-0022-02",
+          "url": "https://example.com/synth-startup-0022/2"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "ia generativa, inferencia, cudf, ai saas, nvidia gpu.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "machine learning, ia generativa, nvidia, ai saas, placa de vídeo.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.62, nv_level=0.51",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0023",
+      "startup_name": "Startup 0023",
+      "website_url": "https://example.com/synth-startup-0023",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "gpu, batch inference, object detection, kafka.",
+          "snippet": "gpu, batch inference, object detection, kafka.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8339,
+          "evidence_confidence_score": 0.5948,
+          "source_id": "src-synth-startup-0023-00",
+          "url": "https://example.com/synth-startup-0023/0"
+        },
+        {
+          "text": "l4, treinamento, computer vision, streaming.",
+          "snippet": "l4, treinamento, computer vision, streaming.",
+          "source_type": "official_website",
+          "source_quality_score": 0.9007,
+          "evidence_confidence_score": 0.6653,
+          "source_id": "src-synth-startup-0023-01",
+          "url": "https://example.com/synth-startup-0023/1"
+        },
+        {
+          "text": "etl, high throughput, image recognition, integracao de dados.",
+          "snippet": "etl, high throughput, image recognition, integracao de dados.",
+          "source_type": "news",
+          "source_quality_score": 0.8346,
+          "evidence_confidence_score": 0.6241,
+          "source_id": "src-synth-startup-0023-02",
+          "url": "https://example.com/synth-startup-0023/2"
+        },
+        {
+          "text": "model serving, tempo real, computer vision, kafka.",
+          "snippet": "model serving, tempo real, computer vision, kafka.",
+          "source_type": "news",
+          "source_quality_score": 0.8159,
+          "evidence_confidence_score": 0.695,
+          "source_id": "src-synth-startup-0023-03",
+          "url": "https://example.com/synth-startup-0023/3"
+        },
+        {
+          "text": "k8s, real-time, computer vision, banco de dados vetorial.",
+          "snippet": "k8s, real-time, computer vision, banco de dados vetorial.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6802,
+          "evidence_confidence_score": 0.6834,
+          "source_id": "src-synth-startup-0023-04",
+          "url": "https://example.com/synth-startup-0023/4"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "inference, tensorrt, t4.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "language model, triton inference server, placa de video.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "similaridade semântica, nvidia omniverse, a100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.31, nv_level=0.66",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0024",
+      "startup_name": "Startup 0024",
+      "website_url": "https://example.com/synth-startup-0024",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "detectron, scalability, h100, training, inferência, computer vision, rag, vector database.",
+          "snippet": "detectron, scalability, h100, training, inferência, computer vision, rag, vector database.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8685,
+          "evidence_confidence_score": 0.6459,
+          "source_id": "src-synth-startup-0024-00",
+          "url": "https://example.com/synth-startup-0024/0"
+        },
+        {
+          "text": "sklearn, cluster, escalabilidade, real-time, batch inference, computer vision, chatbot, etl.",
+          "snippet": "sklearn, cluster, escalabilidade, real-time, batch inference, computer vision, chatbot, etl.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.7695,
+          "evidence_confidence_score": 0.7,
+          "source_id": "src-synth-startup-0024-01",
+          "url": "https://example.com/synth-startup-0024/1"
+        },
+        {
+          "text": "sklearn, mlops, cluster, inferencia, batch inference, computer vision, rag, streaming.",
+          "snippet": "sklearn, mlops, cluster, inferencia, batch inference, computer vision, rag, streaming.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8738,
+          "evidence_confidence_score": 0.7024,
+          "source_id": "src-synth-startup-0024-02",
+          "url": "https://example.com/synth-startup-0024/2"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "transfer learning, processamento de linguagem natural, nvidia nim, nvidia isaac, solucao de ia, l4.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "ia generativa, genai, nvidia nim, nemo guardrails, predictive analytics, tesla.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "redes neurais, inference, triton inference server, cugraph, ai-powered, placa de video.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.61, nv_level=0.75",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0025",
+      "startup_name": "Startup 0025",
+      "website_url": "https://example.com/synth-startup-0025",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "xgb, kubeflow, chatbot.",
+          "snippet": "xgb, kubeflow, chatbot.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.8627,
+          "evidence_confidence_score": 0.631,
+          "source_id": "src-synth-startup-0025-00",
+          "url": "https://example.com/synth-startup-0025/0"
+        },
+        {
+          "text": "catboost, tokenizer, llm.",
+          "snippet": "catboost, tokenizer, llm.",
+          "source_type": "official_website",
+          "source_quality_score": 0.7132,
+          "evidence_confidence_score": 0.6221,
+          "source_id": "src-synth-startup-0025-01",
+          "url": "https://example.com/synth-startup-0025/1"
+        },
+        {
+          "text": "chroma, nltk, llm.",
+          "snippet": "chroma, nltk, llm.",
+          "source_type": "blog",
+          "source_quality_score": 0.6398,
+          "evidence_confidence_score": 0.5032,
+          "source_id": "src-synth-startup-0025-02",
+          "url": "https://example.com/synth-startup-0025/2"
+        },
+        {
+          "text": "tensorflow, pinecone, llm.",
+          "snippet": "tensorflow, pinecone, llm.",
+          "source_type": "official_website",
+          "source_quality_score": 0.7151,
+          "evidence_confidence_score": 0.7111,
+          "source_id": "src-synth-startup-0025-03",
+          "url": "https://example.com/synth-startup-0025/3"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "embedding, inteligencia artificial, ai-native.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "deep learning, treinamento, nossa ia.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "modelo proprietario, visao computacional, solução de ia.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "diffusion, vector database, assistente virtual.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        },
+        {
+          "claim_text": "retrieval augmented, inference, recomendacao inteligente.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "high"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.70, nv_level=0.14",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0026",
+      "startup_name": "Startup 0026",
+      "website_url": "https://example.com/synth-startup-0026",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "dask, ray, etl, ci/cd for ml, model serving, baixa latencia, object detection, rag, etl.",
+          "snippet": "dask, ray, etl, ci/cd for ml, model serving, baixa latencia, object detection, rag, etl.",
+          "source_type": "blog",
+          "source_quality_score": 0.584,
+          "evidence_confidence_score": 0.4272,
+          "source_id": "src-synth-startup-0026-00",
+          "url": "https://example.com/synth-startup-0026/0"
+        },
+        {
+          "text": "weaviate, catboost, data pipeline, kubernetes, real-time, batch inference, image recognition, rag, data lake.",
+          "snippet": "weaviate, catboost, data pipeline, kubernetes, real-time, batch inference, image recognition, rag, data lake.",
+          "source_type": "news",
+          "source_quality_score": 0.5782,
+          "evidence_confidence_score": 0.4422,
+          "source_id": "src-synth-startup-0026-02",
+          "url": "https://example.com/synth-startup-0026/2"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "llm, transfer learning, language model, rapids, nvidia morpheus, our ai, quadro.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "aprendizado de maquina, agente de ia, modelo proprietario, nvidia morpheus, cudnn, saas com ia, v100.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.77, nv_level=0.74",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0027",
+      "startup_name": "Startup 0027",
+      "website_url": "https://example.com/synth-startup-0027",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "lightgbm, llm.",
+          "snippet": "lightgbm, llm.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.5123,
+          "evidence_confidence_score": 0.4194,
+          "source_id": "src-synth-startup-0027-00",
+          "url": "https://example.com/synth-startup-0027/0"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "visão computacional, ia generativa, assistente virtual.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "ia generativa, llm, analise preditiva.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "llm, embedding, intelligent automation.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "machine learning, aprendizado de maquina, analise inteligente.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.55, nv_level=0.32",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0028",
+      "startup_name": "Startup 0028",
+      "website_url": "https://example.com/synth-startup-0028",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "a100, treinamento distribuído, tempo real, alta taxa, image recognition, data integration.",
+          "snippet": "a100, treinamento distribuído, tempo real, alta taxa, image recognition, data integration.",
+          "source_type": "official_website",
+          "source_quality_score": 0.5134,
+          "evidence_confidence_score": 0.5024,
+          "source_id": "src-synth-startup-0028-00",
+          "url": "https://example.com/synth-startup-0028/0"
+        },
+        {
+          "text": "v100, distributed training, low latency, inferência, object detection, vector database.",
+          "snippet": "v100, distributed training, low latency, inferência, object detection, vector database.",
+          "source_type": "news",
+          "source_quality_score": 0.6174,
+          "evidence_confidence_score": 0.469,
+          "source_id": "src-synth-startup-0028-01",
+          "url": "https://example.com/synth-startup-0028/1"
+        },
+        {
+          "text": "docker, v100, tempo real, baixa latencia, computer vision, data warehouse.",
+          "snippet": "docker, v100, tempo real, baixa latencia, computer vision, data warehouse.",
+          "source_type": "news",
+          "source_quality_score": 0.5809,
+          "evidence_confidence_score": 0.5131,
+          "source_id": "src-synth-startup-0028-02",
+          "url": "https://example.com/synth-startup-0028/2"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "tensorrt, nvidia ai enterprise, placa de video.",
+          "criticality": "critical",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "nvidia nim, nvidia omniverse, aceleração gráfica.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "rapids, nemo, tesla.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "triton inference server, cuml, aceleracao grafica.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "nemo, nvidia morpheus, aceleracao grafica.",
+          "criticality": "critical",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.12, nv_level=0.85",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    },
+    {
+      "startup_id": "synth-startup-0029",
+      "startup_name": "Startup 0029",
+      "website_url": "https://example.com/synth-startup-0029",
+      "extracted_profile_snapshot": {
+        "sector": "Technology",
+        "funding_stage": "seed"
+      },
+      "accepted_evidence_items_snapshot": [
+        {
+          "text": "treinamento distribuido, inference server, treinamento, high throughput, image recognition, banco de dados vetorial.",
+          "snippet": "treinamento distribuido, inference server, treinamento, high throughput, image recognition, banco de dados vetorial.",
+          "source_type": "blog",
+          "source_quality_score": 0.5757,
+          "evidence_confidence_score": 0.4622,
+          "source_id": "src-synth-startup-0029-00",
+          "url": "https://example.com/synth-startup-0029/0"
+        },
+        {
+          "text": "inference server, treinamento distribuído, real-time, treinamento, image recognition, big data.",
+          "snippet": "inference server, treinamento distribuído, real-time, treinamento, image recognition, big data.",
+          "source_type": "official_website",
+          "source_quality_score": 0.5812,
+          "evidence_confidence_score": 0.4946,
+          "source_id": "src-synth-startup-0029-01",
+          "url": "https://example.com/synth-startup-0029/1"
+        },
+        {
+          "text": "t4, feature store, tempo real, real-time, object detection, spark.",
+          "snippet": "t4, feature store, tempo real, real-time, object detection, spark.",
+          "source_type": "blog",
+          "source_quality_score": 0.5664,
+          "evidence_confidence_score": 0.5004,
+          "source_id": "src-synth-startup-0029-02",
+          "url": "https://example.com/synth-startup-0029/2"
+        },
+        {
+          "text": "k8s, scalability, batch inference, tempo real, computer vision, data analytics.",
+          "snippet": "k8s, scalability, batch inference, tempo real, computer vision, data analytics.",
+          "source_type": "news",
+          "source_quality_score": 0.5526,
+          "evidence_confidence_score": 0.4696,
+          "source_id": "src-synth-startup-0029-03",
+          "url": "https://example.com/synth-startup-0029/3"
+        },
+        {
+          "text": "feature store, h100, training, real-time, computer vision, streaming.",
+          "snippet": "feature store, h100, training, real-time, computer vision, streaming.",
+          "source_type": "technical_docs",
+          "source_quality_score": 0.6447,
+          "evidence_confidence_score": 0.5006,
+          "source_id": "src-synth-startup-0029-04",
+          "url": "https://example.com/synth-startup-0029/4"
+        },
+        {
+          "text": "scalability, model serving, tempo real, treinamento, computer vision, análise de dados.",
+          "snippet": "scalability, model serving, tempo real, treinamento, computer vision, análise de dados.",
+          "source_type": "news",
+          "source_quality_score": 0.7072,
+          "evidence_confidence_score": 0.4335,
+          "source_id": "src-synth-startup-0029-05",
+          "url": "https://example.com/synth-startup-0029/5"
+        },
+        {
+          "text": "docker, t4, real-time, baixa latencia, object detection, data integration.",
+          "snippet": "docker, t4, real-time, baixa latencia, object detection, data integration.",
+          "source_type": "official_website",
+          "source_quality_score": 0.6583,
+          "evidence_confidence_score": 0.4238,
+          "source_id": "src-synth-startup-0029-06",
+          "url": "https://example.com/synth-startup-0029/6"
+        }
+      ],
+      "accepted_claims_snapshot": [
+        {
+          "claim_text": "aprendizado de máquina, cugraph, cudf, placa de video.",
+          "criticality": "normal",
+          "support_status": "unsupported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "vector database, nvidia nim, tensorrt, tesla.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "inferência, triton inference server, rapids, placa de video.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        },
+        {
+          "claim_text": "language model, cudnn, cuda, a100.",
+          "criticality": "normal",
+          "support_status": "supported",
+          "supporting_evidence_refs": [],
+          "confidence": "medium"
+        }
+      ],
+      "human_label_ai_native_level": "high",
+      "human_label_nvidia_fit_level": "high",
+      "human_label_ai_native_score": 1.0,
+      "human_label_nvidia_fit_score": 1.0,
+      "label_notes": "Derived from synthetic reference weights. ai_level=0.32, nv_level=0.71",
+      "label_source": "derived_from_synthetic_reference",
+      "labeler_id": "startup_scoring_calibration.py"
+    }
+  ]
+}

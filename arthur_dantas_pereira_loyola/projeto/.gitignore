@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Tooling and caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Duplicate frontend (created by mistake)
+ai-agent-system/frontend/
+ai-agent-system/frontend/node_modules/
+ai-agent-system/frontend/dist/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Local SQLite runtime database
+ai-agent-system/src/radar/database/radar.db
+ai-agent-system/src/radar/database/radar.db-*

@@ -1,0 +1,6 @@
+tool,provider,category,free_tier_available,api_key_required,signup_required,rate_limit,terms_url,data_retention,privacy_risk,configured,readiness_check,decision
+OpenAI Evals,OpenAI,evaluation,unknown,true,true,TBD,https://openai.com/policies,TBD,medium,false,scripts/check_api_key_readiness.py,FUTURE_RESEARCH_BY_CONSTRAINT
+RAGAS,RAGAS,evaluation,true,false,false,local,https://docs.ragas.io,TBD,low,false,scripts/run_rag_eval_suite.py,BENCHMARK_REQUIRED
+DeepEval,Confident AI,evaluation,true,false,false,local,https://docs.confident-ai.com,TBD,low,false,scripts/run_rag_eval_suite.py,BENCHMARK_REQUIRED
+Arize Phoenix,Arize,observability,true,false,false,local,https://docs.arize.com/phoenix,TBD,low,false,scripts/check_free_external_tools.py,BENCHMARK_REQUIRED
+LangSmith,LangChain,observability,unknown,true,true,TBD,https://docs.smith.langchain.com,TBD,medium,false,scripts/check_api_key_readiness.py,FUTURE_RESEARCH_BY_CONSTRAINT

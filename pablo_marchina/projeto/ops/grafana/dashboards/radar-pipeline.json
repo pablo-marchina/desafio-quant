@@ -1,0 +1,51 @@
+{
+  "title": "Radar Pipeline",
+  "uid": "radar-pipeline",
+  "panels": [
+    {
+      "title": "Node Latency (P50/P95)",
+      "type": "heatmap",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(graph_node_latency_seconds_bucket[5m])",
+          "format": "heatmap",
+          "legendFormat": "{{le}}"
+        }
+      ]
+    },
+    {
+      "title": "Node Error Rate",
+      "type": "stat",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(graph_node_errors_total[5m])",
+          "legendFormat": "errors/s"
+        }
+      ]
+    },
+    {
+      "title": "Active Runs",
+      "type": "stat",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "graph_active_runs",
+          "legendFormat": "active"
+        }
+      ]
+    },
+    {
+      "title": "Node Results by Status",
+      "type": "piechart",
+      "datasource": "Prometheus",
+      "targets": [
+        {
+          "expr": "rate(graph_node_results_total[5m])",
+          "legendFormat": "{{status}}"
+        }
+      ]
+    }
+  ]
+}

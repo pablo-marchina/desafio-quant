@@ -1,0 +1,11 @@
+{
+  "url": "https://www.nvidia.com/en-us/omniverse/",
+  "fonte": "nvidia.com",
+  "titulo": "NVIDIA Omniverse — Simulação Física, Digital Twins e Workflows Agênticos",
+  "categoria": "produto",
+  "familia": "plataforma",
+  "tecnologia": "Omniverse",
+  "setores": ["industria", "logistica", "energia"],
+  "ia_tipos": ["visão computacional", "geracao de conteudo"],
+  "texto": "NVIDIA Omniverse é uma coleção de bibliotecas aceleradas e microservices para desenvolvimento de aplicações de simulação com physical AI e workflows agênticos. Agentes e desenvolvedores podem usar as capacidades do Omniverse como ferramentas pré-construídas para construir, testar e refinar soluções de simulação.\n\nA plataforma é composta por três camadas tecnológicas principais. OpenUSD (Universal Scene Description) habilita interoperabilidade de dados e workflows de simulação 3D, incluindo assets SimReady para digital twins prontos para simulação. NVIDIA PhysX oferece bibliotecas de física e movimento aceleradas por GPU com física nativa em USD para simulação complexa, robótica e digital twins industriais. NVIDIA RTX fornece simulação de sensores e renderização fisicamente baseada em tempo real para geração de dados sintéticos e simulação de ambientes de physical AI em escala.\n\nOs casos de uso principais são: digital twins de instalações industriais (fábricas virtuais com visualização fisicamente baseada, interoperabilidade de dados e colaboração em tempo real); geração de dados sintéticos para treino de modelos de physical AI multimodal, com redução de custo e tempo de coleta de dados reais; simulação de robôs e frotas de robôs que precisam navegar e manipular objetos em ambientes dinâmicos e imprevisíveis; simulação de veículos autônomos com dados de sensores de alta fidelidade via NVIDIA Cosmos condicionado nas bibliotecas de física do Omniverse; e robot learning baseado em simulação para adaptar robôs a mudanças inesperadas de ambiente.\n\nOmniverse é especialmente relevante para startups de industria 4.0, robótica, logística automatizada e veículos autônomos que precisam de ambientes de simulação para treinar e validar modelos de IA física antes do deploy no mundo real."
+}

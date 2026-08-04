@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Learning Notes"
+  short_description: "Learning notes with code and flows"
+  default_prompt: "Use $obsidian-learning-notes to update the project learning notes with beginner explanations, code snippets, and flow diagrams."

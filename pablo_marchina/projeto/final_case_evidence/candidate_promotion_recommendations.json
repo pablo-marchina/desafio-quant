@@ -1,0 +1,17 @@
+{
+  "add_to_product": [],
+  "do_not_add_without_direct_quality_benchmark": [],
+  "future_research": [],
+  "keep_baseline": [],
+  "keep_required_runtime": [],
+  "rejected_by_evidence": [],
+  "report_id": "candidate_promotion_recommendations",
+  "summary": {
+    "add_to_product_count": 0,
+    "future_research_count": 0,
+    "keep_baseline_count": 0,
+    "keep_required_runtime_count": 0,
+    "needs_direct_quality_benchmark_count": 1098,
+    "rejected_by_evidence_count": 0
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "baseline_score": 0.575,
+  "candidate_score": 1.0,
+  "case_count": 2,
+  "cases": [
+    {
+      "baseline_chunk_ids": [
+        "generic_ai"
+      ],
+      "baseline_score": 0.15,
+      "candidate_chunk_ids": [
+        "triton_inference",
+        "nim_endpoint",
+        "generic_ai"
+      ],
+      "candidate_score": 1.0,
+      "case_id": "business_vocab_to_triton",
+      "description": "Business vocabulary should recover Triton inference evidence.",
+      "expected_chunk_ids": [
+        "triton_inference"
+      ],
+      "quality_delta": 0.85,
+      "query_variants": [
+        {
+          "gap_type": null,
+          "include_deprecated": false,
+          "include_expired": false,
+          "include_stale": false,
+          "keywords": [
+            "scale",
+            "delivery",
+            "enterprise"
+          ],
+          "technology": null
+        },
+        {
+          "gap_type": null,
+          "include_deprecated": false,
+          "include_expired": false,
+          "include_stale": false,
+          "keywords": [
+            "scale",
+            "throughput",
+            "latency",
+            "deployment",
+            "delivery",
+            "endpoint",
+            "serving",
+            "inference",
+            "enterprise",
+            "production",
+            "reliability"
+          ],
+          "technology": null
+        }
+      ]
+    },
+    {
+      "baseline_chunk_ids": [
+        "nim_endpoint",
+        "generic_ai"
+      ],
+      "baseline_score": 1.0,
+      "candidate_chunk_ids": [
+        "nim_endpoint",
+        "triton_inference",
+        "generic_ai"
+      ],
+      "candidate_score": 1.0,
+      "case_id": "business_vocab_to_nim",
+      "description": "AI delivery vocabulary should recover NVIDIA NIM evidence.",
+      "expected_chunk_ids": [
+        "nim_endpoint"
+      ],
+      "quality_delta": 0.0,
+      "query_variants": [
+        {
+          "gap_type": null,
+          "include_deprecated": false,
+          "include_expired": false,
+          "include_stale": false,
+          "keywords": [
+            "ai",
+            "customers",
+            "delivery"
+          ],
+          "technology": null
+        },
+        {
+          "gap_type": null,
+          "include_deprecated": false,
+          "include_expired": false,
+          "include_stale": false,
+          "keywords": [
+            "ai",
+            "model",
+            "inference",
+            "gpu",
+            "customers",
+            "endpoint",
+            "production",
+            "deployment",
+            "delivery",
+            "serving"
+          ],
+          "technology": null
+        }
+      ]
+    }
+  ],
+  "decision": "PROMOTE_TO_PRODUCT_SPIKE",
+  "generated_at": "2026-07-01T05:58:27.637705+00:00",
+  "methodology": "Compares baseline lexical retrieval against deterministic multi-query rewriting on local product-like cases. This justifies product spike work, not default runtime adoption.",
+  "min_delta": 0.2,
+  "quality_delta": 0.425,
+  "regression_count": 0,
+  "report_id": "query_rewriting_product_spike_report",
+  "status": "PASS"
+}

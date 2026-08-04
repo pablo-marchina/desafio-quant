@@ -1,0 +1,24 @@
+{
+  "case_id": "startup_non_ai",
+  "description": "Management consulting firm with no AI signals — expects not_recommended and zero gaps.",
+  "profile": {
+    "sector": "Consulting",
+    "ai_signals": [],
+    "tech_stack": [],
+    "description": "Traditional management consulting firm providing business strategy and operational advisory services.",
+    "product_summary": "Business strategy and management consulting services.",
+    "customers": ["Large Corp A"],
+    "funding": []
+  },
+  "evidence": [],
+  "expected": {
+    "motion_in": ["not_recommended"],
+    "min_score": 0,
+    "max_score": 20,
+    "expected_gaps": [],
+    "brief_min_sections": 3,
+    "confidence_max": "low",
+    "has_approach_now": false,
+    "zero_recommendations": true
+  }
+}

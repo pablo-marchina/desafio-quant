@@ -1,0 +1,23 @@
+groups:
+  - name: nvidia-startup-ai-radar
+    rules:
+      - alert: WorkerLeaseVencido
+        expr: nvidia_radar_alerts_total{status="worker_stale"} == 1
+        for: 2m
+        labels: { severity: critical }
+        annotations: { summary: "Worker com lease vencido" }
+      - alert: BacklogSemWorker
+        expr: nvidia_radar_alerts_total{status="worker_missing_with_backlog"} == 1
+        for: 2m
+        labels: { severity: critical }
+        annotations: { summary: "Existem itens pendentes sem worker ativo" }
+      - alert: BacklogElevado
+        expr: nvidia_radar_alerts_total{status="backlog_high"} == 1
+        for: 10m
+        labels: { severity: warning }
+        annotations: { summary: "Backlog acima do limite operacional" }
+      - alert: FirecrawlComFalhas
+        expr: nvidia_radar_alerts_total{status="firecrawl_failure_ratio_high"} == 1
+        for: 5m
+        labels: { severity: warning }
+        annotations: { summary: "Taxa de falhas Firecrawl acima de 50%" }

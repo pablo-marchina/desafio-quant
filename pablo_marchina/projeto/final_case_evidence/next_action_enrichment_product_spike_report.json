@@ -1,0 +1,87 @@
+{
+  "baseline_score": 0.0476,
+  "candidate_score": 1.0,
+  "case_count": 3,
+  "cases": [
+    {
+      "baseline_next_action": "Contact startup to discuss Triton adoption.",
+      "baseline_score": 0.0,
+      "candidate_score": 1.0,
+      "case_id": "latency_action_to_measurable_experiment",
+      "description": "Generic latency recommendation should become a measurable Triton experiment.",
+      "enriched_next_action": {
+        "evidence_requirement": "baseline p50/p95 latency, model artifact, and traffic shape",
+        "metric": "p95 latency and throughput under representative load",
+        "next_step": "NVIDIA technical solution architect to run Triton Inference Server validation: measure p95 latency and throughput under representative load against threshold >=20% p95 latency reduction or >=15% throughput gain within 10 business days.",
+        "owner": "NVIDIA technical solution architect",
+        "success_decision": "run a Triton deployment plan with startup engineering",
+        "technology": "Triton Inference Server",
+        "threshold": ">=20% p95 latency reduction or >=15% throughput gain",
+        "timeframe": "10 business days",
+        "trace": {
+          "action": "approach_now",
+          "confidence": "high",
+          "diagnosed_gap": "high_latency",
+          "priority": "high"
+        }
+      },
+      "quality_delta": 1.0
+    },
+    {
+      "baseline_next_action": "Schedule technical discussion about NVIDIA NIM.",
+      "baseline_score": 0.1429,
+      "candidate_score": 1.0,
+      "case_id": "api_dependency_action_to_nim_experiment",
+      "description": "External API dependency recommendation should define NIM validation metrics.",
+      "enriched_next_action": {
+        "evidence_requirement": "external API usage, privacy constraints, and model compatibility",
+        "metric": "self-hosted inference cost, data-control fit, and p95 latency",
+        "next_step": "NVIDIA technical solution architect to run NVIDIA NIM validation: measure self-hosted inference cost, data-control fit, and p95 latency against threshold validated data-control path and >=20% cost or latency improvement within 10 business days.",
+        "owner": "NVIDIA technical solution architect",
+        "success_decision": "scope NVIDIA NIM proof of value",
+        "technology": "NVIDIA NIM",
+        "threshold": "validated data-control path and >=20% cost or latency improvement",
+        "timeframe": "10 business days",
+        "trace": {
+          "action": "approach_now",
+          "confidence": "high",
+          "diagnosed_gap": "external_api_dependency",
+          "priority": "high"
+        }
+      },
+      "quality_delta": 0.8571
+    },
+    {
+      "baseline_next_action": "Run a guardrails workshop.",
+      "baseline_score": 0.0,
+      "candidate_score": 1.0,
+      "case_id": "governance_action_to_guardrails_experiment",
+      "description": "Agent governance recommendation should include violation-rate measurement.",
+      "enriched_next_action": {
+        "evidence_requirement": "agent workflows, tool policies, and failure examples",
+        "metric": "policy violation catch rate and false-positive rate",
+        "next_step": "NVIDIA technical solution architect to run NeMo Guardrails validation: measure policy violation catch rate and false-positive rate against threshold >=90% critical violation catch rate with acceptable false positives within 10 business days.",
+        "owner": "NVIDIA technical solution architect",
+        "success_decision": "prototype NeMo Guardrails policy pack",
+        "technology": "NeMo Guardrails",
+        "threshold": ">=90% critical violation catch rate with acceptable false positives",
+        "timeframe": "10 business days",
+        "trace": {
+          "action": "approach_now",
+          "confidence": "high",
+          "diagnosed_gap": "agent_governance_gap",
+          "priority": "high"
+        }
+      },
+      "quality_delta": 1.0
+    }
+  ],
+  "decision": "PROMOTE_TO_PRODUCT_SPIKE",
+  "generated_at": "2026-07-01T05:58:29.065573+00:00",
+  "methodology": "Compares generic recommendation next actions against deterministic enriched next actions. This justifies product spike work, not default runtime adoption.",
+  "min_delta": 0.35,
+  "quality_delta": 0.9524,
+  "regression_count": 0,
+  "report_id": "next_action_enrichment_product_spike_report",
+  "status": "PASS"
+}

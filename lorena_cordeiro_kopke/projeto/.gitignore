@@ -1,0 +1,17 @@
+# Credenciais — nunca subir
+.env
+.streamlit/secrets.toml
+
+# Arquivos de ambiente virtual
+.venv
+
+# Bytecode gerado pelo Python
+__pycache__/
+*.pyc
+
+# Pasta extra 
+zzz/
+
+# Dados gerados pelo pipeline
+data/jsons/
+

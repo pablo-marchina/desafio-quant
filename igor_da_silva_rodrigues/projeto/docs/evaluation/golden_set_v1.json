@@ -1,0 +1,131 @@
+{
+  "version": "1.0.0-draft",
+  "status": "draft",
+  "created_at": "2026-06-29T14:13:12.482587Z",
+  "description": "Amostra independente para rotulagem e aprovacao humana.",
+  "source_batch_id": "7cbf2fb4-a197-413c-bd7e-c23be2803e43",
+  "documents_version": null,
+  "code_commit": "6f26635b33e44e157eccafc54ee0946dd22b5d94",
+  "cases": [
+    {
+      "case_id": "01-opsfactor",
+      "startup": "OpsFactor",
+      "pipeline_run_id": "9a49fb52-73f0-4e66-890d-a30e025f1d98",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "02-air-robotics",
+      "startup": "Air Robotics",
+      "pipeline_run_id": "d2bf9d63-ae1e-4af1-be58-de55ccf858a1",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "03-zeev",
+      "startup": "Zeev",
+      "pipeline_run_id": "06d8fa1f-b7db-4cff-9c09-6afa1e265d8c",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "04-pok-proof-of-knowledge",
+      "startup": "POK (Proof of Knowledge)",
+      "pipeline_run_id": "8efd8fbd-5f28-4ff5-b18c-ce6da9f3071d",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "05-marisa-care",
+      "startup": "Marisa.care",
+      "pipeline_run_id": "7507fad9-9d30-4d3e-bb9d-134659ecc2a7",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "06-delend",
+      "startup": "Delend",
+      "pipeline_run_id": "44daae43-9ed4-45a1-bf30-a21d959b2b3b",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "07-taxcel",
+      "startup": "Taxcel",
+      "pipeline_run_id": "a104f86b-3f13-4c2b-b15f-27da73b8cc98",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "08-biti9",
+      "startup": "Biti9",
+      "pipeline_run_id": "48efd63d-7ab1-433d-8c3f-4ccc96e4756b",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "09-evcomx",
+      "startup": "Evcomx",
+      "pipeline_run_id": "27821918-0ed0-44a8-b9e0-a536cd24eca4",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    },
+    {
+      "case_id": "10-anzi-finance",
+      "startup": "Anzi Finance",
+      "pipeline_run_id": "17bf6881-03e2-4e15-9c62-66e761a4a658",
+      "expected_classification": null,
+      "expected_maturity": null,
+      "accepted_evidence_urls": [],
+      "expected_nvidia_technologies": [],
+      "briefing_utility_1_5": null,
+      "reviewed_by": null,
+      "review_notes": ""
+    }
+  ]
+}

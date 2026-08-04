@@ -1,0 +1,13 @@
+{
+  "controls": [
+    "document_acl",
+    "source_acl",
+    "chunk_acl",
+    "evidence_acl",
+    "retrieval_acl_filter",
+    "evidence_access_policy",
+    "permission_preserving_rag"
+  ],
+  "generated_at": "2026-07-01T05:57:51.032146+00:00",
+  "status": "PASS"
+}

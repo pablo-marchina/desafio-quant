@@ -1,0 +1,115 @@
+# Governed lexical aliases for the active NVIDIA corpus.
+# These terms express intentional retrieval scope. Raw page chrome, navigation,
+# scripts, or incidental words in downloaded HTML must not decide source recall.
+keywords:
+  nim:
+    - inference
+    - production
+    - latency
+    - model
+    - api
+    - deployment
+  tensorrt_llm:
+    - inference
+    - production
+    - open-source
+    - open source
+    - latency
+    - model
+    - llm
+  triton:
+    - inference
+    - production
+    - latency
+    - model
+    - serving
+  nemo_guardrails:
+    - open-source
+    - open source
+    - guardrails
+    - governance
+    - safety
+  rapids:
+    - open-source
+    - open source
+    - model
+    - data
+    - dataframe
+    - tabular
+  riva:
+    - production
+    - latency
+    - model
+    - speech
+    - voice
+  omniverse:
+    - model
+    - simulation
+    - digital twin
+  isaac:
+    - model
+    - robotics
+  clara_monai:
+    - open-source
+    - open source
+    - model
+    - healthcare
+  morpheus:
+    - cybersecurity
+    - anomaly detection
+  inception:
+    - startup
+    - program
+    - gpu
+    - acceleration
+  nemo:
+    - model
+    - training
+    - customization
+    - llm
+    - generative ai
+  cuda:
+    - gpu
+    - acceleration
+    - performance
+    - kernels
+  cudf:
+    - open-source
+    - open source
+    - data
+    - dataframe
+    - tabular
+    - etl
+  cuml:
+    - open-source
+    - open source
+    - model
+    - machine learning
+    - training
+  ai_enterprise:
+    - production
+    - deployment
+    - governance
+    - enterprise
+  nvidia_api_catalog:
+    - inference
+    - model
+    - api
+    - endpoint
+  nvidia_blueprint_ai_agents:
+    - agent
+    - blueprint
+    - rag
+    - reference workflow
+  nvidia_whitepaper_inference:
+    - inference
+    - latency
+    - model
+    - cost
+    - performance
+  nvidia_whitepaper_rag:
+    - production
+    - model
+    - rag
+    - retrieval
+    - grounding

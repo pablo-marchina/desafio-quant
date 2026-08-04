@@ -1,0 +1,224 @@
+{
+  "$defs": {
+    "KnowledgeMetadata": {
+      "additionalProperties": true,
+      "properties": {
+        "tecnologia": {
+          "enum": [
+            "NIM",
+            "Triton",
+            "TensorRT-LLM",
+            "NeMo",
+            "RAPIDS",
+            "CUDA",
+            "Riva",
+            "Omniverse",
+            "Clara",
+            "Isaac",
+            "Morpheus",
+            "AI Enterprise",
+            "Inception"
+          ],
+          "title": "Tecnologia",
+          "type": "string"
+        },
+        "tipo": {
+          "enum": [
+            "documentacao",
+            "whitepaper",
+            "blog",
+            "case_study",
+            "github"
+          ],
+          "title": "Tipo",
+          "type": "string"
+        },
+        "dores_relacionadas": {
+          "items": {
+            "enum": [
+              "custo",
+              "latencia",
+              "escalabilidade",
+              "governanca",
+              "privacidade",
+              "vendor_lockin"
+            ],
+            "type": "string"
+          },
+          "title": "Dores Relacionadas",
+          "type": "array"
+        },
+        "perfil_aplicavel": {
+          "items": {
+            "enum": [
+              "AI-native",
+              "AI-enabled",
+              "API-consumer"
+            ],
+            "type": "string"
+          },
+          "title": "Perfil Aplicavel",
+          "type": "array"
+        },
+        "titulo_secao": {
+          "minLength": 1,
+          "title": "Titulo Secao",
+          "type": "string"
+        },
+        "url_fonte": {
+          "title": "Url Fonte",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tecnologia",
+        "tipo",
+        "perfil_aplicavel",
+        "titulo_secao",
+        "url_fonte"
+      ],
+      "title": "KnowledgeMetadata",
+      "type": "object"
+    },
+    "RecommendationItem": {
+      "additionalProperties": true,
+      "properties": {
+        "tecnologia": {
+          "enum": [
+            "NIM",
+            "Triton",
+            "TensorRT-LLM",
+            "NeMo",
+            "RAPIDS",
+            "CUDA",
+            "Riva",
+            "Omniverse",
+            "Clara",
+            "Isaac",
+            "Morpheus",
+            "AI Enterprise",
+            "Inception"
+          ],
+          "title": "Tecnologia",
+          "type": "string"
+        },
+        "fit_score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Fit Score",
+          "type": "number"
+        },
+        "justificativa": {
+          "minLength": 1,
+          "title": "Justificativa",
+          "type": "string"
+        },
+        "dores_atendidas": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Dores Atendidas",
+          "type": "array"
+        },
+        "citacoes": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Citacoes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "tecnologia",
+        "fit_score",
+        "justificativa",
+        "citacoes"
+      ],
+      "title": "RecommendationItem",
+      "type": "object"
+    },
+    "RetrievedChunk": {
+      "additionalProperties": true,
+      "properties": {
+        "chunk_id": {
+          "minLength": 1,
+          "title": "Chunk Id",
+          "type": "string"
+        },
+        "content": {
+          "minLength": 1,
+          "title": "Content",
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/$defs/KnowledgeMetadata"
+        },
+        "retrieval_score": {
+          "title": "Retrieval Score",
+          "type": "number"
+        },
+        "rerank_score": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rerank Score"
+        }
+      },
+      "required": [
+        "chunk_id",
+        "content",
+        "metadata",
+        "retrieval_score"
+      ],
+      "title": "RetrievedChunk",
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "properties": {
+    "startup": {
+      "minLength": 1,
+      "title": "Startup",
+      "type": "string"
+    },
+    "recomendacoes": {
+      "items": {
+        "$ref": "#/$defs/RecommendationItem"
+      },
+      "title": "Recomendacoes",
+      "type": "array"
+    },
+    "chunks_utilizados": {
+      "items": {
+        "$ref": "#/$defs/RetrievedChunk"
+      },
+      "maxItems": 5,
+      "title": "Chunks Utilizados",
+      "type": "array"
+    },
+    "aviso": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Aviso"
+    }
+  },
+  "required": [
+    "startup"
+  ],
+  "title": "NVIDIARecommendationOutput",
+  "type": "object"
+}

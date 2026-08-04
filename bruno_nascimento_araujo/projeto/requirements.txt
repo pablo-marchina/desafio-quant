@@ -1,0 +1,7 @@
+# Core do pipeline (Scraper 1 - Discovery). Roda 100% sem as deps de IA.
+httpx>=0.27
+beautifulsoup4>=4.12
+lxml>=5.2
+asyncpg>=0.29
+python-dotenv>=1.0
+tenacity>=8.3

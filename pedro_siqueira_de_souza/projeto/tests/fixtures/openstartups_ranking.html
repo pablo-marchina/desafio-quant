@@ -1,0 +1,46 @@
+<!--
+  Fixture: recorte representativo do ranking de startups da 100 Open Startups.
+  Reproduz a estrutura de 5 células que o OpenStartupsAdapter usa, SEM rede:
+    td[0]=rank  td[1]=logo(img alt)  td[2]=nome  td[3]=setor  td[4]=vazio
+  Inclui:
+    - cabeçalho com <th> (deve ser ignorado)
+    - linha com rank não-numérico (deve ser ignorada)
+    - uma linha cujo setor tem subsetor em 2ª linha (só a 1ª conta)
+-->
+<html>
+  <body>
+    <table>
+      <tr>
+        <th>#</th><th>Logo</th><th>Startup</th><th>Setor</th><th></th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><img alt="Logotipo Leverpro"></td>
+        <td>Leverpro</td>
+        <td>FinTechs</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><img alt="Logotipo Weknow"></td>
+        <td>Weknow</td>
+        <td>HealthTechs</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><img alt="Logotipo Melvin"></td>
+        <td>Melvin</td>
+        <td>IndTechs<br>Automação e Inteligência Operacional</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>-</td>
+        <td><img alt="Logotipo Ruído"></td>
+        <td>Linha Espúria</td>
+        <td>Nada</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

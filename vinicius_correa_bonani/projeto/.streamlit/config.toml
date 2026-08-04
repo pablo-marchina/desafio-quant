@@ -1,0 +1,8 @@
+# Tema da UI — paleta NVIDIA (verde #76B900 sobre fundo escuro).
+[theme]
+base = "dark"
+primaryColor = "#76B900"
+backgroundColor = "#0C0F0A"
+secondaryBackgroundColor = "#161A14"
+textColor = "#E8EAE6"
+font = "sans serif"

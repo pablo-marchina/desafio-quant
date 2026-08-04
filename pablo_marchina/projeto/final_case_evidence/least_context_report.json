@@ -1,0 +1,8 @@
+{
+  "controls": [
+    "least_context_packer",
+    "prompt_context_budgeter"
+  ],
+  "generated_at": "2026-07-01T05:57:51.032146+00:00",
+  "status": "PASS"
+}

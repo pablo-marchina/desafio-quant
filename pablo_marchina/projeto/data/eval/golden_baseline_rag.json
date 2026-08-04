@@ -1,0 +1,243 @@
+{
+  "_meta": {
+    "description": "Enhanced golden queries for RAG Baseline Calibration — adds minimum_relevant_contexts and critical_claims_expected",
+    "based_on": "examples/rag_eval/golden_queries.json",
+    "corpus_version": "data/nvidia_corpus/ — 10 sources, 50 chunks",
+    "created": "2026-06-17",
+    "purpose": "rag_baseline_calibration",
+    "calibration_status": "baseline_measured"
+  },
+  "queries": [
+    {
+      "case_id": "inference_cost_all",
+      "description": "high_inference_cost must return NIM, TensorRT-LLM, and Triton",
+      "query": { "gap_type": "high_inference_cost", "technology": null, "keywords": [] },
+      "expected_source_ids": ["nim", "tensorrt_llm", "triton"],
+      "expected_products": ["NVIDIA NIM", "TensorRT-LLM", "Triton Inference Server"],
+      "is_critical": true,
+      "top_k_for_test": 15,
+      "minimum_relevant_contexts": 3,
+      "critical_claims_expected": 3
+    },
+    {
+      "case_id": "inference_cost_tensorrt",
+      "description": "high_inference_cost + TensorRT-LLM tech returns tensorrt_llm chunks",
+      "query": { "gap_type": "high_inference_cost", "technology": "TensorRT-LLM", "keywords": [] },
+      "expected_source_ids": ["tensorrt_llm"],
+      "expected_products": ["TensorRT-LLM"],
+      "is_critical": true,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 1
+    },
+    {
+      "case_id": "inference_cost_triton",
+      "description": "high_inference_cost + Triton tech returns triton chunks",
+      "query": { "gap_type": "high_inference_cost", "technology": "Triton Inference Server", "keywords": [] },
+      "expected_source_ids": ["triton"],
+      "expected_products": ["Triton Inference Server"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "latency_all",
+      "description": "high_latency returns NIM, TensorRT-LLM, Triton",
+      "query": { "gap_type": "high_latency", "technology": null, "keywords": [] },
+      "expected_source_ids": ["nim", "tensorrt_llm", "triton"],
+      "expected_products": ["NVIDIA NIM", "TensorRT-LLM", "Triton Inference Server"],
+      "is_critical": false,
+      "top_k_for_test": 15,
+      "minimum_relevant_contexts": 3,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "latency_tensorrt",
+      "description": "high_latency + TensorRT-LLM tech returns tensorrt_llm chunks",
+      "query": { "gap_type": "high_latency", "technology": "TensorRT-LLM", "keywords": [] },
+      "expected_source_ids": ["tensorrt_llm"],
+      "expected_products": ["TensorRT-LLM"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "agent_governance",
+      "description": "agent_governance_gap returns NeMo Guardrails",
+      "query": { "gap_type": "agent_governance_gap", "technology": null, "keywords": [] },
+      "expected_source_ids": ["nemo_guardrails"],
+      "expected_products": ["NeMo Guardrails"],
+      "is_critical": true,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 1
+    },
+    {
+      "case_id": "data_pipeline",
+      "description": "slow_data_pipeline returns RAPIDS",
+      "query": { "gap_type": "slow_data_pipeline", "technology": null, "keywords": [] },
+      "expected_source_ids": ["rapids"],
+      "expected_products": ["NVIDIA RAPIDS"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "tabular_heavy",
+      "description": "heavy_tabular_processing returns RAPIDS",
+      "query": { "gap_type": "heavy_tabular_processing", "technology": null, "keywords": [] },
+      "expected_source_ids": ["rapids"],
+      "expected_products": ["NVIDIA RAPIDS"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "voice_ai",
+      "description": "voice_need returns Riva",
+      "query": { "gap_type": "voice_need", "technology": null, "keywords": [] },
+      "expected_source_ids": ["riva"],
+      "expected_products": ["NVIDIA Riva"],
+      "is_critical": true,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 1
+    },
+    {
+      "case_id": "external_api",
+      "description": "external_api_dependency returns NIM",
+      "query": { "gap_type": "external_api_dependency", "technology": null, "keywords": [] },
+      "expected_source_ids": ["nim"],
+      "expected_products": ["NVIDIA NIM"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "simulation",
+      "description": "simulation_need returns Omniverse",
+      "query": { "gap_type": "simulation_need", "technology": null, "keywords": [] },
+      "expected_source_ids": ["omniverse"],
+      "expected_products": ["NVIDIA Omniverse"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "robotics",
+      "description": "robotics_need returns Isaac",
+      "query": { "gap_type": "robotics_need", "technology": null, "keywords": [] },
+      "expected_source_ids": ["isaac"],
+      "expected_products": ["NVIDIA Isaac"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "healthcare",
+      "description": "healthcare_compliance_need returns Clara/MONAI",
+      "query": { "gap_type": "healthcare_compliance_need", "technology": null, "keywords": [] },
+      "expected_source_ids": ["clara_monai"],
+      "expected_products": ["Clara / MONAI"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "cybersecurity",
+      "description": "ai_cybersecurity_need returns Morpheus",
+      "query": { "gap_type": "ai_cybersecurity_need", "technology": null, "keywords": [] },
+      "expected_source_ids": ["morpheus"],
+      "expected_products": ["NVIDIA Morpheus"],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 1,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "unknown_gap",
+      "description": "nonexistent gap returns empty — negative test",
+      "query": { "gap_type": "nonexistent_gap", "technology": null, "keywords": [] },
+      "expected_source_ids": [],
+      "expected_products": [],
+      "is_critical": true,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 0,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "empty_query",
+      "description": "empty query returns empty — negative test",
+      "query": { "gap_type": null, "technology": null, "keywords": [] },
+      "expected_source_ids": [],
+      "expected_products": [],
+      "is_critical": false,
+      "top_k_for_test": 3,
+      "minimum_relevant_contexts": 0,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "kw_inference",
+      "description": "keyword 'inference' returns NIM, TensorRT-LLM, Triton",
+      "query": { "gap_type": null, "technology": null, "keywords": ["inference"] },
+      "expected_source_ids": ["nim", "tensorrt_llm", "triton"],
+      "expected_products": ["NVIDIA NIM", "TensorRT-LLM", "Triton Inference Server"],
+      "is_critical": true,
+      "top_k_for_test": 10,
+      "minimum_relevant_contexts": 3,
+      "critical_claims_expected": 1
+    },
+    {
+      "case_id": "kw_production",
+      "description": "keyword 'production' returns NIM, Riva, TensorRT-LLM, Triton",
+      "query": { "gap_type": null, "technology": null, "keywords": ["production"] },
+      "expected_source_ids": ["nim", "riva", "tensorrt_llm", "triton"],
+      "expected_products": ["NVIDIA NIM", "NVIDIA Riva", "TensorRT-LLM", "Triton Inference Server"],
+      "is_critical": false,
+      "top_k_for_test": 5,
+      "minimum_relevant_contexts": 4,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "kw_open_source",
+      "description": "keyword 'open-source' returns Clara/MONAI, NeMo Guardrails, RAPIDS, TensorRT-LLM",
+      "query": { "gap_type": null, "technology": null, "keywords": ["open-source"] },
+      "expected_source_ids": ["clara_monai", "nemo_guardrails", "rapids", "tensorrt_llm"],
+      "expected_products": ["Clara / MONAI", "NeMo Guardrails", "NVIDIA RAPIDS", "TensorRT-LLM"],
+      "is_critical": false,
+      "top_k_for_test": 5,
+      "minimum_relevant_contexts": 4,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "kw_latency",
+      "description": "keyword 'latency' returns NIM, Riva, TensorRT-LLM, Triton",
+      "query": { "gap_type": null, "technology": null, "keywords": ["latency"] },
+      "expected_source_ids": ["nim", "riva", "tensorrt_llm", "triton"],
+      "expected_products": ["NVIDIA NIM", "NVIDIA Riva", "TensorRT-LLM", "Triton Inference Server"],
+      "is_critical": false,
+      "top_k_for_test": 8,
+      "minimum_relevant_contexts": 4,
+      "critical_claims_expected": 0
+    },
+    {
+      "case_id": "kw_model",
+      "description": "keyword 'model' returns 8 sources (all except Morpheus and NeMo Guardrails)",
+      "query": { "gap_type": null, "technology": null, "keywords": ["model"] },
+      "expected_source_ids": ["clara_monai", "isaac", "nim", "omniverse", "rapids", "riva", "tensorrt_llm", "triton"],
+      "expected_products": ["Clara / MONAI", "NVIDIA Isaac", "NVIDIA NIM", "NVIDIA Omniverse", "NVIDIA RAPIDS", "NVIDIA Riva", "TensorRT-LLM", "Triton Inference Server"],
+      "is_critical": false,
+      "top_k_for_test": 10,
+      "minimum_relevant_contexts": 8,
+      "critical_claims_expected": 0
+    }
+  ]
+}

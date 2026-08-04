@@ -1,0 +1,908 @@
+id,name,sector,official_website,source_name,source_url,status,created_at,updated_at
+1,Clara Pagamentos,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+2,Leggal,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+3,AutoU,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+4,Voltta,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+5,Talent Academy,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+6,Biti9,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+7,Marvin,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+8,Woba,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+9,Anzi Finance,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+10,Kinzbio,Biotecnologia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+11,PIA,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+12,Data Guide,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+13,Laboratorio Kasem,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+14,EasyTelling,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+15,Mangue Tech,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+16,Company Hero,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+17,ESGreen,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+931,Central de Ajuda Facio,(descoberta - QFirst),https://ajuda.facio.com,QFirst Open Search,https://ajuda.facio.com,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+19,Zeev,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+20,Mera,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+21,Blu365,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+932,Telegram: Share Web Page,(descoberta - QFirst),"https://t.me/share/url?url=https://exame.com/invest/mercados/rd-station-da-totvs-tots3-adquire-software-de-vendas-exact-sales-por-r-51-milhoes/&text=RD Station, da Totvs (TOTS3), adquire software de vendas Exact Sales por R$ 51 milhões",QFirst Open Search,"https://t.me/share/url?url=https://exame.com/invest/mercados/rd-station-da-totvs-tots3-adquire-software-de-vendas-exact-sales-por-r-51-milhoes/&text=RD Station, da Totvs (TOTS3), adquire software de vendas Exact Sales por R$ 51 milhões",pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+23,Moodar,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+24,Taxcel,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+25,Diel Energia,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+27,Wikimee,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+28,Excuela,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+31,DeltaAI,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+32,OpsFactor,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+33,Air Robotics,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+34,Delend,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+35,Carteiro Amigo,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+36,Plugin,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+37,Futuro Maquinas Agricolas,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+38,Hub4pay,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+39,Linkana,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+40,Brain Artificial,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+41,Foliume,Seguros,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+42,Teramot,Inteligência Artificial,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+43,Skyblue Analytics,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+44,Foccuz,Software,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+45,OrderEAT,Software,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+46,VENTIA,Software,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+47,AICube,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+48,Precision Data Engineering and Data Science,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+49,Marisa.care,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+50,POK (Proof of Knowledge),Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+51,BioLinker,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+52,Amplifique.me,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+53,Abundance Brasil,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+54,Nimbloo,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+55,Webmania,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+56,Docket,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+57,Smart Online,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+58,Evlos4u,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+59,Tractionfy,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+60,doc9,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+61,Cashin,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+62,Paiper,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+63,Netspaces Operações LTDA,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+64,Fiibo,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+65,Neuralmind,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+66,Level up,Atendimento ao Cliente,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+67,Edoo,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+68,SWARM Engineering,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+69,Prisma,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+70,Tuvis,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+933,ClickUp Forms,(descoberta - QFirst),https://forms.clickup.com/43221529/f/1970gt-93171/REZ42SUWDV9JXF2U96,QFirst Open Search,https://forms.clickup.com/43221529/f/1970gt-93171/REZ42SUWDV9JXF2U96,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+72,Rocketseat,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+73,LiquidAI,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+74,Horizon,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+75,Ahorra Facil,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+76,Roota,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+77,Crowder,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+78,Yazo,Entretenimento,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+79,Damap,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+934,Wellhub Portal Access,(descoberta - QFirst),https://gympass.com/pessoas/entrar,QFirst Open Search,https://gympass.com/pessoas/entrar,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+81,Enteria,Biotecnologia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+82,Codiversity,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+83,Encuentra,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+84,Tellapp,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+85,Millsonic,UNKNOWN,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+86,Tripwip,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+88,Desk Manager,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+89,Vacinas.net,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+90,Finor,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+91,Kompa Saúde,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+92,Radiant Security,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+93,NeuralMed,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+94,UP Estate,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+95,Neowrk,Facilities,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+96,Versa Fuel,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+97,Abstra,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+98,Meu Vista,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+99,Cosmos 3D,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+100,Consulte GEO,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+101,Precifica,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+102,BRINTA,UNKNOWN,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+103,Certdox,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+104,Alephee,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+105,Uncover Desenvolvimento de Software,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+106,Instaleap,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+107,Robbin,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+108,A4 Solutions,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+109,Tecspal Technologies,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+110,Evnts,Entretenimento,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+111,Easy B2B,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+112,Turivius,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+113,Aluga Mais App,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+114,Agidesk,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+115,Tupi,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+116,Botnicks,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+117,IOUPIE,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+118,JettaCargo,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+119,Carbon Free Brasil,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+120,AmFi Finance,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+121,CargoSnap,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+122,Shooju,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+123,netLex,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+124,Medway,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+935,Start a petition,(descoberta - QFirst),https://queremoswellhub.com,QFirst Open Search,https://queremoswellhub.com,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+126,Acquaplan,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+127,Simpletech,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+128,RHGestor,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+129,Jestor,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+130,SplitC,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+936,Wellz para empresas,(descoberta - QFirst),https://www.wellz.com/pt-br,QFirst Open Search,https://www.wellz.com/pt-br/?utm_campaign=site-wellz&utm_source=banner-wellz&utm_medium=site-wellhub&utm_content=saiba-mais&utm_id=banner-wellz-site-wellhub,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+132,Bondy,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+133,Marvik,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+134,CS Academy,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+135,Lobby,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+136,Flokzu,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+137,Brokerware,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+937,Wellhub | Sem Fraude,(descoberta - QFirst),https://wellhub.semfraude.online,QFirst Open Search,https://wellhub.semfraude.online/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+139,Loopt,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+140,Food To Save,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+141,Supply Brain,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+142,8D Hubify,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+143,DPOnet,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+144,Aravita,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+145,Hauseful,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+146,Beacon Founders,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+148,maggu,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+149,Qlic,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+150,Vendoor,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+151,Terreno Livre,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+152,MindSelf,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+153,Payface,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+154,Deco.cx,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+155,Just Travel,Entretenimento,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+156,OKA,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+157,Oinc,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+158,Walie Tecnologia,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+159,Maestro ABM,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+938,Quem somos - Gávea Investimentos,(descoberta - QFirst),https://www.gaveainvest.com.br/quem-somos,QFirst Open Search,https://www.gaveainvest.com.br/quem-somos/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+161,Aegro,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+162,Teddy Open Finance,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+163,Mimoo,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+164,Mention,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+165,Tera,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+166,FX Data Intelligence,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+167,Viddy,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+168,Doutor Multas,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+169,Growyx,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+170,Bykonz,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+939,Redondo - Estratégia + Design,(descoberta - QFirst),https://redondodesign.com.br,QFirst Open Search,https://redondodesign.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+172,Obra Lean,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+173,LandApp,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+174,Adea Grow Tecnologia e Intermediacao S.a.,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+175,Beelog,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+176,Tenex,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+177,Magis5 Hub,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+178,Ignitia,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+179,Lyga,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+180,Janis Commerce,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+181,Openport,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+182,SINAI,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+183,ROIT,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+184,Adiante Recebíveis,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+185,PagBrasil,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+186,Nexforce,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+187,ALLUGG,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+188,Dcifre,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+189,Vlab,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+190,MasterTrack,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+191,MODULAR RENTAL COMPANY,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+192,Tidewise,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+193,Giro Pagamentos,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+194,MadeinWeb,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+940,Política de Privacidade - TaOn | TaOn,(descoberta - QFirst),https://www.taon.app/privacy,QFirst Open Search,https://www.taon.app/privacy,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+197,KarHub,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+198,Avatar da Saúde,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+199,Umanni,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+200,Fluna,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+202,Veeries Inteligência em Agronegócio,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+203,Doctari,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+204,Proesc,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+941,Celero: o 1º BFM White Label do Brasil preparado para o Open Finance,(descoberta - QFirst),https://celero.com.br,QFirst Open Search,https://celero.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+206,mevuelo,Entretenimento,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+942,Área Local,(descoberta - QFirst),http://www.arealocal.com.br,QFirst Open Search,http://www.arealocal.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+208,Yooga,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+209,Technomar,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+210,iPORT,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+211,Pix Force,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+212,Dootax,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+213,Wellbe,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+943,"GDPR Cookie Compliance – Cookie Banner, Cookie Consent, Cookie Notice for CCPA, EU Cookie Law – WordPress plugin | WordPress.org",(descoberta - QFirst),https://wordpress.org/plugins/gdpr-cookie-compliance,QFirst Open Search,https://wordpress.org/plugins/gdpr-cookie-compliance/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+215,Hidromares,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+216,eMercado,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+217,Ouvidor Digital,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+218,Escavador,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+944,CNN Brasil | Notícias Ao Vivo do Brasil e do Mundo,(descoberta - QFirst),https://www.cnnbrasil.com.br,QFirst Open Search,https://www.cnnbrasil.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+220,Arqgen,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+945,"Agência Zíriga | Agência Digital de Marketing de Conteúdo e Marketing Digital, Desenvolvimento de Sites, Geração de Tráfego e Soluções Web em geral : Agência Zíriga",(descoberta - QFirst),https://ziriga.com.br,QFirst Open Search,https://ziriga.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+222,Clavis,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+223,Nocnoc,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+224,Maio Marketing,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+226,Lead energy,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+228,Clic Health ID,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+229,LogShare Tecnologia,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+230,Dadosfera,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+231,Improvefy,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+232,Doc4doc,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+233,SmartEnvios,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+234,a55,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+235,Pin People,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+236,Open Solo,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+237,Datasales,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+238,Tarken,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+239,Incentivar,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+240,Sellentt,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+241,Shape Digital,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+242,NavalPort,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+244,Icrop,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+246,Datafarm,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+247,Grão Direto,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+248,TI Saúde,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+249,Connectabil,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+250,IMBR Agro,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+251,Somapay,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+252,Btime,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+253,Stake,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+254,Marlim,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+255,Labora,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+946,Nex Digital,(descoberta - QFirst),https://www.nex.digital/lab,QFirst Open Search,https://www.nex.digital/lab,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+257,Digitalk,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+258,Veggly,Entretenimento,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+259,Uppo,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+260,Agrotools,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+947,AR & AP Automation Software for B2B Payments | Paystand,(descoberta - QFirst),https://www.paystand.com,QFirst Open Search,https://www.paystand.com/?utm_source=yaydoo&utm_medium=banner&utm_campaign=brand-merge&utm_content=ar-payments,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+948,Expense Management Software | Paystand,(descoberta - QFirst),https://www.teampay.co,QFirst Open Search,https://www.teampay.co/?utm_source=yaydoo&utm_medium=banner&utm_campaign=brand-merge&utm_content=ap-expense,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+263,Cashu,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+264,POS CONTROLE,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+265,Abbiamo,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+266,Sami,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+267,Lever Pro,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+268,Bds Datasolution,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+949,Simplify Global Payroll & Workforce Payments | Bitwage,(descoberta - QFirst),https://bitwage.com,QFirst Open Search,https://bitwage.com/?utm_source=yaydoo&utm_medium=banner&utm_campaign=brand-merge&utm_content=fx-payouts,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+950,Paystand.org: Empowering Financial Inclusion with Blockchain & Bitcoin,(descoberta - QFirst),https://www.paystand.org,QFirst Open Search,https://www.paystand.org//?utm_source=yaydoo&utm_medium=banner&utm_campaign=brand-merge&utm_content=paystand-org,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+271,Murabei Data Science,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+272,Docsync,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+273,Smart Sell Pro,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+274,Ume,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+275,Mintech,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+276,Inteligov,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+277,Moki,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+280,Intera,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+281,Eunerd,Software,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+283,i4sea,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+284,Receiv,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+286,Looqbox,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+287,Solucx,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+288,Marketup,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+289,Pipefy,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+290,Siteware,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+291,Sysaid,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+292,Cloudia,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+293,Bornlogic,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+294,Telavita,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+295,Home Agent,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+296,Bigdata Corp,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+297,BossaBox,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+298,Enjoy,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+299,hCentrix,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+300,Agile Trends,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+301,Arquiteto de Bolso (upik),Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+302,B2Blue,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+303,wehandle,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+304,Salvy,Telecomunicação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+305,NewsRoom AI,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+306,Flipando,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+307,Promtior,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+308,SD Conecta,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+309,Autoforce,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+310,Morada.ai,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+311,Audsat,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+312,Learninc,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+313,Geprode,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+314,Wonasport,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+315,Vankka Carbon,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+316,TruckMe,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+317,AdMan,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+318,R1 Asset Integrity,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+319,Calm es simple,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+320,Unxpose,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+321,Revella,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+322,Smash,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+323,Atlas Governance Tecnologia,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+324,Opinion Box,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+325,Blox,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+326,D2P,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+327,MOL,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+328,Joycar,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+329,Otimiza Benefícios,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+330,Guiando,Telecomunicação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+331,Ecotrace,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+951,Multiplica Seguros | Proteção que Multiplica Valores,(descoberta - QFirst),https://multiplicaseguros.com.br,QFirst Open Search,https://multiplicaseguros.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+333,Carenet Longevity,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+334,Alura,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+335,Accountfy,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+336,VAAS,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+337,Granto Seguros,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+338,PowerOfData,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+339,Mobs2 Data Science & Education,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+340,Bright Data,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+341,eKyte,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+342,Nexgy,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+343,Peoplefy,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+344,Hiperbanco,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+345,Green Fuel,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+346,Zero Carbon Logistics,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+347,Indexa Ai,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+348,Jusbrasil,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+350,GoPersonal,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+351,Sigalei,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+352,Inswitch,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+353,BORD,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+354,Agendart,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+355,Aprova,Governo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+356,Neuratek,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+357,Unimate RPA,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+358,espor.ai,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+952,Início | bem-te-vi,(descoberta - QFirst),https://docs.bemteviseguros.com,QFirst Open Search,https://docs.bemteviseguros.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+360,Efficast,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+361,HXtos,Marítimo e Portuário,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+362,Tamborine Tecnologia,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+363,Salesrun,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+364,Sovran AI,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+365,Eficiência Fiscal,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+366,Guardline,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+367,4KST,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+368,Agrotoken,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+369,Deepagro,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+370,Zeeppay,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+371,Infinite Foundry,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+372,Veriff,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+373,Publitas,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+374,walljobs,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+375,Hybrid AI,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+376,EFY Finance,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+377,DT Labs,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+378,MeetRox,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+379,Loomi,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+380,Cognito,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+381,Verifact,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+382,ticketbro,Entretenimento,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+383,Delto,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+384,Gloria Beauty,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+385,Norns (Siclo Pay),Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+386,Wisecare,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+387,ASAAS,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+388,Strike,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+389,Kolab,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+390,Octopus data solutions,Análise de Dados,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+391,Piwi,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+392,Mozart Fintech,Atendimento ao Cliente,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+393,Dito,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+394,Cerensa,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+395,Aliger,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+396,704Apps do Brasil,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+397,ARDAN PHARMA,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+398,CUB,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+399,Curseduca,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+400,Douk Educacional,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+401,EOLO PHARMA,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+402,Eyecue,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+403,Fluke,Telecomunicação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+404,Frota 162,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+405,Golazzos,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+406,hunterstack.io,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+407,Jetsales Brasil,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+408,MedSimples,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+409,Nonno,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+410,Preservaland,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+411,Produzindo Certo,Agricultura e Pecuária,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+412,Starbem,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+413,StaryaAI,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+414,Yavendio,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+415,Yeda,Biotecnologia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+416,YouShop,Software,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+417,Zavia Bio,Biotecnologia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+418,Runflow,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+419,Zenith Saúde Mental,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+420,Ainwater,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+953,Baixe o app Méliuz — Cashback nas suas compras,(descoberta - QFirst),https://meliuz.onelink.me/2657008059/t6f3cus4,QFirst Open Search,https://meliuz.onelink.me/2657008059/t6f3cus4,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+422,Log Manager,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+423,Logstore,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+954,Méliuz,(descoberta - QFirst),https://meliuz.gupy.io,QFirst Open Search,https://meliuz.gupy.io/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+425,Dexco,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+426,Tracksale,,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+427,ConstruMoney,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+428,RogerThat,Educação,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+429,Soulmkt,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+430,Hablla,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+431,Oraion,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+432,FalaBoss,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+433,Dharma-AI S.A.,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+434,MeuResiduo,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+435,TOOLS LAW,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+436,Guapeco,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+437,Pxtalk,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+438,Just.,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+439,Reborn,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+440,Conta Black,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+441,Robotictech Serviço de Tecnologia ltda,Energia,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+442,Prezzta,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+443,UP Fleet,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+444,FleetPay,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+445,Galaxies,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+446,Mic&Pose,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+447,Flowcredi,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+448,Aliado,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+449,Orbit,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+450,Viatik,Mobilidade Urbana,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+451,LinkLei,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+452,Mediccont,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+453,FlowUp,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+454,Revoluti,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+455,Zapper,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+456,Multifidelidade,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+457,Houser,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+458,Ciudata,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+459,Base39,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+460,Complif,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+461,Inbuilt Realidade Aumentada,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+955,Ofertas em destaque: Promoções verificadas e atualizadas | Promobit,(descoberta - QFirst),https://www.promobit.com.br,QFirst Open Search,https://www.promobit.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+463,SINKY,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+464,Doji,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+465,Atlante Sistemas,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+956,MelhorPlano.net | Encontre a Melhor Oferta e Economize!,(descoberta - QFirst),https://melhorplano.net,QFirst Open Search,https://melhorplano.net/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+467,Geeco - Materiais & Engenharia,Construção Civil,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+468,Cortex Intelligence Tecnologia Ltda.,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+469,AllStrategy,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+470,Axenya,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+471,Batech,Varejo,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+472,BigLink,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+473,Boomer,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+474,Brange Media Group,Mídias,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+475,Clínica Experts,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+476,Conty,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+477,Doutor-AI.com,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+478,flipzen.com,,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+479,FORELEGAL TECNOLOGIA LTDA,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+480,Green Mining,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+481,GYRA+,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+482,Hywork,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+483,Ibratan,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+484,iUPay,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+485,Juridico AI,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+957,Minha Conexão: Teste a Velocidade Real da sua Internet,(descoberta - QFirst),https://www.minhaconexao.com.br,QFirst Open Search,https://www.minhaconexao.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+487,Learn To Fly Desenvolvimento Humano Ltda,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+488,Letz,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+489,Liberado App,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+490,"L J Maquinas Automaticas Ltda (""SmartMach"")",Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+958,iDinheiro - Decisões financeiras inteligentes,(descoberta - QFirst),https://www.idinheiro.com.br,QFirst Open Search,https://www.idinheiro.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+492,Luppa Health,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+493,Nanoprox,,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+494,New Value,Recursos Humanos,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+495,Nodica AI,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+496,NOZ Comunidades,Marketing,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+497,Pilotin,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+499,Rapiboy,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+500,Sisqualis,Saúde,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+501,StockFY,Logística,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+502,Sumeria,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+503,Sylvera,ESG,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+504,Tachyonix,Indústria,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+505,Taxly,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+506,TESS,Produtividade,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+507,Tilt,Cibersegurança,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+508,Vertrau Tecnologia,Financeiro,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+509,V+ Tech,Direito,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+510,Wave,Mídias,,Cubo,https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+959,"📦🚀🏡 Rastreamento Correios, Aliexpress e Gearbest 📦",(descoberta - QFirst),https://www.muambator.com.br,QFirst Open Search,https://www.muambator.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+513,ConstruCode,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+514,Scoreplan,IndTechs - Automação e Inteligência Operacional; FinTechs; Productivity; ConstrucTechs,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+960,iMaquininhas | As Melhores Máquinas de Cartão,(descoberta - QFirst),https://www.imaquininhas.com.br,QFirst Open Search,https://www.imaquininhas.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+961,HOME – Be IT,(descoberta - QFirst),https://www.beit.work,QFirst Open Search,https://www.beit.work/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+962,Croct Status,(descoberta - QFirst),https://status.croct.io,QFirst Open Search,https://status.croct.io/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+518,SYX Global,IndTechs - Sustentabilidade e Conformidade; CleanTechs; Marketplace,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+963,Croct | Dribbble,(descoberta - QFirst),https://dribbble.com/croct,QFirst Open Search,https://dribbble.com/croct,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+964,Garagem - A única ferramenta que o corretor precisa,(descoberta - QFirst),https://garagem.ai,QFirst Open Search,https://garagem.ai/?utm_source=www.emcasa.com&utm_medium=footer&utm_campaign=powered_by,high_priority,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+965,Leapy usa tecnologia para transformar a jornada dos jovens aprendizes - Estadão,(descoberta - QFirst),https://www.estadao.com.br/pme/blog-do-empreendedor/leapy-usa-tecnologia-para-transformar-a-jornada-dos-jovens-aprendizes?srsltid=AfmBOop9zlyjg1tWYFGCnob8aDrxbvObu-c-pDkGGIh4Ga2b84uGMD-8,QFirst Open Search,https://www.estadao.com.br/pme/blog-do-empreendedor/leapy-usa-tecnologia-para-transformar-a-jornada-dos-jovens-aprendizes/?srsltid=AfmBOop9zlyjg1tWYFGCnob8aDrxbvObu-c-pDkGGIh4Ga2b84uGMD-8,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+87,Recrut.AI,HRTechs - Recrutamento e Dept. Pessoal; Artificial Intelligence,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+523,Dialog,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+282,Gedanken,Productivity; Big Data; LegalTechs; IndTechs - Sustentabilidade e Conformidade,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+966,Como manter a Lei da Aprendizagem relevante no futuro do trabalho | VOCÊ S/A,(descoberta - QFirst),https://vocesa.abril.com.br/carreira/como-manter-a-lei-da-aprendizagem-relevante-no-futuro-do-trabalho,QFirst Open Search,https://vocesa.abril.com.br/carreira/como-manter-a-lei-da-aprendizagem-relevante-no-futuro-do-trabalho/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+967,Como a Grafeno criou seu centro de inovação e economizou R$ 6 milhões,(descoberta - QFirst),https://distrito.me/blog/como-a-grafeno-criou-seu-centro-de-inovacao-e-economizou-r-6-milhoes,QFirst Open Search,https://distrito.me/blog/como-a-grafeno-criou-seu-centro-de-inovacao-e-economizou-r-6-milhoes/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+527,Scopi,IndTechs - Automação e Inteligência Operacional; Productivity; GovTechs; AgriTechs,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+968,Notion,(descoberta - QFirst),https://bossabox.notion.site/741c845065bb404dab21d5c1c4273a34?v=2af74526fb7b800abedf000c427e548c&source=copy_link,QFirst Open Search,https://bossabox.notion.site/741c845065bb404dab21d5c1c4273a34?v=2af74526fb7b800abedf000c427e548c&source=copy_link,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+969,Central de Privacidade - BossaBox - Data Guide,(descoberta - QFirst),https://dataguide.com.br/central-de-privacidade-bossabox,QFirst Open Search,https://dataguide.com.br/central-de-privacidade-bossabox/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+970,Compra en tus marcas favoritas desde la app de Addi,(descoberta - QFirst),http://onelink.to/addishopapp,QFirst Open Search,http://onelink.to/addishopapp,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+971,SIC | Sede Electronica,(descoberta - QFirst),https://sedeelectronica.sic.gov.co,QFirst Open Search,https://sedeelectronica.sic.gov.co/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+972,Astor raises $5 million seed round for its AI-based financial advisory service | Fortune,(descoberta - QFirst),https://fortune.com/2026/04/23/jjjj,QFirst Open Search,https://fortune.com/2026/04/23/jjjj/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+533,CUBi Energia,EnergyTechs; CleanTechs; IndTechs - Sustentabilidade e Conformidade; Big Data,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+973,Omie - Início,(descoberta - QFirst),https://www.contatoseguro.com.br/omie,QFirst Open Search,https://www.contatoseguro.com.br/omie/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+535,Rampfy,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+537,Acertpix Tecnologia S.A,Cybersecurity e Identificação,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+538,goFlux,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+539,Mogai Tecnologia de Informação S.A.,IndTechs - Automação e Inteligência Operacional; LogTechs; IoT; Productivity,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+541,Keeps Learning,"EdTechs; HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+543,CIC - Controle Inteligente de Compensações,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+546,Happmobi - Educação Digital,"EdTechs; HRTechs - Engajamento, Performance e Cultura; Big Data; Customer Service",,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+547,Tallos,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+974,OneFlow - Sistema Contábil web que trabalha para você!,(descoberta - QFirst),https://oneflow.com.br,QFirst Open Search,https://oneflow.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+549,Dattos,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+550,UpFlux Process Mining,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+551,Exati Tecnologia,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+975,"Megaport | Compute, Network & Storage On Demand.",(descoberta - QFirst),https://www.megaport.com,QFirst Open Search,https://www.megaport.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+976,Registre-se e gere renda dirigindo.,(descoberta - QFirst),https://page.didiglobal.com/global/silver-bullet-pre/default-online/pre/99-dvr-br-b,QFirst Open Search,https://page.didiglobal.com/global/silver-bullet-pre/default-online/pre/99-dvr-br-b,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+977,Form,(descoberta - QFirst),https://share.hsforms.com/18fWqS0GtRA2GnfIxDc1VFwbzdf1,QFirst Open Search,https://share.hsforms.com/18fWqS0GtRA2GnfIxDc1VFwbzdf1?utm_source=instagram&utm_medium=linktree,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+978,Plug and Play,(descoberta - QFirst),https://www.plugandplaytechcenter.com/press/plug-and-play-la-announces-program-with-meta-to-transform-the-future-of-business-messaging,QFirst Open Search,https://www.plugandplaytechcenter.com/press/plug-and-play-la-announces-program-with-meta-to-transform-the-future-of-business-messaging/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+979,Carreiras | Lastlink - INHIRE,(descoberta - QFirst),https://carreira.inhire.com.br/carreiras/lastlink,QFirst Open Search,https://carreira.inhire.com.br/carreiras/lastlink/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+557,Ecotrace Solutions,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+980,Consultoria IA para negócios | fazer.ai,(descoberta - QFirst),https://fazer.ai,QFirst Open Search,https://fazer.ai,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+559,Price Survey,RetailTechs; IndTechs - Automação e Inteligência Operacional; Big Data,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+981,WiseCX | Customer Experience Inteligente,(descoberta - QFirst),https://wisecx.com/&WEBKEEPCON,QFirst Open Search,https://wisecx.com/?utm_source=referreal&utm_medium=banner&utm_id=&WEBKEEPCON,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+982,Pragmativa - Marketing y generación de demanda para empresas que venden a empresas.,(descoberta - QFirst),https://pragmativa.com.ar,QFirst Open Search,https://pragmativa.com.ar,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+562,ATENDARE OTIMIZANDO VENDAS COMPLEXAS,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+262,Oystr,Direito,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+564,Mereo,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+565,Edupass,"EdTechs; HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+566,Clarke Energia,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+567,Noleak Defence,Cybersecurity e Identificação,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+983,Monashees | The future is human,(descoberta - QFirst),https://www.monashees.com/portfolio?name=vambe,QFirst Open Search,https://www.monashees.com/portfolio?name=vambe,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+984,Vambe | Nazca,(descoberta - QFirst),https://www.nazca.vc/portfolio/vambe,QFirst Open Search,https://www.nazca.vc/portfolio/vambe,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+985,Vambe AI | M13,(descoberta - QFirst),https://www.m13.co/company/vambe,QFirst Open Search,https://www.m13.co/company/vambe,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+147,Bits Academy,Direito,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+986,"Hablla Marketing Conversacional, integração de sistemas e CRM",(descoberta - QFirst),http://hablla.com,QFirst Open Search,http://hablla.com,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+574,Fu2re Smart Solutions,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+575,Deep Legal analytics,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+466,TCX,IndTechs - Automação e Inteligência Operacional; Artificial Intelligence; IoT; Big Data,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+987,Mantis AI — The Data Intelligence Layer,(descoberta - QFirst),https://mantis-ai.com,QFirst Open Search,https://mantis-ai.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+988,MultiCortex | COMPUTAÇÃO HETEROGÊNEA PARA IA,(descoberta - QFirst),https://www.multicortex.ai,QFirst Open Search,https://www.multicortex.ai/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+579,Shooju Brasil Tecnologia da Informação Ltda.,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+581,SUIV - SISTEMA UNIFICADO DE INFORMAÇÕES VEICULARES,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+582,Startup Mundi,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+270,Carefy,Saúde,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+584,COLAB TECNOLOGIA E SERVIÇOS DE INTERNET S.A,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+517,STANDOUT,MarTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+585,Oransys Industry IT Solutions,IndTechs - Automação e Inteligência Operacional,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+586,"3,2,1 Beauty",HealthTechs; HRTechs - Recrutamento e Dept. Pessoal; Customer Service; Marketplace,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+989,Qive | GPLC,(descoberta - QFirst),https://gplc.com.br/qive,QFirst Open Search,https://gplc.com.br/qive/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+990,BHub | Hub do Empreendedor,(descoberta - QFirst),https://app.bhub.ai,QFirst Open Search,https://app.bhub.ai/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+991,Agrocontar - Soluções Contábeis para o Agronegócio,(descoberta - QFirst),https://agrocontar.com.br,QFirst Open Search,https://agrocontar.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+992,Quality Associados | A maior contabilidade com foco em Terceiro Setor do Brasil.,(descoberta - QFirst),https://site.qualityassociados.com.br,QFirst Open Search,https://site.qualityassociados.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+591,Aqua Tecnologia,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+592,Munai,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+593,KOR Solutions,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+594,Exy Exoesqueletos Industriais,LogTechs; ConstrucTechs; IndTechs - Sustentabilidade e Conformidade; HealthTechs,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+993,BHub secures $20M to become LatAm companies’ back-office administrator | TechCrunch,(descoberta - QFirst),https://techcrunch.com/2021/12/14/bhub-secures-20m-to-become-latam-companies-back-office-administrator,QFirst Open Search,https://techcrunch.com/2021/12/14/bhub-secures-20m-to-become-latam-companies-back-office-administrator/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+994,"Bhub, a Back Office-As-a-Service Startup, Raises $20M Series A",(descoberta - QFirst),https://www.bloomberglinea.com/english/bhub-a-back-office-as-a-service-startup-raises-20m-series-a,QFirst Open Search,https://www.bloomberglinea.com/english/bhub-a-back-office-as-a-service-startup-raises-20m-series-a/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+995,"AI-Powered $20M ARR: The Expansion Playbook of Jorge Vargas Neto, BHub",(descoberta - QFirst),https://podcast.latitud.com/995722/episodes/16832982-ai-powered-20m-arr-the-expansion-playbook-of-jorge-vargas-neto-bhub,QFirst Open Search,https://podcast.latitud.com/995722/episodes/16832982-ai-powered-20m-arr-the-expansion-playbook-of-jorge-vargas-neto-bhub,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+996,Why We Invested in BHub - Next Billion Capital,(descoberta - QFirst),https://nextbillion.capital/why-we-invested-in-bhub,QFirst Open Search,https://nextbillion.capital/why-we-invested-in-bhub/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+599,ONBOARD,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+278,Saber Em Rede,Educação,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+269,Embeddo,AutoTechs; IndTechs - Automação e Inteligência Operacional; IoT; Artificial Intelligence,,100 Open Startups (2023),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+997,Marketing e Vendas - AN1 Martech,(descoberta - QFirst),https://aceleradoran1.com.br,QFirst Open Search,https://aceleradoran1.com.br/?utm_source=referral&utm_medium=assinatura_sites&utm_campaign=bhub,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+998,enjoei,(descoberta - QFirst),https://enjoei.inhire.app/vagas,QFirst Open Search,https://enjoei.inhire.app/vagas/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+999,home - Relações com Investidores,(descoberta - QFirst),https://ri.enjoei.com,QFirst Open Search,https://ri.enjoei.com,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1000,"Banco de imagens, fotos, vetores, vídeos, músicas sem royalties | DepositPhotos",(descoberta - QFirst),https://depositphotos.com/br,QFirst Open Search,https://depositphotos.com/br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+606,4intelligence,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1001,Page 9,(descoberta - QFirst),https://page9.com,QFirst Open Search,https://page9.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+608,Antennas BI,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+609,INTELIGER IA,,,100 Open Startups (2023),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1002,Metro Quadrado,(descoberta - QFirst),https://metroquadrado.com,QFirst Open Search,https://metroquadrado.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+462,OPPEM,IndTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+279,Cargo Sapiens,LogTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+529,clickCompliance,LegalTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1003,Loading...,(descoberta - QFirst),https://partners-official.com/Y5S8Q5,QFirst Open Search,https://partners-official.com/Y5S8Q5,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1004,GambleAware®: Gambling Help & Gambling Addiction,(descoberta - QFirst),https://www.begambleaware.org,QFirst Open Search,https://www.begambleaware.org,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1005,"Ajudante PX | Contratação ágil na logística, por diária - Ajudante PX",(descoberta - QFirst),https://ajudantepx.com.br,QFirst Open Search,https://ajudantepx.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1006,PX.Center,(descoberta - QFirst),https://px.center,QFirst Open Search,https://px.center/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+256,Banco Útil,FinTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+623,Privacy Tools,LegalTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+22,Descola,EdTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1007,Portal de Talentos Senior - Vagas de Emprego,(descoberta - QFirst),https://pxcenter.portaldetalentos.senior.com.br/about,QFirst Open Search,https://pxcenter.portaldetalentos.senior.com.br/about,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1008,Master Driver Brasil — O reality dos motoristas de caminhão,(descoberta - QFirst),https://masterdriverbrasil.com.br,QFirst Open Search,https://masterdriverbrasil.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1009,"“Brasil depende do motorista”, diz CEO da Motorista PX",(descoberta - QFirst),https://mundologistica.com.br/noticias/brasil-depende-do-motorista-diz-ceo-motorista-px,QFirst Open Search,https://mundologistica.com.br/noticias/brasil-depende-do-motorista-diz-ceo-motorista-px,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+629,Bits - Legal Design,LegalTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1010,"Com evolução digital no mercado de transportes, PX, de Joinville, cresce 143% e lidera ranking entre empresas de SC - SC Inova",(descoberta - QFirst),https://scinova.com.br/px-de-joinville-cresce-143-e-lidera-ranking-entre-empresas-de-sc,QFirst Open Search,https://scinova.com.br/px-de-joinville-cresce-143-e-lidera-ranking-entre-empresas-de-sc/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+631,Sling Hub,Big Data,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1011,"Brasil perdeu 1,2 milhão de motoristas de caminhão na última década, aponta levantamento – SETCESP",(descoberta - QFirst),https://setcesp.org.br/noticias/brasil-perdeu-12-milhao-de-motoristas-de-caminhao-na-ultima-decada-aponta-levantamento,QFirst Open Search,https://setcesp.org.br/noticias/brasil-perdeu-12-milhao-de-motoristas-de-caminhao-na-ultima-decada-aponta-levantamento/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+554,MotorHero,AutoTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1012,A Melhor Plataforma de Capacitação de Profissionais da Logística | Academia PX - A Melhor Plataforma de Capacitação de Profissionais da Logística | Academia PX,(descoberta - QFirst),https://academiapx.com.br,QFirst Open Search,https://academiapx.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1013,"2025 - Radar PX | Use inteligência de dados para mapear comportamentos, identificar riscos e prevenir perdas operacionais",(descoberta - QFirst),https://radarpx.com.br,QFirst Open Search,https://radarpx.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1014,Laço Amarelo,(descoberta - QFirst),https://www.onsv.org.br/lacoamarelo,QFirst Open Search,https://www.onsv.org.br/lacoamarelo,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1015,Início - Renda Maior,(descoberta - QFirst),https://bancosimples.com.br,QFirst Open Search,https://bancosimples.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+536,SULTS,RetailTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1016,"Pesquisas, relatórios e reports – Fintechs",(descoberta - QFirst),http://bit.ly/reportfintechsmenu,QFirst Open Search,http://bit.ly/reportfintechsmenu,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1017,Vindi | Pagamentos que entendem seu modelo de negócio,(descoberta - QFirst),http://vindi.com.br,QFirst Open Search,http://Vindi.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1018,Fortune Tiger - Jogo do Tigrinho (Plataforma de jogos 2026),(descoberta - QFirst),http://smartbill.com.br,QFirst Open Search,http://Smartbill.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1019,Astella,(descoberta - QFirst),https://astellainvest.com,QFirst Open Search,https://astellainvest.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+643,Moavi,RetailTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+519,Construct IN,ConstrucTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+645,AlterVision,RetailTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+646,Deskbee,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+647,Elaw Tecnologia,LegalTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1020,Home - Criatec2,(descoberta - QFirst),http://www.criatec2.com.br,QFirst Open Search,http://www.criatec2.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1021,SP Ventures – A leading venture focus on agfood-climate tech in Latin America.,(descoberta - QFirst),http://spventures.com.br,QFirst Open Search,http://spventures.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+650,Conecta Tech,RetailTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1022,"Aceita Fácil Pagamentos | Plataforma para gestão de cobranças, recebimentos, emissão e recebimento por Boleto bancário",(descoberta - QFirst),http://aceitafacil.com,QFirst Open Search,http://AceitaFacil.com,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+498,Planium,FinTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+653,Mission Brasil,RetailTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+560,Skedway,IoT,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+655,Inklua,HRTechs - Recrutamento e Dept. Pessoal,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+526,Nvoip,Customer Service,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1023,Avra — Graph Foundation Model for the economy,(descoberta - QFirst),https://avra.ai,QFirst Open Search,https://avra.ai/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+660,Mundi Game Experiences,EdTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+540,ST-One,IndTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+71,GRTS Digital,LegalTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1024,Profissio.ai — IA à prova do dia-a-dia do seu negócio,(descoberta - QFirst),https://profissio.ai,QFirst Open Search,https://profissio.ai/,high_priority,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1025,eduK (cursoseduk) — Perfil | Pinterest,(descoberta - QFirst),https://br.pinterest.com/cursoseduk,QFirst Open Search,https://br.pinterest.com/cursoseduk/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1026,¿Quieres ser nuestro proveedor?,(descoberta - QFirst),https://forms.zohopublic.com/Tul/form/Quieressernuestroproveedor/formperma/EU_KgWYULQF5w-HXJOi9k57_2YYjhikXiy6DYD2sw7M,QFirst Open Search,https://forms.zohopublic.com/Tul/form/Quieressernuestroproveedor/formperma/EU_KgWYULQF5w-HXJOi9k57_2YYjhikXiy6DYD2sw7M,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1027,Tul - Job openings,(descoberta - QFirst),https://tul.peopleforce.io/careers,QFirst Open Search,https://tul.peopleforce.io/careers,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1028,Central de Denúncia SOS Golpe,(descoberta - QFirst),https://sos.silverguard.com.br/site_barra,QFirst Open Search,https://sos.silverguard.com.br/site_barra,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1029,Vítimas de golpes digitais podem contar com recurso gratuito para resolver crime,(descoberta - QFirst),https://www.otempo.com.br/cidades/vitimas-de-golpes-digitais-podem-contar-com-recurso-gratuito-para-resolver-crime-1.2953303,QFirst Open Search,https://www.otempo.com.br/cidades/vitimas-de-golpes-digitais-podem-contar-com-recurso-gratuito-para-resolver-crime-1.2953303,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1030,Quill - Transações imobiliárias que fluem sem complicações,(descoberta - QFirst),https://www.quill.com.br,QFirst Open Search,https://www.quill.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1031,Goal 8 | Department of Economic and Social Affairs,(descoberta - QFirst),https://sdgs.un.org/goals/goal8,QFirst Open Search,https://sdgs.un.org/goals/goal8,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1032,Apollo - AI for Politics,(descoberta - QFirst),http://askapollo.ai,QFirst Open Search,http://askapollo.ai,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1033,Contém1g,(descoberta - QFirst),https://contem1g.com.br,QFirst Open Search,https://contem1g.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1034,PL Connection - O Maior Evento de Marcas Próprias da América Latina,(descoberta - QFirst),https://plconnection.com.br,QFirst Open Search,https://plconnection.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1035,Aia Context | Laboratório Deeptech de Pesquisa Aplicada em IA,(descoberta - QFirst),https://www.aiacontext.com,QFirst Open Search,https://www.aiacontext.com/,high_priority,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+590,PROA.AI,Artificial Intelligence,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+588,Clima ao Vivo,IoT,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1036,Moises App: O App do Músico | Removedor Vocal e muito mais,(descoberta - QFirst),https://moises.app/download-app,QFirst Open Search,https://moises.app/download-app,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1037,Moises Studio,(descoberta - QFirst),https://moisesapp.page.link/launchApp?store=apps.apple.com,QFirst Open Search,https://moisesapp.page.link/launchApp?store=apps.apple.com,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+569,Taqe,HRTechs - Recrutamento e Dept. Pessoal,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+610,iTransport by HTP Solution Informatica e Sistemas S.A.,Mobility,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+685,Futurai,IndTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1038,About | Music AI,(descoberta - QFirst),https://music.ai/about,QFirst Open Search,https://music.ai/about/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+687,PWTech,Water and Sanitation,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+688,EZVolt,Mobility,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1039,Insights from 2025 GenAI Code Security Report,(descoberta - QFirst),https://www.veracode.com/blog/genai-code-security-report,QFirst Open Search,https://www.veracode.com/blog/genai-code-security-report/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1040,Traive - Transformando o mercado agrícola pela IA - Traive,(descoberta - QFirst),https://traive.com.br,QFirst Open Search,https://traive.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1060,Covalenty Ltda<!-- --> - Pipefy | The operations excellence platform,(descoberta - QFirst),https://app.pipefy.com/organizations/301271508/interfaces/80e83342-60bd-441b-8ee5-00171d9db4c5/pages/526fb4b7-3a02-4f8e-95bc-75c7f875ccbd,QFirst Open Search,https://app.pipefy.com/organizations/301271508/interfaces/80e83342-60bd-441b-8ee5-00171d9db4c5/pages/526fb4b7-3a02-4f8e-95bc-75c7f875ccbd,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+131,Oransys,IndTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+693,Trademaster,FinTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+694,Smarkets,Marketplace,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+696,Incentiv.me,ESGTech,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+698,Minds Digital,Cybersecurity and Identification,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+605,Giro.Tech,FinTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+702,Neokohm Telematics Intelligence,FoodTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+604,Instanteaser,MarTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+705,HedGer,FinTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+706,Techtrials,HealthTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1041,Entrar em traive-prod,(descoberta - QFirst),https://auth.traive-prod.com/realms/traive-prod/protocol/openid-connect/auth?client_id=fiagro-app&redirect_uri=https%3A%2F%2Fplatform.traivefinance.com&state=c4120288-487a-42b7-9f70-19bedf82e277&response_mode=fragment&response_type=code&scope=openid&nonce=5f2e5164-53ba-4822-885f-0f5152184de7,QFirst Open Search,https://auth.traive-prod.com/realms/traive-prod/protocol/openid-connect/auth?client_id=fiagro-app&redirect_uri=https%3A%2F%2Fplatform.traivefinance.com&state=c4120288-487a-42b7-9f70-19bedf82e277&response_mode=fragment&response_type=code&scope=openid&nonce=5f2e5164-53ba-4822-885f-0f5152184de7,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+710,Almox Tech,ConstrucTechs,,100 Open Startups (2024),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+219,Loginfo,LogTechs,,100 Open Startups (2024),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+545,Leverpro,FinTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+512,Weknow,HealthTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+424,Melvin,IndTechs - Automação e Inteligência Operacional,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+542,meuResíduo,CleanTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+195,Ludos Pro,EdTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+558,Acordo Fechado,LegalTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+622,Acertpix,Cybersecurity and Identification,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+171,Hoff Analytics,ConstrucTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+628,cic controle,FinTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+632,Comunitive,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+511,Edusense,EdTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+552,ObraSoft,ESGTech,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+531,Aiko,AgriTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+668,Kinebot,IndTechs - Sustentabilidade e Conformidade,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+532,T&D Sustentável,Water and Sanitation,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+26,Sirros IoT,IoT,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+221,Workhub Digital,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+730,Netrin,Cybersecurity and Identification,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+196,Lexio,LegalTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+640,Beeviral,MarTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+544,Adiau,CityTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+734,Suplos,ConstrucTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+359,Driva,Big Data,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+682,PREDIALIZE,ConstrucTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+662,Happmobi,EdTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+649,Noleak,Artificial Intelligence,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+332,Econodata,Big Data,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+261,Implanta It Solutions,AgriTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+741,Droz,Customer Service,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+548,Top2You,EdTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+80,PX Data.ai,Artificial Intelligence,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+701,GoGood,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+571,Beezer,Mobility,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+746,RH Numbers,HRTechs - Recrutamento e Dept. Pessoal,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+747,OMNIHUNTER,FinTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+648,Mogai Tecnologia,IndTechs - Automação e Inteligência Operacional,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+651,SUIV,AutoTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+750,InCicle Sistemas,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+589,OCTÁGORA,Customer Service,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+636,ATENDARE,MarTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+602,Sinapsis Inovação em Energia,EnergyTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+669,Eskive,Cybersecurity and Identification,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+616,Syx,IndTechs - Sustentabilidade e Conformidade,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+690,Showkase,RetailTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+421,Trashin,CleanTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+598,Aprix,Artificial Intelligence,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+225,Vertown,ESGTech,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+486,kenit,RetailTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+245,Supplylabs,Productivity,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+671,Mutuus,FinTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+763,ESG Now,ESGTech,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+672,Parkaz,AutoTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+125,Academia do Universitário,HRTechs - Recrutamento e Dept. Pessoal,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+207,Cogtive,IndTechs - Automação e Inteligência Operacional,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+767,DYNADOK,Artificial Intelligence,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+768,PERTO DIGITAL,ESGTech,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+769,Ficou Fácil,FinTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+770,MatchIT,Artificial Intelligence,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+771,Comunica.In,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+285,4MDG,Productivity,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+773,Getdemo,MarTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+707,GoMining,EdTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+578,IndustriALL,IndTechs - Automação e Inteligência Operacional,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+573,SciCrop,AgriTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+596,Zapt Tech,HealthTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+778,iTransport by HTP Solution,Mobility,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+697,MAPLY TECNOLOGIA,ConstrucTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+780,Eneergia,EnergyTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+138,Agroboard,AgriTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+227,Trackfy,IoT,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+783,SOLOS,CleanTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+784,NPLAN,IndTechs - Automação e Inteligência Operacional,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+674,Analize,FinTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+30,Linte,LegalTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+787,DROME,IoT,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+205,Workverse,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+789,FastBuilt,ConstrucTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+790,INQUESTI,Artificial Intelligence,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+201,MINEHR,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+709,beAnalytic,Big Data,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+29,baasic,FinTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+712,Wicar,CleanTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+795,Neokohm,LogTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+796,GoLiveTech,Productivity,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+595,Kidopi,HealthTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+798,Indicafix,"HRTechs - Engajamento, Performance e Cultura",,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+491,Lovel,HRTechs - Recrutamento e Dept. Pessoal,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+160,VIK,Marketplace,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+214,Flowls,LogTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+689,Grupo DR1,Big Data,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+243,Docato,LegalTechs,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+804,LogShare,LogTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+18,Evcomx,Artificial Intelligence,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+806,Energia das Coisas,EnergyTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+699,Oficina de Valor,Big Data,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2024-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+349,Vent,Artificial Intelligence,,100 Open Startups (2025),https://api.site.cubo.itau/startups?limit=511&page=1,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+587,Hand Talk,ESGTech,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2023-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+810,DIVE,VR/AR,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+811,Webli,Customer Service,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+812,Crop Labs,BioTechs,,100 Open Startups (2025),https://www.openstartups.net/site/ranking/data/rankings/startups/2025-all.js,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+813,Fu2re,Inteligencia Artificial,https://abria.org.br/associados/fu2re,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+814,SciCrop,Inteligencia Artificial,https://abria.org.br/associados/scicrop,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+815,Aia,Inteligencia Artificial,https://abria.org.br/associados/aia,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+816,Homio,Inteligencia Artificial,https://abria.org.br/associados/homio,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+817,NEX LAB,Inteligencia Artificial,https://abria.org.br/associados/nex-lab,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+818,MultiCortex,Inteligencia Artificial,https://abria.org.br/associados/multicortex,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+819,Profissio.ai,Inteligencia Artificial,https://abria.org.br/associados/profissio-ai,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+820,fazer.ai,Inteligencia Artificial,https://abria.org.br/associados/fazer-ai,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+821,Agenzia MKT,Inteligencia Artificial,https://abria.org.br/associados/agenzia-mkt,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+822,Apollo: AI for Politics,Inteligencia Artificial,https://abria.org.br/associados/apollo-ai-for-politics,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+823,avra,Inteligencia Artificial,https://abria.org.br/associados/avra,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+824,Be iT,Inteligencia Artificial,https://abria.org.br/associados/be-it,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+825,Celero,Inteligencia Artificial,https://abria.org.br/associados/celero,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+826,Crescitech,Inteligencia Artificial,https://abria.org.br/associados/crescitech,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+827,Hablla,Inteligencia Artificial,https://abria.org.br/associados/hablla,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+828,Mantis-AI,Inteligencia Artificial,https://abria.org.br/associados/mantis-ai,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+829,Megaport,Inteligencia Artificial,https://abria.org.br/associados/megaport,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+830,Multiplica Seguros,Inteligencia Artificial,https://abria.org.br/associados/multiplica-seguros,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+831,Nama,Inteligencia Artificial,https://abria.org.br/associados/nama,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+832,Pericoco Martech,Inteligencia Artificial,https://abria.org.br/associados/pericoco-martech,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+833,Quill,Inteligencia Artificial,https://abria.org.br/associados/quill,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+834,Trakto,Inteligencia Artificial,https://abria.org.br/associados/trakto,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+835,Under,Inteligencia Artificial,https://abria.org.br/associados/under,ABRIA,https://abria.org.br/associados/,high_priority,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+836,Amicci,Portfolio VC,https://amicci.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+837,Aprova Digital,Portfolio VC,https://www.aprovadigital.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+838,Bem-Te-Vi,Portfolio VC,https://www.bemtevi.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+839,Birdie,Portfolio VC,https://www.birdie.ai,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+840,Bornlogic,Portfolio VC,https://www.bornlogic.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+841,BossaBox,Portfolio VC,https://bossabox.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+842,BotCity,Portfolio VC,https://www.botcity.dev,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+843,Cayena,Portfolio VC,https://cayena.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+844,Cienty,Portfolio VC,https://www.cienty.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+845,Croct,Portfolio VC,https://croct.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+846,Estoca,Portfolio VC,https://estoca.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+847,Gabriel,Portfolio VC,https://gabriel.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+848,Gove,Portfolio VC,https://www.gove.digital,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+849,Homelend,Portfolio VC,https://hl.homelend.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+850,Indaband,Portfolio VC,https://inda.band,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+851,JOTA,Portfolio VC,https://www.jota.info,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+852,Kompa Saúde,Portfolio VC,https://www.kompa.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+853,Lastlink,Portfolio VC,https://lastlink.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+854,Leapy,Portfolio VC,https://www.leapy.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+855,Livance,Portfolio VC,https://www.livance.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+856,Movens,Portfolio VC,https://www.movens.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+857,Omie,Portfolio VC,https://www.omie.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+858,Purple Metrics,Portfolio VC,https://www.purplemetrics.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+859,Sallve,Portfolio VC,https://www.sallve.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+860,Silverguard,Portfolio VC,https://www.sosgolpe.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+861,TáOn,Portfolio VC,https://apps.apple.com/us/app/t%C3%A1on/id6446641225,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+862,Bom Pra Crédito,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+863,Ciatech,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+864,ClickSign,Portfolio VC,https://www.clicksign.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+865,DeliRec,Portfolio VC,http://www.delirec.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+866,Destaxa,Portfolio VC,https://destaxa.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+867,Dr Jones,Portfolio VC,https://braziljournal.com/boticario-compra-a-dr-jones-fortalecendo-seu-portfolio-masculino,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+868,Dualtec,Portfolio VC,https://www.baguete.com.br/noticias/12/04/2016/uol-diveo-compra-dualtec,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+869,Exact Sales,Portfolio VC,https://exame.com/invest/mercados/rd-station-da-totvs-tots3-adquire-software-de-vendas-exact-sales-por-r-51-milhoes,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+870,Gavea Marketplace,Portfolio VC,https://gavea.com,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+871,Grão,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+872,GuiaVet,Portfolio VC,https://www.guia.vet,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+873,Help Saude,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+874,Imobox,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+875,Itaro,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+876,Kenoby,Portfolio VC,https://neofeed.com.br/blog/home/gupy-fecha-1a-aquisicao-apos-rodada-de-meio-bilhao-do-softbank-e-da-riverwood,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+877,Lojas KD,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+878,Moblife,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+879,Navegg,Portfolio VC,http://g1.globo.com/economia/noticia/2011/02/buscape-compra-empresa-de-segmentacao-de-campanha-publicitaria-navegg.html,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+880,Oculos Shop,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+881,Portal Educação,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+882,Qulture Rocks,Portfolio VC,https://startups.com.br/noticias/uol-edtech-compra-a-qulture-rocks,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+883,RD Station,Portfolio VC,https://neofeed.com.br/blog/home/totvs-paga-r-18-bi-pelo-controle-da-rd-station,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+884,Skore,Portfolio VC,https://braziljournal.com/uol-edtech-dobra-a-aposta-na-educacao-corporativa,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+885,Sled,Portfolio VC,https://www.sled.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+886,Smartbill,Portfolio VC,https://fintechs.com.br/vindi-e-smartbill-assinam-acordo-para-fusao-e-criam-super-fintech,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+887,Smartkids,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+888,Sophie e Juliete,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+889,Topster,Portfolio VC,https://topster.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+890,Traive,Portfolio VC,https://traivefinance.com?lang=en,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+891,Tryoop,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+892,Tuilux,Portfolio VC,,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+893,Zipia,Portfolio VC,https://zipia.com.br,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+894,Zygo,Portfolio VC,https://exame.com/negocios/pagseguro-compra-a-zygo-para-ajudar-pmes-a-montar-programas-de-fidelidade,Astella,https://www.astella.com.br/pt/portfolio,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+895,MWa2Zb,Portfolio VC,https://99app.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+896,MWa2Zb,Portfolio VC,https://co.addi.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+897,MWa2Zb,Portfolio VC,https://www.astor.app,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+898,MWa2Zb,Portfolio VC,https://bhub.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+899,MWa2Zb,Portfolio VC,https://www.doghero.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+900,MWa2Zb,Portfolio VC,https://www.app.eduk.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+901,MWa2Zb,Portfolio VC,https://www.elo7.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+902,MWa2Zb,Portfolio VC,https://emcasa.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+903,MWa2Zb,Portfolio VC,https://www.enjoei.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+904,MWa2Zb,Portfolio VC,https://facio.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+905,MWa2Zb,Portfolio VC,https://wellhub.com/pt-br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+906,MWa2Zb,Portfolio VC,https://www.getninjas.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+907,MWa2Zb,Portfolio VC,https://idwall.co/pt-BR,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+908,MWa2Zb,Portfolio VC,https://keepcon.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+909,MWa2Zb,Portfolio VC,http://as.keyfetch.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+910,MWa2Zb,Portfolio VC,https://loopi.finance,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+911,MWa2Zb,Portfolio VC,https://www.btgpactual.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+912,MWa2Zb,Portfolio VC,http://meemo.ai,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+913,MWa2Zb,Portfolio VC,https://www.meliuz.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+914,MWa2Zb,Portfolio VC,https://memed.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+915,MWa2Zb,Portfolio VC,https://www.moises.ai,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+916,MWa2Zb,Portfolio VC,https://motoristapx.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+917,MWa2Zb,Portfolio VC,https://www.open-co.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+918,MWa2Zb,Portfolio VC,https://peixeurbano.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+919,MWa2Zb,Portfolio VC,https://www.pipedrive.com/pt,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+920,MWa2Zb,Portfolio VC,https://www.piposaude.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+921,MWa2Zb,Portfolio VC,https://qive.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+922,MWa2Zb,Portfolio VC,https://www.rebel.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+923,MWa2Zb,Portfolio VC,https://www.sanctu.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+924,MWa2Zb,Portfolio VC,https://strider.ag,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+925,MWa2Zb,Portfolio VC,https://www.jusbrasil.com.br,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+926,MWa2Zb,Portfolio VC,https://tela.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+927,MWa2Zb,Portfolio VC,https://tul.com.co,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+928,MWa2Zb,Portfolio VC,https://vambe.ai,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+929,MWa2Zb,Portfolio VC,https://yaydoo.com,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+930,MWa2Zb,Portfolio VC,https://zak.app,Monashees,https://framerusercontent.com/cms/VrqXwf4HIKk8QTSs16VX/Am9agj2u21FE4TGQ1eJK/Id3uLm6hk-chunk-default-0.framercms?range=0-120356,pending_deep_scan,2026-06-28 03:40:06.97744,2026-06-28 03:40:06.97744
+1042,Agência Full Service com 18 anos,(descoberta - QFirst),https://www.organicadigital.com,QFirst Open Search,https://www.organicadigital.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1043,Agenzia - Venda todo dia,(descoberta - QFirst),http://www.agenziamkt.com.br,QFirst Open Search,http://www.agenziamkt.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1044,"Studio Yellow - Premium Branding, Web and Marketing",(descoberta - QFirst),https://www.studioyellow.xyz,QFirst Open Search,https://www.studioyellow.xyz,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1045,Invista - Agregador de Ofertas em Plataformas de Investimento,(descoberta - QFirst),https://invista.manus.space,QFirst Open Search,https://invista.manus.space/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1046,Comunidade Startups - A maior comunidade de startups do Brasil,(descoberta - QFirst),https://comunidadestartups.lovable.app,QFirst Open Search,https://comunidadestartups.lovable.app/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1047,UOL EdTech | Home,(descoberta - QFirst),https://uoledtech.com.br,QFirst Open Search,https://uoledtech.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1048,Qulture Rocks,(descoberta - QFirst),https://www.qulture.rocks,QFirst Open Search,https://www.qulture.rocks/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1049,Y Combinator,(descoberta - QFirst),https://www.ycombinator.com,QFirst Open Search,https://www.ycombinator.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1050,Redpoint Ventures,(descoberta - QFirst),https://www.redpoint.com,QFirst Open Search,https://www.redpoint.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1051,Canary,(descoberta - QFirst),https://www.canary.com.br,QFirst Open Search,https://www.canary.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1052,Astella,(descoberta - QFirst),https://www.astella.com.br,QFirst Open Search,https://www.astella.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1053,FundersClub | FundersClub,(descoberta - QFirst),https://fundersclub.com,QFirst Open Search,https://fundersclub.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1054,Início - Bossa Invest |,(descoberta - QFirst),https://bossainvest.com,QFirst Open Search,https://bossainvest.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1055,Crunchbase,(descoberta - QFirst),https://www.crunchbase.com,QFirst Open Search,https://www.crunchbase.com/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1056,SoftBank,(descoberta - QFirst),https://www.softbank.jp/en,QFirst Open Search,https://www.softbank.jp/en/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1057,Sistema de RH e DP Completo: Economize até 40% | Sólides,(descoberta - QFirst),https://solides.com.br,QFirst Open Search,https://solides.com.br/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1058,Threads,(descoberta - QFirst),https://threads.net/intent/post?text=UOL%20Edtech%20compra%20a%20Qulture.Rocks%20https%3A%2F%2Fstartups.com.br%2Fnegocios%2Fuol-edtech-compra-a-qulture-rocks%2F%3Futm_source%3Dthreads%26utm_medium%3Dreferral%26utm_campaign%3Dshare_alongside,QFirst Open Search,https://threads.net/intent/post?text=UOL%20Edtech%20compra%20a%20Qulture.Rocks%20https%3A%2F%2Fstartups.com.br%2Fnegocios%2Fuol-edtech-compra-a-qulture-rocks%2F%3Futm_source%3Dthreads%26utm_medium%3Dreferral%26utm_campaign%3Dshare_alongside,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1059,Seox | Tecnologia em WordPress para Portais de Notícias,(descoberta - QFirst),https://www.seox.com.br,QFirst Open Search,https://www.seox.com.br/?utm_medium=referral&utm_campaign=footer&utm_source=startups.com.br,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1061,Plataforma de compras para farmácias já reúne 1 mil PDVs,(descoberta - QFirst),https://panoramafarmaceutico.com.br/plataforma-de-compras-para-farmacias,QFirst Open Search,https://panoramafarmaceutico.com.br/plataforma-de-compras-para-farmacias/,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923
+1062,covalenty.com.br,(descoberta - QFirst),http://docs.covalenty.com.br/v2/termos_de_uso.html,QFirst Open Search,http://docs.covalenty.com.br/v2/termos_de_uso.html,pending_deep_scan,2026-06-28 03:43:39.704923,2026-06-28 03:43:39.704923

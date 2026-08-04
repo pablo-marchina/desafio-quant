@@ -1,0 +1,2 @@
+decision_id,item_name,category,status,decision,evidence_reference,hypothesis,baseline,metric_names,benchmark_type,benchmark_result_ref,owner,decided_at
+final-roadmap-source-of-truth,final_final_benchmark_first_roadmap_all_changes.md,governance,PROMOTED_TO_RUNTIME,Use the final benchmark-first roadmap as canonical final-product source.,docs/plans/2026-06-21_epic-50_final-benchmark-first-roadmap.md,TBD_BY_BENCHMARK,TBD_BY_BASELINE,"[""governance_traceability""]",REPRODUCIBILITY,final_case_evidence/benchmark_manifest.json,product,2026-07-01T05:57:49.486367Z

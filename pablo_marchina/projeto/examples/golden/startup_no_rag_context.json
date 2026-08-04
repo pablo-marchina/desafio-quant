@@ -1,0 +1,24 @@
+{
+  "case_id": "startup_no_rag_context",
+  "description": "AI company with diagnosed gaps but no RAG corpus — verifies missing_context propagation and motion unchanged by RAG absence.",
+  "profile": {
+    "sector": "AI Infrastructure",
+    "ai_signals": ["inference optimization", "cost reduction", "GPU workloads"],
+    "tech_stack": ["PyTorch", "TensorFlow", "Docker", "Kubernetes"],
+    "description": "AI infrastructure company helping enterprises optimize inference costs and reduce latency for production AI workloads.",
+    "product_summary": "AI inference optimization platform for GPU-accelerated workloads.",
+    "customers": ["Enterprise A"],
+    "funding": ["Seed $2M"]
+  },
+  "evidence": [
+    {"claim": "GPU inference optimization platform", "confidence": "medium"},
+    {"claim": "Reduces inference costs for enterprise customers", "confidence": "medium"}
+  ],
+  "expected": {
+    "motion_in": ["lack_evidence_more_research"],
+    "min_score": 35,
+    "max_score": 45,
+    "expected_gaps": ["high_inference_cost", "high_latency"],
+    "brief_min_sections": 3
+  }
+}

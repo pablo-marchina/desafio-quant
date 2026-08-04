@@ -1,0 +1,14 @@
+{
+  "programa_startups": "que está buscando benefícios, comunidade e suporte técnico para crescer como startup",
+  "inferencia_deploy": "que usa LLMs em produtos ou atendimento ao cliente, mas depende apenas de APIs externas, enfrentando custo e latência",
+  "customizacao_modelos": "que precisa customizar, treinar ou avaliar modelos generativos para o seu domínio específico",
+  "governanca_agentes": "que precisa de governança e controle de comportamento em agentes de IA",
+  "latencia_inferencia": "que sofre com latência de inferência em produção",
+  "dados_tabulares": "que processa grandes volumes de dados tabulares",
+  "infraestrutura_gpu": "que precisa de programação paralela e infraestrutura de GPU para acelerar workloads",
+  "voz": "que trabalha com voz, call center ou transcrição",
+  "robotica_simulacao": "que faz robótica ou simulação",
+  "cybersecurity": "que precisa de cybersecurity acelerada por IA",
+  "plataforma_enterprise": "que precisa de uma plataforma empresarial de IA pronta para produção",
+  "saude": "que atua em saúde ou life sciences"
+}

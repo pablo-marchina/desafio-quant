@@ -1,0 +1,33 @@
+"""anti-pattern detector
+
+Hypothesis: Evaluate whether anti-pattern detector improves final product output without paid dependency.
+Category: 8.43 Memory and Negative Learning
+Expected runtime use: candidate_or_supporting_governance
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+from src.rag.schemas import RetrievedContext
+
+
+class AntiPatternDetector:
+    """anti-pattern detector"""
+
+    def __init__(self, config: Any | None = None) -> None:
+        self.config = config or {}
+
+    def run(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        return self._apply(contexts, **kwargs)
+
+    def _apply(self, contexts: list[RetrievedContext], **kwargs: Any) -> list[RetrievedContext]:
+        anti_patterns = [
+                    ("overly vague", 0.1), ("no specifics", 0.1), ("unsubstantiated claim", 0.12),
+                    ("circular reasoning", 0.15), ("false dichotomy", 0.1),
+                ]
+                for ctx in contexts:
+                    for ap, penalty in anti_patterns:
+                        if ap.lower() in ctx.content.lower():
+                            ctx.relevance_score = max(0.0, ctx.relevance_score - penalty)
+        return contexts

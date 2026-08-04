@@ -1,0 +1,103 @@
+{
+  "checks": [
+    {
+      "check_id": "env.app_mode",
+      "reason": "APP_MODE is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.product_db_url",
+      "reason": "PRODUCT_DB_URL is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.rag_vector_backend",
+      "reason": "RAG_VECTOR_BACKEND is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.rag_required_for_product",
+      "reason": "RAG_REQUIRED_FOR_PRODUCT is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.rag_embedding_model",
+      "reason": "RAG_EMBEDDING_MODEL is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.qdrant_url",
+      "reason": "QDRANT_URL is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.qdrant_collection",
+      "reason": "QDRANT_COLLECTION is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.qdrant_vector_size",
+      "reason": "QDRANT_VECTOR_SIZE is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.agent_orchestration_enabled",
+      "reason": "AGENT_ORCHESTRATION_ENABLED is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "env.langgraph_checkpointer",
+      "reason": "LANGGRAPH_CHECKPOINTER is set",
+      "status": "PASS"
+    },
+    {
+      "check_id": "database.postgresql_required",
+      "reason": "APP_MODE=product requires PRODUCT_DB_URL to be PostgreSQL.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "rag.qdrant_required",
+      "reason": "APP_MODE=product requires RAG_VECTOR_BACKEND=qdrant.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "rag.required_for_recommendations",
+      "reason": "APP_MODE=product requires RAG_REQUIRED_FOR_PRODUCT=true.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "runtime.no_demo_or_mock",
+      "reason": "Product runtime cannot enable demo or mock providers.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "runtime.agent_orchestration_required",
+      "reason": "APP_MODE=product requires AGENT_ORCHESTRATION_ENABLED=true.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "runtime.langgraph_postgres_checkpointer_required",
+      "reason": "APP_MODE=product requires LANGGRAPH_CHECKPOINTER=postgres.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "rag.hybrid_retrieval_required",
+      "reason": "APP_MODE=product requires hybrid RAG retrieval.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "rag.reranker_required",
+      "reason": "APP_MODE=product requires a non-mock reranker provider.",
+      "status": "PASS"
+    },
+    {
+      "check_id": "rag.triton_reranker_endpoint_required",
+      "reason": "APP_MODE=product with RERANKER_PROVIDER=triton requires TRITON_RERANKER_URL.",
+      "status": "PASS"
+    }
+  ],
+  "failure_count": 0,
+  "generated_at": "2026-07-01T07:34:25.199434+00:00",
+  "report_id": "product_configuration_report",
+  "status": "PASS"
+}

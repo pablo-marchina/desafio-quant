@@ -1,0 +1,23 @@
+{
+  "dashboard_version": "1.0",
+  "generated_at": "2026-06-11T00:00:00Z",
+  "status": "PASS",
+  "metrics": {
+    "documents_seen": 1,
+    "documents_valid": 1,
+    "validation_errors": 0,
+    "rag_eval_passed": true,
+    "answer_quality_junit_present": true,
+    "answer_quality_tests": 9,
+    "answer_quality_failures": 0,
+    "answer_quality_errors": 0,
+    "answer_quality_skipped": 0,
+    "answer_quality_passed": true,
+    "answer_quality_status": "PASS",
+    "action_brief_required_sections_passed": true,
+    "missing_evidence_count": 0
+  },
+  "warnings": [],
+  "failures": [],
+  "inputs": []
+}

@@ -1,0 +1,1 @@
+"""Catalogo estatico inicial NVIDIA."""

@@ -1,0 +1,11 @@
+{
+  "url": "https://docs.rapids.ai/api/cuml/stable/",
+  "fonte": "rapids.ai",
+  "titulo": "RAPIDS cuML — Machine Learning Clássico Acelerado por GPU",
+  "categoria": "produto",
+  "familia": "dados",
+  "tecnologia": "cuML",
+  "setores": ["saude", "financas", "varejo", "industria", "geral"],
+  "ia_tipos": ["classificacao", "deteccao de anomalias", "recomendacao", "series temporais"],
+  "texto": "RAPIDS cuML é a biblioteca de machine learning clássico acelerada por GPU do ecossistema RAPIDS. Ela implementa os algoritmos mais usados do scikit-learn — regressão linear e logística, random forest, gradient boosting, SVM, k-means, DBSCAN, PCA, UMAP, entre outros — com execução inteiramente em GPU, mantendo compatibilidade de API com scikit-learn para que pipelines existentes migrem com mudança mínima de código.\n\nO ganho de performance do cuML em relação ao scikit-learn em CPU é significativo para datasets maiores: algoritmos como random forest e k-means escalam com paralelismo massivo de GPU, tornando viável treinar e validar dezenas de variações de modelo em tempo que antes seria impraticável. Isso é especialmente relevante para startups com ciclos curtos de experimentação que precisam iterar rapidamente sobre features e hiperparâmetros.\n\nOs casos de uso mais comuns em startups são: detecção de anomalias e fraude com Isolation Forest ou DBSCAN em datasets financeiros e industriais; classificação de clientes e churn prediction com random forest e gradient boosting em dados de varejo e SaaS; clustering de pacientes ou segmentação de mercado com k-means e HDBSCAN; e modelos de séries temporais com regressão regularizada sobre features extraídas.\n\nO cuML integra com cuDF para pipelines end-to-end em GPU — leitura, transformação e treinamento sem mover dados para CPU — e com o framework XGBoost acelerado por GPU para gradient boosting de alta performance. Modelos treinados com cuML podem ser exportados via ONNX para inferência em produção com TensorRT ou Dynamo-Triton.\n\nStartups em saúde, finanças, varejo e indústria que já usam scikit-learn e enfrentam limites de escala ou velocidade de treinamento encontram no cuML a rota de menor atrito para GPU: mesma API, mesma lógica de pipeline, performance ordens de magnitude maior."
+}

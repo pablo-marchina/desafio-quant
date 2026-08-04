@@ -1,0 +1,11 @@
+{
+  "url": "https://docs.rapids.ai/api/cudf/stable/",
+  "fonte": "rapids.ai",
+  "titulo": "NVIDIA cuDF — Processamento de DataFrames em GPU",
+  "categoria": "produto",
+  "familia": "dados",
+  "tecnologia": "cuDF",
+  "setores": ["geral"],
+  "ia_tipos": ["classificacao", "recomendacao", "series temporais", "deteccao de anomalias"],
+  "texto": "cuDF é uma biblioteca Python de DataFrames acelerada por GPU, construída sobre o formato de memória colunar Apache Arrow. Permite carregar, unir, agregar, filtrar e manipular grandes volumes de dados com uma API idêntica à do pandas, tornando a aceleração em GPU acessível a engenheiros de dados e cientistas de dados sem necessidade de conhecer CUDA.\n\nA biblioteca faz parte do ecossistema RAPIDS da NVIDIA e é projetada para substituir o pandas em pipelines de processamento de dados que precisam de maior velocidade. O cudf.pandas é uma extensão construída sobre cuDF que acelera código pandas existente na GPU sem alterações no código: operações suportadas rodam na GPU automaticamente, e as demais fazem fallback transparente para o pandas na CPU.\n\nO cuDF é especialmente relevante para startups que trabalham com grandes datasets em pipelines de pré-processamento para machine learning — como limpeza de dados, feature engineering, joins e agregações — onde o pandas convencional se torna gargalo de performance. A aceleração GPU reduz o tempo de iteração em experimentação e encurta o ciclo de treino de modelos."
+}

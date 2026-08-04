@@ -1,0 +1,330 @@
+# Eval set rotulado inicial (F1.12) — ground-truth de classificação + AIMI esperado.
+#
+# IMPORTANTE: estas 24 entradas são FIXTURES-SEMENTE sintéticas (`synthetic: true`),
+# ancoradas na definição de pilares/escala de `docs/ARQUITETURA.md §3.6` (F0.11) e no plano
+# `classe × AIMI` (ARQUITETURA §3.6). NÃO são empresas reais — servem para
+# (a) destravar F6.4 (correlação do índice) e F7.1/F7.2 (métricas) desde já, e (b) cobrir
+# todas as regiões do "Mapa de decisão". Entradas REAIS (synthetic: false) devem trazer
+# `evidence_urls` rastreáveis e são adicionadas por revisão humana (F1.14 + F7.1). Ver README.
+#
+# Pilares (0–25): data_moat (P1) · workflow_depth (P2) · technical_optimization (P3) ·
+# distribution_moat (P4). Faixas: 0–6 ausente · 7–12 emergente · 13–18 estabelecido · 19–25 forte.
+entries:
+  # ── fora_escopo (non-AI): sem IA material no produto → briefing fora_de_escopo (F2.13) ──
+  - id: eval-noai-01
+    nome: Condomínio Fácil
+    setor: PropTech / gestão
+    descricao: SaaS de gestão de condomínios (boletos, assembleias, reservas). CRUD, sem IA.
+    classificacao: non-AI
+    region: fora_escopo
+    aimi: { data_moat: 4, workflow_depth: 3, technical_optimization: 1, distribution_moat: 9 }
+    rationale: Produto operacional sem IA; P3 zero, P2 baixo; alguma distribuição (P4) por base de síndicos.
+    synthetic: true
+  - id: eval-noai-02
+    nome: Feira Local
+    setor: Marketplace
+    descricao: Marketplace conectando produtores rurais a consumidores; logística e pagamento simples.
+    classificacao: non-AI
+    region: fora_escopo
+    aimi: { data_moat: 5, workflow_depth: 2, technical_optimization: 0, distribution_moat: 8 }
+    rationale: Marketplace tradicional; nenhum sinal de IA. Dados de transação não realimentam modelo.
+    synthetic: true
+  - id: eval-noai-03
+    nome: ObraCerta
+    setor: ConstruTech
+    descricao: ERP para pequenas construtoras — orçamento, cronograma e medição de obra.
+    classificacao: non-AI
+    region: fora_escopo
+    aimi: { data_moat: 3, workflow_depth: 4, technical_optimization: 2, distribution_moat: 7 }
+    rationale: Software de gestão sem IA; automação é regra de negócio, não modelo.
+    synthetic: true
+  - id: eval-noai-04
+    nome: PetClub
+    setor: E-commerce
+    descricao: Clube de assinatura de produtos pet com recorrência e curadoria manual.
+    classificacao: non-AI
+    region: fora_escopo
+    aimi: { data_moat: 6, workflow_depth: 2, technical_optimization: 1, distribution_moat: 10 }
+    rationale: E-commerce de assinatura; curadoria humana, sem IA. P4 razoável pela base recorrente.
+    synthetic: true
+
+  # ── periferico (AI-enabled): IA é feature sobre produto não-IA → baixa prioridade ──
+  # REGRA DE NeMo Guardrails (periferico + wrapper, F7.7): recebe quem tem SUPERFÍCIE GENERATIVA/
+  # CONVERSACIONAL ao usuário (copiloto/chat/gerador de texto = risco de comportamento a governar);
+  # features DISCRIMINATIVAS (triagem/classificação, recomendação, predição de no-show) NÃO recebem —
+  # não geram texto livre. Por isso enabled-03 (copiloto fiscal) e enabled-05 (gerador de plano de aula)
+  # recebem, mas enabled-01/02/04 (triagem/recomendação/previsor) = []. Em wrapper, o gate de prioridade
+  # ainda manda: wrapper FRÁGIL (P1 E P2 ≤ 6) recebe só setor → wrapper-01/02/03 = []; wrapper-04 (chat,
+  # P2=8 não-frágil) recebe Guardrails. Prioridade da tech única = ALTA (é a alavanca daquela empresa).
+  - id: eval-enabled-01
+    nome: GestRH
+    setor: HRTech
+    descricao: ATS/SaaS de RH consolidado que adicionou triagem de currículo via LLM de API.
+    classificacao: AI-enabled
+    region: periferico
+    aimi: { data_moat: 7, workflow_depth: 6, technical_optimization: 5, distribution_moat: 16 }
+    rationale: Núcleo é ATS tradicional; IA é feature de triagem sobre API. P4 forte (base instalada), P2 raso.
+    expected_nvidia_techs: []
+    synthetic: true
+  - id: eval-enabled-02
+    nome: LojaPro
+    setor: Retail / e-commerce
+    descricao: Plataforma de e-commerce com recomendação de produto via API de terceiros.
+    classificacao: AI-enabled
+    region: periferico
+    aimi: { data_moat: 8, workflow_depth: 5, technical_optimization: 4, distribution_moat: 15 }
+    rationale: Recomendação é acessório sobre e-commerce; IA não entrega o resultado central.
+    expected_nvidia_techs: []
+    synthetic: true
+  - id: eval-enabled-03
+    nome: ContaZen
+    setor: FinTech / contabilidade
+    descricao: Software de contabilidade com copiloto de dúvidas fiscais (chat sobre LLM).
+    classificacao: AI-enabled
+    region: periferico
+    aimi: { data_moat: 6, workflow_depth: 7, technical_optimization: 4, distribution_moat: 13 }
+    rationale: Produto contábil com copiloto periférico; precisa de controle de comportamento no chat.
+    expected_nvidia_techs:
+    - tech: NeMo Guardrails
+      prioridade: alta
+    synthetic: true
+  - id: eval-enabled-04
+    nome: AgendaJá
+    setor: HealthTech / agendamento
+    descricao: SaaS de agendamento para clínicas com previsor simples de no-show.
+    classificacao: AI-enabled
+    region: periferico
+    aimi: { data_moat: 7, workflow_depth: 5, technical_optimization: 5, distribution_moat: 12 }
+    rationale: Agendamento é o core; ML de no-show é feature pontual. IA não é o núcleo.
+    expected_nvidia_techs: []
+    synthetic: true
+  - id: eval-enabled-05
+    nome: EduPlan
+    setor: EdTech
+    descricao: Plataforma de gestão escolar com gerador de planos de aula via LLM.
+    classificacao: AI-enabled
+    region: periferico
+    aimi: { data_moat: 6, workflow_depth: 6, technical_optimization: 4, distribution_moat: 11 }
+    rationale: Gestão escolar com gerador acessório; IA assistiva sobre produto não-IA.
+    expected_nvidia_techs:
+    - tech: NeMo Guardrails
+      prioridade: alta
+    synthetic: true
+
+  # ── wrapper (AI-native + AIMI baixo): IA é o núcleo, mas frágil/substituível ──
+  - id: eval-wrapper-01
+    nome: CopyGênio
+    setor: MarTech
+    descricao: Gerador de copy de marketing 100% sobre API de LLM; IA é o produto.
+    classificacao: AI-native
+    region: wrapper
+    aimi: { data_moat: 3, workflow_depth: 5, technical_optimization: 3, distribution_moat: 6 }
+    rationale: AI-native (IA é o núcleo) mas wrapper — sem dado próprio (P1) e 100% API (P3). Potencial não comprovado.
+    expected_nvidia_techs: []
+    synthetic: true
+  - id: eval-wrapper-02
+    nome: JurAssist
+    setor: LegalTech
+    descricao: Assistente jurídico que responde dúvidas via prompt sobre LLM externo.
+    classificacao: AI-native
+    region: wrapper
+    aimi: { data_moat: 4, workflow_depth: 6, technical_optimization: 4, distribution_moat: 7 }
+    rationale: IA central, mas sem corpus jurídico proprietário nem serving próprio; risco de substituição pelos labs.
+    expected_nvidia_techs: []
+    synthetic: true
+  - id: eval-wrapper-03
+    nome: ResumeAI
+    setor: Produtividade
+    descricao: App que resume documentos PDF via API de LLM.
+    classificacao: AI-native
+    region: wrapper
+    aimi: { data_moat: 2, workflow_depth: 4, technical_optimization: 3, distribution_moat: 5 }
+    rationale: "Wrapper puro: uma caixa de texto na frente de uma API. AIMI baixo em todos os pilares."
+    expected_nvidia_techs: []
+    synthetic: true
+  - id: eval-wrapper-04
+    nome: FalaBot
+    setor: CX / atendimento
+    descricao: Chatbot de atendimento white-label montado sobre API de LLM.
+    classificacao: AI-native
+    region: wrapper
+    aimi: { data_moat: 5, workflow_depth: 8, technical_optimization: 6, distribution_moat: 8 }
+    rationale: IA é o produto, com algum encadeamento (P2 emergente), mas sem dado/serving próprios. Precisa de governança.
+    expected_nvidia_techs:
+    - tech: NeMo Guardrails
+      prioridade: alta
+    synthetic: true
+
+  # ── alvo_graduacao ★ (AI-native · P1/P2 alto · P3 baixo): maior upside NVIDIA (F6.13) ──
+  - id: eval-alvo-01
+    nome: RadiologIA
+    setor: HealthTech / imagem médica
+    descricao: Diagnóstico por imagem com dataset proprietário rotulado e workflow clínico integrado; inferência 100% em API/cloud genérica.
+    classificacao: AI-native
+    region: alvo_graduacao
+    aimi: { data_moat: 20, workflow_depth: 17, technical_optimization: 6, distribution_moat: 12 }
+    rationale: P1 forte (dataset clínico próprio) e P2 alto (fluxo integrado), mas P3 baixo (API crua) — alvo clássico de graduação.
+    expected_nvidia_techs:
+    - tech: NVIDIA NIM
+      prioridade: alta
+    - tech: TensorRT-LLM
+      prioridade: alta
+    - tech: Triton
+      prioridade: media
+    - tech: RAPIDS
+      prioridade: baixa
+    synthetic: true
+  - id: eval-alvo-02
+    nome: CobraAI
+    setor: FinTech / crédito
+    descricao: Agente multi-passo de recuperação de crédito com dados proprietários de inadimplência e feedback loop; inferência via API externa cara.
+    classificacao: AI-native
+    region: alvo_graduacao
+    aimi: { data_moat: 18, workflow_depth: 18, technical_optimization: 5, distribution_moat: 13 }
+    rationale: Agentes profundos (P2) sobre data moat real (P1), mas serving terceirizado (P3 baixo) — custo/latência são a dor.
+    expected_nvidia_techs:
+    - tech: NVIDIA NIM
+      prioridade: alta
+    - tech: TensorRT-LLM
+      prioridade: alta
+    - tech: Triton
+      prioridade: media
+    - tech: NeMo Guardrails
+      prioridade: baixa
+    synthetic: true
+  - id: eval-alvo-03
+    nome: AgroNeural
+    setor: AgTech
+    descricao: Visão computacional para detecção de pragas com dataset proprietário de imagens de lavoura; roda em API de cloud.
+    classificacao: AI-native
+    region: alvo_graduacao
+    aimi: { data_moat: 21, workflow_depth: 14, technical_optimization: 7, distribution_moat: 10 }
+    rationale: P1 forte (imagens próprias de campo) e P2 estabelecido, P3 baixo (sem serving próprio) — upside alto de otimização na GPU.
+    expected_nvidia_techs:
+    - tech: NVIDIA NIM
+      prioridade: alta
+    - tech: TensorRT-LLM
+      prioridade: alta
+    - tech: Triton
+      prioridade: media
+    - tech: RAPIDS
+      prioridade: baixa
+    synthetic: true
+  - id: eval-alvo-04
+    nome: VozClara
+    setor: CX / call center
+    descricao: Análise de chamadas com modelo fine-tuned em dado proprietário e workflow profundo; servido caro via API.
+    classificacao: AI-native
+    region: alvo_graduacao
+    aimi: { data_moat: 17, workflow_depth: 16, technical_optimization: 8, distribution_moat: 14 }
+    rationale: Fine-tuning com dado próprio (P1) e automação multi-passo (P2); P3 ainda baixo (API) — graduação de ASR/serving.
+    expected_nvidia_techs:
+    - tech: NVIDIA NIM
+      prioridade: alta
+    - tech: TensorRT-LLM
+      prioridade: alta
+    - tech: NVIDIA Riva (ASR)
+      prioridade: media
+    - tech: Triton
+      prioridade: media
+    - tech: NeMo Guardrails
+      prioridade: baixa
+    synthetic: true
+  - id: eval-alvo-05
+    nome: LogiRoute
+    setor: LogTech
+    descricao: Otimização logística com agentes e dados proprietários de rotas e entregas; inferência em API.
+    classificacao: AI-native
+    region: alvo_graduacao
+    aimi: { data_moat: 16, workflow_depth: 19, technical_optimization: 6, distribution_moat: 15 }
+    rationale: P2 forte (agentes end-to-end) sobre dados próprios (P1), P3 baixo — pipeline de dados e serving são o gap.
+    expected_nvidia_techs:
+    - tech: NVIDIA NIM
+      prioridade: alta
+    - tech: TensorRT-LLM
+      prioridade: alta
+    - tech: Triton
+      prioridade: media
+    - tech: RAPIDS
+      prioridade: baixa
+    synthetic: true
+  - id: eval-alvo-06
+    nome: DermaScan
+    setor: HealthTech / dermatologia
+    descricao: Triagem dermatológica por imagem com dataset proprietário forte e integração a clínicas; 100% API.
+    classificacao: AI-native
+    region: alvo_graduacao
+    aimi: { data_moat: 22, workflow_depth: 14, technical_optimization: 5, distribution_moat: 11 }
+    rationale: Data moat forte (P1=22) e fluxo clínico estabelecido (P2), mas inferência terceirizada (P3 baixo) — topo da fila de outreach.
+    expected_nvidia_techs:
+    - tech: NVIDIA NIM
+      prioridade: alta
+    - tech: TensorRT-LLM
+      prioridade: alta
+    - tech: Triton
+      prioridade: media
+    synthetic: true
+
+  # ── maduro (AI-native + alto em todos): já defensável; foco em P4/comunidade ──
+  - id: eval-maduro-01
+    nome: CréditoVivo
+    setor: FinTech / crédito
+    descricao: Crédito com modelos próprios servidos em infra otimizada (fine-tuning, quantização) e clientes enterprise.
+    classificacao: AI-native
+    region: maduro
+    aimi: { data_moat: 20, workflow_depth: 18, technical_optimization: 19, distribution_moat: 20 }
+    rationale: Forte nos 4 pilares — stack de inferência própria madura (P3 alto). Foco em escala enterprise (P4).
+    expected_nvidia_techs:
+    - tech: NVIDIA AI Enterprise
+      prioridade: alta
+    synthetic: true
+  - id: eval-maduro-02
+    nome: NeuroSpeech
+    setor: Voz / fala
+    descricao: Plataforma de voz com stack de inferência própria em produção (serving otimizado) e modelos próprios.
+    classificacao: AI-native
+    region: maduro
+    aimi: { data_moat: 18, workflow_depth: 17, technical_optimization: 21, distribution_moat: 18 }
+    rationale: P3 forte (serving próprio otimizado) com data moat e workflow estabelecidos — já graduada na inferência.
+    expected_nvidia_techs:
+    - tech: NVIDIA AI Enterprise
+      prioridade: alta
+    synthetic: true
+  - id: eval-maduro-03
+    nome: FraudeZero
+    setor: FinTech / antifraude
+    descricao: Antifraude com data moat amplo, modelos próprios servidos de forma otimizada e contratos enterprise.
+    classificacao: AI-native
+    region: maduro
+    aimi: { data_moat: 23, workflow_depth: 16, technical_optimization: 18, distribution_moat: 22 }
+    rationale: P1 e P4 fortes, P3 estabelecido — defensável; valor está em escala e comunidade, não em graduação básica.
+    expected_nvidia_techs:
+    - tech: NVIDIA AI Enterprise
+      prioridade: alta
+    synthetic: true
+  - id: eval-maduro-04
+    nome: VisionFlow
+    setor: Automação documental
+    descricao: Automação documental end-to-end com agentes governados e serving próprio.
+    classificacao: AI-native
+    region: maduro
+    aimi: { data_moat: 17, workflow_depth: 21, technical_optimization: 16, distribution_moat: 19 }
+    rationale: P2 forte (agentes em produção com governança) e P3 estabelecido; refinamentos de governança e escala.
+    expected_nvidia_techs:
+    - tech: NVIDIA AI Enterprise
+      prioridade: alta
+    - tech: NeMo Guardrails
+      prioridade: media
+    synthetic: true
+  - id: eval-maduro-05
+    nome: BioMatch
+    setor: HealthTech / genômica
+    descricao: Matching genômico com dataset único e pipeline de dados em GPU próprio (RAPIDS) e modelos próprios.
+    classificacao: AI-native
+    region: maduro
+    aimi: { data_moat: 24, workflow_depth: 17, technical_optimization: 20, distribution_moat: 17 }
+    rationale: Data moat excepcional (P1=24) com pipeline e serving próprios (P3 forte) — referência de maturidade.
+    expected_nvidia_techs:
+    - tech: NVIDIA AI Enterprise
+      prioridade: alta
+    synthetic: true

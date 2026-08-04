@@ -1,0 +1,24 @@
+# Contexto de build enxuto (F0.2): a imagem Python (apps/Dockerfile) usa a raiz como
+# contexto p/ enxergar packages/ — sem isto o Docker enviaria a venv, o node_modules do
+# frontend e o histórico git inteiro p/ o daemon.
+.git
+.venv
+**/__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.mypy_cache
+
+# O frontend tem a própria imagem (apps/frontend/Dockerfile); não vai na imagem Python.
+apps/frontend/node_modules
+apps/frontend/.next
+
+# Segredos entram em runtime via `env_file`/`environment` no compose, não na imagem.
+.env
+
+# Saídas locais que não pertencem à imagem (os dados estáticos seeds/kb/benchmark
+# entram via `COPY data` no Dockerfile; bancos/backups/logs são regeneráveis e locais).
+data/cache
+data/*.db
+data/*.bak
+data/*.log

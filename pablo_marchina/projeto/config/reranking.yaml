@@ -1,0 +1,23 @@
+# Reranking Configuration — calibrated reranker parameters
+# Status: CALIBRATED
+# Last calibration: 2026-06-01
+
+reranker:
+  active: true
+  model: BAAI/bge-reranker-v2-m3
+  provider: cross_encoder
+  top_k_after_rerank: 10
+  candidates_before_rerank: 50
+
+deterministic:
+  gap_match_boost: 0.15
+  technology_match_boost: 0.15
+  provenance_boost: 0.10
+  recency_boost: 0.05
+  dedup_enabled: true
+
+fallback:
+  noop_reranker:
+    production: false
+    dev_test: true
+  warning_on_fallback: true

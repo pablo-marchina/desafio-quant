@@ -1,0 +1,2266 @@
+{
+  "entries": [
+    {
+      "eval_id": "synth-rec-0000",
+      "startup_id": "synth-startup-0000",
+      "startup_name": "SynthRecommendation 0000",
+      "gap_id": "synth-gap-0000",
+      "gap_type": "inference_performance_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-0-0",
+          "gap_type": "inference_performance_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.4063,
+          "mapping_confidence": 0.3674,
+          "uncertainty": 0.2946,
+          "features": {
+            "gap_severity_score": 0.4396,
+            "gap_confidence_score": 0.6612
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-0-0-0",
+            "synth-rag-0-0-1",
+            "synth-rag-0-0-2"
+          ],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "inference_performance_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.4164,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4709,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [
+            "synth-rag-0-0-0",
+            "synth-rag-0-0-1",
+            "synth-rag-0-0-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on inference_performance_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0001",
+      "startup_id": "synth-startup-0001",
+      "startup_name": "SynthRecommendation 0001",
+      "gap_id": "synth-gap-0001",
+      "gap_type": "cybersecurity_ai_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-1-0",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.3653,
+          "mapping_confidence": 0.6419,
+          "uncertainty": 0.3238,
+          "features": {
+            "gap_severity_score": 0.3933,
+            "gap_confidence_score": 0.8743
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-1-0-0"
+          ],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "cybersecurity_ai_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.4337,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4303,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [
+            "synth-rag-1-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on cybersecurity_ai_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0002",
+      "startup_id": "synth-startup-0002",
+      "startup_name": "SynthRecommendation 0002",
+      "gap_id": "synth-gap-0002",
+      "gap_type": "model_optimization_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-2-0",
+          "gap_type": "model_optimization_gap",
+          "nvidia_technology": "TensorRT",
+          "mapping_score": 0.4849,
+          "mapping_confidence": 0.4692,
+          "uncertainty": 0.1376,
+          "features": {
+            "gap_severity_score": 0.8839,
+            "gap_confidence_score": 0.5271
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-2-0-0",
+            "synth-ev-2-0-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "model_optimization_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "TensorRT",
+          "human_label_relevance": 0.4723,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4274,
+          "supporting_evidence_ids": [
+            "synth-ev-2-0-0",
+            "synth-ev-2-0-1"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for TensorRT on model_optimization_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0003",
+      "startup_id": "synth-startup-0003",
+      "startup_name": "SynthRecommendation 0003",
+      "gap_id": "synth-gap-0003",
+      "gap_type": "cybersecurity_ai_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-3-0",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.7284,
+          "mapping_confidence": 0.2344,
+          "uncertainty": 0.0912,
+          "features": {
+            "gap_severity_score": 0.5281,
+            "gap_confidence_score": 0.572
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-3-0-0",
+            "synth-ev-3-0-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-3-1",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA Morpheus",
+          "mapping_score": 0.8256,
+          "mapping_confidence": 0.322,
+          "uncertainty": 0.1421,
+          "features": {
+            "gap_severity_score": 0.7375,
+            "gap_confidence_score": 0.398
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-3-1-0",
+            "synth-ev-3-1-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "cybersecurity_ai_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.6419,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4776,
+          "supporting_evidence_ids": [
+            "synth-ev-3-0-0",
+            "synth-ev-3-0-1"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on cybersecurity_ai_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA Morpheus",
+          "human_label_relevance": 0.6508,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.5409,
+          "supporting_evidence_ids": [
+            "synth-ev-3-1-0",
+            "synth-ev-3-1-1"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA Morpheus on cybersecurity_ai_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0004",
+      "startup_id": "synth-startup-0004",
+      "startup_name": "SynthRecommendation 0004",
+      "gap_id": "synth-gap-0004",
+      "gap_type": "computer_vision_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-4-0",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.7135,
+          "mapping_confidence": 0.8321,
+          "uncertainty": 0.3104,
+          "features": {
+            "gap_severity_score": 0.3397,
+            "gap_confidence_score": 0.8479
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-4-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-4-1",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "TensorRT",
+          "mapping_score": 0.6254,
+          "mapping_confidence": 0.7384,
+          "uncertainty": 0.0851,
+          "features": {
+            "gap_severity_score": 0.3857,
+            "gap_confidence_score": 0.3838
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-4-1-0",
+            "synth-rag-4-1-1",
+            "synth-rag-4-1-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-4-1-0",
+            "synth-ev-4-1-1",
+            "synth-ev-4-1-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "computer_vision_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.7662,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.5589,
+          "supporting_evidence_ids": [
+            "synth-ev-4-0-0"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on computer_vision_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "TensorRT",
+          "human_label_relevance": 0.713,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.8377,
+          "supporting_evidence_ids": [
+            "synth-ev-4-1-0",
+            "synth-ev-4-1-1",
+            "synth-ev-4-1-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-4-1-0",
+            "synth-rag-4-1-1",
+            "synth-rag-4-1-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for TensorRT on computer_vision_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0005",
+      "startup_id": "synth-startup-0005",
+      "startup_name": "SynthRecommendation 0005",
+      "gap_id": "synth-gap-0005",
+      "gap_type": "cybersecurity_ai_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-5-0",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.4715,
+          "mapping_confidence": 0.948,
+          "uncertainty": 0.0553,
+          "features": {
+            "gap_severity_score": 0.3917,
+            "gap_confidence_score": 0.396
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-5-0-0",
+            "synth-ev-5-0-1",
+            "synth-ev-5-0-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-5-1",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA Morpheus",
+          "mapping_score": 0.7104,
+          "mapping_confidence": 0.6473,
+          "uncertainty": 0.1539,
+          "features": {
+            "gap_severity_score": 0.3069,
+            "gap_confidence_score": 0.7324
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-5-1-0",
+            "synth-rag-5-1-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-5-1-0",
+            "synth-ev-5-1-1",
+            "synth-ev-5-1-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "cybersecurity_ai_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.6181,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4479,
+          "supporting_evidence_ids": [
+            "synth-ev-5-0-0",
+            "synth-ev-5-0-1",
+            "synth-ev-5-0-2"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on cybersecurity_ai_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA Morpheus",
+          "human_label_relevance": 0.7891,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.8977,
+          "supporting_evidence_ids": [
+            "synth-ev-5-1-0",
+            "synth-ev-5-1-1",
+            "synth-ev-5-1-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-5-1-0",
+            "synth-rag-5-1-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA Morpheus on cybersecurity_ai_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0006",
+      "startup_id": "synth-startup-0006",
+      "startup_name": "SynthRecommendation 0006",
+      "gap_id": "synth-gap-0006",
+      "gap_type": "cybersecurity_ai_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-6-0",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.4201,
+          "mapping_confidence": 0.3186,
+          "uncertainty": 0.0013,
+          "features": {
+            "gap_severity_score": 0.6752,
+            "gap_confidence_score": 0.805
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-6-0-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-6-0-0",
+            "synth-ev-6-0-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-6-1",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA Morpheus",
+          "mapping_score": 0.5807,
+          "mapping_confidence": 0.3492,
+          "uncertainty": 0.1496,
+          "features": {
+            "gap_severity_score": 0.3671,
+            "gap_confidence_score": 0.5178
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-6-1-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "cybersecurity_ai_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.366,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.7452,
+          "supporting_evidence_ids": [
+            "synth-ev-6-0-0",
+            "synth-ev-6-0-1"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-6-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on cybersecurity_ai_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA Morpheus",
+          "human_label_relevance": 0.4642,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.4519,
+          "supporting_evidence_ids": [
+            "synth-ev-6-1-0"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA Morpheus on cybersecurity_ai_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0007",
+      "startup_id": "synth-startup-0007",
+      "startup_name": "SynthRecommendation 0007",
+      "gap_id": "synth-gap-0007",
+      "gap_type": "data_pipeline_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-7-0",
+          "gap_type": "data_pipeline_gap",
+          "nvidia_technology": "RAPIDS",
+          "mapping_score": 0.3807,
+          "mapping_confidence": 0.6255,
+          "uncertainty": 0.0315,
+          "features": {
+            "gap_severity_score": 0.3755,
+            "gap_confidence_score": 0.6959
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-7-0-0",
+            "synth-ev-7-0-1",
+            "synth-ev-7-0-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "data_pipeline_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "RAPIDS",
+          "human_label_relevance": 0.5152,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4976,
+          "supporting_evidence_ids": [
+            "synth-ev-7-0-0",
+            "synth-ev-7-0-1",
+            "synth-ev-7-0-2"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for RAPIDS on data_pipeline_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0008",
+      "startup_id": "synth-startup-0008",
+      "startup_name": "SynthRecommendation 0008",
+      "gap_id": "synth-gap-0008",
+      "gap_type": "cybersecurity_ai_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-8-0",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.5958,
+          "mapping_confidence": 0.6549,
+          "uncertainty": 0.3857,
+          "features": {
+            "gap_severity_score": 0.5241,
+            "gap_confidence_score": 0.8398
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-8-0-0",
+            "synth-rag-8-0-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-8-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "cybersecurity_ai_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.5534,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.8656,
+          "supporting_evidence_ids": [
+            "synth-ev-8-0-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-8-0-0",
+            "synth-rag-8-0-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on cybersecurity_ai_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0009",
+      "startup_id": "synth-startup-0009",
+      "startup_name": "SynthRecommendation 0009",
+      "gap_id": "synth-gap-0009",
+      "gap_type": "genai_llm_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-9-0",
+          "gap_type": "genai_llm_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.3685,
+          "mapping_confidence": 0.4536,
+          "uncertainty": 0.2353,
+          "features": {
+            "gap_severity_score": 0.3353,
+            "gap_confidence_score": 0.3404
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-9-0-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-9-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "genai_llm_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.4724,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.7925,
+          "supporting_evidence_ids": [
+            "synth-ev-9-0-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-9-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on genai_llm_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0010",
+      "startup_id": "synth-startup-0010",
+      "startup_name": "SynthRecommendation 0010",
+      "gap_id": "synth-gap-0010",
+      "gap_type": "compute_acceleration_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-10-0",
+          "gap_type": "compute_acceleration_gap",
+          "nvidia_technology": "CUDA",
+          "mapping_score": 0.4089,
+          "mapping_confidence": 0.5641,
+          "uncertainty": 0.2157,
+          "features": {
+            "gap_severity_score": 0.4142,
+            "gap_confidence_score": 0.3582
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-10-0-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-10-0-0",
+            "synth-ev-10-0-1",
+            "synth-ev-10-0-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-10-1",
+          "gap_type": "compute_acceleration_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.5233,
+          "mapping_confidence": 0.5177,
+          "uncertainty": 0.1868,
+          "features": {
+            "gap_severity_score": 0.7804,
+            "gap_confidence_score": 0.3656
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "compute_acceleration_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "CUDA",
+          "human_label_relevance": 0.475,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.7014,
+          "supporting_evidence_ids": [
+            "synth-ev-10-0-0",
+            "synth-ev-10-0-1",
+            "synth-ev-10-0-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-10-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for CUDA on compute_acceleration_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.5965,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.2686,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on compute_acceleration_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0011",
+      "startup_id": "synth-startup-0011",
+      "startup_name": "SynthRecommendation 0011",
+      "gap_id": "synth-gap-0011",
+      "gap_type": "mlops_deployment_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-11-0",
+          "gap_type": "mlops_deployment_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.5365,
+          "mapping_confidence": 0.5164,
+          "uncertainty": 0.1114,
+          "features": {
+            "gap_severity_score": 0.6302,
+            "gap_confidence_score": 0.3304
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-11-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "mlops_deployment_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.4374,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.5097,
+          "supporting_evidence_ids": [
+            "synth-ev-11-0-0"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on mlops_deployment_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0012",
+      "startup_id": "synth-startup-0012",
+      "startup_name": "SynthRecommendation 0012",
+      "gap_id": "synth-gap-0012",
+      "gap_type": "cybersecurity_ai_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-12-0",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA Morpheus",
+          "mapping_score": 0.8948,
+          "mapping_confidence": 0.8365,
+          "uncertainty": 0.0665,
+          "features": {
+            "gap_severity_score": 0.3352,
+            "gap_confidence_score": 0.5274
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-12-0-0",
+            "synth-rag-12-0-1",
+            "synth-rag-12-0-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-12-0-0",
+            "synth-ev-12-0-1",
+            "synth-ev-12-0-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "cybersecurity_ai_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA Morpheus",
+          "human_label_relevance": 0.8887,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 1.0,
+          "supporting_evidence_ids": [
+            "synth-ev-12-0-0",
+            "synth-ev-12-0-1",
+            "synth-ev-12-0-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-12-0-0",
+            "synth-rag-12-0-1",
+            "synth-rag-12-0-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA Morpheus on cybersecurity_ai_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0013",
+      "startup_id": "synth-startup-0013",
+      "startup_name": "SynthRecommendation 0013",
+      "gap_id": "synth-gap-0013",
+      "gap_type": "computer_vision_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-13-0",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.5173,
+          "mapping_confidence": 0.918,
+          "uncertainty": 0.3982,
+          "features": {
+            "gap_severity_score": 0.3351,
+            "gap_confidence_score": 0.7414
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-13-0-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-13-0-0",
+            "synth-ev-13-0-1",
+            "synth-ev-13-0-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-13-1",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.2457,
+          "mapping_confidence": 0.4352,
+          "uncertainty": 0.0201,
+          "features": {
+            "gap_severity_score": 0.8108,
+            "gap_confidence_score": 0.3411
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-13-1-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-13-1-0",
+            "synth-ev-13-1-1",
+            "synth-ev-13-1-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "computer_vision_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.6504,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.8927,
+          "supporting_evidence_ids": [
+            "synth-ev-13-0-0",
+            "synth-ev-13-0-1",
+            "synth-ev-13-0-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-13-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on computer_vision_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.3583,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.7642,
+          "supporting_evidence_ids": [
+            "synth-ev-13-1-0",
+            "synth-ev-13-1-1",
+            "synth-ev-13-1-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-13-1-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on computer_vision_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0014",
+      "startup_id": "synth-startup-0014",
+      "startup_name": "SynthRecommendation 0014",
+      "gap_id": "synth-gap-0014",
+      "gap_type": "inference_performance_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-14-0",
+          "gap_type": "inference_performance_gap",
+          "nvidia_technology": "TensorRT",
+          "mapping_score": 0.9062,
+          "mapping_confidence": 0.6273,
+          "uncertainty": 0.2316,
+          "features": {
+            "gap_severity_score": 0.6137,
+            "gap_confidence_score": 0.8608
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-14-1",
+          "gap_type": "inference_performance_gap",
+          "nvidia_technology": "Triton Inference Server",
+          "mapping_score": 0.3532,
+          "mapping_confidence": 0.7371,
+          "uncertainty": 0.0955,
+          "features": {
+            "gap_severity_score": 0.4897,
+            "gap_confidence_score": 0.7511
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-14-1-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-14-1-0",
+            "synth-ev-14-1-1",
+            "synth-ev-14-1-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-14-2",
+          "gap_type": "inference_performance_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.2544,
+          "mapping_confidence": 0.5437,
+          "uncertainty": 0.3994,
+          "features": {
+            "gap_severity_score": 0.3795,
+            "gap_confidence_score": 0.5094
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "inference_performance_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "TensorRT",
+          "human_label_relevance": 0.7647,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.338,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for TensorRT on inference_performance_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "Triton Inference Server",
+          "human_label_relevance": 0.4484,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.7421,
+          "supporting_evidence_ids": [
+            "synth-ev-14-1-0",
+            "synth-ev-14-1-1",
+            "synth-ev-14-1-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-14-1-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for Triton Inference Server on inference_performance_gap (rank=2)"
+        },
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.2835,
+          "human_label_priority_rank": 3,
+          "human_label_actionability": 0.0995,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on inference_performance_gap (rank=3)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0015",
+      "startup_id": "synth-startup-0015",
+      "startup_name": "SynthRecommendation 0015",
+      "gap_id": "synth-gap-0015",
+      "gap_type": "inference_performance_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-15-0",
+          "gap_type": "inference_performance_gap",
+          "nvidia_technology": "Triton Inference Server",
+          "mapping_score": 0.4137,
+          "mapping_confidence": 0.5286,
+          "uncertainty": 0.2173,
+          "features": {
+            "gap_severity_score": 0.8591,
+            "gap_confidence_score": 0.3622
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-15-0-0",
+            "synth-ev-15-0-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "inference_performance_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "Triton Inference Server",
+          "human_label_relevance": 0.4168,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4114,
+          "supporting_evidence_ids": [
+            "synth-ev-15-0-0",
+            "synth-ev-15-0-1"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for Triton Inference Server on inference_performance_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0016",
+      "startup_id": "synth-startup-0016",
+      "startup_name": "SynthRecommendation 0016",
+      "gap_id": "synth-gap-0016",
+      "gap_type": "training_scalability_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-16-0",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "CUDA",
+          "mapping_score": 0.7568,
+          "mapping_confidence": 0.3166,
+          "uncertainty": 0.1127,
+          "features": {
+            "gap_severity_score": 0.4584,
+            "gap_confidence_score": 0.5931
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-16-0-0",
+            "synth-rag-16-0-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-16-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-16-1",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.879,
+          "mapping_confidence": 0.8346,
+          "uncertainty": 0.0369,
+          "features": {
+            "gap_severity_score": 0.3785,
+            "gap_confidence_score": 0.8879
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-16-1-0",
+            "synth-rag-16-1-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-16-1-0",
+            "synth-ev-16-1-1",
+            "synth-ev-16-1-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "training_scalability_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "CUDA",
+          "human_label_relevance": 0.6451,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.926,
+          "supporting_evidence_ids": [
+            "synth-ev-16-0-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-16-0-0",
+            "synth-rag-16-0-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for CUDA on training_scalability_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.909,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.9759,
+          "supporting_evidence_ids": [
+            "synth-ev-16-1-0",
+            "synth-ev-16-1-1",
+            "synth-ev-16-1-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-16-1-0",
+            "synth-rag-16-1-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on training_scalability_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0017",
+      "startup_id": "synth-startup-0017",
+      "startup_name": "SynthRecommendation 0017",
+      "gap_id": "synth-gap-0017",
+      "gap_type": "training_scalability_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-17-0",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "NVIDIA NeMo",
+          "mapping_score": 0.2839,
+          "mapping_confidence": 0.9088,
+          "uncertainty": 0.2764,
+          "features": {
+            "gap_severity_score": 0.3889,
+            "gap_confidence_score": 0.3765
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [
+            "synth-ev-17-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-17-1",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.4312,
+          "mapping_confidence": 0.8742,
+          "uncertainty": 0.3184,
+          "features": {
+            "gap_severity_score": 0.3617,
+            "gap_confidence_score": 0.7681
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-17-1-0",
+            "synth-rag-17-1-1"
+          ],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-17-2",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "CUDA",
+          "mapping_score": 0.8631,
+          "mapping_confidence": 0.5048,
+          "uncertainty": 0.2483,
+          "features": {
+            "gap_severity_score": 0.7865,
+            "gap_confidence_score": 0.8288
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-17-2-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-17-2-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "training_scalability_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA NeMo",
+          "human_label_relevance": 0.5049,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.445,
+          "supporting_evidence_ids": [
+            "synth-ev-17-0-0"
+          ],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NeMo on training_scalability_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.5735,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.5661,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [
+            "synth-rag-17-1-0",
+            "synth-rag-17-1-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on training_scalability_gap (rank=2)"
+        },
+        {
+          "nvidia_technology": "CUDA",
+          "human_label_relevance": 0.8458,
+          "human_label_priority_rank": 3,
+          "human_label_actionability": 0.8355,
+          "supporting_evidence_ids": [
+            "synth-ev-17-2-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-17-2-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for CUDA on training_scalability_gap (rank=3)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0018",
+      "startup_id": "synth-startup-0018",
+      "startup_name": "SynthRecommendation 0018",
+      "gap_id": "synth-gap-0018",
+      "gap_type": "compute_acceleration_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-18-0",
+          "gap_type": "compute_acceleration_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.7868,
+          "mapping_confidence": 0.5088,
+          "uncertainty": 0.268,
+          "features": {
+            "gap_severity_score": 0.5295,
+            "gap_confidence_score": 0.3232
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-18-0-0",
+            "synth-rag-18-0-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-18-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "compute_acceleration_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.7454,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.9636,
+          "supporting_evidence_ids": [
+            "synth-ev-18-0-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-18-0-0",
+            "synth-rag-18-0-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on compute_acceleration_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0019",
+      "startup_id": "synth-startup-0019",
+      "startup_name": "SynthRecommendation 0019",
+      "gap_id": "synth-gap-0019",
+      "gap_type": "genai_llm_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-19-0",
+          "gap_type": "genai_llm_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.8124,
+          "mapping_confidence": 0.5452,
+          "uncertainty": 0.1221,
+          "features": {
+            "gap_severity_score": 0.497,
+            "gap_confidence_score": 0.8186
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-19-0-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-19-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "genai_llm_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.7646,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.9107,
+          "supporting_evidence_ids": [
+            "synth-ev-19-0-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-19-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on genai_llm_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0020",
+      "startup_id": "synth-startup-0020",
+      "startup_name": "SynthRecommendation 0020",
+      "gap_id": "synth-gap-0020",
+      "gap_type": "data_pipeline_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-20-0",
+          "gap_type": "data_pipeline_gap",
+          "nvidia_technology": "CUDA",
+          "mapping_score": 0.9044,
+          "mapping_confidence": 0.2865,
+          "uncertainty": 0.3882,
+          "features": {
+            "gap_severity_score": 0.5074,
+            "gap_confidence_score": 0.7719
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-20-0-0",
+            "synth-rag-20-0-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-20-0-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-20-1",
+          "gap_type": "data_pipeline_gap",
+          "nvidia_technology": "RAPIDS",
+          "mapping_score": 0.5273,
+          "mapping_confidence": 0.9382,
+          "uncertainty": 0.0463,
+          "features": {
+            "gap_severity_score": 0.612,
+            "gap_confidence_score": 0.7839
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-20-1-0",
+            "synth-rag-20-1-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-20-1-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "data_pipeline_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "CUDA",
+          "human_label_relevance": 0.7845,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.9298,
+          "supporting_evidence_ids": [
+            "synth-ev-20-0-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-20-0-0",
+            "synth-rag-20-0-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for CUDA on data_pipeline_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "RAPIDS",
+          "human_label_relevance": 0.702,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.8955,
+          "supporting_evidence_ids": [
+            "synth-ev-20-1-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-20-1-0",
+            "synth-rag-20-1-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for RAPIDS on data_pipeline_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0021",
+      "startup_id": "synth-startup-0021",
+      "startup_name": "SynthRecommendation 0021",
+      "gap_id": "synth-gap-0021",
+      "gap_type": "mlops_deployment_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-21-0",
+          "gap_type": "mlops_deployment_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.9117,
+          "mapping_confidence": 0.8906,
+          "uncertainty": 0.2493,
+          "features": {
+            "gap_severity_score": 0.4957,
+            "gap_confidence_score": 0.7183
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-21-0-0",
+            "synth-rag-21-0-1"
+          ],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-21-1",
+          "gap_type": "mlops_deployment_gap",
+          "nvidia_technology": "Triton Inference Server",
+          "mapping_score": 0.6158,
+          "mapping_confidence": 0.3439,
+          "uncertainty": 0.266,
+          "features": {
+            "gap_severity_score": 0.6288,
+            "gap_confidence_score": 0.3002
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-21-1-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-21-1-0",
+            "synth-ev-21-1-1",
+            "synth-ev-21-1-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "mlops_deployment_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.8313,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.6292,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [
+            "synth-rag-21-0-0",
+            "synth-rag-21-0-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on mlops_deployment_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "Triton Inference Server",
+          "human_label_relevance": 0.5026,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.773,
+          "supporting_evidence_ids": [
+            "synth-ev-21-1-0",
+            "synth-ev-21-1-1",
+            "synth-ev-21-1-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-21-1-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for Triton Inference Server on mlops_deployment_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0022",
+      "startup_id": "synth-startup-0022",
+      "startup_name": "SynthRecommendation 0022",
+      "gap_id": "synth-gap-0022",
+      "gap_type": "data_pipeline_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-22-0",
+          "gap_type": "data_pipeline_gap",
+          "nvidia_technology": "CUDA",
+          "mapping_score": 0.7893,
+          "mapping_confidence": 0.655,
+          "uncertainty": 0.1289,
+          "features": {
+            "gap_severity_score": 0.7762,
+            "gap_confidence_score": 0.8759
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-22-0-0",
+            "synth-rag-22-0-1",
+            "synth-rag-22-0-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-22-0-0",
+            "synth-ev-22-0-1",
+            "synth-ev-22-0-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "data_pipeline_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "CUDA",
+          "human_label_relevance": 0.7221,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.8354,
+          "supporting_evidence_ids": [
+            "synth-ev-22-0-0",
+            "synth-ev-22-0-1",
+            "synth-ev-22-0-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-22-0-0",
+            "synth-rag-22-0-1",
+            "synth-rag-22-0-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for CUDA on data_pipeline_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0023",
+      "startup_id": "synth-startup-0023",
+      "startup_name": "SynthRecommendation 0023",
+      "gap_id": "synth-gap-0023",
+      "gap_type": "training_scalability_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-23-0",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "CUDA",
+          "mapping_score": 0.27,
+          "mapping_confidence": 0.914,
+          "uncertainty": 0.0939,
+          "features": {
+            "gap_severity_score": 0.3277,
+            "gap_confidence_score": 0.8904
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-23-0-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-23-0-0",
+            "synth-ev-23-0-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-23-1",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "NVIDIA NeMo",
+          "mapping_score": 0.6585,
+          "mapping_confidence": 0.7764,
+          "uncertainty": 0.1822,
+          "features": {
+            "gap_severity_score": 0.6936,
+            "gap_confidence_score": 0.3033
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-23-1-0",
+            "synth-rag-23-1-1",
+            "synth-rag-23-1-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-23-1-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-23-2",
+          "gap_type": "training_scalability_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.7632,
+          "mapping_confidence": 0.7775,
+          "uncertainty": 0.0426,
+          "features": {
+            "gap_severity_score": 0.6108,
+            "gap_confidence_score": 0.3301
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-23-2-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-23-2-0",
+            "synth-ev-23-2-1",
+            "synth-ev-23-2-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "training_scalability_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "CUDA",
+          "human_label_relevance": 0.473,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.7627,
+          "supporting_evidence_ids": [
+            "synth-ev-23-0-0",
+            "synth-ev-23-0-1"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-23-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for CUDA on training_scalability_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA NeMo",
+          "human_label_relevance": 0.6565,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.8639,
+          "supporting_evidence_ids": [
+            "synth-ev-23-1-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-23-1-0",
+            "synth-rag-23-1-1",
+            "synth-rag-23-1-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NeMo on training_scalability_gap (rank=2)"
+        },
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.824,
+          "human_label_priority_rank": 3,
+          "human_label_actionability": 1.0,
+          "supporting_evidence_ids": [
+            "synth-ev-23-2-0",
+            "synth-ev-23-2-1",
+            "synth-ev-23-2-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-23-2-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on training_scalability_gap (rank=3)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0024",
+      "startup_id": "synth-startup-0024",
+      "startup_name": "SynthRecommendation 0024",
+      "gap_id": "synth-gap-0024",
+      "gap_type": "mlops_deployment_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-24-0",
+          "gap_type": "mlops_deployment_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.3,
+          "mapping_confidence": 0.5485,
+          "uncertainty": 0.2125,
+          "features": {
+            "gap_severity_score": 0.6029,
+            "gap_confidence_score": 0.7983
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-24-0-0",
+            "synth-rag-24-0-1",
+            "synth-rag-24-0-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-24-0-0",
+            "synth-ev-24-0-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "mlops_deployment_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.314,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.6738,
+          "supporting_evidence_ids": [
+            "synth-ev-24-0-0",
+            "synth-ev-24-0-1"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-24-0-0",
+            "synth-rag-24-0-1",
+            "synth-rag-24-0-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on mlops_deployment_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0025",
+      "startup_id": "synth-startup-0025",
+      "startup_name": "SynthRecommendation 0025",
+      "gap_id": "synth-gap-0025",
+      "gap_type": "cybersecurity_ai_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-25-0",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA Morpheus",
+          "mapping_score": 0.5376,
+          "mapping_confidence": 0.7638,
+          "uncertainty": 0.3359,
+          "features": {
+            "gap_severity_score": 0.3465,
+            "gap_confidence_score": 0.4714
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-25-0-0",
+            "synth-rag-25-0-1",
+            "synth-rag-25-0-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-25-0-0",
+            "synth-ev-25-0-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-25-1",
+          "gap_type": "cybersecurity_ai_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.4038,
+          "mapping_confidence": 0.4398,
+          "uncertainty": 0.2161,
+          "features": {
+            "gap_severity_score": 0.7239,
+            "gap_confidence_score": 0.3385
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-25-1-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-25-1-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "cybersecurity_ai_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA Morpheus",
+          "human_label_relevance": 0.5774,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.8023,
+          "supporting_evidence_ids": [
+            "synth-ev-25-0-0",
+            "synth-ev-25-0-1"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-25-0-0",
+            "synth-rag-25-0-1",
+            "synth-rag-25-0-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA Morpheus on cybersecurity_ai_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.4236,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.8459,
+          "supporting_evidence_ids": [
+            "synth-ev-25-1-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-25-1-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on cybersecurity_ai_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0026",
+      "startup_id": "synth-startup-0026",
+      "startup_name": "SynthRecommendation 0026",
+      "gap_id": "synth-gap-0026",
+      "gap_type": "computer_vision_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-26-0",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.5118,
+          "mapping_confidence": 0.3551,
+          "uncertainty": 0.1681,
+          "features": {
+            "gap_severity_score": 0.4792,
+            "gap_confidence_score": 0.534
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-26-0-0",
+            "synth-rag-26-0-1",
+            "synth-rag-26-0-2"
+          ],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-26-1",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.8687,
+          "mapping_confidence": 0.8268,
+          "uncertainty": 0.2153,
+          "features": {
+            "gap_severity_score": 0.3174,
+            "gap_confidence_score": 0.5017
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-26-1-0",
+            "synth-rag-26-1-1",
+            "synth-rag-26-1-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-26-1-0"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "computer_vision_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.3465,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.4558,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [
+            "synth-rag-26-0-0",
+            "synth-rag-26-0-1",
+            "synth-rag-26-0-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on computer_vision_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.8663,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.9991,
+          "supporting_evidence_ids": [
+            "synth-ev-26-1-0"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-26-1-0",
+            "synth-rag-26-1-1",
+            "synth-rag-26-1-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on computer_vision_gap (rank=2)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0027",
+      "startup_id": "synth-startup-0027",
+      "startup_name": "SynthRecommendation 0027",
+      "gap_id": "synth-gap-0027",
+      "gap_type": "computer_vision_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-27-0",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "TensorRT",
+          "mapping_score": 0.9355,
+          "mapping_confidence": 0.6006,
+          "uncertainty": 0.3628,
+          "features": {
+            "gap_severity_score": 0.577,
+            "gap_confidence_score": 0.3302
+          },
+          "supporting_rag_context_ids": [],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-27-1",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "NVIDIA NIM",
+          "mapping_score": 0.4843,
+          "mapping_confidence": 0.3587,
+          "uncertainty": 0.1307,
+          "features": {
+            "gap_severity_score": 0.4514,
+            "gap_confidence_score": 0.3491
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-27-1-0",
+            "synth-rag-27-1-1"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-27-1-0",
+            "synth-ev-27-1-1",
+            "synth-ev-27-1-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        },
+        {
+          "mapping_id": "synth-map-27-2",
+          "gap_type": "computer_vision_gap",
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "mapping_score": 0.2145,
+          "mapping_confidence": 0.6046,
+          "uncertainty": 0.4,
+          "features": {
+            "gap_severity_score": 0.6911,
+            "gap_confidence_score": 0.7525
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-27-2-0"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-27-2-0",
+            "synth-ev-27-2-1"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "computer_vision_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "TensorRT",
+          "human_label_relevance": 0.8182,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.3062,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for TensorRT on computer_vision_gap (rank=1)"
+        },
+        {
+          "nvidia_technology": "NVIDIA NIM",
+          "human_label_relevance": 0.4478,
+          "human_label_priority_rank": 2,
+          "human_label_actionability": 0.6847,
+          "supporting_evidence_ids": [
+            "synth-ev-27-1-0",
+            "synth-ev-27-1-1",
+            "synth-ev-27-1-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-27-1-0",
+            "synth-rag-27-1-1"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA NIM on computer_vision_gap (rank=2)"
+        },
+        {
+          "nvidia_technology": "NVIDIA AI Enterprise",
+          "human_label_relevance": 0.2804,
+          "human_label_priority_rank": 3,
+          "human_label_actionability": 0.6416,
+          "supporting_evidence_ids": [
+            "synth-ev-27-2-0",
+            "synth-ev-27-2-1"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-27-2-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for NVIDIA AI Enterprise on computer_vision_gap (rank=3)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0028",
+      "startup_id": "synth-startup-0028",
+      "startup_name": "SynthRecommendation 0028",
+      "gap_id": "synth-gap-0028",
+      "gap_type": "mlops_deployment_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-28-0",
+          "gap_type": "mlops_deployment_gap",
+          "nvidia_technology": "Triton Inference Server",
+          "mapping_score": 0.666,
+          "mapping_confidence": 0.3789,
+          "uncertainty": 0.1894,
+          "features": {
+            "gap_severity_score": 0.5213,
+            "gap_confidence_score": 0.6635
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-28-0-0"
+          ],
+          "supporting_evidence_ids": [],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "mlops_deployment_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "Triton Inference Server",
+          "human_label_relevance": 0.5423,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.5253,
+          "supporting_evidence_ids": [],
+          "supporting_rag_context_ids": [
+            "synth-rag-28-0-0"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for Triton Inference Server on mlops_deployment_gap (rank=1)"
+        }
+      ]
+    },
+    {
+      "eval_id": "synth-rec-0029",
+      "startup_id": "synth-startup-0029",
+      "startup_name": "SynthRecommendation 0029",
+      "gap_id": "synth-gap-0029",
+      "gap_type": "inference_performance_gap",
+      "nvidia_technology_mappings_snapshot": [
+        {
+          "mapping_id": "synth-map-29-0",
+          "gap_type": "inference_performance_gap",
+          "nvidia_technology": "Triton Inference Server",
+          "mapping_score": 0.2811,
+          "mapping_confidence": 0.2193,
+          "uncertainty": 0.1248,
+          "features": {
+            "gap_severity_score": 0.6553,
+            "gap_confidence_score": 0.7983
+          },
+          "supporting_rag_context_ids": [
+            "synth-rag-29-0-0",
+            "synth-rag-29-0-1",
+            "synth-rag-29-0-2"
+          ],
+          "supporting_evidence_ids": [
+            "synth-ev-29-0-0",
+            "synth-ev-29-0-1",
+            "synth-ev-29-0-2"
+          ],
+          "production_allowed": true,
+          "blockers": [],
+          "calibration_decision_ids": []
+        }
+      ],
+      "rag_contexts_by_gap_snapshot": {
+        "inference_performance_gap": []
+      },
+      "accepted_evidence_items_snapshot": [],
+      "expected_recommendations": [
+        {
+          "nvidia_technology": "Triton Inference Server",
+          "human_label_relevance": 0.2936,
+          "human_label_priority_rank": 1,
+          "human_label_actionability": 0.7055,
+          "supporting_evidence_ids": [
+            "synth-ev-29-0-0",
+            "synth-ev-29-0-1",
+            "synth-ev-29-0-2"
+          ],
+          "supporting_rag_context_ids": [
+            "synth-rag-29-0-0",
+            "synth-rag-29-0-1",
+            "synth-rag-29-0-2"
+          ],
+          "reviewer_id": "synthetic-generator",
+          "label_source": "derived_from_synthetic_reference",
+          "label_notes": "Synthetic label for Triton Inference Server on inference_performance_gap (rank=1)"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "created_at": "2026-06-19T01:58:54.252642+00:00",
+    "total_entries": 30,
+    "generated_by": "run_recommendation_baseline_calibration",
+    "notes": "SYNTHETIC — for structural testing only. Not for production calibration."
+  }
+}

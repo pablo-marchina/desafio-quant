@@ -1,0 +1,35 @@
+{
+  "status": "PASS_STATIC_FRONTEND_BUILD",
+  "generated_at": "2026-07-01T00:14:21.697351Z",
+  "scope": "Frontend complete pipeline result dashboard",
+  "implemented": {
+    "new_component": "frontend/src/components/PipelineFinalResultView.tsx",
+    "auto_open_after_startup_pipeline_run": true,
+    "workflow_polling_until_terminal_status": true,
+    "single_view_sections": [
+      "workflow_summary",
+      "node_progress",
+      "stage_cards",
+      "node_timeline",
+      "evidence_and_claims",
+      "RAG_BM25_GraphRAG_Triton_metrics",
+      "advanced_techniques",
+      "NVIDIA_recommendations",
+      "expected_utility",
+      "executive_brief",
+      "activation_dossier",
+      "final_export"
+    ],
+    "final_deliverable_generation": [
+      "dossier",
+      "opportunity_score",
+      "export"
+    ],
+    "frontend_legacy_default_run_path": "not used by main UI"
+  },
+  "validation": {
+    "npm_ci_ignore_scripts": "PASS",
+    "npm_typecheck": "PASS",
+    "npm_build": "PASS"
+  }
+}

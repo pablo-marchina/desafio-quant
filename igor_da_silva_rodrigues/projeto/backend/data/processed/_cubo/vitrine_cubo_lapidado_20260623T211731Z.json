@@ -1,0 +1,1913 @@
+{
+  "metadados": {
+    "fonte_url": "https://cubo.itau/startups-portfolio",
+    "data_scraping": "2026-06-23",
+    "versao_limpeza": "1.0",
+    "total_bruto": 50,
+    "total_valido": 50,
+    "total_incompletas": 0,
+    "registros_removidos": []
+  },
+  "startups": [
+    {
+      "nome": "Clara Pagamentos",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Financeiro",
+      "descricao_curta": "A Clara é uma plataforma de gestão de gastos corporativos que centraliza cartões, pagamentos, reembolsos e conciliação em tempo real. Com automação, controle por regras e integração com ERPs, ajuda empresas a ganhar eficiência, visibilidade financeira e governança.",
+      "site": "https://clara.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1721669754176-rl78x70m.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/clara-pagamentos",
+      "raw": {
+        "nome": "Clara Pagamentos",
+        "site": "https://clara.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Financeiro",
+        "descricao_curta": "A Clara é uma plataforma de gestão de gastos corporativos que centraliza cartões, pagamentos, reembolsos e conciliação em tempo real. Com automação, controle por regras e integração com ERPs, ajuda empresas a ganhar eficiência, visibilidade financeira e governança.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1721669754176-rl78x70m.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/clara-pagamentos",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:14:55.047898+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Leggal",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Recursos Humanos",
+      "descricao_curta": "Problemas jurídicos são a 3ª maior causa de estresse entre colaboradores, afetando performance e aumentando o risco de burnout. A Leggal nasce para preencher essa lacuna: somos o primeiro benefício de Cuidado Jurídico do Brasil, oferecendo às empresas um diferencial real no bem-estar..",
+      "site": "https://www.leggal.com.br/",
+      "logo_url": "https://media.licdn.com/dms/image/v2/D4D0BAQFusKf-axtS5w/company-logo_200_200/company-logo_200_200/0/1701269747961?e=1773878400&v=beta&t=0LBG2NRqVW7EhtTM34WzOcYK7Z3WIsg9bxYsr_3MroY",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/leggal",
+      "raw": {
+        "nome": "Leggal",
+        "site": "https://www.leggal.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Recursos Humanos",
+        "descricao_curta": "Problemas jurídicos são a 3ª maior causa de estresse entre colaboradores, afetando performance e aumentando o risco de burnout. A Leggal nasce para preencher essa lacuna: somos o primeiro benefício de Cuidado Jurídico do Brasil, oferecendo às empresas um diferencial real no bem-estar..",
+        "logo_url": "https://media.licdn.com/dms/image/v2/D4D0BAQFusKf-axtS5w/company-logo_200_200/company-logo_200_200/0/1701269747961?e=1773878400&v=beta&t=0LBG2NRqVW7EhtTM34WzOcYK7Z3WIsg9bxYsr_3MroY",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/leggal",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:14:58.216087+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "AutoU",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Produtividade",
+      "descricao_curta": "A AutoU é uma plataforma de Inteligência Artificial aplicada ao mundo corporativo, criando soluções digitais para grandes empresas. Atendemos grupos globais como L’Oréal, Nestlé, Jaguar, Stellantis e Saint-Gobain, gerando mais de R$50MM em resultados para 150.000+ usuários em 15+ países.",
+      "site": "https://autou.io",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1702665059047-q0zc3uqf.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/autou",
+      "raw": {
+        "nome": "AutoU",
+        "site": "https://autou.io",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Produtividade",
+        "descricao_curta": "A AutoU é uma plataforma de Inteligência Artificial aplicada ao mundo corporativo, criando soluções digitais para grandes empresas. Atendemos grupos globais como L’Oréal, Nestlé, Jaguar, Stellantis e Saint-Gobain, gerando mais de R$50MM em resultados para 150.000+ usuários em 15+ países.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1702665059047-q0zc3uqf.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/autou",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:01.454154+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Voltta",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Energia",
+      "descricao_curta": "A VOLTTA é uma EnergyTech brasileira que integra tecnologia, operação e experiência digital para comercializar energia e gerir infraestrutura de recarga de veículos elétricos, operando rede de carregadores e soluções SaaS para parceiros e clientes.",
+      "site": "https://voltta.com.br/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1637592306247-jktadm7w.jpg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/voltta",
+      "raw": {
+        "nome": "Voltta",
+        "site": "https://voltta.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Energia",
+        "descricao_curta": "A VOLTTA é uma EnergyTech brasileira que integra tecnologia, operação e experiência digital para comercializar energia e gerir infraestrutura de recarga de veículos elétricos, operando rede de carregadores e soluções SaaS para parceiros e clientes.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1637592306247-jktadm7w.jpg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/voltta",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:04.422294+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Talent Academy",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Recursos Humanos",
+      "descricao_curta": "A Talent Academy é uma HR Tech focada em desenvolver pessoas e fortalecer a cultura organizacional. Combina tecnologia, people analytics e uma rede de talent experts para apoiar empresas nos principais desafios relacionados a desenvolvimento de times, performance e cultura organizacional.",
+      "site": "https://talentacademy.com.br/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1648578040321-kknfl548.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/talent-academy",
+      "raw": {
+        "nome": "Talent Academy",
+        "site": "https://talentacademy.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Recursos Humanos",
+        "descricao_curta": "A Talent Academy é uma HR Tech focada em desenvolver pessoas e fortalecer a cultura organizacional. Combina tecnologia, people analytics e uma rede de talent experts para apoiar empresas nos principais desafios relacionados a desenvolvimento de times, performance e cultura organizacional.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1648578040321-kknfl548.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/talent-academy",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:07.556420+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Biti9",
+      "cidade": null,
+      "estado": null,
+      "pais": "Não Possuo Operação Em Países Latam",
+      "categoria": "Produtividade",
+      "descricao_curta": "A Biti9 é uma consultoria e integradora de tecnologia especializada em Hiperautomação (RPA + IA) e Transformação Digital para médias e grandes empresas. O foco central é eliminar ineficiências operacionais, convertendo processos manuais e repetitivos em fluxos de trabalho inteligentes e escaláveis",
+      "site": "https://www.biti9.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1708095213459-do0ry7i7.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/biti9",
+      "raw": {
+        "nome": "Biti9",
+        "site": "https://www.biti9.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Não possuo operação em países LATAM",
+        "categoria": "Produtividade",
+        "descricao_curta": "A Biti9 é uma consultoria e integradora de tecnologia especializada em Hiperautomação (RPA + IA) e Transformação Digital para médias e grandes empresas. O foco central é eliminar ineficiências operacionais, convertendo processos manuais e repetitivos em fluxos de trabalho inteligentes e escaláveis",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1708095213459-do0ry7i7.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/biti9",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:10.649524+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Marvin",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Agricultura E Pecuária",
+      "descricao_curta": "Impulsionando o futuro do comércio global Infraestrutura de cadeia de suprimentos nativa de IA, criada para reduzir riscos, aumentar a confiança e desbloquear o acesso ao mercado em um cenário de comércio global em rápida transformação.",
+      "site": "https://www.marvinblue.earth/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1727206324904-mi6jeg1e.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/marvin",
+      "raw": {
+        "nome": "Marvin",
+        "site": "https://www.marvinblue.earth/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Agricultura e Pecuária",
+        "descricao_curta": "Impulsionando o futuro do comércio global Infraestrutura de cadeia de suprimentos nativa de IA, criada para reduzir riscos, aumentar a confiança e desbloquear o acesso ao mercado em um cenário de comércio global em rápida transformação.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1727206324904-mi6jeg1e.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/marvin",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:13.962397+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Woba",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Construção Civil",
+      "descricao_curta": "Woba é a forma mais inteligente de contratar e administrar escritórios. A solução e tecnologia Woba permite que grandes empresas controlem os seus espaços de trabalho em uma única plataforma, sem custos escondidos. Muito mais eficiência, flexibilidade e centralização.",
+      "site": "http://www.woba.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1668801769193-awnpnd02.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/woba",
+      "raw": {
+        "nome": "Woba",
+        "site": "http://www.woba.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Construção Civil",
+        "descricao_curta": "Woba é a forma mais inteligente de contratar e administrar escritórios. A solução e tecnologia Woba permite que grandes empresas controlem os seus espaços de trabalho em uma única plataforma, sem custos escondidos. Muito mais eficiência, flexibilidade e centralização.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1668801769193-awnpnd02.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/woba",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:17.219112+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Anzi Finance",
+      "cidade": null,
+      "estado": null,
+      "pais": "Colômbia",
+      "categoria": "Financeiro",
+      "descricao_curta": "Anzi provides credit risk mitigation infrastructure, operating guarantees on its own or third-party balance and first-loss pools via multisig wallets. It supports real-world assets as counter-collateral. Blockchain adds traceability, automatic reconciliations, and live monitoring.",
+      "site": "https://www.anzi.finance/",
+      "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/c6194bac-74df-47b3-a7ba-b477e1420a45/d72a5f1aa612918cfb9cda35b29435c4b07a025dee419e54907b058fcb0ee603.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/anzi-finance",
+      "raw": {
+        "nome": "Anzi Finance",
+        "site": "https://www.anzi.finance/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Colômbia",
+        "categoria": "Financeiro",
+        "descricao_curta": "Anzi provides credit risk mitigation infrastructure, operating guarantees on its own or third-party balance and first-loss pools via multisig wallets. It supports real-world assets as counter-collateral. Blockchain adds traceability, automatic reconciliations, and live monitoring.",
+        "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/c6194bac-74df-47b3-a7ba-b477e1420a45/d72a5f1aa612918cfb9cda35b29435c4b07a025dee419e54907b058fcb0ee603.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/anzi-finance",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:20.396034+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Kinzbio",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Biotecnologia",
+      "descricao_curta": "Kinzbio is developing biotechnologies for the treatment of bacterial infections. Allowing to capture phages thriving in nature and turn them into precision tools to treat patients suffering from infections. Kinzbio has been cleared by the Ministry in Uruguay, and successfully treated humans.",
+      "site": "http://kinzbio.com",
+      "logo_url": "https://media.licdn.com/dms/image/v2/C4D0BAQGnIlyErzmTIg/company-logo_200_200/company-logo_200_200/0/1645117841909/kinzbio_logo?e=1740614400&v=beta&t=sOSAyMjqUMajQ1wH_TNp3HsDLF297QpjfdV_zUlYmeA",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/kinzbio",
+      "raw": {
+        "nome": "Kinzbio",
+        "site": "http://kinzbio.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Biotecnologia",
+        "descricao_curta": "Kinzbio is developing biotechnologies for the treatment of bacterial infections. Allowing to capture phages thriving in nature and turn them into precision tools to treat patients suffering from infections. Kinzbio has been cleared by the Ministry in Uruguay, and successfully treated humans.",
+        "logo_url": "https://media.licdn.com/dms/image/v2/C4D0BAQGnIlyErzmTIg/company-logo_200_200/company-logo_200_200/0/1645117841909/kinzbio_logo?e=1740614400&v=beta&t=sOSAyMjqUMajQ1wH_TNp3HsDLF297QpjfdV_zUlYmeA",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/kinzbio",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:23.385260+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "PIA",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Recursos Humanos",
+      "descricao_curta": "AI interview analysis for modern hiring teams in LATAM",
+      "site": "https://meetpia.ai",
+      "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/0370f609-44e5-47e1-91ef-0f8a75d8b52c/17eb896279da7d52e677951a8270e9da35aafdbaf959ad6c904e64b8cb42c829.jpg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/pia",
+      "raw": {
+        "nome": "PIA",
+        "site": "https://meetpia.ai",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Recursos Humanos",
+        "descricao_curta": "AI interview analysis for modern hiring teams in LATAM",
+        "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/0370f609-44e5-47e1-91ef-0f8a75d8b52c/17eb896279da7d52e677951a8270e9da35aafdbaf959ad6c904e64b8cb42c829.jpg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/pia",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:26.436630+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Data Guide",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Cibersegurança",
+      "descricao_curta": "Na Data Guide, transformamos desafios de privacidade e segurança da informação em soluções práticas para o negócio. Atuamos com LGPD e GDPR, DPO-as-a-Service, Pentests e certificações como ISO 27001 e SOC 2, ajudando empresas a crescer com confiança pelo mercado.",
+      "site": "https://dataguide.com.br/",
+      "logo_url": null,
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/data-guide",
+      "raw": {
+        "nome": "Data Guide",
+        "site": "https://dataguide.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Cibersegurança",
+        "descricao_curta": "Na Data Guide, transformamos desafios de privacidade e segurança da informação em soluções práticas para o negócio. Atuamos com LGPD e GDPR, DPO-as-a-Service, Pentests e certificações como ISO 27001 e SOC 2, ajudando empresas a crescer com confiança pelo mercado.",
+        "logo_url": null,
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/data-guide",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:29.751595+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Laboratorio Kasem",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Saúde",
+      "descricao_curta": "Desenvolvemos linhas de produtos de primeiros socorros projetados para proteger a segurança e o cuidado das pessoas que trabalham diariamente com produtos químicos.",
+      "site": "https://gpolarol.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1727800914539-gk9dougl.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/laboratorio-kasem",
+      "raw": {
+        "nome": "Laboratorio Kasem",
+        "site": "https://gpolarol.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Saúde",
+        "descricao_curta": "Desenvolvemos linhas de produtos de primeiros socorros projetados para proteger a segurança e o cuidado das pessoas que trabalham diariamente com produtos químicos.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1727800914539-gk9dougl.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/laboratorio-kasem",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:32.785750+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "EasyTelling",
+      "cidade": null,
+      "estado": null,
+      "pais": "Não Possuo Operação Em Países Latam",
+      "categoria": "Educação",
+      "descricao_curta": "A EasyTelling é uma plataforma de IA que resolve desafios de P&D e inovação com pesquisas científicas a partir de um banco de 225 milhões de artigos científicos do mundo todo e em todas as áreas. Estamos criando uma infraestrutura e um marketplace global de aplicação de pesquisas.",
+      "site": "https://easytelling.ai/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1733970090766-ialsp9j5.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/easytelling",
+      "raw": {
+        "nome": "EasyTelling",
+        "site": "https://easytelling.ai/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Não possuo operação em países LATAM",
+        "categoria": "Educação",
+        "descricao_curta": "A EasyTelling é uma plataforma de IA que resolve desafios de P&D e inovação com pesquisas científicas a partir de um banco de 225 milhões de artigos científicos do mundo todo e em todas as áreas. Estamos criando uma infraestrutura e um marketplace global de aplicação de pesquisas.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1733970090766-ialsp9j5.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/easytelling",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:35.881730+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Mangue Tech",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Esg",
+      "descricao_curta": "A Mangue Tech é uma startup de tecnologia que ajuda empresas a organizar dados de sustentabilidade e transformar ESG em decisões de negócio. Centralizamos informações, reduzimos a dependência de planilhas e trazemos clareza para reportar, gerir riscos e evoluir com confiança.",
+      "site": "https://mangue.tech",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1715618828824-hf8t98e7.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/mangue-tech",
+      "raw": {
+        "nome": "Mangue Tech",
+        "site": "https://mangue.tech",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "ESG",
+        "descricao_curta": "A Mangue Tech é uma startup de tecnologia que ajuda empresas a organizar dados de sustentabilidade e transformar ESG em decisões de negócio. Centralizamos informações, reduzimos a dependência de planilhas e trazemos clareza para reportar, gerir riscos e evoluir com confiança.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1715618828824-hf8t98e7.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/mangue-tech",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:39.100761+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Company Hero",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Direito",
+      "descricao_curta": "Fundada em 2018, a Company Hero é a primeira plataforma do Brasil a oferecer soluções integradas para profissionais Pessoas Jurídicas (PJs), reunindo suporte e recursos para o trabalho independente: desde a formalização e regularização do CNPJ até a oferta de planos de saúde e seguros diversos.",
+      "site": "https://www.companyhero.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1672859847383-f2xcmod8.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/company-hero",
+      "raw": {
+        "nome": "Company Hero",
+        "site": "https://www.companyhero.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Direito",
+        "descricao_curta": "Fundada em 2018, a Company Hero é a primeira plataforma do Brasil a oferecer soluções integradas para profissionais Pessoas Jurídicas (PJs), reunindo suporte e recursos para o trabalho independente: desde a formalização e regularização do CNPJ até a oferta de planos de saúde e seguros diversos.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1672859847383-f2xcmod8.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/company-hero",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:42.267397+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "ESGreen",
+      "cidade": null,
+      "estado": null,
+      "pais": "Não Possuo Operação Em Países Latam",
+      "categoria": "Esg",
+      "descricao_curta": "A ESGreen é uma plataforma brasileira de gestão e monitoramento ESG que transforma exigências regulatórias e dados socioambientais em inteligência de risco, conformidade e decisão para instituições financeiras, empresas e projetos sustentáveis.",
+      "site": "https://esgreen.com.br/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1694608223743-iclpbm7e.jpg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/esgreen",
+      "raw": {
+        "nome": "ESGreen",
+        "site": "https://esgreen.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Não possuo operação em países LATAM",
+        "categoria": "ESG",
+        "descricao_curta": "A ESGreen é uma plataforma brasileira de gestão e monitoramento ESG que transforma exigências regulatórias e dados socioambientais em inteligência de risco, conformidade e decisão para instituições financeiras, empresas e projetos sustentáveis.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1694608223743-iclpbm7e.jpg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/esgreen",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:45.179260+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Evcomx",
+      "cidade": null,
+      "estado": null,
+      "pais": "Não Possuo Operação Em Países Latam",
+      "categoria": "Indústria",
+      "descricao_curta": "Somos uma Deeptech que tem como propósito potencializar a tomada de decisão baseada em dados, gerando impacto financeiro para nossos clientes. Utilizamos técnicas de IA, Big Data, Pesquisa Operacional e Modelagem Matemática para criar uma cópia matemática dos processos produtivos (Math Twin).",
+      "site": "https://evcomx.com.br/",
+      "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/lqkBT1bIF5Vv3B3CzUPg0oKRQtv1/f70c99914e88635728a5779d03846b80fccf8e00581b1919e9998f4fcbaaf37e.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/evcomx",
+      "raw": {
+        "nome": "Evcomx",
+        "site": "https://evcomx.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Não possuo operação em países LATAM",
+        "categoria": "Indústria",
+        "descricao_curta": "Somos uma Deeptech que tem como propósito potencializar a tomada de decisão baseada em dados, gerando impacto financeiro para nossos clientes. Utilizamos técnicas de IA, Big Data, Pesquisa Operacional e Modelagem Matemática para criar uma cópia matemática dos processos produtivos (Math Twin).",
+        "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/lqkBT1bIF5Vv3B3CzUPg0oKRQtv1/f70c99914e88635728a5779d03846b80fccf8e00581b1919e9998f4fcbaaf37e.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/evcomx",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:48.244448+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Zeev",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Produtividade",
+      "descricao_curta": "O Zeev é a plataforma BPMS de automação de processos com IA da Stoque. Com tecnologia low-code e inteligência artificial integrada, ele organiza fluxos de trabalho , centraliza a gestão e automatiza tarefas repetitivas com agentes de IA, para que empresas façam mais, façam melhor e façam o certo.",
+      "site": "https://zeev.it",
+      "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/bTWYKRzzfoXHnb8GQhL8w0e5EWg2/1d6a7aa4c460e80d233478d8ed13dfd368e2ae3d2e6d6379e4c405bacf573de8.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/zeev-by-stoque",
+      "raw": {
+        "nome": "Zeev",
+        "site": "https://zeev.it",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Produtividade",
+        "descricao_curta": "O Zeev é a plataforma BPMS de automação de processos com IA da Stoque. Com tecnologia low-code e inteligência artificial integrada, ele organiza fluxos de trabalho , centraliza a gestão e automatiza tarefas repetitivas com agentes de IA, para que empresas façam mais, façam melhor e façam o certo.",
+        "logo_url": "https://cubo-workspace-prod-api-assets.s3.us-east-1.amazonaws.com/collaborators/bTWYKRzzfoXHnb8GQhL8w0e5EWg2/1d6a7aa4c460e80d233478d8ed13dfd368e2ae3d2e6d6379e4c405bacf573de8.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/zeev-by-stoque",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:51.343079+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Mera",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Saúde",
+      "descricao_curta": "Somos uma empresa de logística de profissionais da saúde. Utilizando nossa plataforma e nosso algoritmo conectamos profissionais e atendimentos de forma rápida e assertiva",
+      "site": "https://www.meracare.com.br/",
+      "logo_url": "https://www.meracare.com.br/assets/home/logo-mera-with-name-e96ddfe1eb2e4fb4f20e2823ce8fe22ade18a1e9244c469efb13e7735f8a1a79.svg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/mera",
+      "raw": {
+        "nome": "Mera",
+        "site": "https://www.meracare.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Saúde",
+        "descricao_curta": "Somos uma empresa de logística de profissionais da saúde. Utilizando nossa plataforma e nosso algoritmo conectamos profissionais e atendimentos de forma rápida e assertiva",
+        "logo_url": "https://www.meracare.com.br/assets/home/logo-mera-with-name-e96ddfe1eb2e4fb4f20e2823ce8fe22ade18a1e9244c469efb13e7735f8a1a79.svg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/mera",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:54.912629+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Blu365",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Financeiro",
+      "descricao_curta": "BLU365 (https://bit.ly/BLUCASH) is a digital-first and data-oriented fintech that deploys best-in-class data science capabilities & operational efficiency into its NPL (non-performing loans) solution",
+      "site": "https://empresas.blu365.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/unclassified/1540330312320-5pcfnoel.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/blu365",
+      "raw": {
+        "nome": "Blu365",
+        "site": "https://empresas.blu365.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Financeiro",
+        "descricao_curta": "BLU365 (https://bit.ly/BLUCASH) is a digital-first and data-oriented fintech that deploys best-in-class data science capabilities & operational efficiency into its NPL (non-performing loans) solution",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/unclassified/1540330312320-5pcfnoel.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/blu365",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:15:58.153602+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Descola",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Educação",
+      "descricao_curta": "Edtech focada no desenvolvimento de power skills para empresas. Criamos cursos, trilhas e soluções educacionais que apoiam lideranças e times a transformarem comportamento em performance, com conteúdos práticos, atuais e integráveis a qualquer LMS.",
+      "site": "https://www.descola.org",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/unclassified/1538160318185-x02qa57f.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/descola",
+      "raw": {
+        "nome": "Descola",
+        "site": "https://www.descola.org",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Educação",
+        "descricao_curta": "Edtech focada no desenvolvimento de power skills para empresas. Criamos cursos, trilhas e soluções educacionais que apoiam lideranças e times a transformarem comportamento em performance, com conteúdos práticos, atuais e integráveis a qualquer LMS.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/unclassified/1538160318185-x02qa57f.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/descola",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:01.137963+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Moodar",
+      "cidade": null,
+      "estado": null,
+      "pais": "Argentina",
+      "categoria": "Recursos Humanos",
+      "descricao_curta": "Plataforma de gestão da segurança psicológica com IA. A Moodar apoia mais de 200 grandes empresas no Brasil e América Latina na redução de afastamentos relacionados a saúde mental, promoção do bem-estar corporativo e compliance com a gestão de riscos psicossociais.",
+      "site": "https://www.moodar.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/moodar.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/moodar",
+      "raw": {
+        "nome": "Moodar",
+        "site": "https://www.moodar.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Argentina",
+        "categoria": "Recursos Humanos",
+        "descricao_curta": "Plataforma de gestão da segurança psicológica com IA. A Moodar apoia mais de 200 grandes empresas no Brasil e América Latina na redução de afastamentos relacionados a saúde mental, promoção do bem-estar corporativo e compliance com a gestão de riscos psicossociais.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/moodar.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/moodar",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:04.813526+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Taxcel",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Financeiro",
+      "descricao_curta": "A Taxcel é uma tax tech B2B que otimiza e traz governança a rotinas fiscais de empresas. Oferece soluções SaaS para edição, controle, conciliação e analytics de dados fiscais, garantindo eficiência, rastreabilidade e conformidade em ambientes complexos.",
+      "site": "https://taxcel.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/logo_taxcel_fundo_branco.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/taxcel",
+      "raw": {
+        "nome": "Taxcel",
+        "site": "https://taxcel.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Financeiro",
+        "descricao_curta": "A Taxcel é uma tax tech B2B que otimiza e traz governança a rotinas fiscais de empresas. Oferece soluções SaaS para edição, controle, conciliação e analytics de dados fiscais, garantindo eficiência, rastreabilidade e conformidade em ambientes complexos.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/logo_taxcel_fundo_branco.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/taxcel",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:08.017308+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Diel Energia",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Energia",
+      "descricao_curta": "A Diel Energia é uma plataforma de gestão inteligente de ar-condicionado que ajuda grandes operações a reduzir consumo de energia, garantir conforto térmico e otimizar a manutenção, usando dados, IoT e inteligência operacional.",
+      "site": "http://www.dielenergia.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/Logo%20Mono%20Diel%20Preto.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/diel-energia",
+      "raw": {
+        "nome": "Diel Energia",
+        "site": "http://www.dielenergia.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Energia",
+        "descricao_curta": "A Diel Energia é uma plataforma de gestão inteligente de ar-condicionado que ajuda grandes operações a reduzir consumo de energia, garantir conforto térmico e otimizar a manutenção, usando dados, IoT e inteligência operacional.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/Logo%20Mono%20Diel%20Preto.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/diel-energia",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:11.448809+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Sirros IoT",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Indústria",
+      "descricao_curta": "A Sirros IoT é uma startup brasileira especializada em Internet das Coisas (IoT) voltada para a Indústria 4.0. Atuando como uma one-stop shop em digitalização industrial, a empresa desenvolve soluções que integram telemetria, geolocalização, visão computacional e inteligência artificial.",
+      "site": "https://sirros.io/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1750254686564-iun2l7u5.jpg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/sirros-iot",
+      "raw": {
+        "nome": "Sirros IoT",
+        "site": "https://sirros.io/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Indústria",
+        "descricao_curta": "A Sirros IoT é uma startup brasileira especializada em Internet das Coisas (IoT) voltada para a Indústria 4.0. Atuando como uma one-stop shop em digitalização industrial, a empresa desenvolve soluções que integram telemetria, geolocalização, visão computacional e inteligência artificial.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1750254686564-iun2l7u5.jpg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/sirros-iot",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:15.136764+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Wikimee",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Marketing",
+      "descricao_curta": "Wikimee Plataforma Digital é uma Martech. Uma Plataforma de Experiência Digital com Marketplace Nativo. Única no Brasil, Wikimee é uma solução SaaS PLG com efeito de rede (NFX), escalabilidade orgânica e margens elevadas.",
+      "site": "https://wikimee.com/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1749240005904-x2kc9dlc.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/wikimee",
+      "raw": {
+        "nome": "Wikimee",
+        "site": "https://wikimee.com/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Marketing",
+        "descricao_curta": "Wikimee Plataforma Digital é uma Martech. Uma Plataforma de Experiência Digital com Marketplace Nativo. Única no Brasil, Wikimee é uma solução SaaS PLG com efeito de rede (NFX), escalabilidade orgânica e margens elevadas.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1749240005904-x2kc9dlc.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/wikimee",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:18.150444+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Excuela",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Educação",
+      "descricao_curta": "Excuela is a mobile-first learning platform that uses AI and offline technology to deliver culturally grounded, low-data training to frontline workers and underserved communities across Latin America and beyond.",
+      "site": "https://excuela.com/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1748894456858-bcv0xyrp.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/excuela",
+      "raw": {
+        "nome": "Excuela",
+        "site": "https://excuela.com/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Educação",
+        "descricao_curta": "Excuela is a mobile-first learning platform that uses AI and offline technology to deliver culturally grounded, low-data training to frontline workers and underserved communities across Latin America and beyond.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1748894456858-bcv0xyrp.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/excuela",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:21.439760+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "baasic",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Financeiro",
+      "descricao_curta": "A baasic é uma plataforma white label de embedded finance que permite a empresas monetizarem seus ecossistemas oferecendo serviços financeiros. Com tecnologia modular e segura, ela integra produtos na jornada do cliente, aumentando resultado, otimizando custos e reduzindo o churn.",
+      "site": "https://baasic.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1748872680052-uny1q91y.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/baasic",
+      "raw": {
+        "nome": "baasic",
+        "site": "https://baasic.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Financeiro",
+        "descricao_curta": "A baasic é uma plataforma white label de embedded finance que permite a empresas monetizarem seus ecossistemas oferecendo serviços financeiros. Com tecnologia modular e segura, ela integra produtos na jornada do cliente, aumentando resultado, otimizando custos e reduzindo o churn.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1748872680052-uny1q91y.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/baasic",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:24.715782+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Linte",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Direito",
+      "descricao_curta": "Linte ajuda empresas a eliminar burocracia nos fluxos de contratos com automação de documentos, revisão de cláusulas com AI e workflow customizável para cada empresa.",
+      "site": "http://www.linte.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1748538253060-f2qha3z8.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/linte",
+      "raw": {
+        "nome": "Linte",
+        "site": "http://www.linte.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Direito",
+        "descricao_curta": "Linte ajuda empresas a eliminar burocracia nos fluxos de contratos com automação de documentos, revisão de cláusulas com AI e workflow customizável para cada empresa.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1748538253060-f2qha3z8.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/linte",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:27.982925+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "DeltaAI",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Direito",
+      "descricao_curta": "DeltaAI é uma plataforma de inteligência artificial e jurimetria que ajuda empresas a prever e prevenir litígios. Em apenas 6 meses, processamos mais de 1 milhão de decisões judiciais, mapeando padrões e economizando até 40% dos custos jurídicos dos nossos clientes. Somos o copiloto do jurídico.",
+      "site": "https://usedeltaai.com/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1747938348113-m4ov5vva.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/deltaai",
+      "raw": {
+        "nome": "DeltaAI",
+        "site": "https://usedeltaai.com/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Direito",
+        "descricao_curta": "DeltaAI é uma plataforma de inteligência artificial e jurimetria que ajuda empresas a prever e prevenir litígios. Em apenas 6 meses, processamos mais de 1 milhão de decisões judiciais, mapeando padrões e economizando até 40% dos custos jurídicos dos nossos clientes. Somos o copiloto do jurídico.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1747938348113-m4ov5vva.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/deltaai",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:31.151433+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "OpsFactor",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Indústria",
+      "descricao_curta": "A OpsFactor é uma plataforma SaaS especializada na digitalização, planejamento integrado e otimização de supply chain. Com algoritmos avançados, oferecemos soluções rápidas e eficazes, que maximizam EBITDA, otimizam capital de giro e identificam ganhos estratégicos para grandes empresas.",
+      "site": "https://opsfactor.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1747851855381-wa7w0pnc.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/opsfactor",
+      "raw": {
+        "nome": "OpsFactor",
+        "site": "https://opsfactor.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Indústria",
+        "descricao_curta": "A OpsFactor é uma plataforma SaaS especializada na digitalização, planejamento integrado e otimização de supply chain. Com algoritmos avançados, oferecemos soluções rápidas e eficazes, que maximizam EBITDA, otimizam capital de giro e identificam ganhos estratégicos para grandes empresas.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1747851855381-wa7w0pnc.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/opsfactor",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:34.120838+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Air Robotics",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Indústria",
+      "descricao_curta": "A Air Robotics transforma drones em ferramentas estratégicas de segurança, monitoramento e inspeção, por meio de tecnologia própria que automatiza voos, aplica IA para detecção de riscos, transmite dados em tempo real e gera relatórios para a gestão de grandes áreas e ativos outdoor.",
+      "site": "https://www.airrobotics.com.br/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1747332239981-cifsrhor.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/air-robotics",
+      "raw": {
+        "nome": "Air Robotics",
+        "site": "https://www.airrobotics.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Indústria",
+        "descricao_curta": "A Air Robotics transforma drones em ferramentas estratégicas de segurança, monitoramento e inspeção, por meio de tecnologia própria que automatiza voos, aplica IA para detecção de riscos, transmite dados em tempo real e gera relatórios para a gestão de grandes áreas e ativos outdoor.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1747332239981-cifsrhor.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/air-robotics",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:37.207362+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Delend",
+      "cidade": null,
+      "estado": null,
+      "pais": "Não Possuo Operação Em Países Latam",
+      "categoria": "Financeiro",
+      "descricao_curta": "A Delend ajuda PMEs a vender a prazo e receber em dia através de um assistente inteligente de scoring de crédito, cobrança e pagamento, 100% conversacional via WhatsApp.",
+      "site": "https://www.delend.com.br/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1746714074172-6783aso8.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/delend",
+      "raw": {
+        "nome": "Delend",
+        "site": "https://www.delend.com.br/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Não possuo operação em países LATAM",
+        "categoria": "Financeiro",
+        "descricao_curta": "A Delend ajuda PMEs a vender a prazo e receber em dia através de um assistente inteligente de scoring de crédito, cobrança e pagamento, 100% conversacional via WhatsApp.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1746714074172-6783aso8.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/delend",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:40.476941+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Carteiro Amigo",
+      "cidade": null,
+      "estado": null,
+      "pais": "Não Possuo Operação Em Países Latam",
+      "categoria": "Logística",
+      "descricao_curta": "O Carteiro Amigo é uma plataforma de logística inteligente e inclusiva que transforma a última milha no Brasil ao conectar tecnologia, dados e pessoas. Presente nas favelas e no asfalto, a empresa constrói pontes entre territórios e negócios no asfalto, levando acesso, eficiência logística.",
+      "site": "http://carteiroamigo.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1746286057987-oi9cgitp.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/carteiro-amigo",
+      "raw": {
+        "nome": "Carteiro Amigo",
+        "site": "http://carteiroamigo.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Não possuo operação em países LATAM",
+        "categoria": "Logística",
+        "descricao_curta": "O Carteiro Amigo é uma plataforma de logística inteligente e inclusiva que transforma a última milha no Brasil ao conectar tecnologia, dados e pessoas. Presente nas favelas e no asfalto, a empresa constrói pontes entre territórios e negócios no asfalto, levando acesso, eficiência logística.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1746286057987-oi9cgitp.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/carteiro-amigo",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:43.361731+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Plugin",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Energia",
+      "descricao_curta": "A PLUG.IN é uma startup brasileira fundada em 2021 para atender a remanufatura, eletrificação e produção de caminhões, ônibus e geradores elétricos com baterias de ÍONS de última geração. A empresa nasceu da paixão e do entusiasmo por automóveis do fundador Artur Felipe Ramos. O foco inicial da PLUG.IN, quando da sua fundação, foi nas operações de caminhões elétricos. A empresa portanto começou a oferecer os serviços de conversão de caminhões a combustão para 100% elétricos. A PLUG.IN promove sustentabilidade e rentabilidade em uma só conversão, sendo a única empresa no mercado brasileiro convertendo veículos comercias pesados, com flexibilidade de autonomia. Outro nicho desenvolvido pelaLUG.IN foi o desenvolvimento de um carregador ultra rápido, chamado Supercharger. Este carregador trás consigo a facilidade de ser móvel. O Powerbank, outro produto desenvolvido pela PLUG.IN, é uma fonte geradora de energia 100% elétrica, silenciosa e com 0%vde emissão de CO2. Recentemente a startup começou a atuar no segmento de equipamentos portuários, oferendo o processo de conversão para rodantes de grande porte que movimentam as cargas que chegam e que saem do país. A PLUG.IN conquistou e vem conquistando clientes de grande relevância no mercado em pouco tempo de operação.",
+      "site": "https://www.plugin.eco.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1744046664098-nagxiabl.jpeg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/plugin",
+      "raw": {
+        "nome": "Plugin",
+        "site": "https://www.plugin.eco.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Energia",
+        "descricao_curta": "A PLUG.IN é uma startup brasileira fundada em 2021 para atender a remanufatura, eletrificação e produção de caminhões, ônibus e geradores elétricos com baterias de ÍONS de última geração. A empresa nasceu da paixão e do entusiasmo por automóveis do fundador Artur Felipe Ramos. O foco inicial da PLUG.IN, quando da sua fundação, foi nas operações de caminhões elétricos. A empresa portanto começou a oferecer os serviços de conversão de caminhões a combustão para 100% elétricos. A PLUG.IN promove sustentabilidade e rentabilidade em uma só conversão, sendo a única empresa no mercado brasileiro convertendo veículos comercias pesados, com flexibilidade de autonomia. Outro nicho desenvolvido pelaLUG.IN foi o desenvolvimento de um carregador ultra rápido, chamado Supercharger. Este carregador trás consigo a facilidade de ser móvel. O Powerbank, outro produto desenvolvido pela PLUG.IN, é uma fonte geradora de energia 100% elétrica, silenciosa e com 0%vde emissão de CO2. Recentemente a startup começou a atuar no segmento de equipamentos portuários, oferendo o processo de conversão para rodantes de grande porte que movimentam as cargas que chegam e que saem do país. A PLUG.IN conquistou e vem conquistando clientes de grande relevância no mercado em pouco tempo de operação.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1744046664098-nagxiabl.jpeg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/plugin",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:46.479167+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Futuro Maquinas Agricolas",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Agricultura E Pecuária",
+      "descricao_curta": "A Futuro Máquinas simplifica a negociação de máquinas agrícolas ao conectar produtores rurais e concessionárias em um ambiente digital eficiente e confiável.",
+      "site": "https://www.futuroagronegocios.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1743525162755-qtj27jci.jpg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/futuro-maquinas-agricolas",
+      "raw": {
+        "nome": "Futuro Maquinas Agricolas",
+        "site": "https://www.futuroagronegocios.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Agricultura e Pecuária",
+        "descricao_curta": "A Futuro Máquinas simplifica a negociação de máquinas agrícolas ao conectar produtores rurais e concessionárias em um ambiente digital eficiente e confiável.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1743525162755-qtj27jci.jpg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/futuro-maquinas-agricolas",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:49.903287+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Hub4pay",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Marketing",
+      "descricao_curta": "A Hub4Pay é uma fintech de Rewards as a Service que automatiza pagamentos de incentivos, premiações e giftcard corporativos via cartão cardless MasterCard, soluções globais e marketplace, garantindo eficiência, segurança jurídica e escala para empresas.",
+      "site": "http://hub4pay.io",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1743052817319-ef4rkj5n.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/hub4pay",
+      "raw": {
+        "nome": "Hub4pay",
+        "site": "http://hub4pay.io",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Marketing",
+        "descricao_curta": "A Hub4Pay é uma fintech de Rewards as a Service que automatiza pagamentos de incentivos, premiações e giftcard corporativos via cartão cardless MasterCard, soluções globais e marketplace, garantindo eficiência, segurança jurídica e escala para empresas.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1743052817319-ef4rkj5n.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/hub4pay",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:53.062014+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Linkana",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Esg",
+      "descricao_curta": "A Linkana é o SRM que centraliza cadastro, homologação, monitoramento e avaliação de fornecedores em um só lugar, automatizando processos e integrando-se a sistemas como SAP, Coupa, Oracle e Ariba para trazer eficiência e controle à gestão de fornecedores.",
+      "site": "http://www.linkana.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742777093791-ta1e5vlf.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/linkana",
+      "raw": {
+        "nome": "Linkana",
+        "site": "http://www.linkana.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "ESG",
+        "descricao_curta": "A Linkana é o SRM que centraliza cadastro, homologação, monitoramento e avaliação de fornecedores em um só lugar, automatizando processos e integrando-se a sistemas como SAP, Coupa, Oracle e Ariba para trazer eficiência e controle à gestão de fornecedores.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742777093791-ta1e5vlf.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/linkana",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:55.979967+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Brain Artificial",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Produtividade",
+      "descricao_curta": "O Brain é uma startup de IA que transforma câmeras em sistemas inteligentes para segurança, varejo e operações. Com visão computacional avançada, automatizamos a detecção de eventos, geramos insights estratégicos e otimizamos processos, oferecendo inovação escalável para diversos setores.",
+      "site": "https://appbrain.com.br",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742488792458-oxxyb8eh.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/brain-artificial",
+      "raw": {
+        "nome": "Brain Artificial",
+        "site": "https://appbrain.com.br",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Produtividade",
+        "descricao_curta": "O Brain é uma startup de IA que transforma câmeras em sistemas inteligentes para segurança, varejo e operações. Com visão computacional avançada, automatizamos a detecção de eventos, geramos insights estratégicos e otimizamos processos, oferecendo inovação escalável para diversos setores.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742488792458-oxxyb8eh.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/brain-artificial",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:16:59.049772+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Foliume",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Seguros",
+      "descricao_curta": "The AI system of action of insurance distribution. We bring chat & voice assistants to insurance brokers, agents and banks to liberate from admin work, reduce response time and increase revenue streams.",
+      "site": "https://foliume.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742410352740-rn9j42hd.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/foliume",
+      "raw": {
+        "nome": "Foliume",
+        "site": "https://foliume.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Seguros",
+        "descricao_curta": "The AI system of action of insurance distribution. We bring chat & voice assistants to insurance brokers, agents and banks to liberate from admin work, reduce response time and increase revenue streams.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742410352740-rn9j42hd.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/foliume",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:01.964567+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Teramot",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Inteligência Artificial",
+      "descricao_curta": "The Connectivity Layer for AI Agents AI agents can't work directly with enterprise databases—they only work with text or images. Teramot autonomously transforms databases into AI-ready infrastructure with proper context. Build software solutions 10X faster and 10X cheaper.",
+      "site": "https://teramot.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742394708624-8a0sak5n.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/teramot",
+      "raw": {
+        "nome": "Teramot",
+        "site": "https://teramot.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Inteligência Artificial",
+        "descricao_curta": "The Connectivity Layer for AI Agents AI agents can't work directly with enterprise databases—they only work with text or images. Teramot autonomously transforms databases into AI-ready infrastructure with proper context. Build software solutions 10X faster and 10X cheaper.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742394708624-8a0sak5n.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/teramot",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:05.089799+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Skyblue Analytics",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Financeiro",
+      "descricao_curta": "A Skyblue Analytics é uma fintech B2B que desenvolve infraestrutura tecnológica de investimento para bancos, brokers e family offices na América Latina, oferecendo plataformas white-label e APIs para acesso seguro e escalável a mercados globais.",
+      "site": "http://skyblueanalytics.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742304832489-iutsy2gd.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/skyblue-analytics",
+      "raw": {
+        "nome": "Skyblue Analytics",
+        "site": "http://skyblueanalytics.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Financeiro",
+        "descricao_curta": "A Skyblue Analytics é uma fintech B2B que desenvolve infraestrutura tecnológica de investimento para bancos, brokers e family offices na América Latina, oferecendo plataformas white-label e APIs para acesso seguro e escalável a mercados globais.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742304832489-iutsy2gd.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/skyblue-analytics",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:08.060352+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Foccuz",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Software",
+      "descricao_curta": null,
+      "site": "https://foccuz.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742248530912-ga7olzuo.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/foccuz",
+      "raw": {
+        "nome": "Foccuz",
+        "site": "https://foccuz.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Software",
+        "descricao_curta": null,
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742248530912-ga7olzuo.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/foccuz",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:11.160484+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "OrderEAT",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Software",
+      "descricao_curta": "OrderEAT é uma edtech que digitaliza cantinas escolares, combinando pagamentos, gestão e aprendizado financeiro e nutricional para crianças. A plataforma já opera em mais de 450 escolas, com 150 mil usuários ativos.",
+      "site": "https://ordereat.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742248530912-ga7olzuo.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/ordereat",
+      "raw": {
+        "nome": "OrderEAT",
+        "site": "https://ordereat.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Software",
+        "descricao_curta": "OrderEAT é uma edtech que digitaliza cantinas escolares, combinando pagamentos, gestão e aprendizado financeiro e nutricional para crianças. A plataforma já opera em mais de 450 escolas, com 150 mil usuários ativos.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742248530912-ga7olzuo.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/ordereat",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:14.269164+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "VENTIA",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Software",
+      "descricao_curta": "Ventia es una empresa de software B2B que digitaliza y optimiza equipos comerciales. Su plataforma combina CRM, gestión de vendedores e inteligencia artificial para ordenar el proceso de ventas, mejorar la ejecución diaria y aumentar los ingresos, integrándose con el ERP que la empresa ya utiliza.",
+      "site": "https://www.getventia.com",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742233764775-6g89itwf.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/ventia",
+      "raw": {
+        "nome": "VENTIA",
+        "site": "https://www.getventia.com",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Software",
+        "descricao_curta": "Ventia es una empresa de software B2B que digitaliza y optimiza equipos comerciales. Su plataforma combina CRM, gestión de vendedores e inteligencia artificial para ordenar el proceso de ventas, mejorar la ejecución diaria y aumentar los ingresos, integrándose con el ERP que la empresa ya utiliza.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1742233764775-6g89itwf.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/ventia",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:17.498015+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "AICube",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Produtividade",
+      "descricao_curta": "A AICube revoluciona a automação com Qube, um agente de IA autônomo que opera sistemas como um humano, sem APIs ou código. Reduz custos, elimina tarefas manuais e otimiza processos em Finanças, RH, Compras e Logística, acelerando a transformação digital e impulsionando negócios.",
+      "site": "http://www.aicube.ca",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1741889834318-yzhhokll.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/aicube",
+      "raw": {
+        "nome": "AICube",
+        "site": "http://www.aicube.ca",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Produtividade",
+        "descricao_curta": "A AICube revoluciona a automação com Qube, um agente de IA autônomo que opera sistemas como um humano, sem APIs ou código. Reduz custos, elimina tarefas manuais e otimiza processos em Finanças, RH, Compras e Logística, acelerando a transformação digital e impulsionando negócios.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1741889834318-yzhhokll.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/aicube",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:20.363161+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Precision Data Engineering and Data Science",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Saúde",
+      "descricao_curta": "A Precision Data é uma startup que habilita o uso de dados de instituições de saúde para impulsionar a ciência. Capacita epidemiologistas, padroniza e adapta dados, viabilizando pesquisas que impactam a evolução dos sistemas de saúde com ciência e precisão.",
+      "site": "https://www.precisiondata.ai/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1741781075720-79zlwmyf.jpg",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/precision-data-engineering-and-data-science",
+      "raw": {
+        "nome": "Precision Data Engineering and Data Science",
+        "site": "https://www.precisiondata.ai/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Saúde",
+        "descricao_curta": "A Precision Data é uma startup que habilita o uso de dados de instituições de saúde para impulsionar a ciência. Capacita epidemiologistas, padroniza e adapta dados, viabilizando pesquisas que impactam a evolução dos sistemas de saúde com ciência e precisão.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1741781075720-79zlwmyf.jpg",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/precision-data-engineering-and-data-science",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:23.258202+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "Marisa.care",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Saúde",
+      "descricao_curta": "A Marisa.Care é uma healthtech que utiliza inteligência artificial para otimizar a prevenção médica. Sua plataforma identifica riscos à saúde com alta precisão, aumentando a adesão a exames preventivos e gerando valor para hospitais. Com clientes líderes no Brasil, entrega ROI de até 12x.",
+      "site": "https://marisa.care",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1741393931067-iweeu0jk.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/marisacare",
+      "raw": {
+        "nome": "Marisa.care",
+        "site": "https://marisa.care",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Saúde",
+        "descricao_curta": "A Marisa.Care é uma healthtech que utiliza inteligência artificial para otimizar a prevenção médica. Sua plataforma identifica riscos à saúde com alta precisão, aumentando a adesão a exames preventivos e gerando valor para hospitais. Com clientes líderes no Brasil, entrega ROI de até 12x.",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1741393931067-iweeu0jk.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/marisacare",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:26.137031+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    },
+    {
+      "nome": "POK (Proof of Knowledge)",
+      "cidade": null,
+      "estado": null,
+      "pais": "Brasil",
+      "categoria": "Educação",
+      "descricao_curta": "POK — Infraestrutura de Credenciais Digitais Verificáveis (Open Badge 3.0) A POK é uma infraestrutura de credenciais digitais que transforma aprendizado, treinamento e desenvolvimento de competências em provas verificáveis, rastreáveis e compartilháveis. Baseada em blockchain e alinhada ao padrão",
+      "site": "https://www.pok.tech/",
+      "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1740689434929-2q1ajdcu.png",
+      "link_perfil_cubo": "https://cubo.itau/startups-portfolio/pok-proof-of-knowledge",
+      "raw": {
+        "nome": "POK (Proof of Knowledge)",
+        "site": "https://www.pok.tech/",
+        "cidade": null,
+        "estado": null,
+        "pais": "Brasil",
+        "categoria": "Educação",
+        "descricao_curta": "POK — Infraestrutura de Credenciais Digitais Verificáveis (Open Badge 3.0) A POK é uma infraestrutura de credenciais digitais que transforma aprendizado, treinamento e desenvolvimento de competências em provas verificáveis, rastreáveis e compartilháveis. Baseada em blockchain e alinhada ao padrão",
+        "logo_url": "https://storage.googleapis.com/cubo-platform.appspot.com/startups/1740689434929-2q1ajdcu.png",
+        "link_perfil_cubo": "https://cubo.itau/startups-portfolio/pok-proof-of-knowledge",
+        "fonte": "Cubo Itaú - Vitrine de Startups",
+        "coletado_em": "2026-06-23T21:17:29.133344+00:00"
+      },
+      "qualidade": {
+        "score": 0.8333,
+        "completude": "4/6",
+        "completude_percentual": 0.6667,
+        "incompleto": false,
+        "baixa_qualidade": false,
+        "componentes": {
+          "completude_peso_0_5": 0.3333,
+          "site_valido_peso_0_2": 0.2,
+          "cidade_estado_consistente_peso_0_2": 0.2,
+          "normalizacao_sem_conflitos_peso_0_1": 0.1
+        },
+        "alertas": []
+      }
+    }
+  ]
+}

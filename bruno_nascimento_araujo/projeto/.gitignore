@@ -1,0 +1,44 @@
+# Segredos
+.env
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# Cache e compilados Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.models_cache/
+
+# Logs
+*.log
+nohup.out
+
+# Estado e arquivos gerados em runtime
+nvidia_ingest_state.json
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Relatorios gerados localmente (mantemos a pasta versionada via .gitkeep)
+reports/*
+!reports/.gitkeep
+
+# Qdrant local (binario + dados vetoriais + snapshots) — trabalho local caro
+# de refazer; nunca deve ir para o repositorio.
+/qdrant
+/storage/
+/snapshots/
+.qdrant-initialized
+
+# IDE
+.vscode/
+.idea/
+*.iml

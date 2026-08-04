@@ -1,0 +1,20 @@
+{
+  "golden_set_status": "baseline_dataset_insufficient",
+  "description": "Golden set for NVIDIA Technology Mapping calibration. Currently empty — no human-labeled gap-to-technology relevance samples available.",
+  "samples": [],
+  "calibration_required": {
+    "mapping_score_weights": "uncalibrated",
+    "mapping_confidence_weights": "uncalibrated",
+    "production_threshold": "uncalibrated",
+    "minimum_rag_contexts": "uncalibrated",
+    "minimum_evidence_support": "uncalibrated",
+    "uncertainty_penalty": "uncalibrated",
+    "technology_priority_policy": "uncalibrated"
+  },
+  "next_steps": [
+    "Collect 20+ samples with gap_type, rag_contexts, expected_nvidia_technologies",
+    "For each sample, have human label mapping_relevance (high/medium/low)",
+    "Run calibration script to compute optimal weights and thresholds",
+    "Update golden_set_status to 'baseline_measured' when ready"
+  ]
+}

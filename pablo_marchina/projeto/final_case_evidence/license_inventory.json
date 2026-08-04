@@ -1,0 +1,54 @@
+{
+  "frontend_dependencies": {
+    "@vitejs/plugin-react": "6.0.2",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "typescript": "6.0.3",
+    "vite": "8.0.16"
+  },
+  "frontend_dependency_count": 5,
+  "frontend_dev_dependencies": {
+    "@playwright/test": "1.61.0",
+    "@types/node": "25.9.3",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3"
+  },
+  "frontend_dev_dependency_count": 4,
+  "notes": "Manifest inventory only; full third-party license resolution remains a release gate.",
+  "python_dependencies": [
+    "fastapi",
+    "uvicorn",
+    "pydantic>=2.7",
+    "pydantic-settings",
+    "python-dotenv",
+    "httpx>=0.28",
+    "requests",
+    "PyYAML",
+    "beautifulsoup4",
+    "trafilatura",
+    "playwright",
+    "qdrant-client",
+    "sqlalchemy",
+    "alembic",
+    "psycopg2-binary",
+    "langgraph>=1.2,<2",
+    "langgraph-checkpoint-postgres>=3.1.0",
+    "litellm>=1.60,<3"
+  ],
+  "python_dependency_count": 18,
+  "python_optional_groups": [
+    "agent-orchestration",
+    "agents",
+    "dev",
+    "eval",
+    "full",
+    "llm-judge",
+    "observability",
+    "postgres",
+    "rag",
+    "ragas-eval",
+    "scraping",
+    "security"
+  ],
+  "status": "PASS"
+}

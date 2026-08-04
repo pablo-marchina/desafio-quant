@@ -1,0 +1,271 @@
+{
+  "_meta": {
+    "description": "Golden set for scraping/source collection baseline calibration — 8 fictional + 3 real Brazilian AI startups with per-source ground truth across 8 source categories",
+    "created": "2026-06-17",
+    "purpose": "scraping_baseline_calibration",
+    "calibration_status": "baseline_dataset_insufficient",
+    "source_categories": [
+      "official_website", "technical_docs", "funding_news", "jobs",
+      "github_or_code", "ecosystem_directory", "media", "nvidia_or_partner_ecosystem"
+    ],
+    "notes": "Dataset contains 11 startups (8 fictional + 3 real). Calibration blocked until real scraping collector validates coverage. 3 real startups (Gupy, Maritaca AI, Sílex) added for SourceCollector validation."
+  },
+  "startups": [
+    {
+      "startup_id": "startup-001",
+      "startup_name": "HealthML",
+      "website_url": "https://healthml.ai",
+      "expected_claim_types": ["gpu_usage", "team", "funding", "technical_publication", "hiring_signal"],
+      "sources": [
+        {"url": "https://healthml.ai", "category": "official_website", "rank": 1, "evidence_covered": 3, "claim_ids_supported": ["c1","c2","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 450, "compliance_blocked": false},
+        {"url": "https://docs.healthml.ai", "category": "technical_docs", "rank": 2, "evidence_covered": 2, "claim_ids_supported": ["c1","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 620, "compliance_blocked": false},
+        {"url": "https://github.com/healthml", "category": "github_or_code", "rank": 3, "evidence_covered": 2, "claim_ids_supported": ["c1","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 310, "compliance_blocked": false},
+        {"url": "https://exame.com/healthml-series-a", "category": "funding_news", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 520, "compliance_blocked": false},
+        {"url": "https://linkedin.com/jobs/healthml", "category": "jobs", "rank": 5, "evidence_covered": 1, "claim_ids_supported": ["c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 280, "compliance_blocked": false},
+        {"url": "https://startupi.com.br/healthml", "category": "media", "rank": 6, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 390, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "HealthML uses GPU acceleration for medical image inference", "claim_type": "gpu_usage"},
+        {"claim_id": "c2", "claim_text": "Founded in 2023 by doctors and ML researchers from USP", "claim_type": "team"},
+        {"claim_id": "c3", "claim_text": "Raised R$5M in Series A from Monashees", "claim_type": "funding"},
+        {"claim_id": "c4", "claim_text": "Published benchmark on public medical dataset achieving 98% accuracy", "claim_type": "technical_publication"},
+        {"claim_id": "c5", "claim_text": "Hiring ML engineers with CUDA experience", "claim_type": "hiring_signal"}
+      ],
+      "total_available_sources": 6,
+      "total_claims": 5,
+      "max_depth_applicable": 2
+    },
+    {
+      "startup_id": "startup-002",
+      "startup_name": "VoiceOps",
+      "website_url": "https://voiceops.com.br",
+      "expected_claim_types": ["ai_native", "funding", "customer", "team", "technology_stack"],
+      "sources": [
+        {"url": "https://voiceops.com.br", "category": "official_website", "rank": 1, "evidence_covered": 3, "claim_ids_supported": ["c1","c4","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 380, "compliance_blocked": false},
+        {"url": "https://neofeed.com.br/voiceops-series-b", "category": "funding_news", "rank": 2, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 410, "compliance_blocked": false},
+        {"url": "https://valor.globo.com/voiceops", "category": "media", "rank": 3, "evidence_covered": 2, "claim_ids_supported": ["c2","c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 550, "compliance_blocked": false},
+        {"url": "https://linkedin.com/jobs/voiceops", "category": "jobs", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 260, "compliance_blocked": false},
+        {"url": "https://techcrunch.com/voiceops", "category": "media", "rank": 5, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": false, "extraction_success": false, "is_duplicate": false, "latency_ms": 5000, "compliance_blocked": true}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "VoiceOps provides AI-powered voice analytics for call centers", "claim_type": "ai_native"},
+        {"claim_id": "c2", "claim_text": "Raised R$20M in Series B from Kaszek Ventures", "claim_type": "funding"},
+        {"claim_id": "c3", "claim_text": "Serves 50+ enterprise customers including Nubank", "claim_type": "customer"},
+        {"claim_id": "c4", "claim_text": "Team of 80 engineers with NLP expertise", "claim_type": "team"},
+        {"claim_id": "c5", "claim_text": "Uses NVIDIA Riva for real-time transcription", "claim_type": "technology_stack"}
+      ],
+      "total_available_sources": 5,
+      "total_claims": 5,
+      "max_depth_applicable": 1
+    },
+    {
+      "startup_id": "startup-003",
+      "startup_name": "AgriSense",
+      "website_url": "https://agrisense.agr.br",
+      "expected_claim_types": ["computer_vision", "funding", "partnership", "deployment"],
+      "sources": [
+        {"url": "https://agrisense.agr.br", "category": "official_website", "rank": 1, "evidence_covered": 3, "claim_ids_supported": ["c1","c3","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 420, "compliance_blocked": false},
+        {"url": "https://distrito.biz/startups/agrisense", "category": "ecosystem_directory", "rank": 2, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 350, "compliance_blocked": false},
+        {"url": "https://slinghub.com/startups/agrisense", "category": "ecosystem_directory", "rank": 3, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": true, "latency_ms": 340, "compliance_blocked": false},
+        {"url": "https://exame.com/agrisense-pivot", "category": "funding_news", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 480, "compliance_blocked": false},
+        {"url": "https://github.com/agrisense", "category": "github_or_code", "rank": 5, "evidence_covered": 2, "claim_ids_supported": ["c1","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 290, "compliance_blocked": false},
+        {"url": "https://startupi.com.br/agrisense-agtech", "category": "media", "rank": 6, "evidence_covered": 1, "claim_ids_supported": ["c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 370, "compliance_blocked": false},
+        {"url": "https://docs.agrisense.agr.br", "category": "technical_docs", "rank": 7, "evidence_covered": 2, "claim_ids_supported": ["c1","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 510, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "AgriSense uses computer vision to detect crop diseases", "claim_type": "computer_vision"},
+        {"claim_id": "c2", "claim_text": "Raised R$3M in seed funding", "claim_type": "funding"},
+        {"claim_id": "c3", "claim_text": "Partnered with Embrapa for field trials", "claim_type": "partnership"},
+        {"claim_id": "c4", "claim_text": "Deployed in 500 farms across Brazil", "claim_type": "deployment"}
+      ],
+      "total_available_sources": 7,
+      "total_claims": 4,
+      "max_depth_applicable": 2
+    },
+    {
+      "startup_id": "startup-004",
+      "startup_name": "LegalMind",
+      "website_url": "https://legalmind.jur.br",
+      "expected_claim_types": ["nlp", "open_source", "team", "technology_stack"],
+      "sources": [
+        {"url": "https://legalmind.jur.br", "category": "official_website", "rank": 1, "evidence_covered": 2, "claim_ids_supported": ["c1","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 400, "compliance_blocked": false},
+        {"url": "https://github.com/legalmind", "category": "github_or_code", "rank": 2, "evidence_covered": 3, "claim_ids_supported": ["c2","c3","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 270, "compliance_blocked": false},
+        {"url": "https://docs.legalmind.jur.br", "category": "technical_docs", "rank": 3, "evidence_covered": 1, "claim_ids_supported": ["c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 530, "compliance_blocked": false},
+        {"url": "https://linkedin.com/jobs/legalmind", "category": "jobs", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 250, "compliance_blocked": false},
+        {"url": "https://neofeed.com.br/legalmind-legaltech", "category": "media", "rank": 5, "evidence_covered": 1, "claim_ids_supported": ["c1"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 440, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "LegalMind automates legal document review with NLP", "claim_type": "nlp"},
+        {"claim_id": "c2", "claim_text": "Team of 15 with PhDs in NLP", "claim_type": "team"},
+        {"claim_id": "c3", "claim_text": "Open-sourced a Portuguese legal BERT model", "claim_type": "open_source"},
+        {"claim_id": "c4", "claim_text": "Uses NVIDIA TensorRT for inference optimization", "claim_type": "technology_stack"}
+      ],
+      "total_available_sources": 5,
+      "total_claims": 4,
+      "max_depth_applicable": 2
+    },
+    {
+      "startup_id": "startup-005",
+      "startup_name": "Cyberguard AI",
+      "website_url": "https://cyberguard.ai",
+      "expected_claim_types": ["cybersecurity", "nvidia_partner", "funding", "technology_stack", "customer"],
+      "sources": [
+        {"url": "https://cyberguard.ai", "category": "official_website", "rank": 1, "evidence_covered": 4, "claim_ids_supported": ["c1","c4","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 360, "compliance_blocked": false},
+        {"url": "https://nvidia.com/partners/cyberguard", "category": "nvidia_or_partner_ecosystem", "rank": 2, "evidence_covered": 2, "claim_ids_supported": ["c3","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 180, "compliance_blocked": false},
+        {"url": "https://developer.nvidia.com/cyberguard-case-study", "category": "nvidia_or_partner_ecosystem", "rank": 3, "evidence_covered": 3, "claim_ids_supported": ["c1","c3","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 200, "compliance_blocked": false},
+        {"url": "https://valor.globo.com/cyberguard-series-a", "category": "funding_news", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 490, "compliance_blocked": false},
+        {"url": "https://github.com/cyberguard-ai", "category": "github_or_code", "rank": 5, "evidence_covered": 1, "claim_ids_supported": ["c1"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 300, "compliance_blocked": false},
+        {"url": "https://linkedin.com/jobs/cyberguard", "category": "jobs", "rank": 6, "evidence_covered": 1, "claim_ids_supported": ["c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 240, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "Cyberguard AI detects network intrusions using ML", "claim_type": "cybersecurity"},
+        {"claim_id": "c2", "claim_text": "Raised R$15M in Series A from Canary VC", "claim_type": "funding"},
+        {"claim_id": "c3", "claim_text": "Official NVIDIA Inception partner since 2024", "claim_type": "nvidia_partner"},
+        {"claim_id": "c4", "claim_text": "Uses NVIDIA Morpheus for AI-powered security analytics", "claim_type": "technology_stack"},
+        {"claim_id": "c5", "claim_text": "Serves 30 enterprise clients in financial sector", "claim_type": "customer"}
+      ],
+      "total_available_sources": 6,
+      "total_claims": 5,
+      "max_depth_applicable": 1
+    },
+    {
+      "startup_id": "startup-006",
+      "startup_name": "FinML",
+      "website_url": "https://finml.com.br",
+      "expected_claim_types": ["ml_platform", "funding", "team", "regulatory", "technology_stack"],
+      "sources": [
+        {"url": "https://finml.com.br", "category": "official_website", "rank": 1, "evidence_covered": 3, "claim_ids_supported": ["c1","c3","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 390, "compliance_blocked": false},
+        {"url": "https://exame.com/finml-fintech", "category": "funding_news", "rank": 2, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 510, "compliance_blocked": false},
+        {"url": "https://valor.globo.com/finml", "category": "media", "rank": 3, "evidence_covered": 2, "claim_ids_supported": ["c2","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 480, "compliance_blocked": false},
+        {"url": "https://neofeed.com.br/finml-regulation", "category": "media", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 460, "compliance_blocked": false},
+        {"url": "https://distrito.biz/startups/finml", "category": "ecosystem_directory", "rank": 5, "evidence_covered": 1, "claim_ids_supported": ["c1"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 330, "compliance_blocked": false},
+        {"url": "https://slinghub.com/startups/finml", "category": "ecosystem_directory", "rank": 6, "evidence_covered": 1, "claim_ids_supported": ["c1"], "fetch_success": true, "extraction_success": true, "is_duplicate": true, "latency_ms": 320, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "FinML provides ML platform for credit risk assessment", "claim_type": "ml_platform"},
+        {"claim_id": "c2", "claim_text": "Raised R$10M in seed funding", "claim_type": "funding"},
+        {"claim_id": "c3", "claim_text": "Team of 40 data scientists and engineers", "claim_type": "team"},
+        {"claim_id": "c4", "claim_text": "Compliant with Brazilian Central Bank AI regulations", "claim_type": "regulatory"},
+        {"claim_id": "c5", "claim_text": "Uses NVIDIA RAPIDS for GPU-accelerated data processing", "claim_type": "technology_stack"}
+      ],
+      "total_available_sources": 6,
+      "total_claims": 5,
+      "max_depth_applicable": 2
+    },
+    {
+      "startup_id": "startup-007",
+      "startup_name": "RetailVision",
+      "website_url": "https://retailvision.io",
+      "expected_claim_types": ["computer_vision", "deployment", "customer", "technology_stack", "funding", "partnership"],
+      "sources": [
+        {"url": "https://retailvision.io", "category": "official_website", "rank": 1, "evidence_covered": 3, "claim_ids_supported": ["c1","c3","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 370, "compliance_blocked": false},
+        {"url": "https://docs.retailvision.io", "category": "technical_docs", "rank": 2, "evidence_covered": 2, "claim_ids_supported": ["c1","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 580, "compliance_blocked": false},
+        {"url": "https://github.com/retailvision", "category": "github_or_code", "rank": 3, "evidence_covered": 1, "claim_ids_supported": ["c1"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 280, "compliance_blocked": false},
+        {"url": "https://exame.com/retailvision-series-a", "category": "funding_news", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 500, "compliance_blocked": false},
+        {"url": "https://startupi.com.br/retailvision-pivot", "category": "media", "rank": 5, "evidence_covered": 1, "claim_ids_supported": ["c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 360, "compliance_blocked": false},
+        {"url": "https://linkedin.com/jobs/retailvision", "category": "jobs", "rank": 6, "evidence_covered": 1, "claim_ids_supported": ["c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 230, "compliance_blocked": false},
+        {"url": "https://distrito.biz/startups/retailvision", "category": "ecosystem_directory", "rank": 7, "evidence_covered": 1, "claim_ids_supported": ["c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 340, "compliance_blocked": false},
+        {"url": "https://nvidia.com/inception/retailvision", "category": "nvidia_or_partner_ecosystem", "rank": 8, "evidence_covered": 2, "claim_ids_supported": ["c4","c6"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 195, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "RetailVision uses computer vision for real-time shelf monitoring", "claim_type": "computer_vision"},
+        {"claim_id": "c2", "claim_text": "Raised R$8M in Series A from Valor Capital", "claim_type": "funding"},
+        {"claim_id": "c3", "claim_text": "Deployed in 200+ retail stores across Brazil", "claim_type": "deployment"},
+        {"claim_id": "c4", "claim_text": "Uses NVIDIA TensorRT for edge inference on Jetson", "claim_type": "technology_stack"},
+        {"claim_id": "c5", "claim_text": "Serves 15 enterprise retail chains", "claim_type": "customer"},
+        {"claim_id": "c6", "claim_text": "Member of NVIDIA Inception program", "claim_type": "partnership"}
+      ],
+      "total_available_sources": 8,
+      "total_claims": 6,
+      "max_depth_applicable": 2
+    },
+    {
+      "startup_id": "startup-008",
+      "startup_name": "EdgeAI",
+      "website_url": "https://edgeai.dev",
+      "expected_claim_types": ["edge_computing", "technology_stack", "open_source"],
+      "sources": [
+        {"url": "https://edgeai.dev", "category": "official_website", "rank": 1, "evidence_covered": 2, "claim_ids_supported": ["c1","c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 410, "compliance_blocked": false},
+        {"url": "https://github.com/edgeai", "category": "github_or_code", "rank": 2, "evidence_covered": 3, "claim_ids_supported": ["c2","c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 265, "compliance_blocked": false},
+        {"url": "https://docs.edgeai.dev", "category": "technical_docs", "rank": 3, "evidence_covered": 2, "claim_ids_supported": ["c1","c3"], "fetch_success": true, "extraction_success": false, "is_duplicate": false, "latency_ms": 1800, "compliance_blocked": false},
+        {"url": "https://linkedin.com/jobs/edgeai", "category": "jobs", "rank": 4, "evidence_covered": 0, "claim_ids_supported": [], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 240, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "EdgeAI provides edge inference platform for IoT devices", "claim_type": "edge_computing"},
+        {"claim_id": "c2", "claim_text": "Open-sourced model optimization toolkit for edge deployment", "claim_type": "open_source"},
+        {"claim_id": "c3", "claim_text": "Uses NVIDIA Jetson and TensorRT for edge acceleration", "claim_type": "technology_stack"}
+      ],
+      "total_available_sources": 4,
+      "total_claims": 3,
+      "max_depth_applicable": 1
+    },
+    {
+      "startup_id": "startup-009",
+      "startup_name": "Maritaca AI",
+      "website_url": "https://maritaca.ai",
+      "is_real": true,
+      "expected_claim_types": ["llm", "funding", "team", "open_source", "technology_stack"],
+      "sources": [
+        {"url": "https://maritaca.ai", "category": "official_website", "rank": 1, "evidence_covered": 3, "claim_ids_supported": ["c1","c3","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 300, "compliance_blocked": false},
+        {"url": "https://github.com/maritaca-ai", "category": "github_or_code", "rank": 2, "evidence_covered": 2, "claim_ids_supported": ["c2","c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 250, "compliance_blocked": false},
+        {"url": "https://docs.maritaca.ai", "category": "technical_docs", "rank": 3, "evidence_covered": 2, "claim_ids_supported": ["c2","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 400, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "Maritaca AI develops Portuguese LLM Sabiá", "claim_type": "llm"},
+        {"claim_id": "c2", "claim_text": "Open-sourced models on GitHub", "claim_type": "open_source"},
+        {"claim_id": "c3", "claim_text": "Founded by UNICAMP NLP researchers", "claim_type": "team"},
+        {"claim_id": "c4", "claim_text": "Published LLM evaluation benchmarks", "claim_type": "technical_publication"},
+        {"claim_id": "c5", "claim_text": "Uses NVIDIA GPUs for model training", "claim_type": "technology_stack"}
+      ],
+      "total_available_sources": 3,
+      "total_claims": 5,
+      "max_depth_applicable": 2
+    },
+    {
+      "startup_id": "startup-010",
+      "startup_name": "Sílex",
+      "website_url": "https://silex.com.br",
+      "is_real": true,
+      "expected_claim_types": ["cybersecurity", "funding", "customer", "technology_stack", "team"],
+      "sources": [
+        {"url": "https://silex.com.br", "category": "official_website", "rank": 1, "evidence_covered": 3, "claim_ids_supported": ["c1","c3","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 350, "compliance_blocked": false},
+        {"url": "https://exame.com/silex", "category": "funding_news", "rank": 2, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 500, "compliance_blocked": false},
+        {"url": "https://silex.com.br/careers", "category": "jobs", "rank": 3, "evidence_covered": 1, "claim_ids_supported": ["c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 280, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "Sílex provides AI-powered cybersecurity platform", "claim_type": "cybersecurity"},
+        {"claim_id": "c2", "claim_text": "Raised funding from Valor Capital", "claim_type": "funding"},
+        {"claim_id": "c3", "claim_text": "Serves enterprise clients in financial sector", "claim_type": "customer"},
+        {"claim_id": "c4", "claim_text": "Team of security engineers and ML researchers", "claim_type": "team"},
+        {"claim_id": "c5", "claim_text": "Uses ML for real-time threat detection", "claim_type": "technology_stack"}
+      ],
+      "total_available_sources": 3,
+      "total_claims": 5,
+      "max_depth_applicable": 2
+    },
+    {
+      "startup_id": "startup-011",
+      "startup_name": "Gupy",
+      "website_url": "https://gupy.io",
+      "is_real": true,
+      "expected_claim_types": ["ai_native", "funding", "customer", "team", "technology_stack"],
+      "sources": [
+        {"url": "https://gupy.io", "category": "official_website", "rank": 1, "evidence_covered": 4, "claim_ids_supported": ["c1","c3","c4","c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 320, "compliance_blocked": false},
+        {"url": "https://gupy.io/careers", "category": "jobs", "rank": 2, "evidence_covered": 1, "claim_ids_supported": ["c4"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 260, "compliance_blocked": false},
+        {"url": "https://github.com/gupy", "category": "github_or_code", "rank": 3, "evidence_covered": 1, "claim_ids_supported": ["c5"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 240, "compliance_blocked": false},
+        {"url": "https://neofeed.com.br/gupy", "category": "funding_news", "rank": 4, "evidence_covered": 1, "claim_ids_supported": ["c2"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 450, "compliance_blocked": false},
+        {"url": "https://startupi.com.br/gupy", "category": "media", "rank": 5, "evidence_covered": 1, "claim_ids_supported": ["c3"], "fetch_success": true, "extraction_success": true, "is_duplicate": false, "latency_ms": 380, "compliance_blocked": false}
+      ],
+      "claims": [
+        {"claim_id": "c1", "claim_text": "Gupy is an AI-powered recruiting platform", "claim_type": "ai_native"},
+        {"claim_id": "c2", "claim_text": "Raised R$50M from Riverwood Capital", "claim_type": "funding"},
+        {"claim_id": "c3", "claim_text": "Serves 3000+ companies in Brazil", "claim_type": "customer"},
+        {"claim_id": "c4", "claim_text": "Team of 200+ employees", "claim_type": "team"},
+        {"claim_id": "c5", "claim_text": "Uses ML for candidate-job matching", "claim_type": "technology_stack"}
+      ],
+      "total_available_sources": 5,
+      "total_claims": 5,
+      "max_depth_applicable": 2
+    }
+  ]
+}

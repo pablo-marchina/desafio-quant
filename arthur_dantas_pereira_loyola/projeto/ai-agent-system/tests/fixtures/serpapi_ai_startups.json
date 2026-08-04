@@ -1,0 +1,22 @@
+{
+  "search_metadata": {
+    "id": "fixture-search-001",
+    "status": "Success"
+  },
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "Example AI Platform",
+      "link": "https://example.com/startup-ai-platform",
+      "snippet": "Startup brasileira usa agentes de IA em workflows operacionais.",
+      "type": "official"
+    },
+    {
+      "position": 2,
+      "title": "Example AI Platform raises seed round",
+      "link": "https://news.example.com/example-ai-platform",
+      "snippet": "A empresa reporta automacao com LLMs e avaliacao de workflows em producao.",
+      "type": "news"
+    }
+  ]
+}

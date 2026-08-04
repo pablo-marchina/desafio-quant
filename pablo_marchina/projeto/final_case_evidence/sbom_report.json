@@ -1,0 +1,11 @@
+{
+  "command": "syft . -o cyclonedx-json",
+  "findings_count": null,
+  "finished_at": "2026-07-01T05:58:07.063885+00:00",
+  "reason": "No SBOM generator is installed.",
+  "report_id": "sbom_report",
+  "started_at": "2026-07-01T05:58:07.062722+00:00",
+  "status": "BLOCKED_BY_ENVIRONMENT",
+  "tool": "syft_or_cyclonedx-py",
+  "version": "not_installed"
+}

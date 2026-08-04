@@ -1,0 +1,23 @@
+{
+  "case_id": "startup_weak_evidence",
+  "description": "E-commerce startup with no AI signals and zero evidence — expects not_recommended.",
+  "profile": {
+    "sector": "E-commerce",
+    "ai_signals": [],
+    "tech_stack": ["WordPress", "PHP", "MySQL"],
+    "description": "Online store selling handmade crafts and artisanal products to the Brazilian market.",
+    "product_summary": "Simple e-commerce platform for handmade goods.",
+    "customers": [],
+    "funding": []
+  },
+  "evidence": [],
+  "expected": {
+    "motion_in": ["not_recommended"],
+    "min_score": 0,
+    "max_score": 25,
+    "expected_gaps": [],
+    "brief_min_sections": 3,
+    "confidence_max": "low",
+    "has_approach_now": false
+  }
+}

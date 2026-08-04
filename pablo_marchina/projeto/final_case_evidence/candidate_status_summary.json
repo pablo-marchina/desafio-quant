@@ -1,0 +1,175 @@
+{
+  "benchmark_configured_count": 0,
+  "benchmarkability": {
+    "configured_ratio": 0.0,
+    "external_dependency_ratio": 0.7759562841530054
+  },
+  "by_category": {
+    "8.1 Runtime core": {
+      "BENCHMARKED": 9
+    },
+    "8.10 Recommendation, ranking and scoring": {
+      "BENCHMARKED": 17
+    },
+    "8.11 Multimodal AI and Document AI": {
+      "BENCHMARKED": 11
+    },
+    "8.12 Parsing, OCR and extraction tools": {
+      "BENCHMARKED": 15
+    },
+    "8.13 Evaluation frameworks and judges": {
+      "BENCHMARKED": 8
+    },
+    "8.14 Observability, LLMOps and experiment tracking": {
+      "BENCHMARKED": 8
+    },
+    "8.15 Security, guardrails and red team": {
+      "BENCHMARKED": 11
+    },
+    "8.16 MCP, tools and agent protocols": {
+      "BENCHMARKED": 7
+    },
+    "8.17 TOON, context formats and structured interfaces": {
+      "BENCHMARKED": 18
+    },
+    "8.18 Sourcing and crawling": {
+      "BENCHMARKED": 9
+    },
+    "8.19 Human review, active learning and labeling": {
+      "BENCHMARKED": 9
+    },
+    "8.2 Data layer, storage, versioning and governance": {
+      "BENCHMARKED": 5
+    },
+    "8.20 Release, supply chain, repo cleanliness and delivery": {
+      "BENCHMARKED": 8
+    },
+    "8.21 Model Serving, Routing and Inference": {
+      "DOCUMENTED_CANDIDATE": 17
+    },
+    "8.22 Workflow Orchestration and Background Jobs": {
+      "DOCUMENTED_CANDIDATE": 16
+    },
+    "8.23 Cache, Queues and Performance": {
+      "DOCUMENTED_CANDIDATE": 13
+    },
+    "8.24 Authentication, Authorization and Multi-Tenancy": {
+      "DOCUMENTED_CANDIDATE": 16
+    },
+    "8.25 Privacy, PII and LGPD": {
+      "DOCUMENTED_CANDIDATE": 19
+    },
+    "8.26 Product Analytics and Experimentation": {
+      "DOCUMENTED_CANDIDATE": 15
+    },
+    "8.27 API, Contract, Load and E2E Testing": {
+      "DOCUMENTED_CANDIDATE": 19
+    },
+    "8.28 Statistical Decision Science": {
+      "DOCUMENTED_CANDIDATE": 27
+    },
+    "8.29 Dataset and Golden Set Lifecycle": {
+      "DOCUMENTED_CANDIDATE": 24
+    },
+    "8.3 Vector/search/retrieval": {
+      "BENCHMARKED": 4
+    },
+    "8.30 Document and Table Understanding": {
+      "DOCUMENTED_CANDIDATE": 28
+    },
+    "8.31 Advanced Retrieval and Evidence Ranking": {
+      "DOCUMENTED_CANDIDATE": 23
+    },
+    "8.32 Structured Output and Constrained Decoding": {
+      "DOCUMENTED_CANDIDATE": 20
+    },
+    "8.33 Claim Verification and Groundedness": {
+      "DOCUMENTED_CANDIDATE": 29
+    },
+    "8.34 Verifier-Guided and Corrective RAG": {
+      "DOCUMENTED_CANDIDATE": 24
+    },
+    "8.35 Agentic RAG and Multi-Agent Verification": {
+      "DOCUMENTED_CANDIDATE": 42
+    },
+    "8.36 Advanced GraphRAG and Ontology-Guided Retrieval": {
+      "DOCUMENTED_CANDIDATE": 35
+    },
+    "8.37 Long-Context, Context Packing and Hierarchical Retrieval": {
+      "DOCUMENTED_CANDIDATE": 34
+    },
+    "8.38 Source Acquisition and Freshness": {
+      "DOCUMENTED_CANDIDATE": 41
+    },
+    "8.39 Temporal RAG and Currentness Control": {
+      "DOCUMENTED_CANDIDATE": 12
+    },
+    "8.4 Graph and GraphRAG": {
+      "BENCHMARKED": 6
+    },
+    "8.40 Evaluation Stack and Benchmarks": {
+      "DOCUMENTED_CANDIDATE": 51
+    },
+    "8.41 Advanced Benchmarks and Research Artifacts": {
+      "DOCUMENTED_CANDIDATE": 43
+    },
+    "8.42 Security, Guardrails and Red Teaming": {
+      "DOCUMENTED_CANDIDATE": 29
+    },
+    "8.43 Memory and Negative Learning": {
+      "DOCUMENTED_CANDIDATE": 27
+    },
+    "8.44 Output Versioning, Audit Bundle and Report Compilation": {
+      "DOCUMENTED_CANDIDATE": 42
+    },
+    "8.45 Failure Transparency and Completeness Control": {
+      "DOCUMENTED_CANDIDATE": 47
+    },
+    "8.46 Decision Accountability and Responsibility": {
+      "DOCUMENTED_CANDIDATE": 24
+    },
+    "8.47 Tool/Flow/Prompt Governance": {
+      "DOCUMENTED_CANDIDATE": 36
+    },
+    "8.48 Software V&V and Codebase-Aware RAG": {
+      "DOCUMENTED_CANDIDATE": 27
+    },
+    "8.49 Formal Agentic RAG Control": {
+      "DOCUMENTED_CANDIDATE": 34
+    },
+    "8.5 RAG/retrieval techniques": {
+      "BENCHMARKED": 35
+    },
+    "8.50 Terminology and Domain Adaptation": {
+      "DOCUMENTED_CANDIDATE": 12
+    },
+    "8.51 Search Backend Benchmarks": {
+      "DOCUMENTED_CANDIDATE": 15
+    },
+    "8.52 Local Experiment Tracking and Benchmark Registry": {
+      "DOCUMENTED_CANDIDATE": 11
+    },
+    "8.6 Reranking": {
+      "BENCHMARKED": 8
+    },
+    "8.7 Evidence, verification, uncertainty and abstention": {
+      "BENCHMARKED": 24
+    },
+    "8.8 Reasoning, agents and generation": {
+      "BENCHMARKED": 24
+    },
+    "8.9 Graph intelligence": {
+      "BENCHMARKED": 9
+    },
+    "Agentic RAG / Tool-Using Agents": {
+      "DOCUMENTED_CANDIDATE": 1
+    }
+  },
+  "by_status": {
+    "BENCHMARKED": 245,
+    "DOCUMENTED_CANDIDATE": 853
+  },
+  "external_dependency_count": 852,
+  "runtime_relevant_count": 9,
+  "total_candidates": 1098
+}

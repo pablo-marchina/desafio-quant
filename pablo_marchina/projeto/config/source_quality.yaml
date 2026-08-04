@@ -1,0 +1,41 @@
+# Source Quality Configuration — calibrated source scoring parameters
+# Status: CALIBRATED
+# Last calibration: 2026-06-01
+
+source_types:
+  official_site: 1.0
+  news: 0.8
+  founder_profile: 0.7
+  blog: 0.6
+  job_post: 0.5
+  directory: 0.4
+
+discovery:
+  max_sources: 10
+  max_search_depth: 2
+  confidence_weights:
+    has_name: 0.3
+    has_website: 0.1
+    is_manual_seed: 0.2
+    source_reliable: 0.1
+
+rate_limit:
+  requests_per_second: 2
+  concurrent_requests: 1
+
+gap_business_impact:
+  external_api_dependency: 0.7
+  high_inference_cost: 0.8
+  high_latency: 0.7
+  slow_data_pipeline: 0.6
+  heavy_tabular_processing: 0.5
+  computer_vision_need: 0.6
+  voice_need: 0.5
+  agent_governance_gap: 0.8
+  privacy_or_controlled_deployment_gap: 0.9
+  ai_cybersecurity_need: 0.7
+  healthcare_compliance_need: 0.8
+  robotics_need: 0.5
+  simulation_need: 0.5
+  model_evaluation_gap: 0.4
+  observability_gap: 0.5

@@ -1,0 +1,49 @@
+{
+  "_comentario": "Arquivo de referência — NÃO é indexado (começa com _).",
+
+  "campos_obrigatorios": {
+    "url":        "URL canônica da fonte (use nvidia.com mesmo se o texto for seu)",
+    "fonte":      "Domínio de origem, ex: nvidia.com",
+    "titulo":     "Título da tecnologia ou caso de uso",
+    "categoria":  "produto | conceito | caso_de_uso | inception | stack",
+    "familia":    "inferencia | treinamento | dados | deployment | plataforma",
+    "tecnologia": "Nome exato da tecnologia NVIDIA (TensorRT, NIM, NeMo, etc.)",
+    "setores":    ["saude","financas","agro","varejo","industria","educacao","energia","logistica","geral"],
+    "ia_tipos":   ["visão computacional","NLP","LLM","recomendacao","series temporais","deteccao de anomalias","classificacao","geracao de conteudo","busca semantica"],
+    "texto":      "Texto descritivo que será chunkificado e indexado. Mínimo 50 caracteres."
+  },
+
+  "valores_validos": {
+    "categoria":  ["produto", "conceito", "caso_de_uso", "inception", "stack"],
+    "familia":    ["inferencia", "treinamento", "dados", "deployment", "plataforma"],
+    "setores":    ["saude", "financas", "agro", "varejo", "industria", "educacao", "energia", "logistica", "geral"],
+    "ia_tipos":   ["visão computacional", "NLP", "LLM", "recomendacao", "series temporais", "deteccao de anomalias", "classificacao", "geracao de conteudo", "busca semantica"]
+  },
+
+  "mapeamento_familia": {
+    "inferencia":   ["TensorRT", "TensorRT-LLM", "Triton", "NIM", "Dynamo"],
+    "treinamento":  ["NeMo", "CUDA", "cuDNN"],
+    "dados":        ["RAPIDS", "cuDF", "cuML", "cuOpt"],
+    "deployment":   ["NIM", "GPU Operator", "Run:ai"],
+    "plataforma":   ["DGX", "NGC", "AI Enterprise", "Nemotron", "Metropolis", "Isaac", "Jetson"]
+  },
+
+  "dica_texto": [
+    "Escreva 3-6 parágrafos por tecnologia.",
+    "Inclua: o que é, para que serve, casos de uso reais, setores beneficiados, vantagens técnicas.",
+    "Mencione outras tecnologias NVIDIA que integram com esta (ex: NIM + Triton).",
+    "Textos mais ricos = embeddings melhores = recomendações mais precisas."
+  ],
+
+  "exemplo_valido": {
+    "url":        "https://www.nvidia.com/en-us/ai-data-science/products/nemo/",
+    "fonte":      "nvidia.com",
+    "titulo":     "NVIDIA NeMo — Framework para LLMs e IA Generativa",
+    "categoria":  "produto",
+    "familia":    "treinamento",
+    "tecnologia": "NeMo",
+    "setores":    ["geral"],
+    "ia_tipos":   ["LLM", "NLP", "geracao de conteudo"],
+    "texto":      "NVIDIA NeMo é um framework de código aberto para construir, customizar e fazer deploy de modelos de linguagem grandes (LLMs) e modelos de IA generativa. Ele oferece uma pipeline completa que vai do pré-treinamento ao fine-tuning e alinhamento com RLHF, permitindo que times de pesquisa e produto treinem modelos fundacionais do zero ou adaptem modelos existentes para domínios específicos."
+  }
+}

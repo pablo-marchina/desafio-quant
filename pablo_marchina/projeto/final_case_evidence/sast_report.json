@@ -1,0 +1,11 @@
+{
+  "command": "/opt/pyvenv/bin/python -m bandit -r src scripts -f json",
+  "findings_count": null,
+  "finished_at": "2026-07-01T05:58:05.526786+00:00",
+  "reason": "Bandit is not installed.",
+  "report_id": "sast_report",
+  "started_at": "2026-07-01T05:58:04.310979+00:00",
+  "status": "BLOCKED_BY_ENVIRONMENT",
+  "tool": "bandit",
+  "version": "not_installed"
+}

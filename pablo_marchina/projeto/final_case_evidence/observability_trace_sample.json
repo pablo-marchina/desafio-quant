@@ -1,0 +1,64 @@
+{
+  "chunks_retrieved": [
+    {
+      "chunk_id": "triton_latency",
+      "score": 0.86
+    }
+  ],
+  "claims_generated": [
+    "Latency gap maps to Triton when source-backed evidence exists."
+  ],
+  "claims_supported": [
+    "Latency gap maps to Triton when source-backed evidence exists."
+  ],
+  "degraded_states": [],
+  "documents_scraped": [],
+  "errors": [],
+  "generated_at": "2026-07-01T05:58:13.380940+00:00",
+  "graph_paths_used": [
+    [
+      "source:triton_latency",
+      "gap:high_latency",
+      "technology:triton"
+    ]
+  ],
+  "latency_by_stage": {
+    "pack_ms": 1,
+    "planning_ms": 2,
+    "rerank_ms": 3,
+    "retrieval_ms": 11
+  },
+  "models_used": [
+    "sentence-transformers/all-MiniLM-L6-v2"
+  ],
+  "planner_output": {
+    "must_have_terms": [
+      "evidence",
+      "gap",
+      "NVIDIA"
+    ],
+    "retrieval_mode": "hybrid"
+  },
+  "prompt_versions": [
+    "deterministic-template-v1"
+  ],
+  "query": "Connect evidence to gap, NVIDIA recommendation, and next action.",
+  "recommendations": [
+    "Evaluate Triton Inference Server with a latency benchmark."
+  ],
+  "reranked_chunks": [
+    {
+      "chunk_id": "triton_latency",
+      "score": 0.91
+    }
+  ],
+  "retriever_versions": [
+    "hybrid-rag-v1"
+  ],
+  "run_id": "trace-sample-epic-79",
+  "sources_selected": [
+    "official_site",
+    "nvidia_docs"
+  ],
+  "startup_id": "synthetic_eval_startup_001"
+}

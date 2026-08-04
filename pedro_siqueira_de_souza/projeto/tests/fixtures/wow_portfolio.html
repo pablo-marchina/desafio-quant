@@ -1,0 +1,30 @@
+<!--
+  Fixture: recorte representativo da página /portfolio da WOW Aceleradora.
+  Reproduz os sinais que o WowAdapter usa, SEM depender de rede:
+    - header com o logo da marca (ruído a ser ignorado)
+    - grid de <img alt="Nome"> (inclui ruído: alt vazio e nome de arquivo)
+    - <a href="/cases/slug"> em destaque (um casa com o grid -> enriquece
+      detail_url; outro NÃO está no grid -> entra a partir do slug)
+-->
+<html>
+  <body>
+    <header>
+      <img alt="WOW Aceleradora" src="/logo.svg">
+    </header>
+
+    <section class="portfolio-grid">
+      <img alt="Becon">
+      <img alt="Squid">
+      <img alt="Aegro">
+      <img alt="Movidesk">
+      <img alt="Dietbox">
+      <img alt="">
+      <img alt="banner.png">
+    </section>
+
+    <section class="cases-destaque">
+      <a href="/cases/becon">Becon<span>Confira o case completo</span></a>
+      <a href="/cases/treasy">Treasy<span>Confira o case completo</span></a>
+    </section>
+  </body>
+</html>

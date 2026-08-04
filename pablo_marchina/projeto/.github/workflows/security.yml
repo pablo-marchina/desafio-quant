@@ -1,0 +1,46 @@
+name: Security
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "23 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  dependency-and-static-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install security tooling and product dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install ".[security]"
+      - name: Audit external Python dependencies
+        run: |
+          python -m pip freeze | grep -vi '^nvidia-startup-ai-radar' > audited-requirements.txt
+          pip-audit --strict --requirement audited-requirements.txt
+      - name: Run high-severity Python static analysis
+        run: bandit -q -r src scripts -lll
+      - name: Audit frontend dependencies
+        working-directory: frontend
+        run: |
+          npm ci
+          npm audit --audit-level=high

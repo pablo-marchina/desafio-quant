@@ -1,0 +1,17 @@
+{
+  "catalog_path": "final_case_evidence/candidate_catalog.csv",
+  "items": [],
+  "policy": "Every external FUTURE_RESEARCH candidate must have an explicit free/no-cost classification. Only eligible free/local/API statuses may enter benchmark ranking.",
+  "registry_path": "/mnt/data/nvidia_final_impl/docs/free_external_candidate_registry.json",
+  "report_id": "external_free_verification_report",
+  "status": "PASS",
+  "summary": {
+    "blocked_or_unverified_count": 0,
+    "external_row_count": 0,
+    "external_unique_count": 0,
+    "missing_registry_count": 0,
+    "missing_source_count": 0,
+    "ranking_eligible_count": 0,
+    "registry_entry_count": 1098
+  }
+}

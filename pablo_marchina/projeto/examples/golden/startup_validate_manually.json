@@ -1,0 +1,24 @@
+{
+  "case_id": "startup_validate_manually",
+  "description": "Startup with medium evidence but low confidence — expects lack_evidence_more_research and no APPROACH_NOW.",
+  "profile": {
+    "sector": "AI",
+    "ai_signals": ["machine learning", "AI assistant"],
+    "tech_stack": ["Python", "Flask"],
+    "description": "A company exploring AI-powered features with limited public evidence of production use.",
+    "product_summary": "AI-powered assistant platform.",
+    "customers": [],
+    "funding": []
+  },
+  "evidence": [
+    {"claim": "Exploring AI assistant features", "confidence": "low"}
+  ],
+  "expected": {
+    "motion_in": ["lack_evidence_more_research", "not_recommended"],
+    "min_score": 0,
+    "max_score": 40,
+    "expected_gaps": [],
+    "brief_min_sections": 3,
+    "has_approach_now": false
+  }
+}

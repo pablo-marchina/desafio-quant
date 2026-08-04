@@ -1,0 +1,34 @@
+# Core API
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+
+# Agent orchestration
+langgraph
+langchain-core
+langchain-openai
+
+# HTTP and scraping
+httpx
+beautifulsoup4
+trafilatura
+playwright
+scrapy
+
+# Structured data and storage
+sqlalchemy
+psycopg[binary]
+
+# Vector search and retrieval
+qdrant-client
+rank-bm25
+cohere
+
+# Database migrations
+alembic
+
+# Utilities
+tenacity
+orjson

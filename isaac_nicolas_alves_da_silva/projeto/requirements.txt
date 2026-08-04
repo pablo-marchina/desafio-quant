@@ -1,0 +1,46 @@
+# API e configuração
+fastapi>=0.115,<1
+pydantic-settings>=2.7,<3
+uvicorn[standard]>=0.34,<1
+
+# Scraping HTTP e extração de HTML
+beautifulsoup4>=4.12,<5
+httpx>=0.28,<1
+playwright>=1.52,<2
+trafilatura>=2.0,<3
+
+# Testes
+pytest>=8.3,<9
+
+sqlalchemy[asyncio]>=2.0,<3
+asyncpg>=0.30,<1
+alembic>=1.14,<2
+
+# Fila de tarefas distribuida
+dramatiq[redis]>=2.1,<3
+
+# Agentes e orquestracao de fluxos com LLM
+langchain>=0.3,<1
+langchain-google-genai>=2.1,<3
+langgraph>=0.2,<1
+
+# Banco vetorial
+qdrant-client>=1.12,<2
+
+# Reranking (RAG V4)
+cohere>=5.0,<6
+
+# Observabilidade de LLM (tracing/custo/latencia via Langfuse self-hosted)
+langfuse>=4,<5
+
+# Avaliacao de qualidade do RAG (Fase 2, baseline ragas_eval opt-in)
+ragas>=0.4,<0.5
+
+# Exportacao de briefing em PDF (Frontend V3) - HTML via Jinja2+markdown,
+# PDF via Chromium headless (playwright, ja listado acima)
+jinja2>=3.1,<4
+markdown>=3.6,<4
+
+# Dedup de startups por nome/dominio (Startups V4)
+rapidfuzz>=3.0,<4
+

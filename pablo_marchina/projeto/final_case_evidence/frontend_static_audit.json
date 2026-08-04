@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checks": {
+    "frontend_decision_cockpit": true,
+    "startup_profile_first_class": true,
+    "recommendations_all_no_slice": true,
+    "evidence_matrix_all_claims": true,
+    "rag_contexts_all": true,
+    "radar_dashboard_no_slice": true,
+    "evidence_first_no_slice": true
+  }
+}

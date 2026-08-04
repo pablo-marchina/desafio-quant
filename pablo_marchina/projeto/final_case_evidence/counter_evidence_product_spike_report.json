@@ -1,0 +1,139 @@
+{
+  "baseline_score": 0.1725,
+  "candidate_score": 0.865,
+  "case_count": 2,
+  "cases": [
+    {
+      "baseline_output": {
+        "confidence": 0.88,
+        "degraded_checks": [],
+        "detected_contradiction_ids": [],
+        "missing_evidence": [],
+        "uncertainty": 0.12
+      },
+      "baseline_score": 0.17,
+      "candidate_output": {
+        "adjusted_confidence": 0.66,
+        "degraded_checks": [
+          {
+            "claim": "NVIDIA NIM is ready to replace third-party inference APIs.",
+            "code": "COUNTER_EVIDENCE_FOUND",
+            "evidence_id": "nim_private_preview_constraint",
+            "reason": "Source says the capability is unsupported or not validated.",
+            "relevance_score": 0.84,
+            "severity": "high",
+            "status": "degraded",
+            "technology": "NVIDIA NIM"
+          }
+        ],
+        "detected_contradiction_ids": [
+          "nim_private_preview_constraint"
+        ],
+        "missing_evidence": [
+          "manual review of conflicting RAG evidence",
+          "fresh source confirming the recommendation still applies",
+          "measured experiment before high-confidence promotion"
+        ],
+        "original_confidence": 0.88,
+        "records": [
+          {
+            "evidence_id": "nim_private_preview_constraint",
+            "matched_signals": [
+              "unsupported",
+              "manual review",
+              "may",
+              "preview"
+            ],
+            "reason": "Source says the capability is unsupported or not validated.",
+            "relevance_score": 0.84,
+            "severity": "high",
+            "source_id": "nim_ops",
+            "title": "NIM operational constraints",
+            "url": "https://docs.nvidia.com/nim/"
+          }
+        ],
+        "status": "PASS",
+        "uncertainty": 0.34,
+        "warnings": [
+          "counter_evidence_without_required_provenance_dropped"
+        ]
+      },
+      "candidate_score": 0.875,
+      "case_id": "nim_api_dependency_counter_evidence",
+      "description": "NIM recommendation should surface deployment constraints before high confidence.",
+      "expected_counter_evidence_ids": [
+        "nim_private_preview_constraint"
+      ],
+      "quality_delta": 0.705
+    },
+    {
+      "baseline_output": {
+        "confidence": 0.86,
+        "degraded_checks": [],
+        "detected_contradiction_ids": [],
+        "missing_evidence": [],
+        "uncertainty": 0.14
+      },
+      "baseline_score": 0.175,
+      "candidate_output": {
+        "adjusted_confidence": 0.74,
+        "degraded_checks": [
+          {
+            "claim": "Triton will reduce p95 latency for the startup workload.",
+            "code": "COUNTER_EVIDENCE_FOUND",
+            "evidence_id": "triton_measurement_requirement",
+            "reason": "Source describes a tradeoff.",
+            "relevance_score": 0.78,
+            "severity": "medium",
+            "status": "degraded",
+            "technology": "Triton Inference Server"
+          }
+        ],
+        "detected_contradiction_ids": [
+          "triton_measurement_requirement"
+        ],
+        "missing_evidence": [
+          "manual review of conflicting RAG evidence",
+          "fresh source confirming the recommendation still applies",
+          "measured experiment before high-confidence promotion"
+        ],
+        "original_confidence": 0.86,
+        "records": [
+          {
+            "evidence_id": "triton_measurement_requirement",
+            "matched_signals": [
+              "tradeoff",
+              "may"
+            ],
+            "reason": "Source describes a tradeoff.",
+            "relevance_score": 0.78,
+            "severity": "medium",
+            "source_id": "triton_perf",
+            "title": "Triton performance tradeoffs",
+            "url": "https://docs.nvidia.com/triton/"
+          }
+        ],
+        "status": "PASS",
+        "uncertainty": 0.26,
+        "warnings": [
+          "counter_evidence_without_required_provenance_dropped"
+        ]
+      },
+      "candidate_score": 0.855,
+      "case_id": "triton_latency_counter_evidence",
+      "description": "Triton recommendation should expose measurement requirements and limitations.",
+      "expected_counter_evidence_ids": [
+        "triton_measurement_requirement"
+      ],
+      "quality_delta": 0.68
+    }
+  ],
+  "decision": "PROMOTE_TO_PRODUCT_SPIKE",
+  "generated_at": "2026-07-01T05:58:31.534017+00:00",
+  "methodology": "Compares baseline high-confidence recommendation output against counter-evidence-aware output. The benchmark rewards contradiction detection, confidence correction, degraded checks, and missing evidence prompts. This justifies product spike work, not default runtime adoption.",
+  "min_delta": 0.12,
+  "quality_delta": 0.6925,
+  "regression_count": 0,
+  "report_id": "counter_evidence_product_spike_report",
+  "status": "PASS"
+}

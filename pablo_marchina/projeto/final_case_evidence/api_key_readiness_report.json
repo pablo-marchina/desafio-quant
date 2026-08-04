@@ -1,0 +1,22 @@
+{
+  "checks": [
+    {
+      "configured": false,
+      "env_key": "OPENAI_API_KEY",
+      "is_set": false,
+      "status": "PASS",
+      "tool": "OpenAI Evals"
+    },
+    {
+      "configured": false,
+      "env_key": "LANGSMITH_API_KEY",
+      "is_set": false,
+      "status": "PASS",
+      "tool": "LangSmith"
+    }
+  ],
+  "failures": [],
+  "generated_at": "2026-07-01T05:58:12.057585+00:00",
+  "report_id": "api_key_readiness_report",
+  "status": "PASS"
+}
