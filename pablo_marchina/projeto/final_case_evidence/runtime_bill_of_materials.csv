@@ -1,4 +1,0 @@
-component_id,name,category,version_or_source,status,runtime_role,configuration_ref,benchmark_ref,decision_ref,owner
-runtime.fastapi,FastAPI,Runtime core,pyproject.toml,PROMOTED_TO_RUNTIME,product_api,.env.example,final_case_evidence/benchmark_manifest.json,final_case_evidence/decision_ledger.csv,product
-runtime.postgresql,PostgreSQL,Runtime core,PRODUCT_DB_URL,PROMOTED_TO_RUNTIME,product_database,.env.example,final_case_evidence/benchmark_manifest.json,final_case_evidence/decision_ledger.csv,product
-runtime.qdrant,Qdrant,Runtime core,QDRANT_URL,PROMOTED_TO_RUNTIME,rag_vector_store,.env.example,final_case_evidence/benchmark_manifest.json,final_case_evidence/decision_ledger.csv,product

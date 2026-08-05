@@ -1,1 +1,0 @@
-"""AI stack gap diagnostics."""

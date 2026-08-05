@@ -1,1 +1,0 @@
-"""Infraestrutura compartilhada de filas."""

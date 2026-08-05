@@ -1,6 +1,0 @@
-path,category,purpose,owner,runtime_or_documentation_role,runtime_role,documentation_role,evidence_role,keep_or_remove,justification,evidence_reference
-src,Product Runtime,"Typed product backend, RAG, scoring, orchestration, API, and governance runtime.",product,runtime,none,none,none,keep,Purpose is documented in the repository final delivery evidence.,docs/final_runtime_contract.md
-frontend,Product Runtime,Evidence-first product UI.,product,runtime,none,none,none,keep,Purpose is documented in the repository final delivery evidence.,docs/final_delivery_index.md
-tests,Product Tests,"Automated unit, integration, eval, acceptance, and E2E validation.",product,test,none,none,none,keep,Purpose is documented in the repository final delivery evidence.,EVALS.md
-final_case_evidence,Governance Evidence,"Generated final proof reports, ledgers, manifests, and benchmark outputs.",product,evidence,none,none,none,keep,Purpose is documented in the repository final delivery evidence.,docs/final_delivery_index.md
-notebooks,Archived Historical Material,Exploratory notebooks excluded from runtime proof.,research,historical,none,none,none,review,Purpose is documented in the repository final delivery evidence.,docs/final_repository_map.md

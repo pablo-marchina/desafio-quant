@@ -1,4 +1,0 @@
-{"question":"O que é NVIDIA NIM?","ground_truth":"NVIDIA NIM é um conjunto de microserviços para implantação de modelos de IA generativa."}
-{"question":"Para que serve o NVIDIA NeMo?","ground_truth":"NVIDIA NeMo é usado para criar, customizar e implantar modelos de IA generativa."}
-{"question":"Qual serviço NVIDIA ajuda a executar inferência otimizada?","ground_truth":"NVIDIA Triton Inference Server ajuda a servir inferência de modelos em produção."}
-

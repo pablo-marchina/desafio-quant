@@ -1,8 +1,0 @@
-fastapi
-pydantic
-pydantic-settings
-requests
-uvicorn[standard]
-sentence-transformers
-psycopg[binary]
-langgraph

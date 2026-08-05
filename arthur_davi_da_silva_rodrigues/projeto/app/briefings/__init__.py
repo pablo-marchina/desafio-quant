@@ -1,1 +1,0 @@
-"""Executive briefing generation."""

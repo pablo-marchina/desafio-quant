@@ -1,5 +1,0 @@
-# O build do frontend reinstala deps e regenera o .next dentro da imagem (F0.2);
-# nada disso vai no contexto.
-node_modules
-.next
-npm-debug.log*

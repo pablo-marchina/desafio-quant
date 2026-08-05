@@ -1,3 +1,0 @@
-# NVIDIA NIM
-
-Updated content.

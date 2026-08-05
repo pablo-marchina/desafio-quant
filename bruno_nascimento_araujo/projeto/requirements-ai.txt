@@ -1,7 +1,0 @@
-# Recursos pesados/opcionais. Instale ALEM do requirements.txt para habilitar:
-#   - Filtro semantico neural QFirst (sentence-transformers)
-#   - Fallback de renderizacao de SPAs (crawl4ai + Playwright)
-# pip install -r requirements.txt -r requirements-ai.txt
-# python -m playwright install chromium   # apos instalar crawl4ai
-sentence-transformers>=2.7
-crawl4ai>=0.3
