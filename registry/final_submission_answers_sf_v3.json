@@ -1,0 +1,39 @@
+{
+  "artifact": "FINAL_SUBMISSION_FREEZE",
+  "version": "SF-v3.0",
+  "freeze_date": "2026-08-11",
+  "status": "FINAL_TRUTH_ALIGNED_H2_FAIL",
+  "fields": [
+    {
+      "field": "Nome do Robô",
+      "answer": "ARGOS"
+    },
+    {
+      "field": "Explicação do Nome",
+      "answer": "ARGOS remete ao guardião de múltiplos olhos. O nome representa um sistema que observa simultaneamente a probabilidade e diferentes dimensões observáveis de um mercado de previsão — trajetória de preços, volume, fluxo, concentração e participação — para testar se algum movimento acrescenta informação. A analogia é de vigilância quantitativa, não de identificação de insiders: o sistema não observa informação privada, intenção, ilegalidade ou a origem causal de uma negociação."
+    },
+    {
+      "field": "Lógica da Estratégia",
+      "answer": "O ARGOS foi construído como um sistema quantitativo de decisão com abstention explícita. Primeiro, mede a probabilidade point-in-time do mercado de previsão e a compara com baselines públicos gratuitos. Depois, modela movimentos anormais de preço, volume, fluxo, persistência, concentração e participação e exige que essa camada demonstre ganho incremental fora da amostra sobre a própria probabilidade agregada antes de autorizar qualquer tradução para ações. Na implementação congelada em contratos de earnings/EPS da Polymarket, M2 apresentou valor preditivo contra os baselines públicos testados, mas M_MOVE_CORE falhou no gate confirmatório H2: piorou Brier e log loss pontualmente e não cumpriu os critérios pré-registrados de promoção. Pelo stop rule definido antes do teste, não há resgate por subgrupos, novos thresholds ou modelos pós-resultado, e nenhuma regra long/short é promovida a partir dos movimentos. Assim, a decisão econômica final no conjunto testado é no-trade."
+    },
+    {
+      "field": "Classe de Ativos",
+      "answer": "Ações individuais de empresas listadas nos Estados Unidos. Essa é a classe de ativos da implementação empírica do ARGOS; porém, após o FAIL de H2, nenhuma implementação long/short baseada nos movimentos do mercado de previsão é promovida. A decisão econômica final dentro da evidência testada permanece no-trade."
+    },
+    {
+      "field": "Universo de Investimento",
+      "answer": "A implementação empírica usa ações de empresas dos Estados Unidos ligadas a contratos elegíveis de earnings/EPS da Polymarket, com ligação evento–empresa auditável, resolução objetiva e cutoff point-in-time seguro. O painel principal contém 117 eventos; 115 possuem tape e trajetória de probabilidade pre-cutoff estruturalmente disponíveis. A auditoria independente de EPS oficial cobre 116/117 eventos, com 116/116 concordâncias e um único residual fail-closed, BLSH|2025-09-17. O universo descreve o laboratório do teste; não implica que earnings seja a família de eventos mais assimétrica nem que exista alpha acionário validado."
+    },
+    {
+      "field": "Frequência da Estratégia",
+      "answer": "Event-driven. O sistema é avaliado em janelas point-in-time anteriores a cada evento e o protocolo confirmatório congela a construção das features e o calendário de avaliação antes de abrir os outcomes. Como H2 falhou, não existe frequência de execução long/short promovida: o output econômico final é no-trade, em vez de forçar operações sem evidência incremental."
+    },
+    {
+      "field": "Benchmark",
+      "answer": "Na camada informacional, M2 — a probabilidade agregada point-in-time da Polymarket — é o benchmark primário para qualquer feature de movimento; M0 e os baselines públicos gratuitos testados contextualizam o ganho preditivo de H1. Na camada econômica, SPY é o benchmark financeiro das traduções acionárias já avaliadas e C0_NO_TRADE é a opção nula e champion econômico do conjunto testado."
+    }
+  ],
+  "final_claim": "Prediction-market probability was predictive relative to the tested free/public baselines, but the frozen movement layer did not add incremental information beyond M2; the pre-registered stop rule therefore ends the tested path at no-trade.",
+  "prohibited_reframing": "Do not rewrite FAIL_H2 as an alpha result, hidden subgroup opportunity, smart-wallet strategy, insider detector or future long/short promise.",
+  "next_action": "FINAL_REPORT_AUTHORING_AND_QA"
+}
