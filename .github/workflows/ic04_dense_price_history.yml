@@ -1,0 +1,63 @@
+name: IC-04 Dense Price History
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ic04_dense_price_history_audit.py'
+      - '.github/workflows/ic04_dense_price_history.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download frozen IC-02 raw metadata
+        uses: actions/download-artifact@v4
+        with:
+          name: ic02-polymarket-trade-tape-raw
+          path: ic02_input
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: pablo-marchina/desafio-quant
+          run-id: 31449689618
+      - name: Run full 117-event dense price-history audit
+        run: |
+          python scripts/ic04_dense_price_history_audit.py \
+            --ic02-dir ic02_input \
+            --input registry/ic02_event_manifest.csv \
+            --output-dir ic04_output
+      - name: Publish compact data products
+        if: always()
+        run: |
+          mkdir -p data
+          for f in ic04_event_summary.csv ic04_raw_manifest.csv ic04_summary.json ic04_errors.csv; do test -f "ic04_output/$f" && cp "ic04_output/$f" "registry/$f" || true; done
+          test -f ic04_output/ic04_report.md && cp ic04_output/ic04_report.md docs/17_ic04_dense_price_history_report.md || true
+          test -f ic04_output/ic04_dense_prices.csv.gz && cp ic04_output/ic04_dense_prices.csv.gz data/ic04_dense_prices.csv.gz || true
+          test -f ic04_output/ic04_yes_probability_trajectory.csv.gz && cp ic04_output/ic04_yes_probability_trajectory.csv.gz data/ic04_yes_probability_trajectory.csv.gz || true
+      - name: Upload IC-04 raw provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ic04-dense-price-history-raw
+          path: ic04_output/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit compact IC-04 outputs
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for f in registry/ic04_event_summary.csv registry/ic04_raw_manifest.csv registry/ic04_summary.json registry/ic04_errors.csv docs/17_ic04_dense_price_history_report.md data/ic04_dense_prices.csv.gz data/ic04_yes_probability_trajectory.csv.gz; do test -f "$f" && git add "$f"; done
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: record IC-04 dense price-history audit'
+            git push
+          fi
