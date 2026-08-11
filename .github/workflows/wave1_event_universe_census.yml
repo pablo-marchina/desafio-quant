@@ -52,8 +52,19 @@ jobs:
       - name: Upload raw Gamma snapshot
         uses: actions/upload-artifact@v4
         with:
-          name: wave1-polymarket-closed-events-raw
+          name: wave1-polymarket-closed-events-raw-${{ github.run_id }}
           path: /tmp/wave1_polymarket_closed_events_raw.json.gz
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload census outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: wave1-event-universe-census-outputs-${{ github.run_id }}
+          path: |
+            registry/wave1_event_universe_census_events.csv.gz
+            registry/wave1_event_universe_census_summary.csv
+            registry/wave1_event_universe_census_summary.json
           if-no-files-found: error
           retention-days: 30
 
@@ -69,5 +80,6 @@ jobs:
             echo 'No census output changes.'
           else
             git commit -m 'wave1: materialize performance-blind Polymarket event census'
+            git pull --rebase origin main
             git push
           fi
