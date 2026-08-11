@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/ic03_onchain_direction_audit.py'
       - 'scripts/ic03_onchain_direction_audit_fast.py'
+      - 'scripts/ic03_onchain_direction_audit_fast96.py'
       - '.github/workflows/ic03_onchain_direction_audit.yml'
   workflow_dispatch:
 
@@ -13,10 +14,13 @@ permissions:
   contents: write
   actions: read
 
+env:
+  POLYGON_RPC_ENDPOINTS: https://polygon.drpc.org,https://tenderly.rpc.polygon.community,https://polygon.publicnode.com,https://polygon-mainnet.gateway.tatum.io/,https://polygon-public.nodies.app/,https://1rpc.io/matic,https://rpc-mainnet.matic.quiknode.pro,https://polygon.api.onfinality.io/public,https://polygon-rpc.com
+
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,7 +46,7 @@ jobs:
 
       - name: Reconcile 12,752 pre-cutoff trades against Polygon receipts
         run: |
-          python scripts/ic03_onchain_direction_audit_fast.py \
+          python scripts/ic03_onchain_direction_audit_fast96.py \
             --ic02-dir ic02_input \
             --input registry/ic02_event_manifest.csv \
             --output-dir ic03_output
