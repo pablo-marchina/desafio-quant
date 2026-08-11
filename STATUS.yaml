@@ -1,0 +1,42 @@
+project: ARGOS
+challenge: Itaú Asset Quant AI 2026
+snapshot_date: 2026-08-10
+submission_deadline: 2026-08-17
+scientific_freeze:
+  thesis: TF-v1.0
+  constitution: ART-027_FREEZE_v1.0
+  current_truth: CT-v3.0
+  submission_freeze_previous_stage: SF-v2.0
+implementation:
+  prediction_market: Polymarket
+  event_family: earnings/EPS
+  asset_class: US individual equities
+  benchmark: SPY
+champions:
+  probabilistic: M2
+  economic: C0_NO_TRADE
+hypotheses:
+  H1: SUPPORTED_IN_TESTED_SAMPLE
+  H2: PENDING
+  H3: BLOCKED_BY_H2
+  H4: BLOCKED_BY_H2
+  H5: BLOCKED_BY_H4
+critical_path:
+  - ART-028_MOVEMENT_DATA_FEASIBILITY
+  - ART-029_EXP07I_PROTOCOL_FREEZE
+  - ART-030_EXP07I_H2
+  - H4_CROSS_MARKET_TRANSMISSION_IF_H2_PASS
+  - H5_ECONOMIC_RULE_IF_H4_PASS
+report:
+  format: PDF
+  max_pages: 5
+  aspect_ratio: "16:9"
+  language: pt-BR
+  anonymous: true
+  target_words: 580
+blockers:
+  - ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY
+  - ART025_STALE_DRIVE_ID_IN_SR_V3
+  - H2_NOT_EXECUTED
+  - 66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED
+  - GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC
