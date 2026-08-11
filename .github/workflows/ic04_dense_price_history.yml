@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/ic04_dense_price_history_audit.py'
       - 'scripts/ic04_dense_price_history_audit_parallel.py'
+      - 'scripts/ic04_dense_price_history_audit_chunked.py'
       - '.github/workflows/ic04_dense_price_history.yml'
   workflow_dispatch:
 
@@ -32,7 +33,7 @@ jobs:
           run-id: 31449689618
       - name: Run full 117-event dense price-history audit
         run: |
-          python scripts/ic04_dense_price_history_audit_parallel.py \
+          python scripts/ic04_dense_price_history_audit_chunked.py \
             --ic02-dir ic02_input \
             --input registry/ic02_event_manifest.csv \
             --output-dir ic04_output
