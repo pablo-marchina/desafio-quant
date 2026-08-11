@@ -1,0 +1,272 @@
+{
+  "artifact": "FINAL_REPORT_AUTHORING_EVIDENCE_PACK",
+  "version": "RAEP-v1.0",
+  "date": "2026-08-11",
+  "status": "PASS_AUTHORING_EVIDENCE_PACK_READY_FOR_FIGURE_FACTORY",
+  "scientific_authority": "FST-v1.0 / SF-v3.0",
+  "framing_authority": "RFF-v1.0",
+  "scientific_reopened": false,
+  "claim_overlay": "registry/report_authoring_claim_overlay.csv",
+  "figure_inputs": "registry/report_figure_inputs.csv",
+  "exact_numeric_authority": [
+    "registry/final_submission_numbers.csv",
+    "registry/model_complexity_sufficiency_summary.json",
+    "registry/economic_backtest_quality_summary.json",
+    "registry/event_universe_euas_ranking.json",
+    "registry/genai_usage_summary.json"
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "title": "ARGOS — informação só vira risco depois de sobreviver ao teste",
+      "subtitle": "Mercados de previsão como sensores point-in-time; capital apenas após evidência incremental.",
+      "hero_caption": "Observe → valide a informação incremental → só então aloque. Se o gate falha, abstain.",
+      "approved_microcopy": [
+        "ARGOS remete ao guardião de múltiplos olhos: cada olho é um sensor quantitativo observável, não um detector de insiders.",
+        "Primeiro validamos a probabilidade agregada do prediction market. Depois exigimos que movimentos, fluxo e concentração acrescentem informação fora da amostra sobre esse próprio benchmark.",
+        "O laboratório congelado usa contratos earnings/EPS da Polymarket ligados a ações individuais dos EUA.",
+        "No EUAS-v1.1 performance-blind, earnings obteve 72 pontos e permaneceu o maior score conjunto entre as famílias comparadas com evidência completa de gates."
+      ],
+      "numbers": {
+        "tested_events": "117",
+        "pre_cutoff_tape_and_dense_probability_coverage": "115/117",
+        "official_eps_validation": "116/117",
+        "official_eps_matches": "116/116",
+        "euas_earnings_score": "72"
+      },
+      "required_qualifiers": [
+        "EUAS is a research-design score, not cross-family ARGOS performance.",
+        "Do not claim earnings is globally the maximum-asymmetry family.",
+        "Do not imply a movement-based long/short strategy was promoted."
+      ],
+      "source_claims": ["FCLM-008", "FCLM-010", "RCLM-001", "RCLM-006"]
+    },
+    {
+      "page": 2,
+      "title": "Complexidade removida antes dos outcomes",
+      "subtitle": "Pesquisa ampla; arquitetura confirmatória pequena o suficiente para o n efetivo.",
+      "hero_caption": "69 técnicas → 59 inputs → 25 descritores label-free → 6 mecanismos → core regularizado + 1 challenger.",
+      "approved_microcopy": [
+        "A pesquisa começou ampla e reduziu graus de liberdade sem olhar outcomes.",
+        "Quinze pares de descritores já mostravam |Spearman| ≥ 0,90 no Pass B; manter todos inflaria complexidade aparente sem nova informação independente.",
+        "M_MOVE_CORE tem oito coeficientes: intercepto, slope de M2 e seis coeficientes de movimentos regularizados com ridge λ=1.",
+        "Com 75 previsões OOS em 54 clusters e warm-up inicial de 40 eventos, mais flexibilidade aumentaria o risco de seleção/overfit mais rápido que a informação independente."
+      ],
+      "numbers": {
+        "techniques": 69,
+        "pass_b_inputs": 59,
+        "label_free_descriptors": 25,
+        "high_correlation_pairs": 15,
+        "primary_mechanisms": 6,
+        "core_coefficients": 8,
+        "nonlinear_challengers": 1,
+        "ridge_lambda": 1.0,
+        "warmup_events": 40,
+        "oos_events": 75,
+        "date_clusters": 54
+      },
+      "six_mechanisms": [
+        "conditional_z_move_6h",
+        "velocity_6h_per_hour",
+        "signed_notional_imbalance_24h",
+        "wallet_hhi_notional_24h",
+        "same_direction_transition_share_lifecycle",
+        "jump_score_6h"
+      ],
+      "required_qualifiers": [
+        "Scientific unit is event/date-cluster, not individual trades.",
+        "Do not claim all possible techniques were implemented.",
+        "Do not imply more complex deferred methods would rescue H2."
+      ],
+      "source_claims": ["RCLM-002"]
+    },
+    {
+      "page": 3,
+      "title": "O teste podia reprovar o robô — e reprovou H2",
+      "subtitle": "A probabilidade agregada permaneceu informativa; a camada de movimentos não provou ganho incremental.",
+      "hero_caption": "M_MOVE_CORE piorou os point estimates de Brier e log loss contra M2_CAL; os intervalos de incremento cruzam zero e 0/3 tercis temporais foram positivos.",
+      "approved_microcopy": [
+        "M2 permanece o champion probabilístico entre as especificações testadas.",
+        "M_MOVE_CORE não acrescentou informação incremental além de M2 sob EXP07I-H2-FREEZE-v1.0.",
+        "Nenhum critério confirmatório de promoção foi satisfeito.",
+        "A consequência foi definida antes dos resultados: H3 não pode resgatar por subgrupos; H4 e H5 ficam bloqueadas."
+      ],
+      "numbers": {
+        "m2_cal_brier": "0.1450",
+        "m_move_core_brier": "0.1621",
+        "brier_increment_m2_minus_move": "-0.0171",
+        "brier_increment_ci95": "[-0.0491; +0.0128]",
+        "m2_cal_log_loss": "0.4540",
+        "m_move_core_log_loss": "0.5404",
+        "logloss_increment_m2_minus_move": "-0.0864",
+        "logloss_increment_ci95": "[-0.2145; +0.0252]",
+        "positive_temporal_brier_terciles": "0/3",
+        "scored_events": 75,
+        "date_clusters": 54
+      },
+      "required_qualifiers": [
+        "Lower Brier/log loss is better.",
+        "Increment is M2_CAL minus M_MOVE_CORE; negative favors M2_CAL.",
+        "Do not claim universal impossibility of movement information.",
+        "Do not mine ablations, subgroups or challengers after FAIL_H2."
+      ],
+      "source_claims": ["FCLM-002", "FCLM-003", "FCLM-004", "FCLM-005", "FCLM-006", "RCLM-003", "RCLM-004"]
+    },
+    {
+      "page": 4,
+      "title": "Traduzimos em capital — e o stop rule preservou no-trade",
+      "subtitle": "Backtest econômico separado, com regras PIT, benchmark, custos, sizing e multiplicidade congelados.",
+      "hero_caption": "R1 T−1 / 10 sessões: 108 oportunidades, 34 trades; MA net/opportunity −0,205%, CI95 [−0,972%; +0,559%]. Gate falhou → C0_NO_TRADE.",
+      "approved_microcopy": [
+        "O backtest econômico não é o mesmo teste que H2: ele traduz regras fixas em exposição acionária e compara com SPY e a opção nula.",
+        "Entradas/saídas são point-in-time, sizing é equal-notional, não há alavancagem e custos round trip foram congelados em 20 bps para long e 35 bps para short.",
+        "R1 executou 34 trades em 108 oportunidades: 21 long e 13 short.",
+        "O gate econômico falhou; C0_NO_TRADE permaneceu champion. Resultados diagnósticos positivos não foram promovidos pós-hoc."
+      ],
+      "numbers": {
+        "opportunities": 108,
+        "trades": 34,
+        "longs": 21,
+        "shorts": 13,
+        "trade_rate": "31.48%",
+        "long_cost": "20 bps",
+        "short_cost": "35 bps",
+        "ma_net_per_opportunity": "-0.2050%",
+        "ci95": "[-0.9719%; +0.5590%]",
+        "hit_rate": "41.18%",
+        "holm_p": "1.0",
+        "economic_champion": "C0_NO_TRADE"
+      },
+      "required_qualifiers": [
+        "Event/opportunity economics, not a frozen financed-portfolio path.",
+        "Do not report standard Sharpe or standard max drawdown.",
+        "Do not promote R3 or C5 because of positive diagnostics."
+      ],
+      "source_claims": ["FCLM-007", "RCLM-005"]
+    },
+    {
+      "page": 5,
+      "title": "O resultado final é uma decisão de pesquisa — e um próximo experimento melhor",
+      "subtitle": "GenAI acelerou pesquisa e execução; gates humanos, fontes, CI e hashes decidiram o que podia virar evidência.",
+      "hero_caption": "AI propõe → fonte/execução verifica → gate humano → freeze/hash → aceita ou rejeita.",
+      "approved_microcopy": [
+        "GenAI não contou como evidência empírica sem execução ou fonte verificável.",
+        "Caso 1 — dados: pipelines e manifests foram gerados/depurados com apoio de IA e aceitos somente após checks de schema, contagem e hash.",
+        "Caso 2 — modelagem: a IA ajudou a auditar um universo de 69 técnicas, mas a redução para a arquitetura confirmatória ocorreu sob firewall de outcomes.",
+        "Caso 3 — falsificação: protocolo, calendário, métricas e stop rules foram formalizados e hash-frozen antes dos outcomes; depois do FAIL_H2, a IA não pôde propor resgate pós-hoc.",
+        "Próximo experimento: preregistrar FDA se mantivermos ações individuais; usar macro apenas com arquitetura explícita de rates/índices; ampliar descoberta performance-blind antes de promover M&A completion."
+      ],
+      "numbers": {
+        "genai_ledger_entries": 11,
+        "euas_rank_1": "Earnings/EPS 72",
+        "euas_rank_2": "Macro/Fed/CPI 50",
+        "euas_rank_3": "FDA 47",
+        "euas_rank_4": "M&A announcement 47",
+        "euas_leader_sensitivity": "81/81"
+      },
+      "genai_cases": [
+        {
+          "name": "Reproducible data + fail-closed completeness",
+          "ledger": ["GAI-003", "GAI-005"],
+          "verification": "CI/schema/row/hash gates"
+        },
+        {
+          "name": "Outcome-blind research-space reduction",
+          "ledger": ["GAI-006", "GAI-007"],
+          "verification": "label-free redundancy/data audits before outcomes"
+        },
+        {
+          "name": "Preregistration + deterministic falsification",
+          "ledger": ["GAI-008", "GAI-009", "GAI-010"],
+          "verification": "protocol hashes + deterministic rerun + preserved FAIL_H2"
+        }
+      ],
+      "required_qualifiers": [
+        "Human-in-the-loop throughout.",
+        "AI output is not empirical evidence.",
+        "EUAS future families are next-study recommendations, not realized ARGOS alpha.",
+        "81/81 is EUAS judgment sensitivity, not statistical inference."
+      ],
+      "source_claims": ["FCLM-009", "FCLM-010", "RCLM-008", "RCLM-009", "RCLM-010", "RCLM-011", "RCLM-012"]
+    }
+  ],
+  "figure_factory_queue": [
+    {
+      "id": "FIG-01",
+      "page": 1,
+      "type": "architecture_pipeline",
+      "priority": "P0",
+      "input": "conceptual",
+      "success": "one glance explains why no-trade is a designed output"
+    },
+    {
+      "id": "FIG-02",
+      "page": 2,
+      "type": "research_reduction_funnel",
+      "priority": "P0",
+      "input": "registry/report_figure_inputs.csv",
+      "success": "shows sophistication and anti-overfit simultaneously"
+    },
+    {
+      "id": "FIG-03",
+      "page": 3,
+      "type": "metric_comparison_plus_ci",
+      "priority": "P0",
+      "input": "registry/report_figure_inputs.csv",
+      "success": "negative H2 is visually undeniable without looking like a project failure"
+    },
+    {
+      "id": "FIG-04",
+      "page": 4,
+      "type": "economic_protocol_and_result_card",
+      "priority": "P0",
+      "input": "registry/report_figure_inputs.csv",
+      "success": "proves a real economic backtest was executed and explains no-trade"
+    },
+    {
+      "id": "FIG-05",
+      "page": 5,
+      "type": "genai_verification_loop_plus_future_euas",
+      "priority": "P0",
+      "input": "registry/report_figure_inputs.csv + genai ledger",
+      "success": "GenAI earns rubric points through concrete verified impact; future work remains separate"
+    }
+  ],
+  "source_footnote_candidates": [
+    {
+      "use": "prediction markets as information aggregators",
+      "source": "Wolfers & Zitzewitz, Prediction Markets, NBER Working Paper 10504",
+      "pages": [1]
+    },
+    {
+      "use": "information heterogeneity in Polymarket earnings markets",
+      "source": "Cheong & Tamayo, SSRN 6685139 (2026)",
+      "pages": [1, 5]
+    },
+    {
+      "use": "prediction-market earnings forecasting context",
+      "source": "Rabetti, Shao & Zhang, SSRN 6649938 (2026)",
+      "pages": [1]
+    }
+  ],
+  "global_copy_rules": [
+    "Use short causal sentences; avoid methodology diary prose.",
+    "Lead each page with one evaluative claim, then show the evidence.",
+    "Do not use more than one hero visual per page.",
+    "Use the exact sign convention for incremental metrics.",
+    "Use no-trade/abstention as a deliberate state, not a failure icon.",
+    "Do not put GitHub links, author names, university identity or other anonymity-breaking metadata in the PDF.",
+    "Keep external citations minimal and source-like; internal artifact IDs do not belong in final reader-facing copy.",
+    "Every future-work statement must be grammatical future tense and visually separated from submitted evidence."
+  ],
+  "exit_gate": {
+    "all_five_pages_have_single_message": true,
+    "all_key_numbers_sourced": true,
+    "all_p0_figures_have_inputs": true,
+    "claims_firewall_attached": true,
+    "genai_cases_selected": true,
+    "future_work_separated": true,
+    "scientific_freeze_unchanged": true,
+    "next_step": "ARGOS_ROBOT_AND_VISUAL_IDENTITY_PLUS_FINAL_FIGURE_FACTORY"
+  }
+}
