@@ -1,0 +1,56 @@
+{
+  "artifact": "ECONOMIC_BACKTEST_QUALITY_W1",
+  "date": "2026-08-11",
+  "status": "PASS_ECONOMIC_BACKTEST_QUALITY_FOR_REPORT_WITH_EVENT_LEVEL_PORTFOLIO_AGGREGATION_LIMITATION",
+  "scientific_reopen": false,
+  "authoritative_artifacts": {
+    "EXP06_ART023_drive_id": "1fNcVAW7OgqGrpAg_p9gbIoM6Y1fHgnuAIEvF80jvr6I",
+    "EXP06R_ART025_drive_id": "16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA",
+    "EXP06R_protocol_ART024_drive_id": "1ztvcEdAO4GVL2Oq_BWS0JprzJgn-tHJKsBU8yQmfuLg"
+  },
+  "exp06": {
+    "trade_level_rows": 796,
+    "entry_rule": "first exchange-session open strictly after observation_utc",
+    "exit_rule": "adjusted close of first exchange session strictly after company_event_date",
+    "sizing": "equal notional per event trade; no leverage; no cross-event optimization",
+    "benchmark": "SPY matched dates",
+    "long_cost_bps_round_trip": 20,
+    "short_cost_bps_round_trip": 35,
+    "multiplicity": "Holm across eligible non-null candidate-horizon tests",
+    "decision": "COMPLETED_NO_ECONOMIC_PROMOTION",
+    "positive_unpromoted_example": "C5 contrarian T-1 point estimate positive but frozen promotion gate failed; cannot be selected retrospectively"
+  },
+  "exp06r_primary_R1_tminus1_10sessions": {
+    "opportunities": 108,
+    "trades": 34,
+    "longs": 21,
+    "shorts": 13,
+    "trade_rate": 0.3148148148148148,
+    "mean_market_adjusted_net_per_opportunity": -0.002050335178338882,
+    "mean_market_adjusted_net_per_trade": -0.006512829390017625,
+    "median_market_adjusted_net_per_trade": -0.005441099185813339,
+    "trade_hit_rate": 0.4117647058823529,
+    "ci95_market_adjusted_net_per_opportunity": [-0.009719144951331745, 0.00559016443962192],
+    "one_sided_p": 0.6879312068793121,
+    "holm_p": 1.0,
+    "max_additive_drawdown_opportunity": -0.567323579607275,
+    "drawdown_semantics": "additive ordered opportunity-path statistic from the frozen experiment; not standard financed-portfolio max drawdown",
+    "decision": "FAIL_R1_C0_NO_TRADE_REMAINS_CHAMPION"
+  },
+  "report_recommended_metrics": [
+    "108 eligible opportunities / 34 executed trades (21 long, 13 short)",
+    "fixed 20 bps long / 35 bps short transaction-cost assumptions",
+    "-0.2050% market-adjusted net return per eligible opportunity",
+    "95% CI [-0.9719%, +0.5590%]",
+    "41.2% executed-trade hit rate or Holm p=1.0, whichever fits the visual more clearly",
+    "C0_NO_TRADE remained economic champion"
+  ],
+  "do_not_report_as_portfolio_metrics": [
+    "standard portfolio Sharpe unless an original frozen portfolio-capital aggregation is recovered",
+    "standard portfolio max drawdown using max_additive_drawdown_opportunity",
+    "optimized equity curve created by retrospective overlap/sizing assumptions",
+    "R3 as prediction-market alpha"
+  ],
+  "backtest_story": "ARGOS has a strong informational walk-forward validation layer and separately executed fixed economic event-trading rules with PIT entry/exit, matched SPY benchmark, explicit costs, equal-notional sizing, multiplicity control and promotion gates. The economic rules failed promotion; later H2 also failed, so no long/short rule is promoted and C0_NO_TRADE remains the defensible capital decision.",
+  "limitation": "The economic experiments were event/opportunity based. A standard financed portfolio path with explicit treatment of overlapping positions was not part of the authoritative frozen protocol, so the report should not invent Sharpe or portfolio drawdown after the fact."
+}
