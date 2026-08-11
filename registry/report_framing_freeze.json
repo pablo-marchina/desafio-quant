@@ -1,0 +1,207 @@
+{
+  "artifact": "ARGOS_INVESTMENT_THESIS_REPORT_FRAMING_FREEZE",
+  "version": "RFF-v1.0",
+  "date": "2026-08-11",
+  "status": "PASS_REPORT_FRAMING_FREEZE",
+  "scientific_authority": "FST-v1.0 / SF-v3.0",
+  "scientific_reopened": false,
+  "report_only_evidence_layer": "W1-A / W1-B / W1-C",
+  "format": {
+    "maximum_pages": 5,
+    "aspect_ratio": "16:9",
+    "language": "pt-BR",
+    "anonymous": true,
+    "self_contained": true
+  },
+  "core_thesis": "Mercados de previsão podem funcionar como sensores point-in-time; ARGOS só promove risco quando informação adicional demonstra ganho incremental fora da amostra sobre a própria probabilidade agregada. Se o gate falha, o output é abstention/no-trade.",
+  "one_line_value_proposition": "Observar não é o mesmo que operar: ARGOS transforma informação em risco apenas depois de evidência incremental pré-registrada.",
+  "robot_identity": {
+    "name": "ARGOS",
+    "metaphor": "guardião de múltiplos olhos",
+    "meaning": "múltiplos sensores observáveis submetidos a gates quantitativos de validação",
+    "not_meaning": "insider detector, private-information detector, manipulation detector or illegality detector",
+    "tagline_primary": "Muitos olhos. Risco só com evidência incremental.",
+    "tagline_secondary": "Observe. Valide. Só então aloque."
+  },
+  "story_arc": [
+    "Prediction markets aggregate dispersed information and can be treated as sensors rather than automatic trading signals.",
+    "ARGOS first validates aggregate probability, then asks the harder incremental question: do movement/flow/concentration dynamics add information beyond that aggregate sensor?",
+    "The research process deliberately removed complexity before outcomes and froze the confirmatory protocol before labels were opened.",
+    "Aggregate probability showed predictive value in the tested earnings/EPS laboratory, but the movement layer failed the incremental H2 gate.",
+    "Economic translations also failed promotion, so the pre-registered stop rule preserved C0_NO_TRADE rather than selecting a post-hoc winner.",
+    "A performance-blind EUAS audit later showed earnings was an ex-ante defensible first laboratory and identified disciplined future universes without rewriting the frozen result.",
+    "GenAI's value was operational and governance-heavy: broad research, reproducible data engineering, structural reduction, preregistration, deterministic execution and preservation of negative evidence under human control."
+  ],
+  "page_plan": [
+    {
+      "page": 1,
+      "working_title": "ARGOS — informação só vira risco depois de sobreviver ao teste",
+      "primary_rubric": ["Strategy Concept 20%", "Robot Presentation 5%"],
+      "single_message": "ARGOS treats prediction markets as PIT information sensors and uses abstention as a first-class portfolio decision.",
+      "content_blocks": [
+        "ARGOS identity + many-eyes metaphor",
+        "economic mechanism: dispersed information -> prediction-market probability -> incremental movement test -> capital gate",
+        "three-state decision: LONG / SHORT / ABSTAIN, with only promoted rules allowed to reach capital",
+        "tested laboratory: Polymarket earnings/EPS linked to US individual equities",
+        "compact EUAS rationale: earnings #1 among complete-evidence families, score 72, explicitly not a global maximal-asymmetry claim"
+      ],
+      "hero_visual": "single horizontal Observe -> Validate -> Allocate pipeline with a red stop branch to NO-TRADE",
+      "must_use_claims": ["RCLM-001", "RCLM-006"],
+      "avoid": ["long literature review", "performance chart", "claim of deployable alpha"]
+    },
+    {
+      "page": 2,
+      "working_title": "Complexidade removida antes dos outcomes",
+      "primary_rubric": ["Modeling 20%"],
+      "single_message": "Technical sophistication came from broad mechanism search followed by outcome-blind structural reduction appropriate to the effective sample.",
+      "content_blocks": [
+        "69 techniques -> 59 Pass-B inputs -> 25 label-free descriptors -> redundancy/data gates -> 6 primary mechanisms",
+        "six mechanisms: conditional state, velocity, signed flow, concentration, directional persistence, jump/regime change",
+        "M_MOVE_CORE = intercept + M2 slope + 6 movement coefficients; fixed ridge lambda=1; no hyperparameter search",
+        "one nonlinear challenger: matrix-profile discord",
+        "effective confirmatory sample: 75 OOS events across 54 date clusters; 40-event warm-up"
+      ],
+      "hero_visual": "funnel / Sankey-like reduction diagram emphasizing removal before outcomes",
+      "must_use_claims": ["RCLM-002"],
+      "key_numbers": [69, 59, 25, 6, 8, 1, 75, 54, 40],
+      "avoid": ["algorithm name dump", "pseudo-replication using 12,752 trades as outcome n", "advanced-for-advanced-sake framing"]
+    },
+    {
+      "page": 3,
+      "working_title": "O teste podia reprovar o robô — e reprovou H2",
+      "primary_rubric": ["Results Analysis 15%", "Modeling 20% support"],
+      "single_message": "M2 remained informative, but the frozen movement layer did not add incremental information and failed every confirmatory promotion gate.",
+      "content_blocks": [
+        "H1 qualitative result: PIT Polymarket probability predictive versus tested free/public baselines",
+        "H2 head-to-head: M2_CAL vs M_MOVE_CORE Brier and log loss",
+        "paired cluster-bootstrap confidence intervals for incremental metrics",
+        "0/3 temporal Brier terciles positive",
+        "pre-registered stop rule: no subgroup/threshold/challenger rescue"
+      ],
+      "hero_visual": "two-metric comparison plus incremental-CI zero line and a compact gate-failure strip",
+      "must_use_claims": ["RCLM-003", "RCLM-004"],
+      "permitted_numbers": [
+        "M2_CAL Brier 0.1450265",
+        "M_MOVE_CORE Brier 0.1620975",
+        "M2_CAL-M_MOVE Brier -0.017071; CI95 [-0.04910, 0.01282]",
+        "M2_CAL log loss 0.4540019",
+        "M_MOVE_CORE log loss 0.5403843",
+        "M2_CAL-M_MOVE log-loss -0.0863824; CI95 [-0.21448, 0.02521]",
+        "75 events / 54 date clusters",
+        "0/3 temporal Brier terciles"
+      ],
+      "avoid": ["calling M2 an external competitor", "impossibility-universal language", "feature importance rescue"]
+    },
+    {
+      "page": 4,
+      "working_title": "Traduzimos em capital — e o stop rule preservou no-trade",
+      "primary_rubric": ["Backtest 15%", "Results Analysis 15% support"],
+      "single_message": "ARGOS was subjected to a separate economic translation with PIT entries/exits, SPY, explicit costs, equal notional sizing and multiplicity; the rule failed, so C0_NO_TRADE remained champion.",
+      "content_blocks": [
+        "two-layer distinction: informational validation vs economic capital test",
+        "R1 T-1 / 10 sessions: 108 eligible opportunities, 34 trades, 21 long / 13 short",
+        "fixed costs: 20 bps long / 35 bps short round trip",
+        "market-adjusted net return per opportunity -0.2050%; CI95 [-0.9719%, +0.5590%]",
+        "hit rate 41.18%; Holm p=1.0",
+        "C0_NO_TRADE champion; positive diagnostic rules were not promoted"
+      ],
+      "hero_visual": "backtest protocol strip feeding a compact result card ending in C0_NO_TRADE",
+      "must_use_claims": ["RCLM-005"],
+      "avoid": ["invented financed-portfolio Sharpe", "standard max drawdown label", "R3 or C5 winner framing", "equity curve optimized after results"]
+    },
+    {
+      "page": 5,
+      "working_title": "O resultado final é uma decisão de pesquisa — e um próximo experimento melhor",
+      "primary_rubric": ["Generative AI 15%", "Conclusion and Next Steps 10%"],
+      "single_message": "The negative result changes the research agenda rather than the story: GenAI helped build a reproducible falsification pipeline, and EUAS defines the next preregistered tests without mining a new winner.",
+      "content_blocks": [
+        "final decision stack: H1 supported; H2 failed; H3/H4/H5 blocked; C0_NO_TRADE",
+        "GenAI case 1: data/provenance engineering with live CI validation and fail-closed missingness",
+        "GenAI case 2: 69-technique outcome-blind audit and redundancy reduction",
+        "GenAI case 3: executable preregistration + deterministic H2 execution + no post-hoc rescue after FAIL",
+        "GenAI control loop: propose -> verify/source/execute -> freeze/hash -> accept/reject",
+        "EUAS next steps: FDA preferred single-name extension; macro requires rates/index architecture; expand M&A-completion discovery before ranking/promotion"
+      ],
+      "hero_visual": "left: GenAI verification loop; right: EUAS future-research ladder",
+      "must_use_claims": ["RCLM-008", "RCLM-009", "RCLM-010", "RCLM-011", "RCLM-012"],
+      "optional_callout": "Earnings EUAS leader retained 81/81 single-cell +/-1 sensitivity scenarios.",
+      "avoid": ["tool-logo collage as primary GenAI evidence", "claiming AI autonomously made scientific decisions", "future-family alpha promises"]
+    }
+  ],
+  "rubric_coverage": {
+    "Strategy Concept 20%": [1, 5],
+    "Modeling 20%": [2, 3],
+    "Backtest 15%": [4],
+    "Results Analysis 15%": [3, 4],
+    "Generative AI 15%": [5],
+    "Conclusion and Next Steps 10%": [5],
+    "Robot Presentation 5%": [1]
+  },
+  "narrative_priority": [
+    "incremental-information gate",
+    "outcome-blind reduction / preregistration",
+    "negative H2 as falsification evidence",
+    "economic no-trade discipline",
+    "GenAI as verified research infrastructure",
+    "EUAS future research without scientific rewrite"
+  ],
+  "anti_narrative": [
+    "do not hide H2 failure",
+    "do not make the report about Polymarket novelty alone",
+    "do not market an equity alpha strategy",
+    "do not show complexity as algorithm count",
+    "do not promote favorable diagnostics that failed frozen gates",
+    "do not let EUAS imply realized cross-family ARGOS performance",
+    "do not over-allocate space to implementation plumbing that does not earn rubric points"
+  ],
+  "authoring_rules": {
+    "max_primary_visuals_per_page": 1,
+    "max_secondary_callouts_per_page": 3,
+    "numeric_precision": "round for readability while preserving direction and CI endpoints; source exact values from final_submission_numbers.csv or frozen W1 summaries",
+    "citations": "short footnote-style citations only where they strengthen methodological credibility; never link the non-anonymous GitHub repo",
+    "claims_precedence": "FST/SF frozen claims > final claim/number registries > W1 report-only overlay > prose",
+    "negative_result_policy": "show result, uncertainty, pre-registered consequence and what was not allowed after failure",
+    "space_policy": "every block must map to at least one rubric criterion"
+  },
+  "selected_genai_case_studies": [
+    {
+      "ledger_ids": ["GAI-003", "GAI-005"],
+      "label": "Reproducible data + fail-closed completeness",
+      "impact": "live API pipelines, manifests, hashes and explicit unavailable inputs",
+      "verification": "CI row/schema/hash gates and machine-readable completeness checks"
+    },
+    {
+      "ledger_ids": ["GAI-006", "GAI-007"],
+      "label": "Outcome-blind research-space reduction",
+      "impact": "69 techniques audited before outcomes and reduced to a constrained feature/model architecture",
+      "verification": "label-free feature/correlation audits, data gates and preserved rejected candidates"
+    },
+    {
+      "ledger_ids": ["GAI-008", "GAI-009", "GAI-010"],
+      "label": "Preregistration + deterministic falsification",
+      "impact": "protocol, trials, walk-forward schedule, metrics and stop rules became executable before outcomes",
+      "verification": "hash validation, deterministic rerun after an engineering-only failure and preserved FAIL_H2 without rescue"
+    }
+  ],
+  "prohibited_claims": [
+    "insider/private information detection",
+    "movement/flow/wallet alpha beyond M2",
+    "sell-side consensus superiority",
+    "validated equity alpha or deployable long/short strategy",
+    "R3 or C5 as final strategy",
+    "earnings as globally proven maximum-asymmetry family",
+    "multi-market system already operational",
+    "BLSH official non-GAAP EPS reconstructed"
+  ],
+  "exit_gate": {
+    "core_thesis_frozen": true,
+    "page_arc_frozen": true,
+    "rubric_100pct_mapped": true,
+    "claim_overlay_frozen": true,
+    "negative_result_visible": true,
+    "genai_case_studies_selected": true,
+    "future_research_separated_from_submitted_evidence": true,
+    "scientific_freeze_unchanged": true,
+    "next_step": "FINAL_REPORT_AUTHORING_EVIDENCE_PACK"
+  }
+}
