@@ -1,0 +1,64 @@
+name: ART-029 EXP-07I Protocol Freeze
+
+on:
+  push:
+    paths:
+      - 'scripts/art029_freeze_exp07i_protocol.py'
+      - 'data/art028_h2_feature_matrix.csv.gz'
+      - 'registry/art028_summary.json'
+      - 'registry/art028_art029_handoff.csv'
+      - 'docs/02_thesis_governance.md'
+      - '.github/workflows/art029_freeze_exp07i_protocol.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Freeze ART-029 protocol
+        run: python scripts/art029_freeze_exp07i_protocol.py
+      - name: Validate freeze integrity
+        run: |
+          python - <<'PY'
+          import csv, json, hashlib
+          def sha(p):
+              h=hashlib.sha256()
+              with open(p,'rb') as f:
+                  for b in iter(lambda:f.read(1<<20),b''): h.update(b)
+              return h.hexdigest()
+          m=json.load(open('registry/art029_freeze_manifest.json',encoding='utf-8'))
+          p=json.load(open('registry/art029_exp07i_protocol.json',encoding='utf-8'))
+          trials=list(csv.DictReader(open('registry/art029_trial_registry.csv',encoding='utf-8')))
+          thesis=list(csv.DictReader(open('registry/art029_thesis_map.csv',encoding='utf-8')))
+          assert m['decision']=='PASS_ART029_PROTOCOL_FROZEN_BEFORE_OUTCOMES'
+          assert m['outcomes_or_performance_read_by_freeze_script'] is False
+          assert m['label_free_expected_scored_events'] >= 60
+          assert m['label_free_expected_scored_date_clusters'] >= 30
+          assert p['decision']=='FROZEN_BEFORE_OUTCOMES'
+          assert p['benchmarks_and_models']['M_MOVE_CORE']['primary_features']==[
+              'conditional_z_move_6h','velocity_6h_per_hour','signed_notional_imbalance_24h',
+              'wallet_hhi_notional_24h','same_direction_transition_share_lifecycle','jump_score_6h']
+          assert p['benchmarks_and_models']['M_MOVE_MP']['role'].startswith('single pre-registered hierarchical challenger')
+          assert p['decision_gate']['stop_rule'].startswith('If CORE is FAIL_H2 or INCONCLUSIVE')
+          assert len([r for r in trials if r['role']=='PRIMARY_CONFIRMATORY'])==1
+          assert len([r for r in trials if r['role']=='HIERARCHICAL_CHALLENGER'])==1
+          assert len(thesis)==8 and all(r['answer']=='YES' for r in thesis)
+          assert sha('registry/art029_exp07i_protocol.json')==m['freeze_hashes']['protocol_sha256']
+          assert sha('registry/art029_trial_registry.csv')==m['freeze_hashes']['trial_registry_sha256']
+          assert sha('registry/art029_evaluation_schedule.csv')==m['freeze_hashes']['evaluation_schedule_sha256']
+          PY
+      - name: Commit frozen protocol outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add registry/art029_exp07i_protocol.json registry/art029_trial_registry.csv registry/art029_evaluation_schedule.csv registry/art029_thesis_map.csv registry/art029_claims.csv registry/art029_freeze_manifest.json docs/25_art029_exp07i_h2_protocol_freeze.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'freeze: ART-029 EXP-07I H2 protocol before outcomes'
+          git push
