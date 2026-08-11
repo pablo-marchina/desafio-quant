@@ -1,0 +1,16 @@
+feature,n_v1,n_v2,median_v1,median_v2,median_shift_over_pooled_iqr,ks_statistic,flag,interpretation
+conditional_z_move_6h,68,20,0.249421051,0.6433888653,0.3665544629,0.2764705882,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+velocity_6h_per_hour,94,21,0,0.0025,0.4,0.2568389058,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+vol_scaled_delta_6h,88,20,0,1.196067828,0.5612965072,0.3204545455,MODERATE_ERA_DISTRIBUTION_SHIFT,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+signed_notional_imbalance_24h,86,17,0.6003227752,0.8510183634,0.2811250008,0.365253078,MODERATE_ERA_DISTRIBUTION_SHIFT,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+wallet_hhi_notional_24h,86,17,0.2270673393,0.3203661517,0.5026292697,0.4124487004,MODERATE_ERA_DISTRIBUTION_SHIFT,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+same_direction_transition_share_lifecycle,92,19,0.5745603322,0.6666666667,0.7305479095,0.5051487414,STRONG_ERA_DISTRIBUTION_SHIFT,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+jump_score_6h,88,20,2.548203997,3.05924484,0.127377099,0.1363636364,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+large_trade_notional_share_24h,83,17,0.432809933,0.5142246826,0.1071732491,0.1828490432,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+cusum_score_6h,88,20,1.376798497,1.265389512,0.0431374659,0.1295454545,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+matrix_profile_discord_6h,87,20,0.4127421956,0.265730056,0.4968536897,0.3896551724,MODERATE_ERA_DISTRIBUTION_SHIFT,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+conformal_log_martingale_6h,91,21,0,0,0,0.0989010989,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+multivariate_anomaly_distance,60,14,1.096411882,1.688379945,0.6141359645,0.3333333333,MODERATE_ERA_DISTRIBUTION_SHIFT,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+sign_consistency_1_6_24h,92,21,0.6666666667,0.3333333333,0.5,0.2116977226,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+post_jump_half_life_hours,29,4,3,3,0,0.275862069,NO_LARGE_ERA_SHIFT_DETECTED,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
+prequential_feature_distance,60,14,1.096411882,1.688379945,0.6141359645,0.3333333333,MODERATE_ERA_DISTRIBUTION_SHIFT,Descriptive era/time check only; V1/V2 is confounded with calendar time and market maturity.
