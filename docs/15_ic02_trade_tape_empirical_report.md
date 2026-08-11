@@ -1,34 +1,144 @@
 # ARGOS — IC-02 Empirical Polymarket Trade Tape Audit
 
-Generated UTC: 2026-08-11T01:34:40.509387+00:00  
-Input events: 117  
-Final decision: **PASS_TAPE_STRUCTURAL_DIRECTION_PENDING_IC03**
+**Empirical run:** 2026-08-11 UTC  
+**Frozen input:** 117 ARGOS events  
+**Decision:** `PASS_TAPE_AVAILABILITY_WITH_PRE_CUTOFF_LIMITATIONS_DIRECTION_PENDING_IC03`
 
-## Scope
-Audits the public Polymarket Data API trade tape for the complete frozen 117-event ARGOS panel, without consulting event outcomes or post-event equity returns. Each Gamma market ID is resolved to its conditionId/token IDs, then `/trades` is retrieved with explicit `takerOnly=true`, `limit=10000`, and offset pagination. Raw responses are preserved as compressed workflow artifacts and hashed.
+## 1. Question
 
-## Results
-- structurally clean markets: 117/117
-- API/runtime errors: 0
-- markets with documented offset truncation risk: 0
-- markets with zero returned trades: 0
-- markets with schema/semantic anomalies: 0
-- total returned trade rows: 23,652
-- total pre-cutoff rows: 12,752
+Can the public Polymarket trade tape be reconstructed reproducibly for the complete frozen ARGOS event panel, with enough structural integrity to support later point-in-time movement-feature feasibility work?
 
-## Hard interpretation boundary
-This audit can establish retrieval coverage, schema consistency, token/condition mapping, pagination limits, timestamps, wallet/transaction-hash availability and reproducibility. It **does not yet declare Data API `side` to be ground-truth aggressor direction**. That semantic claim remains gated on IC-03 reconciliation against V1/V2 `OrderFilled` settlement events.
+This is an **information-completeness audit**, not an H2 test. Event outcomes and post-event equity returns were not consulted to select, accept or reject markets.
 
-## API limitations tested
-The public Data API documents `limit <= 10000`, `offset <= 10000` and `takerOnly=true` by default. Therefore a market whose second 10,000-row page is also full is classified as truncation risk rather than silently treated as complete.
+## 2. Collection protocol
 
-## Provenance
-- Polymarket API overview: https://docs.polymarket.com/api-reference/introduction
-- Data API trades: https://docs.polymarket.com/api-reference/core/get-trades-for-a-user-or-markets
-- Rate limits: https://docs.polymarket.com/api-reference/rate-limits
-- Gamma market by id: https://docs.polymarket.com/api-reference/markets/get-market-by-id
-- CLOB V2 migration: https://docs.polymarket.com/v2-migration
-- Contracts: https://docs.polymarket.com/resources/contracts
+For every frozen `market_id`:
 
-## Next gate
-If no truncation or unreconciled structural defect exists, IC-02 closes for **public tape availability** and IC-03 must establish V1/V2 settlement-side semantics before signed-flow features can be frozen.
+1. resolve Gamma metadata to `conditionId`, `clobTokenIds` and binary outcomes;
+2. query the public Data API `/trades` with explicit `market=<conditionId>`, `takerOnly=true`, `limit=10000` and offset pagination;
+3. preserve Gamma raw JSON plus compressed trade JSONL;
+4. hash every raw file;
+5. validate market/token mapping, required fields, wallet/transaction-hash syntax, price/size domain, duplicate rows and pagination boundaries;
+6. split availability at the pre-existing `safe_cutoff_utc`; never infer a new cutoff from the tape.
+
+The public API documents a maximum `limit` and `offset` of 10,000. A full second page would therefore be treated as unresolved truncation risk rather than silently accepted as complete.
+
+## 3. Structural result
+
+- markets queried: **117/117**
+- structurally clean: **117/117**
+- API/runtime errors: **0**
+- truncation-risk markets: **0**
+- markets with zero total returned trades: **0**
+- schema/semantic-structure anomalies detected by the frozen checks: **0**
+- total returned trade rows: **23,652**
+- exact duplicate rows: **0**
+- page-boundary duplicate keys: **0**
+- missing required-field rows: **0**
+- invalid price rows: **0**
+- invalid size rows: **0**
+- malformed proxy-wallet rows: **0**
+- malformed transaction-hash rows: **0**
+- condition-ID mismatches: **0**
+- asset-not-in-market-token mismatches: **0**
+
+Every market fit in a single API page, so the documented offset ceiling did not bind in this sample.
+
+## 4. Point-in-time availability
+
+There are **12,752 trade rows at or before the frozen safe cutoff**.
+
+Pre-cutoff tape exists for **115/117 events**. The exceptions are:
+
+- `ANF|2026-05-27` — 0 pre-cutoff trades;
+- `BRZE|2026-05-27` — 0 pre-cutoff trades.
+
+These are not API gaps. Their Polymarket metadata shows trading beginning after the frozen safe cutoff, and their first observed trades occur on the event date. Therefore these cases must be encoded as **market-not-yet-trading / structurally unavailable**, never as zero flow, zero volume or zero participation.
+
+### Density
+
+Pre-cutoff trade count across the 117-event panel:
+
+- minimum: **0**
+- median: **77**
+- maximum: **1,104**
+- ≥1 trade: **115/117**
+- ≥10 trades: **111/117**
+- ≥20 trades: **102/117**
+- ≥50 trades: **77/117**
+- ≥100 trades: **43/117**
+- ≥200 trades: **15/117**
+
+This closes availability of the tape but **does not pre-authorize high-dimensional microstructure models**. Every later technique must pass its own density/sample-complexity gate.
+
+## 5. V1/V2 coverage
+
+Using the official CLOB V2 migration cutover only as an era label on the already-frozen safe cutoff:
+
+- V1-era events: **81**, with 11,161 pre-cutoff rows and median 95 rows/event;
+- V2-era events: **36**, with 1,591 pre-cutoff rows and median 26 rows/event;
+- both zero-pre-cutoff cases are in the V2-era subset.
+
+This difference is descriptive only. It must not be interpreted as an effect of the protocol version because calendar period, market age, contract design and sample composition differ simultaneously.
+
+## 6. Identity and auditability
+
+Across the full retrieved tape:
+
+- unique `proxyWallet`: **8,452**
+- unique transaction hashes: **23,652**
+- condition IDs: **117**
+- token assets: **234**
+
+At or before safe cutoff:
+
+- unique `proxyWallet`: **5,082**
+- unique transaction hashes: **12,752**
+- condition IDs represented: **115**
+- token assets represented: **229**
+
+The compact raw manifest contains **234 hashed source files**: 117 Gamma metadata JSONs and 117 compressed trade-tape files.
+
+The preserved GitHub Actions raw artifact is:
+
+- workflow run: `31449689618`
+- artifact id: `9085858433`
+- artifact SHA-256: `38ba23d6189076841c96e6734445921fc59fb71a4121ad40424798a8a6c6cae0`
+
+## 7. Hard semantic boundary
+
+IC-02 establishes that fields such as wallet identifier, side, asset, size, price, timestamp, outcome and transaction hash are structurally retrievable and internally consistent with the market/token mapping.
+
+It **does not establish that Data API `side` is authoritative aggressor direction**. Signed flow, aggressor imbalance, whale direction and price-impact features remain blocked until IC-03 reconciles Data API records against the correct V1/V2 on-chain `OrderFilled` semantics.
+
+Similarly, `proxyWallet` is an observable pseudonymous identifier, not a legal identity and not evidence of insider status.
+
+## 8. Decision
+
+**IC-02 is CLOSED for public trade-tape availability, with disclosed pre-cutoff limitations.**
+
+What is now established:
+
+- complete structural retrieval for the 117 frozen markets;
+- no observed API truncation in this sample;
+- raw/hash lineage;
+- 115/117 pre-cutoff market coverage;
+- explicit structural missingness for ANF and BRZE on 2026-05-27;
+- enough event-level heterogeneity to require feature-specific density gates later.
+
+What remains deliberately unresolved:
+
+- authoritative signed direction → **IC-03**;
+- historical order-book depth/L2 → separate information gate;
+- whether any trade-tape-derived feature adds information beyond M2 → **ART-028/029/030**, only after Information Completeness closes.
+
+## 9. Primary documentation
+
+- Polymarket API introduction
+- Polymarket Data API `/trades`
+- Polymarket API rate limits
+- Gamma market-by-ID endpoint
+- official CLOB V2 migration documentation
+- official Polymarket contract/deployment documentation
+
+Exact URLs remain in the collector/report provenance and the project source registry.
