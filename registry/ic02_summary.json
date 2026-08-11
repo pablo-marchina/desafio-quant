@@ -1,0 +1,11 @@
+{
+  "decision": "PASS_TAPE_STRUCTURAL_DIRECTION_PENDING_IC03",
+  "events": 117,
+  "clean": 117,
+  "errors": 0,
+  "truncation_risk": 0,
+  "zero_trades": 0,
+  "schema_anomalies": 0,
+  "total_rows": 23652,
+  "pre_cutoff_rows": 12752
+}
