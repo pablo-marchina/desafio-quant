@@ -1,0 +1,70 @@
+name: Wave 1 Event Universe Targeted Census
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wave1_event_universe_targeted_census.py'
+      - '.github/workflows/wave1_event_universe_targeted_census.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run targeted performance-blind census
+        run: python scripts/wave1_event_universe_targeted_census.py --registry-dir registry
+
+      - name: Validate boundary
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          meta = json.loads(Path('registry/wave1_event_universe_targeted_census_summary.json').read_text())
+          assert meta['performance_blind'] is True
+          assert meta['scientific_reopen'] is False
+          assert meta['unique_events_returned_by_queries'] > 0
+          rows = list(csv.DictReader(Path('registry/wave1_event_universe_targeted_census_summary.csv').open()))
+          assert len(rows) == 7
+          assert all(r['count_semantics'] == 'LOWER_BOUND_DISCOVERY_ONLY' for r in rows)
+          print('PASS_WAVE1_TARGETED_CENSUS_BOUNDARY')
+          PY
+
+      - name: Upload targeted census outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: wave1-targeted-census-${{ github.run_id }}
+          path: |
+            registry/wave1_event_universe_targeted_census_events.csv.gz
+            registry/wave1_event_universe_targeted_census_summary.csv
+            registry/wave1_event_universe_targeted_query_audit.csv
+            registry/wave1_event_universe_targeted_census_summary.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/wave1_event_universe_targeted_census_events.csv.gz \
+            registry/wave1_event_universe_targeted_census_summary.csv \
+            registry/wave1_event_universe_targeted_query_audit.csv \
+            registry/wave1_event_universe_targeted_census_summary.json
+          if git diff --cached --quiet; then
+            echo 'No targeted census changes.'
+          else
+            git commit -m 'wave1: materialize targeted event-universe census'
+            git pull --rebase origin main
+            git push
+          fi
