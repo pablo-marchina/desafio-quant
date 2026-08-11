@@ -49,12 +49,39 @@ information_completeness:
     api_size_equals_gross: 12183/12752
     api_size_noncanonical_v1_fee_module_rows: 569
     audit_ready_tape_sha256: 3563d3c1348a3cc78b13419f554195a306cc7f7ad70e330b4b3432c043f4ad96
+  IC04_dense_price_history:
+    status: PASS_DENSE_PRICE_HISTORY_WITH_DISCLOSED_GAPS
+    yes_history_coverage: 115/117
+    no_history_coverage: 115/117
+    absent_pre_cutoff_events:
+      - ANF|2026-05-27
+      - BRZE|2026-05-27
+    total_yes_rows: 1593454
+    total_yes_no_rows: 3186908
+    median_yes_rows_per_available_event: 14424
+    median_within_event_gap_minutes: 1.0
+    median_last_point_age_at_cutoff_minutes: 0.9
+    max_last_point_age_at_cutoff_minutes: 25.683333333333334
+    api_errors: 0
+    conflicting_chunk_duplicates: 0
+    bad_or_post_cutoff_rows: 0
+    raw_chunk_files: 564
+    raw_artifact_id: 9098753431
+    raw_artifact_sha256: 8710e2e4fad6ed666eb3c3759e6cb82f7f40fafa69287336ccb784d15fc9d661
+    yes_trajectory_sha256: 2058dbdef714a378a0b8c117af2c68ef47b5caeea6aa6f4a0aa0094589dd8606
+  IC05_historical_l2:
+    status: NO_RETRO_HISTORICAL_L2_FIRST_PARTY_DOCUMENTED
+    current_book_available: true
+    realtime_l2_available: true
+    retro_historical_book_available: false
+    onchain_reconstruction_of_full_book: false
+    audit_policy: NO_GO_FOR_CURRENT_DATA_WHEN_TECHNIQUE_REQUIRES_HISTORICAL_L2
 critical_path:
   - INFO_COMPLETENESS_MAP
   - IC02_TRADE_TAPE_COMPLETED_WITH_LIMITATIONS
   - IC03_ONCHAIN_TRADE_SEMANTICS_COMPLETED
-  - DENSE_PRICE_HISTORY_PILOT
-  - HISTORICAL_L2_AVAILABILITY_DECISION
+  - IC04_DENSE_PRICE_HISTORY_COMPLETED_WITH_LIMITATIONS
+  - IC05_HISTORICAL_L2_DECISION_COMPLETED
   - EVENT_TIMING_MATERIALIZATION
   - CONTEXTUAL_DATA_AVAILABILITY_CLOSURE
   - INFORMATION_COMPLETENESS_GATE
@@ -71,8 +98,6 @@ report:
   anonymous: true
   target_words: 580
 blockers:
-  - DENSE_PRICE_HISTORY_NOT_MATERIALIZED
-  - HISTORICAL_L2_AVAILABILITY_NOT_FINALIZED
   - EVENT_TIMING_COVERAGE_NOT_MATERIALIZED
   - CONTEXTUAL_DATA_AVAILABILITY_NOT_CLOSED
   - ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY
@@ -81,5 +106,6 @@ blockers:
   - 66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED
   - GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC
 limitations:
-  - TRADE_TAPE_PRE_CUTOFF_STRUCTURALLY_UNAVAILABLE_FOR_ANF_2026_05_27_AND_BRZE_2026_05_27
+  - TRADE_TAPE_AND_DENSE_PRICE_PRE_CUTOFF_STRUCTURALLY_UNAVAILABLE_FOR_ANF_2026_05_27_AND_BRZE_2026_05_27
   - DATA_API_SIZE_IS_NONCANONICAL_FOR_569_V1_FEE_MODULE_BUY_ROWS_USE_ONCHAIN_GROSS_AND_COLLATERAL_INSTEAD
+  - HISTORICAL_FULL_L2_NOT_RETROACTIVELY_AVAILABLE_FROM_DOCUMENTED_FIRST_PARTY_SURFACES_FOR_FROZEN_SAMPLE
