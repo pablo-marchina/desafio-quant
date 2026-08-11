@@ -1,0 +1,67 @@
+{
+  "artifact": "POST_H2_FAIL_FINAL_EVIDENCE_RECONCILIATION",
+  "decision": "CONDITIONAL_FINAL_EVIDENCE_RECONCILIATION_EPS_RESIDUAL_1",
+  "date": "2026-08-11",
+  "h2_decision_before_closeout": "FAIL_H2",
+  "h2_decision_after_closeout": "FAIL_H2",
+  "h2_changed": false,
+  "closed_blockers": [
+    "ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY",
+    "ART025_STALE_DRIVE_ID_IN_SR_V3",
+    "GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC",
+    "66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED_AS_BULK_BLOCKER"
+  ],
+  "remaining_blockers": [
+    "OFFICIAL_EPS_INDEPENDENT_RECONSTRUCTION_RESIDUAL_1_BLSH_2025_09_17",
+    "FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_NOT_EXECUTED"
+  ],
+  "art022": {
+    "status": "PASS_RECONCILED",
+    "live_sheet_id": "1RhSm_K4UszP3phL6we7oF8YF2QisV5z4fWx-WK2ws7Y",
+    "protocol_sha256": "675f0a230b83cdda79d70f3a8d38908258e8132b30ada68b0549fb5b0d3c0006",
+    "input_sha256": "e448f36147c46eaab8480d53698d3c4ae9241c3037d0117bcafe09df1e380ade",
+    "original_xlsx_sha256": "deaef850239397588f0e185dfea08633163539958f5e45be0719cdd9b5418d0e",
+    "decision_preserved": "RETAIN_COLEADERS_FOR_EXP06"
+  },
+  "art025": {
+    "status": "PASS_DRIVE_ID_CORRECTED",
+    "live_drive_id": "16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA"
+  },
+  "official_eps": {
+    "status": "PARTIAL_FAIL_CLOSED_RESIDUAL_1",
+    "independently_validated": 116,
+    "population": 117,
+    "validated_matches_polymarket": 116,
+    "validated_mismatches": 0,
+    "remaining_event_keys": ["BLSH|2025-09-17"],
+    "h2_effect": "NO_CHANGE_FAIL_H2",
+    "table_path": "registry/official_eps_closeout_66.csv",
+    "table_git_blob_sha": "f3491d1eec8afec0f99b35388fe3272410bda63b"
+  },
+  "genai": {
+    "status": "PASS_GENAI_LEDGER_FINAL_EVIDENCE_SYNC",
+    "entries": 11,
+    "ledger_path": "registry/genai_usage_ledger.csv",
+    "summary_path": "registry/genai_usage_summary.json"
+  },
+  "art030_lock": {
+    "status": "PASS_FAIL_H2_PRESERVED",
+    "protocol_version": "EXP07I-H2-FREEZE-v1.0",
+    "protocol_sha256": "fcbf7121ae3fe47328b9e06b9f974d01cb5c94bb9760f717b25c64ab839b43c1",
+    "decision": "FAIL_H2",
+    "post_hoc_rescue_permitted": false
+  },
+  "sr_v3": {
+    "status": "PASS_SYNCED",
+    "drive_id": "12dGCC306uEVNC62qU8nUKL_jT__WKSD1jhzBT-VHXHk",
+    "revision_id": "AIroW36iQLgeZl7cSGRYGG2iImj0kRgzA4HptdFc-CamrJ8lQ7GV6XECWksteraIYi_0p6j3iPXdNm76lXMV3gHLKyw4qC5Jh0dDCNhXj6c"
+  },
+  "failed_automation": {
+    "status": "DISCLOSED_OPERATIONAL_FAILURE_NO_DATA_PROMOTED",
+    "route": "GitHub Actions to SEC endpoints",
+    "failure": "HTTP 403 before first event",
+    "partial_data_promoted": false
+  },
+  "next_stage": "FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE",
+  "next_stage_rule": "Carry the one-event BLSH EPS provenance residual as an explicit limitation. Do not reopen H2/H3/H4/H5 or create a post-hoc movement rescue."
+}
