@@ -1,0 +1,99 @@
+{
+  "artifact": "ARGOS_ROBOT_VISUAL_IDENTITY_FREEZE",
+  "version": "AVIF-v1.0",
+  "date": "2026-08-11",
+  "status": "PASS_VISUAL_IDENTITY_FREEZE",
+  "scientific_reopen": false,
+  "concept": "observatorio_quantitativo_institucional",
+  "design_intent": "Transmitir pesquisa quantitativa de asset management, múltiplos sensores, gates, incerteza e disciplina de capital; evitar estética cyberpunk, trading-guru, cassino, robô humanoide ou eye-of-providence.",
+  "robot": {
+    "name": "ARGOS",
+    "archetype": "sentinela quantitativa abstrata",
+    "mark_geometry": "três arcos elípticos concêntricos incompletos representam múltiplos sensores/gates; um núcleo circular representa a probabilidade agregada M2; uma pequena interrupção deliberada no arco externo representa abstention quando o gate não fecha",
+    "face_policy": "sem rosto humanoide, sem pupila realista, sem câmera de vigilância",
+    "meaning": "observação multi-sensor + validação incremental + decisão disciplinada",
+    "not_meaning": ["insider detection", "private information detection", "surveillance of people", "manipulation detection", "guaranteed alpha"],
+    "tagline_primary": "Muitos olhos. Risco só com evidência incremental.",
+    "tagline_secondary": "Observe. Valide. Só então aloque."
+  },
+  "palette": {
+    "ink": "#07111F",
+    "surface": "#0E1B2B",
+    "surface_2": "#14283D",
+    "paper": "#F4F7FB",
+    "muted": "#9FB0C3",
+    "sensor_cyan": "#49C6E5",
+    "evidence_teal": "#2DD4BF",
+    "gate_amber": "#F4BF4F",
+    "fail_coral": "#FF6B6B",
+    "grid": "#294158",
+    "neutral": "#D6DEE8"
+  },
+  "semantic_color_rules": {
+    "sensor_cyan": "dado observado / sensor / probabilidade",
+    "evidence_teal": "critério que sobreviveu ao gate; nunca significa lucro",
+    "gate_amber": "gate, cautela, abstention e C0_NO_TRADE como decisão deliberada",
+    "fail_coral": "hipótese/gate que falhou; usar pontualmente, sem transformar a página em estado de erro",
+    "muted": "limitação, contexto, baseline secundário",
+    "paper": "texto principal sobre fundo escuro"
+  },
+  "typography": {
+    "stack": "Inter, Segoe UI, Arial, sans-serif",
+    "numeric_stack": "Segoe UI, Arial, sans-serif",
+    "title_weight": 700,
+    "body_weight": 400,
+    "label_weight": 600,
+    "principle": "tipografia editorial institucional; números grandes apenas quando são decisão-evidência, não decoração"
+  },
+  "layout": {
+    "canvas": "1600x900",
+    "aspect_ratio": "16:9",
+    "safe_margin_px": 80,
+    "grid_columns": 12,
+    "corner_radius_px": 18,
+    "stroke_px": 2,
+    "density": "baixa a média; uma mensagem e um hero visual por página"
+  },
+  "visual_grammar": {
+    "eye_or_sensor_arcs": "informação observada",
+    "gate_shape": "evidência necessária para promoção",
+    "broken_outer_arc": "abstention possível por desenho",
+    "funnel": "graus de liberdade removidos antes dos outcomes",
+    "zero_line": "falsificabilidade / ausência de ganho demonstrado",
+    "hash_chip": "preregistration/freeze",
+    "amber_terminal": "NO_TRADE como output válido",
+    "future_dashed_line": "próximo estudo; nunca misturar com evidência submetida"
+  },
+  "chart_rules": {
+    "no_3d": true,
+    "no_gradients": true,
+    "no_dual_axis": true,
+    "direct_labels": true,
+    "show_zero_when_relevant": true,
+    "show_uncertainty_when_frozen": true,
+    "baseline_first": true,
+    "do_not_use_green_for_profit": true,
+    "future_work_dashed": true
+  },
+  "accessibility": {
+    "minimum_body_size_for_1600x900_svg_px": 24,
+    "minimum_secondary_size_px": 20,
+    "never_encode_status_by_color_only": true,
+    "status_always_has_text_or_symbol": true,
+    "high_contrast": true
+  },
+  "anonymity": {
+    "forbid_person_names": true,
+    "forbid_university_identity": true,
+    "forbid_github_repo_url": true,
+    "forbid_qr_to_nonanonymous_assets": true
+  },
+  "exit_gate": {
+    "robot_metaphor_matches_strategy": true,
+    "palette_semantics_frozen": true,
+    "no_trade_is_intentional_visual_state": true,
+    "negative_result_has_distinct_noncatastrophic_visual_language": true,
+    "future_work_visually_separated": true,
+    "next_step": "FINAL_FIGURE_FACTORY"
+  }
+}
