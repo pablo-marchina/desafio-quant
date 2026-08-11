@@ -1,0 +1,47 @@
+{
+  "artifact": "REPORT_SCORING_MAXIMIZATION_WAVE_1",
+  "date": "2026-08-11",
+  "scientific_authority": "FST-v1.0 / SF-v3.0",
+  "scientific_reopened": false,
+  "wave": "WAVE_1_SCORING_CONTRACT_AND_CRITICAL_AUDITS",
+  "overall_status": "IN_PROGRESS",
+  "purpose": "Maximize report evaluation score through rubric mapping and critical pre-authoring audits without post-hoc result seeking.",
+  "scoring_contract": {
+    "status": "STARTED",
+    "doc": "docs/30_report_scoring_maximization_contract.md",
+    "matrix": "registry/report_scoring_maximization_matrix.csv",
+    "mapped_weight_pct": 100
+  },
+  "audits": {
+    "model_complexity_technique_sufficiency": {
+      "status": "IN_PROGRESS_PRELIMINARY_STRONG",
+      "doc": "docs/31_model_complexity_technique_sufficiency_audit.md",
+      "primary_score_criterion": "Modeling",
+      "risk": "LOW_MEDIUM",
+      "preliminary_finding": "Complexity is not the primary weakness; the defensible story is broad outcome-blind mechanism search followed by sample-aware parsimony."
+    },
+    "economic_backtest_quality": {
+      "status": "IN_PROGRESS_HIGH_PRIORITY",
+      "doc": "docs/32_economic_backtest_quality_audit.md",
+      "primary_score_criterion": "Backtest",
+      "risk": "HIGH",
+      "preliminary_finding": "Forecast validation is strong, but the report-facing capital simulation and display-safe risk/return inventory must be reconciled from already frozen economic trials."
+    },
+    "event_universe_information_asymmetry": {
+      "status": "IN_PROGRESS_RESEARCH_REQUIRED",
+      "doc": "docs/33_event_universe_information_asymmetry_audit.md",
+      "primary_score_criteria": ["Strategy Concept", "Conclusion and Next Steps"],
+      "risk": "MEDIUM",
+      "preliminary_finding": "Earnings/EPS is proven strong on resolution, mapping, sampleability and PIT reproducibility; its relative information-asymmetry opportunity remains to be assessed ex ante against other event families."
+    }
+  },
+  "wave1_exit_requires": [
+    "100 percent rubric-to-evidence mapping",
+    "explicit model complexity sufficiency verdict",
+    "complete frozen economic-trial and metric inventory",
+    "event-family asymmetry framework frozen before suitability scoring",
+    "report-safe earnings laboratory interpretation",
+    "no H2 rescue or R3 promotion"
+  ],
+  "next_after_wave1": "ARGOS_INVESTMENT_THESIS_REPORT_FRAMING_FREEZE"
+}
