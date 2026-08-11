@@ -1,0 +1,31 @@
+{
+  "decision": "NO_RETRO_HISTORICAL_L2_FIRST_PARTY_DOCUMENTED",
+  "scope": "Polymarket first-party APIs, official documentation, official SDK/repository search",
+  "checked_at": "2026-08-11",
+  "current_orderbook": {
+    "available": true,
+    "endpoints": ["GET /book", "POST /books"],
+    "time_semantics": "current snapshot only in documented request schema"
+  },
+  "realtime_l2": {
+    "available": true,
+    "endpoint": "wss://ws-subscriptions-clob.polymarket.com/ws/market",
+    "time_semantics": "prospective stream from subscription; initial book snapshot plus subsequent updates"
+  },
+  "historical_price": {
+    "available": true,
+    "endpoint": "GET /prices-history and POST /batch-prices-history",
+    "time_semantics": "absolute historical start/end supported",
+    "materialized_by_ic04": true
+  },
+  "historical_l2": {
+    "documented_first_party_endpoint_found": false,
+    "documented_timestamp_parameter_for_book_found": false,
+    "documented_first_party_archive_found": false,
+    "retroactive_reconstruction_from_settlement_only": false,
+    "reason": "Polymarket CLOB matching/order state is off-chain while matched trades settle on-chain; settlement logs do not contain the full state of unfilled/resting/cancelled off-chain orders required to reconstruct historical depth."
+  },
+  "audit_policy": "Historical bid/ask spread, depth, OFI from full L2, depth-normalized impact, queue state and book-shape features must be marked DATA_UNAVAILABLE_RETRO_FIRST_PARTY for the frozen 2025-2026 sample. They may not be approximated from current books or from last trades and may not be encoded as zero.",
+  "prospective_policy": "Current /book and market WebSocket may support future/prospective collection only; they are not admissible as retroactive inputs for the frozen sample.",
+  "boundary": "This is a data-availability decision for the later implementation audit, not a rejection of L2-based techniques in general. A technique can remain conceptually valid but receive NO_GO_FOR_CURRENT_DATA if it requires historical L2."
+}
