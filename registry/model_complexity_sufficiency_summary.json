@@ -1,0 +1,48 @@
+{
+  "artifact": "MODEL_COMPLEXITY_TECHNIQUE_SUFFICIENCY_W1",
+  "date": "2026-08-11",
+  "status": "PRELIMINARY_PASS_SAMPLE_AWARE_PARSIMONY",
+  "outcome_blind_architecture_selection": true,
+  "technique_universe": 69,
+  "pass_b_input_rows": 59,
+  "label_free_feature_columns": 25,
+  "label_free_feature_events": 115,
+  "near_duplicate_pairs_abs_spearman_ge_0_90_pass_b": 15,
+  "pass_b_status_counts": {
+    "CONDITIONAL": 9,
+    "DEFERRED": 11,
+    "GO_CHALLENGER": 11,
+    "GO_CORE_CANDIDATE": 16,
+    "GO_ROBUSTNESS": 11,
+    "NO_GO_DATA": 5,
+    "NO_GO_REDUNDANT": 5,
+    "NO_GO_SAMPLE_COMPLEXITY": 1
+  },
+  "h2_pass_b": {
+    "core_candidate_families": 7,
+    "challenger_families": 7,
+    "robustness_families": 3,
+    "no_go_data": 2,
+    "no_go_redundant": 3,
+    "deferred": 3,
+    "conditional": 1
+  },
+  "art028_final_core_features": 6,
+  "art029_nonlinear_challengers_allowed": 1,
+  "m_move_core_total_coefficients": 8,
+  "m_move_core_unpenalized_coefficients": 2,
+  "m_move_core_regularized_movement_coefficients": 6,
+  "ridge_lambda": 1.0,
+  "hyperparameter_search": false,
+  "initial_training_events": 40,
+  "oos_scored_events": 75,
+  "oos_date_clusters": 54,
+  "scientific_unit": "event/date-cluster, not individual trade",
+  "interpretation": "The final confirmatory model is deliberately simple relative to the effective event-level sample. Sophistication is demonstrated by broad mechanism search, pre-outcome feasibility/redundancy reduction, fixed regularization and a single distinct nonlinear challenger—not by maximizing parameter count.",
+  "prohibited_reframing": [
+    "Do not claim all possible microstructure methods were tested.",
+    "Do not treat 12,752 trades as independent outcome observations.",
+    "Do not imply deferred Hawkes/HMM/deep methods would have rescued H2.",
+    "Do not use ART-030 ablations to redesign M_MOVE post-hoc."
+  ]
+}
