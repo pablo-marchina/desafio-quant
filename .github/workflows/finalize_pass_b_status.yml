@@ -1,0 +1,36 @@
+name: Finalize Pass B Status
+
+on:
+  push:
+    paths:
+      - 'scripts/finalize_pass_b_status.py'
+      - '.github/workflows/finalize_pass_b_status.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/finalize_pass_b_status.py
+      - run: |
+          python - <<'PY'
+          s=open('STATUS.yaml',encoding='utf-8').read()
+          assert 'current_phase: ART028_MOVEMENT_DATA_FEASIBILITY' in s
+          assert 'implementation_audit: COMPLETE_PASS_A_AND_PASS_B_OUTCOME_BLIND' in s
+          assert 'implementation_audit_pass_b:' in s
+          assert 'ART028_MOVEMENT_DATA_FEASIBILITY_NOT_FROZEN' in s
+          PY
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATUS.yaml
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'status: close Pass B and advance to ART-028'
+          git push
