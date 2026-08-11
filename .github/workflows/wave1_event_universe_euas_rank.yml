@@ -1,0 +1,72 @@
+name: Wave 1 EUAS Ranking
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wave1_event_universe_euas_rank.py'
+      - 'registry/event_universe_euas_score_assignments.csv'
+      - 'registry/event_universe_scoring_protocol.json'
+      - 'registry/wave1_event_universe_manual_validation_summary.json'
+      - '.github/workflows/wave1_event_universe_euas_rank.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rank:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compute mechanical EUAS ranking
+        run: python scripts/wave1_event_universe_euas_rank.py --registry-dir registry
+
+      - name: Validate ranking boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          meta = json.loads(Path('registry/event_universe_euas_ranking.json').read_text())
+          assert meta['protocol'] == 'EUAS-v1.1'
+          assert meta['performance_blind'] is True
+          assert meta['scientific_reopen'] is False
+          assert meta['assignments_committed_before_ranking'] is True
+          assert meta['ranking'][0]['family'] == 'EARNINGS_EPS'
+          assert meta['leader_sensitivity']['leader_robust_to_any_single_one_point_assignment_change'] is True
+          unranked = {r['family']: r['status'] for r in meta['unranked']}
+          assert unranked['MA_DEAL_COMPLETION_REGULATORY_CLEARANCE'] == 'UNRANKED_GATE_EVIDENCE_INCOMPLETE'
+          assert unranked['ANTITRUST_REGULATORY'] == 'UNRANKED_GATE_EVIDENCE_INCOMPLETE'
+          assert unranked['LITIGATION_COURT'] == 'INELIGIBLE_HARD_GATE_FAIL'
+          print('PASS_WAVE1_EUAS_RANKING_BOUNDARY')
+          PY
+
+      - name: Upload ranking artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wave1-euas-ranking-${{ github.run_id }}
+          path: |
+            registry/event_universe_euas_scores.csv
+            registry/event_universe_euas_ranking.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit ranking artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/event_universe_euas_scores.csv \
+            registry/event_universe_euas_ranking.json
+          if git diff --cached --quiet; then
+            echo 'No EUAS ranking changes.'
+          else
+            git commit -m 'wave1: materialize EUAS event-family ranking'
+            git push origin HEAD:main
+          fi
