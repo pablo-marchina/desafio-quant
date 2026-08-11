@@ -1,0 +1,54 @@
+name: IC-02 Polymarket Trade Tape Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ic02_trade_tape_audit.py'
+      - 'registry/ic02_event_manifest.csv'
+      - '.github/workflows/ic02_trade_tape_audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run full 117-market audit
+        run: |
+          python scripts/ic02_trade_tape_audit.py \
+            --input registry/ic02_event_manifest.csv \
+            --output-dir .ic02
+      - name: Publish compact audited outputs
+        if: always()
+        run: |
+          test -f .ic02/ic02_trade_tape_audit.csv && cp .ic02/ic02_trade_tape_audit.csv registry/ic02_trade_tape_audit.csv || true
+          test -f .ic02/ic02_raw_manifest.csv && cp .ic02/ic02_raw_manifest.csv registry/ic02_raw_manifest.csv || true
+          test -f .ic02/ic02_report.md && cp .ic02/ic02_report.md docs/15_ic02_trade_tape_empirical_report.md || true
+          test -f .ic02/ic02_summary.json && cp .ic02/ic02_summary.json registry/ic02_summary.json || true
+          test -f .ic02/ic02_errors.csv && cp .ic02/ic02_errors.csv registry/ic02_errors.csv || true
+      - name: Upload frozen raw responses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ic02-polymarket-trade-tape-raw
+          path: .ic02/
+          retention-days: 30
+          if-no-files-found: warn
+      - name: Commit compact results
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/ic02_trade_tape_audit.csv registry/ic02_raw_manifest.csv registry/ic02_summary.json registry/ic02_errors.csv docs/15_ic02_trade_tape_empirical_report.md 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: record IC-02 empirical trade tape audit'
+            git push
+          fi
