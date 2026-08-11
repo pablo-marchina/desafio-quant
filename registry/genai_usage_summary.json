@@ -1,0 +1,20 @@
+{
+  "artifact": "GENAI_USAGE_LEDGER_FINAL_SYNC",
+  "decision": "PASS_GENAI_LEDGER_FINAL_EVIDENCE_SYNC",
+  "entries": 11,
+  "coverage_through": "POST_H2_FAIL_SCIENTIFIC_CLOSEOUT",
+  "human_in_the_loop": true,
+  "empirical_evidence_policy": "GenAI outputs never count as empirical evidence without execution/source verification.",
+  "outcome_firewall": "Feature/architecture audit and ART-029 freeze were outcome-blind; outcomes opened only in ART-030 after protocol hash freeze.",
+  "negative_result_policy": "FAIL_H2 was preserved; GenAI was not allowed to rescue with post-hoc thresholds, subgroups, features or models.",
+  "concrete_roles": [
+    "research structuring and source triage",
+    "code/workflow generation and debugging",
+    "data-contract and provenance auditing",
+    "label-free technique/feature architecture",
+    "confirmatory protocol formalization",
+    "reproducible execution support",
+    "critical interpretation and evidence reconciliation"
+  ],
+  "ledger_path": "registry/genai_usage_ledger.csv"
+}
