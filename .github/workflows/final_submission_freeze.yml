@@ -1,0 +1,51 @@
+name: Final Scientific Truth Submission Freeze
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/final_scientific_truth.json'
+      - 'registry/final_submission_answers_sf_v3.json'
+      - 'registry/final_submission_claims.csv'
+      - 'registry/final_submission_numbers.csv'
+      - 'registry/final_submission_manifest.json'
+      - 'scripts/final_submission_freeze_validate.py'
+      - 'scripts/finalize_final_submission_freeze_status.py'
+      - '.github/workflows/final_submission_freeze.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate final scientific truth and submission freeze
+        run: python scripts/final_submission_freeze_validate.py
+      - name: Apply final STATUS transition
+        run: python scripts/finalize_final_submission_freeze_status.py
+      - name: Validate final STATUS invariants
+        run: |
+          grep -F 'current_phase: FINAL_REPORT_AUTHORING_AND_QA' STATUS.yaml
+          grep -F 'H2: FAIL_UNDER_FROZEN_EXP07I' STATUS.yaml
+          grep -F 'H3: BLOCKED_BY_H2_FAIL_NO_RESCUE' STATUS.yaml
+          grep -F 'blockers: []' STATUS.yaml
+          grep -F 'submission_freeze: SF-v3.0' STATUS.yaml
+          grep -F 'post_hoc_rescue_permitted: false' STATUS.yaml
+          test -s registry/final_submission_freeze_validation.json
+      - name: Commit freeze validation and STATUS
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATUS.yaml registry/final_submission_freeze_validation.json
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+          else
+            git commit -m 'freeze: finalize scientific truth and submission state'
+            git push
+          fi
