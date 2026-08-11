@@ -1,35 +1,51 @@
 {
-  "decision": "PASS_SIGNED_DIRECTION_FULL_RECONCILIATION",
-  "era_mismatches": 0,
+  "decision": "PASS_IC03_AUDIT_READY_TAPE_WITH_DISCLOSED_API_SIZE_SEMANTICS",
+  "direction_status": "PASS_FULL_ONCHAIN_RECONCILIATION",
+  "quantity_status": "PASS_CANONICAL_ONCHAIN_GROSS_AND_COLLATERAL",
   "events": 117,
+  "events_with_pre_cutoff_tape": 115,
+  "no_pre_cutoff_tape_events": [
+    "ANF|2026-05-27",
+    "BRZE|2026-05-27"
+  ],
+  "pre_cutoff_trades": 12752,
+  "status_counts": {
+    "PASS": 12752
+  },
   "exchange_version_rows": {
     "V1": 11729,
     "V2": 1023
   },
-  "generated_utc": "2026-08-11T10:32:07.928690+00:00",
-  "ic02_manifest_sha256": "809001cb49948a4402e38f0d9ee77ce4de26793fbb8c43b089be1dbbeb6d26a4",
-  "ic02_raw_files_verified": 234,
-  "pre_cutoff_trades": 12752,
-  "price_matches": 12752,
-  "receipts_sha256": "035b540f2a9dbf4d5d00e8a8f8129376aafa5fc6f001ac53706e7107db862159",
-  "rpc_failures": {
-    "https://polygon-mainnet.gateway.tatum.io/": 3131,
-    "https://polygon.drpc.org": 2,
-    "https://rpc-mainnet.matic.quiknode.pro": 2414
-  },
-  "rpc_successes": {
-    "https://polygon-mainnet.gateway.tatum.io/": 19,
-    "https://polygon.drpc.org": 5588,
-    "https://rpc-mainnet.matic.quiknode.pro": 3944,
-    "https://tenderly.rpc.polygon.community": 3204
-  },
   "side_matches": 12752,
   "side_mismatches": 0,
-  "signed_tape_sha256": "34f52e64e165a83a953b41f099ca107af33939e7c38d31efcbc08b92ad042825",
-  "size_matches": 12183,
-  "status_counts": {
-    "PASS": 12752
+  "price_matches": 12752,
+  "era_mismatches": 0,
+  "api_size_equals_canonical_gross_rows": 12183,
+  "api_size_differs_from_canonical_gross_rows": 569,
+  "v1_fee_module_rows_semantically_audited": 569,
+  "fee_module_receive_matches_onchain_gross_rows": 569,
+  "api_size_policy": "Retain api_size as a raw vendor field. Canonical volume is on-chain gross token amount and canonical notional is on-chain collateral amount. Never silently substitute api_size for gross token volume in the 569 audited V1 Fee Module BUY rows.",
+  "canonical_fields": {
+    "direction": "side_canonical",
+    "price": "price_canonical",
+    "gross_token_volume": "token_amount_gross_canonical",
+    "collateral_notional": "collateral_notional_canonical"
   },
+  "ic02_raw_files_verified": 234,
+  "ic02_manifest_sha256": "809001cb49948a4402e38f0d9ee77ce4de26793fbb8c43b089be1dbbeb6d26a4",
+  "receipts_sha256": "035b540f2a9dbf4d5d00e8a8f8129376aafa5fc6f001ac53706e7107db862159",
+  "signed_tape_sha256": "34f52e64e165a83a953b41f099ca107af33939e7c38d31efcbc08b92ad042825",
+  "audit_ready_tape_sha256": "3563d3c1348a3cc78b13419f554195a306cc7f7ad70e330b4b3432c043f4ad96",
+  "v1_exchange": "0x4bfb41d5b3570defd03c39a9a4d8de6bd8b8982e",
+  "v2_exchange": "0xe111180000d2663c0091e4f400237545b87b996b",
   "v1_topic": "0xd0a08e8c493f9c94f29311604c9de1b4e8c8d4c06bd0c789af57f2d65bfec0f6",
-  "v2_topic": "0xd543adfd945773f1a62f74f0ee55a5e3b9b1a28262980ba90b1a89f2ea84d8ee"
+  "v2_topic": "0xd543adfd945773f1a62f74f0ee55a5e3b9b1a28262980ba90b1a89f2ea84d8ee",
+  "historical_fee_module": {
+    "address": "0xe3f18acc55091e2c48d883fc8c8413319d4ab7b0",
+    "source_commit": "f5b26a1ca0f56190df9ae5354beead35630f5176",
+    "matchOrders_selector": "0x2287e350",
+    "takerReceiveAmount_matches_gross_rows": 569,
+    "vendor_api_size_accounting": "not promoted to canonical semantics; unnecessary for the implementation audit"
+  },
+  "boundary": "IC-03 makes trade direction, price, gross token amount and collateral notional eligible as audited data inputs. It does not approve any feature, technique, predictive claim or H2 result."
 }
