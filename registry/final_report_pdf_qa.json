@@ -1,0 +1,80 @@
+{
+  "artifact": "ARGOS_FINAL_REPORT_PDF_QA",
+  "version": "FRPDFQA-v1.0",
+  "date": "2026-08-11",
+  "status": "PASS_FINAL_REPORT_PDF_QA_READY_FOR_SUBMISSION",
+  "scientific_authority": "FST-v1.0 / SF-v3.0",
+  "scientific_reopen": false,
+  "submission_source": {
+    "page_set": "report/pages_submission",
+    "page_set_commit": "3dcbc2d0de9feb38d54fe84d8931d8e40c7cb994",
+    "workflow": "ARGOS Submission Page Set",
+    "workflow_run_id": 31537184668,
+    "artifact_name": "argos-submission-pages-31537184668",
+    "artifact_sha256": "83d33e3129ed7dc0aa12b6ca230f7ffe8000b4e679496f31ba91e90fdf2b65f7"
+  },
+  "pdf": {
+    "delivery_filename": "ARGOS_Desafio_Quant_AI_2026_FINAL.pdf",
+    "sha256": "5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561",
+    "size_bytes": 450760,
+    "pages": 5,
+    "page_size_points": "1200 x 675",
+    "aspect_ratio": "16:9",
+    "pdf_version": "1.5",
+    "encrypted": false,
+    "forms": false,
+    "attachments": false,
+    "annotations": false,
+    "text_rendering": "converted to vector paths to remove font dependency"
+  },
+  "preflight": {
+    "status": "PASS",
+    "openable_pymupdf": true,
+    "likely_scanned": false,
+    "xfa_present": false,
+    "exact_page_limit": true,
+    "all_pages_same_size": true
+  },
+  "anonymity": {
+    "status": "PASS",
+    "author_metadata_empty": true,
+    "forbidden_source_tokens_checked": [
+      "Pablo Marchina",
+      "github.com/pablo-marchina",
+      "Inteli"
+    ],
+    "forbidden_tokens_found": [],
+    "rendered_pages_contain_person_or_university_identity": false,
+    "repository_url_rendered": false
+  },
+  "scientific_content_gate": {
+    "status": "PASS",
+    "page_1": "explicit falsifiable hypothesis; 117 tested events; 116/117 official EPS; 115/117 tape/trajectory; abstention/no-trade; EUAS earnings 72",
+    "page_2": "69 -> 59 -> 25 -> 6 -> 8 + 1 research reduction; six mechanisms named; warm-up 40; 75 OOS events; 54 clusters; ridge lambda=1; no hyperparameter search",
+    "page_3": "H1 supported qualitative claim; H2 metrics and confidence intervals; 0/3 temporal terciles; 75 events / 54 clusters; stop rule visible",
+    "page_4": "108 opportunities; 34 trades; 21/13 long/short; 31.48% trade rate; 20/35 bps costs; -0.2050% MA net/opportunity; CI; hit rate; Holm p=1.0; C0_NO_TRADE",
+    "page_5": "ChatGPT (OpenAI) named; team-vs-AI responsibility visible; three concrete GenAI cases; 11 ledger entries; FDA 47; Macro 50; M&A completion unranked; earnings 81/81 EUAS sensitivity",
+    "prohibited_reframing_found": false
+  },
+  "visual_qa": {
+    "status": "PASS",
+    "pdfium_render_dpi": 200,
+    "pdfium_visual_inspection": "PASS_NO_CLIPPING_OVERLAP_BLACK_SQUARES_OR_BROKEN_GLYPHS",
+    "pdftoppm_render_dpi": 200,
+    "pdftoppm_visual_inspection": "PASS_NO_CLIPPING_OVERLAP_BLACK_SQUARES_OR_BROKEN_GLYPHS",
+    "renderer_parity": {
+      "pages_compared": 5,
+      "max_fraction_pixels_changed": 0.03035872825434913,
+      "interpretation": "small rasterization/anti-aliasing differences only; no structural or layout discrepancy observed"
+    }
+  },
+  "metadata": {
+    "title": "ARGOS - Desafio Quant AI 2026",
+    "author": "",
+    "subject": "Relatorio quantitativo anonimo",
+    "creator": "ARGOS deterministic report build",
+    "producer": ""
+  },
+  "final_verdict": "PASS_READY_FOR_SUBMISSION",
+  "remaining_action": "Submit the QA-approved PDF through the official challenge channel; do not edit the PDF after this QA without regenerating the hash and rerunning the gate."
+}
