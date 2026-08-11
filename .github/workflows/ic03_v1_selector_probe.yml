@@ -1,0 +1,26 @@
+name: IC-03 V1 Selector Probe
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ic03_v1_selector_probe.py'
+      - '.github/workflows/ic03_v1_selector_probe.yml'
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Probe
+        run: python scripts/ic03_v1_selector_probe.py
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/ic03_v1_selector_probe.csv
+          git commit -m 'data: record V1 selector probe'
+          git push
