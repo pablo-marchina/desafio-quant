@@ -21,7 +21,7 @@ hypotheses:
   H3: BLOCKED_BY_H2
   H4: BLOCKED_BY_H2
   H5: BLOCKED_BY_H4
-current_phase: ART028_MOVEMENT_DATA_FEASIBILITY
+current_phase: ART029_EXP07I_PROTOCOL_FREEZE
 implementation_audit: COMPLETE_PASS_A_AND_PASS_B_OUTCOME_BLIND
 information_completeness_gate: PASS_INFORMATION_COMPLETENESS_GATE
 information_completeness:
@@ -162,6 +162,55 @@ implementation_audit_pass_b:
   correlations_path: registry/pass_b_feature_correlations.csv
   summary_path: registry/pass_b_summary.json
   report_path: docs/23_cross_strategy_implementation_audit_pass_b.md
+art028_movement_data_feasibility:
+  status: PASS_ART028_MOVEMENT_DATA_FEASIBILITY_AND_POST_MATERIALIZATION_ARCHITECTURE
+  outcome_blind: true
+  events_total: 117
+  structurally_available_events: 115
+  structurally_unavailable_events:
+    - ANF|2026-05-27
+    - BRZE|2026-05-27
+  core_families_materialized: 7/7
+  primary_m_move_feature_count: 6
+  primary_m_move_features:
+    - conditional_z_move_6h
+    - velocity_6h_per_hour
+    - signed_notional_imbalance_24h
+    - wallet_hhi_notional_24h
+    - same_direction_transition_share_lifecycle
+    - jump_score_6h
+  eligible_challenger_features:
+    - large_trade_notional_share_24h
+    - matrix_profile_discord_6h
+    - conformal_log_martingale_6h
+  nonlinear_challenger_preference: matrix_profile_discord_6h
+  model_cap: ONE_INTERPRETABLE_REGULARIZED_M_MOVE_PLUS_MAX_ONE_NONLINEAR_CHALLENGER
+  robustness_only:
+    - vol_scaled_delta_6h
+    - sign_consistency_1_6_24h
+    - prequential_feature_distance
+    - Platt/isotonic/online calibration
+  post_materialization_no_go:
+    - cusum_score_6h
+    - post_jump_half_life_hours
+  deferred_initial_confirmatory:
+    - multivariate_anomaly_distance
+    - Online weighted ensemble
+    - Dispersion across simple forecasters
+  label_free_amendment_F06:
+    initial_24h_coverage: 81/117
+    lifecycle_coverage: 111/117
+    outcomes_consulted: false
+  strong_era_distribution_shift_features:
+    - same_direction_transition_share_lifecycle
+  half_life_status: FAIL_COVERAGE
+  half_life_coverage: 33/117
+  feature_matrix_sha256: 1295e7367396ccf493ba1e153bbec528fc215016e2631e9a37ea31772645658a
+  art029_handoff_sha256: 7fd26d5b49203c81772684021000d869341d1bece480cb079b52a562178ab5d1
+  feature_matrix_path: data/art028_h2_feature_matrix.csv.gz
+  handoff_path: registry/art028_art029_handoff.csv
+  summary_path: registry/art028_summary.json
+  report_path: docs/24_art028_movement_data_feasibility.md
 critical_path:
   - INFO_COMPLETENESS_MAP_COMPLETED
   - IC02_TRADE_TAPE_COMPLETED_WITH_LIMITATIONS
@@ -173,7 +222,7 @@ critical_path:
   - INFORMATION_COMPLETENESS_GATE_COMPLETED
   - CROSS_STRATEGY_IMPLEMENTATION_AUDIT_PASS_A_FULL_SUPERSET_COMPLETED
   - CROSS_STRATEGY_IMPLEMENTATION_AUDIT_PASS_B_REDUNDANCY_COMPLETED
-  - ART-028_MOVEMENT_DATA_FEASIBILITY
+  - ART-028_MOVEMENT_DATA_FEASIBILITY_COMPLETED
   - ART-029_EXP07I_PROTOCOL_FREEZE
   - ART-030_EXP07I_H2
   - H4_CROSS_MARKET_TRANSMISSION_IF_H2_PASS
@@ -186,13 +235,14 @@ report:
   anonymous: true
   target_words: 580
 blockers:
-  - ART028_MOVEMENT_DATA_FEASIBILITY_NOT_FROZEN
+  - ART029_EXP07I_PROTOCOL_NOT_FROZEN
   - ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY
   - ART025_STALE_DRIVE_ID_IN_SR_V3
   - H2_NOT_EXECUTED
   - 66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED
   - GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC
 limitations:
+  - OUTCOMES_AND_PERFORMANCE_FORBIDDEN_UNTIL_ART029_PROTOCOL_FREEZE
   - TRADE_TAPE_AND_DENSE_PRICE_PRE_CUTOFF_STRUCTURALLY_UNAVAILABLE_FOR_ANF_2026_05_27_AND_BRZE_2026_05_27
   - DATA_API_SIZE_IS_NONCANONICAL_FOR_569_V1_FEE_MODULE_BUY_ROWS_USE_ONCHAIN_GROSS_AND_COLLATERAL_INSTEAD
   - HISTORICAL_FULL_L2_NOT_RETROACTIVELY_AVAILABLE_FROM_DOCUMENTED_FIRST_PARTY_SURFACES_FOR_FROZEN_SAMPLE
