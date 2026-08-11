@@ -1,0 +1,54 @@
+{
+  "artifact": "EVENT_UNIVERSE_INFORMATION_ASYMMETRY_SCORING_PROTOCOL",
+  "version": "EUAS-v1.0",
+  "freeze_date": "2026-08-11",
+  "purpose": "Rank future ARGOS event-family research suitability using ex-ante mechanism/data properties, never realized ARGOS profitability.",
+  "performance_blind": true,
+  "scientific_reopen": false,
+  "hard_gates": {
+    "ex_ante_contractability_C": {"minimum_0_to_5": 2, "reason": "A prediction-market signal must exist before resolution/news."},
+    "prediction_market_observability_P": {"minimum_0_to_5": 2, "reason": "PIT price/trade data must be reproducible."},
+    "linked_asset_sensitivity_I": {"minimum_0_to_5": 3, "reason": "ARGOS requires a defensible financial transmission target."},
+    "resolution_objectivity_R": {"minimum_0_to_5": 3, "reason": "Outcome must be independently auditable."},
+    "sampleability_S": {"minimum_0_to_5": 2, "reason": "Enough repeated events/contracts are required for honest OOS inference."}
+  },
+  "survivor_score_weights_pct": {
+    "information_asymmetry_potential_A": 30,
+    "cross_market_timing_opportunity_T": 20,
+    "linked_asset_sensitivity_I": 15,
+    "liquidity_statistical_density_L": 15,
+    "sampleability_S": 10,
+    "resolution_objectivity_R": 5,
+    "prediction_market_observability_P": 5
+  },
+  "penalties_points": {
+    "public_information_saturation_PIS": {"range": [0, 10], "direction": "subtract"},
+    "selection_contract_creation_bias_SCB": {"range": [0, 10], "direction": "subtract"},
+    "data_execution_friction_DEF": {"range": [0, 10], "direction": "subtract"}
+  },
+  "score_scale": "Each positive dimension 0-5, weighted to 100 before penalties. Penalties are separately evidenced and subtract up to 30 points.",
+  "tie_breakers_in_order": [
+    "higher sampleability_S",
+    "higher liquidity_statistical_density_L",
+    "higher resolution_objectivity_R",
+    "lower data_execution_friction_DEF"
+  ],
+  "candidate_families_initial": [
+    "EARNINGS_EPS",
+    "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE",
+    "MA_ANNOUNCEMENT_RUMOR",
+    "FDA_APPROVAL_ADVISORY",
+    "ANTITRUST_REGULATORY",
+    "LITIGATION_COURT",
+    "MACRO_FED_CPI",
+    "OTHER_CORPORATE_BINARY"
+  ],
+  "prohibited_inputs": [
+    "ARGOS H2 performance within a candidate family",
+    "post-hoc subgroup profitability",
+    "R3 diagnostic returns",
+    "knowledge that a family produced a favorable historical trade",
+    "unverified anecdotal insider allegations"
+  ],
+  "next_step": "Populate dimension evidence from primary literature and historical Polymarket contract/liquidity census, then score without changing this protocol."
+}
