@@ -1,0 +1,23 @@
+number_id,topic,metric,value,unit,scope,source,submission_status
+FNUM-001,H2,M2_RAW Brier,0.13954701,Brier,"75 scored events; 54 date clusters",ART-030,PERMITTED
+FNUM-002,H2,M2_CAL Brier,0.14502650803435788,Brier,"75 scored events; 54 date clusters",ART-030,PERMITTED
+FNUM-003,H2,M_MOVE_CORE Brier,0.1620974987486428,Brier,"75 scored events; 54 date clusters",ART-030,PERMITTED
+FNUM-004,H2,"M2_CAL - M_MOVE_CORE Brier increment",-0.017070990714284907,Brier,"CI95 [-0.04910144519317386; 0.012816462700925006]",ART-030,PERMITTED
+FNUM-005,H2,M2_RAW log loss,0.4302918261840308,log_loss,"75 scored events; 54 date clusters",ART-030,PERMITTED
+FNUM-006,H2,M2_CAL log loss,0.45400185611709,log_loss,"75 scored events; 54 date clusters",ART-030,PERMITTED
+FNUM-007,H2,M_MOVE_CORE log loss,0.5403842574211747,log_loss,"75 scored events; 54 date clusters",ART-030,PERMITTED
+FNUM-008,H2,"M2_CAL - M_MOVE_CORE log-loss increment",-0.08638240130408478,log_loss,"CI95 [-0.21447850973675447; 0.025206964277829834]",ART-030,PERMITTED
+FNUM-009,H2,Positive temporal Brier terciles,0/3,terciles,"Frozen temporal robustness gate",ART-030,PERMITTED
+FNUM-010,H2,Scored events,75,events,"EXP07I-T02",ART-030,PERMITTED
+FNUM-011,H2,Scored date clusters,54,date_clusters,"EXP07I-T02",ART-030,PERMITTED
+FNUM-012,Outcomes,Contract targets reconstructed,117/117,events,"ART-030 target panel",ART-030,PERMITTED
+FNUM-013,Outcomes,Independent official EPS validation,116/117,events,"One residual: BLSH|2025-09-17",Final Evidence Reconciliation,PERMITTED
+FNUM-014,Outcomes,Independent EPS matches,116/116,validated_events,"Zero mismatches among validated events",Final Evidence Reconciliation,PERMITTED
+FNUM-015,Trade data,Pre-cutoff trade-tape coverage,115/117,events,"ANF and BRZE structurally unavailable",IC02,PERMITTED_AS_LIMITATION
+FNUM-016,Trade data,Pre-cutoff canonical trade rows,12752,rows,"Direction and price reconciled 12752/12752",IC03,PERMITTED
+FNUM-017,Price data,Dense YES trajectory coverage,115/117,events,"ANF and BRZE structurally unavailable",IC04,PERMITTED_AS_LIMITATION
+FNUM-018,Price data,Dense YES trajectory rows,1593454,rows,"Median within-event gap 1.0 minute",IC04,PERMITTED
+FNUM-019,Trade semantics,Noncanonical Data API size rows,569,rows,"V1 FeeModule BUY; use on-chain gross/collateral",IC03,PERMITTED_AS_LIMITATION
+FNUM-020,GenAI,Final ledger entries,11,entries,"Human-in-the-loop; outcome firewall; negative-result policy",GenAI ledger,PERMITTED
+FNUM-021,Report,Maximum pages,5,pages,"Final submission contract",Official challenge directions,REQUIRED
+FNUM-022,Report,Aspect ratio,16:9,ratio,"Horizontal final PDF",Official challenge directions,REQUIRED
