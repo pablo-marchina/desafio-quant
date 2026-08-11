@@ -1,0 +1,38 @@
+name: Information Completeness Gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/information_completeness_gate.py'
+      - '.github/workflows/information_completeness_gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run Information Completeness Gate
+        run: python scripts/information_completeness_gate.py
+      - name: Commit gate outputs
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add registry/information_completeness_gate.csv \
+                  registry/information_completeness_gate.json \
+                  registry/information_completeness_data_contract.csv \
+                  registry/implementation_audit.csv \
+                  registry/history/implementation_audit_pre_information_completeness_gate.csv \
+                  docs/21_information_completeness_gate.md 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m 'audit: record Information Completeness Gate'
+            git push
+          fi
