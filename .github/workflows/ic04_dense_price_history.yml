@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/ic04_dense_price_history_audit.py'
+      - 'scripts/ic04_dense_price_history_audit_parallel.py'
       - '.github/workflows/ic04_dense_price_history.yml'
   workflow_dispatch:
 
@@ -15,7 +16,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,7 +32,7 @@ jobs:
           run-id: 31449689618
       - name: Run full 117-event dense price-history audit
         run: |
-          python scripts/ic04_dense_price_history_audit.py \
+          python scripts/ic04_dense_price_history_audit_parallel.py \
             --ic02-dir ic02_input \
             --input registry/ic02_event_manifest.csv \
             --output-dir ic04_output
