@@ -4,6 +4,7 @@
 **Date:** 2026-08-11  
 **Submission deadline:** 2026-08-17  
 **Scientific authority:** `FST-v1.0 / SF-v3.0`  
+**Status:** `PASS_WAVE1`  
 **Purpose:** maximize expected evaluation score without reopening frozen scientific claims.
 
 ## 1. Hard boundary
@@ -27,15 +28,15 @@ Not allowed:
 
 ## 2. Official scoring contract
 
-| Criterion | Weight | What the report must prove | ARGOS strongest evidence | Current score risk | Wave-1 action |
-|---|---:|---|---|---|---|
-| Strategy concept | 20% | clear economic mechanism, hypothesis, originality, investment relevance | cross-market information validation; M2 as sensor; explicit abstention | MEDIUM | thesis framing + event-universe asymmetry audit |
-| Modeling | 20% | systematic inputs→processing→output; appropriate complexity; replicability | 69-technique outcome-blind audit → six core features → regularized interpretable model + one challenger | LOW-MEDIUM | model complexity & technique sufficiency audit |
-| Backtest | 15% | rigorous historical simulation, timing, biases, costs, benchmark, implementation understanding | PIT walk-forward H2 + EXP-06/06R economic rules + `C0_NO_TRADE` | HIGH | economic backtest quality audit |
-| Results analysis | 15% | metrics plus critical interpretation, uncertainty, limitations | H1 positive; H2 negative; CIs; temporal stability failure; rejected R3 rescue | LOW | authoring evidence pack after Wave 1 |
-| Generative AI | 15% | concrete high-impact uses, validation and limitations | 11-entry ledger; outcome firewall; human-in-the-loop; no post-hoc AI rescue | LOW | select three strongest case studies |
-| Conclusion / next steps | 10% | proportional claims and realistic next research | stop rule, no-trade, event-universe redesign, prospective L2 | LOW-MEDIUM | use event-universe audit to make next steps economically motivated |
-| Robot presentation | 5% | name, identity, explanation, coherence with system | ARGOS / many eyes / selective risk | MEDIUM | visual identity after Wave 1 |
+| Criterion | Weight | What the report must prove | ARGOS strongest evidence | Wave-1 status |
+|---|---:|---|---|---|
+| Strategy concept | 20% | clear economic mechanism, hypothesis, originality, investment relevance | cross-market information validation; M2 as sensor; explicit abstention; EUAS-v1.1 ex-ante universe audit | **PASS W1-C** |
+| Modeling | 20% | systematic inputs→processing→output; appropriate complexity; replicability | 69-technique outcome-blind audit → six core mechanisms → regularized interpretable model + one challenger | **PASS W1-A** |
+| Backtest | 15% | rigorous historical simulation, timing, biases, costs, benchmark, implementation understanding | PIT walk-forward H2 + EXP-06/06R economic rules + `C0_NO_TRADE` | **PASS W1-B** |
+| Results analysis | 15% | metrics plus critical interpretation, uncertainty, limitations | H1 positive; H2 negative; CIs; temporal stability failure; rejected R3 rescue | READY FOR AUTHORING |
+| Generative AI | 15% | concrete high-impact uses, validation and limitations | 11-entry ledger; outcome firewall; human-in-the-loop; no post-hoc AI rescue | READY FOR AUTHORING |
+| Conclusion / next steps | 10% | proportional claims and realistic next research | stop rule; no-trade; EUAS ranking; preregistered future-universe logic | **PASS W1-C** |
+| Robot presentation | 5% | name, identity, explanation, coherence with system | ARGOS / many eyes / selective risk | READY FOR VISUAL IDENTITY |
 
 ## 3. Score-maximization principles
 
@@ -44,7 +45,7 @@ Not allowed:
 3. **Backtest must be presented in two layers:** informational validation and economic capital translation.
 4. **Negative results are decision evidence.** `FAIL_H2` is shown as a falsification that activates a pre-registered stop rule.
 5. **No-trade is a capital decision**, but only where the historical policy and gates justify that framing.
-6. **Earnings/EPS is the tested laboratory, not automatically the optimal information-asymmetry universe.** Any broader claim must be supported by the event-universe audit.
+6. **Earnings/EPS is the tested laboratory, not a universal claim of maximal asymmetry.** W1-C now supports it as the strongest demonstrated joint EUAS laboratory among families with complete gate evidence.
 7. **M2 is part of ARGOS**, not an external model that “beat the robot”.
 8. **GenAI is evaluated by impact + verification**, not by tool count.
 9. **The five pages are self-contained.** No repo, QR code or external appendix is required to understand the result.
@@ -54,38 +55,45 @@ Not allowed:
 
 ### W1-A — Model Complexity & Technique Sufficiency Audit
 
-Question: **Was the final technical complexity appropriate to the mechanism and effective sample, and did the research cover the important families without creating avoidable overfit?**
-
+**Verdict:** `PASS_MODEL_COMPLEXITY_SUFFICIENCY_FOR_REPORT_SAMPLE_AWARE_PARSIMONY`  
 Output: `docs/31_model_complexity_technique_sufficiency_audit.md`.
 
 ### W1-B — Economic Backtest Quality Audit
 
-Question: **Does the project contain a sufficiently complete and defensible historical capital simulation for the 15% Backtest criterion, and which already-frozen metrics can be displayed without creating a new post-hoc rule?**
-
+**Verdict:** `PASS_ECONOMIC_BACKTEST_QUALITY_FOR_REPORT_WITH_EVENT_LEVEL_PORTFOLIO_AGGREGATION_LIMITATION`  
 Output: `docs/32_economic_backtest_quality_audit.md`.
 
 ### W1-C — Event Universe Information-Asymmetry Audit
 
-Question: **Was earnings/EPS an ex ante strong laboratory for ARGOS, and which event-family properties should define the next-generation universe if information asymmetry is the mechanism?**
-
+**Verdict:** `PASS_W1C_EUAS_V1_1_RANKED_REPORT_SAFE`  
 Output: `docs/33_event_universe_information_asymmetry_audit.md`.
+
+EUAS-v1.1 ranked only families with complete hard-gate evidence:
+1. Earnings/EPS — 72
+2. Macro/Fed/CPI — 50
+3. FDA approval/advisory — 47
+4. M&A announcement/rumor — 47
+
+The earnings leader survived 81/81 one-at-a-time ±1 anchor perturbations. M&A completion and antitrust remain unranked for incomplete `C/S` evidence rather than being labeled failures; the broad litigation family fails the `I>=3` linked-asset gate.
 
 ## 5. Wave 1 exit gate
 
-Wave 1 closes only when all are true:
+- [x] scoring matrix maps 100% of rubric weight to specific evidence and intended visuals;
+- [x] model audit gives an explicit complexity-sufficiency verdict and report-safe wording;
+- [x] backtest audit inventories every relevant existing economic trial and identifies display-safe risk/return metrics;
+- [x] backtest audit states the boundary on additional descriptive calculations from frozen trades;
+- [x] event-universe audit freezes an ex-ante scoring framework and compares candidate families using primary evidence + performance-blind historical PM discovery;
+- [x] family count evidence is semantically validated before `C/L/S` gate use;
+- [x] EUAS score assignments are committed before the mechanical ranking;
+- [x] event-universe audit distinguishes tested evidence from future-research hypotheses;
+- [x] final thesis framing can be frozen without contradicting FST-v1.0;
+- [x] no audit introduces a post-hoc H2 rescue.
 
-- [ ] scoring matrix maps 100% of rubric weight to specific evidence and intended visuals;
-- [ ] model audit gives an explicit complexity-sufficiency verdict and report-safe wording;
-- [ ] backtest audit inventories every relevant existing economic trial and identifies display-safe risk/return metrics;
-- [ ] backtest audit states whether additional **descriptive** calculations are needed from frozen trades;
-- [ ] event-universe audit defines an ex-ante scoring framework and compares candidate event families using primary evidence + historical prediction-market availability;
-- [ ] event-universe audit distinguishes tested evidence from future-research hypotheses;
-- [ ] final thesis framing can be frozen without contradicting FST-v1.0;
-- [ ] no audit introduces a post-hoc H2 rescue.
+**Wave 1 verdict:** `PASS_WAVE1`.
 
 ## 6. Critical path after Wave 1
 
-1. `ARGOS INVESTMENT THESIS — REPORT FRAMING FREEZE`
+1. **`ARGOS INVESTMENT THESIS — REPORT FRAMING FREEZE`** ← current next step
 2. `FINAL REPORT AUTHORING EVIDENCE PACK`
 3. `ARGOS ROBOT & VISUAL IDENTITY`
 4. `FINAL FIGURE FACTORY`
@@ -99,6 +107,10 @@ Wave 1 closes only when all are true:
 
 The report should leave the evaluator with one coherent investment-research story:
 
-> ARGOS treats prediction markets as information sensors, asks whether additional market dynamics contain genuinely incremental information, and promotes risk only after point-in-time out-of-sample evidence survives pre-registered gates. In the tested earnings/EPS laboratory, aggregate probability carried predictive value but the movement layer failed the incremental gate, so the system preserved capital rather than mining a post-hoc winner.
+> ARGOS treats prediction markets as point-in-time information sensors. It first asks whether their aggregate probability contains signal and then imposes a harder question: whether market dynamics add information beyond that aggregate sensor. Risk is promoted only after pre-registered, out-of-sample evidence survives the gates. In the earnings/EPS laboratory, aggregate probability carried predictive value, but the frozen movement layer failed the incremental test; the system therefore abstained instead of mining a post-hoc winner.
 
-This wording is an **editorial framing target**; all numeric and empirical statements remain governed by the frozen claim/number registries.
+W1-C adds the ex-ante universe rationale:
+
+> Earnings/EPS was not merely convenient: under the performance-blind EUAS-v1.1 audit it remained the strongest demonstrated joint laboratory among families with complete viability evidence. Future work should preregister FDA for a single-name equity extension, redesign the linked-asset layer explicitly for macro, and expand performance-blind discovery before promoting M&A completion.
+
+These are **editorial framing targets**. Numeric and empirical statements remain governed by the frozen claim/number registries; W1-C is a report-design evidence layer and does not amend `FST-v1.0 / SF-v3.0`.
