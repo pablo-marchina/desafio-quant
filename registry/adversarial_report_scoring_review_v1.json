@@ -1,0 +1,94 @@
+{
+  "artifact": "ARGOS_ADVERSARIAL_REPORT_SCORING_REVIEW",
+  "version": "ARSR-v1.0",
+  "date": "2026-08-11",
+  "status": "PASS_WITH_FOUR_AUTHORING_FIXES_REQUIRED_BEFORE_FINAL",
+  "scientific_reopen": false,
+  "review_target": "first 5-page visual build generated from FFF-v1.0",
+  "rubric_review": [
+    {
+      "criterion": "Strategy Concept",
+      "weight_pct": 20,
+      "current_strength": "Architecture, abstention, tested universe and EUAS rationale are visually clear.",
+      "residual_risk": "The falsifiable hypothesis is inferable from 'movimento > M2?' but not written as an explicit hypothesis sentence.",
+      "fix": "Add a one-line hypothesis banner: movement dynamics only matter if they improve on M2 out-of-sample.",
+      "claim_source": "RCLM-001 / FCLM-003 / FCLM-006",
+      "risk_after_fix": "LOW"
+    },
+    {
+      "criterion": "Robot Presentation",
+      "weight_pct": 5,
+      "current_strength": "ARGOS mark and many-eyes visual language are coherent with the sensor/gate architecture.",
+      "residual_risk": "A reader could see an eye mark without understanding why the name maps to the system.",
+      "fix": "Add a compact name explanation: guardião de múltiplos olhos = múltiplos sensores quantitativos; não insiders.",
+      "claim_source": "SF-v3.0 Nome/Explicação",
+      "risk_after_fix": "LOW"
+    },
+    {
+      "criterion": "Modeling",
+      "weight_pct": 20,
+      "current_strength": "69→59→25→6→8+1 reduction, sample size, regularization and no hyperparameter search are exceptionally visible.",
+      "residual_risk": "The six mechanisms are counted but not named, so a strict evaluator could say the actual model inputs remain abstract.",
+      "fix": "Name the six mechanisms in economic language: estado condicional, velocidade, fluxo assinado, concentração, persistência direcional, salto/regime.",
+      "claim_source": "RFF-v1.0 / RAEP-v1.0 / W1-A",
+      "risk_after_fix": "LOW"
+    },
+    {
+      "criterion": "Results Analysis",
+      "weight_pct": 15,
+      "current_strength": "H2 comparison, confidence intervals, temporal robustness and stop-rule consequence are strong and honest.",
+      "residual_risk": "H1 is only described as 'M2 continuou informativo', which understates one of the frozen positive findings.",
+      "fix": "Add an explicit qualitative banner: H1 supported in tested sample — PIT Polymarket probability was predictive relative to tested free/public baselines.",
+      "claim_source": "FCLM-001 / SF-v3.0 final_claim",
+      "risk_after_fix": "LOW"
+    },
+    {
+      "criterion": "Backtest",
+      "weight_pct": 15,
+      "current_strength": "PIT entry/exit, SPY, costs, sizing, multiplicity, opportunity/trade counts, uncertainty and C0_NO_TRADE are all visible.",
+      "residual_risk": "No material scoring gap identified; preserve the explicit prohibition on invented financed-portfolio Sharpe/drawdown.",
+      "fix": "No new metric. Keep page unchanged.",
+      "claim_source": "W1-B / RCLM-005",
+      "risk_after_fix": "LOW"
+    },
+    {
+      "criterion": "Generative AI",
+      "weight_pct": 15,
+      "current_strength": "The verification loop, human-in-the-loop policy and outcome firewall are visible.",
+      "residual_risk": "The page can still be read as governance abstraction rather than concrete GenAI contribution because the three selected case studies are not named on-page.",
+      "fix": "Add three concrete labels: dados/CI reproduzíveis; auditoria outcome-blind de 69 técnicas; preregistro + execução/falsificação determinística.",
+      "claim_source": "GAI-003/005/006/007/008/009/010; RCLM-011/012",
+      "risk_after_fix": "LOW"
+    },
+    {
+      "criterion": "Conclusion and Next Steps",
+      "weight_pct": 10,
+      "current_strength": "FDA, macro and M&A completion are clearly separated as future study, with EUAS discipline and no alpha promise.",
+      "residual_risk": "No material scoring gap identified.",
+      "fix": "Keep future-work separation and 81/81 sensitivity qualifier.",
+      "claim_source": "W1-C / RCLM-008/009/010",
+      "risk_after_fix": "LOW"
+    }
+  ],
+  "cross_cutting_findings": {
+    "page_limit": "PASS_5_PAGES",
+    "aspect_ratio": "PASS_16_9",
+    "negative_result_visibility": "PASS",
+    "no_trade_as_deliberate_output": "PASS",
+    "future_work_separation": "PASS",
+    "anonymity_visual_scan": "PASS_NO_AUTHOR_UNIVERSITY_REPO_URL_IN_RENDERED_PAGES",
+    "readability": "PASS_AT_1600x900_AFTER_PAGE1_TAGLINE_FIX",
+    "remaining_copy_density": "LOW",
+    "scientific_claim_drift": "NONE_IDENTIFIED"
+  },
+  "required_before_final": [
+    "Explicit hypothesis banner on page 1",
+    "ARGOS name/metaphor micro-explanation on page 1",
+    "Six mechanisms named on page 2",
+    "H1 supported qualitative banner on page 3",
+    "Three concrete GenAI case labels on page 5",
+    "Regenerate, render and visually inspect all five pages",
+    "Run final scientific/anonymity/PDF QA"
+  ],
+  "next_step": "REPORT_PAGE_COMPOSITOR_V2_AND_SECOND_RENDER_REVIEW"
+}
