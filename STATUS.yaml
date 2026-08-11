@@ -21,7 +21,7 @@ hypotheses:
   H3: BLOCKED_BY_H2
   H4: BLOCKED_BY_H2
   H5: BLOCKED_BY_H4
-current_phase: ART029_EXP07I_PROTOCOL_FREEZE
+current_phase: ART030_EXP07I_H2_EXECUTION
 implementation_audit: COMPLETE_PASS_A_AND_PASS_B_OUTCOME_BLIND
 information_completeness_gate: PASS_INFORMATION_COMPLETENESS_GATE
 information_completeness:
@@ -211,6 +211,33 @@ art028_movement_data_feasibility:
   handoff_path: registry/art028_art029_handoff.csv
   summary_path: registry/art028_summary.json
   report_path: docs/24_art028_movement_data_feasibility.md
+art029_exp07i_protocol_freeze:
+  status: PASS_ART029_PROTOCOL_FROZEN_BEFORE_OUTCOMES
+  protocol_version: EXP07I-H2-FREEZE-v1.0
+  outcome_blind_freeze: true
+  expected_scored_events: 75
+  expected_scored_date_clusters: 54
+  warmup_prior_events: 40
+  primary_confirmatory_trial: EXP07I-T02
+  hierarchical_challenger_trial: EXP07I-T03
+  trial_count: 15
+  primary_control: M2_CAL
+  raw_benchmark: M2_RAW
+  primary_model: M_MOVE_CORE
+  primary_feature_count: 6
+  challenger: M_MOVE_CORE_PLUS_MATRIX_PROFILE_DISCORD
+  ridge_lambda: 1.0
+  bootstrap_replications: 20000
+  bootstrap_seed: 20260811
+  protocol_sha256: fcbf7121ae3fe47328b9e06b9f974d01cb5c94bb9760f717b25c64ab839b43c1
+  trial_registry_sha256: 2d58d02cb7654f2d6e0fea6eb239069100d46322e5b43d2da2c65c5f0834b9ea
+  evaluation_schedule_sha256: f097cd65eb515d5f648d37bea08d5fd5a8c1f16da0796320a3adbd5fc4551d85
+  outcomes_opening_authorized_for_art030: true
+  protocol_path: registry/art029_exp07i_protocol.json
+  trial_registry_path: registry/art029_trial_registry.csv
+  evaluation_schedule_path: registry/art029_evaluation_schedule.csv
+  manifest_path: registry/art029_freeze_manifest.json
+  report_path: docs/25_art029_exp07i_h2_protocol_freeze.md
 critical_path:
   - INFO_COMPLETENESS_MAP_COMPLETED
   - IC02_TRADE_TAPE_COMPLETED_WITH_LIMITATIONS
@@ -223,7 +250,7 @@ critical_path:
   - CROSS_STRATEGY_IMPLEMENTATION_AUDIT_PASS_A_FULL_SUPERSET_COMPLETED
   - CROSS_STRATEGY_IMPLEMENTATION_AUDIT_PASS_B_REDUNDANCY_COMPLETED
   - ART-028_MOVEMENT_DATA_FEASIBILITY_COMPLETED
-  - ART-029_EXP07I_PROTOCOL_FREEZE
+  - ART-029_EXP07I_PROTOCOL_FREEZE_COMPLETED
   - ART-030_EXP07I_H2
   - H4_CROSS_MARKET_TRANSMISSION_IF_H2_PASS
   - H5_ECONOMIC_RULE_IF_H4_PASS
@@ -235,14 +262,14 @@ report:
   anonymous: true
   target_words: 580
 blockers:
-  - ART029_EXP07I_PROTOCOL_NOT_FROZEN
+  - ART030_EXP07I_H2_NOT_EXECUTED
   - ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY
   - ART025_STALE_DRIVE_ID_IN_SR_V3
   - H2_NOT_EXECUTED
   - 66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED
   - GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC
 limitations:
-  - OUTCOMES_AND_PERFORMANCE_FORBIDDEN_UNTIL_ART029_PROTOCOL_FREEZE
+  - OUTCOMES_NOW_AUTHORIZED_ONLY_FOR_FROZEN_ART030_EXP07I_PROTOCOL
   - TRADE_TAPE_AND_DENSE_PRICE_PRE_CUTOFF_STRUCTURALLY_UNAVAILABLE_FOR_ANF_2026_05_27_AND_BRZE_2026_05_27
   - DATA_API_SIZE_IS_NONCANONICAL_FOR_569_V1_FEE_MODULE_BUY_ROWS_USE_ONCHAIN_GROSS_AND_COLLATERAL_INSTEAD
   - HISTORICAL_FULL_L2_NOT_RETROACTIVELY_AVAILABLE_FROM_DOCUMENTED_FIRST_PARTY_SURFACES_FOR_FROZEN_SAMPLE
