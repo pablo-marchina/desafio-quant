@@ -1,0 +1,16 @@
+trial_id,role,specification,inferential,can_change_h2,prerequisite,notes
+EXP07I-T00,BENCHMARK,M2_RAW,false,false,none,Contemporaneous raw p_cutoff.
+EXP07I-T01,CONTROL,M2_CAL,false,false,none,Calibration-only aggregate-probability control.
+EXP07I-T02,PRIMARY_CONFIRMATORY,M_MOVE_CORE,true,true,protocol integrity,Sole primary H2 model; six frozen movement features.
+EXP07I-T03,HIERARCHICAL_CHALLENGER,M_MOVE_CORE + matrix_profile_discord_6h,conditional,false,T02 PASS_H2,May change reporting champion only after H2 is already passed; cannot rescue.
+EXP07I-A01,ABLATION,M_MOVE_CORE minus conditional_z_move_6h,false,false,T02 executed,Descriptive family contribution only; no post-hoc deletion.
+EXP07I-A02,ABLATION,M_MOVE_CORE minus velocity_6h_per_hour,false,false,T02 executed,Descriptive family contribution only; no post-hoc deletion.
+EXP07I-A03,ABLATION,M_MOVE_CORE minus signed_notional_imbalance_24h,false,false,T02 executed,Descriptive family contribution only; no post-hoc deletion.
+EXP07I-A04,ABLATION,M_MOVE_CORE minus wallet_hhi_notional_24h,false,false,T02 executed,Descriptive family contribution only; no post-hoc deletion.
+EXP07I-A05,ABLATION,M_MOVE_CORE minus same_direction_transition_share_lifecycle,false,false,T02 executed,Descriptive family contribution only; no post-hoc deletion.
+EXP07I-A06,ABLATION,M_MOVE_CORE minus jump_score_6h,false,false,T02 executed,Descriptive family contribution only; no post-hoc deletion.
+EXP07I-R01,ROBUSTNESS,replace velocity with vol_scaled_delta_6h,false,false,T02 executed,Never simultaneous with velocity.
+EXP07I-R02,ROBUSTNESS,replace velocity with sign_consistency_1_6_24h,false,false,T02 executed,Sign-only trajectory alternative.
+EXP07I-R03,ROBUSTNESS,V1/V2 pooled-prediction split,false,false,T02 executed,No causal era claim.
+EXP07I-R04,ROBUSTNESS,chronological terciles,false,true,T02 executed,Only the predeclared temporal-stability condition can prevent PASS; no subgroup promotion.
+EXP07I-R05,ROBUSTNESS,prequential drift-distance terciles,false,false,T02 executed,Monitoring only.

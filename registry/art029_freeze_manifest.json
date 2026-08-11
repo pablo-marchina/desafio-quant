@@ -1,0 +1,26 @@
+{
+  "artifact_id": "ART-029",
+  "decision": "PASS_ART029_PROTOCOL_FROZEN_BEFORE_OUTCOMES",
+  "freeze_hashes": {
+    "claims_sha256": "3a77f5c84ba096d82a38d70fbf3b6d39cdf315fda4ad002b0eabb8bd4615a07f",
+    "evaluation_schedule_sha256": "f097cd65eb515d5f648d37bea08d5fd5a8c1f16da0796320a3adbd5fc4551d85",
+    "protocol_sha256": "fcbf7121ae3fe47328b9e06b9f974d01cb5c94bb9760f717b25c64ab839b43c1",
+    "thesis_map_sha256": "16b17f4df10cbd071bf3382ae2490f62daaee412ee3ece87d6a34c45d2c2b5c7",
+    "trial_registry_sha256": "2d58d02cb7654f2d6e0fea6eb239069100d46322e5b43d2da2c65c5f0834b9ea"
+  },
+  "hierarchical_challenger_trial": "EXP07I-T03",
+  "input_hashes": {
+    "art028_feature_matrix_sha256": "1295e7367396ccf493ba1e153bbec528fc215016e2631e9a37ea31772645658a",
+    "art028_handoff_sha256": "7fd26d5b49203c81772684021000d869341d1bece480cb079b52a562178ab5d1",
+    "art028_summary_sha256": "bf2c4f7eafcad31dcf3ab550a7656bee70074a9d05ff1f766e81fb483ce2e3ba",
+    "governance_sha256": "26a04a081045c613f259c78466361802251e7d4287f2629a52db31113a5ce9b5"
+  },
+  "label_free_expected_scored_date_clusters": 54,
+  "label_free_expected_scored_events": 75,
+  "next_artifact": "ART-030_EXP07I_H2_EXECUTION",
+  "outcomes_opening_authorized_next": true,
+  "outcomes_or_performance_read_by_freeze_script": false,
+  "primary_confirmatory_trial": "EXP07I-T02",
+  "protocol_version": "EXP07I-H2-FREEZE-v1.0",
+  "trial_count": 15
+}

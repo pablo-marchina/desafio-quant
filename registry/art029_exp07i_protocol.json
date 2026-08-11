@@ -1,0 +1,203 @@
+{
+  "ablations": {
+    "family_claim_rule": "A family-specific claim is allowed only if its ablation point estimate supports contribution; global H2 PASS does not automatically validate every family.",
+    "features": [
+      "conditional_z_move_6h",
+      "velocity_6h_per_hour",
+      "signed_notional_imbalance_24h",
+      "wallet_hhi_notional_24h",
+      "same_direction_transition_share_lifecycle",
+      "jump_score_6h"
+    ],
+    "inference": "descriptive only; no p-values, no family-wise promotion and no post-hoc feature deletion in ART-030",
+    "metric": "Brier(ablated)-Brier(full CORE); positive means the removed family helped full CORE",
+    "type": "six leave-one-primary-feature-out models using the exact same walk-forward/preprocessing/penalty"
+  },
+  "art030_execution_boundary": "ART-030 is the first stage allowed to open outcomes. Any change to population, feature set, transforms, model formulas, lambda, warmup, metrics, inference, challenger, trial IDs or decision gates after this freeze requires a documented protocol-violation record; it cannot be used for confirmatory H2 promotion.",
+  "artifact_id": "ART-029",
+  "benchmarks_and_models": {
+    "M2_CAL": {
+      "fit": "expanding date-batched prior outcomes only; alpha and beta unpenalized",
+      "formula": "logit(P[y=1]) = alpha + beta*logit(p_raw)",
+      "role": "calibration-only control; stronger H2 comparator preventing recalibration from masquerading as movement value"
+    },
+    "M2_RAW": {
+      "formula": "p_raw = clip(p_cutoff, 1e-6, 1-1e-6)",
+      "role": "frozen contemporaneous aggregate prediction-market probability benchmark",
+      "training": "none"
+    },
+    "M_MOVE_CORE": {
+      "fit": "deterministic IRLS/Newton logistic optimization, max_iter=100, tolerance=1e-10; no hyperparameter search",
+      "formula": "logit(P[y=1]) = alpha + beta*logit(p_raw) + sum_j gamma_j*z_j",
+      "penalty": {
+        "applies_to": "movement coefficients gamma only; alpha and beta unpenalized",
+        "lambda": 1.0,
+        "type": "L2 ridge"
+      },
+      "primary_features": [
+        "conditional_z_move_6h",
+        "velocity_6h_per_hour",
+        "signed_notional_imbalance_24h",
+        "wallet_hhi_notional_24h",
+        "same_direction_transition_share_lifecycle",
+        "jump_score_6h"
+      ],
+      "role": "sole confirmatory H2 movement model"
+    },
+    "M_MOVE_MP": {
+      "execution_rule": "May be fit in the same frozen run, but inferential promotion is evaluated only if M_MOVE_CORE returns PASS_H2.",
+      "formula": "M_MOVE_CORE plus z(matrix_profile_discord_6h)",
+      "role": "single pre-registered hierarchical challenger; cannot rescue CORE FAIL/INCONCLUSIVE"
+    }
+  },
+  "causal_stage": "prediction-market aggregate state -> abnormal observable movement -> event outcome",
+  "challenger_gate": {
+    "candidate": "matrix_profile_discord_6h",
+    "no_rescue": true,
+    "otherwise": "M_MOVE_CORE remains champion; challenger is recorded as no promotion.",
+    "prerequisite": "M_MOVE_CORE == PASS_H2",
+    "promotion": "M_MOVE_MP may replace CORE as the H2 reporting champion only if the 95% cluster-bootstrap lower bound of Brier improvement versus CORE is >0, log-loss point improvement versus CORE is >0, and Brier improvement is positive in at least 2/3 chronological terciles."
+  },
+  "claims": {
+    "allowed_if_FAIL_H2": "Under the frozen EXP-07I specification, movements did not demonstrate incremental information beyond M2; no post-hoc rescue is permitted.",
+    "allowed_if_INCONCLUSIVE": "The frozen EXP-07I test is inconclusive under its stated uncertainty/data/stability gate.",
+    "allowed_if_PASS_H2": "In the frozen Polymarket earnings sample and EXP-07I protocol, pre-cutoff movement features add out-of-sample information beyond contemporaneous aggregate market probability and a calibration-only M2 control.",
+    "always_prohibited": [
+      "detects insiders/private information/illegal activity",
+      "stock alpha or tradable profitability before H4/H5",
+      "analyst-consensus superiority",
+      "wallet skill or smart-money copying claim",
+      "causal attribution to CLOB V1/V2",
+      "universal generalization beyond the frozen venue/event sample"
+    ]
+  },
+  "classification": "CORE",
+  "decision": "FROZEN_BEFORE_OUTCOMES",
+  "decision_gate": {
+    "FAIL_H2": [
+      "95% cluster-bootstrap upper bound for Brier increment M2_CAL -> M_MOVE_CORE is < 0, OR",
+      "both Brier and log-loss point increments versus M2_CAL are <= 0"
+    ],
+    "INCONCLUSIVE": [
+      "all cases that are neither PASS_H2 nor FAIL_H2",
+      "includes confidence intervals crossing zero, Brier/log-loss disagreement, insufficient evaluation coverage, temporal-instability gate failure, or execution-integrity failure"
+    ],
+    "PASS_H2": [
+      "scored events >= 60 and scored date clusters >= 30",
+      "95% cluster-bootstrap lower bound for Brier increment M2_CAL -> M_MOVE_CORE is > 0",
+      "95% cluster-bootstrap lower bound for log-loss increment M2_CAL -> M_MOVE_CORE is > 0",
+      "point improvements versus M2_RAW are > 0 for both Brier and log loss",
+      "Brier increment versus M2_CAL is positive in at least 2 of 3 chronological scored-event terciles"
+    ],
+    "stop_rule": "If CORE is FAIL_H2 or INCONCLUSIVE, no challenger, threshold, subgroup, horizon, wallet filter or H3 interaction may rescue or redefine H2."
+  },
+  "feature_preprocessing": {
+    "fixed_transform": {
+      "all_other_primary_features": "identity",
+      "jump_score_6h": "log1p(x)"
+    },
+    "global_normalization": "forbidden",
+    "m2_transform": "logit after numeric clipping to [1e-6, 1-1e-6]",
+    "missing_values": "Within each training batch, impute each transformed movement feature to its training median. Test-event missing values use that same training median. No missingness indicators.",
+    "primary_features": [
+      "conditional_z_move_6h",
+      "velocity_6h_per_hour",
+      "signed_notional_imbalance_24h",
+      "wallet_hhi_notional_24h",
+      "same_direction_transition_share_lifecycle",
+      "jump_score_6h"
+    ],
+    "scaling": "Training-only robust centering/scaling: median center; IQR scale; if IQR=0 use 1.4826*MAD; if still zero use scale=1.",
+    "why_conservative": "Missing movement inputs are mapped to the training-typical state rather than allowed to become an additional availability signal.",
+    "winsorization": "none"
+  },
+  "governance": {
+    "art027_drive_id": "1WyH-cJ_BB42r0jJ1LlU6JC4PQZHj3ysJAOnKdKsjH9o",
+    "h3_h4_h5_remain_blocked_until_h2_pass": true,
+    "local_governance_path": "docs/02_thesis_governance.md",
+    "no_outcomes_used_for_protocol_selection": true,
+    "no_post_hoc_rescue": true
+  },
+  "hypothesis": "H2_INCREMENTAL_VALUE_OF_MOVEMENTS",
+  "inference": {
+    "confidence_interval": "two-sided 95% percentile interval",
+    "multiplicity": "No multiplicity adjustment is needed for the sole primary CORE test. The one challenger is hierarchical and may be promoted only after CORE PASS. Ablations and robustness checks are non-inferential and cannot rescue H2.",
+    "paired_unit": "same scored events for every compared model",
+    "primary_test_family": "one confirmatory CORE H2 model only",
+    "replications": 20000,
+    "resampling": "paired nonparametric cluster bootstrap by company_event_date",
+    "seed": 20260811
+  },
+  "not_admitted_to_initial_confirmatory": [
+    "large_trade_notional_share_24h",
+    "conformal_log_martingale_6h",
+    "cusum_score_6h",
+    "post_jump_half_life_hours",
+    "multivariate_anomaly_distance as alpha challenger",
+    "Online weighted ensemble",
+    "Dispersion across simple forecasters",
+    "BOCPD",
+    "Wavelet decomposition",
+    "any H3/H4/H5 feature"
+  ],
+  "population": {
+    "batching_unit": "company_event_date",
+    "frozen_events": 117,
+    "label_free_expected_scored_date_clusters": 54,
+    "label_free_expected_scored_events": 75,
+    "minimum_prior_events_before_first_scored_batch": 40,
+    "movement_data_available": 115,
+    "prediction_anchor": "safe_cutoff_utc / contemporaneous p_cutoff from ART-028",
+    "same_date_rule": "Events with the same company_event_date are scored together; none of their outcomes may enter training for another event in that date batch.",
+    "structural_missingness_policy": "Exclude from H2 movement comparison; never encode as zero movement/activity.",
+    "structurally_unavailable": [
+      "ANF|2026-05-27",
+      "BRZE|2026-05-27"
+    ]
+  },
+  "primary_estimands": {
+    "brier_increment_vs_M2_CAL": "mean[(y-p_M2_CAL)^2 - (y-p_M_MOVE_CORE)^2]; positive favors movements",
+    "logloss_increment_vs_M2_CAL": "mean[LL(y,p_M2_CAL) - LL(y,p_M_MOVE_CORE)]; positive favors movements",
+    "raw_M2_guard": "M_MOVE_CORE must also have positive point improvement versus M2_RAW in both Brier and log loss"
+  },
+  "protocol_version": "EXP07I-H2-FREEZE-v1.0",
+  "robustness": {
+    "R_DRIFT": "report performance by terciles of prequential_feature_distance using already-frozen predictions; monitor only",
+    "R_ERA": "report frozen CORE predictions separately for V1 and V2; no era refit, no era indicator, no causal version claim",
+    "R_PERSISTENCE": "mandatory leave-one-out persistence ablation overall and by era because ART-028 found a strong descriptive era shift",
+    "R_SIGN": "replace velocity_6h_per_hour with sign_consistency_1_6_24h; descriptive only",
+    "R_TEMPORAL": "three chronological scored-event terciles, fixed after schedule freeze",
+    "R_VOL": "replace velocity_6h_per_hour with vol_scaled_delta_6h; never include both simultaneously; descriptive only",
+    "calibration_robustness": "Platt/isotonic are not permitted to rescue the primary test; any post-model calibration is secondary and must be fit strictly on earlier batches."
+  },
+  "secondary_metrics": [
+    "Brier score for M2_RAW, M2_CAL, M_MOVE_CORE and M_MOVE_MP",
+    "log loss with predictions clipped to [1e-6,1-1e-6]",
+    "ROC AUC as discrimination diagnostic only",
+    "calibration intercept and calibration slope",
+    "5-bin equal-frequency expected calibration error",
+    "coverage and number of date clusters"
+  ],
+  "software_contract": {
+    "dependencies": "standard library implementation preferred for protocol-critical fitting/bootstrap; no hidden AutoML/tuning library",
+    "optimizer_failure_policy": "execution-integrity failure; do not silently switch model family/solver after seeing outcomes",
+    "runtime": "Python 3.11"
+  },
+  "target": {
+    "official_eps_policy": "Independent EPS reconstruction is mandatory provenance/robustness evidence where available. Any disagreement must be reported and sensitivity-tested; it cannot silently rewrite the frozen primary target after results.",
+    "outcomes_opening_rule": "No target file or label may be read until this protocol, trial registry, schedule and manifest are committed and hashed.",
+    "primary_label": "resolved Polymarket binary contract outcome, YES=1 NO=0",
+    "target_rationale": "The contract outcome is the exact target forecast by M2 and the movement process. Independent official EPS reconstruction validates target provenance but does not redefine the primary target post hoc."
+  },
+  "thesis": "Pre-cutoff abnormal prediction-market movements may add out-of-sample information beyond contemporaneous aggregate prediction-market probability.",
+  "walk_forward": {
+    "cross_validation": "none",
+    "hyperparameter_tuning": "none",
+    "minimum_prior_events": 40,
+    "random_model_seed": "not applicable; deterministic optimizer",
+    "refit_frequency": "once per company_event_date batch",
+    "test_data": "entire next eligible date batch",
+    "training_data": "all eligible events from strictly earlier company_event_date batches",
+    "type": "expanding walk-forward, batched by company_event_date"
+  }
+}

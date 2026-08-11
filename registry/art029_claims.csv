@@ -1,0 +1,10 @@
+condition,status,claim
+PASS_H2,ALLOWED,"In the frozen Polymarket earnings sample and EXP-07I protocol, pre-cutoff movement features add out-of-sample information beyond contemporaneous aggregate market probability and a calibration-only M2 control."
+FAIL_H2,ALLOWED,"Under the frozen EXP-07I specification, movements did not demonstrate incremental information beyond M2; no post-hoc rescue is permitted."
+INCONCLUSIVE,ALLOWED,The frozen EXP-07I test is inconclusive under its stated uncertainty/data/stability gate.
+ALL,PROHIBITED,detects insiders/private information/illegal activity
+ALL,PROHIBITED,stock alpha or tradable profitability before H4/H5
+ALL,PROHIBITED,analyst-consensus superiority
+ALL,PROHIBITED,wallet skill or smart-money copying claim
+ALL,PROHIBITED,causal attribution to CLOB V1/V2
+ALL,PROHIBITED,universal generalization beyond the frozen venue/event sample

@@ -1,0 +1,9 @@
+gate,question,answer,evidence
+G1,Prediction-market information central?,YES,M2 and all movement inputs are Polymarket-derived.
+G2,Object is abnormal observable movement?,YES,Six frozen movement families from ART-028.
+G3,Increment tested against M2?,YES,Primary comparator is stronger M2_CAL plus raw-M2 guard.
+G4,Strictly point-in-time?,YES,"Safe cutoff, prior-date batching, train-only transforms and fitting."
+G5,Explicit causal-chain stage?,YES,Movement -> event outcome; no equity translation yet.
+G6,Can falsify H2?,YES,PASS/FAIL/INCONCLUSIVE gates and no-rescue stop rule.
+G7,Features/models/horizon/criteria frozen pre-outcome?,YES,EXP07I-H2-FREEZE-v1.0
+G8,Claims allowed/prohibited frozen?,YES,Protocol claims section.
