@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/ic03_onchain_direction_audit.py'
+      - 'scripts/ic03_onchain_direction_audit_fast.py'
       - '.github/workflows/ic03_onchain_direction_audit.yml'
   workflow_dispatch:
 
@@ -15,7 +16,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -41,7 +42,7 @@ jobs:
 
       - name: Reconcile 12,752 pre-cutoff trades against Polygon receipts
         run: |
-          python scripts/ic03_onchain_direction_audit.py \
+          python scripts/ic03_onchain_direction_audit_fast.py \
             --ic02-dir ic02_input \
             --input registry/ic02_event_manifest.csv \
             --output-dir ic03_output
