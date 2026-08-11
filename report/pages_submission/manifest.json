@@ -1,0 +1,20 @@
+{
+  "artifact": "ARGOS_SUBMISSION_PAGE_SET",
+  "version": "SPS-v1.0",
+  "status": "PASS_SUBMISSION_PAGES_READY_FOR_PDF_BUILD",
+  "scientific_reopen": false,
+  "source": "report/pages_final",
+  "mandatory_genai_disclosure": {
+    "tool": "Ferramenta: ChatGPT (OpenAI)",
+    "team_vs_ai": "Equipe: tese, aprovação, interpretação e decisão final. IA: estruturação, código, auditoria e documentação sob verificação.",
+    "boundary": "Saída de IA não contou como evidência empírica sem fonte/execução/gate verificável."
+  },
+  "outputs": {
+    "fig01_strategy_pipeline.svg": "a6272770e054795f7265ba46c1455dfcc5db9bb5cd2888aa908793ee85e0b7e0",
+    "fig02_model_reduction.svg": "c525334304bf2de8b1adbe300b40ef7d4ca545071280d8d5c8f0807d869755ea",
+    "fig03_h2_results.svg": "6170d8bf1427c76d218232b99f65728bf91239681d6aa82a902404446abda29d",
+    "fig04_economic_backtest.svg": "975b476e6372d35b66b2d4d37b1a0ddf61a5e66636646a15f8770809e9ebda1a",
+    "fig05_genai_future.svg": "7fe4b16d39ffbb5cd967cdeac8cba95078c340673545416e710d0c1b82906bac"
+  },
+  "disclosure_sha256": "ca4b87792802f404a276b60f187b1f1db0f7e4c4c5a3149de47a81fa224a3d52"
+}
