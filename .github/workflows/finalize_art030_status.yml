@@ -1,0 +1,43 @@
+name: Finalize ART-030 Status
+
+on:
+  push:
+    paths:
+      - 'scripts/finalize_art030_status.py'
+      - '.github/workflows/finalize_art030_status.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Update STATUS
+        run: python scripts/finalize_art030_status.py
+      - name: Validate status transition
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('STATUS.yaml').read_text(encoding='utf-8')
+          assert 'H2: FAIL_UNDER_FROZEN_EXP07I' in s
+          assert 'current_phase: POST_H2_FAIL_SCIENTIFIC_CLOSEOUT' in s
+          assert 'art030_exp07i_h2_execution:' in s
+          assert 'status: FAIL_H2' in s
+          assert 'H2_FAIL_STOP_RULE_ACTIVE_NO_POST_HOC_RESCUE_H3_H4_H5_BLOCKED' in s
+          assert 'ART030_EXP07I_H2_NOT_EXECUTED' not in s
+          assert 'H2_NOT_EXECUTED' not in s
+          PY
+      - name: Commit STATUS
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add STATUS.yaml
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'status: record frozen ART-030 FAIL_H2 stop rule'
+          git push
