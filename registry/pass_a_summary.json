@@ -1,0 +1,72 @@
+{
+  "decision": "PASS_A_COMPLETE_FULL_SUPERSET_OUTCOME_BLIND",
+  "superset_rows": 69,
+  "superset_sha256": "15e0c0e4f7d9be99016af2eedfa7279e9f300c4a0c4b68995fb3034664f16074",
+  "superset_git_blob_sha_from_icg": "b2ca5a8262ff417d38f8a772fe6af09f337b5a41",
+  "audited_rows": 69,
+  "missing_rows": 0,
+  "schema_includes_g1_thesis_alignment": true,
+  "status_counts": {
+    "CONDITIONAL": 14,
+    "DEFERRED": 4,
+    "GO_CHALLENGER": 17,
+    "GO_CORE_CANDIDATE": 20,
+    "GO_ROBUSTNESS": 8,
+    "NO_GO_DATA": 5,
+    "NO_GO_SAMPLE_COMPLEXITY": 1
+  },
+  "target_counts": {
+    "Governance": 6,
+    "H2": 26,
+    "H3": 13,
+    "H4": 10,
+    "H5": 14
+  },
+  "hard_no_go_count": 6,
+  "hard_no_go_techniques": [
+    "OFI normalized by depth",
+    "Spread/depth state conditioning",
+    "BMO versus AMC",
+    "Secondary trade/no-trade model",
+    "Almgren-Chriss style cost layer",
+    "RL execution challenger"
+  ],
+  "deferred_count": 4,
+  "deferred_techniques": [
+    "Kalman/state-space residual",
+    "Transfer entropy",
+    "Cardinality/sparse decision",
+    "Bayesian/uncertainty-adjusted Kelly"
+  ],
+  "conditional_count": 14,
+  "conditional_techniques": [
+    "Implementation shortfall",
+    "Half-life/post-jump decay",
+    "Expected-versus-realized residual",
+    "Residual return versus factors",
+    "Size/volatility/liquidity neutralization",
+    "State-dependent coefficients",
+    "Macro-news coincidence",
+    "Residualized managerial tone",
+    "Vagueness/uncertainty score",
+    "Text entropy/topic surprise",
+    "Wavelet decomposition",
+    "Mutual information lead-lag",
+    "Synthetic control",
+    "PBO/CSCV"
+  ],
+  "pass_b_pending_count": 59,
+  "outcomes_or_performance_read_by_script": false,
+  "allowed_inputs": [
+    "cross_strategy_transfer_map.csv",
+    "ic02_summary.json",
+    "ic03_summary.json",
+    "ic04_summary.json",
+    "ic05_summary.json",
+    "ic06_summary.json",
+    "ic07_summary.json",
+    "information_completeness_gate.json"
+  ],
+  "pass_b_rule": "Only rows with final_status=PENDING_PASS_B proceed to redundancy/input-correlation architecture analysis. Hard structural no-gos and DEFERRED remain recorded, not deleted.",
+  "boundary": "Pass A is structural feasibility only. GO/CHALLENGER/ROBUSTNESS/CONDITIONAL does not mean empirical success and cannot be used as an H2/H3/H4/H5 claim."
+}
