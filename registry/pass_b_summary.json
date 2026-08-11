@@ -1,0 +1,121 @@
+{
+  "architecture_principles": [
+    "simple-first within each mechanism",
+    "one primary representative per redundancy family where possible",
+    "challengers must test a distinct representation, not parameter variants",
+    "conditional/unmaterialized inputs do not become features by assumption",
+    "H3/H4/H5 remain dependency-gated",
+    "all later performance trials must enter the trial ledger"
+  ],
+  "art028_h2_challenger_families": [
+    "H2_FLOW_SIZE",
+    "H2_FORECAST_DISAGREEMENT",
+    "H2_PATTERN_NOVELTY",
+    "H2_SEQUENTIAL_EVIDENCE",
+    "H2_MULTIVARIATE_ANOMALY",
+    "H2_MODEL_POOLING"
+  ],
+  "art028_h2_core_families": [
+    "H2_RESIDUAL_STATE",
+    "H2_TRAJECTORY",
+    "H2_STATE_NORMALIZATION",
+    "H2_FLOW",
+    "H2_CONCENTRATION",
+    "H2_FLOW_PERSISTENCE",
+    "H2_REGIME_CHANGE"
+  ],
+  "art029_model_cap": "one interpretable regularized M_MOVE champion plus at most one nonlinear challenger, consistent with ART-027",
+  "audited_rows": 69,
+  "boundary": "Pass B selects architecture and removes redundant representations without outcomes. It does not establish incremental predictive value or authorize H2 claims.",
+  "decision": "PASS_B_COMPLETE_REDUNDANCY_ARCHITECTURE_OUTCOME_BLIND",
+  "feature_correlations_sha256": "6c10668638ed1f3e533e6aaff0e0be81a12f0315295415fc61ac69c314b653ab",
+  "feature_matrix_sha256": "d727de86659ea65655b2280d08c059fa893361e212f68e0f4839bf69d5e09ff0",
+  "h2_challengers": [
+    "Large-trade share",
+    "Online weighted ensemble",
+    "Dispersion across simple forecasters",
+    "CUSUM/score-CUSUM",
+    "Matrix Profile discord score",
+    "Conformal martingale",
+    "Multivariate anomaly distance"
+  ],
+  "h2_core_candidates": [
+    "Signed notional imbalance",
+    "HHI and top-k notional share",
+    "Run length and signed-flow persistence",
+    "Velocity and acceleration",
+    "Volatility-scaled movement",
+    "Conditional z-score",
+    "Jump intensity/change score"
+  ],
+  "h2_robustness": [
+    "Multi-horizon sign consistency",
+    "Platt/isotonic/online calibration",
+    "Conformal/change-drift monitor"
+  ],
+  "label_free_feature_columns": 25,
+  "label_free_feature_events": 115,
+  "near_duplicate_feature_pairs_abs_spearman_ge_0_90": 15,
+  "no_go_redundant": [
+    "Volatility/panic state interaction",
+    "Forecast/variance disagreement",
+    "Normal-state payoff versus tail state",
+    "Matrix Profile motif similarity",
+    "Regret-based expert weighting"
+  ],
+  "outcomes_or_performance_read_by_script": false,
+  "pass_b_input_rows": 59,
+  "pending_after_pass_b": 0,
+  "status_counts": {
+    "CONDITIONAL": 9,
+    "DEFERRED": 11,
+    "GO_CHALLENGER": 11,
+    "GO_CORE_CANDIDATE": 16,
+    "GO_ROBUSTNESS": 11,
+    "NO_GO_DATA": 5,
+    "NO_GO_REDUNDANT": 5,
+    "NO_GO_SAMPLE_COMPLEXITY": 1
+  },
+  "target_status_counts": {
+    "Governance": {
+      "CONDITIONAL": 1,
+      "GO_CORE_CANDIDATE": 4,
+      "GO_ROBUSTNESS": 1
+    },
+    "H2": {
+      "CONDITIONAL": 1,
+      "DEFERRED": 3,
+      "GO_CHALLENGER": 7,
+      "GO_CORE_CANDIDATE": 7,
+      "GO_ROBUSTNESS": 3,
+      "NO_GO_DATA": 2,
+      "NO_GO_REDUNDANT": 3
+    },
+    "H3": {
+      "CONDITIONAL": 3,
+      "DEFERRED": 3,
+      "GO_CHALLENGER": 2,
+      "GO_CORE_CANDIDATE": 2,
+      "GO_ROBUSTNESS": 1,
+      "NO_GO_DATA": 1,
+      "NO_GO_REDUNDANT": 1
+    },
+    "H4": {
+      "CONDITIONAL": 3,
+      "DEFERRED": 2,
+      "GO_CHALLENGER": 1,
+      "GO_CORE_CANDIDATE": 1,
+      "GO_ROBUSTNESS": 3
+    },
+    "H5": {
+      "CONDITIONAL": 1,
+      "DEFERRED": 3,
+      "GO_CHALLENGER": 1,
+      "GO_CORE_CANDIDATE": 2,
+      "GO_ROBUSTNESS": 3,
+      "NO_GO_DATA": 2,
+      "NO_GO_REDUNDANT": 1,
+      "NO_GO_SAMPLE_COMPLEXITY": 1
+    }
+  }
+}
