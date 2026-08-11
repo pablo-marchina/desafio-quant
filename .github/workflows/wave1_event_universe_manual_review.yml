@@ -1,0 +1,68 @@
+name: Wave 1 Event Universe Manual Review
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wave1_event_universe_manual_review.py'
+      - 'registry/wave1_event_universe_manual_validation_queue.csv'
+      - '.github/workflows/wave1_event_universe_manual_review.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Materialize reviewed lower bounds
+        run: python scripts/wave1_event_universe_manual_review.py --registry-dir registry
+
+      - name: Validate review boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          meta = json.loads(Path('registry/wave1_event_universe_manual_validation_summary.json').read_text())
+          assert meta['performance_blind'] is True
+          assert meta['scientific_reopen'] is False
+          assert 'low validated count cannot establish' in meta['lower_bound_rule']
+          fs = meta['family_summary']
+          assert fs['FDA_APPROVAL_ADVISORY']['reviewed_valid_independent_lower_bound'] >= 50
+          assert fs['MA_ANNOUNCEMENT_RUMOR']['reviewed_valid_independent_lower_bound'] >= 25
+          assert fs['MACRO_FED_CPI']['reviewed_valid_independent_lower_bound'] >= 50
+          assert fs['MA_DEAL_COMPLETION_REGULATORY_CLEARANCE']['absence_or_failure_inference_allowed'] is False
+          print('PASS_WAVE1_MANUAL_REVIEW_BOUNDARY')
+          PY
+
+      - name: Upload review artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wave1-manual-review-${{ github.run_id }}
+          path: |
+            registry/wave1_event_universe_manual_validation_review.csv
+            registry/wave1_event_universe_manual_validation_summary.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit review artifacts
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/wave1_event_universe_manual_validation_review.csv \
+            registry/wave1_event_universe_manual_validation_summary.json
+          if git diff --cached --quiet; then
+            echo 'No manual-review changes.'
+          else
+            git commit -m 'wave1: materialize manual event-family review'
+            git push origin HEAD:main
+          fi
