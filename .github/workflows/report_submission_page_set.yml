@@ -1,0 +1,76 @@
+name: ARGOS Submission Page Set
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/report_submission_compliance_overlay.py'
+      - 'registry/genai_report_disclosure.json'
+      - 'registry/argos_visual_identity_freeze.json'
+      - 'report/pages_final/**'
+      - '.github/workflows/report_submission_page_set.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  submission-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Render submission page set
+        run: python scripts/report_submission_compliance_overlay.py
+
+      - name: Validate mandatory GenAI disclosure and anonymity
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out = Path('report/pages_submission')
+          manifest = json.loads((out / 'manifest.json').read_text())
+          assert manifest['status'] == 'PASS_SUBMISSION_PAGES_READY_FOR_PDF_BUILD'
+          assert manifest['scientific_reopen'] is False
+          names = [
+              'fig01_strategy_pipeline.svg',
+              'fig02_model_reduction.svg',
+              'fig03_h2_results.svg',
+              'fig04_economic_backtest.svg',
+              'fig05_genai_future.svg',
+          ]
+          forbidden = ['github.com/pablo-marchina', 'Pablo Marchina', 'Inteli']
+          for name in names:
+              body = (out / name).read_text(encoding='utf-8')
+              assert 'viewBox="0 0 1600 900"' in body
+              assert all(token not in body for token in forbidden)
+          p5 = (out / 'fig05_genai_future.svg').read_text(encoding='utf-8')
+          assert 'Ferramenta: ChatGPT (OpenAI)' in p5
+          assert 'Equipe decide' in p5 and 'IA apoia sob verificação' in p5
+          print('PASS_ARGOS_SUBMISSION_PAGE_SET')
+          PY
+
+      - name: Upload submission pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: argos-submission-pages-${{ github.run_id }}
+          path: report/pages_submission/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit submission pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add report/pages_submission/
+          if git diff --cached --quiet; then
+            echo 'No submission-page changes.'
+          else
+            git commit -m 'report: materialize submission-ready five-page SVG set'
+            git push origin HEAD:main
+          fi
