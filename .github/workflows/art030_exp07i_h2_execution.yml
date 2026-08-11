@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'scripts/art030_exp07i_h2_execution.py'
+      - 'scripts/art030_runner.py'
       - '.github/workflows/art030_exp07i_h2_execution.yml'
   workflow_dispatch:
 
@@ -19,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Execute frozen ART-030 H2 test
-        run: python scripts/art030_exp07i_h2_execution.py
+        run: python scripts/art030_runner.py
       - name: Validate execution against ART-029 freeze
         run: |
           python - <<'PY'
