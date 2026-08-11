@@ -1,0 +1,49 @@
+{
+  "artifact": "WAVE1_EVENT_UNIVERSE_MANUAL_VALIDATION_QUEUE",
+  "version": "EUAS_VALIDATION_QUEUE_v1.0",
+  "snapshot_utc": "2026-08-11T20:41:05Z",
+  "source": "registry/wave1_event_universe_targeted_census_events.csv.gz",
+  "source_sha256": "dc39ee17b4940a77eaab33a148fe5138f75bb7c7c3c9e9811f66b29aae2e1c54",
+  "performance_blind": true,
+  "scientific_reopen": false,
+  "query_protocol_unchanged": true,
+  "euas_protocol_unchanged": true,
+  "method": "query-family consistency filter before manual semantic review",
+  "raw_rows": 1964,
+  "queue_rows": 1876,
+  "cross_family_rows_removed": 88,
+  "raw_counts_by_family": {
+    "ANTITRUST_REGULATORY": 36,
+    "EARNINGS_EPS": 1460,
+    "FDA_APPROVAL_ADVISORY": 65,
+    "LITIGATION_COURT": 63,
+    "MACRO_FED_CPI": 268,
+    "MA_ANNOUNCEMENT_RUMOR": 56,
+    "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE": 16
+  },
+  "queue_counts_by_family": {
+    "ANTITRUST_REGULATORY": 10,
+    "EARNINGS_EPS": 1460,
+    "FDA_APPROVAL_ADVISORY": 64,
+    "LITIGATION_COURT": 31,
+    "MACRO_FED_CPI": 253,
+    "MA_ANNOUNCEMENT_RUMOR": 42,
+    "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE": 16
+  },
+  "cross_family_removed_by_family": {
+    "ANTITRUST_REGULATORY": 26,
+    "FDA_APPROVAL_ADVISORY": 1,
+    "LITIGATION_COURT": 32,
+    "MACRO_FED_CPI": 15,
+    "MA_ANNOUNCEMENT_RUMOR": 14
+  },
+  "manual_validation_required": true,
+  "gate_boundary": "Queue counts remain discovery evidence only and cannot satisfy EUAS C/L/S gates.",
+  "limitations": [
+    "Title-search queries can still return semantically irrelevant events within their own query family (for example DOJ criminal cases in an antitrust query).",
+    "M&A query terms can return non-corporate uses of acquire/takeover and require manual review.",
+    "Supreme Court/lawsuit queries can return elections, appointments or non-financial cases and require manual review.",
+    "Independent-event deduplication and linked-asset mapping are manual-review fields, not inferred here."
+  ],
+  "queue_csv_sha256": "d021d75cfea5f2959c0d80fe70d584725ce08f38635b36b1ca9d1445441be9a5"
+}
