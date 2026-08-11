@@ -1,0 +1,94 @@
+{
+  "artifact": "WAVE1_EVENT_UNIVERSE_MANUAL_SEMANTIC_REVIEW",
+  "version": "EUAS_MANUAL_SEMANTIC_REVIEW_v1.0",
+  "snapshot_utc": "2026-08-11T20:45:59Z",
+  "source_queue": "registry/wave1_event_universe_manual_validation_queue.csv",
+  "source_queue_sha256": "d021d75cfea5f2959c0d80fe70d584725ce08f38635b36b1ca9d1445441be9a5",
+  "performance_blind": true,
+  "scientific_reopen": false,
+  "review_basis": "family semantics + independent Gamma event ID + positive lead + lifetime-volume threshold evidence only",
+  "prohibited_inputs_confirmed_unused": [
+    "ARGOS H2 family performance",
+    "linked-asset returns",
+    "Brier/log loss by candidate family",
+    "trade P&L or favorable retrospective trade selection"
+  ],
+  "lower_bound_rule": "Validated positives may establish C/L/S minimum anchors. A low validated count cannot establish family absence or a failing score because targeted discovery is incomplete.",
+  "family_summary": {
+    "ANTITRUST_REGULATORY": {
+      "reviewed_valid_independent_lower_bound": 6,
+      "reviewed_rejected_examples": 3,
+      "median_lead_days_validated": 95.05611252,
+      "validated_volume_ge_1k": 6,
+      "validated_volume_ge_10k": 3,
+      "validated_volume_ge_100k": 0,
+      "C_anchor_lower_bound": "NOT_ESTABLISHED_FROM_REVIEWED_LOWER_BOUND",
+      "L_anchor_lower_bound": "NOT_ESTABLISHED_FROM_REVIEWED_LOWER_BOUND",
+      "S_anchor_lower_bound": "NOT_ESTABLISHED_FROM_REVIEWED_LOWER_BOUND",
+      "absence_or_failure_inference_allowed": false
+    },
+    "FDA_APPROVAL_ADVISORY": {
+      "reviewed_valid_independent_lower_bound": 50,
+      "reviewed_rejected_examples": 3,
+      "median_lead_days_validated": 20.51296705,
+      "validated_volume_ge_1k": 48,
+      "validated_volume_ge_10k": 17,
+      "validated_volume_ge_100k": 5,
+      "C_anchor_lower_bound": "C4_LOWER_BOUND_ESTABLISHED",
+      "L_anchor_lower_bound": "L2_LOWER_BOUND_ESTABLISHED",
+      "S_anchor_lower_bound": "S4_LOWER_BOUND_ESTABLISHED",
+      "absence_or_failure_inference_allowed": false
+    },
+    "LITIGATION_COURT": {
+      "reviewed_valid_independent_lower_bound": 10,
+      "reviewed_rejected_examples": 7,
+      "median_lead_days_validated": 88.74926120500001,
+      "validated_volume_ge_1k": 10,
+      "validated_volume_ge_10k": 10,
+      "validated_volume_ge_100k": 5,
+      "C_anchor_lower_bound": "C2_LOWER_BOUND_ESTABLISHED",
+      "L_anchor_lower_bound": "L2_LOWER_BOUND_ESTABLISHED",
+      "S_anchor_lower_bound": "S2_LOWER_BOUND_ESTABLISHED",
+      "absence_or_failure_inference_allowed": false
+    },
+    "MACRO_FED_CPI": {
+      "reviewed_valid_independent_lower_bound": 50,
+      "reviewed_rejected_examples": 0,
+      "median_lead_days_validated": 55.92998162000001,
+      "validated_volume_ge_1k": 50,
+      "validated_volume_ge_10k": 50,
+      "validated_volume_ge_100k": 50,
+      "C_anchor_lower_bound": "C4_LOWER_BOUND_ESTABLISHED",
+      "L_anchor_lower_bound": "L4_LOWER_BOUND_ESTABLISHED",
+      "S_anchor_lower_bound": "S4_LOWER_BOUND_ESTABLISHED",
+      "absence_or_failure_inference_allowed": false
+    },
+    "MA_ANNOUNCEMENT_RUMOR": {
+      "reviewed_valid_independent_lower_bound": 25,
+      "reviewed_rejected_examples": 8,
+      "median_lead_days_validated": 102.52054054,
+      "validated_volume_ge_1k": 25,
+      "validated_volume_ge_10k": 21,
+      "validated_volume_ge_100k": 8,
+      "C_anchor_lower_bound": "C3_LOWER_BOUND_ESTABLISHED",
+      "L_anchor_lower_bound": "L2_LOWER_BOUND_ESTABLISHED",
+      "S_anchor_lower_bound": "S3_LOWER_BOUND_ESTABLISHED",
+      "absence_or_failure_inference_allowed": false
+    },
+    "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE": {
+      "reviewed_valid_independent_lower_bound": 3,
+      "reviewed_rejected_examples": 4,
+      "median_lead_days_validated": 287.68988808,
+      "validated_volume_ge_1k": 3,
+      "validated_volume_ge_10k": 3,
+      "validated_volume_ge_100k": 1,
+      "C_anchor_lower_bound": "NOT_ESTABLISHED_FROM_REVIEWED_LOWER_BOUND",
+      "L_anchor_lower_bound": "NOT_ESTABLISHED_FROM_REVIEWED_LOWER_BOUND",
+      "S_anchor_lower_bound": "NOT_ESTABLISHED_FROM_REVIEWED_LOWER_BOUND",
+      "absence_or_failure_inference_allowed": false
+    }
+  },
+  "earnings_note": "EARNINGS_EPS is not re-reviewed here because the frozen ARGOS panel already supplies 117 event contracts with separately audited PIT and resolution evidence; its EUAS evidence is populated from authoritative frozen artifacts.",
+  "review_csv_sha256": "e37eb58b2bf6e0fe93890d1d690923d56cf10f0f61b2b81072edfaf06bb24d87",
+  "next_step": "Populate non-count EUAS dimensions and penalties from primary evidence, merge the frozen earnings evidence, then rank only families whose hard gates are actually established."
+}
