@@ -1,15 +1,27 @@
 {
-  "api_equals_pre_surplus": 0,
-  "api_not_equal_pre_surplus": 0,
-  "decode_errors": 569,
-  "decoded_matchorders": 0,
+  "api_matches_net_receive": 0,
+  "canonical_signature": "matchOrders((uint256,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,uint8,uint8,bytes),(uint256,address,address,address,uint256,uint256,uint256,uint256,uint256,uint256,uint8,uint8,bytes)[],uint256,uint256,uint256[],uint256,uint256[])",
+  "collateral_matches_gross_x_price": 569,
+  "computed_selector": "0x2287e350",
+  "decision": "REVIEW_V1_SIZE_SEMANTICS",
+  "fee_module_address": "0xe3f18acc55091e2c48d883fc8c8413319d4ab7b0",
+  "fee_module_source_sha256": "4f00ab1badfdd9fb888dd2418caaf369095c90e60a49eb68da17c3a0f2964a3b",
+  "fee_rate_bps_counts": {
+    "1000": 569
+  },
+  "gross_minus_api_matches_operator_fee": 0,
   "healthy_rpcs": [
     "https://polygon.drpc.org",
     "https://tenderly.rpc.polygon.community"
   ],
-  "max_abs_api_minus_pre_surplus": null,
-  "official_repo_commit": "ed5c7708b7be3aa98bf5f0c6602b57cc498e2ef4",
-  "pinned_v1_abi_sha256": "18918b6bd52df95ead565d1aed0630d1ec80a1689c4129440c7914af9b1f5e2a",
+  "max_abs_api_minus_net_receive": "78.140970",
+  "max_abs_gross_minus_api_minus_fee": "78.140970",
+  "max_abs_receive_minus_gross": "0.000001",
+  "official_source_commit": "f5b26a1ca0f56190df9ae5354beead35630f5176",
+  "receive_matches_onchain_gross": 569,
   "rows": 569,
-  "v1_exchange": "0x4bfb41d5b3570defd03c39a9a4d8de6bd8b8982e"
+  "selector_counts": {
+    "0x2287e350": 569
+  },
+  "structs_source_sha256": "3c2005a31e4e3686dcdcfcbcbe704c4e4b333ca75e53ac662e186fdf4ffac357"
 }
