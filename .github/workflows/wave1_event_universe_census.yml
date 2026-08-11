@@ -1,0 +1,72 @@
+name: Wave 1 Event Universe Census
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wave1_event_universe_contract_census.py'
+      - '.github/workflows/wave1_event_universe_census.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run performance-blind Gamma census
+        run: |
+          python scripts/wave1_event_universe_contract_census.py \
+            --registry-dir registry \
+            --raw-output /tmp/wave1_polymarket_closed_events_raw.json.gz
+
+      - name: Validate census boundary
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+
+          meta = json.loads(Path('registry/wave1_event_universe_census_summary.json').read_text())
+          assert meta['performance_blind'] is True
+          assert meta['scientific_reopen'] is False
+          assert meta['total_closed_events_retrieved'] > 0
+          assert meta['classified_event_family_rows'] > 0
+
+          rows = list(csv.DictReader(Path('registry/wave1_event_universe_census_summary.csv').open()))
+          assert len(rows) == 7, len(rows)
+          forbidden = {'return', 'brier', 'logloss', 'sharpe', 'pnl', 'outcome_accuracy'}
+          headers = {h.lower() for h in rows[0].keys()}
+          assert not (headers & forbidden), headers & forbidden
+          print('PASS_WAVE1_EVENT_UNIVERSE_CENSUS_BOUNDARY')
+          PY
+
+      - name: Upload raw Gamma snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: wave1-polymarket-closed-events-raw
+          path: /tmp/wave1_polymarket_closed_events_raw.json.gz
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit census outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/wave1_event_universe_census_events.csv.gz \
+            registry/wave1_event_universe_census_summary.csv \
+            registry/wave1_event_universe_census_summary.json
+          if git diff --cached --quiet; then
+            echo 'No census output changes.'
+          else
+            git commit -m 'wave1: materialize performance-blind Polymarket event census'
+            git push
+          fi
