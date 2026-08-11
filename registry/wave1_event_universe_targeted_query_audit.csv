@@ -1,0 +1,33 @@
+query_family,query,returned_unique_events
+EARNINGS_EPS,earnings,1443
+EARNINGS_EPS,EPS,183
+EARNINGS_EPS,quarterly earnings,1243
+FDA_APPROVAL_ADVISORY,FDA,64
+FDA_APPROVAL_ADVISORY,PDUFA,0
+FDA_APPROVAL_ADVISORY,drug approval,0
+FDA_APPROVAL_ADVISORY,advisory committee,0
+MA,merger,12
+MA,acquisition,8
+MA,acquire,38
+MA,takeover,3
+MA,deal close,0
+MA,deal completion,0
+ANTITRUST_REGULATORY,antitrust,2
+ANTITRUST_REGULATORY,FTC,2
+ANTITRUST_REGULATORY,DOJ,7
+ANTITRUST_REGULATORY,regulatory approval,0
+ANTITRUST_REGULATORY,regulatory clearance,0
+LITIGATION_COURT,Supreme Court,27
+LITIGATION_COURT,court ruling,0
+LITIGATION_COURT,court decision,0
+LITIGATION_COURT,lawsuit,3
+LITIGATION_COURT,verdict,1
+LITIGATION_COURT,injunction,0
+MACRO_FED_CPI,FOMC,4
+MACRO_FED_CPI,Fed decision,26
+MACRO_FED_CPI,Fed rate,9
+MACRO_FED_CPI,CPI,5
+MACRO_FED_CPI,inflation,129
+MACRO_FED_CPI,GDP,42
+MACRO_FED_CPI,payrolls,0
+MACRO_FED_CPI,unemployment,41

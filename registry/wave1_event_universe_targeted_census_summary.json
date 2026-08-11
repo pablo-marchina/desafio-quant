@@ -1,0 +1,68 @@
+{
+  "artifact": "WAVE1_EVENT_UNIVERSE_TARGETED_CENSUS",
+  "version": "EUAS_TARGETED_DISCOVERY_v1.0",
+  "snapshot_utc": "2026-08-11T20:35:26Z",
+  "source": "official Polymarket Gamma API /events/keyset with frozen title_search queries",
+  "performance_blind": true,
+  "scientific_reopen": false,
+  "classifier_version": "EUAS_TEXT_CLASSIFIER_v1.0",
+  "query_map": {
+    "EARNINGS_EPS": [
+      "earnings",
+      "EPS",
+      "quarterly earnings"
+    ],
+    "FDA_APPROVAL_ADVISORY": [
+      "FDA",
+      "PDUFA",
+      "drug approval",
+      "advisory committee"
+    ],
+    "MA": [
+      "merger",
+      "acquisition",
+      "acquire",
+      "takeover",
+      "deal close",
+      "deal completion"
+    ],
+    "ANTITRUST_REGULATORY": [
+      "antitrust",
+      "FTC",
+      "DOJ",
+      "regulatory approval",
+      "regulatory clearance"
+    ],
+    "LITIGATION_COURT": [
+      "Supreme Court",
+      "court ruling",
+      "court decision",
+      "lawsuit",
+      "verdict",
+      "injunction"
+    ],
+    "MACRO_FED_CPI": [
+      "FOMC",
+      "Fed decision",
+      "Fed rate",
+      "CPI",
+      "inflation",
+      "GDP",
+      "payrolls",
+      "unemployment"
+    ]
+  },
+  "unique_events_returned_by_queries": 2035,
+  "classified_rows": 1964,
+  "count_semantics": "LOWER_BOUND_DISCOVERY_ONLY; low counts cannot establish family absence/failure",
+  "events_csv_gz_sha256": "dc39ee17b4940a77eaab33a148fe5138f75bb7c7c3c9e9811f66b29aae2e1c54",
+  "summary_csv_sha256": "01067fb09a311844f92db6d38976ca7925c4295505fe0ed8be6a51416aeec826",
+  "query_audit_sha256": "0549b7cd0edf4404437a3d9635edee8c200c5b5da92a10e1f9e8cc0a09d0dc4d",
+  "limitations": [
+    "title_search may miss relevant events whose family terms are absent from titles",
+    "regex post-filter can create false positives/false negatives",
+    "lifetime event volume is not PIT liquidity",
+    "lead time does not prove the contract predated every material rumor/news item",
+    "manual validation is required before using counts for EUAS gates"
+  ]
+}
