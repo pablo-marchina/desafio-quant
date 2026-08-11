@@ -1,11 +1,71 @@
 {
-  "decision": "PASS_TAPE_STRUCTURAL_DIRECTION_PENDING_IC03",
+  "decision": "PASS_TAPE_AVAILABILITY_WITH_PRE_CUTOFF_LIMITATIONS_DIRECTION_PENDING_IC03",
   "events": 117,
-  "clean": 117,
-  "errors": 0,
-  "truncation_risk": 0,
-  "zero_trades": 0,
-  "schema_anomalies": 0,
-  "total_rows": 23652,
-  "pre_cutoff_rows": 12752
+  "structurally_clean_events": 117,
+  "api_errors": 0,
+  "truncation_risk_events": 0,
+  "zero_total_trade_events": 0,
+  "schema_anomaly_events": 0,
+  "total_trade_rows": 23652,
+  "total_pre_cutoff_rows": 12752,
+  "pre_cutoff_usable_events": 115,
+  "pre_cutoff_absent_events": [
+    "ANF|2026-05-27",
+    "BRZE|2026-05-27"
+  ],
+  "pre_cutoff_absence_reason": "market trading started after the frozen safe cutoff; do not encode as zero activity",
+  "pre_cutoff_trade_count": {
+    "min": 0,
+    "median": 77,
+    "max": 1104,
+    "events_ge_1": 115,
+    "events_ge_5": 114,
+    "events_ge_10": 111,
+    "events_ge_20": 102,
+    "events_ge_50": 77,
+    "events_ge_75": 60,
+    "events_ge_100": 43,
+    "events_ge_200": 15
+  },
+  "era_by_safe_cutoff": {
+    "V1": {
+      "events": 81,
+      "pre_cutoff_rows": 11161,
+      "pre_cutoff_zero_events": 0,
+      "median_pre_cutoff_rows": 95
+    },
+    "V2": {
+      "events": 36,
+      "pre_cutoff_rows": 1591,
+      "pre_cutoff_zero_events": 2,
+      "median_pre_cutoff_rows": 26
+    }
+  },
+  "global_full_tape": {
+    "unique_proxy_wallets": 8452,
+    "unique_transaction_hashes": 23652,
+    "condition_ids": 117,
+    "token_assets": 234
+  },
+  "global_pre_cutoff_tape": {
+    "unique_proxy_wallets": 5082,
+    "unique_transaction_hashes": 12752,
+    "condition_ids": 115,
+    "token_assets": 229
+  },
+  "validation_totals": {
+    "exact_duplicate_rows": 0,
+    "page_boundary_duplicate_keys": 0,
+    "missing_required_field_rows": 0,
+    "invalid_price_rows": 0,
+    "invalid_size_rows": 0,
+    "bad_wallet_rows": 0,
+    "bad_txhash_rows": 0,
+    "condition_mismatch_rows": 0,
+    "asset_not_in_market_tokens_rows": 0
+  },
+  "workflow_run": 31449689618,
+  "raw_artifact_id": 9085858433,
+  "raw_artifact_sha256": "38ba23d6189076841c96e6734445921fc59fb71a4121ad40424798a8a6c6cae0",
+  "semantic_boundary": "Data API side is not yet treated as authoritative aggressor direction; IC-03 V1/V2 OrderFilled reconciliation is mandatory before signed-flow features."
 }
