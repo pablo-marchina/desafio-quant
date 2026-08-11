@@ -1,0 +1,19 @@
+item,family,art029_role,status,reason
+conditional_z_move_6h,H2_RESIDUAL_STATE,PRIMARY_M_MOVE_FEATURE,FREEZE_CANDIDATE,Distinct residual-state representation; 88-event prequential coverage; not near-duplicate with other primary features.
+velocity_6h_per_hour,H2_TRAJECTORY,PRIMARY_M_MOVE_FEATURE,FREEZE_CANDIDATE,Simplest trajectory magnitude representation; 115/117 coverage. Preferred over vol-scaled alternative after rho>=0.90 redundancy.
+vol_scaled_delta_6h,H2_STATE_NORMALIZATION,ROBUSTNESS_ALTERNATIVE_NOT_SIMULTANEOUS,ROBUSTNESS_ONLY,"Near-duplicate rank ordering with velocity (rho>=0.90), lower coverage and heavier scaling tails. Keep as alternate transformation, never simultaneous primary input."
+signed_notional_imbalance_24h,H2_FLOW,PRIMARY_M_MOVE_FEATURE,FREEZE_CANDIDATE,Distinct event-oriented canonical signed-flow mechanism; 103/117 coverage.
+wallet_hhi_notional_24h,H2_CONCENTRATION,PRIMARY_M_MOVE_FEATURE,FREEZE_CANDIDATE,Distinct participant-concentration mechanism; 103/117 coverage; address-level interpretation only.
+same_direction_transition_share_lifecycle,H2_FLOW_PERSISTENCE,PRIMARY_M_MOVE_FEATURE_WITH_ERA_ROBUSTNESS,FREEZE_CANDIDATE,"111/117 coverage after outcome-blind lifecycle amendment; strong descriptive era shift requires explicit era robustness, not causal version claim."
+jump_score_6h,H2_REGIME_CHANGE,PRIMARY_M_MOVE_FEATURE,FREEZE_CANDIDATE,Simple-first regime-change representation; 108/117 coverage. Preferred over CUSUM after rho>=0.90 redundancy.
+large_trade_notional_share_24h,H2_FLOW_SIZE,CHALLENGER_FEATURE,ELIGIBLE_CHALLENGER,100/117 coverage and low-to-moderate correlation with core flow/concentration; distinct size-conditioning mechanism.
+cusum_score_6h,H2_SEQUENTIAL_EVIDENCE,DIAGNOSTIC_ONLY,NO_GO_REDUNDANT_POST_MATERIALIZATION,rho>=0.90 with simple jump score; retaining both would multiply the same regime-change evidence.
+matrix_profile_discord_6h,H2_PATTERN_NOVELTY,NONLINEAR_CHALLENGER_FEATURE,ELIGIBLE_CHALLENGER,107/117 coverage; distinct model-free trajectory novelty representation with no near-duplicate primary feature.
+conformal_log_martingale_6h,H2_SEQUENTIAL_EVIDENCE,CHALLENGER_OR_ROBUSTNESS_FEATURE,ELIGIBLE_CHALLENGER,112/117 coverage and not near-duplicate with jump; sequential evidence representation remains distinct.
+multivariate_anomaly_distance,H2_MULTIVARIATE_ANOMALY,DEFERRED_DERIVED_CHALLENGER,DEFER_INITIAL_CONFIRMATORY,Only 74/117 coverage and is a nonlinear recombination of already retained core inputs; costly missingness for limited new raw information.
+sign_consistency_1_6_24h,H2_TRAJECTORY,ROBUSTNESS_FEATURE,ROBUSTNESS_ONLY,113/117 sign-only trajectory robustness; not an independent primary family.
+post_jump_half_life_hours,H2_PRICE_DYNAMICS,NOT_ADMITTED,NO_GO_COVERAGE_POST_MATERIALIZATION,33/117 materialized events versus predeclared minimum 40; threshold was not relaxed.
+prequential_feature_distance,H2_DRIFT,DRIFT_MONITOR_ONLY,ROBUSTNESS_MONITOR,Exactly identical to multivariate anomaly distance in current construction; may monitor covariate drift but must not create a second alpha trial.
+Online weighted ensemble,H2_MODEL_POOLING,PROTOCOL_LEVEL_MODEL_OPTION,DEFER_INITIAL_CONFIRMATORY,Requires resolved prior labels/model predictions and adds expert-set degrees of freedom; not justified before the frozen primary M_MOVE under the sample/model cap.
+Dispersion across simple forecasters,H2_FORECAST_DISAGREEMENT,PROTOCOL_LEVEL_MODEL_OPTION,DEFER_INITIAL_CONFIRMATORY,Requires a frozen forecaster set and prior model outputs; defer to avoid expanding the initial confirmatory family under ~115 independent events.
+Platt/isotonic/online calibration,H2_CALIBRATION,POST_MODEL_ROBUSTNESS_RULE,ROBUSTNESS_ONLY,Requires prior resolved labels and does not add new information; calibration may be frozen as a prequential robustness layer only.

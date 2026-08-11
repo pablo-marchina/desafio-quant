@@ -19,7 +19,7 @@
     "F06",
     "F07"
   ],
-  "decision": "PASS_ART028_MOVEMENT_DATA_FEASIBILITY_ALL_CORE_FAMILIES_MATERIALIZED",
+  "decision": "PASS_ART028_MOVEMENT_DATA_FEASIBILITY_AND_POST_MATERIALIZATION_ARCHITECTURE",
   "era_interpretation": "Descriptive stability only; V1/V2 is confounded with calendar time/market maturity and is not a causal version-effect estimate.",
   "events_total": 117,
   "half_life_conditional_status": "FAIL_COVERAGE",
@@ -46,11 +46,74 @@
   "near_duplicate_pairs_abs_spearman_ge_0_90": 3,
   "outcomes_or_performance_read_by_script": false,
   "output_hashes": {
+    "art029_handoff_sha256": "7fd26d5b49203c81772684021000d869341d1bece480cb079b52a562178ab5d1",
     "correlations_sha256": "9563b96db43383b950b0a1d5f6c05fd341e8814ef0becf14244de3abcb72bebe",
     "coverage_sha256": "89b61adb6be99448d3c6dbfbfad1ffda9d92cbe17d595a3ce84d60a6aa9efe2e",
     "era_stability_sha256": "38ead24d379d91b7e21f0511d9e86ee9e9686c4bd5fc22d0aff8792ce4e1a946",
     "feature_dictionary_sha256": "879be5ce27fc1223bfcf6fdc877e95b82b4d3da312da669df3224dad463206da",
     "feature_matrix_sha256": "1295e7367396ccf493ba1e153bbec528fc215016e2631e9a37ea31772645658a"
+  },
+  "post_materialization_architecture": {
+    "art029_nonlinear_challenger_preference": "matrix_profile_discord_6h",
+    "decision": "PASS_ART028_POST_MATERIALIZATION_ARCHITECTURE_FREEZE",
+    "deferred_initial_confirmatory": [
+      "multivariate_anomaly_distance",
+      "Online weighted ensemble",
+      "Dispersion across simple forecasters"
+    ],
+    "eligible_challenger_features": [
+      "large_trade_notional_share_24h",
+      "matrix_profile_discord_6h",
+      "conformal_log_martingale_6h"
+    ],
+    "handoff_sha256": "7fd26d5b49203c81772684021000d869341d1bece480cb079b52a562178ab5d1",
+    "model_cap": "ONE_INTERPRETABLE_REGULARIZED_M_MOVE_PLUS_MAX_ONE_NONLINEAR_CHALLENGER",
+    "outcomes_consulted": false,
+    "post_materialization_no_go": [
+      "cusum_score_6h",
+      "post_jump_half_life_hours"
+    ],
+    "primary_m_move_features": [
+      "conditional_z_move_6h",
+      "velocity_6h_per_hour",
+      "signed_notional_imbalance_24h",
+      "wallet_hhi_notional_24h",
+      "same_direction_transition_share_lifecycle",
+      "jump_score_6h"
+    ],
+    "reason_for_preference": "Highest-coverage eligible nonlinear novelty representation that is not a deterministic recombination of retained core features.",
+    "redundancy_actions": [
+      {
+        "action": "velocity primary; vol-scaled robustness alternative only",
+        "pair": [
+          "velocity_6h_per_hour",
+          "vol_scaled_delta_6h"
+        ],
+        "spearman_rho": 0.9396492219
+      },
+      {
+        "action": "jump primary; CUSUM no separate trial",
+        "pair": [
+          "jump_score_6h",
+          "cusum_score_6h"
+        ],
+        "spearman_rho": 0.9515841462
+      },
+      {
+        "action": "single metric; alpha challenger deferred, drift-monitor role only",
+        "pair": [
+          "multivariate_anomaly_distance",
+          "prequential_feature_distance"
+        ],
+        "spearman_rho": 1.0
+      }
+    ],
+    "robustness_only": [
+      "vol_scaled_delta_6h",
+      "sign_consistency_1_6_24h",
+      "prequential_feature_distance",
+      "Platt/isotonic/online calibration"
+    ]
   },
   "robustness_feature_ids_passing": [
     "F13",

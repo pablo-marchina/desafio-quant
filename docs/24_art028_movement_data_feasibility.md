@@ -52,3 +52,16 @@ Online weighted ensemble, dispersion across forecasters and probability calibrat
 ART-029 may use only PASS_COVERAGE features, must preserve structural missingness for ANF/BRZE, and must obey the Pass-B cap of one interpretable regularized M_MOVE plus at most one nonlinear challenger. All trial IDs and specifications freeze before outcomes.
 
 Feature matrix SHA-256: `1295e7367396ccf493ba1e153bbec528fc215016e2631e9a37ea31772645658a`
+
+
+## Post-materialization architecture freeze
+
+The final redundancy decision uses only pre-cutoff feature coverage/distribution/correlation. No outcome or candidate performance is consulted.
+
+**Primary M_MOVE feature candidates:** conditional_z_move_6h, velocity_6h_per_hour, signed_notional_imbalance_24h, wallet_hhi_notional_24h, same_direction_transition_share_lifecycle, jump_score_6h.
+
+**Eligible challenger features:** large_trade_notional_share_24h, matrix_profile_discord_6h, conformal_log_martingale_6h.
+
+Velocity is primary over vol-scaled movement because they are near-duplicate by rank and velocity has higher coverage/simpler semantics. Jump score is primary over CUSUM for the same simple-first reason. Multivariate anomaly distance and the drift distance are identical in this materialization; they cannot create separate trials. Half-life fails its frozen coverage minimum (33 < 40).
+
+For the at-most-one nonlinear challenger slot, `matrix_profile_discord_6h` is the pre-ART-029 preference because it has 107/117 coverage and adds a distinct model-free path-novelty representation rather than recombining the retained core features. ART-029 must still freeze the final model/trial IDs before reading outcomes.
