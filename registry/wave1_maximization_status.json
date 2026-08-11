@@ -4,10 +4,10 @@
   "scientific_authority": "FST-v1.0 / SF-v3.0",
   "scientific_reopened": false,
   "wave": "WAVE_1_SCORING_CONTRACT_AND_CRITICAL_AUDITS",
-  "overall_status": "IN_PROGRESS_W1C_CENSUS",
+  "overall_status": "PASS_WAVE1_READY_FOR_INVESTMENT_THESIS_REPORT_FRAMING_FREEZE",
   "purpose": "Maximize report evaluation score through rubric mapping and critical pre-authoring audits without post-hoc result seeking.",
   "scoring_contract": {
-    "status": "ACTIVE_100_PERCENT_MAPPED",
+    "status": "ACTIVE_100_PERCENT_MAPPED_WAVE1_CRITICAL_GATES_CLOSED",
     "doc": "docs/30_report_scoring_maximization_contract.md",
     "matrix": "registry/report_scoring_maximization_matrix.csv",
     "mapped_weight_pct": 100
@@ -31,22 +31,56 @@
       "finding": "EXP-06/06R contain fixed PIT entry/exit, equal-notional sizing, SPY benchmark, 20/35-bps costs, multiplicity controls and event/trade-level economics. Do not invent standard financed-portfolio Sharpe or max drawdown because overlap-capital aggregation was not frozen."
     },
     "event_universe_information_asymmetry": {
-      "status": "IN_PROGRESS_PROTOCOL_FROZEN_CENSUS_RUNNING",
+      "status": "PASS_W1C_EUAS_V1_1_RANKED_REPORT_SAFE",
       "doc": "docs/33_event_universe_information_asymmetry_audit.md",
       "research_matrix": "registry/event_universe_information_asymmetry_research_matrix.csv",
       "scoring_protocol": "registry/event_universe_scoring_protocol.json",
-      "primary_score_criteria": ["Strategy Concept", "Conclusion and Next Steps"],
-      "risk": "MEDIUM",
-      "finding_so_far": "Earnings/EPS has direct evidence of information heterogeneity and is exceptionally strong on resolution, direct equity mapping, sampleability and PIT reproducibility. It should not be called a low-asymmetry universe; the open question is whether another family dominates on the joint EUAS criteria.",
-      "census": {
-        "workflow": ".github/workflows/wave1_event_universe_census.yml",
-        "failed_run_1": 31524163459,
-        "failed_run_1_reason": "Fail-closed pagination guard reached 30,000 closed Gamma events while cursor remained active; no truncated census was published.",
-        "run_2": 31524477588,
-        "run_2_status_at_sync": "IN_PROGRESS",
-        "scientific_change_between_runs": false,
-        "engineering_change": "pagination safety ceiling only; classifier and EUAS protocol unchanged"
-      }
+      "score_assignments": "registry/event_universe_euas_score_assignments.csv",
+      "scores": "registry/event_universe_euas_scores.csv",
+      "ranking": "registry/event_universe_euas_ranking.json",
+      "targeted_census": "registry/wave1_event_universe_targeted_census_summary.csv",
+      "validation_queue": "registry/wave1_event_universe_manual_validation_queue_summary.json",
+      "manual_review": "registry/wave1_event_universe_manual_validation_summary.json",
+      "primary_score_criteria": [
+        "Strategy Concept",
+        "Conclusion and Next Steps"
+      ],
+      "risk_after_audit": "LOW",
+      "performance_blind": true,
+      "scientific_reopen": false,
+      "broad_census_policy": "FAIL_CLOSED_NO_TRUNCATED_POPULATION_CLAIM_AFTER_UNIVERSE_EXCEEDED_PAGINATION_SAFETY_CEILING",
+      "targeted_census_status": "PASS_FROZEN_QUERY_LOWER_BOUND_DISCOVERY_MATERIALIZED",
+      "manual_validation_status": "PASS_CONSERVATIVE_LOWER_BOUND_REVIEW",
+      "ranking_status": "PASS_MECHANICAL_RANKING_FROM_PRECOMMITTED_ASSIGNMENTS",
+      "ranking_summary": [
+        {
+          "rank": 1,
+          "family": "EARNINGS_EPS",
+          "score": 72.0
+        },
+        {
+          "rank": 2,
+          "family": "MACRO_FED_CPI",
+          "score": 50.0
+        },
+        {
+          "rank": 3,
+          "family": "FDA_APPROVAL_ADVISORY",
+          "score": 47.0
+        },
+        {
+          "rank": 4,
+          "family": "MA_ANNOUNCEMENT_RUMOR",
+          "score": 47.0
+        }
+      ],
+      "unranked_or_ineligible": {
+        "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE": "UNRANKED_GATE_EVIDENCE_INCOMPLETE_NOT_FAIL",
+        "ANTITRUST_REGULATORY": "UNRANKED_GATE_EVIDENCE_INCOMPLETE_NOT_FAIL",
+        "LITIGATION_COURT": "INELIGIBLE_BROAD_FAMILY_I2_BELOW_I3_GATE"
+      },
+      "leader_sensitivity": "EARNINGS_EPS remains leader in 81/81 single-cell +/-1 anchor perturbations",
+      "finding": "Earnings/EPS is not merely convenient: under the pre-frozen EUAS-v1.1 framework it is the highest-scoring demonstrated joint laboratory among families with complete gate evidence. H2 remains failed. FDA is the preferred fully evidenced next preregistered family for a single-name equity extension; macro is the strongest fully evidenced alternative under a rates/index architecture; M&A completion remains a high-priority performance-blind discovery target because of I5 but is not promoted until C/L/S evidence is established."
     }
   },
   "wave1_exit_requires": [
@@ -54,9 +88,13 @@
     "explicit model complexity sufficiency verdict — PASS",
     "complete frozen economic-trial and metric inventory — PASS",
     "event-family asymmetry framework frozen before suitability scoring — PASS",
-    "performance-blind historical PM contract census — IN PROGRESS",
-    "report-safe earnings laboratory classification — PENDING CENSUS",
+    "performance-blind historical PM targeted lower-bound census — PASS",
+    "manual semantic validation before C/L/S gate use — PASS",
+    "EUAS-v1.1 assignments frozen before ranking — PASS",
+    "mechanical EUAS ranking and leader sensitivity — PASS",
+    "report-safe earnings laboratory classification — PASS",
     "no H2 rescue or R3 promotion — PASS"
   ],
+  "wave1_verdict": "PASS_WAVE1",
   "next_after_wave1": "ARGOS_INVESTMENT_THESIS_REPORT_FRAMING_FREEZE"
 }
