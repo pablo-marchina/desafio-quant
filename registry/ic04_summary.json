@@ -1,28 +1,26 @@
 {
-  "api_errors": 8,
-  "decision": "REVIEW_DENSE_PRICE_HISTORY",
-  "dense_prices_sha256": "584339dfadba433813a43670c46423af40936238429ffd6591d74ea51ef92c91",
+  "api_errors": 0,
+  "bad_price_or_timestamp_rows": 0,
+  "chunk_seconds": 432000,
+  "conflicting_chunk_duplicates": 0,
+  "decision": "PASS_DENSE_PRICE_HISTORY_WITH_DISCLOSED_GAPS",
+  "dense_prices_sha256": "502ee8419a807925169e965d5c9192553bf1e1d2fdc7925dd6c5c796774cafbb",
   "events": 117,
   "max_last_yes_point_age_minutes_at_cutoff": 25.683333333333334,
   "median_last_yes_point_age_minutes_at_cutoff": 0.9,
   "median_yes_gap_minutes_across_events": 1.0,
-  "median_yes_rows_per_available_event": 14190,
-  "no_events_with_history": 111,
-  "raw_files": 222,
-  "raw_manifest_sha256": "399491d12378e9085e2af5a56dc3576f117a7ef8dd29e49fa5820b2d3a30d994",
+  "median_yes_rows_per_available_event": 14424,
+  "no_events_with_history": 115,
+  "raw_chunk_files": 564,
+  "raw_manifest_sha256": "3c4252e9f10ad4cd4617eeb20a3cf0c5140cf63745371685eaa14693cba23bf3",
   "retrieval_workers": 10,
   "structurally_unavailable_events": [
     "ANF|2026-05-27",
     "BRZE|2026-05-27"
   ],
-  "total_price_rows_both_tokens": 2970108,
-  "total_yes_rows": 1485054,
-  "yes_events_with_history": 111,
-  "yes_trajectory_sha256": "ee8b493d48a74c1b575bdb83aff6cffe33089eb6798238c9b12f06aadfcc729e",
-  "zero_yes_history_despite_open_market": [
-    "HOG|2025-11-04",
-    "F|2026-02-10",
-    "HOG|2026-02-10",
-    "GD|2026-04-29"
-  ]
+  "total_price_rows_both_tokens": 3186908,
+  "total_yes_rows": 1593454,
+  "yes_events_with_history": 115,
+  "yes_trajectory_sha256": "2058dbdef714a378a0b8c117af2c68ef47b5caeea6aa6f4a0aa0094589dd8606",
+  "zero_yes_history_despite_open_market": []
 }
