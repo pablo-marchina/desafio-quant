@@ -2,67 +2,111 @@
 
 ## Política
 
-O projeto opera sob orçamento de dados **R$ 0** para a cadeia reproduzível. Fontes com cobrança, risco de cobrança, cartão obrigatório, trial ou crédito promocional não podem ser dependência científica do ARGOS.
+A cadeia científica reproduzível do ARGOS opera sob orçamento de dados **R$ 0**. Fontes com cobrança, risco de cobrança, cartão, trial ou crédito promocional não podem ser dependência obrigatória.
 
-Toda feature deve ter disponibilidade temporal comprovada. Resultado numérico deve ter cadeia: `raw → transformação → código/versão → parâmetros → output → auditoria → claim`.
+Toda feature deve ter disponibilidade temporal comprovada. Todo resultado numérico deve preservar a cadeia:
 
-## Fontes operacionais principais
+`raw → transformação → código/versão → parâmetros → output → auditoria → claim`.
 
-- **Polymarket Gamma API:** metadata/event-market mapping.
-- **Polymarket CLOB price history:** probabilidades PIT.
-- **Polymarket trades/market data:** candidata/necessária para ART-028 e movimentos; sem presumir que último trade representa spread/depth/midpoint histórico.
-- **SEC EDGAR:** CIK, filings, exhibits e timestamps.
-- **Investor Relations oficiais:** release/timing/EPS.
-- **exchange-calendars / NYSE:** calendário de sessões.
-- **Yahoo Finance chart v8:** DAT-007 operacional para equity, aprovado com limitações.
-- **SPY:** benchmark de mercado coletado pela mesma fonte de equity.
+## Prediction-market data
 
-## Painel prediction-market/eventos
+### IC-02 — trade tape
 
-- censo: `1,089` contratos, `423` tickers;
-- eventos com cutoff seguro: `117`;
-- pares evento-horizonte auditados: `468`;
-- snapshots válidos: `385`;
-- T−10: `57/58`;
-- T−5: `104/104`;
-- T−3: `111/111`;
-- T−1: `113/113`;
-- um `api_gap` conhecido: CRM em T−10;
-- zero look-ahead conhecido no painel aprovado.
+- universo estrutural: **117/117** mercados;
+- cobertura pre-cutoff: **115/117**;
+- linhas totais: **23.652**;
+- linhas pre-cutoff: **12.752**;
+- ausências estruturais: `ANF|2026-05-27` e `BRZE|2026-05-27`.
 
-## Outcomes
+### IC-03 — semântica on-chain
 
-- 117 labels contratuais resolvidos;
-- 51 outcomes reconstruídos com EPS oficial;
-- 51/51 coincidem com a resolução contratual;
-- 66 continuam pendentes de reconstrução independente;
-- 133 documentos oficiais tiveram hashes reproduzidos na auditoria parcial.
+As 12.752 linhas pre-cutoff foram reconciliadas contra os exchanges oficiais V1/V2:
+
+- direção reconciliada: **12.752/12.752**;
+- preço reconciliado: **12.752/12.752**;
+- V1: 11.729 linhas;
+- V2: 1.023 linhas.
+
+Campos canônicos:
+
+- `side_canonical`;
+- `price_canonical`;
+- `token_amount_gross_canonical`;
+- `collateral_notional_canonical`.
+
+O campo vendor `api_size` não é canônico em **569** compras V1 FeeModule. Não usar esse campo como volume econômico nesses casos.
+
+### IC-04 — trajetória densa de probabilidade
+
+- Yes history: **115/117**;
+- No history: **115/117**;
+- Yes rows: **1.593.454**;
+- Yes+No rows: **3.186.908**;
+- mediana de gap dentro do evento: **1,0 minuto**;
+- zero API errors, zero rows pós-cutoff e zero conflicting duplicates na execução aprovada.
+
+### IC-05 — L2
+
+Current book e WebSocket L2 são disponíveis prospectivamente, mas **não existe arquivo first-party documentado de full historical L2 retroativo** para a amostra congelada. Técnicas que exigem depth/queue/book OFI histórico são `NO_GO_FOR_CURRENT_DATA`.
+
+### IC-06 — event timing
+
+- cutoff diário seguro: **117/117**;
+- violações de calendário: **0**;
+- BMO/AMC/exact release timing populacional: **não materializado**.
+
+Nunca inferir BMO/AMC a partir de acceptance timestamp da SEC, conference call ou convenção de mercado.
+
+### IC-07 — contexto
+
+`RETRIEVABLE` não significa materializado. Fontes de user activity, OI, wallet prior skill, intraday equity, NBBO, factors, fundamentals, macro e short interest não podem aparecer como evidência empírica submetida sem materialização/auditoria específica. Consenso sell-side PIT reproduzível sob R$ 0 permanece indisponível.
 
 ## Equity / DAT-007
 
 ART-020 + ART-021 fecharam DAT-007 como `PASS_DAT007_WITH_DISCLOSED_LIMITATIONS`:
 
-- 117 eventos de entrada;
-- 107 símbolos/JSONs brutos;
-- 114/114 arquivos de manifesto validados por SHA-256;
+- 107 símbolos incluindo SPY;
 - 43.019 linhas diárias;
-- zero duplicidade ticker-data;
-- adjusted close em 43.019/43.019;
-- 116/117 eventos com features pré-cutoff e reação;
+- adjusted close completo;
+- 116/117 eventos com features/reação;
 - zero preço posterior ao cutoff;
 - 426 corporate actions;
-- reconstrução byte-idêntica para painéis raw derivados; diferença numérica máxima cross-platform em features ~`2.66e-15`.
+- reprodução cross-platform auditada.
 
-Limitações obrigatórias:
+Limitações históricas preservadas:
 
-- `GAMB|2025-11-13`: sem histórico de preços anterior ao evento → sempre excluir.
-- `BLSH|2025-09-17`: sem 60 sessões → features de 60 sessões têm `n ≤ 115`.
-- painel de reação não é, sozinho, backtest executável.
+- `GAMB|2025-11-13`: sem histórico suficiente → excluído;
+- `BLSH|2025-09-17`: não possui 60 sessões anteriores para features longas;
+- dados de reação não equivalem automaticamente a execution-grade backtest.
+
+## Outcomes
+
+- target contratual usado em ART-030: **117/117**;
+- reconstrução oficial independente final: **116/117**;
+- concordâncias: **116/116**;
+- divergências validadas: **0**;
+- residual: `BLSH|2025-09-17`.
+
+BLSH permanece fail-closed porque a evidência oficial localizada não publica explicitamente o non-GAAP EPS contratualmente compatível. **Não derivar valor sintético por ação.**
 
 ## Consenso de analistas
 
-A rota de consenso histórico PIT rico foi auditada e fechada sob R$ 0. FactSet/LSEG/Bloomberg/SIX e outras alternativas não viraram dependência operacional reproduzível. Portanto:
+Nenhuma série point-in-time sell-side com custo R$ 0 e proveniência reproduzível foi aprovada. Logo:
 
-> **M0 é baseline público gratuito, não “consenso de analistas”.**
+> `M0` é um baseline público gratuito; não é consenso profissional de analistas.
 
-Nunca escrever “Polymarket supera consenso profissional/sell-side” com a evidência atual.
+É proibido afirmar que a Polymarket supera consenso sell-side com a evidência atual.
+
+## Artefatos autoritativos
+
+- `registry/ic02_summary.json`
+- `registry/ic03_summary.json`
+- `registry/ic04_summary.json`
+- `registry/ic06_summary.json`
+- `registry/ic07_summary.json`
+- `registry/information_completeness_gate.json`
+- `registry/art028_summary.json`
+- `registry/art030_summary.json`
+- `registry/final_scientific_truth.json`
+
+Os hashes finais autorizados para a submissão estão consolidados em `registry/final_submission_manifest.json` e `registry/final_submission_numbers.csv`.

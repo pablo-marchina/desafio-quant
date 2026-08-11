@@ -1,0 +1,37 @@
+name: Repository Hygiene
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - STATUS.yaml
+      - .gitignore
+      - .gitattributes
+      - docs/**
+      - registry/**
+      - scripts/**
+      - .github/workflows/repository_hygiene.yml
+      - .github/workflows/README.md
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate final freeze first
+        run: python scripts/final_submission_freeze_validate.py
+
+      - name: Validate repository hygiene
+        run: python scripts/repository_hygiene_validate.py

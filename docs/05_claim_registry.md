@@ -1,48 +1,55 @@
 # Registro de claims para o relatório final
 
-## Permitidos hoje
+**Autoridade machine-readable:** `registry/final_submission_claims.csv`.  
+**Freeze:** `FST-v1.0 / SF-v3.0`.
 
-- O censo contém **1.089 contratos e 423 tickers**.
-- O painel principal possui **117 eventos com cutoffs seguros**.
-- Foram obtidos **385 snapshots válidos**, sem look-ahead conhecido, com um api_gap de CRM em T−10.
-- Entre os baselines públicos gratuitos e prequential testados, **M2/Polymarket apresentou melhor desempenho probabilístico em T−3 e T−1**.
-- **51 outcomes** foram reconstruídos com EPS oficial e coincidem **51/51** com as resoluções contratuais; isso não representa auditoria independente dos 117.
-- O painel acionário tem proveniência reproduzível para **116/117 eventos**, com limitações GAMB/BLSH divulgadas.
-- M1-ZB não melhorou M0; M3 não melhorou M2.
-- As traduções econômicas já testadas não promoveram regra; **C0_NO_TRADE permanece champion econômico**.
-- R3 apresentou resultado diagnóstico positivo, mas **não representa ARGOS**.
-- A tese está congelada em **movimentos informacionais anormais com teste incremental contra M2**.
-- Mercados de previsão são o objeto conceitual; Polymarket e earnings/EPS são a implementação inicial.
+Este arquivo é uma versão humana resumida. Claims não podem ser promovidos por narrativa, design ou implicação visual.
 
-## Proibidos até nova evidência
+## Claims permitidos
+
+1. **M2 teve valor preditivo** versus os baselines públicos gratuitos/prequential testados no laboratório earnings/EPS.
+2. **M2 permanece o champion probabilístico** entre as especificações auditadas.
+3. **H2 falhou sob o protocolo congelado** `EXP07I-H2-FREEZE-v1.0`.
+4. `M_MOVE_CORE` teve Brier/log loss piores pontualmente que `M2_CAL` e nenhum gate confirmatório de promoção foi satisfeito.
+5. Houve **0/3 tercis temporais** com incremento positivo de Brier em H2.
+6. O **stop rule foi definido antes do resultado** e bloqueou resgate H3, H4 e H5.
+7. **C0_NO_TRADE é o champion econômico** do conjunto de regras testadas.
+8. A reconstrução oficial independente cobre **116/117 eventos**, com **116/116 concordâncias** e zero divergências entre os casos validados.
+9. O pipeline preservou **point-in-time, hashes, protocolos pré-resultados, resultados negativos e trilha de GenAI com validação humana**.
+10. **Abstention/no-trade é uma decisão quantitativa explícita**: sem evidência incremental suficiente, o sistema não força posição.
+
+## Claims proibidos
 
 - “ARGOS detecta insiders.”
-- “ARGOS detecta informação privilegiada, ilegalidade ou manipulação.”
-- “Wallets inteligentes geram o sinal do ARGOS.”
-- “Movimentos/flow/wallets acrescentam informação a M2.” — bloqueado até ART-030/H2.
-- “Polymarket supera consenso rico de analistas/sell-side.”
-- “ARGOS gera alpha negociável.”
-- “A estratégia é lucrativa após custos.”
-- “Existe backtest final validado.”
-- “R3 é a estratégia final.”
-- “M3 agrega valor a M2.”
-- “Earnings é o tipo de evento mais assimétrico.”
+- “ARGOS observa/detecta informação privada, ilegalidade ou manipulação.”
+- “Fluxo, wallets, concentração, participação ou microestrutura agregam valor incremental além de M2.”
+- “Smart wallets são a estratégia do ARGOS.”
+- “Polymarket supera consenso sell-side/profissional.”
+- “ARGOS possui alpha acionário.”
+- “Existe retorno líquido robusto ou backtest final long/short validado.”
+- “A estratégia está pronta para deployment ou possui capacidade comprovada.”
+- “R3 valida a tese de prediction markets ou é a estratégia final.”
+- “Earnings/EPS é comprovadamente a família de eventos mais assimétrica.”
+- “Ações dos EUA são comprovadamente a classe globalmente ótima.”
 - “ARGOS já é multi-market operacional.”
-- “A estratégia está pronta para deployment.”
+- “BLSH possui non-GAAP EPS oficialmente reconstruído.”
 
-## Claims condicionais
+## Qualificadores obrigatórios
 
-### Se H2 PASS
-Pode-se dizer que os movimentos anormais definidos no protocolo do EXP-07I acrescentaram informação OOS a M2, sempre descrevendo amostra, métricas e incerteza.
+### H1
+Usar **“no conjunto testado / versus os baselines públicos gratuitos testados”**. Não extrapolar para consenso sell-side ou todos os prediction markets.
 
-### Se H2 FAIL
-Deve-se dizer que a probabilidade agregada demonstrou valor, mas a camada adicional de movimentos **não mostrou ganho robusto** no protocolo testado. Não abrir resgate pós-hoc.
+### H2
+Usar **“sob o protocolo congelado EXP07I-H2-FREEZE-v1.0”**. O resultado não demonstra impossibilidade universal de todo movimento futuro; demonstra FAIL da hipótese confirmatória submetida.
 
-### Se H2 INCONCLUSIVE
-Deve-se dizer que cobertura/poder/integridade não permitiram decisão; não converter inconclusivo em evidência negativa.
+### No-trade
+Usar **“champion econômico do conjunto de regras testadas”**. Não afirmar que nenhuma estratégia econômica possível existirá em qualquer desenho futuro.
 
-### Se H4 PASS
-Pode-se discutir transmissão cross-market do **sinal H2-validado**. Se H4 falhar, não reivindicar stock alpha.
+### Outcomes
+Usar **“116/117 independentemente validados; 116/116 concordâncias; BLSH residual fail-closed”**.
 
-### Se H5 PASS
-Pode-se discutir utilidade econômica líquida somente com thresholds treinados, custos, slippage, turnover, capacidade, concentração e no-trade incorporados.
+## Regra pós-freeze
+
+Não existe mais branching `se H2 PASS/FAIL/INCONCLUSIVE` para a submissão de 2026. H2 já foi decidido como `FAIL_UNDER_FROZEN_EXP07I`.
+
+Nenhum novo threshold, subgrupo, wallet cohort, feature, modelo, venue ou horizonte pós-resultado pode alterar a narrativa final. Somente erro factual/proveniência demonstrado permite correção do freeze.

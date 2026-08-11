@@ -1,72 +1,75 @@
 # Current Truth — ARGOS
 
-**Snapshot operacional:** 10/08/2026  
-**Autoridade científica vigente:** ART-027 FREEZE v1.0 + CT-v3.0.
+**Snapshot operacional:** 11/08/2026  
+**Autoridade vigente:** `ART-027 FREEZE v1.0` + `FST-v1.0` + `CT-v4.0` + `SF-v3.0`.
 
-## Definição vigente
+Este arquivo é uma visão curta para navegação. Em qualquer conflito, prevalecem `registry/final_scientific_truth.json`, `STATUS.yaml` e o manifesto do freeze final.
 
-O ARGOS é um **sistema quantitativo de vigilância informacional** que identifica movimentos anormais observáveis em mercados de previsão antes de eventos ligados a ativos financeiros e testa se esses movimentos contêm informação incremental sobre o resultado do evento e sobre o retorno anormal do ativo relacionado.
+## Definição congelada
 
-Cadeia causal:
+O ARGOS é um sistema quantitativo de vigilância informacional concebido para testar se movimentos anormais observáveis em mercados de previsão contêm informação incremental além da informação pública e da probabilidade agregada do próprio mercado antes de qualquer tradução para o ativo relacionado.
 
-`informação pública → estado/probabilidade do prediction market → movimento anormal → conteúdo informacional incremental → resultado do evento → transmissão ao ativo → long / short / no-trade após custos e incerteza`
+Cadeia científica:
 
-A Polymarket é a implementação empírica inicial, não o limite conceitual. Earnings/EPS é o primeiro laboratório, não a família comprovadamente mais assimétrica.
+`informação pública → probabilidade do prediction market → movimentos anormais → teste incremental contra M2 → evento → ativo → long / short / no-trade`
 
-## Estado das hipóteses
+Polymarket + earnings/EPS + ações dos EUA formam a implementação empírica inicial. Isso não prova que earnings seja a família de eventos mais assimétrica nem que ações dos EUA sejam a classe globalmente ótima.
 
-| Hipótese | Pergunta | Estado |
+## Estado final das hipóteses
+
+| Hipótese | Estado final | Consequência |
 |---|---|---|
-| H1 | A probabilidade do prediction market acrescenta informação ao baseline público gratuito? | **SUPPORTED** no conjunto testado |
-| H2 | Movimentos anormais acrescentam informação a M2? | **PENDING** |
-| H3 | O ganho de movimentos varia com assimetria informacional ex ante? | **BLOCKED** até H2 |
-| H4 | O sinal validado antecipa retorno anormal da ação? | **BLOCKED** até H2 |
-| H5 | A regra mantém utilidade líquida após custos e incerteza? | **BLOCKED** até H4 |
+| H1 | `SUPPORTED_IN_TESTED_SAMPLE` | M2 mostrou valor preditivo versus baselines públicos gratuitos testados. |
+| H2 | `FAIL_UNDER_FROZEN_EXP07I` | M_MOVE_CORE não melhorou M2 sob o protocolo congelado. |
+| H3 | `BLOCKED_BY_H2_FAIL_NO_RESCUE` | Subgrupos/proxies não podem resgatar H2. |
+| H4 | `BLOCKED_BY_H2_FAIL` | Nenhuma tradução acionária da camada incremental é promovida. |
+| H5 | `BLOCKED_BY_H4` | Nenhuma utilidade econômica da cadeia H2→H4 é reivindicada. |
 
-Dependência obrigatória: `H1 → H2 → H4 → H5`. H3 é opcional e não pode resgatar um FAIL global de H2.
+**Champion probabilístico:** `M2`.  
+**Champion econômico do conjunto testado:** `C0_NO_TRADE`.  
+**R3:** diagnóstico apenas; não representa a tese ARGOS.
 
-## Champions vigentes
+## Resultado confirmatório H2 — ART-030
 
-- `M0`: baseline público Beta-Binomial prequential.
-- `M1-ZB`: executado; **não promovido**.
-- `M2`: probabilidade point-in-time da Polymarket; **champion probabilístico**.
-- `M3`: combinação M0+M2; **não promovido**.
-- `M_MOVE`: próximo modelo central; M2 + movimentos anormais.
-- `C0_NO_TRADE`: **champion econômico** das regras já testadas.
-- `R3`: resultado positivo diagnóstico, mas **sem autoridade de promoção** por não utilizar prediction-market information.
+Protocolo: `EXP07I-H2-FREEZE-v1.0`, congelado antes dos outcomes.  
+Amostra confirmatória: **75 eventos / 54 clusters de data**.
 
-## Evidência já consolidada
+| Modelo | Brier | Log loss |
+|---|---:|---:|
+| M2_RAW | 0.13954701 | 0.4302918262 |
+| M2_CAL | 0.1450265080 | 0.4540018561 |
+| M_MOVE_CORE | 0.1620974987 | 0.5403842574 |
 
-- Censo: **1.089 contratos** e **423 tickers**.
-- Painel diário: **117 eventos** com cutoff seguro.
-- Snapshots válidos: **385**; T−10 57/58, T−5 104/104, T−3 111/111, T−1 113/113.
-- Outcomes oficiais reconstruídos: **51**, com **51/51** coincidências; **66** ainda não reconstruídos independentemente.
-- Painel acionário aprovado: **116/117 eventos**, **43.019** observações diárias, **107 símbolos**, **426 corporate actions**.
-- GAMB 2025-11-13 permanece excluído por ausência de histórico.
-- BLSH 2025-09-17 não possui 60 sessões de histórico; modelos de 60 sessões têm `n ≤ 115`.
+- Δ Brier `M2_CAL − M_MOVE_CORE`: **−0.0170709907**, IC95 `[−0.0491014452; 0.0128164627]`.
+- Δ log loss: **−0.0863824013**, IC95 `[−0.2144785097; 0.0252069643]`.
+- Tercis cronológicos com ΔBrier positivo: **0/3**.
+- Challenger matrix-profile: não promovido.
+- Stop rule: **acionado**.
 
-## Resultado H1
+Interpretação autorizada: **a camada de movimentos testada não acrescentou informação incremental demonstrável além de M2 sob o protocolo congelado**. Não transformar isso em oportunidade de subgrupo, wallet, threshold ou novo modelo pós-hoc.
 
-### T−3
-- M0 Brier: `0.19106193`
-- M2 Brier: `0.15660954`
-- melhora M0−M2: `0.03445239`
-- IC cluster-date: `[0.0069005, 0.0637691]`
-- M2 AUC: `0.7253`
+## Outcomes e proveniência
 
-### T−1
-- M0 Brier: `0.19784897`
-- M2 Brier: `0.15741267`
-- melhora M0−M2: `0.04043630`
-- IC cluster-date: `[0.0106034, 0.0699468]`
-- M2 AUC: `0.7603`
+- Target contratual ART-030: **117/117** eventos reconstruídos.
+- Auditoria oficial independente: **116/117**.
+- Concordância nos casos validados: **116/116**; zero divergências.
+- Residual: `BLSH|2025-09-17`, mantido fail-closed sem derivar non-GAAP EPS sintético.
 
-Interpretação máxima: **a probabilidade da Polymarket superou os baselines públicos gratuitos e prequential testados, sobretudo em T−3 e T−1**. Isso não prova superioridade contra consenso sell-side rico nem alpha negociável.
+## Dados de movimentos
 
-## Próximo gate
+- Trade tape pre-cutoff: **115/117**, 12.752 linhas canônicas.
+- Trajetória densa de probabilidade: **115/117**.
+- Eventos estruturalmente indisponíveis pre-cutoff: `ANF|2026-05-27`, `BRZE|2026-05-27`.
+- Historical full L2: **NO-GO retroativo** para a amostra congelada.
+- BMO/AMC/exact release timing: não materializado populacionalmente; usar contrato diário conservador.
+- `api_size` não canônico em 569 compras V1 FeeModule; usar campos on-chain canônicos.
 
-O próximo teste central é:
+## Consequência econômica
 
-> **EXP-07I / H2:** `M_MOVE` melhora `M2` fora da amostra em Brier e log loss, com zero leakage, estabilidade temporal e sem dependência extrema de poucos eventos ou participantes?
+Como H2 falhou, H4/H5 não são abertas para resgate. As regras econômicas anteriores também não promoveram a tese. O output final do conjunto testado é **abstention / no-trade**.
 
-Nada posterior pode ser promovido antes dessa resposta.
+## Próxima fase
+
+`FINAL_REPORT_AUTHORING_AND_QA`.
+
+O trabalho restante é editorial e de QA: selecionar evidência congelada, construir o PDF 16:9 de até cinco páginas, verificar anonimato, números, claims, GenAI e legibilidade. **Não buscar um resultado científico melhor.**

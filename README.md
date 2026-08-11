@@ -1,63 +1,84 @@
 # ARGOS — Desafio Itaú Asset Quant AI 2026
 
-Repositório central de trabalho do **ARGOS**, consolidando o estado científico, a proveniência, os experimentos, os claims, as pendências e o plano do relatório final.
+Repositório operacional e reprodutível do **ARGOS**. O projeto já encerrou sua fase científica confirmatória para a submissão de 2026 e está em **FINAL_REPORT_AUTHORING_AND_QA**.
 
-> **Importante:** este repositório é operacional e identifica seus autores pelo próprio GitHub. **Não deve ser citado nem linkado no PDF final**, que precisa ser totalmente anônimo.
+> **Anonimato:** este repositório identifica seus autores pelo GitHub e **não deve ser citado nem linkado no PDF final**.
 
-## Estado atual
+## Estado científico congelado
 
-- **Tese:** congelada em ART-027 / TF-v1.0.
-- **Implementação empírica inicial:** Polymarket + contratos de earnings/EPS + ações individuais dos EUA.
-- **Champion probabilístico:** `M2` — probabilidade point-in-time da Polymarket.
-- **Champion econômico:** `C0_NO_TRADE` entre as regras já testadas.
-- **H1:** suportada no conjunto testado.
-- **H2:** pendente — principal gate atual.
-- **H3:** bloqueada até H2.
-- **H4:** bloqueada até H2.
-- **H5:** bloqueada até H4.
-- **Próximo caminho crítico:** `ART-028 → ART-029 → ART-030 / EXP-07I → H4 → H5`.
-- **Entrega final:** 17/08/2026.
+- **Tese:** `TF-v1.0` / `ART-027_FREEZE_v1.0`.
+- **Final Scientific Truth:** `FST-v1.0`.
+- **Submission Freeze:** `SF-v3.0`.
+- **Implementação empírica:** Polymarket + earnings/EPS + ações individuais dos EUA.
+- **H1:** `SUPPORTED_IN_TESTED_SAMPLE`.
+- **H2:** `FAIL_UNDER_FROZEN_EXP07I`.
+- **H3:** `BLOCKED_BY_H2_FAIL_NO_RESCUE`.
+- **H4:** `BLOCKED_BY_H2_FAIL`.
+- **H5:** `BLOCKED_BY_H4`.
+- **Champion probabilístico:** `M2`.
+- **Champion econômico:** `C0_NO_TRADE`.
+- **Blockers científicos para a submissão:** nenhum.
+- **Limitação de outcome restante:** `BLSH|2025-09-17`, mantida fail-closed; 116/117 eventos possuem validação oficial independente e 116/116 validados concordam com a resolução contratual.
 
-## Estrutura
+O resultado final não é uma estratégia long/short promovida: a probabilidade agregada da Polymarket teve valor preditivo frente aos baselines públicos gratuitos testados, mas a camada congelada de movimentos não acrescentou informação incremental demonstrável além de M2. O stop rule encerra a cadeia testada em **no-trade**.
+
+## Fonte de verdade
+
+Leia nesta ordem:
+
+1. `STATUS.yaml` — estado operacional machine-readable.
+2. `registry/final_scientific_truth.json` — verdade científica final.
+3. `registry/final_submission_answers_sf_v3.json` — sete respostas finais congeladas.
+4. `registry/final_submission_claims.csv` — fronteira de claims permitidos/proibidos.
+5. `registry/final_submission_numbers.csv` — números autorizados para a entrega.
+6. `registry/final_submission_manifest.json` — manifesto de hashes e identidades.
+7. `registry/final_submission_freeze_validation.json` — prova do gate final.
+8. `docs/29_final_scientific_truth_submission_freeze.md` — leitura humana do freeze.
+
+Bundle final congelado: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`.
+
+## Estrutura do repositório
 
 ```text
 .
-├── README.md
-├── STATUS.yaml
-├── docs/
-│   ├── 00_current_truth.md
-│   ├── 01_challenge_requirements.md
-│   ├── 02_thesis_governance.md
-│   ├── 03_data_provenance.md
-│   ├── 04_experiments_results.md
-│   ├── 05_claim_registry.md
-│   ├── 06_final_report_plan.md
-│   ├── 07_audit_gaps.md
-│   ├── 08_source_index.md
-│   ├── 09_project_history.md
-│   └── 10_genai_ledger.md
-├── registry/
-│   └── artifacts.csv
-└── templates/
-    ├── thesis-map.md
-    └── experiment-closeout.md
+├── README.md                  # entrada e navegação
+├── STATUS.yaml                # estado operacional atual
+├── data/                      # datasets derivados auditáveis necessários à reprodução
+├── docs/                      # documentação ativa + histórico científico
+├── registry/                  # contratos, manifests, gates, claims, hashes e summaries
+├── scripts/                   # pipelines e validadores reproduzíveis
+├── templates/                 # templates metodológicos
+└── .github/workflows/         # execuções reproduzíveis e gates de CI
+```
+
+Consulte os índices locais em `docs/README.md`, `registry/README.md`, `scripts/README.md` e `.github/workflows/README.md`.
+
+## Política de limpeza
+
+**Não deletar nem reescrever evidência histórica para deixar o repositório “bonito”.** Resultados negativos, protocolos pré-resultados, outputs superados e falhas documentadas fazem parte da trilha de auditoria. A limpeza deste repo significa:
+
+- separar claramente **autoritativo atual** de **histórico**;
+- remover linguagem stale dos documentos ativos;
+- manter raw/derivados e hashes necessários à reprodução;
+- evitar arquivos locais, caches, secrets e outputs temporários no Git;
+- impedir que documentação antiga substitua o freeze final.
+
+## Validação
+
+O gate final da ciência pode ser reproduzido com:
+
+```bash
+python scripts/final_submission_freeze_validate.py
+```
+
+A higiene/navegação do repositório é verificada por:
+
+```bash
+python scripts/repository_hygiene_validate.py
 ```
 
 ## Regra de precedência
 
-Em caso de conflito:
+Para o conteúdo submetido: **ART-027/TF-v1.0 → FST-v1.0 → CT-v4.0 → SF-v3.0 → manifesto/claims/números finais → artefatos individuais → documentação histórica**.
 
-1. comunicação oficial mais recente do desafio;
-2. instrução específica da etapa;
-3. ART-027 FREEZE v1.0;
-4. Current Truth CT-v3.0;
-5. Registro Mestre SR-v3.0;
-6. Matriz HM-v3.0;
-7. artefatos individuais;
-8. documentação histórica.
-
-Resultados numéricos só podem entrar no relatório após a cadeia **fonte bruta → transformação → código/versão → parâmetros → output → auditoria → claim** estar fechada.
-
-## Leitura recomendada
-
-Comece por `STATUS.yaml` e `docs/00_current_truth.md`. Antes de executar qualquer novo experimento, leia `docs/02_thesis_governance.md`, `docs/05_claim_registry.md` e use `templates/thesis-map.md`.
+Nenhum novo threshold, subgrupo, feature, modelo ou experimento pós-ART-030 pode alterar a verdade congelada da submissão sem erro factual/proveniência demonstrado.

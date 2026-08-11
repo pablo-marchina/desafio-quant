@@ -1,120 +1,113 @@
-# Plano de ação para o relatório final
+# Plano de ação — relatório final e QA
 
-Entrega: **17/08/2026**. O caminho científico e o caminho editorial devem avançar em paralelo, mas o conteúdo final só congela após os gates.
+**Entrega:** 17/08/2026.  
+**Fase vigente:** `FINAL_REPORT_AUTHORING_AND_QA`.  
+**Ciência:** congelada em `FST-v1.0 / SF-v3.0`; não abrir nova busca de resultado.
 
-## 10/08 — Centralização e reconciliação
+## Objetivo
 
-- [x] criar repositório operacional central;
-- [ ] reconciliar ART-022;
-- [ ] corrigir referência stale do ART-025 no SR-v3.0;
-- [ ] garantir que CT/HM/SR e este repo apontem para a mesma Current Truth;
-- [ ] fechar `FINAL_REPORT_CURRENT_TRUTH` após reconciliação.
+Transformar a evidência já congelada em um PDF anônimo, autossuficiente, visual e rigoroso de **até 5 páginas, horizontal 16:9**, maximizando os critérios da banca sem alterar a verdade científica.
 
-**Gate:** nenhuma divergência de número/hashes em claims candidatos ao PDF.
+## Contrato editorial
 
-## 11/08 — ART-028: movement-data feasibility
+O relatório deve mostrar simultaneamente:
 
-Objetivo: verificar se há dados confiáveis para medir movimentos sem usar outcomes na seleção.
+- identidade ARGOS e problema econômico;
+- mecanismo e modelagem;
+- dados e disciplina point-in-time;
+- evidência positiva de H1;
+- resultado confirmatório negativo de H2;
+- consequência econômica no-trade;
+- resultados anteriores relevantes sem promover R3;
+- uso concreto de GenAI e controles humanos;
+- limitações materiais;
+- conclusão crítica.
 
-Auditar, quando disponíveis: trajetória de probabilidade, trades, volume, buy/sell direction, trade size, persistência, concentração, participantes ativos, novidade, especialização, sincronização e proxies de liquidez.
+Qualquer número usado precisa existir em `registry/final_submission_numbers.csv`. Qualquer frase material precisa respeitar `registry/final_submission_claims.csv`.
 
-Para cada feature: cobertura, PIT, semântica, missingness, leakage risk e `GO / CONDITIONAL / NO-GO`.
+## Arquitetura sugerida das cinco páginas
 
-**DoD:** dataset auditável + hashes + event-market mapping + tabela de cobertura + decisão por família.
+### Página 1 — ARGOS: tese e decisão
 
-## 12/08 — ART-029: freeze EXP-07I
+- nome/identidade visual;
+- pergunta central;
+- cadeia `public info → M2 → movimentos → teste incremental → ativo → trade/no-trade`;
+- headline final: **probabilidade teve valor; movimentos não passaram o gate; sistema abstém**.
 
-Congelar antes de ver resultado:
+### Página 2 — dados e desenho anti-bias
 
-- amostra;
-- feature dictionary;
-- definição de estado esperado `S`;
-- transformações/anormalidades;
-- missing policy;
-- champion e challenger;
-- expanding walk-forward + same-date batching;
-- Brier/log loss primários;
-- calibração/ECE e AUC auxiliar;
-- bootstrap por data/ticker;
-- ablações;
-- multiplicidade;
-- gates PASS/FAIL/INCONCLUSIVE;
-- claims permitidos/proibidos.
+- universo: 117 eventos earnings/EPS;
+- trade tape + dense probability 115/117;
+- auditoria EPS 116/117;
+- protocolo outcome-blind;
+- walk-forward, same-date batching, hashes e stop rules;
+- limitações críticas sem poluir a página.
 
-**DoD:** protocolo assinado por hash, sem alteração pós-resultado.
+### Página 3 — resultado informacional
 
-## 13/08 — ART-030: EXP-07I / H2
+- evidência H1 de M2;
+- tabela/gráfico H2 `M2_RAW / M2_CAL / M_MOVE_CORE`;
+- ΔBrier/ΔLogLoss e 0/3 tercis;
+- destacar `FAIL_H2`, não apenas “não significativo”.
 
-Pipeline: `raw trades → normalização → features → estado esperado → anomalias → walk-forward → M2 → M_MOVE → métricas → bootstrap → ablação`.
+### Página 4 — consequência econômica e falsificações
 
-Resultado mínimo:
+- H2 FAIL → H3/H4/H5 bloqueadas;
+- `C0_NO_TRADE` champion econômico;
+- R1 e regras anteriores falharam;
+- R3 aparece, se necessário, apenas como exemplo de **resultado atraente recusado por desalinhamento causal**.
 
-| Métrica | M2 | M_MOVE | Δ |
-|---|---:|---:|---:|
-| Brier | | | |
-| Log loss | | | |
-| ECE | | | |
-| AUC (aux.) | | | |
+### Página 5 — GenAI, conclusão e limitações
 
-Também: ICs, estabilidade temporal, dependência de poucos eventos/participantes, missingness e contribution by family.
+- 2–3 usos de GenAI com maior impacto;
+- outcome firewall e human-in-the-loop;
+- erro/limitação encontrado com apoio de IA e como foi verificado;
+- conclusão científica;
+- limitações e possíveis trabalhos futuros claramente separados da evidência submetida.
 
-## 14/08 — decisão H2 e H4 condicional
+## Checklist de autoria
 
-- H2 PASS → executar H4.
-- H2 FAIL → parar resgate; preparar narrativa científica negativa.
-- H2 INCONCLUSIVE → declarar limitação.
+- [ ] nenhuma URL pública do repositório no PDF;
+- [ ] nenhuma identidade pessoal/institucional;
+- [ ] nenhum claim proibido;
+- [ ] todos os números rastreáveis ao registry final;
+- [ ] H2 escrito como FAIL sob protocolo congelado;
+- [ ] no-trade explicado como decisão, não como ausência de estratégia;
+- [ ] R3 rotulado `diagnostic-only` se aparecer;
+- [ ] BLSH mantido como residual, sem EPS sintético;
+- [ ] GenAI descrita por contribuição + validação humana;
+- [ ] material limitations presentes onde necessárias para interpretar números.
 
-H4 testa exclusivamente se o **sinal validado em H2** antecipa retorno anormal relativo ao SPY. R3 não pode substituir H4.
+## Checklist técnico do PDF
 
-## 15/08 — H5 condicional + scientific freeze
+- [ ] `≤ 5` páginas;
+- [ ] horizontal `16:9`;
+- [ ] pt-BR;
+- [ ] legível em tela cheia sem zoom;
+- [ ] sem speaker notes/comments/metadados identificáveis;
+- [ ] sem links necessários para entender a entrega;
+- [ ] texto e figuras não cortados;
+- [ ] PDF reaberto e inspecionado após exportação;
+- [ ] hash SHA-256 final registrado;
+- [ ] nome final `[chave].pdf`;
+- [ ] comprovante de submissão preservado.
 
-Somente se H4 PASS:
+## QA científico antes da exportação
 
-- thresholds definidos em treino;
-- long/short/no-trade;
-- equal notional / sem alavancagem salvo protocolo distinto pré-congelado;
-- custos e slippage;
-- turnover, drawdown, capacidade e concentração;
-- C0_NO_TRADE como benchmark nulo.
+Rodar:
 
-À noite: criar `FINAL_TRUTH_v1.0`. Após esse ponto, **não abrir nova linha de pesquisa**.
+```bash
+python scripts/final_submission_freeze_validate.py
+python scripts/repository_hygiene_validate.py
+```
 
-## 16/08 — construir PDF candidato
+E comparar manualmente o PDF contra:
 
-### Página 1 — tese + identidade ARGOS
-Problema, hipótese, ineficiência e diagrama causal.
+- `registry/final_scientific_truth.json`;
+- `registry/final_submission_claims.csv`;
+- `registry/final_submission_numbers.csv`;
+- `registry/final_submission_answers_sf_v3.json`.
 
-### Página 2 — dados + modelagem + anti-bias
-Censo → PIT → modelo → walk-forward → decisão. Mostrar no-look-ahead, pre-registration e no-trade.
+## Regra de mudança
 
-### Página 3 — evidência informacional
-M0 vs M2 + resultado central M2 vs M_MOVE + ablation.
-
-### Página 4 — tradução econômica + falsificações
-H4/H5 se executados; caso contrário, mostrar por que regras anteriores foram rejeitadas e não vender R3 como tese.
-
-### Página 5 — GenAI + conclusão + próximos passos
-Mostrar contribuições concretas de IA, controles humanos, limitações e caminho futuro.
-
-Meta editorial: **~580 palavras**, preferindo gráficos/tabelas/diagramas.
-
-## 17/08 — auditoria e submissão
-
-- [ ] ≤5 páginas;
-- [ ] 16:9;
-- [ ] português;
-- [ ] totalmente anônimo, inclusive metadata/notes/comments;
-- [ ] legível 100% sem zoom;
-- [ ] cada número rastreado a artefato autoritativo;
-- [ ] zero claim proibido;
-- [ ] todos os 7 critérios cobertos;
-- [ ] PDF reaberto após exportação;
-- [ ] hash final registrado;
-- [ ] nome `[chave].pdf`;
-- [ ] comprovante de envio salvo.
-
-## Ordem de sacrifício se faltar tempo
-
-Não sacrificar: `ART-028 → ART-029 → ART-030 → consistência factual → PDF`.
-
-Depois: H4/H5 apenas se gates autorizarem. Depois: design sofisticado. Por último: papers extras, modelos laterais e features não essenciais.
+Após FST-v1.0/SF-v3.0, **design pode mudar; ciência não**. Só corrigir o freeze se surgir erro factual/proveniência demonstrado ou conflito com fonte oficial mais autoritativa.

@@ -1,58 +1,95 @@
-# Auditoria de gaps e inconsistências
+# Auditoria de gaps, limitações e estado de fechamento
 
-## BLOCKER-01 — ART-022 inconsistente
+**Snapshot:** 11/08/2026.  
+**Blockers científicos/operacionais para iniciar o relatório final:** **nenhum**.
 
-Há divergência material entre SR-v3.0 e a planilha ART-022 atual.
+Os blockers antigos de ART-022, ART-025, H2 pendente, 66 EPS pendentes e GenAI ledger foram fechados ou reclassificados. Este documento agora diferencia **limitação material** de **blocker**.
 
-| Candidato | SR-v3.0 Brier | ART-022 atual Brier |
-|---|---:|---:|
-| T−10 | 0.198839 | 0.19937149 |
-| T−5 | 0.181715 | 0.17114300 |
-| T−3 | 0.164346 | 0.16884718 |
-| T−1 | 0.161021 | 0.16770252 |
-| ADAPT | 0.165314 | 0.17041945 |
+## Fechamentos concluídos
 
-Além disso:
+### ART-022 — reconciliado
 
-- SR-v3.0 protocol hash: `c20ed9a4e16725829855ce7b2cc600fa95b818468bd09e30e55a46bd63901437`
-- planilha atual protocol hash: `675f0a230b83cdda79d70f3a8d38908258e8132b30ada68b0549fb5b0d3c0006`
+A planilha viva e o XLSX original preservado concordam. Protocolo autoritativo:
 
-**Ação:** localizar os dois pacotes/protocolos, verificar timestamps, input hashes e scripts, determinar a execução autoritativa, corrigir SR/CT/HM se necessário e marcar a versão superada. Até lá, EXP-05 é proibido como número final.
+`675f0a230b83cdda79d70f3a8d38908258e8132b30ada68b0549fb5b0d3c0006`
 
-## BLOCKER-02 — referência ART-025 stale
+Status: `PASS_RECONCILED`.
 
-SR-v3.0 registra/referenciou em um ponto o Sheets ID `1igagDzeSOOpL3hKV9bKvzAOIvFNZM6NM35cq7nzQJ8E`, que não resolve. O arquivo atual localizado é:
+### ART-025 — referência corrigida
 
-`ARGOS — ART-025 Resultados EXP-06R`  
-ID: `16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA`
+Drive ID autoritativo: `16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA`.
 
-**Ação:** corrigir registro mestre e qualquer manifesto dependente; validar hash/versão da planilha correta.
+Status: `PASS_DRIVE_ID_CORRECTED`.
 
-## BLOCKER-03 — H2 ainda não executada
+### H2 — executada
 
-O coração da tese congelada — ganho incremental de movimentos sobre M2 — ainda não tem teste populacional. Sem ART-030, H4/H5 permanecem bloqueadas.
+ART-030 encerrou H2 como `FAIL_UNDER_FROZEN_EXP07I`. H3 não pode resgatar; H4/H5 permanecem bloqueadas por stop rule.
 
-## GAP-04 — outcomes oficiais incompletos
+### GenAI ledger — sincronizado
 
-51/117 foram reconstruídos independentemente; 66 permanecem pendentes. Isso não invalida labels contratuais, mas limita o claim de auditoria independente.
+11 entradas finais, com human-in-the-loop, outcome firewall e política explícita de preservação de resultado negativo.
 
-**Decisão a tomar:** concluir os 66 ou justificar formalmente por que a subamostra auditada é suficiente para o uso no relatório, sem escrever “117 outcomes oficiais auditados”.
+Status: `PASS_GENAI_LEDGER_FINAL_EVIDENCE_SYNC`.
 
-## GAP-05 — GenAI ledger precisa de sincronização final
+### Scientific/submission freeze — concluído
 
-ART-011 é obrigatório, mas o PDF deverá mostrar exemplos concretos e distinguir IA de decisão humana. Fechar modelos/ferramentas, etapas, entregáveis e verificações usadas.
+`FST-v1.0 / SF-v3.0` passaram o validador final. Bundle SHA-256:
 
-## GAP-06 — materiais educacionais não auditados integralmente
+`c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`.
 
-- `Material Aula3.zip` (~173 MB): PENDING de auditoria integral.
-- `Desafio Quant AI - Gravações.pdf`: índice sem transcrição textual útil; conteúdo audiovisual não auditado individualmente.
+## Limitações materiais — não blockers
 
-Se esses materiais não sustentarem claims, registrar explicitamente `NOT USED AS EVIDENCE` e não gastar caminho crítico.
+### LIM-01 — EPS independente 116/117
 
-## GAP-07 — backtest final inexistente hoje
+- 116 eventos com validação oficial independente;
+- 116/116 concordâncias;
+- zero divergências;
+- residual: `BLSH|2025-09-17`.
 
-Resultados econômicos existentes são negativos ou diagnósticos. Um backtest final coerente com ARGOS só existe se H2→H4→H5 autorizarem. Não transformar EXP-06/06R ou R3 em “backtest final” por pressão de prazo.
+Política: fail-closed. Não derivar non-GAAP EPS sintético. Isso **não altera H2**.
 
-## GAP-08 — anonimato operacional
+### LIM-02 — ANF e BRZE sem pre-cutoff
 
-O repositório identifica autores. O PDF final não pode conter URL deste repo, nome da universidade, nomes pessoais, logos, metadata, comentários ou speaker notes identificáveis.
+`ANF|2026-05-27` e `BRZE|2026-05-27` começaram após o cutoff seguro e não possuem trade tape nem dense probability trajectory pre-cutoff estruturalmente disponíveis.
+
+### LIM-03 — historical L2 indisponível
+
+Full historical order book não pode ser reconstruído retroativamente com as superfícies first-party documentadas. Features dependentes de depth/queue/book OFI permanecem NO-GO para a amostra congelada.
+
+### LIM-04 — release-session timing limitado
+
+Cutoff diário é verificado 117/117; BMO/AMC/exact release time não é populacionalmente materializado. Não inferir sessão.
+
+### LIM-05 — Data API size
+
+`api_size` é não canônico em 569 compras V1 FeeModule. Usar `token_amount_gross_canonical` e `collateral_notional_canonical`.
+
+### LIM-06 — consenso sell-side PIT
+
+Não existe série sell-side point-in-time aprovada, reproduzível e R$ 0. Claims contra consenso profissional permanecem proibidos.
+
+### LIM-07 — materiais educacionais não essenciais
+
+`Material Aula3.zip` e gravações não auditadas integralmente **não sustentam claims finais**. Permanecem fora da cadeia de evidência, salvo auditoria futura explícita.
+
+### LIM-08 — anonimato
+
+O GitHub é público e identifica autores. O PDF final não pode conter URL do repo, identidade pessoal/institucional, metadata, comments ou notes identificáveis.
+
+## Riscos editoriais atuais
+
+Estes são riscos de execução do relatório, não gaps científicos:
+
+- copiar número de artefato histórico em vez do registry final;
+- escrever “H2 inconclusivo” quando o freeze diz `FAIL`;
+- usar R3 como resgate visual;
+- transformar “retrievable” em “materialized”;
+- esconder BLSH/ANF/BRZE quando relevantes ao denominador mostrado;
+- omitir a contribuição e os controles de GenAI;
+- ultrapassar 5 páginas ou quebrar anonimato.
+
+## Gate atual
+
+`READY_FOR_FINAL_REPORT_AUTHORING_AND_QA`.
+
+O próximo trabalho é somente autoria, visualização e QA fiel à evidência congelada.

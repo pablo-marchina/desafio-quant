@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Environments / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary / scratch
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+scratch/
+tmp/
+temp/
+.cache/
+
+# Local build / export staging
+build/
+dist/
+exports_local/
+report_working/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Do not ignore scientific data/registry artifacts by extension.
+# Tracked evidence is intentionally explicit in data/ and registry/.
