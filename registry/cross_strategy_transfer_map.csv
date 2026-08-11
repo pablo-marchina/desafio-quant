@@ -1,0 +1,70 @@
+family,mechanism,technique,target_gate,transfer_to_ARGOS,status_before_data_audit
+Market microstructure,Signed pressure,Signed notional imbalance,H2,Directional flow anomaly,CANDIDATE
+Market microstructure,Adverse selection,OFI normalized by depth,H2,Flow impact conditional on liquidity,CANDIDATE
+Market microstructure,Trade-size information,Large-trade share,H2,Size-conditioned information arrival,CANDIDATE
+Market microstructure,Participant concentration,HHI and top-k notional share,H2,Concentration as movement context,CANDIDATE
+Market microstructure,Order splitting,Run length and signed-flow persistence,H2,Persistent informed-like execution pattern,CANDIDATE
+Market making,Adverse-selection filter,Spread/depth state conditioning,H2,Separate flow from thin-liquidity mechanics,CANDIDATE
+Market making,No-trade region,Inventory-style decision band,H5,Formal abstention region,CANDIDATE
+Market making,Execution separation,Implementation shortfall,H5,Separate alpha from execution,CANDIDATE
+Momentum,Persistence,Multi-horizon sign consistency,H2,Trajectory continuation feature,CANDIDATE
+Momentum,Trend strength,Velocity and acceleration,H2,Probability trajectory dynamics,CANDIDATE
+Momentum,Risk normalization,Volatility-scaled movement,H2,Comparable anomaly magnitude across regimes,CANDIDATE
+Momentum,Crash regime,Volatility/panic state interaction,H3,Condition signal reliability on stress,CANDIDATE
+Mean reversion,Relative-value residual,Conditional z-score,H2,Deviation from expected market state,CANDIDATE
+Mean reversion,Dynamic equilibrium,Kalman/state-space residual,H2,Adaptive expected-state model,CANDIDATE
+Mean reversion,Reversion speed,Half-life/post-jump decay,H2,Separate persistent from temporary movement,CANDIDATE
+Event-driven,Surprise,Expected-versus-realized residual,H3,Movement/disclosure surprise representation,CANDIDATE
+Event-driven,Underreaction,Delayed incorporation metric,H4,Test gradual equity response,CANDIDATE
+Event-driven,Attention,Friday/weekday indicator,H3,Information-attention conditioning,CANDIDATE
+Event-driven,Timing,BMO versus AMC,H3,Execution and incorporation state,CANDIDATE
+Event-driven,Clustering,Concurrent announcement intensity,H3,Competing-attention state,CANDIDATE
+Factor investing,Neutralization,Residual return versus factors,H4,Abnormal-return robustness,CANDIDATE
+Factor investing,Cross-sectional scaling,Rank/z-score transforms,H3,Robust comparable state variables,CANDIDATE
+Factor investing,Exposure control,Size/volatility/liquidity neutralization,H4,Remove known return exposures,CANDIDATE
+Volatility,State dependence,Realized volatility regime,H3,Signal reliability by risk state,CANDIDATE
+Volatility,Jump risk,Jump intensity/change score,H2,Separate continuous versus jump movement,CANDIDATE
+Volatility,Tail risk,Skew/tail conditional loss,H5,Detect hidden crash-risk payoff,CANDIDATE
+Volatility,Disagreement,Forecast/variance disagreement,H2,Second-order uncertainty state,CANDIDATE
+Carry,Crash decomposition,Normal-state payoff versus tail state,H5,Prevent false alpha from rare losses,CANDIDATE
+Carry,Funding/liquidity state,Liquidity stress interaction,H5,Condition economic viability on stress,CANDIDATE
+Liquidity,Temporary pressure,Short-horizon reversal diagnostic,H4,Distinguish information from liquidity shock,CANDIDATE
+Liquidity,Turnover state,Turnover-conditioned response,H3,Information environment proxy,CANDIDATE
+Macro,Regime conditioning,State-dependent coefficients,H3,Allow ex-ante contextual heterogeneity,CANDIDATE
+Macro,Concurrent news,Macro-news coincidence,H3,Attention/information complementarity control,CANDIDATE
+Text/NLP,Tone surprise,Residualized managerial tone,H3,Contextual event-information proxy,CANDIDATE
+Text/NLP,Ambiguity,Vagueness/uncertainty score,H3,Information-quality proxy,CANDIDATE
+Text/NLP,Unusualness,Text entropy/topic surprise,H3,Novel information measure,CANDIDATE
+Text/NLP,PIT model discipline,Chronologically bounded language model,Governance,Avoid textual look-ahead,CANDIDATE
+Forecasting,Calibration,Platt/isotonic/online calibration,H2,Calibrated incremental probability,CANDIDATE
+Forecasting,Model pooling,Online weighted ensemble,H2,Compare robust combination versus M2,CANDIDATE
+Forecasting,Disagreement,Dispersion across simple forecasters,H2,Uncertainty feature,CANDIDATE
+Signal processing,Change detection,BOCPD,H2,Posterior of regime shift,CANDIDATE
+Signal processing,Sequential detection,CUSUM/score-CUSUM,H2,Accumulate weak abnormal evidence,CANDIDATE
+Signal processing,Novelty,Matrix Profile discord score,H2,Model-free unusual trajectory score,CANDIDATE
+Signal processing,Patterns,Matrix Profile motif similarity,H2,Historical-pattern similarity,CANDIDATE
+Signal processing,Multi-scale,Wavelet decomposition,H2,Separate short/medium-horizon movement,CANDIDATE
+Network,Nonlinear dependence,Mutual information lead-lag,H4,Nonlinear cross-market propagation,CANDIDATE
+Network,Directed information,Transfer entropy,H4,Directional propagation diagnostic,CANDIDATE
+Network,Lead-lag,Event-time lag regression,H4,Prediction-market to equity timing,CANDIDATE
+Causal inference,Counterfactual,Synthetic control,H4,Alternative abnormal-return benchmark,CANDIDATE
+Causal inference,Negative control,Reverse-direction equity-to-PM test,H4,Detect reverse causality,CANDIDATE
+Causal inference,Matched controls,Matched event study,H4,Robust counterfactual response,CANDIDATE
+Online learning,Adaptive weighting,Regret-based expert weighting,H2,Adaptive point-in-time model combination,CANDIDATE
+Online learning,Concept drift,Conformal/change-drift monitor,H2,Detect changing data-generating process,CANDIDATE
+Robust optimization,Parameter uncertainty,Worst-case expected return,H5,Discount estimated alpha by uncertainty,CANDIDATE
+Robust optimization,Regularization,Turnover penalty,H5,Reduce fragile trading,CANDIDATE
+Robust optimization,Sparsity,Cardinality/sparse decision,H5,Avoid marginal low-confidence positions,CANDIDATE
+Kelly,Position sizing,Fractional Kelly,H5,Convert edge and uncertainty to size,CANDIDATE
+Kelly,Estimation risk,Bayesian/uncertainty-adjusted Kelly,H5,Shrink size when confidence is weak,CANDIDATE
+Selective classification,Abstention,Risk-coverage curve,H5,Formal trade/no-trade evaluation,CANDIDATE
+Meta-labeling,Trade filter,Secondary trade/no-trade model,H5,Separate directional signal from tradability,CANDIDATE
+Optimal execution,Market impact,Almgren-Chriss style cost layer,H5,Execution-aware net utility,CANDIDATE
+Optimal execution,Adaptive execution,RL execution challenger,H5,Dynamic implementation only after alpha gate,CANDIDATE
+Industrial anomaly detection,Sequential false alarm,Conformal martingale,H2,Anytime-valid abnormality evidence,CANDIDATE
+Industrial anomaly detection,Discord detection,Multivariate anomaly distance,H2,Pattern novelty without outcome labels,CANDIDATE
+Governance,Multiple testing,Deflated Sharpe Ratio,Governance,Correct performance for trial selection,CANDIDATE
+Governance,Backtest overfit,PBO/CSCV,Governance,Estimate selection-overfit risk,CANDIDATE
+Governance,Experiment accounting,Trial ledger,Governance,Count every tested configuration,CANDIDATE
+Governance,Placebo,Random-null/placebo tests,Governance,Test whether mechanism exceeds chance,CANDIDATE
+Governance,Pre-registration,Frozen feature/model family,Governance,Prevent outcome-driven specification,CANDIDATE
