@@ -1,0 +1,91 @@
+{
+  "artifact": "FINAL_SCIENTIFIC_TRUTH",
+  "version": "FST-v1.0",
+  "freeze_date": "2026-08-11",
+  "decision": "PASS_FINAL_SCIENTIFIC_TRUTH_WITH_DISCLOSED_EPS_RESIDUAL_1",
+  "thesis_version": "TF-v1.0",
+  "constitution": "ART-027_FREEZE_v1.0",
+  "scientific_state": {
+    "H1": "SUPPORTED_IN_TESTED_SAMPLE",
+    "H2": "FAIL_UNDER_FROZEN_EXP07I",
+    "H3": "BLOCKED_BY_H2_FAIL_NO_RESCUE",
+    "H4": "BLOCKED_BY_H2_FAIL",
+    "H5": "BLOCKED_BY_H4"
+  },
+  "champions": {
+    "probabilistic": "M2",
+    "economic": "C0_NO_TRADE"
+  },
+  "authoritative_interpretation": [
+    "The point-in-time Polymarket probability M2 showed predictive value versus the tested free/public prequential baselines in the tested earnings/EPS sample.",
+    "The frozen incremental movement model M_MOVE_CORE did not improve M2 out of sample under EXP07I-H2-FREEZE-v1.0; its point estimates were worse on both Brier and log loss and the frozen promotion conditions failed.",
+    "The H2 stop rule is active. H3 cannot be used as a subgroup rescue; H4 and H5 are not authorized after H2 failure.",
+    "No long/short implementation is promoted from the movement thesis. C0_NO_TRADE remains the economic champion of the tested rules.",
+    "R3 remains diagnostic only because it does not use prediction-market information and cannot represent ARGOS thesis alpha.",
+    "Negative and null results are part of the final scientific truth and cannot be replaced by post-hoc thresholds, subgroups, features or models."
+  ],
+  "art030": {
+    "protocol_version": "EXP07I-H2-FREEZE-v1.0",
+    "protocol_sha256": "fcbf7121ae3fe47328b9e06b9f974d01cb5c94bb9760f717b25c64ab839b43c1",
+    "scored_events": 75,
+    "scored_date_clusters": 54,
+    "primary_comparator": "M2_CAL",
+    "primary_candidate": "M_MOVE_CORE",
+    "m2_raw_brier": 0.13954701,
+    "m2_raw_log_loss": 0.4302918261840308,
+    "m2_cal_brier": 0.14502650803435788,
+    "m2_cal_log_loss": 0.45400185611709,
+    "m_move_core_brier": 0.1620974987486428,
+    "m_move_core_log_loss": 0.5403842574211747,
+    "brier_increment_m2_cal_minus_m_move_core": -0.017070990714284907,
+    "brier_increment_ci95": [-0.04910144519317386, 0.012816462700925006],
+    "logloss_increment_m2_cal_minus_m_move_core": -0.08638240130408478,
+    "logloss_increment_ci95": [-0.21447850973675447, 0.025206964277829834],
+    "temporal_positive_brier_terciles": "0/3",
+    "matrix_profile_challenger_promoted": false,
+    "stop_rule_applied": true,
+    "predictions_sha256": "6033ab864ed0576092828cab3d3ebf15e039133c6e5efb2f29e6d45401065de2",
+    "outcomes_sha256": "11fdfccfbec4a9d6ac4aa523b17a120b6719db8cb290d206fd63461ffaed7158"
+  },
+  "outcome_reconciliation": {
+    "independently_validated": "116/117",
+    "validated_matches_contract_resolution": "116/116",
+    "validated_mismatches": 0,
+    "remaining_residual": "BLSH|2025-09-17",
+    "residual_policy": "FAIL_CLOSED_NO_SYNTHETIC_NON_GAAP_EPS",
+    "effect_on_h2": "NO_CHANGE_FAIL_H2"
+  },
+  "hard_submission_limits": [
+    "Do not claim detection of insiders, private information, illegality or manipulation.",
+    "Do not claim superiority over sell-side analyst consensus; no reproducible R$0 point-in-time analyst-consensus series was approved.",
+    "Do not claim incremental value of movement, flow, concentration, participation or wallets beyond M2; H2 failed under the frozen protocol.",
+    "Do not claim equity alpha, robust net return, final backtest, deployable long/short strategy or capacity validation.",
+    "Do not use R3 as evidence for the prediction-market thesis.",
+    "Do not impute historical L2, BMO/AMC timing, missing pre-cutoff events, current snapshots as historical state, or BLSH non-GAAP EPS."
+  ],
+  "material_limitations": [
+    "ANF|2026-05-27 and BRZE|2026-05-27 have no structurally available pre-cutoff trade tape or dense price history.",
+    "Historical full L2 is not retroactively available from documented first-party Polymarket surfaces for the frozen sample.",
+    "Broad BMO/AMC or exact release-session timing is not materialized; only the conservative daily timing contract is population-wide.",
+    "Data API size is noncanonical for 569 V1 FeeModule BUY rows; canonical on-chain gross token amount and collateral notional are used instead.",
+    "Contextual sources classified as retrievable but not materialized are barred from submitted empirical claims.",
+    "BLSH|2025-09-17 remains the sole independent official-EPS provenance residual."
+  ],
+  "genai_governance": {
+    "ledger_status": "PASS_GENAI_LEDGER_FINAL_EVIDENCE_SYNC",
+    "ledger_entries": 11,
+    "human_in_the_loop": true,
+    "evidence_policy": "GenAI outputs never count as empirical evidence without execution or source verification.",
+    "outcome_firewall": "Architecture selection and ART-029 freeze were outcome-blind; outcomes opened only after protocol hash freeze for ART-030.",
+    "negative_result_policy": "GenAI was not permitted to rescue FAIL_H2 with post-hoc features, thresholds, subgroups or models."
+  },
+  "submission_contract": {
+    "format": "PDF",
+    "max_pages": 5,
+    "aspect_ratio": "16:9",
+    "language": "pt-BR",
+    "anonymous": true,
+    "public_repository_url_in_submission": false
+  },
+  "reopen_rule": "Only a demonstrated factual/provenance error or conflicting authoritative source may amend FST-v1.0. New post-hoc experiments cannot change the frozen submission truth."
+}
