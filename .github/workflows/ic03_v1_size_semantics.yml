@@ -1,0 +1,55 @@
+name: IC-03 V1 Size Semantics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ic03_v1_size_semantics.py'
+      - '.github/workflows/ic03_v1_size_semantics.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  POLYGON_RPC_ENDPOINTS: https://polygon.drpc.org,https://tenderly.rpc.polygon.community,https://polygon.publicnode.com,https://polygon.api.onfinality.io/public,https://1rpc.io/matic
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install decoder
+        run: pip install 'web3>=7,<8'
+      - name: Decode frozen V1 BUY size mismatches
+        run: |
+          python scripts/ic03_v1_size_semantics.py \
+            --signed-tape data/ic03_signed_tape.csv.gz \
+            --out ic03_size_output
+      - name: Publish results
+        if: always()
+        run: |
+          test -f ic03_size_output/ic03_v1_size_semantics.csv && cp ic03_size_output/ic03_v1_size_semantics.csv registry/ic03_v1_size_semantics.csv || true
+          test -f ic03_size_output/ic03_v1_size_summary.json && cp ic03_size_output/ic03_v1_size_summary.json registry/ic03_v1_size_summary.json || true
+      - name: Upload provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ic03-v1-size-semantics
+          path: ic03_size_output/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for f in registry/ic03_v1_size_semantics.csv registry/ic03_v1_size_summary.json; do test -f "$f" && git add "$f"; done
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: record IC-03 V1 size semantics audit'
+            git push
+          fi
