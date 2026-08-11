@@ -1,44 +1,50 @@
 # ARGOS — Event Universe Information-Asymmetry Audit
 
 **Wave:** 1C  
-**Status:** `IN_PROGRESS_EUAS_V1_1_FROZEN_CENSUS_RUNNING`  
-**Boundary:** evaluates ex-ante suitability of event families and future research design; it does not re-score H2 on a new subgroup or event family.
+**Status:** `PASS_W1C_EUAS_V1_1_RANKED_REPORT_SAFE`  
+**Boundary:** evaluates ex-ante suitability of event families and future research design; it does **not** re-score H2 on a new subgroup or event family and does not alter `FST-v1.0 / SF-v3.0`.
 
-Machine-readable inputs:
+Machine-readable evidence:
 - `registry/event_universe_scoring_protocol.json` (`EUAS-v1.1`);
-- `registry/event_universe_information_asymmetry_research_matrix.csv`.
+- `registry/event_universe_information_asymmetry_research_matrix.csv`;
+- `registry/wave1_event_universe_targeted_census_summary.csv`;
+- `registry/wave1_event_universe_manual_validation_queue_summary.json`;
+- `registry/wave1_event_universe_manual_validation_summary.json`;
+- `registry/event_universe_euas_score_assignments.csv`;
+- `registry/event_universe_euas_scores.csv`;
+- `registry/event_universe_euas_ranking.json`.
 
 ## 1. Audit question
 
-Was the earnings/EPS universe an ex-ante strong laboratory for the ARGOS mechanism, and which properties should define a prediction-market event universe when the economic thesis depends on **information asymmetry and cross-market information diffusion**?
+Was the earnings/EPS universe an ex-ante strong laboratory for the ARGOS mechanism, and which properties should define a future prediction-market event universe when the economic thesis depends on **information asymmetry and cross-market information diffusion**?
 
-## 2. Why this matters for scoring
+The answer after W1-C is **yes, earnings/EPS was a defensible and unusually strong joint laboratory among the families for which the audit established complete gate evidence**. This conclusion does not rescue H2: the frozen H2 result remains `FAIL_UNDER_FROZEN_EXP07I`.
+
+## 2. Why this matters for the report
 
 The report must explain not only **what was tested**, but **why that universe was economically plausible**.
 
-A clean, large and objectively resolved dataset can still be a weak laboratory for incremental information if the event is already heavily monitored and the prediction-market probability efficiently aggregates available signals.
+A clean, large and objectively resolved dataset can still be a weak laboratory for incremental information if the event is already heavily monitored and a prediction market efficiently aggregates public and heterogeneous signals. Conversely, a theoretically asymmetric event family is unusable for ARGOS if contracts appear too late, liquidity is sparse, the linked asset is ambiguous, resolution is subjective or sample size is inadequate for honest OOS evaluation.
 
-Conversely, a theoretically asymmetric event family is useless for ARGOS if no prediction market exists sufficiently before resolution, liquidity is too sparse, the linked asset is ambiguous, resolution is subjective or sample size is too small for honest OOS evaluation.
+The correct universe is therefore a multi-objective design problem rather than a retrospective search for whichever family backtests best.
 
-The correct universe is therefore a multi-objective design problem.
+## 3. EUAS-v1.1 — frozen before ranking
 
-## 3. EUAS-v1.1 — ex-ante scoring rule frozen before family scoring
+`EUAS-v1.0` froze dimensions, hard gates and weights. Before any family suitability score was calculated, `EUAS-v1.1` operationalized deterministic 0–5 anchors. Weights and candidate families did not change and no ARGOS family performance was read.
 
-EUAS-v1.0 froze dimensions, hard gates and weights. **Before any family score was calculated**, EUAS-v1.1 operationalized the 0–5 anchors. Weights and candidate families did not change and no ARGOS performance was read.
+### Hard viability gates
 
-### Hard viability gates — each dimension 0–5
-
-| Dimension | Minimum | Reason |
+| Dimension | Minimum | Requirement |
 |---|---:|---|
-| Ex-Ante Contractability `C` | 2 | PM signal must exist before resolution/news |
-| Prediction-Market Observability `P` | 2 | PIT price/trade data must be reproducible |
-| Linked-Asset Sensitivity `I` | 3 | financial transmission target must be defensible |
-| Resolution Objectivity `R` | 3 | outcome must be independently auditable |
-| Sampleability `S` | 2 | repeated events are needed for OOS inference |
+| Ex-Ante Contractability `C` | 2 | PM signal exists before resolution/material news |
+| PM Observability `P` | 2 | historical PIT data surface is reproducible |
+| Linked-Asset Sensitivity `I` | 3 | defensible tradeable transmission target |
+| Resolution Objectivity `R` | 3 | independently auditable outcome |
+| Sampleability `S` | 2 | repeated events for honest OOS inference |
 
-### Score among gate survivors
+### Weighted survivor score
 
-| Positive dimension | Weight |
+| Dimension | Weight |
 |---|---:|
 | Information Asymmetry Potential `A` | 30% |
 | Cross-Market Timing Opportunity `T` | 20% |
@@ -48,138 +54,167 @@ EUAS-v1.0 froze dimensions, hard gates and weights. **Before any family score wa
 | Resolution Objectivity `R` | 5% |
 | PM Observability `P` | 5% |
 
-Penalties, each 0–10 points:
-- Public Information Saturation `PIS`;
-- Selection / Contract-Creation Bias `SCB`;
-- Data / Execution Friction `DEF`.
+Penalties subtract 0–10 points each for public-information saturation `PIS`, selection/contract-creation bias `SCB`, and data/execution friction `DEF`.
 
-The full deterministic anchors are in the registry. Importantly, **classifier-discovered market counts cannot themselves satisfy gates**; C/L/S require manual validation of independent event families.
-
-No realized ARGOS performance is an input to EUAS.
+Crucially, **raw classifier counts cannot satisfy `C/L/S` gates**. Count anchors require semantic review of independent events. Low discovery counts also cannot prove absence or gate failure because the targeted title-search route is a lower-bound discovery instrument.
 
 ## 4. Tested laboratory: earnings/EPS
 
-### Structural strengths already demonstrated by ARGOS
+ARGOS had already demonstrated unusually strong structural properties before this audit:
 
 - 117 event contracts in the frozen panel;
-- objective binary threshold semantics;
-- company/ticker linkage auditable;
 - safe daily PIT cutoffs 117/117;
 - pre-cutoff tape and dense probability trajectories 115/117;
-- independent official EPS reconstruction 116/117, with 116/116 validated matches;
-- repeated event structure supporting walk-forward evaluation;
-- direct listed-equity mapping.
+- objective binary threshold semantics;
+- direct company/ticker and listed-equity mapping;
+- independent official EPS reconstruction 116/117 with 116/116 validated matches;
+- repeated event structure supporting walk-forward evaluation.
 
-These properties make earnings/EPS an unusually strong **sampleability, resolution and reproducibility laboratory**.
+The primary-literature pass also rejects the simplistic explanation that earnings is merely a low-asymmetry environment. Direct 2026 Polymarket research reports concentrated informed trading in earnings markets, while broader corporate-announcement research documents pre-announcement information incorporation. Other work indicates that prediction-market probabilities themselves can already be strong aggregators.
 
-### Primary evidence: earnings is not a trivial low-asymmetry environment
+Therefore the correct interpretation of H2 is not “earnings had no information.” The frozen result says the tested movement representation did not add demonstrable incremental value beyond the already informative aggregate PM probability.
 
-The literature pass rejects a simplistic explanation that earnings was merely a weak universe:
+## 5. Performance-blind contract discovery
 
-- Wolfers & Zitzewitz (`NBER w10504`) show the general mechanism by which prediction markets aggregate dispersed information. This makes **incremental value over M2** the correct hard question.
-- Cheong & Tamayo (`SSRN 6685139`, 2026) study Polymarket earnings directly and report prediction accuracy concentrated among a small number of large traders.
-- Rabetti, Shao & Zhang (`SSRN 6649938`, 2026) report strong earnings forecasting by Polymarket in their own dataset. ARGOS does not import their sell-side comparison, but their result reinforces the possibility that aggregate PM probability is already a difficult benchmark.
-- Brennan, Huh & Subrahmanyam (`RFS`, DOI `10.1093/rfs/hhy005`) document pre-announcement informed-trading patterns around earnings and other corporate announcements.
-- Demers & Vega (`FRB IFDP 2008-951`) show that earnings announcements also contain softer information whose interpretation and post-announcement response vary with the information environment.
+### 5.1 Broad population crawl
 
-Therefore W1-C is not asking **whether earnings contains information asymmetry at all**. It asks whether another family dominates earnings on the **joint** criteria of asymmetry, PM lead time, liquidity, asset sensitivity, resolution and repeated sample size.
+The broad Gamma `/events/keyset?closed=true` census was deliberately fail-closed. The closed-event universe exceeded the pagination safety ceiling while the cursor remained active, reaching well above 200,000 distinct events during the audit. No truncated broad census was published or treated as population-complete evidence.
 
-## 5. Candidate-family evidence
+This engineering result changed the discovery strategy, **not the scientific protocol**: EUAS dimensions, families, weights and performance firewall remained frozen.
 
-### M&A announcement
+### 5.2 Frozen-query targeted census
 
-Lowry, Rossi & Zhu (`RFS`, DOI `10.1093/rfs/hhy072`) report significant advisor-bank options trading ahead of merger announcements. The asymmetry mechanism is strong.
+A complementary targeted census used only pre-frozen family queries against the official Gamma API and read no ARGOS outcomes, linked-asset returns, Brier/log loss or P&L. Its outputs were successfully materialized after the workflow commit/push issue was fixed.
 
-ARGOS feasibility risk: prediction-market contracts may be created **after** a rumor/news item already exposes the opportunity. This can make `SCB` high even when `A` is high.
+Raw lower-bound candidate counts were:
 
-### M&A deal completion / regulatory clearance
+| Family | Raw lower bound | Median lead | Median lifetime volume |
+|---|---:|---:|---:|
+| Earnings/EPS | 1,460 | 12.0 d | $7.5k |
+| FDA approval/advisory | 65 | 20.0 d | $5.9k |
+| M&A completion/clearance | 16 | 145.7 d | $60.1k |
+| M&A announcement/rumor | 56 | 76.6 d | $37.8k |
+| Antitrust/regulatory | 36 | 40.0 d | $36.9k |
+| Litigation/court | 63 | 101.5 d | $59.0k |
+| Macro/Fed/CPI | 268 | 29.0 d | $49.4k |
 
-Giglio & Shue (`RFS`, DOI `10.1093/rfs/hhu052`) show that after a merger announcement, elapsed time itself contains information about eventual completion and predicts returns. Deal-completion uncertainty is therefore more naturally ex-ante contractable than a secret acquisition announcement, with a particularly clear target-equity payoff mapping.
+These counts are explicitly `LOWER_BOUND_DISCOVERY_ONLY` and were **not** used directly to pass EUAS gates.
 
-Historical PM breadth/liquidity remains a census question.
+## 6. Semantic validation and contamination control
 
-### FDA approval / advisory
+Inspection found substantial cross-family contamination when a query-discovered event was reclassified globally from text in long descriptions. Examples included generic DOJ material leaking into antitrust, court/election material leaking into litigation, and unrelated descriptions leaking into M&A or macro.
 
-Wu, Borochin & Golec (`Journal of Corporate Finance`, DOI `10.1016/j.jcorpfin.2023.102495`) document abnormal options trading ahead of FDA advisory meetings and a mechanism involving technical reports not yet public when shared with experts.
+A query-consistency queue removed 88 cross-family rows before review, reducing 1,964 raw classified rows to 1,876 family-consistent candidates. This was only a cleaning layer, not validation.
 
-This is a strong theoretical ARGOS environment because outcomes can be discrete and single-name impacts concentrated. The open issue is repeated historical PM coverage/liquidity.
+The subsequent performance-blind semantic review used family meaning, independent Gamma event identity, positive ex-ante lead and lifetime-volume thresholds only. It explicitly excluded ARGOS performance, linked-asset returns, Brier/log loss and P&L.
 
-### Antitrust / regulatory
+Validated lower-bound anchors:
 
-Primary event-study evidence shows major antitrust/court decisions can materially reprice affected companies. This supports `I`, but it does not yet prove recurring prediction-market contractability or a large standardized sample. The family remains **mechanistically relevant but feasibility-unproven** pending census/manual validation.
+| Family | Valid independent lower bound | `C` | `L` | `S` | Interpretation |
+|---|---:|---:|---:|---:|---|
+| FDA approval/advisory | 50 | 4 | 2 | 4 | recurrent and sampleable; liquidity heterogeneous |
+| Macro/Fed/CPI | 50 | 4 | 4 | 4 | recurrent, liquid and strongly sampleable |
+| M&A announcement/rumor | 25 | 3 | 2 | 3 | viable sample, but selection bias remains important |
+| Litigation/court | 10 | 2 | 2 | 2 | minimum sampleability established |
+| M&A completion/clearance | 3 | — | — | — | positive evidence, but discovery insufficient for count anchors |
+| Antitrust/regulatory | 6 | — | — | — | positive evidence, but discovery insufficient for count anchors |
 
-### Litigation / court
+A dash means **not established**, not zero and not a failed family.
 
-Legal event-study literature documents economically meaningful firm-value effects around corporate litigation filings, settlements and some court decisions. This supports possible linked-asset sensitivity, while also highlighting a major ARGOS difficulty: legal cases vary materially in timing, resolution semantics and asset mapping. `R`, `S` and `SCB` must therefore be assessed case-by-case before treating “legal” as a coherent universe.
+Earnings was not re-reviewed through this targeted sample because its authoritative frozen ARGOS panel already establishes 117 contracts plus independent PIT/resolution evidence.
 
-### Macro / Fed / CPI
+## 7. Frozen score assignments
 
-Federal Reserve research documents both strong asset-price reactions around FOMC decisions and evidence of pre-announcement informed positioning/order flow. Macro therefore has a real information-heterogeneity mechanism and excellent PM contractability/liquidity.
+After count validation, but **before running the ranking**, family assignments for `A/C/P/L/I/R/S/T` and penalties were committed separately. This makes the ranking a mechanical consequence of `EUAS-v1.1` rather than a score-tuning exercise.
 
-Its principal ARGOS trade-off is different: the linked asset is often a broad rates/index/factor exposure rather than a clean single-name stock. Macro may score highly on `C/L/S/R` but lower than corporate binary events on `I` for the current equity-centered architecture.
+Key economic distinctions were kept explicit:
 
-## 6. Current candidate set — still no ranking
+- **Earnings:** direct same-family PM information-heterogeneity evidence, strong reproducibility, direct single-name mapping, but high public-information saturation.
+- **Macro:** excellent contractability/liquidity/resolution, but maximal public-information saturation and a more diffuse rates/index asset architecture.
+- **FDA:** strong single-name sensitivity and good sampleability, but thinner/heterogeneous PM liquidity and higher data-friction.
+- **M&A announcement:** strong asymmetry mechanism, but severe rumor/contract-creation selection bias.
+- **M&A completion:** highest linked-asset score (`I=5`) because merger-spread completion is close to a mechanical payoff mapping, but `C/L/S` are not yet established by discovery.
+- **Litigation:** the broad frozen family fails the linked-asset gate (`I=2`) because many legal events lack a consistent tradeable asset; this does not rule out a narrower future corporate-litigation family.
 
-| Family | Mechanism evidence | PM feasibility | Current audit state |
-|---|---|---|---|
-| Earnings/EPS | **strong, including direct PM evidence** | proven strong in ARGOS panel | STRONG BASELINE / NEEDS EUAS SCORE |
-| M&A completion / clearance | **strong** | contract form exists; historical breadth pending | PROMISING / PENDING CENSUS |
-| M&A announcement / rumor | **strong** | potentially severe contract-creation bias | HIGH A / HIGH SCB RISK |
-| FDA approval / advisory | **strong** | contract form exists; breadth/liquidity unresolved | PROMISING / LIQUIDITY-SAMPLE RISK |
-| Antitrust / regulatory | moderate-strong asset-impact evidence | pending | FEASIBILITY UNPROVEN |
-| Litigation / court | moderate-strong asset-impact evidence | heterogeneous | FEASIBILITY / STANDARDIZATION RISK |
-| Macro / Fed / CPI | strong macro information/timing evidence | visibly strong recurring PM markets | HIGH CONTRACTABILITY / DIFFUSE-ASSET TRADE-OFF |
-| Other corporate binary | open | systematic census required | OPEN |
+## 8. Final EUAS-v1.1 ranking
 
-These are **not rankings**. Family scoring occurs only after EUAS-v1.1 evidence fields are populated.
+Only families with complete gate evidence are ranked:
 
-## 7. Performance-blind historical PM census
+| Rank | Family | Positive score | Penalties | EUAS composite |
+|---:|---|---:|---:|---:|
+| **1** | **Earnings/EPS** | 82 | 10 | **72** |
+| **2** | Macro/Fed/CPI | 62 | 12 | **50** |
+| **3** | FDA approval/advisory | 58 | 11 | **47** |
+| **4** | M&A announcement/rumor | 62 | 15 | **47** |
 
-A reproducible Gamma API census was started to measure only:
-- historical candidate contract count;
-- contract open/end lead time;
-- lifetime volume distribution;
-- repeated-event density.
+FDA wins the 47-point tie through the pre-frozen tie-breakers: higher sampleability precedes liquidity, resolution and lower data friction.
 
-The script reads **no ARGOS outcome, linked-asset return, Brier/log loss or P&L**.
+Not ranked:
+- **M&A completion / regulatory clearance:** gate evidence incomplete (`C/S` not established); **not a fail**.
+- **Antitrust / regulatory:** gate evidence incomplete (`C/S` not established); **not a fail**.
+- **Litigation / court:** fails the broad-family linked-asset gate with `I=2 < 3`.
 
-First run `31524163459` failed closed after retrieving 30,000 distinct closed events because the pagination safety guard was reached while a cursor remained. **No truncated output was published.**
+### Robustness of the leader
 
-A second run `31524477588` changes only the engineering pagination ceiling. The text classifier, event-family definitions and EUAS weights remain unchanged.
+A one-at-a-time sensitivity check perturbed every eligible family assignment cell by ±1 anchor point where bounds allowed. Across **81 scenarios**, earnings remained the leader in **81/81**. No single one-point judgment change overturns the principal conclusion.
 
-Classifier counts are discovery evidence only; family samples must be manually validated before satisfying C/L/S gates.
+This is a sensitivity analysis of the EUAS research-design judgment, not a statistical confidence interval and not an ARGOS performance test.
 
-## 8. Report-safe interpretation under current evidence
+## 9. What the ranking means
 
-Current report-safe wording is already stronger than “earnings was convenient”:
+### Submitted universe
 
-> **Earnings/EPS foi escolhido como primeiro laboratório escalável porque combinava contratos repetidos, resolução objetiva, ligação direta com ações e dados point-in-time reproduzíveis. Evidência externa também sustenta heterogeneidade informacional nesse ambiente. O resultado negativo de H2, portanto, não deve ser descartado como teste de um universo trivial; ele mostra que a representação congelada de movimentos não acrescentou valor a uma probabilidade agregada já informativa.**
+**Earnings/EPS was not merely convenient.** Under a framework frozen before family ranking, it is the strongest demonstrated joint laboratory among families whose hard-gate evidence is complete. This strengthens the ex-ante rationale for the submitted universe while preserving the negative H2 result.
 
-What remains open is whether M&A completion, FDA or another family offers a superior **next-generation** joint EUAS profile.
+### Highest-ranked alternative
 
-## 9. What this audit cannot do
+**Macro/Fed/CPI** is the strongest fully evidenced alternative because its PM contracts are recurring, liquid, sampleable and objectively resolved. It is not an automatic ARGOS replacement: a future macro implementation should explicitly redesign the linked-asset layer around rates/index instruments, and the event family is maximally saturated by public forecasts.
+
+### Preferred equity-centered extension
+
+**FDA approval/advisory** is the preferred fully evidenced next preregistered family if ARGOS keeps direct single-name equity transmission. It combines `I4`, `C4` and `S4`; its primary weaknesses are liquidity heterogeneity and data/execution friction.
+
+### Highest-priority discovery family
+
+**M&A completion / regulatory clearance** deserves the highest priority for further performance-blind data discovery because its `I5` merger-spread linkage is economically exceptional. It is deliberately not promoted until repeated contractability/sampleability are demonstrated.
+
+## 10. Report-safe conclusion
+
+> **Earnings/EPS foi escolhido como primeiro laboratório escalável porque combinava contratos repetidos, resolução objetiva, ligação direta com ações e dados point-in-time reproduzíveis. Evidência externa também sustenta heterogeneidade informacional nesse ambiente. Em uma comparação ex-ante performance-blind com famílias alternativas, earnings permaneceu o laboratório conjunto mais forte entre aquelas com evidência completa de viabilidade. Assim, o resultado negativo de H2 é informativo: a representação congelada de movimentos não acrescentou valor demonstrável a uma probabilidade agregada já informativa, e não pode ser descartada como um teste feito em um universo obviamente inadequado.**
+
+Future-work sentence:
+
+> **Uma próxima geração deve pré-registrar FDA como extensão preferencial se a arquitetura continuar centrada em ações individuais; macro exige uma arquitetura explícita de rates/índices; e M&A completion deve primeiro passar por uma expansão performance-blind da descoberta de contratos antes de ser promovido.**
+
+## 11. What this audit cannot do
 
 It cannot:
 - claim H2 failed because earnings is “too efficient”;
-- rerun H2 on low-coverage/small-cap/high-surprise earnings subgroups;
-- choose M&A/FDA because a retrospective ARGOS backtest looks profitable;
+- rerun H2 on favorable earnings subgroups;
+- choose a family because a retrospective ARGOS backtest is profitable;
 - replace the frozen earnings result;
-- infer insider trading/illegality from ARGOS features;
+- infer insider trading or illegality from market behavior;
+- treat a low targeted-discovery count as proof that a family is absent or unviable;
 - import external-paper performance as if ARGOS reproduced it.
 
-## 10. Exit criteria
+## 12. Exit criteria
 
-- [x] dimensions and weights frozen;
+- [x] dimensions, hard gates and weights frozen;
 - [x] 0–5 anchors operationalized before family scoring (`EUAS-v1.1`);
 - [x] primary evidence for earnings, M&A, FDA, legal/regulatory and macro mechanisms;
-- [x] performance-blind Gamma census protocol implemented with fail-closed behavior;
-- [ ] complete census execution and raw artifact preservation;
-- [ ] manual validation of family samples discovered by classifier;
-- [ ] C/L/S and other EUAS dimensions populated;
-- [ ] EUAS ranking/classification produced without protocol changes;
-- [ ] final future-universe recommendation separated from submitted empirical evidence;
-- [ ] no post-hoc H2 subgroup rescue.
+- [x] performance-blind Gamma discovery implemented with fail-closed broad-crawl behavior;
+- [x] frozen-query targeted census fully executed and materialized;
+- [x] cross-family classifier contamination isolated before semantic review;
+- [x] manual lower-bound validation of candidate families completed;
+- [x] `C/L/S` evidence anchors populated where demonstrable;
+- [x] non-count EUAS dimensions and penalties frozen before ranking;
+- [x] EUAS ranking computed mechanically without protocol changes;
+- [x] leader sensitivity audit completed (81/81 retains earnings);
+- [x] final future-universe recommendation separated from submitted empirical evidence;
+- [x] no post-hoc H2 subgroup rescue.
 
-## 11. Preliminary conclusion
+## 13. W1-C verdict
 
-The audit now supports a more defensible thesis framing: **earnings/EPS is a legitimate, information-heterogeneous and unusually scalable first laboratory, not necessarily the universally optimal ARGOS universe.** M&A completion and FDA remain especially compelling on economic mechanism; macro is especially compelling on contractability/liquidity but has a more diffuse asset mapping. The performance-blind census will determine which of those mechanisms are actually sampleable enough to recommend for a next preregistered generation.
+`PASS_W1C_EUAS_V1_1_RANKED_REPORT_SAFE`
+
+The W1-C audit closes the remaining Strategy Concept / Conclusion-and-Next-Steps research-design risk. Wave 1 can now transition to the **ARGOS investment-thesis/report-framing freeze** using the frozen scientific truth plus this report-only, performance-blind evidence layer.
