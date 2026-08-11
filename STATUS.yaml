@@ -17,11 +17,11 @@ champions:
   economic: C0_NO_TRADE
 hypotheses:
   H1: SUPPORTED_IN_TESTED_SAMPLE
-  H2: PENDING
-  H3: BLOCKED_BY_H2
-  H4: BLOCKED_BY_H2
+  H2: FAIL_UNDER_FROZEN_EXP07I
+  H3: BLOCKED_BY_H2_FAIL_NO_RESCUE
+  H4: BLOCKED_BY_H2_FAIL
   H5: BLOCKED_BY_H4
-current_phase: ART030_EXP07I_H2_EXECUTION
+current_phase: POST_H2_FAIL_SCIENTIFIC_CLOSEOUT
 implementation_audit: COMPLETE_PASS_A_AND_PASS_B_OUTCOME_BLIND
 information_completeness_gate: PASS_INFORMATION_COMPLETENESS_GATE
 information_completeness:
@@ -238,6 +238,39 @@ art029_exp07i_protocol_freeze:
   evaluation_schedule_path: registry/art029_evaluation_schedule.csv
   manifest_path: registry/art029_freeze_manifest.json
   report_path: docs/25_art029_exp07i_h2_protocol_freeze.md
+art030_exp07i_h2_execution:
+  status: FAIL_H2
+  protocol_version: EXP07I-H2-FREEZE-v1.0
+  protocol_sha256: fcbf7121ae3fe47328b9e06b9f974d01cb5c94bb9760f717b25c64ab839b43c1
+  scored_events: 75
+  scored_date_clusters: 54
+  target_reconstructed: 117/117
+  target_yes: 88
+  target_no: 29
+  primary_comparator: M2_CAL
+  primary_candidate: M_MOVE_CORE
+  m2_raw_brier: 0.13954701
+  m2_cal_brier: 0.14502650803435788
+  m_move_core_brier: 0.1620974987486428
+  m2_raw_log_loss: 0.4302918261840308
+  m2_cal_log_loss: 0.45400185611709
+  m_move_core_log_loss: 0.5403842574211747
+  brier_increment_vs_m2_cal: -0.017070990714284907
+  brier_ci95: [-0.04910144519317386, 0.012816462700925006]
+  logloss_increment_vs_m2_cal: -0.08638240130408478
+  logloss_ci95: [-0.21447850973675447, 0.025206964277829834]
+  raw_m2_brier_guard: -0.02255048874864278
+  raw_m2_logloss_guard: -0.11009243123714373
+  temporal_positive_brier_terciles: 0/3
+  matrix_profile_challenger_promoted: false
+  stop_rule_active: true
+  h3: BLOCKED_NO_RESCUE
+  h4: BLOCKED
+  h5: BLOCKED
+  predictions_sha256: 6033ab864ed0576092828cab3d3ebf15e039133c6e5efb2f29e6d45401065de2
+  outcomes_sha256: 11fdfccfbec4a9d6ac4aa523b17a120b6719db8cb290d206fd63461ffaed7158
+  summary_path: registry/art030_summary.json
+  report_path: docs/26_art030_exp07i_h2_execution.md
 critical_path:
   - INFO_COMPLETENESS_MAP_COMPLETED
   - IC02_TRADE_TAPE_COMPLETED_WITH_LIMITATIONS
@@ -251,9 +284,9 @@ critical_path:
   - CROSS_STRATEGY_IMPLEMENTATION_AUDIT_PASS_B_REDUNDANCY_COMPLETED
   - ART-028_MOVEMENT_DATA_FEASIBILITY_COMPLETED
   - ART-029_EXP07I_PROTOCOL_FREEZE_COMPLETED
-  - ART-030_EXP07I_H2
-  - H4_CROSS_MARKET_TRANSMISSION_IF_H2_PASS
-  - H5_ECONOMIC_RULE_IF_H4_PASS
+  - ART-030_EXP07I_H2_COMPLETED_FAIL
+  - H2_STOP_RULE_ACTIVE_NO_H3_RESCUE_NO_H4_NO_H5
+  - POST_H2_FAIL_SCIENTIFIC_CLOSEOUT
 report:
   format: PDF
   max_pages: 5
@@ -262,13 +295,12 @@ report:
   anonymous: true
   target_words: 580
 blockers:
-  - ART030_EXP07I_H2_NOT_EXECUTED
   - ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY
   - ART025_STALE_DRIVE_ID_IN_SR_V3
-  - H2_NOT_EXECUTED
   - 66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED
   - GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC
 limitations:
+  - H2_FAIL_STOP_RULE_ACTIVE_NO_POST_HOC_RESCUE_H3_H4_H5_BLOCKED
   - OUTCOMES_NOW_AUTHORIZED_ONLY_FOR_FROZEN_ART030_EXP07I_PROTOCOL
   - TRADE_TAPE_AND_DENSE_PRICE_PRE_CUTOFF_STRUCTURALLY_UNAVAILABLE_FOR_ANF_2026_05_27_AND_BRZE_2026_05_27
   - DATA_API_SIZE_IS_NONCANONICAL_FOR_569_V1_FEE_MODULE_BUY_ROWS_USE_ONCHAIN_GROSS_AND_COLLATERAL_INSTEAD
