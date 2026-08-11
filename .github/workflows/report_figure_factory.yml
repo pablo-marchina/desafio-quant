@@ -1,0 +1,83 @@
+name: ARGOS Final Figure Factory
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/report_figure_factory.py'
+      - 'registry/argos_visual_identity_freeze.json'
+      - 'registry/report_figure_inputs.csv'
+      - '.github/workflows/report_figure_factory.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Render deterministic SVG figures
+        run: python scripts/report_figure_factory.py
+
+      - name: Validate figure factory boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out = Path('report/figures')
+          expected = [
+              'argos_mark.svg',
+              'fig01_strategy_pipeline.svg',
+              'fig02_model_reduction.svg',
+              'fig03_h2_results.svg',
+              'fig04_economic_backtest.svg',
+              'fig05_genai_future.svg',
+          ]
+          manifest = json.loads((out / 'manifest.json').read_text())
+          assert manifest['status'] == 'PASS_FIGURES_GENERATED_FROM_FROZEN_INPUTS'
+          assert manifest['scientific_reopen'] is False
+          assert set(manifest['outputs']) == set(expected)
+          forbidden = ['github.com/pablo-marchina', 'Pablo Marchina', 'Inteli']
+          for name in expected:
+              text = (out / name).read_text(encoding='utf-8')
+              assert 'viewBox="0 0 1600 900"' in text
+              assert '<svg ' in text and '</svg>' in text
+              assert all(token not in text for token in forbidden)
+          h2 = (out / 'fig03_h2_results.svg').read_text(encoding='utf-8')
+          assert '0.1450' in h2 and '0.1621' in h2
+          assert '0.4540' in h2 and '0.5404' in h2
+          assert 'STOP RULE ATIVADO' in h2
+          econ = (out / 'fig04_economic_backtest.svg').read_text(encoding='utf-8')
+          assert 'C0_NO_TRADE' in econ and '−0,2050%' in econ
+          future = (out / 'fig05_genai_future.svg').read_text(encoding='utf-8')
+          assert 'NÃO É RESULTADO SUBMETIDO' in future and '81/81' in future
+          print('PASS_ARGOS_FINAL_FIGURE_FACTORY_BOUNDARY')
+          PY
+
+      - name: Upload figure bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: argos-final-figure-factory-${{ github.run_id }}
+          path: report/figures/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit rendered figures
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add report/figures/
+          if git diff --cached --quiet; then
+            echo 'No figure changes.'
+          else
+            git commit -m 'report: materialize frozen figure factory outputs'
+            git push origin HEAD:main
+          fi
