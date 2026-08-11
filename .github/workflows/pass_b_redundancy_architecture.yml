@@ -1,0 +1,48 @@
+name: Cross-Strategy Audit Pass B
+
+on:
+  push:
+    paths:
+      - 'scripts/pass_b_redundancy_architecture.py'
+      - 'registry/implementation_audit.csv'
+      - 'registry/pass_a_summary.json'
+      - 'data/ic03_audit_ready_tape.csv.gz'
+      - 'data/ic04_yes_probability_trajectory.csv.gz'
+      - '.github/workflows/pass_b_redundancy_architecture.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run Pass B
+        run: python scripts/pass_b_redundancy_architecture.py
+      - name: Validate Pass B outputs
+        run: |
+          python - <<'PY'
+          import csv,json
+          rows=list(csv.DictReader(open('registry/implementation_audit.csv',encoding='utf-8')))
+          assert len(rows)==69
+          assert all(r['final_status']!='PENDING_PASS_B' for r in rows)
+          assert all(r['pass_b_status'] for r in rows)
+          s=json.load(open('registry/pass_b_summary.json',encoding='utf-8'))
+          assert s['decision']=='PASS_B_COMPLETE_REDUNDANCY_ARCHITECTURE_OUTCOME_BLIND'
+          assert s['audited_rows']==69 and s['pass_b_input_rows']==59 and s['pending_after_pass_b']==0
+          assert s['outcomes_or_performance_read_by_script'] is False
+          assert len(s['h2_core_candidates'])>=5
+          PY
+      - name: Commit Pass B outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/implementation_audit.csv registry/pass_b_label_free_feature_matrix.csv registry/pass_b_feature_correlations.csv registry/pass_b_architecture.csv registry/pass_b_summary.json docs/23_cross_strategy_implementation_audit_pass_b.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit: complete redundancy architecture Pass B'
+          git push
