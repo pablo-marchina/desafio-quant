@@ -1,0 +1,28 @@
+{
+  "api_size_differs_from_canonical_gross_rows": 569,
+  "api_size_equals_canonical_gross_rows": 12183,
+  "api_size_policy": "retain as raw vendor field; never silently substitute for gross token volume in the 569 audited V1 FeeModule BUY rows",
+  "audit_ready_tape_sha256": "3563d3c1348a3cc78b13419f554195a306cc7f7ad70e330b4b3432c043f4ad96",
+  "canonical_direction_field": "side_canonical",
+  "canonical_notional_field": "collateral_notional_canonical",
+  "canonical_price_field": "price_canonical",
+  "canonical_volume_field": "token_amount_gross_canonical",
+  "decision": "PASS_IC03_AUDIT_READY_TAPE_WITH_DISCLOSED_API_SIZE_SEMANTICS",
+  "direction_status": "PASS_FULL_ONCHAIN_RECONCILIATION",
+  "era_matches": 12752,
+  "events_with_pre_cutoff_tape": 115,
+  "fee_module_mismatch_rows_semantically_audited": 569,
+  "fee_module_receive_matches_gross_rows": 569,
+  "frozen_events": 117,
+  "gross_minus_api_equals_two_times_fee_rows_descriptive": 568,
+  "no_pre_cutoff_tape_events": [
+    "ANF|2026-05-27",
+    "BRZE|2026-05-27"
+  ],
+  "price_matches": 12752,
+  "quantity_status": "PASS_CANONICAL_ONCHAIN_GROSS_AND_COLLATERAL",
+  "rows": 12752,
+  "side_matches": 12752,
+  "size_semantics_csv_sha256": "330857a8dec49b7467b65faeff8b3a9affc550067a4a9bbb2714ae114fdd5122",
+  "source_signed_tape_sha256": "34f52e64e165a83a953b41f099ca107af33939e7c38d31efcbc08b92ad042825"
+}
