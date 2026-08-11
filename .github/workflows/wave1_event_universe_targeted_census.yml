@@ -65,10 +65,8 @@ jobs:
             echo 'No targeted census changes.'
           else
             git commit -m 'wave1: materialize targeted event-universe census'
-            # csv.DictWriter emits CRLF by default while .gitattributes stores CSV as LF.
-            # The commit already contains the normalized bytes; reset the worktree-only
-            # newline differences before rebasing so git pull cannot fail as dirty.
-            git reset --hard HEAD
-            git pull --rebase origin main
-            git push
+            # The job starts from the push commit on main. Avoid rebasing a worktree
+            # whose generated CSV representation can differ only by line endings.
+            # A non-fast-forward push fails closed instead of silently rewriting history.
+            git push origin HEAD:main
           fi
