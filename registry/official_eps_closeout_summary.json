@@ -1,0 +1,35 @@
+{
+  "artifact": "POST_H2_FAIL_OFFICIAL_EPS_POPULATION_CLOSEOUT",
+  "decision": "PARTIAL_FAIL_CLOSED_RESIDUAL_1",
+  "historical_validated": 51,
+  "new_review_queue": 66,
+  "new_validated": 65,
+  "population_independent_validated": 116,
+  "population_total": 117,
+  "remaining_pending": 1,
+  "remaining_event_keys": ["BLSH|2025-09-17"],
+  "newly_compared_matches": 65,
+  "newly_compared_mismatches": 0,
+  "mismatch_event_keys": [],
+  "total_validated_matches_polymarket": 116,
+  "total_validated_mismatches": 0,
+  "selection_used_polymarket_outcome": false,
+  "strict_operator_preserved": true,
+  "h2_effect": "NO_CHANGE_FAIL_H2",
+  "target_integrity_interpretation": "No independently reconstructed target disagreement was found among 116 validated events. One Bullish event remains unresolved because the official release does not report an explicit contract-compatible non-GAAP EPS. The frozen ART-030 primary target remains the Polymarket contract resolution and the closeout cannot rescue or redefine H2.",
+  "operational_failure": {
+    "route": "GitHub Actions -> SEC submissions/archive",
+    "result": "HTTP_403_BEFORE_FIRST_EVENT",
+    "partial_data_promoted": false,
+    "disposition": "DISCLOSED_OPERATIONAL_FAILURE_NO_DATA_PROMOTED"
+  },
+  "validation_status_counts": {
+    "VALIDATED_OFFICIAL": 64,
+    "VALIDATED_DERIVED_OFFICIAL_RECONCILIATION": 1,
+    "AMBIGUOUS_NO_EXPLICIT_CONTRACT_METRIC": 1
+  },
+  "closeout_table_path": "registry/official_eps_closeout_66.csv",
+  "closeout_table_git_blob_sha": "f3491d1eec8afec0f99b35388fe3272410bda63b",
+  "source_policy": "Each reconstructed event uses the frozen contract metric/operator and an official issuer/SEC results document identified by accession. The Polymarket label is compared only after the EPS value is fixed.",
+  "residual_policy": "Do not derive Bullish adjusted EPS from adjusted net income and an assumed share denominator; keep BLSH unresolved until an explicit contract-compatible official per-share measure is found."
+}
