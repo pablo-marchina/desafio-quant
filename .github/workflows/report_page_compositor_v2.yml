@@ -1,0 +1,80 @@
+name: ARGOS Report Page Compositor v2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/report_page_compositor_v2.py'
+      - 'registry/adversarial_report_scoring_review_v1.json'
+      - 'registry/argos_visual_identity_freeze.json'
+      - 'report/figures/**'
+      - '.github/workflows/report_page_compositor_v2.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compose adversarially revised pages
+        run: python scripts/report_page_compositor_v2.py
+
+      - name: Validate v2 authoring fixes and anonymity
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out = Path('report/pages_v2')
+          manifest = json.loads((out / 'manifest.json').read_text())
+          assert manifest['status'] == 'PASS_ADVERSARIAL_AUTHORING_FIXES_MATERIALIZED'
+          assert manifest['scientific_reopen'] is False
+          expected = {
+              'fig01_strategy_pipeline.svg',
+              'fig02_model_reduction.svg',
+              'fig03_h2_results.svg',
+              'fig04_economic_backtest.svg',
+              'fig05_genai_future.svg',
+          }
+          assert set(manifest['outputs']) == expected
+          forbidden = ['github.com/pablo-marchina', 'Pablo Marchina', 'Inteli']
+          text = {name: (out / name).read_text(encoding='utf-8') for name in expected}
+          assert 'HIPÓTESE' in text['fig01_strategy_pipeline.svg']
+          assert 'não insiders' in text['fig01_strategy_pipeline.svg']
+          assert 'estado condicional' in text['fig02_model_reduction.svg']
+          assert 'H1 SUPORTADA' in text['fig03_h2_results.svg']
+          assert 'dados/CI reproduzíveis' in text['fig05_genai_future.svg']
+          assert 'auditoria outcome-blind de 69 técnicas' in text['fig05_genai_future.svg']
+          for name, body in text.items():
+              assert 'viewBox="0 0 1600 900"' in body
+              assert all(token not in body for token in forbidden)
+          print('PASS_ARGOS_REPORT_PAGE_COMPOSITOR_V2')
+          PY
+
+      - name: Upload v2 page bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: argos-report-pages-v2-${{ github.run_id }}
+          path: report/pages_v2/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit v2 pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add report/pages_v2/
+          if git diff --cached --quiet; then
+            echo 'No page changes.'
+          else
+            git commit -m 'report: materialize adversarially revised five-page build'
+            git push origin HEAD:main
+          fi
