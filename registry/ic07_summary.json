@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-08-11",
+  "decision": "PASS_CONTEXTUAL_DATA_AVAILABILITY_CLOSURE_WITH_EXPLICIT_DEFERRED_AND_UNAVAILABLE_INPUTS",
+  "scope": "Availability, PIT semantics, cost, historical reach and audit admissibility of contextual data only. No feature construction, outcome inspection, model fitting or predictive testing.",
+  "matrix_rows": 18,
+  "p0_h2_required_new_external_context_sources": 0,
+  "p0_h2_dependency_status": "NO_UNRESOLVED_CONTEXTUAL_DATA_DEPENDENCY",
+  "newly_closed_findings": {
+    "polymarket_user_activity": "RETRIEVABLE_FREE_PIT",
+    "polymarket_open_interest": "RECONSTRUCTABLE_FREE_PIT_NOT_MATERIALIZED",
+    "historical_holder_positions": "NO_DIRECT_RETRO_SNAPSHOT_SERIES_USE_TRADE_PARTICIPATION_INSTEAD_WHERE_DEFINITION_PERMITS",
+    "wallet_prior_skill": "RETRIEVABLE_FREE_METHOD_LIMITED_P1_ONLY",
+    "equity_intraday": "RETRIEVABLE_FREE_NOT_MATERIALIZED_MASSIVE_BASIC_2Y",
+    "historical_nbbo": "RETRIEVABLE_FREE_NOT_MATERIALIZED_MASSIVE_BASIC_2Y",
+    "fama_french_momentum": "RETRIEVABLE_FREE_VERSION_FREEZE_REQUIRED",
+    "sec_fundamentals": "RETRIEVABLE_FREE_PIT_SCHEMA_REQUIRED",
+    "macro_calendar": "RETRIEVABLE_FREE_OFFICIAL_BLS_BEA_FED",
+    "analyst_consensus": "UNAVAILABLE_REPRODUCIBLE_R0_KEEP_CLOSED",
+    "options_iv_flow": "LIMITED_FREE_RAW_OPTIONS_NOT_AUDIT_READY_DEFER_P2",
+    "short_interest": "RETRIEVABLE_FREE_OFFICIAL_PUBLICATION_TIMING_REQUIRED",
+    "short_sale_volume": "RETRIEVABLE_FREE_OFFICIAL_NOT_SHORT_INTEREST",
+    "borrow_fee_availability": "LIMITED_ACCOUNT_GATED_VENDOR_NOT_REQUIRED_DEPENDENCY",
+    "social_search_attention": "DEFER_NOT_REQUIRED_NO_APPROVED_SOURCE"
+  },
+  "audit_rules": [
+    "RETRIEVABLE does not mean materialized or feature-ready.",
+    "Current snapshots may not be substituted for historical PIT state.",
+    "No paid, account-gated or unreproducible source may become a required dependency of the frozen thesis.",
+    "Data unavailable for a technique becomes an explicit NO_GO/DEFER disposition rather than a proxy fabricated from another field.",
+    "Context features that are only relevant to H3/H4/H5 remain blocked by the thesis dependency gates even when their data is retrievable.",
+    "The 66-event independent official EPS reconstruction gap remains separate from IC-07 because realized EPS is an outcome audit, not a pre-event contextual signal input."
+  ],
+  "information_completeness_implication": "IC-07 removes CONTEXTUAL_DATA_AVAILABILITY_NOT_CLOSED. The project may proceed to the INFORMATION_COMPLETENESS_GATE, which must verify IC-02 through IC-07 jointly before the implementation audit is unpaused.",
+  "boundary": "This PASS classifies data availability. It does not approve any candidate technique, feature, model, H2 result, H3 interaction, H4 transmission test or H5 trading rule."
+}
