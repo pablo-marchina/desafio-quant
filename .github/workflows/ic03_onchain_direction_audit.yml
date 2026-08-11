@@ -8,6 +8,7 @@ on:
       - 'scripts/ic03_onchain_direction_audit_fast.py'
       - 'scripts/ic03_onchain_direction_audit_fast96.py'
       - 'scripts/ic03_onchain_direction_audit_bulk.py'
+      - 'scripts/ic03_onchain_direction_audit_health.py'
       - '.github/workflows/ic03_onchain_direction_audit.yml'
   workflow_dispatch:
 
@@ -47,7 +48,7 @@ jobs:
 
       - name: Reconcile 12,752 pre-cutoff trades against Polygon receipts
         run: |
-          python scripts/ic03_onchain_direction_audit_bulk.py \
+          python scripts/ic03_onchain_direction_audit_health.py \
             --ic02-dir ic02_input \
             --input registry/ic02_event_manifest.csv \
             --output-dir ic03_output
