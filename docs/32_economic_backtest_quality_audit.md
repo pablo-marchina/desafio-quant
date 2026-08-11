@@ -1,23 +1,26 @@
 # ARGOS — Economic Backtest Quality Audit
 
 **Wave:** 1B  
-**Status:** `IN_PROGRESS_AUTHORITATIVE_EVIDENCE_FOUND`  
-**Priority:** highest remaining score risk before report authoring.  
+**Decision:** `PASS_ECONOMIC_BACKTEST_QUALITY_FOR_REPORT_WITH_EVENT_LEVEL_PORTFOLIO_AGGREGATION_LIMITATION`  
 **Scientific boundary:** inventory and evaluate already executed rules/trades only; no new result-seeking strategy, subgroup, threshold or horizon.
+
+Machine-readable:
+- `registry/economic_backtest_quality_inventory.csv`;
+- `registry/economic_backtest_quality_summary.json`.
 
 ## 1. Audit question
 
 Does the existing project contain a sufficiently complete, point-in-time and economically interpretable historical simulation to earn the **Backtest** criterion, and which already-frozen metrics can be shown without converting a negative/diagnostic trial into a new post-hoc strategy?
 
-Machine-readable inventory: `registry/economic_backtest_quality_inventory.csv`.
+**Verdict: yes, with a specific limitation.** The project has strong event-level economic backtests with fixed entry/exit, costs, benchmark, sizing, multiplicity and promotion gates. What it does **not** have is a frozen financed-portfolio aggregation convention for overlapping positions; therefore the report should not invent a standard Sharpe/equity curve/max-drawdown interpretation after the fact.
 
 ## 2. Two backtest layers must remain distinct
 
-### Layer A — Informational backtest / forecasting validation
+### Layer A — Informational validation
 
 EXP-07I tests whether movement information adds predictive value beyond aggregate Polymarket probability.
 
-Strengths already frozen:
+Strengths:
 - 117-event universe; 115 with movement data;
 - 40-event warm-up;
 - expanding date-batched walk-forward;
@@ -25,180 +28,142 @@ Strengths already frozen:
 - 75 OOS scored events across 54 date clusters;
 - transforms fit on prior training data only;
 - no hyperparameter search;
-- proper scores: Brier + log loss;
+- Brier + log loss;
 - 20,000 paired cluster-bootstrap resamples;
 - pass/fail and stop rules frozen before outcomes;
 - H2 failed and no rescue was allowed.
 
-This is a **strong predictive backtest**, but it is not by itself a full capital P&L simulation.
+This is a **strong predictive backtest**, but it is not itself a capital P&L simulation.
 
-### Layer B — Economic translation / capital simulation
+### Layer B — Economic capital tests
 
-Earlier EXP-06 / EXP-06R attempted to translate fixed information rules into capital and maintained `C0_NO_TRADE` as the null economic policy.
+EXP-06 / EXP-06R separately attempted to translate fixed information rules into event-level equity exposure, always against `C0_NO_TRADE`.
 
-## 3. Authoritative EXP-06 evidence recovered
+## 3. EXP-06 / ART-023 — authoritative implementation
 
 Drive artifact: `ARGOS — ART-023 Resultados EXP-06 Tradução Econômica`  
 Drive ID: `1fNcVAW7OgqGrpAg_p9gbIoM6Y1fHgnuAIEvF80jvr6I`.
 
-The workbook contains:
-- `00_Resumo`;
-- `01_Metricas`;
-- `02_Promocao`;
-- `03_Auditoria`;
-- `04_Trades` — **796 rows / 33 columns**;
-- `05_Oportunidades`;
-- `06_Protocolo`.
+The workbook preserves **796 trade-level rows / 33 fields**, including signal timestamp, entry/exit date and adjusted prices, matched SPY prices, position, fixed cost, gross/net return and market-adjusted return.
 
-### Frozen economic protocol
-
-- objective: translate PIT Polymarket probabilities into pre-specified equity long/short/no-trade decisions without realized earnings outcomes or future prices in signal construction;
-- entry: **first available exchange-session open strictly after `observation_utc`**;
-- primary exit: **adjusted close of the first exchange session strictly after `company_event_date`**;
-- sizing: **equal notional per event trade; no leverage; no cross-event optimization**;
-- benchmark adjustment: SPY over matched dates;
+Frozen protocol:
+- entry: first exchange-session open strictly after `observation_utc`;
+- primary exit: adjusted close of the first exchange session strictly after `company_event_date`;
+- equal notional per event trade;
+- no leverage;
+- no cross-event optimization;
+- SPY matched-date benchmark;
 - long cost: **20 bps round trip**;
 - short cost: **35 bps round trip**;
-- primary metric: mean screening-net market-adjusted return per event trade;
-- multiplicity: **Holm correction** across eligible non-null candidate-horizon tests;
-- failure action was frozen: if no rule passes, `C0_NO_TRADE` remains champion.
-
-### Trade-level fields preserved
-
-The ART-023 `04_Trades` sheet includes, per candidate/event:
-- market/event/ticker/date;
-- signal horizon and observation timestamp;
-- entry date and adjusted open;
-- primary/sensitivity exit dates and adjusted closes;
-- matched SPY entry/exit values;
-- asset and SPY returns;
-- M2/M0/delta used by the fixed rule;
-- candidate ID and position;
-- cost rate;
-- raw gross/net return;
-- market-adjusted gross/net return;
-- sensitivity returns.
-
-This is sufficient in principle for **deterministic descriptive reconstruction of a fixed candidate path**, subject to overlap/portfolio-aggregation rules being stated before calculation.
-
-### EXP-06 result
+- Holm correction across eligible non-null candidate/horizon tests;
+- frozen failure action: if nobody passes, `C0_NO_TRADE` wins.
 
 Decision: `COMPLETED_NO_ECONOMIC_PROMOTION`.
 
-Examples at T−1:
-- `C1_DELTA_015_TWO_SIDED`: 112 opportunities / 63 trades; mean market-adjusted net per trade `-0.9207%`; CI crosses zero;
-- `C2_PM_080_050_TWO_SIDED`: 112 / 75; mean `-1.5870%`;
-- `C3_DELTA_015_LONG_ONLY`: 112 / 42; mean `-1.3217%`;
-- `C4_DELTA_015_SHORT_ONLY`: 112 / 21; mean `-0.1188%`;
-- `C5_DELTA_015_CONTRARIAN`: 112 / 63; mean `+0.3707%`, but CI crosses zero and promotion requirements failed.
+At T−1, for example:
+- C1: 112 opportunities / 63 trades, mean MA net per trade `−0.9207%`;
+- C2: 112 / 75, `−1.5870%`;
+- C3: 112 / 42, `−1.3217%`;
+- C4: 112 / 21, `−0.1188%`;
+- C5 contrarian: 112 / 63, point estimate `+0.3707%`, **but its CI crossed zero and the frozen conjunctive gate failed**.
 
-The positive contrarian point estimate cannot be used as a retrospective winner because the frozen conjunctive gate did not promote it.
+The positive C5 point estimate cannot be selected retrospectively as a winner.
 
-## 4. Authoritative EXP-06R evidence recovered
+## 4. EXP-06R / ART-024–025 — confirmatory economic reformulation
 
-Drive artifact: `ARGOS — ART-025 Resultados EXP-06R`  
-Drive ID: `16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA`.
+ART-024 froze R1 before ART-025 execution.
 
-The workbook contains summary, gates, primary comparison, all metrics, R1 sensitivities, R1-vs-B1, audit and protocol tabs.
+Primary R1 rule:
+- LONG when `delta >= 0.15` and the two-session market-adjusted equity reaction is positive;
+- SHORT when `delta <= -0.15` and the reaction is negative;
+- otherwise NO_TRADE.
 
-### Frozen EXP-06R protocol
-
-- primary horizon: T−1;
-- robustness horizon: T−3;
-- reaction: stock adjusted-close reaction minus matched SPY reaction;
-- entry: first available adjusted open strictly after the following session date;
-- primary exit: adjusted close after **10 trading sessions**, with frozen 5/20-session sensitivities;
+ART-025 protocol:
+- primary probabilistic horizon: T−1;
+- robustness: T−3;
+- entry: first adjusted open strictly after the following session date;
+- primary exit: 10 trading sessions;
+- frozen sensitivities: 5 and 20 sessions;
 - equal event notional; no leverage;
-- benchmark: SPY on identical entry/exit sessions;
-- long cost: **20 bps**;
-- short cost: **35 bps**;
-- primary metric: mean market-adjusted net return per eligible opportunity, including zero for no-trade;
-- Holm correction across the primary T−1/10-session non-null family;
-- frozen stop rule: if R1 fails, challengers cannot replace R1 and `C0_NO_TRADE` remains champion.
+- matched SPY benchmark;
+- 20 bps long / 35 bps short costs;
+- primary metric: market-adjusted net return per eligible opportunity, with zero for no-trade;
+- Holm multiplicity control;
+- frozen stop rule: if R1 fails, challengers cannot replace it.
 
-### Confirmatory R1 result
+### R1 T−1 / 10 sessions — primary result
 
-At T−1 / 10 sessions:
-- 108 eligible opportunities;
-- 34 trades (21 long / 13 short);
-- trade rate: 31.48%;
-- mean market-adjusted net return per opportunity: **−0.205034%**;
-- mean market-adjusted net return per executed trade: **−0.651283%**;
-- median trade return: **−0.544110%**;
-- hit rate: **41.18%**;
-- 95% opportunity-level CI: **[−0.971914%; +0.559016%]**;
-- one-sided p vs zero: ~0.688;
-- Holm-adjusted p: **1.0**.
+| Metric | Value |
+|---|---:|
+| Eligible opportunities | **108** |
+| Executed trades | **34** |
+| Long / Short | **21 / 13** |
+| Trade rate | **31.48%** |
+| MA net / opportunity | **−0.2050%** |
+| MA net / executed trade | **−0.6513%** |
+| Median trade | **−0.5441%** |
+| Hit rate | **41.18%** |
+| 95% CI / opportunity | **[−0.9719%; +0.5590%]** |
+| One-sided p | **0.688** |
+| Holm p | **1.0** |
 
-Frozen gates that failed included:
-- positive opportunity-weighted mean;
-- CI lower bound > 0;
-- Holm p < 0.05;
-- same positive sign at T−3;
-- 5-session downside-margin condition.
+The stored `max_additive_drawdown_opportunity` is `−56.73%`, but its semantics are an **additive ordered opportunity-path statistic**, not the maximum drawdown of a financed portfolio with overlapping-position capital accounting. It should not be relabeled as standard portfolio drawdown.
 
-R1 had positive incremental return versus B1, but the confirmatory gate was conjunctive; that isolated comparison was insufficient for promotion.
+R1 failed the frozen conjunctive gate. `C0_NO_TRADE` remained champion.
 
-### R3 discipline
+## 5. Why R3 does not rescue the backtest
 
-`R3_EXTREME_REACTION_REVERSAL_5PCT` was numerically positive in the diagnostic family, including T−1/10 sessions, but it uses post-event equity reaction rather than prediction-market information and has **no ARGOS thesis promotion authority**. It remains useful only as an example of a tempting result that the project refused to use as a rescue.
+R3 generated attractive diagnostic numbers in EXP-06R, but it is driven by post-event equity reaction and does not use prediction-market information as the source of the signal. Its role was frozen as secondary/diagnostic and it cannot replace R1 after execution.
 
-## 5. Updated quality assessment
+This is useful for scoring only as evidence of research discipline:
 
-| Dimension | Current assessment | Evidence / issue |
-|---|---|---|
-| Point-in-time discipline | STRONG | fixed observation/entry/exit rules and no realized outcome in signal construction |
-| Historical implementation detail | STRONG | ART-023 stores trade-level dates/prices/positions/costs/returns |
-| OOS / anti-leakage forecasting design | STRONG | expanding walk-forward + same-date batching in EXP-07I |
-| Selection / data-snooping control | STRONG | protocol freezes, trial ledgers, Holm, conjunctive gates, stop rules |
-| Benchmarking | STRONG | SPY matched-date adjustment + C0_NO_TRADE; M2 controls informationally |
-| Transaction-cost awareness | STRONG FOR SCREENING | fixed 20/35 bps; not observed execution/slippage |
-| Sizing | STRONG / SIMPLE | equal event notional, no leverage, no cross-event optimization |
-| Return path / equity curve | DERIVABLE FOR ART-023 | needs fixed aggregation convention before deterministic calculation |
-| Drawdown / volatility | DERIVABLE CONDITIONALLY | only after defining how overlapping event trades aggregate |
-| Exposure / turnover | DERIVABLE CONDITIONALLY | same overlap/portfolio convention issue |
-| Capacity / market impact | LIMITED | no historical full L2; do not claim capacity validation |
-| Final deployable ARGOS strategy | NOT SUPPORTED | H2 stop rule blocks H4/H5; economic tests did not promote a rule |
+> **Um resultado positivo não foi promovido porque não respondia à tese ARGOS.**
 
-## 6. Core scoring interpretation
+## 6. Final quality assessment
 
-The report should present **two layers** rather than forcing all evidence into one metric family:
+| Dimension | Verdict |
+|---|---|
+| Point-in-time entry/signal discipline | **STRONG** |
+| Entry/exit reproducibility | **STRONG** |
+| Explicit position mapping | **STRONG** |
+| Transaction costs | **STRONG FOR SCREENING** — fixed 20/35 bps, not realized slippage |
+| Benchmark | **STRONG** — matched SPY + C0 null |
+| Sizing | **STRONG / SIMPLE** — equal event notional, no leverage |
+| Selection / multiplicity control | **STRONG** — Holm + frozen gates + stop rules |
+| Trade-level auditability | **STRONG** — ART-023 796-row output |
+| Statistical uncertainty | **STRONG** — CIs/bootstrap/p-values where frozen |
+| Capacity / impact | **LIMITED** — no retro historical full L2 |
+| Financed portfolio Sharpe/equity curve | **NOT FROZEN / DO NOT INVENT** |
+| Final deployable long/short ARGOS strategy | **NOT SUPPORTED** |
 
-> **Backtest informacional:** existe informação incremental além de M2?  
-> **Backtest econômico:** regras fixas anteriores sobreviveram a custos e SPY?  
-> **Decisão de capital:** não. Nenhuma regra foi promovida; depois, H2 também falhou e bloqueou nova tradução econômica.
+## 7. Metrics recommended for the five-page report
 
-This is stronger and more truthful than presenting only Brier/log loss or pretending EXP-06R is the final H2 strategy.
+For the economic backtest, the most defensible compact set is:
 
-## 7. Permitted deterministic enrichment
+1. **108 opportunities / 34 trades (21L / 13S)**;
+2. **20 bps long / 35 bps short** frozen cost assumptions;
+3. **−0.205% market-adjusted net per opportunity**;
+4. **95% CI [−0.972%; +0.559%]**;
+5. **41.2% hit rate** or **Holm p=1.0** depending on available space;
+6. `C0_NO_TRADE` remained champion.
 
-ART-023 trade-level data appears sufficient to calculate, without changing any rule:
-- chronological cumulative net market-adjusted return of each exact frozen candidate;
-- fixed-rule max drawdown;
-- exposure/coverage;
-- distribution of executed returns;
-- gross-to-net cost drag;
-- long/short composition;
-- event concentration;
-- overlap of simultaneous positions.
+These metrics demonstrate actual capital-rule construction, costs, benchmark, sampling, uncertainty and decision without fabricating a portfolio statistic.
 
-Before computing portfolio-level return/volatility/Sharpe, the audit must freeze an **aggregation convention** (e.g. equal notional per active event with explicit capital accounting) that does not retrospectively optimize sizing. If the original experiment did not define portfolio aggregation, report event/opportunity metrics rather than inventing a deployable portfolio.
+## 8. What should not enter as a standard portfolio claim
 
-## 8. Remaining questions
+Do not report:
+- a newly constructed Sharpe from event returns as if it were the frozen strategy portfolio;
+- the additive event-path drawdown as standard portfolio max drawdown;
+- a retrospectively optimized equity curve or capital allocation for overlapping positions;
+- R3 as ARGOS alpha;
+- C5 as a winner because its point estimate happened to be positive.
 
-- [x] authoritative EXP-06 workbook located;
-- [x] EXP-06 trade-level outputs located;
-- [x] exact EXP-06 entry/exit/cost/sizing/benchmark protocol recovered;
-- [x] authoritative EXP-06R workbook located;
-- [x] exact EXP-06R entry/exit/cost/sizing/benchmark protocol recovered;
-- [x] confirmatory R1 gate outcomes recovered;
-- [ ] locate event-level R1 output if preserved outside the final ART-025 workbook;
-- [ ] inspect ART-023 overlap of simultaneous trades and determine whether a portfolio equity curve is unambiguous;
-- [ ] decide whether Sharpe/Sortino are statistically meaningful or whether event-level mean/CI/drawdown is stronger;
-- [ ] compute only approved deterministic descriptive metrics;
-- [ ] select 3–5 backtest metrics for the five-page report;
-- [ ] add display-safe metrics to the Wave-2 authoring evidence pack.
+## 9. Final scoring interpretation
 
-## 9. Preliminary conclusion
+The strongest truthful framing is:
 
-**Updated assessment:** the economic backtest is materially stronger than the consolidated narrative alone suggested. EXP-06 contains reproducible trade-level execution fields, fixed transaction costs, SPY adjustment, equal-notional sizing, multiplicity control and explicit promotion/no-trade gates. EXP-06R adds a confirmatory capital test with fixed holding horizons and conjunctive gates. The remaining risk is **portfolio-level presentation**, not absence of a backtest. Wave 1 should now determine which deterministic risk/path metrics are valid without inventing portfolio assumptions that were never part of the frozen experiment.
+> **O ARGOS foi testado em duas camadas. Primeiro, um walk-forward informacional verificou se o prediction market adicionava informação. Separadamente, regras econômicas fixas foram simuladas com entradas/saídas point-in-time, SPY, custos, sizing equal-notional e gates de promoção. As regras econômicas não passaram; depois, a camada confirmatória de movimentos também falhou. O sistema não procurou uma curva vencedora pós-hoc e preservou `C0_NO_TRADE`.**
+
+## 10. Final conclusion
+
+**PASS with limitation.** The project contains a rigorous and defensible event-level economic backtest for report purposes. The remaining limitation is not missing trading logic; it is the absence of a frozen financed-portfolio aggregation convention for overlapping positions. The score-maximizing response is to present the actual event/opportunity economics and uncertainty rather than inventing Sharpe or portfolio drawdown after results.
