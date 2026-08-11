@@ -1,0 +1,100 @@
+{
+  "artifact": "FINAL_SUBMISSION_MANIFEST",
+  "version": "FSM-v1.0",
+  "freeze_date": "2026-08-11",
+  "decision": "PASS_FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_WITH_DISCLOSED_EPS_RESIDUAL_1",
+  "authoritative_layers": {
+    "constitution": "ART-027_FREEZE_v1.0",
+    "thesis": "TF-v1.0",
+    "final_scientific_truth": "FST-v1.0",
+    "final_submission_freeze": "SF-v3.0",
+    "current_truth": "CT-v4.0",
+    "hypothesis_matrix": "HM-v4.0",
+    "source_registry": "SR-v3.0_FINAL_OVERLAY"
+  },
+  "github_artifacts": [
+    {
+      "path": "registry/final_scientific_truth.json",
+      "git_blob_sha": "0434cc9c3a03e5de822b84c59ecad7eafb046455"
+    },
+    {
+      "path": "registry/final_submission_answers_sf_v3.json",
+      "git_blob_sha": "8ae7447c1d4d5704e9f84d65a9c595d47ba72d0d"
+    },
+    {
+      "path": "registry/final_submission_claims.csv",
+      "git_blob_sha": "7d261f4742645fcb1c810722a71967d1d7f00987"
+    },
+    {
+      "path": "registry/final_submission_numbers.csv",
+      "git_blob_sha": "b9c3da41e59541059c824d1a5ad13667fbefb231"
+    },
+    {
+      "path": "docs/29_final_scientific_truth_submission_freeze.md",
+      "git_blob_sha": "ddda8584bb85d24cddc50b32388de3ebf1fa9f34"
+    },
+    {
+      "path": "registry/final_evidence_reconciliation_summary.json",
+      "git_blob_sha": "6062a03844550f41c791f321bbdb5be5e0b34c8e"
+    },
+    {
+      "path": "registry/official_eps_closeout_66.csv",
+      "git_blob_sha": "f3491d1eec8afec0f99b35388fe3272410bda63b"
+    },
+    {
+      "path": "registry/genai_usage_summary.json",
+      "git_blob_sha": "bc8ad541a510cd4862080dc565c476fdf8da184b"
+    }
+  ],
+  "google_drive_snapshots": {
+    "current_truth_ct_v4": {
+      "document_id": "1MRWhaYaVkEwBVJTWTWtwziK7qQtFOtxJsvabzUV5Msw",
+      "revision_id": "AIroW36kQxfl6U2tFklt6dqDwRs5c6kp2OKSdRCrCZsTjKK-AGkOsYoAj63LvjtG7qBngXBDWPfLBsTmiXlunVxm_E9rEPXLdm2HPvevmEw"
+    },
+    "source_registry_sr_v3": {
+      "document_id": "12dGCC306uEVNC62qU8nUKL_jT__WKSD1jhzBT-VHXHk",
+      "revision_id": "AIroW34ZR5Y9YF1AgUURluGk87rZ66FhuyfoorYzCiffOYqknrxBF_-NRpdA2QqCkBNfBpluwtHzRWlwq7nvCptjjaUbFwbBSZJVY4rhPwU"
+    },
+    "hypothesis_matrix_hm_v4": {
+      "spreadsheet_id": "1h1JAzYdqFurIP17_69c1ZWqcKI1NzrAbChi-DGLC8io",
+      "modified_time_utc": "2026-08-11T15:01:44.150Z",
+      "authoritative_tabs": ["12_Final_Scientific_Truth", "13_Freeze_Submissao_v3"],
+      "historical_tabs_preserved": "01-11"
+    }
+  },
+  "art030_lock": {
+    "decision": "FAIL_H2",
+    "protocol_version": "EXP07I-H2-FREEZE-v1.0",
+    "protocol_sha256": "fcbf7121ae3fe47328b9e06b9f974d01cb5c94bb9760f717b25c64ab839b43c1",
+    "predictions_sha256": "6033ab864ed0576092828cab3d3ebf15e039133c6e5efb2f29e6d45401065de2",
+    "outcomes_sha256": "11fdfccfbec4a9d6ac4aa523b17a120b6719db8cb290d206fd63461ffaed7158",
+    "post_hoc_rescue_permitted": false
+  },
+  "final_state": {
+    "H1": "SUPPORTED_IN_TESTED_SAMPLE",
+    "H2": "FAIL_UNDER_FROZEN_EXP07I",
+    "H3": "BLOCKED_BY_H2_FAIL_NO_RESCUE",
+    "H4": "BLOCKED_BY_H2_FAIL",
+    "H5": "BLOCKED_BY_H4",
+    "probabilistic_champion": "M2",
+    "economic_champion": "C0_NO_TRADE"
+  },
+  "eps_reconciliation": {
+    "independent_validation": "116/117",
+    "matches": "116/116",
+    "mismatches": 0,
+    "residual": "BLSH|2025-09-17",
+    "residual_is_submission_blocker": false,
+    "residual_is_material_limitation": true
+  },
+  "report_contract": {
+    "format": "PDF",
+    "max_pages": 5,
+    "aspect_ratio": "16:9",
+    "language": "pt-BR",
+    "anonymous": true,
+    "public_repository_url_in_submission": false
+  },
+  "authorized_next_phase": "FINAL_REPORT_AUTHORING_AND_QA",
+  "reopen_rule": "Factual/provenance correction only; no post-hoc experiment may change the submitted scientific truth."
+}
