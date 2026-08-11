@@ -1,0 +1,19 @@
+{
+  "audit_implication": "daily event alignment is fully available; BMO/AMC or exact-release-time techniques must be treated as insufficiently materialized for the broad frozen sample unless a new explicit timing collection is opened before the implementation audit.",
+  "daily_cutoff_calendar_violations": 0,
+  "daily_evidence_composition": {
+    "high_confidence_explicit_dateline": 80,
+    "preserved_official_ir_evidence": 1,
+    "same_day_validated_earnings_exhibit_medium_confidence": 36
+  },
+  "daily_safe_cutoff_verified": 117,
+  "daily_timing_source_artifact": "SEC Exhibit Release Resolver v1.1 independent cache-only audit described in ARGOS master dossier",
+  "decision": "PASS_DAILY_EVENT_TIMING_SESSION_TIMING_LIMITED",
+  "event_timing_csv_sha256": "eec51de1d3c253d74c04254d3219b7dd6846e811e676d037ba4a5504be9b0c7c",
+  "frozen_events": 117,
+  "legacy_intraday_identity_table_accessible_in_current_connectors": false,
+  "legacy_intraday_or_explicit_session_events_known": 8,
+  "release_session_policy": "UNKNOWN unless explicit timestamp/session evidence is materialized; never infer BMO/AMC from SEC acceptanceDateTime, event date, conference-call time, or the conservative prior-close daily cutoff.",
+  "release_session_populationally_materialized": 0,
+  "source_artifact_sha256": "36a8f379327c911533147c0bf6102278b95d3e41058702a0b941fc9bcaf6e49b"
+}
