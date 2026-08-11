@@ -1,0 +1,24 @@
+{
+  "artifact": "FINAL_SUBMISSION_FREEZE_VALIDATION",
+  "decision": "PASS_FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_WITH_DISCLOSED_EPS_RESIDUAL_1",
+  "fst_version": "FST-v1.0",
+  "sf_version": "SF-v3.0",
+  "h2_preserved": "FAIL_UNDER_FROZEN_EXP07I",
+  "post_hoc_rescue_permitted": false,
+  "seven_submission_fields": 7,
+  "official_eps_independent_coverage": "116/117",
+  "official_eps_validated_mismatches": 0,
+  "eps_residual": "BLSH|2025-09-17",
+  "genai_entries": 11,
+  "manifest_git_artifacts_verified": 8,
+  "bundle_sha256": "c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885",
+  "report_contract": {
+    "format": "PDF",
+    "max_pages": 5,
+    "aspect_ratio": "16:9",
+    "language": "pt-BR",
+    "anonymous": true,
+    "public_repository_url_in_submission": false
+  },
+  "authorized_next_phase": "FINAL_REPORT_AUTHORING_AND_QA"
+}

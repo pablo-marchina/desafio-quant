@@ -5,8 +5,36 @@ submission_deadline: 2026-08-17
 scientific_freeze:
   thesis: TF-v1.0
   constitution: ART-027_FREEZE_v1.0
-  current_truth: CT-v3.0
+  final_truth: FST-v1.0
+  current_truth: CT-v4.0
+  submission_freeze: SF-v3.0
   submission_freeze_previous_stage: SF-v2.0
+  status: PASS_FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_WITH_DISCLOSED_EPS_RESIDUAL_1
+final_submission_freeze:
+  status: PASS_FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_WITH_DISCLOSED_EPS_RESIDUAL_1
+  fst_version: FST-v1.0
+  sf_version: SF-v3.0
+  ct_version: CT-v4.0
+  hm_version: HM-v4.0
+  h2_preserved: FAIL_UNDER_FROZEN_EXP07I
+  post_hoc_rescue_permitted: false
+  official_eps_independent_validation: 116/117
+  official_eps_validated_mismatches: 0
+  official_eps_residual: BLSH|2025-09-17
+  residual_is_blocker: false
+  residual_is_material_limitation: true
+  genai_ledger_entries: 11
+  bundle_sha256: c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885
+  truth_path: registry/final_scientific_truth.json
+  answers_path: registry/final_submission_answers_sf_v3.json
+  claims_path: registry/final_submission_claims.csv
+  numbers_path: registry/final_submission_numbers.csv
+  manifest_path: registry/final_submission_manifest.json
+  validation_path: registry/final_submission_freeze_validation.json
+  report_path: docs/29_final_scientific_truth_submission_freeze.md
+  current_truth_drive_id: 1MRWhaYaVkEwBVJTWTWtwziK7qQtFOtxJsvabzUV5Msw
+  hypothesis_matrix_drive_id: 1h1JAzYdqFurIP17_69c1ZWqcKI1NzrAbChi-DGLC8io
+  source_registry_drive_id: 12dGCC306uEVNC62qU8nUKL_jT__WKSD1jhzBT-VHXHk
 implementation:
   prediction_market: Polymarket
   event_family: earnings/EPS
@@ -21,7 +49,7 @@ hypotheses:
   H3: BLOCKED_BY_H2_FAIL_NO_RESCUE
   H4: BLOCKED_BY_H2_FAIL
   H5: BLOCKED_BY_H4
-current_phase: FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE
+current_phase: FINAL_REPORT_AUTHORING_AND_QA
 implementation_audit: COMPLETE_PASS_A_AND_PASS_B_OUTCOME_BLIND
 information_completeness_gate: PASS_INFORMATION_COMPLETENESS_GATE
 information_completeness:
@@ -329,7 +357,8 @@ critical_path:
   - ART-030_EXP07I_H2_COMPLETED_FAIL
   - H2_STOP_RULE_ACTIVE_NO_H3_RESCUE_NO_H4_NO_H5
   - POST_H2_FAIL_FINAL_EVIDENCE_RECONCILIATION_COMPLETED_WITH_EPS_RESIDUAL_1
-  - FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE
+  - FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_COMPLETED
+  - FINAL_REPORT_AUTHORING_AND_QA
 report:
   format: PDF
   max_pages: 5
@@ -337,9 +366,7 @@ report:
   language: pt-BR
   anonymous: true
   target_words: 580
-blockers:
-  - OFFICIAL_EPS_INDEPENDENT_RECONSTRUCTION_RESIDUAL_1_BLSH_2025_09_17
-  - FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_NOT_EXECUTED
+blockers: []
 limitations:
   - OFFICIAL_EPS_INDEPENDENT_RECONSTRUCTION_COVERAGE_116_OF_117_BLSH_RESIDUAL_NO_SYNTHETIC_IMPUTATION
   - H2_FAIL_STOP_RULE_ACTIVE_NO_POST_HOC_RESCUE_H3_H4_H5_BLOCKED
