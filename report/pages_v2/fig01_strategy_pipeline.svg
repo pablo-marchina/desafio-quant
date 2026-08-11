@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#9FB0C3"/></marker>
+<marker id="arrowAmber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#F4BF4F"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#07111F"/>
+<text x="80" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5" text-anchor="start" opacity="1">01 • ESTRATÉGIA</text>
+<text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">Informação só vira risco depois de sobreviver ao teste</text>
+<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">Prediction markets como sensores PIT; abstention é um output de primeira classe.</text>
+<path d="M 1411.5 85 Q 1450 57.5 1488.5 85" fill="none" stroke="#49C6E5" stroke-width="2.75" opacity="1"/>
+<path d="M 1421.4 89.4 Q 1450 111.4 1478.6 89.4" fill="none" stroke="#2DD4BF" stroke-width="2.75" opacity="1"/>
+<path d="M 1403.8 94.9 Q 1430.75 125.7 1461.0 111.4" fill="none" stroke="#F4BF4F" stroke-width="2.2" opacity="1" stroke-dasharray="9.9,6.050000000000001"/>
+<circle cx="1450" cy="87.75" r="6.6000000000000005" fill="#F4F7FB" stroke="none" stroke-width="0"/>
+<circle cx="1450" cy="87.75" r="2.75" fill="#49C6E5" stroke="none" stroke-width="0"/>
+<text x="1450" y="135.6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.200000000000001" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">ARGOS</text>
+<rect x="100" y="300" width="250" height="145" rx="20" fill="#0E1B2B" stroke="#49C6E5" stroke-width="2" opacity="1"/>
+<circle cx="136" cy="336" r="10" fill="#49C6E5" stroke="none" stroke-width="0"/>
+<text x="128" y="383" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">Prediction market</text>
+<text x="128" y="418" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">sensor PIT</text>
+<rect x="430" y="300" width="250" height="145" rx="20" fill="#0E1B2B" stroke="#49C6E5" stroke-width="2" opacity="1"/>
+<circle cx="466" cy="336" r="10" fill="#49C6E5" stroke="none" stroke-width="0"/>
+<text x="458" y="383" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">M2</text>
+<text x="458" y="418" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">probabilidade agregada</text>
+<rect x="760" y="300" width="250" height="145" rx="20" fill="#0E1B2B" stroke="#2DD4BF" stroke-width="2" opacity="1"/>
+<circle cx="796" cy="336" r="10" fill="#2DD4BF" stroke="none" stroke-width="0"/>
+<text x="788" y="383" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">Gate incremental</text>
+<text x="788" y="418" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">movimento &gt; M2?</text>
+<rect x="1090" y="300" width="250" height="145" rx="20" fill="#0E1B2B" stroke="#2DD4BF" stroke-width="2" opacity="1"/>
+<circle cx="1126" cy="336" r="10" fill="#2DD4BF" stroke="none" stroke-width="0"/>
+<text x="1118" y="383" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">Gate econômico</text>
+<text x="1118" y="418" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">capital + custos</text>
+<line x1="358" y1="372" x2="418" y2="372" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<line x1="688" y1="372" x2="748" y2="372" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<line x1="1018" y1="372" x2="1078" y2="372" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<rect x="1380" y="300" width="140" height="145" rx="20" fill="#14283D" stroke="#2DD4BF" stroke-width="2" opacity="1"/>
+<text x="1450" y="358" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#2DD4BF" text-anchor="middle" opacity="1">ALOCA</text>
+<text x="1450" y="398" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">somente</text>
+<text x="1450" y="422" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">se passar</text>
+<line x1="1340" y1="372" x2="1368" y2="372" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<line x1="885" y1="445" x2="885" y2="535" stroke="#F4BF4F" stroke-width="3" opacity="1" marker-end="url(#arrowAmber)"/>
+<rect x="715" y="550" width="340" height="110" rx="20" fill="#14283D" stroke="#F4BF4F" stroke-width="2" opacity="1"/>
+<text x="885" y="595" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#F4BF4F" text-anchor="middle" opacity="1">ABSTAIN / C0_NO_TRADE</text>
+<text x="885" y="630" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">decisão deliberada, não erro</text>
+<rect x="100" y="570" width="500" height="230" rx="20" fill="#0E1B2B" stroke="#294158" stroke-width="2" opacity="1"/>
+<text x="130" y="612" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5" text-anchor="start" opacity="1">POR QUE EARNINGS/EPS?</text>
+<text x="130" y="666" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#F4F7FB" text-anchor="start" opacity="1">Earnings</text>
+<rect x="250" y="650" width="230.4" height="20" rx="10" fill="#2DD4BF" stroke="none" stroke-width="0" opacity="1"/>
+<text x="500" y="666" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#2DD4BF" text-anchor="end" opacity="1">72</text>
+<text x="130" y="700" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#F4F7FB" text-anchor="start" opacity="1">Macro</text>
+<rect x="250" y="684" width="160.0" height="20" rx="10" fill="#9FB0C3" stroke="none" stroke-width="0" opacity="1"/>
+<text x="500" y="700" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#9FB0C3" text-anchor="end" opacity="1">50</text>
+<text x="130" y="734" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#F4F7FB" text-anchor="start" opacity="1">FDA</text>
+<rect x="250" y="718" width="150.4" height="20" rx="10" fill="#9FB0C3" stroke="none" stroke-width="0" opacity="1"/>
+<text x="500" y="734" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#9FB0C3" text-anchor="end" opacity="1">47</text>
+<text x="130" y="768" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="600" fill="#F4F7FB" text-anchor="start" opacity="1">M&amp;A ann.</text>
+<rect x="250" y="752" width="150.4" height="20" rx="10" fill="#9FB0C3" stroke="none" stroke-width="0" opacity="1"/>
+<text x="500" y="768" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#9FB0C3" text-anchor="end" opacity="1">47</text>
+<text x="130" y="790" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">EUAS-v1.1 • research-design score, não performance</text>
+<rect x="1120" y="590" width="300" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1270.0" y="622" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">117 eventos testados</text>
+<rect x="1120" y="650" width="300" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1270.0" y="682" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">116/117 EPS oficiais</text>
+<rect x="1120" y="710" width="300" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1270.0" y="742" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">115/117 tape + trajetória</text>
+<text x="1120" y="790" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4BF4F" text-anchor="start" opacity="1">Muitos olhos. Risco só com evidência incremental.</text>
+
+<rect x="100" y="200" width="1420" height="58" rx="14" fill="#14283D" stroke="#294158" stroke-width="1" opacity="1"/>
+<text x="125" y="237" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#49C6E5" text-anchor="start">HIPÓTESE • movimentos anormais só importam se melhorarem M2 fora da amostra.</text>
+<text x="1490" y="237" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="15" font-weight="400" fill="#9FB0C3" text-anchor="end">falsificável antes dos outcomes</text>
+<rect x="1095" y="760" width="425" height="48" rx="0" fill="#07111F" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1120" y="790" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#F4BF4F" text-anchor="start">Muitos olhos. Risco só com evidência incremental.</text>
+<text x="1450" y="158" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="600" fill="#9FB0C3" text-anchor="middle">múltiplos sensores</text>
+<text x="1450" y="176" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#9FB0C3" text-anchor="middle">não insiders</text>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "artifact": "ARGOS_REPORT_PAGE_COMPOSITOR_V2",
+  "version": "RPC-v2.0",
+  "status": "PASS_ADVERSARIAL_AUTHORING_FIXES_MATERIALIZED",
+  "scientific_reopen": false,
+  "source_factory_manifest": "report/figures/manifest.json",
+  "review_source": "registry/adversarial_report_scoring_review_v1.json",
+  "review_sha256": "c04bed09e65b21a6a964ab2f0e2ad5a07b56a2739aac873dfe3583d97d80b054",
+  "identity_sha256": "106edfff7874a291694e37c2a2eccfe241397634728ce013be1f3bdf40d788b0",
+  "outputs": {
+    "fig01_strategy_pipeline.svg": "32a1adeea05cec7a4214527bca8e5067d31fc55869991ad2b5122010fec11d46",
+    "fig02_model_reduction.svg": "99abdf56bbfcc9bff251df0d45377c448eb18dc046049d1afea67427d69e5758",
+    "fig03_h2_results.svg": "6170d8bf1427c76d218232b99f65728bf91239681d6aa82a902404446abda29d",
+    "fig04_economic_backtest.svg": "975b476e6372d35b66b2d4d37b1a0ddf61a5e66636646a15f8770809e9ebda1a",
+    "fig05_genai_future.svg": "2c4f0bf559edcf22bea40f0da19e8436ddcae13f75f5465d89d65168bbd2e45c"
+  },
+  "fixes": [
+    "Page 1 explicit falsifiable hypothesis",
+    "Page 1 ARGOS multiple-sensor/non-insider name explanation",
+    "Page 1 clipped tagline repaired",
+    "Page 2 six economic mechanisms named",
+    "Page 3 H1 supported qualitative banner",
+    "Page 5 three concrete GenAI contribution labels"
+  ],
+  "claim_policy": "All overlays are restatements of already-permitted SF-v3.0/FST/W1 claims; no new metric or result is introduced."
+}
