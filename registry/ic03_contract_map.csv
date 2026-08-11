@@ -1,0 +1,3 @@
+version,chain_id,exchange_address,order_filled_signature,order_filled_topic,direction_rule,official_repo_commit
+V1,137,0x4bfb41d5b3570defd03c39a9a4d8de6bd8b8982e,"OrderFilled(bytes32,address,address,uint256,uint256,uint256,uint256,uint256)",0xd0a08e8c493f9c94f29311604c9de1b4e8c8d4c06bd0c789af57f2d65bfec0f6,BUY iff makerAssetId=0; SELL iff takerAssetId=0,ed5c7708b7be3aa98bf5f0c6602b57cc498e2ef4
+V2,137,0xe111180000d2663c0091e4f400237545b87b996b,"OrderFilled(bytes32,address,address,uint8,uint256,uint256,uint256,uint256,bytes32,bytes32)",0xd543adfd945773f1a62f74f0ee55a5e3b9b1a28262980ba90b1a89f2ea84d8ee,Side enum 0=BUY 1=SELL,ccc0596074f4dfd62c944fbca4de252893b82b4b
