@@ -1,0 +1,17 @@
+check_id,domain,status,evidence,failure_policy
+ICG-01,IC02 trade tape,PASS,117/117 structurally clean; zero API errors/truncation risk,Block audit if structural tape retrieval is unresolved.
+ICG-02,Pre-cutoff missingness,PASS,115/117; ANF and BRZE structurally not trading before cutoff; never encode as zero,Block any technique that silently treats unavailable markets as zero activity.
+ICG-03,IC03 signed tape,PASS,"12,752/12,752 side and price reconciliation; zero V1/V2 era mismatch",Signed techniques blocked unless authoritative semantics reconcile full available tape.
+ICG-04,Canonical quantities,PASS,569 V1 FeeModule rows isolated; canonical gross token amount/collateral notional defined,Vendor api_size cannot be silently substituted for canonical gross volume.
+ICG-05,IC03 artifact hash,PASS,expected SHA256 3563d3c1348a3cc78b13419f554195a306cc7f7ad70e330b4b3432c043f4ad96,Block audit if canonical tape bytes differ from frozen summary.
+ICG-06,IC04 dense probability,PASS,115/117 YES histories; 0 API errors/conflicts/bad rows/open-market empty histories,Block dense-trajectory techniques if history quality is unresolved.
+ICG-07,IC04 artifact hash,PASS,expected SHA256 2058dbdef714a378a0b8c117af2c68ef47b5caeea6aa6f4a0aa0094589dd8606,Block audit if canonical probability trajectory bytes differ from frozen summary.
+ICG-08,Cross-dataset structural missingness,PASS,Trade tape and dense price trajectory share the same two structurally unavailable events,Investigate mismatched missingness before implementation audit.
+ICG-09,Historical L2,PASS,No documented retro first-party full L2; current/live book is prospective only,L2-dependent techniques must receive NO_GO_DATA/DEFER for frozen sample; no proxy substitution.
+ICG-10,Daily event timing,PASS,117/117 daily safe cutoffs; zero XNYS calendar violations,Block daily event-aligned techniques if any cutoff is unresolved.
+ICG-11,Session/exact timing,PASS,BMO/AMC/exact-session not broadly materialized; only 8 legacy explicit cases known,"Never infer BMO/AMC from SEC acceptance, conference-call time, event date or prior-close cutoff."
+ICG-12,Contextual closure,PASS,18 contextual classes closed; zero unresolved required external P0/H2 context dependency,Do not start audit if any required P0/H2 contextual dependency is unresolved.
+ICG-13,Retrievable vs materialized,PASS,RETRIEVABLE is not admissible until a separate materialization/PIT/provenance gate passes,Audit must classify such techniques CONDITIONAL/DEFERRED rather than use unmaterialized data.
+ICG-14,Outcome firewall,PASS,"EPS outcomes, resolved labels, post-event returns and candidate performance are forbidden during IAUD structural/redundancy passes",Any accidental exposure must be logged as leakage and affected confirmatory use controlled.
+ICG-15,Cost/reproducibility firewall,PASS,Paid/account-gated/unreproducible sources cannot become required dependencies; analyst consensus remains closed under R$0,Such techniques receive NO_GO_COST/DEFER unless an admissible source is separately frozen.
+ICG-16,Superset freeze,PASS,69 candidates; Git blob b2ca5a8262ff417d38f8a772fe6af09f337b5a41,Do not audit a partial shortlist; all frozen candidates must enter Pass A.

@@ -1,0 +1,12 @@
+domain,canonical_field_or_dataset,audit_admissibility,source_gate,coverage,hard_rule
+PM_TRADE_DIRECTION,side_canonical,ADMISSIBLE_NOW,IC03,115/117 events,Never use unreconciled Data API side as an alternative canonical field
+PM_TRADE_PRICE,price_canonical,ADMISSIBLE_NOW,IC03,115/117 events,Trade-level
+PM_GROSS_TOKEN_VOLUME,token_amount_gross_canonical,ADMISSIBLE_NOW,IC03,115/117 events,api_size_raw is lineage only for 569 V1 FeeModule BUY rows
+PM_COLLATERAL_NOTIONAL,collateral_notional_canonical,ADMISSIBLE_NOW,IC03,115/117 events,Canonical notional
+PM_DENSE_YES_PROBABILITY,data/ic04_yes_probability_trajectory.csv.gz,ADMISSIBLE_NOW,IC04,115/117 events,Irregular timestamps preserved; fidelity=1 is not assumed regular grid
+PM_HISTORICAL_FULL_L2,bid/ask/depth/queue/book shape,PROHIBITED_CURRENT_SAMPLE,IC05,0/117 retro first-party archive,Current/live book cannot proxy history
+DAILY_SAFE_CUTOFF,registry/ic06_event_timing.csv,ADMISSIBLE_NOW,IC06,117/117 events,Daily prior-close alignment only
+BMO_AMC_EXACT_SESSION,release_session,NOT_MATERIALIZED,IC06,0/117 broad table; 8 legacy explicit cases known,No inference from SEC acceptance/date/call time
+CONTEXT_RETRIEVABLE,OI/activity/intraday/NBBO/factors/fundamentals/macro/short-interest,CONDITIONAL_NOT_ADMISSIBLE_YET,IC07,varies,Requires separate materialization + PIT + provenance gate
+ANALYST_CONSENSUS_PIT,licensed/reproducible vintage series,PROHIBITED_REQUIRED_DEPENDENCY,IC07,none under R$0 constraint,Do not claim comparison vs analyst consensus
+OUTCOMES,EPS/Yes-No resolution/post-event returns,PROHIBITED_DURING_IAUD,IAUD-v1.0,N/A,Structural audit must remain outcome-blind
