@@ -1,0 +1,86 @@
+name: IC-03 On-chain Direction Reconciliation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ic03_onchain_direction_audit.py'
+      - '.github/workflows/ic03_onchain_direction_audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Download frozen IC-02 raw artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ic02-polymarket-trade-tape-raw
+          path: ic02_input
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: pablo-marchina/desafio-quant
+          run-id: 31449689618
+
+      - name: Verify IC-02 artifact layout
+        run: |
+          test -f ic02_input/ic02_raw_manifest.csv
+          test -d ic02_input/raw/gamma
+          test -d ic02_input/raw/trades
+          echo "gamma=$(find ic02_input/raw/gamma -type f | wc -l)"
+          echo "trades=$(find ic02_input/raw/trades -type f | wc -l)"
+
+      - name: Reconcile 12,752 pre-cutoff trades against Polygon receipts
+        run: |
+          python scripts/ic03_onchain_direction_audit.py \
+            --ic02-dir ic02_input \
+            --input registry/ic02_event_manifest.csv \
+            --output-dir ic03_output
+
+      - name: Publish compact audited outputs
+        if: always()
+        run: |
+          mkdir -p data
+          test -f ic03_output/ic03_event_summary.csv && cp ic03_output/ic03_event_summary.csv registry/ic03_event_summary.csv || true
+          test -f ic03_output/ic03_contract_map.csv && cp ic03_output/ic03_contract_map.csv registry/ic03_contract_map.csv || true
+          test -f ic03_output/ic03_summary.json && cp ic03_output/ic03_summary.json registry/ic03_summary.json || true
+          test -f ic03_output/ic03_unresolved.csv && cp ic03_output/ic03_unresolved.csv registry/ic03_unresolved.csv || true
+          test -f ic03_output/ic03_report.md && cp ic03_output/ic03_report.md docs/16_ic03_onchain_direction_report.md || true
+          test -f ic03_output/ic03_signed_tape.csv.gz && cp ic03_output/ic03_signed_tape.csv.gz data/ic03_signed_tape.csv.gz || true
+
+      - name: Upload IC-03 provenance artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ic03-onchain-direction-audit
+          path: ic03_output/
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Commit compact IC-03 dataset and report
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for f in \
+            registry/ic03_event_summary.csv \
+            registry/ic03_contract_map.csv \
+            registry/ic03_summary.json \
+            registry/ic03_unresolved.csv \
+            docs/16_ic03_onchain_direction_report.md \
+            data/ic03_signed_tape.csv.gz; do
+            test -f "$f" && git add "$f"
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: record IC-03 on-chain direction audit'
+            git push
+          fi
