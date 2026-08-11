@@ -14,10 +14,10 @@ import argparse
 import csv
 import gzip
 import hashlib
+import io
 import json
 import math
 import re
-import statistics
 import time
 import urllib.error
 import urllib.parse
@@ -35,50 +35,24 @@ CLASSIFIER_VERSION = "EUAS_TEXT_CLASSIFIER_v1.0"
 # Frozen before the census is executed. These patterns classify market/event
 # *topics*, not profitability or realized linked-asset behavior.
 FAMILY_PATTERNS = {
-    "EARNINGS_EPS": [
-        r"\bearnings\b",
-        r"\beps\b",
-        r"earnings per share",
-    ],
+    "EARNINGS_EPS": [r"\bearnings\b", r"\beps\b", r"earnings per share"],
     "FDA_APPROVAL_ADVISORY": [
-        r"\bfda\b",
-        r"food and drug administration",
-        r"\bpdufa\b",
-        r"drug approval",
-        r"advisory committee",
+        r"\bfda\b", r"food and drug administration", r"\bpdufa\b",
+        r"drug approval", r"advisory committee",
     ],
     "ANTITRUST_REGULATORY": [
-        r"\bantitrust\b",
-        r"\bftc\b",
-        r"federal trade commission",
-        r"department of justice",
-        r"\bdoj\b",
-        r"competition commission",
-        r"regulatory approval",
-        r"regulatory clearance",
+        r"\bantitrust\b", r"\bftc\b", r"federal trade commission",
+        r"department of justice", r"\bdoj\b", r"competition commission",
+        r"regulatory approval", r"regulatory clearance",
     ],
     "LITIGATION_COURT": [
-        r"supreme court",
-        r"federal court",
-        r"court ruling",
-        r"court decision",
-        r"\blawsuit\b",
-        r"\blitigation\b",
-        r"\bverdict\b",
-        r"\binjunction\b",
+        r"supreme court", r"federal court", r"court ruling", r"court decision",
+        r"\blawsuit\b", r"\blitigation\b", r"\bverdict\b", r"\binjunction\b",
     ],
     "MACRO_FED_CPI": [
-        r"federal reserve",
-        r"\bfed\b",
-        r"\bcpi\b",
-        r"consumer price index",
-        r"\binflation\b",
-        r"interest rate",
-        r"rate cut",
-        r"rate hike",
-        r"\bgdp\b",
-        r"\bpayrolls?\b",
-        r"\bunemployment\b",
+        r"federal reserve", r"\bfed\b", r"\bcpi\b", r"consumer price index",
+        r"\binflation\b", r"interest rate", r"rate cut", r"rate hike",
+        r"\bgdp\b", r"\bpayrolls?\b", r"\bunemployment\b",
     ],
 }
 
@@ -87,10 +61,7 @@ MA_COMPLETION = re.compile(
     r"\b(close|closing|closed|complete|completion|completed|approve|approved|approval|clearance|terminate|terminated|break|breaks)\b",
     re.I,
 )
-COMPILED = {
-    fam: [re.compile(pattern, re.I) for pattern in patterns]
-    for fam, patterns in FAMILY_PATTERNS.items()
-}
+COMPILED = {fam: [re.compile(p, re.I) for p in pats] for fam, pats in FAMILY_PATTERNS.items()}
 
 
 def fetch_json(path: str, params: dict[str, object] | None = None, retries: int = 6):
@@ -143,9 +114,8 @@ def fetch_all_closed_events() -> list[dict]:
 def text_blob(event: dict) -> str:
     bits: list[str] = []
     for key in ("title", "subtitle", "description", "slug", "category", "subcategory"):
-        value = event.get(key)
-        if value:
-            bits.append(str(value))
+        if event.get(key):
+            bits.append(str(event[key]))
     for tag in event.get("tags") or []:
         if isinstance(tag, dict):
             bits.extend(str(tag.get(k, "")) for k in ("label", "slug"))
@@ -167,7 +137,6 @@ def classify(event: dict) -> list[tuple[str, str]]:
             matches.append(("MA_DEAL_COMPLETION_REGULATORY_CLEARANCE", "MA_CORE+MA_COMPLETION"))
         else:
             matches.append(("MA_ANNOUNCEMENT_RUMOR", "MA_CORE_without_completion_term"))
-    # Deduplicate family while retaining first deterministic reason.
     dedup: dict[str, str] = {}
     for family, reason in matches:
         dedup.setdefault(family, reason)
@@ -178,8 +147,6 @@ def parse_dt(value) -> datetime | None:
     if not value:
         return None
     s = str(value).strip()
-    if not s:
-        return None
     try:
         if s.endswith("Z"):
             s = s[:-1] + "+00:00"
@@ -206,15 +173,17 @@ def percentile(values: list[float], q: float) -> float | None:
     if len(xs) == 1:
         return xs[0]
     pos = (len(xs) - 1) * q
-    lo = int(math.floor(pos))
-    hi = int(math.ceil(pos))
+    lo, hi = int(math.floor(pos)), int(math.ceil(pos))
     if lo == hi:
         return xs[lo]
     return xs[lo] * (hi - pos) + xs[hi] * (pos - lo)
 
 
-def sha256_bytes(payload: bytes) -> str:
-    return hashlib.sha256(payload).hexdigest()
+def deterministic_gzip_write(path: Path, payload: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("wb") as raw_fh:
+        with gzip.GzipFile(filename="", mode="wb", fileobj=raw_fh, mtime=0) as gz:
+            gz.write(payload)
 
 
 def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
@@ -226,11 +195,11 @@ def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
 
 
 def write_gzip_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with gzip.open(path, "wt", newline="", encoding="utf-8", mtime=0) as fh:  # type: ignore[arg-type]
-        writer = csv.DictWriter(fh, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
+    sio = io.StringIO(newline="")
+    writer = csv.DictWriter(sio, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(rows)
+    deterministic_gzip_write(path, sio.getvalue().encode("utf-8"))
 
 
 def main() -> None:
@@ -244,17 +213,13 @@ def main() -> None:
     snapshot_utc = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
     events = fetch_all_closed_events()
-    # Preserve exact retrieved JSON as workflow artifact, not as a tracked scientific input.
     raw_bytes = json.dumps(events, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
-    raw_sha = sha256_bytes(raw_bytes)
+    raw_sha = hashlib.sha256(raw_bytes).hexdigest()
     raw_path = Path(args.raw_output)
-    raw_path.parent.mkdir(parents=True, exist_ok=True)
-    with gzip.open(raw_path, "wb", mtime=0) as fh:  # type: ignore[arg-type]
-        fh.write(raw_bytes)
+    deterministic_gzip_write(raw_path, raw_bytes)
 
     classified_rows: list[dict] = []
     by_family: dict[str, list[dict]] = defaultdict(list)
-
     for event in events:
         start = parse_dt(event.get("startDate") or event.get("creationDate") or event.get("createdAt"))
         end = parse_dt(event.get("endDate") or event.get("closedTime"))
@@ -320,8 +285,6 @@ def main() -> None:
     summary_path = registry / "wave1_event_universe_census_summary.csv"
     write_csv(summary_path, summary_rows, summary_fields)
 
-    events_gz_sha = hashlib.sha256(events_path.read_bytes()).hexdigest()
-    summary_sha = hashlib.sha256(summary_path.read_bytes()).hexdigest()
     meta = {
         "artifact": "WAVE1_EVENT_UNIVERSE_POLYMARKET_CENSUS",
         "version": "EUAS-CENSUS-v1.0",
@@ -334,8 +297,8 @@ def main() -> None:
         "total_closed_events_retrieved": len(events),
         "classified_event_family_rows": len(classified_rows),
         "raw_json_sha256": raw_sha,
-        "classified_events_csv_gz_sha256": events_gz_sha,
-        "summary_csv_sha256": summary_sha,
+        "classified_events_csv_gz_sha256": hashlib.sha256(events_path.read_bytes()).hexdigest(),
+        "summary_csv_sha256": hashlib.sha256(summary_path.read_bytes()).hexdigest(),
         "limitations": [
             "Text/tag classifier is a discovery instrument and can create false positives/negatives.",
             "Event volume is lifetime event volume, not a historical point-in-time liquidity measure.",
@@ -348,7 +311,6 @@ def main() -> None:
     }
     meta_path = registry / "wave1_event_universe_census_summary.json"
     meta_path.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-
     print(json.dumps(meta, indent=2))
 
 
