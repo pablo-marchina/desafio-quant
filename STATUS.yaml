@@ -21,7 +21,7 @@ hypotheses:
   H3: BLOCKED_BY_H2_FAIL_NO_RESCUE
   H4: BLOCKED_BY_H2_FAIL
   H5: BLOCKED_BY_H4
-current_phase: POST_H2_FAIL_SCIENTIFIC_CLOSEOUT
+current_phase: FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE
 implementation_audit: COMPLETE_PASS_A_AND_PASS_B_OUTCOME_BLIND
 information_completeness_gate: PASS_INFORMATION_COMPLETENESS_GATE
 information_completeness:
@@ -271,6 +271,48 @@ art030_exp07i_h2_execution:
   outcomes_sha256: 11fdfccfbec4a9d6ac4aa523b17a120b6719db8cb290d206fd63461ffaed7158
   summary_path: registry/art030_summary.json
   report_path: docs/26_art030_exp07i_h2_execution.md
+final_evidence_reconciliation:
+  status: CONDITIONAL_FINAL_EVIDENCE_RECONCILIATION_EPS_RESIDUAL_1
+  date: 2026-08-11
+  h2_changed: false
+  art022:
+    status: PASS_RECONCILED
+    live_sheet_id: 1RhSm_K4UszP3phL6we7oF8YF2QisV5z4fWx-WK2ws7Y
+    protocol_sha256: 675f0a230b83cdda79d70f3a8d38908258e8132b30ada68b0549fb5b0d3c0006
+    input_sha256: e448f36147c46eaab8480d53698d3c4ae9241c3037d0117bcafe09df1e380ade
+    original_xlsx_sha256: deaef850239397588f0e185dfea08633163539958f5e45be0719cdd9b5418d0e
+    decision_preserved: RETAIN_COLEADERS_FOR_EXP06
+  art025:
+    status: PASS_DRIVE_ID_CORRECTED
+    live_drive_id: 16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA
+  official_eps:
+    status: PARTIAL_FAIL_CLOSED_RESIDUAL_1
+    independently_validated: 116/117
+    validated_matches_polymarket: 116/116
+    validated_mismatches: 0
+    remaining_event: BLSH|2025-09-17
+    h2_effect: NO_CHANGE_FAIL_H2
+    table_path: registry/official_eps_closeout_66.csv
+    summary_path: registry/official_eps_closeout_summary.json
+  genai:
+    status: PASS_GENAI_LEDGER_FINAL_EVIDENCE_SYNC
+    entries: 11
+    ledger_path: registry/genai_usage_ledger.csv
+    summary_path: registry/genai_usage_summary.json
+  art030_lock:
+    status: PASS_FAIL_H2_PRESERVED
+    protocol_version: EXP07I-H2-FREEZE-v1.0
+    post_hoc_rescue_permitted: false
+  sr_v3:
+    status: PASS_SYNCED
+    drive_id: 12dGCC306uEVNC62qU8nUKL_jT__WKSD1jhzBT-VHXHk
+    revision_id: AIroW36iQLgeZl7cSGRYGG2iImj0kRgzA4HptdFc-CamrJ8lQ7GV6XECWksteraIYi_0p6j3iPXdNm76lXMV3gHLKyw4qC5Jh0dDCNhXj6c
+  failed_sec_automation:
+    status: DISCLOSED_OPERATIONAL_FAILURE_NO_DATA_PROMOTED
+    failure: HTTP_403_BEFORE_FIRST_EVENT
+  matrix_path: registry/final_evidence_reconciliation_matrix.csv
+  summary_path: registry/final_evidence_reconciliation_summary.json
+  report_path: docs/28_post_h2_fail_final_evidence_reconciliation.md
 critical_path:
   - INFO_COMPLETENESS_MAP_COMPLETED
   - IC02_TRADE_TAPE_COMPLETED_WITH_LIMITATIONS
@@ -286,7 +328,8 @@ critical_path:
   - ART-029_EXP07I_PROTOCOL_FREEZE_COMPLETED
   - ART-030_EXP07I_H2_COMPLETED_FAIL
   - H2_STOP_RULE_ACTIVE_NO_H3_RESCUE_NO_H4_NO_H5
-  - POST_H2_FAIL_SCIENTIFIC_CLOSEOUT
+  - POST_H2_FAIL_FINAL_EVIDENCE_RECONCILIATION_COMPLETED_WITH_EPS_RESIDUAL_1
+  - FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE
 report:
   format: PDF
   max_pages: 5
@@ -295,11 +338,10 @@ report:
   anonymous: true
   target_words: 580
 blockers:
-  - ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY
-  - ART025_STALE_DRIVE_ID_IN_SR_V3
-  - 66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED
-  - GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC
+  - OFFICIAL_EPS_INDEPENDENT_RECONSTRUCTION_RESIDUAL_1_BLSH_2025_09_17
+  - FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_NOT_EXECUTED
 limitations:
+  - OFFICIAL_EPS_INDEPENDENT_RECONSTRUCTION_COVERAGE_116_OF_117_BLSH_RESIDUAL_NO_SYNTHETIC_IMPUTATION
   - H2_FAIL_STOP_RULE_ACTIVE_NO_POST_HOC_RESCUE_H3_H4_H5_BLOCKED
   - OUTCOMES_NOW_AUTHORIZED_ONLY_FOR_FROZEN_ART030_EXP07I_PROTOCOL
   - TRADE_TAPE_AND_DENSE_PRICE_PRE_CUTOFF_STRUCTURALLY_UNAVAILABLE_FOR_ANF_2026_05_27_AND_BRZE_2026_05_27
