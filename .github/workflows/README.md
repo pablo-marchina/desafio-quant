@@ -2,10 +2,15 @@
 
 Os workflows desta pasta são parte da trilha de execução do ARGOS. A maioria representa gates científicos **já concluídos** e é mantida para auditoria/reprodutibilidade.
 
-## Workflow final vigente
+## Workflow operacional atual
 
-- `final_submission_freeze.yml` — valida FST-v1.0/SF-v3.0 e a transição para `FINAL_REPORT_AUTHORING_AND_QA`.
-- `repository_hygiene.yml` — valida a organização e impede regressão documental após o freeze.
+- `repository_hygiene.yml` — verifica o estado pós-finalização: blob SHAs do bundle congelado, FST/SF, ART-030, EPS/GenAI, STATUS e documentação ativa.
+
+## Workflow de freeze concluído
+
+- `final_submission_freeze.yml` — executou o freeze FST-v1.0/SF-v3.0 e depois promoveu `STATUS.yaml` para `FINAL_REPORT_AUTHORING_AND_QA`.
+
+O script `final_submission_freeze_validate.py` dentro desse workflow checava deliberadamente a fase **pré-finalizer**. Portanto, rerodar esse validador isoladamente no `main` final não é um health check válido; sua execução histórica bem-sucedida está preservada nos runs/commits do freeze.
 
 ## Workflows históricos preservados
 
@@ -24,7 +29,7 @@ Eles **não indicam a fase atual** apenas porque permanecem em `.github/workflow
 ## Regra de manutenção
 
 - Não apagar workflows que sustentem artefatos congelados.
-- Não rerodar um workflow histórico com inputs atuais esperando reproduzir um snapshot antigo; use o commit/run correspondente quando necessário.
+- Não rerodar workflow histórico com inputs atuais esperando reproduzir snapshot antigo; use o commit/run correspondente.
 - Não modificar protocolo histórico para refletir resultado posterior.
 - Novos workflows após o freeze final devem ser de **autoria, QA, validação, build ou submissão**, não de busca de novo alpha para alterar SF-v3.0.
 

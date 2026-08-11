@@ -30,8 +30,5 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Validate final freeze first
-        run: python scripts/final_submission_freeze_validate.py
-
-      - name: Validate repository hygiene
+      - name: Validate frozen bundle and repository hygiene
         run: python scripts/repository_hygiene_validate.py

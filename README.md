@@ -32,7 +32,7 @@ Leia nesta ordem:
 4. `registry/final_submission_claims.csv` — fronteira de claims permitidos/proibidos.
 5. `registry/final_submission_numbers.csv` — números autorizados para a entrega.
 6. `registry/final_submission_manifest.json` — manifesto de hashes e identidades.
-7. `registry/final_submission_freeze_validation.json` — prova do gate final.
+7. `registry/final_submission_freeze_validation.json` — prova do gate final executado.
 8. `docs/29_final_scientific_truth_submission_freeze.md` — leitura humana do freeze.
 
 Bundle final congelado: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`.
@@ -63,19 +63,17 @@ Consulte os índices locais em `docs/README.md`, `registry/README.md`, `scripts/
 - evitar arquivos locais, caches, secrets e outputs temporários no Git;
 - impedir que documentação antiga substitua o freeze final.
 
-## Validação
+## Validação atual
 
-O gate final da ciência pode ser reproduzido com:
-
-```bash
-python scripts/final_submission_freeze_validate.py
-```
-
-A higiene/navegação do repositório é verificada por:
+Para verificar o estado **pós-finalização**, rode:
 
 ```bash
 python scripts/repository_hygiene_validate.py
 ```
+
+Esse validador confirma que os 8 blobs do `final_submission_manifest.json` continuam byte-idênticos, que o bundle SHA permanece congelado e que README/docs/STATUS refletem a fase final.
+
+`final_submission_freeze_validate.py` é preservado como **validador histórico do momento de freeze**: ele foi executado antes do finalizer e deliberadamente exige a fase pré-finalização. Não é o comando de higiene do `main` atual.
 
 ## Regra de precedência
 

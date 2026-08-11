@@ -94,19 +94,23 @@ Qualquer número usado precisa existir em `registry/final_submission_numbers.csv
 
 ## QA científico antes da exportação
 
-Rodar:
+Rode o validator pós-finalização:
 
 ```bash
-python scripts/final_submission_freeze_validate.py
 python scripts/repository_hygiene_validate.py
 ```
 
-E comparar manualmente o PDF contra:
+Ele confirma que o bundle congelado continua byte-idêntico ao manifesto e que o estado ativo não regrediu.
+
+Depois compare manualmente o PDF contra:
 
 - `registry/final_scientific_truth.json`;
+- `registry/final_submission_freeze_validation.json`;
 - `registry/final_submission_claims.csv`;
 - `registry/final_submission_numbers.csv`;
 - `registry/final_submission_answers_sf_v3.json`.
+
+`final_submission_freeze_validate.py` é histórico do instante pré-finalizer e não deve ser usado como health check pós-freeze.
 
 ## Regra de mudança
 
