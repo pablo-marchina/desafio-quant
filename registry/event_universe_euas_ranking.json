@@ -1,0 +1,103 @@
+{
+  "artifact": "EVENT_UNIVERSE_EUAS_RANKING",
+  "version": "EUAS_RANKING_v1.0",
+  "assignments_version": "EUAS_SCORE_ASSIGNMENTS_v1.0",
+  "snapshot_utc": "2026-08-11T20:50:10Z",
+  "protocol": "EUAS-v1.1",
+  "performance_blind": true,
+  "scientific_reopen": false,
+  "assignments_committed_before_ranking": true,
+  "ranking": [
+    {
+      "rank": 1,
+      "family": "EARNINGS_EPS",
+      "composite_score": 72.0,
+      "weighted_positive_score": 82.0,
+      "penalty_points": 10,
+      "tie_breakers": {
+        "S": 5,
+        "L": 3,
+        "R": 5,
+        "DEF": 2
+      }
+    },
+    {
+      "rank": 2,
+      "family": "MACRO_FED_CPI",
+      "composite_score": 50.0,
+      "weighted_positive_score": 62.0,
+      "penalty_points": 12,
+      "tie_breakers": {
+        "S": 4,
+        "L": 4,
+        "R": 5,
+        "DEF": 2
+      }
+    },
+    {
+      "rank": 3,
+      "family": "FDA_APPROVAL_ADVISORY",
+      "composite_score": 47.0,
+      "weighted_positive_score": 58.0,
+      "penalty_points": 11,
+      "tie_breakers": {
+        "S": 4,
+        "L": 2,
+        "R": 4,
+        "DEF": 5
+      }
+    },
+    {
+      "rank": 4,
+      "family": "MA_ANNOUNCEMENT_RUMOR",
+      "composite_score": 47.0,
+      "weighted_positive_score": 62.0,
+      "penalty_points": 15,
+      "tie_breakers": {
+        "S": 3,
+        "L": 2,
+        "R": 3,
+        "DEF": 5
+      }
+    }
+  ],
+  "unranked": [
+    {
+      "family": "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE",
+      "status": "UNRANKED_GATE_EVIDENCE_INCOMPLETE",
+      "detail": "C|S"
+    },
+    {
+      "family": "ANTITRUST_REGULATORY",
+      "status": "UNRANKED_GATE_EVIDENCE_INCOMPLETE",
+      "detail": "C|S"
+    },
+    {
+      "family": "LITIGATION_COURT",
+      "status": "INELIGIBLE_HARD_GATE_FAIL",
+      "detail": "I2<min3"
+    }
+  ],
+  "leader_sensitivity": {
+    "perturbation": "one assignment cell at a time by +/-1 anchor point within bounds",
+    "scenarios_evaluated": 81,
+    "baseline_leader": "EARNINGS_EPS",
+    "leader_change_scenarios": 0,
+    "alternative_leaders": {},
+    "leader_robust_to_any_single_one_point_assignment_change": true
+  },
+  "interpretation": {
+    "submitted_laboratory": "EARNINGS_EPS is the highest-scoring demonstrated joint EUAS laboratory among families with complete gate evidence. This supports the ex-ante defensibility of the submitted universe and does not alter the frozen H2 failure.",
+    "highest_ranked_alternative": "MACRO_FED_CPI is the highest-ranked fully evidenced alternative, driven by contractability/liquidity/sampleability/resolution, but it requires a rates/index-style linked-asset architecture and carries maximal public-information saturation plus only T2 PM-first timing evidence.",
+    "equity_centered_next_family": "FDA_APPROVAL_ADVISORY is the preferred fully evidenced next preregistered family if ARGOS preserves direct single-name equity transmission: it has I4, C4 and S4, with liquidity/data-friction as the main weaknesses.",
+    "high_priority_discovery": "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE remains the highest-priority data-discovery family because I5 offers near-mechanical merger-spread linkage, but targeted discovery did not establish C/L/S; it is not ranked and is not labeled a failure.",
+    "m_and_a_announcement": "MA_ANNOUNCEMENT_RUMOR passes gates but is penalized heavily for contract-creation/rumor selection bias, limiting its value despite strong asymmetry evidence."
+  },
+  "report_safe_conclusion": "Earnings/EPS was not merely convenient: under the pre-frozen EUAS framework it remains the strongest demonstrated joint laboratory in this audit. The negative H2 result is therefore scientifically informative rather than attributable to an obviously weak event-universe choice. Future work should preregister FDA for a single-name equity extension, test macro only with an explicit rates/index architecture, and first expand performance-blind contract discovery before promoting M&A completion.",
+  "sources": {
+    "protocol_sha256": "7b00130f301894a09b35171b98a676c1564aa0dfdec6d20cd7e6eb6612fc282a",
+    "assignments_sha256": "6b6354eda2dffe174f25cf4df825234d355630fb4b1953c19d4dd773f10a359f",
+    "manual_review_sha256": "8ed8887549fb113eb5b90e0d3019604c24246c68ab5617bc32a57f88e9a120cb",
+    "scores_csv_sha256": "9958b4575691cff23f50e8626e2c32329283d4e88ec0e74af8bf695a4f741331"
+  }
+}
