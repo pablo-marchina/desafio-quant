@@ -1,8 +1,8 @@
 # ARGOS — Model Complexity & Technique Sufficiency Audit
 
 **Wave:** 1A  
-**Status:** `IN_PROGRESS_PRELIMINARY_PASS_SAMPLE_AWARE_PARSIMONY`  
-**Scientific boundary:** no outcome-driven feature/model rescue; audit is about adequacy of the already-frozen research process and model class.
+**Decision:** `PASS_MODEL_COMPLEXITY_SUFFICIENCY_FOR_REPORT_SAMPLE_AWARE_PARSIMONY`  
+**Scientific boundary:** no outcome-driven feature/model rescue; this audit evaluates the adequacy of the already-frozen research process and model class.
 
 Machine-readable summary: `registry/model_complexity_sufficiency_summary.json`.
 
@@ -10,13 +10,15 @@ Machine-readable summary: `registry/model_complexity_sufficiency_summary.json`.
 
 Was the final model technically sophisticated enough to represent the economic mechanisms under study **without exceeding what the effective sample could identify**, and was the reduction from a broad technique universe to the confirmatory architecture defensible before outcomes?
 
+**Verdict: yes.** The defensible strength is not maximum parameter count; it is **broad outcome-blind mechanism research followed by sample-aware parsimony**.
+
 ## 2. Research funnel — complexity before outcomes
 
 The project did not begin with a small hand-picked feature set. The outcome-blind research/audit funnel was:
 
 `69 techniques → 59 Pass-B inputs → 25 label-free descriptors → redundancy audit → 6 confirmatory movement features + 1 nonlinear challenger`
 
-Pass B found **15 feature pairs with |Spearman| >= 0.90** before outcome access. ART-028 later found three near-duplicate pairs among the materialized candidates. This matters because a larger feature set would have counted highly correlated representations as separate degrees of freedom.
+Pass B found **15 feature pairs with |Spearman| >= 0.90** before outcome access. ART-028 later found three near-duplicate pairs among the materialized candidates. A larger unpruned feature set would therefore have counted highly correlated representations as separate apparent complexity.
 
 ### Pass-B disposition of all 69 audited techniques
 
@@ -32,21 +34,11 @@ Pass B found **15 feature pairs with |Spearman| >= 0.90** before outcome access.
 | NO_GO_SAMPLE_COMPLEXITY | 1 |
 | **Total** | **69** |
 
-The reduction therefore occurred for explicit structural reasons: mechanism role, data availability, redundancy, robustness role and sample complexity.
+The reduction occurred for explicit structural reasons: mechanism role, data availability, redundancy, robustness role and sample complexity — **not because later performance was unfavorable**.
 
 ## 3. H2 mechanism coverage
 
-Pass B preserved seven H2 core mechanism families:
-
-1. residual/conditional state;
-2. trajectory;
-3. state normalization;
-4. signed flow;
-5. concentration;
-6. flow persistence;
-7. regime change.
-
-It also preserved seven challenger paths and three robustness families. ART-028 then materialized the feasible representations and froze six final primary inputs:
+Pass B preserved seven H2 core mechanism families: residual/conditional state, trajectory, state normalization, signed flow, concentration, flow persistence and regime change. ART-028 then froze six primary representations:
 
 1. `conditional_z_move_6h` — conditional movement residual/state;
 2. `velocity_6h_per_hour` — trajectory speed;
@@ -59,74 +51,60 @@ The sole nonlinear challenger added `matrix_profile_discord_6h`, a distinct path
 
 ## 4. Parameter burden versus effective sample
 
-`M_MOVE_CORE` is a logistic model with:
+`M_MOVE_CORE` contains:
 - 1 intercept `alpha`;
 - 1 slope `beta` on `logit(M2)`;
 - 6 movement coefficients;
 - **8 coefficients total**;
-- the 6 movement coefficients regularized with fixed ridge `lambda = 1`;
+- fixed ridge `lambda = 1` on the 6 movement coefficients;
 - intercept and M2 slope unpenalized;
 - **no hyperparameter search**.
 
 The expanding walk-forward starts after only **40 prior events** and ultimately scores **75 OOS events across 54 independent date clusters**.
 
-The scientific outcome unit is the **event/date cluster**, not the 12,752 individual trades used to construct pre-event features. Treating the trade tape as 12,752 independent target observations would be pseudo-replication.
+The scientific outcome unit is the **event/date cluster**, not the 12,752 individual trades used to construct pre-event features. Treating those trades as 12,752 independent target observations would be pseudo-replication.
 
-This sample structure makes the fixed 8-coefficient interpretable model already nontrivial at the beginning of the walk-forward. Opening Hawkes/HMM/deep ensembles as confirmatory model families would materially increase degrees of freedom and selection surface without increasing independent event-level outcomes.
+At the start of the walk-forward, an eight-coefficient model is already nontrivial relative to 40 prior events. A larger model zoo would increase model-selection surface without increasing independent outcome information.
 
-## 5. Why the final model is simple — and why that is a strength
+## 5. Frozen cross-check of deferred/no-go sophistication
 
-The correct report story is not:
+The implementation audit confirms the reduction was technically reasoned:
 
-> “We used a simple logistic regression.”
+- historical depth-normalized OFI: `NO_GO_DATA` because full retro L2 was unavailable;
+- BOCPD: `DEFERRED_COMPLEX_CHALLENGER` because hazard/prior choices add degrees of freedom with ~115 independent events;
+- CUSUM: retained as the simpler regime-change challenger;
+- Matrix Profile discord: challenger; motif similarity rejected as redundant;
+- wavelet decomposition: deferred because causal resampling/basis/scale choices add tuning burden;
+- half-life: conditional in Pass B and later failed ART-028 coverage;
+- Hawkes/HMM/deep architectures: literature/research backlog, **not separate rows with invented audit statuses**.
 
-It is:
+This is exactly the distinction the report should make between **sophistication considered** and **complexity justified confirmatorily**.
 
-> **A pesquisa começou com 69 mecanismos, eliminou indisponibilidade e redundância sem outcomes e congelou apenas seis sinais economicamente distintos. Com 75 previsões OOS em 54 clusters, o teste confirmatório usou um modelo regularizado de oito coeficientes e um único challenger não linear, reduzindo a chance de confundir flexibilidade com edge.**
+## 6. Scoring interpretation
 
-That is **sample-aware parsimony**, not lack of sophistication.
+The report should not say “we used the most advanced model available.”
 
-## 6. Techniques not promoted into the confirmatory core
+Report-safe wording:
 
-Some technically interesting families were researched but intentionally not promoted:
+> **A pesquisa começou ampla e reduziu complexidade antes dos outcomes: 69 técnicas foram auditadas, representações indisponíveis ou redundantes foram removidas e seis mecanismos economicamente distintos foram congelados. Com 75 previsões OOS em 54 clusters, o teste confirmatório ficou deliberadamente restrito a um modelo regularizado de oito coeficientes mais um challenger não linear.**
 
-- full historical L2 OFI/depth/queue features — data unavailable retroactively;
-- half-life — failed frozen coverage gate;
-- CUSUM — near-duplicate with retained jump representation;
-- multivariate anomaly — redundant with drift-distance materialization;
-- large-trade share / conformal martingale — challenger candidates not selected for the sole nonlinear slot;
-- online ensembles / forecaster dispersion — model-level candidates deferred;
-- Hawkes/HMM/MMHP — higher sample/identifiability burden;
-- deep architectures — high dimensionality/selection cost not justified by event-level n.
+This demonstrates:
+- research breadth;
+- economic mechanism coverage;
+- anti-overfit design;
+- interpretability;
+- replicability;
+- complexity appropriate to effective sample size.
 
-Entropy/disagreement and more advanced Bayesian change-point representations remain legitimate future mechanism research, but **cannot be retrofitted after ART-030** to claim that H2 would have passed.
+## 7. Recommended report visual
 
-## 7. Preliminary adequacy assessment
-
-| Dimension | Verdict | Reason |
-|---|---|---|
-| Breadth of technique search | **STRONG** | 69 mechanisms audited before confirmatory execution |
-| Economic mechanism coverage | **STRONG** | state, trajectory, flow, concentration, persistence and regime represented |
-| Redundancy control | **STRONG** | 15 high-rank-correlation pairs identified before outcomes |
-| Interpretability | **STRONG** | six mechanism-linked movement inputs + explicit M2 backbone |
-| Complexity relative to n | **APPROPRIATE / NEAR UPPER DEFENSIBLE RANGE** | 8 coefficients; initial n=40; 75 OOS / 54 clusters; fixed ridge/no tuning |
-| Nonlinear representation | **ADEQUATE** | one distinct Matrix Profile challenger without model zoo |
-| Historical L2 microstructure | **DATA-LIMITED** | honest NO-GO rather than imputation |
-| High-parameter latent/deep models | **CORRECTLY DEFERRED** | independent event-level sample too limited for confirmatory expansion |
-
-## 8. Figure specification for the report
-
-Recommended compact visual for Modeling score:
-
-`69 techniques` → `59 structurally reviewed` → `25 label-free descriptors` → `redundancy + data gates` → `6 economic mechanisms` → `M_MOVE_CORE (8 coeffs)` + `1 nonlinear challenger`
+`69 techniques` → `59 structurally reviewed` → `25 label-free descriptors` → `data + redundancy gates` → `6 economic mechanisms` → `M_MOVE_CORE (8 coeffs)` + `1 nonlinear challenger`
 
 Caption:
 
 > **Complexidade foi removida antes dos outcomes, não depois dos resultados.**
 
-This visual communicates breadth, selection control, interpretability and anti-overfit simultaneously.
-
-## 9. What would weaken the score
+## 8. What would weaken the score
 
 Avoid:
 - listing dozens of algorithms as if quantity were sophistication;
@@ -136,16 +114,6 @@ Avoid:
 - treating trades/wallets as independent outcome observations;
 - using ART-030 ablations to redesign M_MOVE post-hoc.
 
-## 10. Remaining work to close W1-A
+## 9. Final conclusion
 
-- [x] map the 69-technique disposition quantitatively;
-- [x] quantify redundancy before outcomes;
-- [x] quantify final coefficient burden versus event-level sample;
-- [x] specify report-safe complexity wording;
-- [x] specify the recommended modeling figure;
-- [ ] perform one final cross-check that all named deferred mechanisms match the frozen implementation audit statuses;
-- [ ] issue final `PASS_MODEL_COMPLEXITY_SUFFICIENCY_FOR_REPORT` verdict.
-
-## 11. Preliminary conclusion
-
-**W1-A is close to PASS.** Complexity is not the primary weakness of ARGOS. The strongest defensible Modeling story is **broad mechanism search → outcome-blind structural reduction → sample-aware regularized parsimony**. With the effective sample available, increasing model flexibility would have increased overfit/multiple-testing risk faster than information content.
+**PASS.** Complexity is not the primary weakness of ARGOS. The strongest Modeling story for the final report is **broad mechanism search → outcome-blind structural reduction → sample-aware regularized parsimony**. Increasing confirmatory flexibility would have increased overfit and multiple-testing risk faster than independent information content.
