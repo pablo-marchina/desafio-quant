@@ -1,0 +1,74 @@
+name: ART-030 EXP-07I H2 Execution
+
+on:
+  push:
+    paths:
+      - 'scripts/art030_exp07i_h2_execution.py'
+      - '.github/workflows/art030_exp07i_h2_execution.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Execute frozen ART-030 H2 test
+        run: python scripts/art030_exp07i_h2_execution.py
+      - name: Validate execution against ART-029 freeze
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, json
+          def sha(p):
+              h=hashlib.sha256()
+              with open(p,'rb') as f:
+                  for b in iter(lambda:f.read(1<<20),b''): h.update(b)
+              return h.hexdigest()
+          fr=json.load(open('registry/art029_freeze_manifest.json',encoding='utf-8'))
+          s=json.load(open('registry/art030_summary.json',encoding='utf-8'))
+          assert s['protocol_sha256']==fr['freeze_hashes']['protocol_sha256']
+          assert s['target_reconstructed_events']==117
+          assert s['target_yes']==88 and s['target_no']==29
+          assert s['scored_events']==fr['label_free_expected_scored_events']==75
+          assert s['scored_date_clusters']==fr['label_free_expected_scored_date_clusters']==54
+          assert s['decision'] in {'PASS_H2','FAIL_H2','INCONCLUSIVE'}
+          assert s['primary_trial']=='EXP07I-T02'
+          assert len(s['pass_conditions'])==6
+          assert sha('data/art030_exp07i_oos_predictions.csv.gz')==s['output_hashes']['predictions_sha256']
+          assert sha('registry/art030_contract_outcomes.csv')==s['output_hashes']['outcomes_sha256']
+          preds=list(csv.DictReader(gzip.open('data/art030_exp07i_oos_predictions.csv.gz','rt',encoding='utf-8')))
+          assert len(preds)==75 and len({r['company_event_date'] for r in preds})==54
+          trials=list(csv.DictReader(open('registry/art030_trial_results.csv',encoding='utf-8')))
+          assert len(trials)==15 and len([r for r in trials if r['role']=='PRIMARY_CONFIRMATORY'])==1
+          PY
+      - name: Upload raw outcome evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: art030-raw-gamma-outcomes
+          path: |
+            artifacts/art030/raw/gamma_outcomes
+            artifacts/art030/raw_manifest.csv
+          retention-days: 30
+      - name: Commit ART-030 outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add data/art030_exp07i_oos_predictions.csv.gz \
+            registry/art030_contract_outcomes.csv \
+            registry/art030_model_metrics.csv \
+            registry/art030_primary_inference.csv \
+            registry/art030_temporal_terciles.csv \
+            registry/art030_ablations.csv \
+            registry/art030_robustness.csv \
+            registry/art030_trial_results.csv \
+            registry/art030_batch_coefficients.csv \
+            registry/art030_summary.json \
+            docs/26_art030_exp07i_h2_execution.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'result: ART-030 EXP-07I frozen H2 execution'
+          git push
