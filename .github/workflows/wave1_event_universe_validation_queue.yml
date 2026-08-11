@@ -1,0 +1,69 @@
+name: Wave 1 Event Universe Validation Queue
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/wave1_event_universe_validation_queue.py'
+      - 'registry/wave1_event_universe_targeted_census_events.csv.gz'
+      - '.github/workflows/wave1_event_universe_validation_queue.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-queue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build query-consistent validation queue
+        run: python scripts/wave1_event_universe_validation_queue.py --registry-dir registry
+
+      - name: Validate boundary
+        run: |
+          python - <<'PY'
+          import csv, json
+          from pathlib import Path
+          meta = json.loads(Path('registry/wave1_event_universe_manual_validation_queue_summary.json').read_text())
+          assert meta['performance_blind'] is True
+          assert meta['scientific_reopen'] is False
+          assert meta['query_protocol_unchanged'] is True
+          assert meta['euas_protocol_unchanged'] is True
+          assert meta['manual_validation_required'] is True
+          rows = list(csv.DictReader(Path('registry/wave1_event_universe_manual_validation_queue.csv').open()))
+          assert len(rows) == meta['queue_rows']
+          assert all(r['query_consistent'] == 'True' for r in rows)
+          assert all(r['manual_validation_status'] == 'PENDING_MANUAL_REVIEW' for r in rows)
+          print('PASS_WAVE1_VALIDATION_QUEUE_BOUNDARY')
+          PY
+
+      - name: Upload validation queue
+        uses: actions/upload-artifact@v4
+        with:
+          name: wave1-validation-queue-${{ github.run_id }}
+          path: |
+            registry/wave1_event_universe_manual_validation_queue.csv
+            registry/wave1_event_universe_manual_validation_queue_summary.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit validation queue
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/wave1_event_universe_manual_validation_queue.csv \
+            registry/wave1_event_universe_manual_validation_queue_summary.json
+          if git diff --cached --quiet; then
+            echo 'No validation queue changes.'
+          else
+            git commit -m 'wave1: materialize event-universe validation queue'
+            git push origin HEAD:main
+          fi
