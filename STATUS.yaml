@@ -1,6 +1,6 @@
 project: ARGOS
 challenge: Itaú Asset Quant AI 2026
-snapshot_date: 2026-08-10
+snapshot_date: 2026-08-11
 submission_deadline: 2026-08-17
 scientific_freeze:
   thesis: TF-v1.0
@@ -33,13 +33,26 @@ information_completeness:
     absent_pre_cutoff_events:
       - ANF|2026-05-27
       - BRZE|2026-05-27
-    signed_direction: BLOCKED_PENDING_IC03
     raw_artifact_id: 9085858433
     raw_artifact_sha256: 38ba23d6189076841c96e6734445921fc59fb71a4121ad40424798a8a6c6cae0
+  IC03_trade_semantics:
+    status: PASS_AUDIT_READY_WITH_DISCLOSED_API_SIZE_SEMANTICS
+    rows: 12752
+    direction_reconciled: 12752/12752
+    price_reconciled: 12752/12752
+    v1_rows: 11729
+    v2_rows: 1023
+    canonical_direction: side_canonical
+    canonical_price: price_canonical
+    canonical_volume: token_amount_gross_canonical
+    canonical_notional: collateral_notional_canonical
+    api_size_equals_gross: 12183/12752
+    api_size_noncanonical_v1_fee_module_rows: 569
+    audit_ready_tape_sha256: 3563d3c1348a3cc78b13419f554195a306cc7f7ad70e330b4b3432c043f4ad96
 critical_path:
   - INFO_COMPLETENESS_MAP
   - IC02_TRADE_TAPE_COMPLETED_WITH_LIMITATIONS
-  - ONCHAIN_V1_V2_VERSION_MAP_AND_DIRECTION_RECONCILIATION
+  - IC03_ONCHAIN_TRADE_SEMANTICS_COMPLETED
   - DENSE_PRICE_HISTORY_PILOT
   - HISTORICAL_L2_AVAILABILITY_DECISION
   - EVENT_TIMING_MATERIALIZATION
@@ -58,9 +71,10 @@ report:
   anonymous: true
   target_words: 580
 blockers:
-  - CLOB_V1_V2_ONCHAIN_MAPPING_AND_DIRECTION_NOT_FROZEN
+  - DENSE_PRICE_HISTORY_NOT_MATERIALIZED
   - HISTORICAL_L2_AVAILABILITY_NOT_FINALIZED
   - EVENT_TIMING_COVERAGE_NOT_MATERIALIZED
+  - CONTEXTUAL_DATA_AVAILABILITY_NOT_CLOSED
   - ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY
   - ART025_STALE_DRIVE_ID_IN_SR_V3
   - H2_NOT_EXECUTED
@@ -68,4 +82,4 @@ blockers:
   - GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC
 limitations:
   - TRADE_TAPE_PRE_CUTOFF_STRUCTURALLY_UNAVAILABLE_FOR_ANF_2026_05_27_AND_BRZE_2026_05_27
-  - DATA_API_SIDE_NOT_YET_AUTHORITATIVE_AGGRESSOR_DIRECTION
+  - DATA_API_SIZE_IS_NONCANONICAL_FOR_569_V1_FEE_MODULE_BUY_ROWS_USE_ONCHAIN_GROSS_AND_COLLATERAL_INSTEAD
