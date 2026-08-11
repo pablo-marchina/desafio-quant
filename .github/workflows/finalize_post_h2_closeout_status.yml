@@ -1,0 +1,57 @@
+name: Finalize Post-H2 Closeout Status
+
+on:
+  push:
+    paths:
+      - 'scripts/finalize_post_h2_closeout_status.py'
+      - 'registry/final_evidence_reconciliation_summary.json'
+      - 'registry/official_eps_closeout_summary.json'
+      - 'registry/genai_usage_summary.json'
+      - 'registry/art030_summary.json'
+      - '.github/workflows/finalize_post_h2_closeout_status.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply closeout status transition
+        run: python scripts/finalize_post_h2_closeout_status.py
+      - name: Validate final closeout state
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('STATUS.yaml').read_text(encoding='utf-8')
+          assert 'current_phase: FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE' in s
+          assert 'H2: FAIL_UNDER_FROZEN_EXP07I' in s
+          assert 'status: CONDITIONAL_FINAL_EVIDENCE_RECONCILIATION_EPS_RESIDUAL_1' in s
+          assert 'independently_validated: 116/117' in s
+          assert 'validated_mismatches: 0' in s
+          assert 'remaining_event: BLSH|2025-09-17' in s
+          assert 'entries: 11' in s
+          assert 'OFFICIAL_EPS_INDEPENDENT_RECONSTRUCTION_RESIDUAL_1_BLSH_2025_09_17' in s
+          assert 'FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE_NOT_EXECUTED' in s
+          for stale in [
+              'ART022_NUMERIC_AND_PROTOCOL_HASH_INCONSISTENCY',
+              'ART025_STALE_DRIVE_ID_IN_SR_V3',
+              '66_OFFICIAL_EPS_OUTCOMES_NOT_INDEPENDENTLY_RECONSTRUCTED',
+              'GENAI_LEDGER_NEEDS_FINAL_EVIDENCE_SYNC',
+              'H2_NOT_EXECUTED',
+              'ART030_EXP07I_H2_NOT_EXECUTED']:
+              assert stale not in s
+          PY
+      - name: Commit STATUS
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add STATUS.yaml
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'status: close final evidence reconciliation and open submission freeze'
+          git push
