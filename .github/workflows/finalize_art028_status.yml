@@ -1,0 +1,37 @@
+name: Finalize ART-028 Status
+
+on:
+  push:
+    paths:
+      - 'scripts/finalize_art028_status.py'
+      - 'registry/art028_summary.json'
+      - '.github/workflows/finalize_art028_status.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Update STATUS
+        run: python scripts/finalize_art028_status.py
+      - name: Validate status transition
+        run: |
+          grep -q '^current_phase: ART029_EXP07I_PROTOCOL_FREEZE$' STATUS.yaml
+          grep -q '^art028_movement_data_feasibility:$' STATUS.yaml
+          grep -q 'ART-028_MOVEMENT_DATA_FEASIBILITY_COMPLETED' STATUS.yaml
+          grep -q 'ART029_EXP07I_PROTOCOL_NOT_FROZEN' STATUS.yaml
+      - name: Commit STATUS
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add STATUS.yaml
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'status: close ART-028 and open ART-029'
+          git push
