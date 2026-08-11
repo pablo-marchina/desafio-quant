@@ -1,0 +1,51 @@
+name: Cross-Strategy Audit Pass A
+
+on:
+  push:
+    paths:
+      - 'scripts/pass_a_full_superset_audit.py'
+      - 'registry/cross_strategy_transfer_map.csv'
+      - 'registry/ic02_summary.json'
+      - 'registry/ic03_summary.json'
+      - 'registry/ic04_summary.json'
+      - 'registry/ic05_summary.json'
+      - 'registry/ic06_summary.json'
+      - 'registry/ic07_summary.json'
+      - 'registry/information_completeness_gate.json'
+      - '.github/workflows/pass_a_full_superset_audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run full-superset Pass A
+        run: python scripts/pass_a_full_superset_audit.py
+      - name: Validate 69 rows and no unaudited statuses
+        run: |
+          python - <<'PY'
+          import csv, json
+          rows=list(csv.DictReader(open('registry/implementation_audit.csv', encoding='utf-8')))
+          assert len(rows)==69
+          assert all(r['pass_a_status']!='UNAUDITED_POST_ICG' for r in rows)
+          assert all(r['thesis_alignment_gate'] for r in rows)
+          s=json.load(open('registry/pass_a_summary.json', encoding='utf-8'))
+          assert s['decision']=='PASS_A_COMPLETE_FULL_SUPERSET_OUTCOME_BLIND'
+          assert s['audited_rows']==69 and s['missing_rows']==0
+          assert s['outcomes_or_performance_read_by_script'] is False
+          PY
+      - name: Commit audit outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/implementation_audit.csv registry/pass_a_summary.json docs/22_cross_strategy_implementation_audit_pass_a.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'audit: complete full-superset Pass A'
+          git push
