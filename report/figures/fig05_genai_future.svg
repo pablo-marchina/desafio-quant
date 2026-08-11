@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#9FB0C3"/></marker>
+<marker id="arrowAmber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#F4BF4F"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#07111F"/>
+<text x="80" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5" text-anchor="start" opacity="1">05 • GENAI + PRÓXIMOS PASSOS</text>
+<text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">O resultado final é uma decisão de pesquisa — e um próximo experimento melhor</text>
+<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">IA acelerou pesquisa e execução; fontes, CI, gates humanos e hashes decidiram o que virou evidência.</text>
+<path d="M 1411.5 85 Q 1450 57.5 1488.5 85" fill="none" stroke="#49C6E5" stroke-width="2.75" opacity="1"/>
+<path d="M 1421.4 89.4 Q 1450 111.4 1478.6 89.4" fill="none" stroke="#2DD4BF" stroke-width="2.75" opacity="1"/>
+<path d="M 1403.8 94.9 Q 1430.75 125.7 1461.0 111.4" fill="none" stroke="#F4BF4F" stroke-width="2.2" opacity="1" stroke-dasharray="9.9,6.050000000000001"/>
+<circle cx="1450" cy="87.75" r="6.6000000000000005" fill="#F4F7FB" stroke="none" stroke-width="0"/>
+<circle cx="1450" cy="87.75" r="2.75" fill="#49C6E5" stroke="none" stroke-width="0"/>
+<text x="1450" y="135.6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.200000000000001" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">ARGOS</text>
+<rect x="80" y="230" width="780" height="520" rx="20" fill="#0E1B2B" stroke="#294158" stroke-width="2" opacity="1"/>
+<text x="120" y="275" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#49C6E5" text-anchor="start" opacity="1">GENAI: IMPACTO COM VERIFICAÇÃO</text>
+<circle cx="190" cy="365" r="58" fill="#14283D" stroke="#49C6E5" stroke-width="3"/>
+<text x="190" y="372" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#49C6E5" text-anchor="middle" opacity="1">AI propõe</text>
+<circle cx="420" cy="330" r="58" fill="#14283D" stroke="#49C6E5" stroke-width="3"/>
+<text x="420" y="328" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#49C6E5" text-anchor="middle" opacity="1">Fonte</text>
+<text x="420" y="351" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#49C6E5" text-anchor="middle" opacity="1">execução</text>
+<circle cx="655" cy="365" r="58" fill="#14283D" stroke="#2DD4BF" stroke-width="3"/>
+<text x="655" y="372" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#2DD4BF" text-anchor="middle" opacity="1">Gate humano</text>
+<circle cx="600" cy="585" r="58" fill="#14283D" stroke="#F4BF4F" stroke-width="3"/>
+<text x="600" y="583" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#F4BF4F" text-anchor="middle" opacity="1">Freeze</text>
+<text x="600" y="606" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#F4BF4F" text-anchor="middle" opacity="1">hash</text>
+<circle cx="300" cy="600" r="58" fill="#14283D" stroke="#F4F7FB" stroke-width="3"/>
+<text x="300" y="607" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Aceita ou rejeita</text>
+<line x1="190" y1="365" x2="420" y2="330" stroke="#9FB0C3" stroke-width="2" opacity="0.7" marker-end="url(#arrow)"/>
+<line x1="420" y1="330" x2="655" y2="365" stroke="#9FB0C3" stroke-width="2" opacity="0.7" marker-end="url(#arrow)"/>
+<line x1="655" y1="365" x2="600" y2="585" stroke="#9FB0C3" stroke-width="2" opacity="0.7" marker-end="url(#arrow)"/>
+<line x1="600" y1="585" x2="300" y2="600" stroke="#9FB0C3" stroke-width="2" opacity="0.7" marker-end="url(#arrow)"/>
+<line x1="300" y1="600" x2="190" y2="365" stroke="#9FB0C3" stroke-width="2" opacity="0.7" marker-end="url(#arrow)"/>
+<text x="120" y="695" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">11 entradas no ledger • human-in-the-loop • outcome firewall</text>
+<rect x="910" y="230" width="610" height="520" rx="20" fill="#0E1B2B" stroke="#294158" stroke-width="2" opacity="1"/>
+<text x="950" y="275" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4BF4F" text-anchor="start" opacity="1">PRÓXIMO ESTUDO — NÃO É RESULTADO SUBMETIDO</text>
+<rect x="950" y="330" width="520" height="100" rx="16" fill="#14283D" stroke="#2DD4BF" stroke-width="2" opacity="1"/>
+<text x="980" y="368" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">FDA</text>
+<text x="1435" y="368" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" fill="#2DD4BF" text-anchor="end" opacity="1">47</text>
+<text x="980" y="402" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">preferida se mantivermos ações individuais</text>
+<rect x="950" y="455" width="520" height="100" rx="16" fill="#14283D" stroke="#49C6E5" stroke-width="2" opacity="1"/>
+<text x="980" y="493" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">Macro</text>
+<text x="1435" y="493" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="27" font-weight="700" fill="#49C6E5" text-anchor="end" opacity="1">50</text>
+<text x="980" y="527" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">forte, mas exige rates/índices</text>
+<rect x="950" y="580" width="520" height="100" rx="16" fill="#14283D" stroke="#F4BF4F" stroke-width="2" opacity="1"/>
+<text x="980" y="618" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">M&amp;A completion</text>
+<text x="1435" y="618" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="700" fill="#F4BF4F" text-anchor="end" opacity="1">UNRANKED</text>
+<text x="980" y="652" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">expandir descoberta antes de rankear</text>
+<line x1="900" y1="210" x2="900" y2="790" stroke="#F4BF4F" stroke-width="2" opacity="0.7" stroke-dasharray="10,10"/>
+<rect x="950" y="710" width="510" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1205.0" y="742" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Earnings #1 em 81/81 sensibilidades</text>
+<text x="80" y="825" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#F4BF4F" text-anchor="start" opacity="1">A disciplina do ARGOS não é sempre operar; é saber quando a evidência ainda não autoriza risco.</text>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "artifact": "ARGOS_FINAL_FIGURE_FACTORY",
+  "version": "FFF-v1.0",
+  "status": "PASS_FIGURES_GENERATED_FROM_FROZEN_INPUTS",
+  "scientific_reopen": false,
+  "canvas": "1600x900",
+  "identity_source": "registry/argos_visual_identity_freeze.json",
+  "figure_input_source": "registry/report_figure_inputs.csv",
+  "identity_sha256": "106edfff7874a291694e37c2a2eccfe241397634728ce013be1f3bdf40d788b0",
+  "figure_inputs_sha256": "28edb916cdc25dd0289b9e2044f4fc722ec1c076d608d397929f2ab33c629c1f",
+  "outputs": {
+    "argos_mark.svg": "155e2456a3eac101658c0532fe75dffd8f9e4af360965844621085097f6a6896",
+    "fig01_strategy_pipeline.svg": "d93d8cf66d8f8348705015bb7249e79c3a6ffb99378e326bf2105b1a65e8a1e9",
+    "fig02_model_reduction.svg": "25ede17c2614e5795faee2e2c810a08095931fb99f74a041a7ea28d3e6ebe9de",
+    "fig03_h2_results.svg": "7da615e4c525628e0536026bc892017a1da3ee3f6dcf8c0fd357e77f3d52deed",
+    "fig04_economic_backtest.svg": "975b476e6372d35b66b2d4d37b1a0ddf61a5e66636646a15f8770809e9ebda1a",
+    "fig05_genai_future.svg": "e405e811bf79ab068988557da5f681360f871049b00b0a3d3163344356a48543"
+  },
+  "rules": [
+    "No result is recomputed; all quantitative values come from frozen report inputs.",
+    "No external fonts or network assets are required.",
+    "No GitHub URL, author name or university identity is rendered.",
+    "No-trade uses the gate/abstention semantic color, not an error-only state.",
+    "Future research is visually segregated from submitted evidence."
+  ]
+}

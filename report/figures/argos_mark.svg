@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#9FB0C3"/></marker>
+<marker id="arrowAmber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#F4BF4F"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#07111F"/>
+<path d="M 646.0 390 Q 800 280.0 954.0 390" fill="none" stroke="#49C6E5" stroke-width="11.0" opacity="1"/>
+<path d="M 685.6 407.6 Q 800 495.6 914.4 407.6" fill="none" stroke="#2DD4BF" stroke-width="11.0" opacity="1"/>
+<path d="M 615.2 429.6 Q 723.0 552.8 844.0 495.6" fill="none" stroke="#F4BF4F" stroke-width="8.8" opacity="1" stroke-dasharray="39.6,24.200000000000003"/>
+<circle cx="800" cy="401.0" r="26.400000000000002" fill="#F4F7FB" stroke="none" stroke-width="0"/>
+<circle cx="800" cy="401.0" r="11.0" fill="#49C6E5" stroke="none" stroke-width="0"/>
+<text x="800" y="610" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="72" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">ARGOS</text>
+<text x="800" y="665" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">Muitos olhos. Risco só com evidência incremental.</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+<marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#9FB0C3"/></marker>
+<marker id="arrowAmber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#F4BF4F"/></marker>
+</defs>
+<rect width="1600" height="900" fill="#07111F"/>
+<text x="80" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5" text-anchor="start" opacity="1">02 • MODELAGEM</text>
+<text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="700" fill="#F4F7FB" text-anchor="start" opacity="1">Complexidade removida antes dos outcomes</text>
+<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">Amplitude de pesquisa → redução estrutural → parcimônia compatível com o n efetivo.</text>
+<path d="M 1411.5 85 Q 1450 57.5 1488.5 85" fill="none" stroke="#49C6E5" stroke-width="2.75" opacity="1"/>
+<path d="M 1421.4 89.4 Q 1450 111.4 1478.6 89.4" fill="none" stroke="#2DD4BF" stroke-width="2.75" opacity="1"/>
+<path d="M 1403.8 94.9 Q 1430.75 125.7 1461.0 111.4" fill="none" stroke="#F4BF4F" stroke-width="2.2" opacity="1" stroke-dasharray="9.9,6.050000000000001"/>
+<circle cx="1450" cy="87.75" r="6.6000000000000005" fill="#F4F7FB" stroke="none" stroke-width="0"/>
+<circle cx="1450" cy="87.75" r="2.75" fill="#49C6E5" stroke="none" stroke-width="0"/>
+<text x="1450" y="135.6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.200000000000001" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">ARGOS</text>
+<rect x="100" y="205.0" width="200" height="430" rx="18" fill="#0E1B2B" stroke="#49C6E5" stroke-width="2" opacity="1"/>
+<text x="200.0" y="402" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700" fill="#49C6E5" text-anchor="middle" opacity="1">69</text>
+<text x="200.0" y="458" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Técnicas</text>
+<line x1="312" y1="420" x2="355" y2="420" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<rect x="370" y="230.0" width="200" height="380" rx="18" fill="#0E1B2B" stroke="#49C6E5" stroke-width="2" opacity="1"/>
+<text x="470.0" y="402" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700" fill="#49C6E5" text-anchor="middle" opacity="1">59</text>
+<text x="470.0" y="458" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Inputs</text>
+<text x="470.0" y="486" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">Pass-B</text>
+<line x1="582" y1="420" x2="625" y2="420" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<rect x="640" y="265.0" width="200" height="310" rx="18" fill="#0E1B2B" stroke="#9FB0C3" stroke-width="2" opacity="1"/>
+<text x="740.0" y="402" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700" fill="#9FB0C3" text-anchor="middle" opacity="1">25</text>
+<text x="740.0" y="458" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Descritores</text>
+<text x="740.0" y="486" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">label-free</text>
+<line x1="852" y1="420" x2="895" y2="420" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<rect x="910" y="302.5" width="200" height="235" rx="18" fill="#0E1B2B" stroke="#2DD4BF" stroke-width="2" opacity="1"/>
+<text x="1010.0" y="402" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700" fill="#2DD4BF" text-anchor="middle" opacity="1">6</text>
+<text x="1010.0" y="458" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Mecanismos</text>
+<text x="1010.0" y="486" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">primários</text>
+<line x1="1122" y1="420" x2="1165" y2="420" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<rect x="1180" y="320.0" width="180" height="200" rx="18" fill="#0E1B2B" stroke="#2DD4BF" stroke-width="2" opacity="1"/>
+<text x="1270.0" y="402" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700" fill="#2DD4BF" text-anchor="middle" opacity="1">8</text>
+<text x="1270.0" y="458" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Coeficientes</text>
+<text x="1270.0" y="486" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">core</text>
+<line x1="1372" y1="420" x2="1415" y2="420" stroke="#9FB0C3" stroke-width="3" opacity="1" marker-end="url(#arrow)"/>
+<rect x="1430" y="337.5" width="180" height="165" rx="18" fill="#0E1B2B" stroke="#F4BF4F" stroke-width="2" opacity="1"/>
+<text x="1520.0" y="402" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700" fill="#F4BF4F" text-anchor="middle" opacity="1">1</text>
+<text x="1520.0" y="458" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">Challenger</text>
+<text x="1520.0" y="486" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#9FB0C3" text-anchor="middle" opacity="1">não linear</text>
+<text x="100" y="705" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="400" fill="#9FB0C3" text-anchor="start" opacity="1">15 pares |Spearman| ≥ 0,90 já no Pass B → redundância removida antes dos labels</text>
+<rect x="100" y="745" width="210" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="205.0" y="777" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">40 warm-up</text>
+<rect x="330" y="745" width="250" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="455.0" y="777" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">75 previsões OOS</text>
+<rect x="600" y="745" width="250" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="725.0" y="777" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">54 date clusters</text>
+<rect x="870" y="745" width="210" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="975.0" y="777" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">ridge λ = 1</text>
+<rect x="1100" y="745" width="340" height="48" rx="24" fill="#14283D" stroke="none" stroke-width="0" opacity="1"/>
+<text x="1270.0" y="777" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="middle" opacity="1">sem hyperparameter search</text>
+<text x="100" y="835" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#2DD4BF" text-anchor="start" opacity="1">Complexidade foi removida antes dos outcomes, não depois dos resultados.</text>
+</svg>
