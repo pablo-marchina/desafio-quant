@@ -1,0 +1,151 @@
+{
+  "artifact_id": "ART-030",
+  "challenger": {
+    "candidate": "M_MOVE_MP",
+    "positive_brier_terciles": 0,
+    "prerequisite_core_pass": false,
+    "promoted": false,
+    "promotion_inference": {
+      "bootstrap_reps": 20000,
+      "brier_ci_high": 0.00903960200435802,
+      "brier_ci_low": -0.02557903850647927,
+      "brier_increment": -0.0069794898062572,
+      "clusters": 54,
+      "comparison": "p_M_MOVE_CORE_minus_p_M_MOVE_MP",
+      "logloss_ci_high": 0.04027828620171385,
+      "logloss_ci_low": -0.051358559455794386,
+      "logloss_increment": -0.0028408721298920025,
+      "n": 75,
+      "seed": 20260812
+    },
+    "trial_id": "EXP07I-T03"
+  },
+  "decision": "FAIL_H2",
+  "execution_timestamp_utc": "2026-08-11T13:21:49.227070+00:00",
+  "h3_status_after_art030": "BLOCKED_BY_H2",
+  "h4_status_after_art030": "BLOCKED_BY_H2",
+  "h5_status_after_art030": "BLOCKED_BY_H4",
+  "model_metrics": {
+    "p_M2_CAL": {
+      "auc": 0.7855750487329435,
+      "base_rate": 0.76,
+      "brier": 0.14502650803435788,
+      "calibration_intercept": -0.5966109932469635,
+      "calibration_slope": 1.5436643491640727,
+      "date_clusters": 54,
+      "ece_5bin": 0.047448110392826086,
+      "log_loss": 0.45400185611709,
+      "mean_prediction": 0.7636206990227064,
+      "n": 75
+    },
+    "p_M2_RAW": {
+      "auc": 0.8055555555555556,
+      "base_rate": 0.76,
+      "brier": 0.13954701,
+      "calibration_intercept": -0.08198462364535554,
+      "calibration_slope": 1.0783432236258725,
+      "date_clusters": 54,
+      "ece_5bin": 0.042433333333333295,
+      "log_loss": 0.4302918261840308,
+      "mean_prediction": 0.7608466666666668,
+      "n": 75
+    },
+    "p_M_MOVE_CORE": {
+      "auc": 0.6734892787524367,
+      "base_rate": 0.76,
+      "brier": 0.1620974987486428,
+      "calibration_intercept": 0.44906556860514457,
+      "calibration_slope": 0.5223803951097101,
+      "date_clusters": 54,
+      "ece_5bin": 0.06999284592313457,
+      "log_loss": 0.5403842574211747,
+      "mean_prediction": 0.7741168037172881,
+      "n": 75
+    },
+    "p_M_MOVE_MP": {
+      "auc": 0.6832358674463938,
+      "base_rate": 0.76,
+      "brier": 0.16907698855489992,
+      "calibration_intercept": 0.4082054665485378,
+      "calibration_slope": 0.5062435078734037,
+      "date_clusters": 54,
+      "ece_5bin": 0.06677756120586412,
+      "log_loss": 0.5432251295510668,
+      "mean_prediction": 0.7842837278624116,
+      "n": 75
+    },
+    "p_R_SIGN": {
+      "auc": 0.6773879142300195,
+      "base_rate": 0.76,
+      "brier": 0.16013501356912063,
+      "calibration_intercept": 0.3900386905969734,
+      "calibration_slope": 0.6306089395603753,
+      "date_clusters": 54,
+      "ece_5bin": 0.10291961221950889,
+      "log_loss": 0.5191411150240892,
+      "mean_prediction": 0.7586333647896643,
+      "n": 75
+    },
+    "p_R_VOL": {
+      "auc": 0.6647173489278753,
+      "base_rate": 0.76,
+      "brier": 0.1682754056558041,
+      "calibration_intercept": 0.8469640056872882,
+      "calibration_slope": 0.21412608109374223,
+      "date_clusters": 54,
+      "ece_5bin": 0.07515651393073873,
+      "log_loss": 0.619698398381474,
+      "mean_prediction": 0.7621469755941441,
+      "n": 75
+    }
+  },
+  "output_hashes": {
+    "ablations_sha256": "8802fee00b5989ee074235282d27b9778056cbfc459fe484bb704c1015f93d55",
+    "inference_sha256": "684d74245800306d2e26e657450ec30902ee6938942e19cce47f86b0d372d2e2",
+    "metrics_sha256": "2347fde24dd4451c2faee6066a89da33f4152539380f4946a878d4ff912f442d",
+    "outcomes_sha256": "11fdfccfbec4a9d6ac4aa523b17a120b6719db8cb290d206fd63461ffaed7158",
+    "predictions_sha256": "6033ab864ed0576092828cab3d3ebf15e039133c6e5efb2f29e6d45401065de2",
+    "raw_manifest_sha256": "a1e1835351eea05425de971a09058650582dd6797be44852b5abdd0e19eab20d",
+    "robustness_sha256": "46f3afb15eea6c1b0f1e90ef67cc5260f1a50f0a6bfcf7fcd0dc26ff6495300a",
+    "trial_results_sha256": "a3ceaa452b62a2cb549ae977dd042f42d1e3d6238433ccf3611f4efae160239b"
+  },
+  "pass_conditions": {
+    "brier_ci_lower_gt_0": false,
+    "coverage": true,
+    "logloss_ci_lower_gt_0": false,
+    "raw_m2_brier_point_gt_0": false,
+    "raw_m2_logloss_point_gt_0": false,
+    "temporal_positive_at_least_2_of_3": false
+  },
+  "primary_candidate": "M_MOVE_CORE",
+  "primary_comparator": "M2_CAL",
+  "primary_inference": {
+    "bootstrap_reps": 20000,
+    "brier_ci_high": 0.012816462700925006,
+    "brier_ci_low": -0.04910144519317386,
+    "brier_increment": -0.017070990714284907,
+    "clusters": 54,
+    "comparison": "p_M2_CAL_minus_p_M_MOVE_CORE",
+    "logloss_ci_high": 0.025206964277829834,
+    "logloss_ci_low": -0.21447850973675447,
+    "logloss_increment": -0.08638240130408478,
+    "n": 75,
+    "seed": 20260811
+  },
+  "primary_trial": "EXP07I-T02",
+  "prior_official_eps_reconstruction_agreement_context": "51/51 previously documented; not used to redefine the primary target",
+  "protocol_sha256": "fcbf7121ae3fe47328b9e06b9f974d01cb5c94bb9760f717b25c64ab839b43c1",
+  "protocol_version": "EXP07I-H2-FREEZE-v1.0",
+  "raw_m2_guard": {
+    "brier_increment": -0.02255048874864278,
+    "logloss_increment": -0.11009243123714373
+  },
+  "scored_date_clusters": 54,
+  "scored_events": 75,
+  "stop_rule_applied": true,
+  "target_no": 29,
+  "target_reconstructed_events": 117,
+  "target_source": "Polymarket Gamma resolved binary contract outcome",
+  "target_yes": 88,
+  "temporal_positive_brier_terciles": 0
+}

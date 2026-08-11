@@ -1,0 +1,13 @@
+trial_id,slice,description,n,date_clusters,brier,log_loss,auc,brier_increment,logloss_increment,brier_contribution_of_persistence
+EXP07I-R01,overall,replace velocity with vol_scaled_delta_6h,75,54,0.168275405656,0.619698398381,0.664717348928,,,
+EXP07I-R02,overall,replace velocity with sign_consistency_1_6_24h,75,54,0.160135013569,0.519141115024,0.67738791423,,,
+EXP07I-R03,V1,frozen CORE predictions by exchange era; no refit,54,37,0.184664085371,0.610661378203,0.649572649573,-0.0176535305025,-0.103143087175,
+EXP07I-R03-PERSISTENCE_ABLATION,V1,mandatory persistence ablation by era,54,37,0.181117388091,0.602657029135,0.65641025641,,,-0.00354669727993
+EXP07I-R03,V2,frozen CORE predictions by exchange era; no refit,21,19,0.104069133149,0.359671661125,0.777777777778,-0.0155730312588,-0.0432834947783,
+EXP07I-R03-PERSISTENCE_ABLATION,V2,mandatory persistence ablation by era,21,19,0.110623690644,0.385273452942,0.759259259259,,,0.00655455749558
+EXP07I-R04,temporal_tercile_1,chronological scored-event tercile,25,17,0.200156081679,0.662628072396,0.547619047619,-0.00192523371038,-0.081496721302,
+EXP07I-R04,temporal_tercile_2,chronological scored-event tercile,25,17,0.15791810908,0.542545446819,0.719298245614,-0.0203440497677,-0.106118703497,
+EXP07I-R04,temporal_tercile_3,chronological scored-event tercile,25,21,0.128218305487,0.415979253048,0.81,-0.0289436886648,-0.071531779113,
+EXP07I-R05,drift_tercile_1,prequential drift-distance tercile; monitoring only,20,19,0.179962015458,0.548075236775,0.68,0.0189814088846,0.0514291014896,
+EXP07I-R05,drift_tercile_2,prequential drift-distance tercile; monitoring only,20,19,0.124477222203,0.403443866729,0.84,0.00535800681181,0.0093070382481,
+EXP07I-R05,drift_tercile_3,prequential drift-distance tercile; monitoring only,20,20,0.190411133869,0.73761392325,0.426666666667,-0.0528395196121,-0.312202949643,
