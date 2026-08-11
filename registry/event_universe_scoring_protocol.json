@@ -1,7 +1,16 @@
 {
   "artifact": "EVENT_UNIVERSE_INFORMATION_ASYMMETRY_SCORING_PROTOCOL",
-  "version": "EUAS-v1.0",
+  "version": "EUAS-v1.1",
   "freeze_date": "2026-08-11",
+  "amendment": {
+    "type": "PRE_SCORING_OPERATIONALIZATION",
+    "prior_version": "EUAS-v1.0",
+    "prior_git_blob_sha": "66515ea87d6c09075b119274dd146b4d1b71d576",
+    "reason": "v1.0 froze dimensions, hard gates and weights but had not operationalized 0-5 anchors. v1.1 adds deterministic anchors before any family suitability score is computed. No ARGOS performance or event-family score was read to make this amendment.",
+    "weights_changed": false,
+    "families_changed": false,
+    "performance_read": false
+  },
   "purpose": "Rank future ARGOS event-family research suitability using ex-ante mechanism/data properties, never realized ARGOS profitability.",
   "performance_blind": true,
   "scientific_reopen": false,
@@ -21,12 +30,90 @@
     "resolution_objectivity_R": 5,
     "prediction_market_observability_P": 5
   },
-  "penalties_points": {
-    "public_information_saturation_PIS": {"range": [0, 10], "direction": "subtract"},
-    "selection_contract_creation_bias_SCB": {"range": [0, 10], "direction": "subtract"},
-    "data_execution_friction_DEF": {"range": [0, 10], "direction": "subtract"}
+  "anchors_0_to_5": {
+    "information_asymmetry_potential_A": {
+      "0": "No credible heterogeneous-information mechanism identified.",
+      "1": "Generic uncertainty only; no family-specific evidence of heterogeneous information before resolution.",
+      "2": "Plausible family-specific heterogeneity/costly information processing, but primary evidence is indirect or mainly public-information based.",
+      "3": "Primary evidence documents informed/heterogeneous trading or pre-event information incorporation in the event family or a very close analogue.",
+      "4": "Multiple primary studies or direct market evidence document strong pre-resolution information heterogeneity closely matching the ARGOS mechanism.",
+      "5": "Direct repeated evidence in prediction markets or tightly linked trading venues documents concentrated/informed information acquisition for the same event family."
+    },
+    "ex_ante_contractability_C": {
+      "0": "Prediction-market contracts generally appear only after resolution/material news or are structurally unavailable.",
+      "1": "Rare contracts or substantial evidence that creation follows rumor/material public news; usable ex-ante lead is exceptional.",
+      "2": "At least 10 manually validated historical independent events with contracts opened before resolution and useful positive lead time, but coverage is irregular.",
+      "3": "At least 25 validated independent events with recurring ex-ante contracts and median lead >= 3 days.",
+      "4": "At least 50 validated independent events with recurring contracts and median lead >= 7 days.",
+      "5": "At least 100 validated independent events or a standardized recurring market program with broad coverage and median lead >= 14 days."
+    },
+    "prediction_market_observability_P": {
+      "0": "No reproducible historical PM data surface.",
+      "1": "Only current snapshots/secondary archives or unresolved provenance.",
+      "2": "Historical event/price metadata reproducible for a meaningful subset, but trade semantics or timestamps are incomplete.",
+      "3": "Historical prices and event metadata reproducible with stable PIT timestamps; trade-level detail limited or family coverage incomplete.",
+      "4": "Historical prices + canonical trade/timestamp data reproducible for most validated events.",
+      "5": "Prices, canonical trade semantics, participant identifiers where relevant, timing and raw provenance are population-wide or near-population-wide and independently auditable."
+    },
+    "liquidity_statistical_density_L": {
+      "0": "No usable contracts/trades.",
+      "1": "Most validated events have negligible activity; fewer than 10 events exceed USD 1k lifetime event volume.",
+      "2": "At least 10 validated events exceed USD 1k volume or at least 5 exceed USD 10k, but density is sparse/heterogeneous.",
+      "3": "At least 25 validated events exceed USD 10k lifetime event volume, or equivalent trade-density evidence supports repeated feature construction.",
+      "4": "At least 50 validated events exceed USD 10k and at least 10 exceed USD 100k, with usable repeated activity.",
+      "5": "At least 100 validated events exceed USD 10k and at least 25 exceed USD 100k, with consistently dense histories suitable for richer microstructure features."
+    },
+    "linked_asset_sensitivity_I": {
+      "0": "No defensible tradeable linked asset.",
+      "1": "Only diffuse economy-wide/sector narrative linkage.",
+      "2": "A broad index/sector/factor linkage exists but event-specific transmission is weak or heterogeneous.",
+      "3": "A specific liquid asset or tight asset basket is identifiable and primary evidence supports material event sensitivity.",
+      "4": "Direct single-name or near-mechanical payoff linkage with material event-study evidence.",
+      "5": "Direct single-name/contractual payoff linkage where the event substantially determines a bounded or mechanically interpretable asset payoff (for example merger-spread completion)."
+    },
+    "resolution_objectivity_R": {
+      "0": "Subjective/ambiguous resolution with no independent authoritative source.",
+      "1": "Resolution is often disputable or depends on inconsistent secondary interpretation.",
+      "2": "Generally resolvable but material semantic/manual ambiguity remains common.",
+      "3": "Clear contractual rule and authoritative outcome source for most events; some edge cases remain.",
+      "4": "Objective binary/numeric rule with authoritative source and high independent-reconstruction coverage.",
+      "5": "Mechanically defined outcome with near-complete independent authoritative validation and minimal semantic ambiguity."
+    },
+    "sampleability_S": {
+      "0": "Fewer than 5 validated independent historical events.",
+      "1": "5-9 validated independent historical events.",
+      "2": "10-24 validated independent historical events.",
+      "3": "25-49 validated independent historical events.",
+      "4": "50-99 validated independent historical events.",
+      "5": "At least 100 validated independent historical events."
+    },
+    "cross_market_timing_opportunity_T": {
+      "0": "No plausible PM-before-asset timing channel; linked asset directly/equally observes resolution.",
+      "1": "Main information arrives essentially simultaneously; only microsecond/minute lead is plausible without specialized execution.",
+      "2": "Some intraday lead/lag is plausible but not structurally recurring or primary evidence is weak.",
+      "3": "Recurring hours/overnight or delayed-incorporation channel is economically plausible and supported by event-family evidence.",
+      "4": "Recurring multi-session window or market-closure/venue-segmentation mechanism gives PM a plausible head start.",
+      "5": "Structural cross-market timing separation creates a repeated and clearly identifiable PM-first information window before the linked asset can fully reprice."
+    }
   },
-  "score_scale": "Each positive dimension 0-5, weighted to 100 before penalties. Penalties are separately evidenced and subtract up to 30 points.",
+  "penalties_points": {
+    "public_information_saturation_PIS": {
+      "range": [0, 10],
+      "direction": "subtract",
+      "anchors": {"0": "low public coverage/standardization", "5": "substantial scheduled coverage and competing public forecasts", "10": "extremely saturated, liquid, widely forecast public-information environment"}
+    },
+    "selection_contract_creation_bias_SCB": {
+      "range": [0, 10],
+      "direction": "subtract",
+      "anchors": {"0": "contracts systematically exist before material public news", "5": "mixed opening timing / some rumor-triggered creation", "10": "contracts usually appear only because a rumor/material event has already surfaced"}
+    },
+    "data_execution_friction_DEF": {
+      "range": [0, 10],
+      "direction": "subtract",
+      "anchors": {"0": "highly reproducible data/timing/execution mapping", "5": "material but manageable missingness/timing/liquidity issues", "10": "data/timing/execution limitations undermine a credible historical test"}
+    }
+  },
+  "score_scale": "Each positive dimension 0-5, weighted to 100 before penalties. Penalties are separately evidenced and subtract up to 30 points. Family scores require manual validation of classifier-discovered contracts; raw text-classifier counts alone cannot satisfy C/L/S gates.",
   "tie_breakers_in_order": [
     "higher sampleability_S",
     "higher liquidity_statistical_density_L",
@@ -50,5 +137,5 @@
     "knowledge that a family produced a favorable historical trade",
     "unverified anecdotal insider allegations"
   ],
-  "next_step": "Populate dimension evidence from primary literature and historical Polymarket contract/liquidity census, then score without changing this protocol."
+  "next_step": "Complete performance-blind historical contract census, manually validate family samples, then populate EUAS scores without changing anchors/weights."
 }
