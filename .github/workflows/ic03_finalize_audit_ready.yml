@@ -1,0 +1,45 @@
+name: IC-03 Finalize Audit-Ready Tape
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/ic03_build_audit_ready_tape.py'
+      - '.github/workflows/ic03_finalize_audit_ready.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build canonical audit-ready tape
+        run: |
+          python scripts/ic03_build_audit_ready_tape.py \
+            --signed-tape data/ic03_signed_tape.csv.gz \
+            --size-audit registry/ic03_v1_size_semantics.csv \
+            --event-summary registry/ic03_event_summary.csv \
+            --out-dir ic03_final
+      - name: Publish final IC-03 data products
+        run: |
+          cp ic03_final/ic03_audit_ready_tape.csv.gz data/ic03_audit_ready_tape.csv.gz
+          cp ic03_final/ic03_audit_ready_summary.json registry/ic03_audit_ready_summary.json
+          cp ic03_final/ic03_final_report.md docs/16_ic03_onchain_direction_report.md
+      - name: Upload final IC-03 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ic03-audit-ready-tape
+          path: ic03_final/
+          retention-days: 30
+          if-no-files-found: error
+      - name: Commit canonical data products
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/ic03_audit_ready_tape.csv.gz registry/ic03_audit_ready_summary.json docs/16_ic03_onchain_direction_report.md
+          git commit -m 'data: finalize IC-03 audit-ready trade tape'
+          git push
