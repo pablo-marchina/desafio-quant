@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'scripts/pass_a_full_superset_audit.py'
+      - 'scripts/pass_a_full_superset_audit_v2.py'
       - 'registry/cross_strategy_transfer_map.csv'
       - 'registry/ic02_summary.json'
       - 'registry/ic03_summary.json'
@@ -27,7 +28,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Run full-superset Pass A
-        run: python scripts/pass_a_full_superset_audit.py
+        run: python scripts/pass_a_full_superset_audit_v2.py
       - name: Validate 69 rows and no unaudited statuses
         run: |
           python - <<'PY'
