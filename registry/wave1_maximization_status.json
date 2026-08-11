@@ -4,44 +4,59 @@
   "scientific_authority": "FST-v1.0 / SF-v3.0",
   "scientific_reopened": false,
   "wave": "WAVE_1_SCORING_CONTRACT_AND_CRITICAL_AUDITS",
-  "overall_status": "IN_PROGRESS",
+  "overall_status": "IN_PROGRESS_W1C_CENSUS",
   "purpose": "Maximize report evaluation score through rubric mapping and critical pre-authoring audits without post-hoc result seeking.",
   "scoring_contract": {
-    "status": "STARTED",
+    "status": "ACTIVE_100_PERCENT_MAPPED",
     "doc": "docs/30_report_scoring_maximization_contract.md",
     "matrix": "registry/report_scoring_maximization_matrix.csv",
     "mapped_weight_pct": 100
   },
   "audits": {
     "model_complexity_technique_sufficiency": {
-      "status": "IN_PROGRESS_PRELIMINARY_STRONG",
+      "status": "PASS_MODEL_COMPLEXITY_SUFFICIENCY_FOR_REPORT_SAMPLE_AWARE_PARSIMONY",
       "doc": "docs/31_model_complexity_technique_sufficiency_audit.md",
+      "summary": "registry/model_complexity_sufficiency_summary.json",
       "primary_score_criterion": "Modeling",
-      "risk": "LOW_MEDIUM",
-      "preliminary_finding": "Complexity is not the primary weakness; the defensible story is broad outcome-blind mechanism search followed by sample-aware parsimony."
+      "risk_after_audit": "LOW",
+      "finding": "Complexity is a strength when framed as 69-technique outcome-blind research followed by structural reduction to six mechanisms, an eight-coefficient regularized model and one nonlinear challenger, appropriate to 75 OOS events / 54 date clusters."
     },
     "economic_backtest_quality": {
-      "status": "IN_PROGRESS_HIGH_PRIORITY",
+      "status": "PASS_ECONOMIC_BACKTEST_QUALITY_FOR_REPORT_WITH_EVENT_LEVEL_PORTFOLIO_AGGREGATION_LIMITATION",
       "doc": "docs/32_economic_backtest_quality_audit.md",
+      "inventory": "registry/economic_backtest_quality_inventory.csv",
+      "summary": "registry/economic_backtest_quality_summary.json",
       "primary_score_criterion": "Backtest",
-      "risk": "HIGH",
-      "preliminary_finding": "Forecast validation is strong, but the report-facing capital simulation and display-safe risk/return inventory must be reconciled from already frozen economic trials."
+      "risk_after_audit": "LOW_MEDIUM",
+      "finding": "EXP-06/06R contain fixed PIT entry/exit, equal-notional sizing, SPY benchmark, 20/35-bps costs, multiplicity controls and event/trade-level economics. Do not invent standard financed-portfolio Sharpe or max drawdown because overlap-capital aggregation was not frozen."
     },
     "event_universe_information_asymmetry": {
-      "status": "IN_PROGRESS_RESEARCH_REQUIRED",
+      "status": "IN_PROGRESS_PROTOCOL_FROZEN_CENSUS_RUNNING",
       "doc": "docs/33_event_universe_information_asymmetry_audit.md",
+      "research_matrix": "registry/event_universe_information_asymmetry_research_matrix.csv",
+      "scoring_protocol": "registry/event_universe_scoring_protocol.json",
       "primary_score_criteria": ["Strategy Concept", "Conclusion and Next Steps"],
       "risk": "MEDIUM",
-      "preliminary_finding": "Earnings/EPS is proven strong on resolution, mapping, sampleability and PIT reproducibility; its relative information-asymmetry opportunity remains to be assessed ex ante against other event families."
+      "finding_so_far": "Earnings/EPS has direct evidence of information heterogeneity and is exceptionally strong on resolution, direct equity mapping, sampleability and PIT reproducibility. It should not be called a low-asymmetry universe; the open question is whether another family dominates on the joint EUAS criteria.",
+      "census": {
+        "workflow": ".github/workflows/wave1_event_universe_census.yml",
+        "failed_run_1": 31524163459,
+        "failed_run_1_reason": "Fail-closed pagination guard reached 30,000 closed Gamma events while cursor remained active; no truncated census was published.",
+        "run_2": 31524477588,
+        "run_2_status_at_sync": "IN_PROGRESS",
+        "scientific_change_between_runs": false,
+        "engineering_change": "pagination safety ceiling only; classifier and EUAS protocol unchanged"
+      }
     }
   },
   "wave1_exit_requires": [
-    "100 percent rubric-to-evidence mapping",
-    "explicit model complexity sufficiency verdict",
-    "complete frozen economic-trial and metric inventory",
-    "event-family asymmetry framework frozen before suitability scoring",
-    "report-safe earnings laboratory interpretation",
-    "no H2 rescue or R3 promotion"
+    "100 percent rubric-to-evidence mapping — PASS",
+    "explicit model complexity sufficiency verdict — PASS",
+    "complete frozen economic-trial and metric inventory — PASS",
+    "event-family asymmetry framework frozen before suitability scoring — PASS",
+    "performance-blind historical PM contract census — IN PROGRESS",
+    "report-safe earnings laboratory classification — PENDING CENSUS",
+    "no H2 rescue or R3 promotion — PASS"
   ],
   "next_after_wave1": "ARGOS_INVESTMENT_THESIS_REPORT_FRAMING_FREEZE"
 }
