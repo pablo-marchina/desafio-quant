@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/wave1_event_universe_contract_census.py'
+      - 'scripts/wave1_event_universe_census_runner.py'
       - '.github/workflows/wave1_event_universe_census.yml'
 
 permissions:
@@ -24,7 +25,7 @@ jobs:
 
       - name: Run performance-blind Gamma census
         run: |
-          python scripts/wave1_event_universe_contract_census.py \
+          python scripts/wave1_event_universe_census_runner.py \
             --registry-dir registry \
             --raw-output /tmp/wave1_polymarket_closed_events_raw.json.gz
 
@@ -37,7 +38,7 @@ jobs:
           meta = json.loads(Path('registry/wave1_event_universe_census_summary.json').read_text())
           assert meta['performance_blind'] is True
           assert meta['scientific_reopen'] is False
-          assert meta['total_closed_events_retrieved'] > 0
+          assert meta['total_closed_events_retrieved'] > 30000
           assert meta['classified_event_family_rows'] > 0
 
           rows = list(csv.DictReader(Path('registry/wave1_event_universe_census_summary.csv').open()))
