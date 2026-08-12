@@ -1,0 +1,20 @@
+name: W2C Adjudication Queue Count Audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/w2c_adjudication_queue_count_audit.py'
+      - '.github/workflows/w2c_adjudication_queue_count_audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Count rows without revealing semantic content
+        run: python scripts/w2c_adjudication_queue_count_audit.py
