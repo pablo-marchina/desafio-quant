@@ -1,0 +1,13 @@
+{
+  "artifact": "W2C_DISCOVERY_EXECUTION_TRIGGER",
+  "version": "W2C-TRIGGER-v1.0",
+  "date": "2026-08-12",
+  "authorized_protocol": "W2C-DISC-v1.0",
+  "discovery_freeze": "W2C-DF-v1.0",
+  "parent_freeze": "W2PF-v1.0",
+  "protocol_git_blob_sha1": "60cc473f15f3fff924718a082c8db4e71a5b2ded",
+  "runner_git_blob_sha1": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+  "performance_blind": true,
+  "ias_scoring_authorized": false,
+  "w3_selection_authorized": false
+}
