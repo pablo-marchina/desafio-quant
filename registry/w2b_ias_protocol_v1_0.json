@@ -1,0 +1,125 @@
+{
+  "artifact": "W2B_IAS_SMAA_PROTOCOL",
+  "version": "IAS-v1.0",
+  "date": "2026-08-12",
+  "status": "PREREGISTRATION_PRE_REAL_AGGREGATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "purpose": "Rank event families by structural inequality of information sets before public/common revelation, independently from operational feasibility and ARGOS performance.",
+  "construct_type": "FORMATIVE_INDEX",
+  "construct_boundary": {
+    "included": ["PAC","LSO","SIB","TAW","PSI"],
+    "excluded": ["prediction-market liquidity","sampleability","contractability","resolution objectivity","linked-asset sensitivity","cross-market lead-lag","ARGOS returns/PnL","Brier/log loss","F1-F9 feasibility outcomes","publication count"],
+    "rule": "F1-F9 may re-enter only after IAS/SMAA ranking is frozen, as a separate W3 feasibility layer."
+  },
+  "taxonomy": [
+    "EARNINGS_EPS",
+    "FDA_ADVISORY_COMMITTEE",
+    "FDA_FINAL_PDUFA_DECISION",
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+    "MA_PENDING_COMPLETION",
+    "MA_REGULATORY_CLEARANCE",
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+    "FOMC_DECISION",
+    "MACRO_STATISTICAL_RELEASE",
+    "CORPORATE_LITIGATION_BINARY"
+  ],
+  "dimensions": {
+    "PAC": {
+      "name": "Privileged Access Concentration",
+      "question": "How strongly does the event-generation process create a bounded group with earlier access to material state information?",
+      "anchors": {"0":"decisive information public; no earlier process access","1":"only public latency/technical advantage","2":"diffuse earlier access or only partial non-decisive state","3":"bounded multi-party group has earlier access to material partial state","4":"small bounded group has earlier access to material or near-decisive state","5":"highly concentrated decision/control set knows or determines decisive state well before public revelation"}
+    },
+    "LSO": {
+      "name": "Latent-State Opacity",
+      "question": "How much outcome-determining state evolves outside continuous public observation?",
+      "anchors": {"0":"mechanical from public observables","1":"mostly public with minor latent component","2":"latent component constrained by frequent public updates","3":"material latent state between intermittent public updates","4":"most decisive state evolves in private/internal/negotiation/regulatory process","5":"decisive state is fundamentally opaque until a discrete revelation"}
+    },
+    "SIB": {
+      "name": "Specialized Interpretation Barrier",
+      "question": "How much specialized expertise is required to interpret the relevant state before broad public understanding?",
+      "anchors": {"0":"mechanical or standardized machine-readable threshold","1":"basic domain knowledge/simple threshold","2":"standard professional finance/statistics/accounting tools","3":"substantial professional expertise and multi-source interpretation","4":"narrow scientific/legal/technical/regulatory specialist expertise","5":"highly specialized, case-specific expertise difficult even for outside professionals"}
+    },
+    "TAW": {
+      "name": "Temporal Asymmetry Window",
+      "question": "How long can a meaningful process-based informational advantage plausibly exist before common/public revelation? Prediction-market contract lead time is forbidden.",
+      "anchors_minutes": {"0":"<=5","1":">5 and <=60","2":">60 and <=1440","3":">1440 and <=10080","4":">10080 and <=43200","5":">43200"}
+    },
+    "PSI": {
+      "name": "Public Saturation Inverse",
+      "question": "How weak is standardized public forecasting/monitoring relative to event uncertainty? Higher means weaker saturation.",
+      "anchors": {"0":"near-continuous dense monitoring and standardized forecasts across multiple independent channels","1":"dense consensus plus multiple independent public signals/forecast channels","2":"broad coverage and standardized forecasts but material idiosyncratic uncertainty","3":"moderate or fragmented public forecasting","4":"sparse specialist coverage with limited standardized forecasting","5":"little or no standardized pre-event forecasting"},
+      "low_anchor_guardrail": "PSI 0 or 1 requires at least two distinct observable public forecast/information channels."
+    }
+  },
+  "evidence_confidence_grade": {
+    "A": {"definition":"direct same-family high-quality empirical/institutional evidence plus independent process or empirical corroboration","score_uncertainty":"triangular clipped to [0,5] centered on anchor with half-width 0.5"},
+    "B": {"definition":"strong same-family mechanism or empirical evidence with a material limitation","score_uncertainty":"triangular clipped to [0,5] centered on anchor with half-width 1.0"},
+    "C": {"definition":"adjacent/theoretical/case-limited evidence","score_uncertainty":"triangular clipped to [0,5] centered on anchor with half-width 2.0"},
+    "D": {"definition":"insufficient evidence for a confident anchor","score_uncertainty":"Uniform(0,5); anchor must be null"}
+  },
+  "family_evidence_gate": {
+    "ecg_d_allowed": 0,
+    "minimum_dimensions_ecg_A_or_B": 3,
+    "failure_semantics": "Family may remain visible but cannot support a comparative highest-asymmetry claim or W3 candidacy."
+  },
+  "central_index": {
+    "formula": "IAS_central=(PAC+LSO+SIB+TAW+PSI)/5",
+    "weights": "equal",
+    "scale_semantics": "quasi-interval descriptive summary; not treated as uniquely cardinal truth",
+    "high_asymmetry_threshold": 3.0,
+    "optimization_forbidden": true
+  },
+  "smaa": {
+    "method": "Stochastic Multicriteria Acceptability Analysis",
+    "weight_distribution": "Dirichlet(1,1,1,1,1) over the full simplex via normalized iid Exp(1)",
+    "same_weight_vector_across_families_per_draw": true,
+    "score_uncertainty": "ECG-dependent distributions above; independent across family-dimension conditional on anchors/ECG",
+    "draws": 200000,
+    "seed": 20260812,
+    "outputs": ["mean_simulated_IAS","P_IAS_ge_3","rank1_acceptability","rank_le_2_acceptability","full_rank_acceptability_vector"],
+    "robust_high_rule": "evidence_gate PASS AND IAS_central>=3.0 AND P_IAS_ge_3>=0.75"
+  },
+  "robustness": {
+    "leave_one_dimension_out": true,
+    "anchor_local_perturbation": "ECG uncertainty is the primary probabilistic perturbation; no outcome-informed manual perturbation allowed",
+    "monotone_scale_sensitivity": ["identity x","convex 5*(x/5)^2","concave 5*sqrt(x/5)"],
+    "interpretation": "Sensitivity outputs are descriptive robustness checks; they cannot change frozen anchors, thresholds or the primary SMAA rule."
+  },
+  "comparative_leader_rule": {
+    "minimum_evidence_qualified_families": 2,
+    "rank1_acceptability_min": 0.50,
+    "rank1_margin_over_runner_up_min": 0.05,
+    "pass_label": "DECISIVE_HIGHEST_ASYMMETRY_LEADER",
+    "fail_label": "NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER"
+  },
+  "w3_sequencing": {
+    "ias_first": true,
+    "feasibility_join_only_after_ranking_freeze": true,
+    "go_requirements": ["family_evidence_gate PASS","IAS_central>=3.0","P_IAS_ge_3>=0.75","frozen F1-F9 all PASS"],
+    "family_without_complete_f1_f9": "FEASIBILITY_NOT_ESTABLISHED",
+    "no_family_meets_all": "NO_GO_NO_W3_PROTOCOL_CANDIDATE",
+    "w3_execution_requires_separate_preregistration_and_byte_freeze": true
+  },
+  "performance_firewall": {
+    "forbidden": ["ARGOS PnL","W2-A funded return/NAV","R1/R3 returns","Brier/log loss","H2 incremental metrics","realized linked-asset returns","F1-F9 statuses as IAS score inputs"],
+    "allowed": ["institutional process documents","original same-family empirical research","public forecasting-channel evidence","frozen structural taxonomy metadata"],
+    "static_scan_required": true
+  },
+  "real_execution_sequence": [
+    "freeze this protocol, source catalog, evidence ledger, scorer and synthetic tests",
+    "independent CI validates byte identities and synthetic archetypes without real aggregation output",
+    "authorize IAS/SMAA aggregation only",
+    "execute 200000-draw SMAA and central index",
+    "freeze exact IAS/SMAA result",
+    "only then join frozen F1-F9 for GO/NO-GO W3"
+  ],
+  "prohibitions": [
+    "No taxonomy merge/split after real IAS aggregation.",
+    "No weight, threshold, ECG, anchor or source adjustment after seeing IAS/SMAA ranking.",
+    "No family score informed by ARGOS or linked-asset performance.",
+    "No F1-F9 failure used to lower IAS.",
+    "No missing feasibility interpreted as low asymmetry.",
+    "No W3 execution before separate freeze."
+  ]
+}
