@@ -1,0 +1,36 @@
+{
+  "artifact": "W2C_DISCOVERY_FREEZE",
+  "version": "W2C-DF-v1.1",
+  "date": "2026-08-12",
+  "status": "FROZEN_BEFORE_V1_1_COUNTS",
+  "science_reopened": false,
+  "performance_blind": true,
+  "parent_freeze": "W2PF-v1.0",
+  "supersedes_for_execution": "W2C-DF-v1.0",
+  "change_scope": "Pagination bound only after v1.0 terminated before family outputs.",
+  "frozen_files": [
+    {
+      "path": "registry/w2c_discovery_protocol_v1_1.json",
+      "git_blob_sha1": "465f6238947402d53024fe2b5899163bd4d4eae9",
+      "role": "AUTHORITATIVE_V1_1_PROTOCOL"
+    },
+    {
+      "path": "scripts/w2c_performance_blind_discovery.py",
+      "git_blob_sha1": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+      "role": "UNCHANGED_AUTHORITATIVE_DISCOVERY_LOGIC"
+    },
+    {
+      "path": "scripts/w2c_performance_blind_discovery_v1_1.py",
+      "git_blob_sha1": "8acdc3d754acccb3f31fa5370bdecc16caa8e6ee",
+      "role": "VERSION_AND_PROTOCOL_PATH_WRAPPER_ONLY"
+    }
+  ],
+  "v1_0_failure": {
+    "run_id": 31606990132,
+    "status": "FAIL_BEFORE_FAMILY_OUTPUT_KEYSET_PAGE_BOUND",
+    "family_counts_opened": false,
+    "ias_scores_computed": false
+  },
+  "execution_rule": "Open v1.1 discovery outputs only by executing these exact frozen blobs. No family-query/classifier changes are authorized.",
+  "interpretation_boundary": "Discovery candidates only; manual semantic validation remains mandatory before feasibility or IAS scoring."
+}
