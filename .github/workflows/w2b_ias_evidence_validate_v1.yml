@@ -5,6 +5,7 @@ on:
       - 'registry/w2b_ias_evidence_matrix_v1.csv'
       - 'registry/w2b_ias_source_registry_v1.json'
       - 'scripts/w2b_ias_evidence_validate_v1.py'
+      - 'scripts/w2b_ias_frozen_bundle_integrity_v1.py'
       - '.github/workflows/w2b_ias_evidence_validate_v1.yml'
   workflow_dispatch:
 jobs:
@@ -17,8 +18,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Revalidate IAS protocol freeze
-        run: python scripts/w2b_ias_protocol_freeze_validate_v1_0.py
+      - name: Verify frozen IAS bundle remains byte-identical
+        run: python scripts/w2b_ias_frozen_bundle_integrity_v1.py
+      - name: Re-run frozen synthetic suites
+        run: |
+          python scripts/w2b_ias_contract_synthetic_validation.py
+          python scripts/w2b_ias_score_synthetic_v1.py
       - name: Validate evidence matrix and source registry
         run: python scripts/w2b_ias_evidence_validate_v1.py
       - name: Assert real scoring still not authorized
