@@ -1,0 +1,21 @@
+name: W2C PIT v2.1 F1-F9 Freeze
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_v2_1_family_gates.json'
+      - 'registry/w2c_pit_v2_1_f1f9_freeze.json'
+      - 'scripts/w2c_pit_v2_1_f1f9_freeze_validate.py'
+      - '.github/workflows/w2c_pit_v2_1_f1f9_freeze.yml'
+  workflow_dispatch:
+jobs:
+  validate-f1f9-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate exact F1-F9 result and all upstream freezes
+        run: python scripts/w2c_pit_v2_1_f1f9_freeze_validate.py
