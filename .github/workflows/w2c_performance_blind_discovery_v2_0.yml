@@ -1,0 +1,78 @@
+name: W2C Performance Blind Discovery v2.0
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'registry/w2c_execution_trigger_v2_0.json'
+
+permissions:
+  contents: write
+
+jobs:
+  discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen v2.0 bytes before network access
+        run: |
+          test "$(git hash-object registry/w2c_discovery_protocol_v2_0.json)" = "f9c8706899f93c072ae0329ed719b119b477b68c"
+          test "$(git hash-object scripts/w2c_performance_blind_discovery.py)" = "3234e7df84aee8e7ef680fa846e746930dd0420d"
+          test "$(git hash-object scripts/w2c_performance_blind_discovery_v2_0.py)" = "547a9357a8827822959bc9b79fedbdea7139b8a3"
+          python -m py_compile scripts/w2c_performance_blind_discovery.py scripts/w2c_performance_blind_discovery_v2_0.py
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w2c_discovery_protocol_v2_0.json'))
+          f=json.load(open('registry/w2c_discovery_freeze_manifest_v2_0.json'))
+          assert p['version']=='W2C-DISC-v2.0'
+          assert p['performance_blind'] is True
+          assert p['lineage']['family_counts_opened_before_v2'] is False
+          assert p['query_dictionary_changed_from_v1_1'] is False
+          assert p['taxonomy_changed_from_v1_1'] is False
+          assert p['classifier_semantics_changed_from_v1_1'] is False
+          assert p['pagination']['broad_keyset_max_pages']==100
+          assert p['pagination']['targeted_keyset_max_pages']==200
+          assert f['bounds']['broad_keyset_max_pages']==100
+          PY
+      - name: Execute frozen bounded performance-blind discovery v2.0
+        run: python scripts/w2c_performance_blind_discovery_v2_0.py
+      - name: Validate firewall lower-bound semantics and no scoring
+        run: |
+          python - <<'PY'
+          import json
+          m=json.load(open('registry/w2c_discovery_summary.json'))
+          t=json.load(open('registry/w2c_discovery_pagination_telemetry.json'))
+          assert m['protocol_version']=='W2C-DISC-v2.0'
+          assert m['parent_freeze']=='W2PF-v1.0'
+          assert m['performance_blind'] is True
+          assert m['science_reopened'] is False
+          assert m['argos_performance_read'] is False
+          assert m['realized_linked_asset_returns_read'] is False
+          assert m['ias_scores_computed'] is False
+          assert m['feasibility_gates_scored'] is False
+          assert m['w3_family_selected'] is False
+          assert m['bounded_lower_bound_discovery'] is True
+          assert m['archive_exhaustion_required'] is False
+          assert len(m['families'])==10
+          assert t['protocol_version']=='W2C-DISC-v2.0'
+          assert t['broad_archive_exhaustion_required'] is False
+          assert t['route_count']>0
+          PY
+      - name: Materialize v2.0 discovery evidence safely on current main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w2c_discovery_events.csv.gz registry/w2c_discovery_validation_queue.csv.gz registry/w2c_discovery_summary.csv registry/w2c_discovery_query_audit.csv registry/w2c_discovery_summary.json registry/w2c_discovery_pagination_telemetry.json
+          if git diff --cached --quiet; then
+            echo 'No discovery output changes.'
+            exit 0
+          fi
+          git commit -m 'w2c: materialize v2.0 lower-bound discovery evidence'
+          git pull --rebase origin main
+          git push origin HEAD:main
