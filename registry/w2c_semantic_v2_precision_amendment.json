@@ -1,17 +1,18 @@
 {
   "artifact":"W2C_SEMANTIC_V2_PRECISION_AMENDMENT",
-  "version":"W2C-SV-v2.0-A3",
+  "version":"W2C-SV-v2.0-A4",
   "date":"2026-08-12",
   "status":"PRE_REAL_SYNTHETIC_REPAIR",
   "parent_protocol":"W2C-SV-v2.0",
   "real_v2_candidate_results_seen":false,
   "performance_data_seen":false,
   "amendments":[
-    {"id":"A1_ANTITRUST_EXPLICIT_SEMANTICS","trigger":"Generic DOJ investigation synthetic case could be misclassified as antitrust.","rule":"Require explicit antitrust/competition-authority/competition-regulator/monopoly language in title+slug in addition to an enforcement action.","direction":"stricter_precision"},
-    {"id":"A2_FDA_INFLECTION","trigger":"Common title form FDA approves X was rejected.","rule":"Recognize approve/approves/approval/approved and authorize/authorizes/authorization while preserving advisory/final separation.","direction":"lexical_equivalence_not_scope_expansion"},
-    {"id":"A3_SLUG_NORMALIZATION","trigger":"Allowed slug words joined by hyphens could not match natural-language family regexes.","rule":"Before classification only, convert hyphen and underscore separators in title+slug to spaces. No query/tag/series/source field is added.","direction":"lexical_normalization_only"}
+    {"id":"A1_ANTITRUST_EXPLICIT_SEMANTICS","rule":"Generic DOJ/FTC identity cannot establish antitrust; require explicit antitrust/competition/monopoly language plus enforcement action.","direction":"stricter_precision"},
+    {"id":"A2_FDA_INFLECTION","rule":"Recognize common inflections approve/approves/approval/approved and authorize/authorizes/authorization.","direction":"lexical_equivalence"},
+    {"id":"A3_SLUG_NORMALIZATION","rule":"Normalize hyphen/underscore separators to spaces in title+slug only.","direction":"lexical_normalization"},
+    {"id":"A4_CROSS_MECHANISM_COLLISION_SENTINEL","trigger":"Synthetic EPS + FTC-acquisition title was forced to M&A because Earnings hard-exclusion removed an explicit second mechanism.","rule":"When explicit EPS/earnings language and another strict family mechanism co-occur, retain EARNINGS_EPS as a hit so the cross-domain resolver returns AMBIGUOUS_MULTI_FAMILY rather than forcing a family.","direction":"fail_closed_ambiguity"}
   ],
-  "precision_direction":"No relaxation based on real v2 counts is permitted after first real v2 execution; changes then require a new protocol version.",
+  "precision_direction":"No relaxation based on real v2 counts is permitted after first real v2 execution; later changes require a new protocol version.",
   "authoritative_runner":"scripts/w2c_semantic_validation_v2_strict.py",
   "authoritative_synthetic_validator":"scripts/w2c_semantic_validation_v2_synthetic_strict.py"
 }

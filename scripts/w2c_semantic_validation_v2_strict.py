@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Precision amendment wrapper for W2C-SV-v2.0 before any v2 real execution.
 
-A1: generic DOJ/FTC investigation language cannot qualify as antitrust without
-explicit antitrust/competition/monopoly language.
-A2: inflected FDA final-action wording such as "FDA approves" is recognized.
-A3: title+slug lexical normalization converts '-' and '_' to spaces only.
+A1 generic DOJ/FTC != antitrust without explicit antitrust semantics.
+A2 FDA inflected final-action verbs are recognized.
+A3 title+slug '-'/'_' separators normalize to spaces.
+A4 explicit cross-mechanism collisions are preserved as ambiguity instead of
+being silently resolved by a hard-exclusion rule.
 """
 from __future__ import annotations
 import importlib.util,re
@@ -16,6 +17,7 @@ EXPLICIT_ANTITRUST=re.compile(r'\b(antitrust|competition authority|competition r
 FDA_ACTOR=re.compile(r'\b(fda|food and drug administration|pdufa)\b',re.I)
 FDA_FINAL_ACTION=re.compile(r'\b(approve|approves|approval|approved|authorize|authorizes|authorization|emergency use authorization|eua|pdufa|action date|complete response|crl)\b',re.I)
 FDA_ADVISORY=re.compile(r'\b(advisory committee|adcom|advisory panel|panel vote)\b',re.I)
+EXPLICIT_EARNINGS=re.compile(r'\b(eps|earnings per share)\b|\b(beat|miss|report)\s+(?:quarterly\s+)?earnings\b',re.I)
 def classification_text(row):
     raw=f"{row.get('title','')} {row.get('slug','')}".strip()
     return re.sub(r'[-_]+',' ',raw)
@@ -27,6 +29,9 @@ def strict_matches(text):
         hits.add('FDA_FINAL_PDUFA_DECISION')
     if FDA_ADVISORY.search(text) and not FDA_FINAL_ACTION.search(text):
         hits.discard('FDA_FINAL_PDUFA_DECISION')
+    # Preserve explicit cross-mechanism collision so resolver returns AMBIGUOUS.
+    if EXPLICIT_EARNINGS.search(text) and any(h != 'EARNINGS_EPS' for h in hits):
+        hits.add('EARNINGS_EPS')
     return hits
 base.classification_text=classification_text
 base.strict_matches=strict_matches
