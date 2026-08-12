@@ -1,56 +1,14 @@
 {
   "artifact":"POST_FREEZE_EXTENSION_PLAN",
-  "version":"PFEP-v2.0",
+  "version":"PFEP-v2.1",
   "date":"2026-08-12",
-  "status":"W2A_GATE0_BLOCKED_W2C_SEMANTIC_V2_PROVISIONAL_MATERIALIZED",
-  "operational_phase":"W2C_OUTCOME_BLIND_ADJUDICATION_SYNTHETIC_PENDING",
+  "status":"W2A_GATE0_BLOCKED_W2C_ADJUDICATION_FROZEN",
+  "operational_phase":"W2C_CONTROLLED_ADJUDICATION_REVEAL_AUTHORIZED",
   "scientific_reopen":false,
-  "submission_baseline":{
-    "scientific_authority":"FST-v1.0 / SF-v3.0",
-    "h2":"FAIL_UNDER_FROZEN_EXP07I",
-    "probabilistic_champion":"M2",
-    "economic_champion":"C0_NO_TRADE",
-    "frozen_bundle_sha256":"c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885",
-    "qa_approved_pdf_sha256":"5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561"
-  },
-  "W2A":{
-    "status":"BLOCKED_GATE0_PROVENANCE_GAP",
-    "gate0":"registry/w2a_gate0_reconciliation.json",
-    "rule":"Parked until an authoritative original ART-025 row-level ledger is recovered; no vendor reconstruction is authorized."
-  },
-  "W2C":{
-    "discovery":"PASS_PERFORMANCE_BLIND_DISCOVERY_MATERIALIZED",
-    "semantic_v1":"INVALIDATED_FAIL_CLOSED_QUERY_LABEL_LEAKAGE",
-    "pit_a_v1":"INVALIDATED_UPSTREAM_DO_NOT_USE",
-    "semantic_v2_freeze":"W2C-SVF-v2.0",
-    "semantic_v2_execution":"PASS_PROVISIONAL_ONLY",
-    "semantic_v2_materialization":"registry/w2c_semantic_v2_materialization.json",
-    "semantic_v2_provisional_clusters":814,
-    "semantic_v2_validated_clusters":0,
-    "adjudication_protocol":"registry/w2c_semantic_v2_adjudication_protocol_v1_0.json",
-    "adjudication_status":"PREREGISTERED_BEFORE_QUEUE_READ",
-    "adjudication_initial_rows":329,
-    "pit_feasibility":"BLOCKED_PENDING_ADJUDICATED_SEMANTIC_INPUT_AND_NEW_PIT_PROTOCOL_FREEZE",
-    "f1_f9":"BLOCKED_PENDING_VALID_PIT_EVIDENCE",
-    "ias":"BLOCKED_PENDING_F1_F9_EVIDENCE_MATERIALIZATION",
-    "ranking":"BLOCKED_PENDING_IAS",
-    "w3_go_no_go":"BLOCKED_PENDING_RANKING_AND_ALL_F1_F9"
-  },
-  "governance":{
-    "semantic_v2_counts_are_provisional":true,
-    "only_adjudicated_accepts_count_for_F3":true,
-    "no_web_during_semantic_adjudication":true,
-    "adjudication_disclosure":"MODEL_ASSISTED_OUTCOME_BLIND_SEMANTIC_ADJUDICATION",
-    "earnings_top_up_only_if_initial_accepts_lt_80":true,
-    "no_other_family_top_up":true
-  },
-  "global_prohibitions":[
-    "No use of semantic-v1 or PIT-A-v1 evidence downstream.",
-    "No W2-A funded metrics before Gate0 passes under unchanged W2PF-v1.0.",
-    "No provisional semantic-v2 cluster may count for F3.",
-    "No PIT network collection before adjudication is materialized and a fresh PIT protocol is preregistered, synthetically validated and frozen.",
-    "No F1-F9/IAS/ranking/W3 selection during semantic adjudication.",
-    "No linked-asset realized returns for family selection."
-  ],
-  "next_action":"Run W2C-ADJ-v1.0 synthetic validation without reading the real 329-row queue. If pass, byte-freeze adjudication protocol/exporter/assembler/input, then reveal only allowed fields and adjudicate all initial rows outcome-blind."
+  "submission_baseline":{"scientific_authority":"FST-v1.0 / SF-v3.0","h2":"FAIL_UNDER_FROZEN_EXP07I","probabilistic_champion":"M2","economic_champion":"C0_NO_TRADE","frozen_bundle_sha256":"c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885","qa_approved_pdf_sha256":"5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561"},
+  "W2A":{"status":"BLOCKED_GATE0_PROVENANCE_GAP","gate0":"registry/w2a_gate0_reconciliation.json","rule":"Parked until an authoritative original ART-025 row-level ledger is recovered; no vendor reconstruction is authorized."},
+  "W2C":{"discovery":"PASS_PERFORMANCE_BLIND_DISCOVERY_MATERIALIZED","semantic_v1":"INVALIDATED_FAIL_CLOSED_QUERY_LABEL_LEAKAGE","pit_a_v1":"INVALIDATED_UPSTREAM_DO_NOT_USE","semantic_v2_freeze":"W2C-SVF-v2.0","semantic_v2_execution":"PASS_PROVISIONAL_ONLY","semantic_v2_provisional_clusters":814,"semantic_v2_validated_clusters":0,"adjudication_freeze":"W2C-ADJF-v1.0","adjudication_freeze_status":"PASS_W2C_ADJUDICATION_BYTE_FREEZE","adjudication_initial_rows":329,"controlled_reveal_authorized":true,"pit_feasibility":"BLOCKED_PENDING_ADJUDICATED_SEMANTIC_INPUT_AND_NEW_PIT_PROTOCOL_FREEZE","f1_f9":"BLOCKED_PENDING_VALID_PIT_EVIDENCE","ias":"BLOCKED_PENDING_F1_F9_EVIDENCE_MATERIALIZATION","ranking":"BLOCKED_PENDING_IAS","w3_go_no_go":"BLOCKED_PENDING_RANKING_AND_ALL_F1_F9"},
+  "governance":{"semantic_v2_counts_are_provisional":true,"only_adjudicated_accepts_count_for_F3":true,"no_web_during_semantic_adjudication":true,"adjudication_disclosure":"MODEL_ASSISTED_OUTCOME_BLIND_SEMANTIC_ADJUDICATION","earnings_top_up_only_if_initial_accepts_lt_80":true,"no_other_family_top_up":true},
+  "global_prohibitions":["No use of semantic-v1 or PIT-A-v1 evidence downstream.","No W2-A funded metrics before Gate0 passes under unchanged W2PF-v1.0.","No provisional semantic-v2 cluster may count for F3.","No PIT network collection before adjudication is materialized and a fresh PIT protocol is frozen.","No F1-F9/IAS/ranking/W3 selection during semantic adjudication.","No linked-asset realized returns for family selection."],
+  "next_action":"Run the frozen controlled reveal exporter over the exact 329-row queue; expose only the seven allowed fields, then adjudicate every revealed row under W2C-ADJ-v1.0."
 }
