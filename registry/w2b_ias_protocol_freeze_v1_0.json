@@ -1,0 +1,35 @@
+{
+  "artifact": "W2B_IAS_PROTOCOL_FREEZE",
+  "version": "W2B-IAS-FREEZE-v1.0",
+  "date": "2026-08-12",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_CI_VALIDATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "real_family_scores_computed": false,
+  "source_validation_run": {
+    "workflow_run_id": 31647719956,
+    "conclusion": "success"
+  },
+  "bundle_sha256": "a008d1bcf45c200708f97d8ea7089a15a773a1a3590dc112633760ac3c13b0dd",
+  "bundle_hash_rule": "SHA256 over lexicographically sorted UTF-8 lines path:git_blob_sha1\\n for every frozen object listed below.",
+  "frozen_objects": {
+    ".github/workflows/w2b_ias_v1_protocol_synthetic.yml": "555d0077becfd1f7aec15c177ad691fbc3c527bf",
+    "registry/w2b_ias_protocol_draft.json": "cb9a9638f236c6c61c97f86805de9bf666209b21",
+    "registry/w2b_ias_real_scoring_contract_v1_0.json": "95e02eaeabceb3a5daa23add0f855b33a6be8a46",
+    "scripts/w2b_ias_contract_synthetic_validation.py": "ace7a002dbcf8142402939e18cf3246a5d263281",
+    "scripts/w2b_ias_score_synthetic_v1.py": "67efd215f7a6437dc17dd89d5bc6a54abdea2a17",
+    "scripts/w2b_ias_score_v1_0.py": "2567dcef47b9c26819eb526649ff4e21eeb9bf57"
+  },
+  "adopted_protocol_id": "W2B-IAS-v1.0",
+  "frozen_taxonomy_count": 10,
+  "frozen_dimensions": ["PAC", "LSO", "SIB", "TAW", "PSI"],
+  "frozen_smaa_samples": 200000,
+  "frozen_smaa_seed": 20260812,
+  "frozen_weight_distribution": "Dirichlet(1,1,1,1,1)",
+  "frozen_comparative_gate": {
+    "leader_rank1_acceptability_min": 0.50,
+    "leader_margin_vs_runnerup_min": 0.05
+  },
+  "execution_authorized": false,
+  "post_freeze_rule": "Populate the real structural evidence matrix only after this candidate passes an independent freeze validator. Any substantive change to taxonomy, anchors, ECG semantics, evidence contract, aggregation, uncertainty, seed, sample count or comparative claim gate requires explicit supersession and complete synthetic revalidation before any new real scoring."
+}
