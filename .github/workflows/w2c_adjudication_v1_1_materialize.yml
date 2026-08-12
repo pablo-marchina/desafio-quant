@@ -1,0 +1,49 @@
+name: W2C Adjudication v1.1 Materialize Results
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/w2c_semantic_v2_adjudication_apply_decisions_v1_1.py'
+      - '.github/workflows/w2c_adjudication_v1_1_materialize.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Revalidate frozen adjudication contract and queue
+        run: python scripts/w2c_semantic_v2_adjudication_v1_1_freeze_validate.py
+      - name: Write completed outcome-blind decisions
+        run: python scripts/w2c_semantic_v2_adjudication_apply_decisions_v1_1.py
+      - name: Run frozen identity-validating materializer
+        run: python scripts/w2c_semantic_v2_adjudication_materialize_v1_1.py
+      - name: Assert semantic-only result and no top-up
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w2c_semantic_v2_adjudication_summary_v1_1.json'))
+          assert x['input_rows']==335 and x['decision_rows']==335
+          assert x['accepted_total']==312
+          assert x['validated_independent_events']==312
+          assert all(not v['required'] for v in x['top_up_status'].values()), x['top_up_status']
+          assert x['f1_f9_scored'] is False and x['ias_computed'] is False
+          assert x['pit_evidence_collected'] is False
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['w3_family_selected'] is False
+          print(json.dumps(x,indent=2))
+          PY
+      - name: Persist exact adjudication result branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-adjudication-v1-1-results
+          git add registry/w2c_semantic_v2_adjudication_decisions_v1_1.csv registry/w2c_semantic_v2_adjudication_results_v1_1.csv registry/w2c_semantic_v2_accepted_clusters_v1_1.csv registry/w2c_semantic_v2_adjudication_summary_v1_1.json
+          git commit -m 'w2c: persist outcome-blind adjudication v1.1 results'
+          git push --force origin HEAD:refs/heads/w2c-adjudication-v1-1-results
