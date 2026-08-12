@@ -1,14 +1,26 @@
 {
   "artifact":"W2C_SEMANTIC_V2_PRECISION_AMENDMENT",
-  "version":"W2C-SV-v2.0-A1",
+  "version":"W2C-SV-v2.0-A2",
   "date":"2026-08-12",
   "status":"PRE_REAL_SYNTHETIC_REPAIR",
   "parent_protocol":"W2C-SV-v2.0",
   "real_v2_candidate_results_seen":false,
   "performance_data_seen":false,
-  "trigger":"Synthetic attack showed that generic DOJ investigation language could be misclassified as antitrust enforcement.",
-  "amendment":"ANTITRUST_ENFORCEMENT_SINGLE_NAME now requires explicit title+slug language containing antitrust, competition authority, competition regulator, or monopoly in addition to an enforcement action. DOJ/FTC identity alone cannot establish antitrust semantics.",
-  "precision_direction":"Stricter; may increase false negatives. This is intentional and cannot be relaxed after real v2 counts are observed without a new protocol version.",
+  "amendments":[
+    {
+      "id":"A1_ANTITRUST_EXPLICIT_SEMANTICS",
+      "trigger":"Synthetic attack showed that generic DOJ investigation language could be misclassified as antitrust enforcement.",
+      "rule":"ANTITRUST_ENFORCEMENT_SINGLE_NAME requires explicit title+slug language containing antitrust, competition authority, competition regulator, or monopoly in addition to an enforcement action. DOJ/FTC identity alone cannot establish antitrust semantics.",
+      "direction":"stricter_precision"
+    },
+    {
+      "id":"A2_FDA_INFLECTION",
+      "trigger":"Synthetic attack showed that common title form 'FDA approves X' was rejected because base regex included approve/approved but not approves.",
+      "rule":"FDA final action recognizes approve/approves/approval/approved and authorize/authorizes/authorization while preserving the advisory/final distinction.",
+      "direction":"lexical_equivalence_not_scope_expansion"
+    }
+  ],
+  "precision_direction":"No relaxation based on real v2 counts is permitted after the first real v2 execution. Any such change requires a new protocol version.",
   "authoritative_runner":"scripts/w2c_semantic_validation_v2_strict.py",
   "authoritative_synthetic_validator":"scripts/w2c_semantic_validation_v2_synthetic_strict.py"
 }
