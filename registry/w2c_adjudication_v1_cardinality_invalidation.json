@@ -1,0 +1,16 @@
+{
+  "artifact":"W2C_ADJUDICATION_V1_CARDINALITY_INVALIDATION",
+  "version":"W2C-ADJ-INCIDENT-v1.0",
+  "date":"2026-08-12",
+  "status":"INVALIDATED_BEFORE_FIRST_TITLE_REVEAL",
+  "invalidated_protocol":"W2C-ADJ-v1.0",
+  "invalidated_freeze":"W2C-ADJF-v1.0",
+  "performance_data_involved":false,
+  "titles_revealed_before_detection":false,
+  "cause":"External W2C semantic-v2 materialization was manually recorded with stale/incorrect 329-row counts, while the authoritative frozen evidence-branch summary and exact queue blob contain 335 unique event/cluster rows.",
+  "authoritative_evidence":{"summary_path":"registry/w2c_semantic_v2_summary.json","summary_git_blob_sha1":"068ebf215ca49066f137388d7da5732a0c4b8326","queue_path":"registry/w2c_semantic_v2_adjudication_queue.csv.gz","queue_git_blob_sha1":"60fdc9784dc189e4b588a56ad70eec3c7c5f23d7","queue_audit_run_id":31625567357,"actual_rows":335,"unique_event_ids":335,"unique_cluster_ids":335},
+  "actual_initial_family_rows":{"ANTITRUST_ENFORCEMENT_SINGLE_NAME":1,"CORPORATE_LITIGATION_BINARY":8,"EARNINGS_EPS":100,"FDA_FINAL_PDUFA_DECISION":63,"FOMC_DECISION":48,"MACRO_STATISTICAL_RELEASE":100,"MA_PENDING_COMPLETION":3,"MA_PRE_ANNOUNCEMENT_OR_RUMOR":12},
+  "secondary_mechanical_error":"v1.0 stated that only Earnings could require top-up. Authoritative semantic-v2 output has 167 provisional Macro clusters but only the first 100 in the initial queue, so generic family top-up under the already-preregistered semantic-v2 rule is required.",
+  "required_repair":"Create W2C-ADJ-v1.1 with the same semantic rubric, same allowed/forbidden fields and same tri-state decisions; correct initial cardinality to 335 and restore generic per-family top-up when accepted<80 and unused provisional clusters remain. Re-run synthetic validation and byte-freeze before any title reveal.",
+  "historical_truth_boundary":"No F1-F9, IAS, ranking, linked-asset return or W3 decision was opened. FST-v1.0/SF-v3.0 unchanged."
+}

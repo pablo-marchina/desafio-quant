@@ -1,0 +1,34 @@
+name: W2C Adjudication v1.1 Synthetic Validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_semantic_v2_adjudication_protocol_v1_1.json'
+      - 'scripts/w2c_semantic_v2_adjudication_export_v1_1.py'
+      - 'scripts/w2c_semantic_v2_adjudication_materialize_v1_1.py'
+      - 'scripts/w2c_semantic_v2_adjudication_synthetic_v1_1.py'
+      - '.github/workflows/w2c_semantic_v2_adjudication_v1_1_synthetic.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile v1.1 mechanics without real queue read
+        run: python -m py_compile scripts/w2c_semantic_v2_adjudication_export_v1_1.py scripts/w2c_semantic_v2_adjudication_materialize_v1_1.py scripts/w2c_semantic_v2_adjudication_synthetic_v1_1.py
+      - name: Run v1.1 synthetic gate
+        run: python scripts/w2c_semantic_v2_adjudication_synthetic_v1_1.py
+      - name: Assert pre-reveal firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w2c_semantic_v2_adjudication_v1_1_synthetic_summary.json'))
+          assert x['failed']==0 and x['real_queue_read'] is False and x['titles_read'] is False
+          assert x['performance_data_read'] is False and x['network_accessed'] is False
+          print(x['status'])
+          PY

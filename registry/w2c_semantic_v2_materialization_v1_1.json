@@ -1,0 +1,33 @@
+{
+  "artifact":"W2C_SEMANTIC_V2_PROVISIONAL_MATERIALIZATION",
+  "version":"W2C-SV2-MAT-v1.1",
+  "date":"2026-08-12",
+  "status":"PASS_FROZEN_V2_PROVISIONAL_MATERIALIZED_ADJUDICATION_REQUIRED",
+  "supersedes_external_record":"W2C-SV2-MAT-v1.0 (incorrect cardinality metadata only)",
+  "parent_freeze":"W2C-SVF-v2.0",
+  "performance_blind":true,
+  "science_reopened":false,
+  "execution":{"workflow_run_id":31623679478,"job_id":94204524435,"conclusion":"success","evidence_branch":"w2c-semantic-v2-evidence","evidence_commit":"d5121e7ec5209b392bf0446d6d985d9dfef48c6a","evidence_tree":"71c21c1b2eb4b31f061cf98f9bb6e34bbb497f23"},
+  "input":{"candidate_rows":4364,"unique_event_ids":3787,"git_blob_sha1":"b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b"},
+  "semantic_status_counts":{"DUPLICATE_INDEPENDENCE_CLUSTER":3,"INVALID_NO_STRICT_FAMILY":2202,"PROVISIONAL_UNIQUE":1582},
+  "provisional_family_counts":{
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME":{"independent_clusters":1,"initial_adjudication_queue":1},
+    "CORPORATE_LITIGATION_BINARY":{"independent_clusters":8,"initial_adjudication_queue":8},
+    "EARNINGS_EPS":{"independent_clusters":1280,"initial_adjudication_queue":100},
+    "FDA_FINAL_PDUFA_DECISION":{"independent_clusters":63,"initial_adjudication_queue":63},
+    "FOMC_DECISION":{"independent_clusters":48,"initial_adjudication_queue":48},
+    "MACRO_STATISTICAL_RELEASE":{"independent_clusters":167,"initial_adjudication_queue":100},
+    "MA_PENDING_COMPLETION":{"independent_clusters":3,"initial_adjudication_queue":3},
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR":{"independent_clusters":12,"initial_adjudication_queue":12}
+  },
+  "adjudication_queue_rows":335,
+  "validated_independent_events":0,
+  "output_blobs":[
+    {"path":"registry/w2c_semantic_v2_events.csv.gz","git_blob_sha1":"d71c41aa974345ac3de39b56ea0f03f062b6f12e"},
+    {"path":"registry/w2c_semantic_v2_clusters.csv.gz","git_blob_sha1":"fd39359d65bb73c03da52a6130d0b4a8aa64dc61"},
+    {"path":"registry/w2c_semantic_v2_adjudication_queue.csv.gz","git_blob_sha1":"60fdc9784dc189e4b588a56ad70eec3c7c5f23d7"},
+    {"path":"registry/w2c_semantic_v2_summary.json","git_blob_sha1":"068ebf215ca49066f137388d7da5732a0c4b8326"}
+  ],
+  "firewall":{"f1_f9_scored":false,"ias_computed":false,"linked_asset_realized_returns_read":false,"w3_family_selected":false},
+  "interpretation_boundary":"All family counts remain provisional. No cluster counts toward F3 until outcome-blind adjudication returns ACCEPT_STRICT_FAMILY."
+}
