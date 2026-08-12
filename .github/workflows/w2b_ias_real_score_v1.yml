@@ -1,0 +1,63 @@
+name: W2B IAS Real Score v1
+on:
+  push:
+    paths:
+      - 'registry/w2b_ias_execution_authorization_v1.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify protocol freeze remains intact
+        run: python scripts/w2b_ias_frozen_bundle_integrity_v1.py
+      - name: Verify evidence bytes and authorization
+        run: |
+          python - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          f=json.loads(Path('registry/w2b_ias_evidence_freeze_v1_0.json').read_text())
+          lines=[]
+          for p,sha in sorted(f['frozen_objects'].items()):
+              got=subprocess.check_output(['git','rev-parse',f'HEAD:{p}'],text=True).strip()
+              assert got==sha,(p,got,sha)
+              lines.append(f'{p}:{got}\n')
+          assert hashlib.sha256(''.join(lines).encode()).hexdigest()==f['evidence_bundle_sha256']
+          a=json.loads(Path('registry/w2b_ias_execution_authorization_v1.json').read_text())
+          assert a['authorized'] is True
+          assert a['protocol_bundle_sha256']=='a008d1bcf45c200708f97d8ea7089a15a773a1a3590dc112633760ac3c13b0dd'
+          assert a['evidence_bundle_sha256']==f['evidence_bundle_sha256']
+          assert a['evidence_matrix_blob']==f['frozen_objects']['registry/w2b_ias_evidence_matrix_v1.csv']
+          print('PRE_SCORE_FREEZES_PASS')
+          PY
+      - name: Validate evidence schema again
+        run: python scripts/w2b_ias_evidence_validate_v1.py
+      - name: Run frozen IAS plus SMAA scorer
+        run: python scripts/w2b_ias_score_v1_0.py
+      - name: Assert separation from PIT and performance
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w2b_ias_smaa_results_v1.json'))
+          assert x['performance_blind'] is True
+          assert x['f1_f9_read'] is False
+          assert x['w3_decision_computed'] is False
+          assert x['samples']==200000
+          assert x['seed']==20260812
+          print('SEPARATION_PASS')
+          PY
+      - name: Publish exact result to isolated branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git switch -C w2b-ias-v1-results
+          git add registry/w2b_ias_smaa_results_v1.json
+          git commit -m 'W2B: materialize frozen IAS and SMAA result'
+          git push --force origin w2b-ias-v1-results
