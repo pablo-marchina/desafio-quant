@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'registry/w2c_execution_trigger_v2_0.json'
+      - 'registry/w2c_execution_retrigger_v2_0.json'
 
 permissions:
   contents: write
@@ -74,5 +75,8 @@ jobs:
             exit 0
           fi
           git commit -m 'w2c: materialize v2.0 lower-bound discovery evidence'
+          # The generated CSVs are normalized to LF in Git; discard any residual
+          # working-tree-only CRLF representation before rebasing the committed bytes.
+          git reset --hard HEAD
           git pull --rebase origin main
           git push origin HEAD:main
