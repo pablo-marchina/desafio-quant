@@ -1,0 +1,107 @@
+{
+  "artifact": "W2C_SEMANTIC_V2_ADJUDICATION_SUMMARY",
+  "version": "W2C-ADJ-RUN-v1.1",
+  "protocol_version": "W2C-ADJ-v1.1",
+  "performance_blind": true,
+  "science_reopened": false,
+  "input_rows": 335,
+  "decision_rows": 335,
+  "accepted_total": 312,
+  "family_decisions": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "ACCEPT_STRICT_FAMILY": 1
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "ACCEPT_STRICT_FAMILY": 4,
+      "REJECT_FALSE_POSITIVE": 4
+    },
+    "EARNINGS_EPS": {
+      "ACCEPT_STRICT_FAMILY": 100
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "ACCEPT_STRICT_FAMILY": 63
+    },
+    "FOMC_DECISION": {
+      "ACCEPT_STRICT_FAMILY": 36,
+      "REJECT_FALSE_POSITIVE": 12
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "ACCEPT_STRICT_FAMILY": 97,
+      "REJECT_FALSE_POSITIVE": 2,
+      "AMBIGUOUS_UNRESOLVED": 1
+    },
+    "MA_PENDING_COMPLETION": {
+      "AMBIGUOUS_UNRESOLVED": 3
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "ACCEPT_STRICT_FAMILY": 11,
+      "REJECT_FALSE_POSITIVE": 1
+    }
+  },
+  "accepted_by_family": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 1,
+    "CORPORATE_LITIGATION_BINARY": 4,
+    "EARNINGS_EPS": 100,
+    "FDA_FINAL_PDUFA_DECISION": 63,
+    "FOMC_DECISION": 36,
+    "MACRO_STATISTICAL_RELEASE": 97,
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 11
+  },
+  "top_up_status": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "accepted": 1,
+      "initial_rows": 1,
+      "provisional_pool": 1,
+      "required": false
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "accepted": 4,
+      "initial_rows": 8,
+      "provisional_pool": 8,
+      "required": false
+    },
+    "EARNINGS_EPS": {
+      "accepted": 100,
+      "initial_rows": 100,
+      "provisional_pool": 1280,
+      "required": false
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "accepted": 63,
+      "initial_rows": 63,
+      "provisional_pool": 63,
+      "required": false
+    },
+    "FOMC_DECISION": {
+      "accepted": 36,
+      "initial_rows": 48,
+      "provisional_pool": 48,
+      "required": false
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "accepted": 97,
+      "initial_rows": 100,
+      "provisional_pool": 167,
+      "required": false
+    },
+    "MA_PENDING_COMPLETION": {
+      "accepted": 0,
+      "initial_rows": 3,
+      "provisional_pool": 3,
+      "required": false
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "accepted": 11,
+      "initial_rows": 12,
+      "provisional_pool": 12,
+      "required": false
+    }
+  },
+  "validated_independent_events": 312,
+  "f1_f9_scored": false,
+  "ias_computed": false,
+  "pit_evidence_collected": false,
+  "linked_asset_realized_returns_read": false,
+  "w3_family_selected": false,
+  "interpretation": "Only ACCEPT_STRICT_FAMILY rows are semantically validated. Top-up is mechanical and hash-ordered; F1-F9 remain unscored."
+}
