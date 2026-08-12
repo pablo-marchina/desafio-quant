@@ -1,0 +1,19 @@
+{
+  "artifact": "W2A_REAL_EXECUTION_AUTHORIZATION",
+  "version": "W2A-REA-v1.0",
+  "date": "2026-08-12",
+  "status": "AUTHORIZED_POST_FREEZE",
+  "freeze_status": "PASS_W2A_REAL_EXECUTION_BYTE_FREEZE",
+  "freeze_bundle_id": "06d3a5ca84014568a46e9e672ae6da9b93a6a89c842248691d70cce7d8928b75",
+  "freeze_commit_sha": "b0f53f26ef4e7d47a6ce0e174ffd728697cc3e06",
+  "freeze_validation_artifact": "registry/w2a_real_execution_freeze_validation_v1.json",
+  "freeze_validation_version": "W2A-REFV-v1.0",
+  "execute_funded_portfolio": true,
+  "authorized_scope": "Execute the already-frozen W2A funded accounting engine over the exact recovered ART-025 R1 34-trade ledger and original DAT-007 marks; emit only the frozen ledger, summary and output manifest.",
+  "performance_outputs_computed_before_authorization": false,
+  "performance_outputs_read_before_authorization": false,
+  "no_post_authorization_method_change": true,
+  "science_reopened": false,
+  "historical_frozen_champion_unchanged": "C0_NO_TRADE",
+  "h2_unchanged": "FAIL_UNDER_FROZEN_EXP07I"
+}
