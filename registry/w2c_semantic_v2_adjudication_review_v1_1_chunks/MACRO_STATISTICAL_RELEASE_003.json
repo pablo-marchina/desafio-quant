@@ -1,0 +1,198 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "MACRO_STATISTICAL_RELEASE",
+  "chunk": 3,
+  "rows": 20,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "5843",
+      "title": "What will be the U-3 unemployment rate in January?",
+      "slug": "what-will-be-the-u3-unemployment-rate-in-january",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "3fe45268f7782e413b1fca23",
+      "end_utc": "2022-07-27T14:44:41.744000Z",
+      "adjudication_rank": "3d6dac06fbd9f2bdddd4ecaba60d93ba1527e10ca6b046017fde1d9cf5020355"
+    },
+    {
+      "event_id": "339954",
+      "title": "April Unemployment Rate",
+      "slug": "april-unemployment-rate-372",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "d36fd36a073096cd6ace6359",
+      "end_utc": "2026-05-08T00:00:00Z",
+      "adjudication_rank": "3db4e2ed75985346628397e16dfedaf3865275bf47ef2b147a00acd1f89d0662"
+    },
+    {
+      "event_id": "670690",
+      "title": "PPI YoY - June 2026",
+      "slug": "ppi-yoy-june-2026-20260702034336684",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "fe3698978d5b650d42dbea11",
+      "end_utc": "2026-07-15T03:59:00Z",
+      "adjudication_rank": "3e33ff262b002b9e385e029a5d0ad2cf27793cc4d161229c46a84e7ccf156be1"
+    },
+    {
+      "event_id": "5840",
+      "title": "What will the U.S. annual inflation be on January 2022?",
+      "slug": "us-inflation-jan-22",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "39f64793781894cddce54734",
+      "end_utc": "2022-02-14T00:00:00Z",
+      "adjudication_rank": "3f4abd5b4a41461ba57b8c739923a1a0d5b79530ee1053fee27991e60c40e7d2"
+    },
+    {
+      "event_id": "563235",
+      "title": "How many jobs added in June?",
+      "slug": "how-many-jobs-added-in-june-20260605153057140",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "4edd71a8b2e980a09dda4fb6",
+      "end_utc": "2026-07-03T03:59:00Z",
+      "adjudication_rank": "40632aaeafc957c38ef813dc21f62a4e6439ac51e95cf41aab2b5d9f4b105a4d"
+    },
+    {
+      "event_id": "103517",
+      "title": "Germany GDP growth in Q4 2025?",
+      "slug": "germany-gdp-growth-in-q4-2025",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "13d8ddd5d6a49d5f53229d4d",
+      "end_utc": "2026-01-31T01:57:26Z",
+      "adjudication_rank": "42a52e7ffc93ebfd257e3f87c901d6d58db77d454051e3e614008835c8f533c0"
+    },
+    {
+      "event_id": "811515",
+      "title": "August Unemployment Rate",
+      "slug": "august-unemployment-rate-1786116586124",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "9fb6b1e375a422a81dd3ef53",
+      "end_utc": "2026-09-04T08:30:00Z",
+      "adjudication_rank": "44b1b4f2de33897597dcc31c8b7b233f98613ecac32267c87884fc2bbf5f7d43"
+    },
+    {
+      "event_id": "711852",
+      "title": "China GDP growth (Y/Y) in Q3 2026?",
+      "slug": "china-gdp-growth-yy-in-q3-2026-20260716161116873",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "c82b920ca1d3d46ed9d5d3e9",
+      "end_utc": "2026-10-20T00:00:00Z",
+      "adjudication_rank": "44ea2e2824390baee7dedb94fc5abca81aa678c573086ca57a285fad06cd53da"
+    },
+    {
+      "event_id": "3860",
+      "title": "Will U.S. inflation be more than 0.9% from May to June 2022?",
+      "slug": "will-us-inflation-be-more-than-0pt9-from-may-to-june-2022",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "1ab597f0fa22260fa89301f4",
+      "end_utc": "2022-07-13T00:00:00Z",
+      "adjudication_rank": "45977630cb4109ab9a47262cf8c3a3bb2e9ca60b7a584d4f9760dcf504984865"
+    },
+    {
+      "event_id": "153669",
+      "title": "January Unemployment Rate",
+      "slug": "january-unemployment-rate-333",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "870244ae057a4a1ccb23b7e7",
+      "end_utc": "2026-02-06T00:00:00Z",
+      "adjudication_rank": "4723e9054263ca3ee12c2c390408ee8e38e438449c5ec32ccd74bc755c9f14a9"
+    },
+    {
+      "event_id": "660461",
+      "title": "July Unemployment Rate",
+      "slug": "july-unemployment-rate-20260702221240753",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "2afd8170b1ba0e7a08c0e0ea",
+      "end_utc": "2026-08-07T08:30:00Z",
+      "adjudication_rank": "48a27e462fb2bb4fc17332156c801368ce64c163a0b0c7500098729c5f14fe7c"
+    },
+    {
+      "event_id": "35440",
+      "title": "US GDP growth in Q3 2025?",
+      "slug": "us-gdp-growth-in-q3-2025",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "8ebc1b5a721583ef713e8ded",
+      "end_utc": "2025-10-30T00:00:00Z",
+      "adjudication_rank": "4bea7c2f2d927e454ede93e21056c13bed47e1bc24d71c908ef0383708fc18ce"
+    },
+    {
+      "event_id": "607340",
+      "title": "What will U.S. inflation be from August to September 2022?",
+      "slug": "what-will-us-inflation-be-from-august-to-september-2022",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "1b862b34b1753494c2b7e3c9",
+      "end_utc": "2022-10-13T00:00:00Z",
+      "adjudication_rank": "4d968c817a52debb4eb966cae27d451614132ab6dd97d78cde412a9ae0952cb6"
+    },
+    {
+      "event_id": "5757",
+      "title": "What will U.S. inflation be from June to July 2022?",
+      "slug": "US-inflation-July2022",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "021c534087dfe9d3089b98cf",
+      "end_utc": "2022-08-10T00:00:00Z",
+      "adjudication_rank": "4f3ea67bc37e28b5103b91116e48b45ccb414f4271ddd9357ff97d5042f47ec9"
+    },
+    {
+      "event_id": "4313",
+      "title": "What will US GDP growth be in Q1 2021?",
+      "slug": "what-will-us-gdp-growth-be-in-q1-2021",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "182c580294fc946c98e6650e",
+      "end_utc": "2021-04-29T00:00:00Z",
+      "adjudication_rank": "510824aa2c6938ebe15e0e0ffdc987ba7fab59536ed5bfabc3fddee4529217c3"
+    },
+    {
+      "event_id": "580298",
+      "title": "Core CPI YoY - June 2026",
+      "slug": "core-cpi-yoy-june-2026-20260610150514590",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "b1dbefe22010674972183685",
+      "end_utc": "2026-07-15T03:59:00Z",
+      "adjudication_rank": "526bea4a71ce1cac6e4df541ff01fa7f57d0a1e7738610690e16124c6c9c9a27"
+    },
+    {
+      "event_id": "535147",
+      "title": "Producer Price Index (PPI) YoY - May 2026",
+      "slug": "producer-price-index-ppi-yoy-may-2026",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "b6033f5d71cbaca48056adbc",
+      "end_utc": "2026-06-11T06:00:00Z",
+      "adjudication_rank": "5338015f2321e9825f6af39c38108ae8d0dc962b10198f3688d42aa84e55c157"
+    },
+    {
+      "event_id": "524530",
+      "title": "Core CPI YoY - May 2026",
+      "slug": "core-cpi-yoy-may-2026",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "c029ef66695d1cdc6c55d3f9",
+      "end_utc": "2026-06-10T06:00:00Z",
+      "adjudication_rank": "576db115437bf04ee4f440a0c051e3145aa49e38d80b40a153f65d79f3690cd7"
+    },
+    {
+      "event_id": "193877",
+      "title": "Germany GDP growth in Q1 2026?",
+      "slug": "germany-gdp-growth-in-q1-2026",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "eeeb00202455d7ec16df58e7",
+      "end_utc": "2026-04-30T00:00:00Z",
+      "adjudication_rank": "57a7101c9887f3f64d977ef6ee7915feda063ef29b260a6286a18ca0b994a243"
+    },
+    {
+      "event_id": "205145",
+      "title": "February Unemployment Rate",
+      "slug": "february-unemployment-rate-557",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "bdd132477e50da19c61c631d",
+      "end_utc": "2026-03-06T00:00:00Z",
+      "adjudication_rank": "5b820162638e0f05ac5ef31071c7d7cbefc2f6b0a3bcf74e6f6dba9d863a735f"
+    }
+  ]
+}

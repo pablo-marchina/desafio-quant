@@ -1,0 +1,198 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "MACRO_STATISTICAL_RELEASE",
+  "chunk": 5,
+  "rows": 20,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "83746",
+      "title": "November Unemployment Rate",
+      "slug": "november-unemployment-rate-765",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "94b1189c584fa3e849936134",
+      "end_utc": "2025-12-05T00:00:00Z",
+      "adjudication_rank": "82a68b8b5f6bd95af60c1e2ddf7f9d33097d947d2cf5a2260e30e063cda7d7e9"
+    },
+    {
+      "event_id": "901284",
+      "title": "What will U.S. inflation be from January to February 2023?",
+      "slug": "what-will-us-inflation-be-from-january-to-february-2023",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "cea4854deeae717dd0bbc57a",
+      "end_utc": "2023-03-14T00:00:00Z",
+      "adjudication_rank": "848b2dc2c41048406649046bbf93e7e0185174f5cc10dc470f09d201ac64fa5a"
+    },
+    {
+      "event_id": "85686",
+      "title": "Eurozone GDP growth in Q4 2025?",
+      "slug": "eurozone-gdp-growth-in-q4-2025",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "425c2787dc971c97d1a04d41",
+      "end_utc": "2026-01-30T13:15:50Z",
+      "adjudication_rank": "876bdf2f26070cf3a2ce1ff7e6afa11417ef3f81ea7131f3c34a52815339c122"
+    },
+    {
+      "event_id": "188924",
+      "title": "Oct-Dec Unemployment Rate - U.K.",
+      "slug": "oct-dec-unemployment-rate-uk",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "7b7a99d5afd610c9ef0f7cb0",
+      "end_utc": "2026-02-17T00:00:00Z",
+      "adjudication_rank": "89d7b16b1b2bab38a7b4d0afbdc00dda4d7793d4fcd117397d5f1c3242f131e9"
+    },
+    {
+      "event_id": "12373",
+      "title": "Unemployment rate over 4.2% in August?",
+      "slug": "unemployment-rate-over-4pt2-for-august",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "8564940fe52dd64368ba8666",
+      "end_utc": "2024-09-06T12:00:00Z",
+      "adjudication_rank": "8a81fc8ccb99fbb1b5778bf30cfddba9ff00e6e952dea3a5e557728616b1b480"
+    },
+    {
+      "event_id": "11828",
+      "title": "How many Jobs added in August?",
+      "slug": "how-many-jobs-added-in-august",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "aba76d7ca3878433213ba217",
+      "end_utc": "2024-09-06T12:00:00Z",
+      "adjudication_rank": "8b7a3a0d5249081fd9b5d6b056cd98176c5d329ae63ed0b5e992e814da35496e"
+    },
+    {
+      "event_id": "119828",
+      "title": "US GDP growth in Q1 2026?",
+      "slug": "us-gdp-growth-in-q1-2026",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "d8958f394d663b7b351489fd",
+      "end_utc": "2026-04-30T00:00:00Z",
+      "adjudication_rank": "8c36b3a2880e2d225817fd77c40f5512316864473e304c577f78a16d5d45af13"
+    },
+    {
+      "event_id": "436440",
+      "title": "Eurozone GDP growth in Q2 2026",
+      "slug": "eurozone-gdp-growth-in-q2-2026",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "da6ad801074d899136a481a7",
+      "end_utc": "2026-07-30T06:00:00Z",
+      "adjudication_rank": "8caebbc77cc08d8cc157df799b28617a0242654689f76ce411e79ae6ff62f5b5"
+    },
+    {
+      "event_id": "462423",
+      "title": "May Unemployment Rate",
+      "slug": "may-unemployment-rate-168",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "bf47508740301189e709af55",
+      "end_utc": "2026-06-05T00:00:00Z",
+      "adjudication_rank": "8d05ba1624f829672fcb878d2e133204a916bde0b1324134f83686e79ec253aa"
+    },
+    {
+      "event_id": "436403",
+      "title": "Mexico GDP growth in Q2 2026?",
+      "slug": "mexico-gdp-growth-in-q2-2026",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "a0278ff740835321555756d9",
+      "end_utc": "2026-07-30T06:00:00Z",
+      "adjudication_rank": "8da2f5bd0110c200c5c649fc4a72a3742f92d053e282d58e65c38190106758b7"
+    },
+    {
+      "event_id": "182146",
+      "title": "2026 World GDP Growth",
+      "slug": "2026-world-gdp-growth",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "27192d61cc2d57c3f9562bc3",
+      "end_utc": "2027-01-15T00:00:00Z",
+      "adjudication_rank": "90277ab5ffca0280f85deb027b0fe1d0c90d7f5cca0b6d87b44893543d386284"
+    },
+    {
+      "event_id": "197105",
+      "title": "January 2026 Unemployment Rate - Japan",
+      "slug": "january-2026-unemployment-rate-japan",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "c6a1a5928865b5c89cb7ff91",
+      "end_utc": "2026-03-03T00:00:00Z",
+      "adjudication_rank": "91bb9186c42461c273a95b90d863aacf625fa9620bb47969790dd7cd81cb9cff"
+    },
+    {
+      "event_id": "34577",
+      "title": "August jobs report prints negative?",
+      "slug": "august-jobs-report-prints-negative",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "f6538f8df59638789f5532f6",
+      "end_utc": "2025-09-05T00:00:00Z",
+      "adjudication_rank": "920a88ade366de747930b946d2018275f4ef8278aac0b43650c03053ef09fbad"
+    },
+    {
+      "event_id": "13275",
+      "title": "How many jobs added in October?",
+      "slug": "how-many-jobs-added-in-october",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "8bf908a4484d9ad2696a99cc",
+      "end_utc": "2024-11-01T12:00:00Z",
+      "adjudication_rank": "930e4e92b20b9ad92fb15399a6cf9021b7e2b8116bd4ff54a4deabb13013e583"
+    },
+    {
+      "event_id": "30833",
+      "title": "July jobs report prints negative?",
+      "slug": "july-jobs-report-prints-negative",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "9ae0097e109d198285067c1a",
+      "end_utc": "2025-08-01T06:00:00Z",
+      "adjudication_rank": "934b8bbdd4e142f39b7a3ad0cb42ca8acbc8522298b81cf2acef769486beff9f"
+    },
+    {
+      "event_id": "205139",
+      "title": "How many jobs added in February?",
+      "slug": "how-many-jobs-added-in-february-246",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "14546d2fcc9734d00e0f65e0",
+      "end_utc": "2026-03-06T00:00:00Z",
+      "adjudication_rank": "93f6730f544c56293b4de9ed0bbd730cc4aeddb3ed8775b87fc1c33e3c4a26d4"
+    },
+    {
+      "event_id": "10319",
+      "title": "US inflation >0.3% from March to April 2024?",
+      "slug": "us-inflation-0pt3-from-march-to-april-2024",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "e44c8ed22b36662ef2077f93",
+      "end_utc": "2024-05-15T12:00:00Z",
+      "adjudication_rank": "95abd610999dcf8fe63704d020e6fe4d7fc918b9cfc2fc1a9db7f2aa4a856c9f"
+    },
+    {
+      "event_id": "208207",
+      "title": "March Unemployment Rate",
+      "slug": "march-unemployment-rate-561",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "ee2d3cf5d682cdfbd3b3ee41",
+      "end_utc": "2026-04-03T00:00:00Z",
+      "adjudication_rank": "996220e9f92e51fb2304c1530a57721875659b374d1c1f7aadfd84a8fbcafbe2"
+    },
+    {
+      "event_id": "10985",
+      "title": "How many Jobs added in June?",
+      "slug": "how-many-jobs-added-in-june",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "a1b85d430730e81c8d8eb4e2",
+      "end_utc": "2024-07-05T12:00:00Z",
+      "adjudication_rank": "99e3a3321ac34301fea2cce67e742b007f360841954ead91441df0fdd2b96ae6"
+    },
+    {
+      "event_id": "12632",
+      "title": "Unemployment rate over 4.2% in September?",
+      "slug": "unemployment-rate-over-4pt2-in-september",
+      "resolved_family": "MACRO_STATISTICAL_RELEASE",
+      "independence_cluster_id": "3f6b3025bdb81910d22ebce0",
+      "end_utc": "2024-10-04T12:00:00Z",
+      "adjudication_rank": "9a9bc16b0aee3d54afb11ca0a55cf6133adf8b30134f1a7777e87f7e3e76dcb0"
+    }
+  ]
+}

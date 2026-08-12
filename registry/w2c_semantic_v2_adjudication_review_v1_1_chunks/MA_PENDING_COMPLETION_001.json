@@ -1,0 +1,45 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "MA_PENDING_COMPLETION",
+  "chunk": 1,
+  "rows": 3,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "100079",
+      "title": "Will Paramount close Warner Bros. acquisition by end of 2026?",
+      "slug": "will-paramount-close-warner-bros-acquisition-by-end-of-2026",
+      "resolved_family": "MA_PENDING_COMPLETION",
+      "independence_cluster_id": "40edbc80b04c65c45346abbc",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "606e4318faa04c7e5b2eab972d49822acd5d2592396a539fb65598298b31a7ed"
+    },
+    {
+      "event_id": "100229",
+      "title": "Who will close Warner Bros. acquisition?",
+      "slug": "who-will-close-warner-bros-acquisition",
+      "resolved_family": "MA_PENDING_COMPLETION",
+      "independence_cluster_id": "a5020c1bd7855b28d8dbbac8",
+      "end_utc": "2027-06-30T00:00:00Z",
+      "adjudication_rank": "8adfe38625387b4ef4c8b8369cb02a019a601b755597fe01758af7297bf39462"
+    },
+    {
+      "event_id": "99583",
+      "title": "Will Netflix close Warner Bros. acquisition by end of 2026?  ",
+      "slug": "will-netflix-close-warner-brothers-acquisition-by-end-of-2026",
+      "resolved_family": "MA_PENDING_COMPLETION",
+      "independence_cluster_id": "eae812ba32a43fb7b2e5adc0",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "e0cd2a7849e3d172cd23bcdfee9e4a08d5c229b09c95cf9c450294ace1af1e9b"
+    }
+  ]
+}

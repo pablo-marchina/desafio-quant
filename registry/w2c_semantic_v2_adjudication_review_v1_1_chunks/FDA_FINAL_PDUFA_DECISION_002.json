@@ -1,0 +1,198 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "FDA_FINAL_PDUFA_DECISION",
+  "chunk": 2,
+  "rows": 20,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "652095",
+      "title": "FDA approves Vera Therapeutics' Atacicept?",
+      "slug": "fda-approves-vera-therapeutics-atacicept-07-07-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "818f7dfd896e0b83ec875468",
+      "end_utc": "2026-07-07T00:00:00Z",
+      "adjudication_rank": "460bb39e8e36bb4ee489980581c4a060a3b72eecb762b743fdbb10db71ecbb6c"
+    },
+    {
+      "event_id": "400511",
+      "title": "FDA approves Sanofi's Tzield?",
+      "slug": "fda-approves-sanofis-tzield",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "6fb78d0f5abcd97188c3fa82",
+      "end_utc": "2026-04-29T00:00:00Z",
+      "adjudication_rank": "4ac51b0b8f26c167b4e43c575bf630105b4207a929b69ea67610de2c7b4394e8"
+    },
+    {
+      "event_id": "652131",
+      "title": "FDA approves Elevar Therapeutics' Rivoceranib + camrelizumab?",
+      "slug": "fda-approves-elevar-therapeutics-rivoceranib-camrelizumab-07-23-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "1e2a4079673de87ed521fc98",
+      "end_utc": "2026-07-23T00:00:00Z",
+      "adjudication_rank": "4cb6c689e749c14c638a83fb374e85e2accccce3d4add54e2d3e7eb68eb54a08"
+    },
+    {
+      "event_id": "652185",
+      "title": "FDA approves MannKind's FUROSCIX ReadyFlow Autoinjector?",
+      "slug": "fda-approves-mannkind-furoscix-readyflow-autoinjector-07-26-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "9ff1d6c9de38da03568a2098",
+      "end_utc": "2026-07-26T00:00:00Z",
+      "adjudication_rank": "4e1ff12a006264efd3f262940a85a5740530d6b66bb16f22c14439ebbb3eb7b3"
+    },
+    {
+      "event_id": "652233",
+      "title": "FDA approves Viatris' low-dose estrogen weekly patch?",
+      "slug": "fda-approves-viatris-low-dose-estrogen-weekly-patch-07-30-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "eee75fa3c7e012b49eea89c8",
+      "end_utc": "2026-07-30T17:59:56.626000Z",
+      "adjudication_rank": "4e2bebc21479a5debf2b9433bc51d04eb839474623339d3f912bf213b5016cc2"
+    },
+    {
+      "event_id": "158107",
+      "title": "FDA approves Retatrutide this year?",
+      "slug": "fda-approves-retatrutide-this-year",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "4258b42a8a85eb947a824b57",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "50b6e6b71b8dd7d0b512fab4cc508da7693bef7b15c8a5e24ade5ded6aef1c7c"
+    },
+    {
+      "event_id": "4334",
+      "title": "Will Johnson and Johnson's COVID-19 vaccine receive FDA approval or Emergency Use Authorization (EUA) by March 15, 2021?",
+      "slug": "will-johnson-and-johnson-s-covid-19-vaccine-receive-fda-approval-or-emergency-use-authorization-eua-by-march-15-2021",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "b751a2077b707d6b1da492b9",
+      "end_utc": "2021-03-15T00:00:00Z",
+      "adjudication_rank": "50c69301459b1ef4ef82ee7a88e32cfbf0d4d305c8bb44cd874a99c43efc77d7"
+    },
+    {
+      "event_id": "34549",
+      "title": "FDA approves Insmed’s Brensocatib for bronchiectasis?",
+      "slug": "fda-approves-insmeds-brensocatib-for-bronchiectasis-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "324ef196a3019ff47e31cc99",
+      "end_utc": "2025-08-12T16:00:00Z",
+      "adjudication_rank": "557660502f59bddbb7839434e3f0870715222bcac1bf80898b1882fb5bfa55ce"
+    },
+    {
+      "event_id": "4694",
+      "title": "Will any of the COVID vaccines be granted full FDA approval by September 1?",
+      "slug": "will-any-of-the-covid-vaccines-be-granted-full-fda-approval-by-september-1",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "26d17ec5ba68026a20d00351",
+      "end_utc": "2021-09-01T00:00:00Z",
+      "adjudication_rank": "5dffe59dd19a5b60112d4130089d6dbd1adf12de5a0d1dcf66b273526de17f3b"
+    },
+    {
+      "event_id": "400481",
+      "title": "FDA approves Sanofi's Dupixent?",
+      "slug": "fda-approves-sanofis-dupixent",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "8063eb9a98b99f78d4f08153",
+      "end_utc": "2026-04-27T00:00:00Z",
+      "adjudication_rank": "5f688791cda549fbc3c6cf4a0713abfe8d77f51475c8ec341912661e2500d096"
+    },
+    {
+      "event_id": "556116",
+      "title": "FDA approves Viridian Therapeutics' Veligrotug?",
+      "slug": "fda-approves-viridian-therapeutics-veligrotug-06-30-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "2d8512750cbc369052792ac9",
+      "end_utc": "2026-06-30T00:00:00Z",
+      "adjudication_rank": "6504f0f1c82be4f6058d10eae32afeed5f6051d7103529ad22f6d60f3d7f77ee"
+    },
+    {
+      "event_id": "34548",
+      "title": "FDA approves PharmaTher Holdings’ Ketamine?",
+      "slug": "fda-approves-pharmather-holdings-ketamine-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "672399543a8a2bd7c91eb35c",
+      "end_utc": "2025-08-09T16:00:00Z",
+      "adjudication_rank": "665134ce27b9c668c7ba4eb7341df70af8ea550b6366eab38386bb30b92a55c1"
+    },
+    {
+      "event_id": "34547",
+      "title": "FDA approves LENZ Therapeutics’ LNZ100 for presbyopia by August 31?",
+      "slug": "fda-approves-lenz-therapeutics-lnz100-for-presbyopia-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "75fb4bf0a523949da39527d8",
+      "end_utc": "2025-08-08T16:00:00Z",
+      "adjudication_rank": "6653a29ff523ed66fb149020126f204eb2496cc944d0f22c78d7310ba0559ed5"
+    },
+    {
+      "event_id": "4810",
+      "title": "Will any of the COVID vaccines be granted full FDA approval by December 1?",
+      "slug": "will-any-of-the-covid-vaccines-be-granted-full-fda-approval-by-december-1",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "bf530d4379bb6e878c8ce409",
+      "end_utc": "2021-12-01T00:00:00Z",
+      "adjudication_rank": "84e662fba47afead0e6c0824bbcfdaade0c13435d777edb8333d178b65eb89eb"
+    },
+    {
+      "event_id": "555997",
+      "title": "FDA approves Camurus' Oclaiz?",
+      "slug": "fda-approves-camurus-oclaiz-06-10-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "9d35f5d8868e4f799a6ed943",
+      "end_utc": "2026-06-10T00:00:00Z",
+      "adjudication_rank": "8a4aa5a3a6004319c7a29939a7416f4f3b850cec251d88c183b12058000809fc"
+    },
+    {
+      "event_id": "34558",
+      "title": "FDA approves Sanofi’s Rilzabrutinib for immune thrombocytopenia?",
+      "slug": "fda-approves-sanofis-rilzabrutinib-for-immune-thrombocytopenia-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "9a668ce823b69f5bb6e2c827",
+      "end_utc": "2025-08-29T16:00:00Z",
+      "adjudication_rank": "8c903d835918a9ec513be7cab89018c6f52a0d97040570d60d8357e7db5f4843"
+    },
+    {
+      "event_id": "3720",
+      "title": "Will the FDA give emergency use authorization or otherwise approve Paxlovid before 2022?",
+      "slug": "will-the-fda-give-emergency-use-authorization-or-otherwise-approve-paxlovid-before-2022",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "8c138056a95c764c38c6ba97",
+      "end_utc": "2022-01-01T00:00:00Z",
+      "adjudication_rank": "92cf4c44b6b1a70974d24a579a0eb8ae3252416ea096d2ade00ed7646c6735ee"
+    },
+    {
+      "event_id": "503854",
+      "title": "FDA approves MannKind's Afrezza?",
+      "slug": "fda-approves-mannkinds-afrezza",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "a9c4365b3470734963665dd8",
+      "end_utc": "2026-05-29T00:00:00Z",
+      "adjudication_rank": "9e9974d6285fce31b23e5e2bc25d1e5972b6a029e1cc6c306918c7e6f9d0cc19"
+    },
+    {
+      "event_id": "431116",
+      "title": "FDA approves argenx's Vyvgart?",
+      "slug": "fda-approves-argenxs-vyvgart",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "bb2cff0a14f572e623d76151",
+      "end_utc": "2026-05-10T00:00:00Z",
+      "adjudication_rank": "9efef6317a29565794087dfc5ce4d3d74b11c8ff0105b9b2ada9406b6c56d2f1"
+    },
+    {
+      "event_id": "556012",
+      "title": "FDA approves GSK & Spero Therapeutics' Tebipenem HBr?",
+      "slug": "fda-approves-gsk-spero-therapeutics-tebipenem-hbr-06-18-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "a40dfe5684db32af4b03cc3d",
+      "end_utc": "2026-06-18T00:00:00Z",
+      "adjudication_rank": "9f7c5c8bc3898c9c5b099119a18d2b1f479e6b65ab0879396848b643ce107867"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK_MANIFEST",
+  "version": "W2C-ADJ-v1.1",
+  "total_rows": 335,
+  "chunks": [
+    {
+      "family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/ANTITRUST_ENFORCEMENT_SINGLE_NAME_001.json",
+      "rows": 1
+    },
+    {
+      "family": "CORPORATE_LITIGATION_BINARY",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/CORPORATE_LITIGATION_BINARY_001.json",
+      "rows": 8
+    },
+    {
+      "family": "EARNINGS_EPS",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/EARNINGS_EPS_001.json",
+      "rows": 20
+    },
+    {
+      "family": "EARNINGS_EPS",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/EARNINGS_EPS_002.json",
+      "rows": 20
+    },
+    {
+      "family": "EARNINGS_EPS",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/EARNINGS_EPS_003.json",
+      "rows": 20
+    },
+    {
+      "family": "EARNINGS_EPS",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/EARNINGS_EPS_004.json",
+      "rows": 20
+    },
+    {
+      "family": "EARNINGS_EPS",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/EARNINGS_EPS_005.json",
+      "rows": 20
+    },
+    {
+      "family": "FDA_FINAL_PDUFA_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/FDA_FINAL_PDUFA_DECISION_001.json",
+      "rows": 20
+    },
+    {
+      "family": "FDA_FINAL_PDUFA_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/FDA_FINAL_PDUFA_DECISION_002.json",
+      "rows": 20
+    },
+    {
+      "family": "FDA_FINAL_PDUFA_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/FDA_FINAL_PDUFA_DECISION_003.json",
+      "rows": 20
+    },
+    {
+      "family": "FDA_FINAL_PDUFA_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/FDA_FINAL_PDUFA_DECISION_004.json",
+      "rows": 3
+    },
+    {
+      "family": "FOMC_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/FOMC_DECISION_001.json",
+      "rows": 20
+    },
+    {
+      "family": "FOMC_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/FOMC_DECISION_002.json",
+      "rows": 20
+    },
+    {
+      "family": "FOMC_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/FOMC_DECISION_003.json",
+      "rows": 8
+    },
+    {
+      "family": "MACRO_STATISTICAL_RELEASE",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/MACRO_STATISTICAL_RELEASE_001.json",
+      "rows": 20
+    },
+    {
+      "family": "MACRO_STATISTICAL_RELEASE",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/MACRO_STATISTICAL_RELEASE_002.json",
+      "rows": 20
+    },
+    {
+      "family": "MACRO_STATISTICAL_RELEASE",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/MACRO_STATISTICAL_RELEASE_003.json",
+      "rows": 20
+    },
+    {
+      "family": "MACRO_STATISTICAL_RELEASE",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/MACRO_STATISTICAL_RELEASE_004.json",
+      "rows": 20
+    },
+    {
+      "family": "MACRO_STATISTICAL_RELEASE",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/MACRO_STATISTICAL_RELEASE_005.json",
+      "rows": 20
+    },
+    {
+      "family": "MA_PENDING_COMPLETION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/MA_PENDING_COMPLETION_001.json",
+      "rows": 3
+    },
+    {
+      "family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/MA_PRE_ANNOUNCEMENT_OR_RUMOR_001.json",
+      "rows": 12
+    }
+  ],
+  "lossless": true,
+  "network_accessed": false,
+  "performance_data_read": false
+}

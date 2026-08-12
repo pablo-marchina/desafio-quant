@@ -1,0 +1,198 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "FDA_FINAL_PDUFA_DECISION",
+  "chunk": 3,
+  "rows": 20,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "3018",
+      "title": "Will AstraZeneca's COVID-19 vaccine receive FDA approval or Emergency Use Authorization (EUA) by May 1, 2021?",
+      "slug": "will-astrazenecas-covid-19-vaccine-receive-fda-approval-or-emergency-use-authorization-eua-by-may-1-2021",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "00356d79ff892f0e1b1b8f8c",
+      "end_utc": "2021-05-01T00:00:00Z",
+      "adjudication_rank": "a408e9608801873bad1385e31a4fc6aadfd142b8a0c5c42f41c4f95eb8b34439"
+    },
+    {
+      "event_id": "34568",
+      "title": "FDA approves EYLEA HD?",
+      "slug": "fda-approves-eylea-hd-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "ffacb1e98220dcb52aefa112",
+      "end_utc": "2025-08-19T16:00:00Z",
+      "adjudication_rank": "a668cf30754f0fcfde5d487fb43955d07a6e79f575688433ee30ea5ba11475b6"
+    },
+    {
+      "event_id": "27386",
+      "title": "FDA approves Gilead’s lenacapavir for treating HIV?",
+      "slug": "fda-approves-gileads-lenacapavir-for-treating-hiv-human-immunodeficiency-virus",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "70774f0eecd8728ddb3e3835",
+      "end_utc": "2025-06-19T00:00:00Z",
+      "adjudication_rank": "a90b35415dfa5fd89c8f966785c4d93ca66c4e7d2c5f37bcb54a54d826e34602"
+    },
+    {
+      "event_id": "3176",
+      "title": "Will the FDA approve any COVID-19 vaccination for children under 12 by November 1?",
+      "slug": "will-the-fda-approve-any-covid-19-vaccination-for-children-under-12-by-november-1",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "a8a27d33abac217eb371d683",
+      "end_utc": "2021-11-01T00:00:00Z",
+      "adjudication_rank": "aa05fbadfbb5a612b626e02660dfabd44d2625fe711f6bfe47a8a19fbeec68c7"
+    },
+    {
+      "event_id": "400551",
+      "title": "FDA approves AstraZeneca's Camizestrant?",
+      "slug": "fda-approves-astrazenecas-camizestrant",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "79e525561769afe638c56ed9",
+      "end_utc": "2026-04-30T00:00:00Z",
+      "adjudication_rank": "b2b72d1bf41d9537b41eadad41c8b8865fba5188d401a7520f14dffda4f6133c"
+    },
+    {
+      "event_id": "26351",
+      "title": "FDA approves Merck’s clesrovimab infant RSV prevention (MK‑1654)?",
+      "slug": "fda-approves-mercks-clesrovimab-infant-rsv-prevention-mk1654",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "2eeecd66fe059125ab179563",
+      "end_utc": "2025-06-17T00:00:00Z",
+      "adjudication_rank": "b57773eca8feb18add44ac0938064cd1d617e92cda76dc65ba8994a746a3833f"
+    },
+    {
+      "event_id": "34571",
+      "title": "FDA approves Dordaviprone?",
+      "slug": "fda-approves-dordaviprone",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "a72bcf52b038db22d13b3aa0",
+      "end_utc": "2025-08-18T16:00:00Z",
+      "adjudication_rank": "b667d283bec8a314d9b94ba9c81c0c1d542043d61fec49874970237cbd097a97"
+    },
+    {
+      "event_id": "382885",
+      "title": "FDA approves Grace Therapeutics’ GTx-104?",
+      "slug": "fda-approves-grace-therapeutics-gtx-104",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "f32bb471ec5aca6c5127ed95",
+      "end_utc": "2026-04-23T00:00:00Z",
+      "adjudication_rank": "bf60ff81528b1ca80a29cabb7eebb599f2fc870dfda1e6a735913e6cf6348ca7"
+    },
+    {
+      "event_id": "482084",
+      "title": "FDA approves Daraxonrasib this year?",
+      "slug": "fda-approves-daraxonrasib-this-year",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "8a0ab89b1572565bfeb139a4",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "c2049906759d55a625af100e63f70ae1c64123c4215a6c54cb63edbb94ea0915"
+    },
+    {
+      "event_id": "27387",
+      "title": "FDA approves Regeneron’s Dupixent for bullous pemphigoid?",
+      "slug": "fda-approves-regenerons-dupixent-for-bullous-pemphigoid",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "6523e86644a76f0c239613ea",
+      "end_utc": "2025-06-20T00:00:00Z",
+      "adjudication_rank": "c3c4dd524c4eca79af431441411c3a2a0daa154015eca9b02173d10347c05eed"
+    },
+    {
+      "event_id": "34566",
+      "title": "FDA approves FILSPARI REMS modification?",
+      "slug": "fda-approves-filspari-rems-modification-for-igan-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "eb744fb5ac5bcb08d81756cb",
+      "end_utc": "2025-08-28T16:00:00Z",
+      "adjudication_rank": "c76420dffff6a902560c14c7a6ce43d8dd0846770a25d66abec95e381e4607b9"
+    },
+    {
+      "event_id": "34550",
+      "title": "FDA approves Tonix Pharmaceuticals’ TNX-102 SL for fibromyalgia?",
+      "slug": "fda-approves-tonix-pharmaceuticals-tnx-102-sl-for-fibromyalgia-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "653defc27c8f22ead4c81d6c",
+      "end_utc": "2025-08-15T16:00:00Z",
+      "adjudication_rank": "c824cd68e00714f83cd57baed31a1ed1352bf537043eb608abb1c95da62e880c"
+    },
+    {
+      "event_id": "652165",
+      "title": "FDA approves Otsuka's Centanafadine?",
+      "slug": "fda-approves-otsuka-centanafadine-07-24-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "f53bc1dfd5b2e63b95e23c01",
+      "end_utc": "2026-07-24T00:00:00Z",
+      "adjudication_rank": "c946593bfa88e8b11f74022a5fa8a13399e835c1d5976cc0c9e98cb6336679df"
+    },
+    {
+      "event_id": "5433",
+      "title": "Will the FDA give emergency use authorization or otherwise approve Molnupiravir before 2022?",
+      "slug": "will-the-fda-give-emergency-use-authorization-or-otherwise-approve-molnupiravir-before-2022",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "7066a7e0a64cfe5ffd51e2f5",
+      "end_utc": "2021-12-31T00:00:00Z",
+      "adjudication_rank": "c9cc075e7e23c4dcc9e30cecf95ccccbf983ff71231f56410729e1550c6ee4a9"
+    },
+    {
+      "event_id": "27388",
+      "title": "FDA approves Unicycive’s Oxylanthanum Carbonate (OLC)?",
+      "slug": "fda-approves-unicycives-oxylanthanum-carbonate-olc",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "36b068fbd76e5c023bfc3606",
+      "end_utc": "2025-06-28T00:00:00Z",
+      "adjudication_rank": "d085b179d08ca7a9b5e780c58624b31189f96779f945b93816618f7813b98c62"
+    },
+    {
+      "event_id": "34567",
+      "title": "FDA approves Donidalorsen?",
+      "slug": "fda-approves-donidalorsen-for-hereditary-angioedema-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "9ccaebaaa9984404d9f0d628",
+      "end_utc": "2025-08-21T16:00:00Z",
+      "adjudication_rank": "d145a98fed8a5911b66807cb053f113aaa9b94c7856e8e1bedab38e989f13c1a"
+    },
+    {
+      "event_id": "34555",
+      "title": "FDA approves Precigen’s PRGN-2012 for recurrent respiratory papillomatosis?",
+      "slug": "fda-approves-precigens-prgn-2012-for-recurrent-respiratory-papillomatosis-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "13573bea9d3f4e7c0931703f",
+      "end_utc": "2025-08-27T16:00:00Z",
+      "adjudication_rank": "d9c4ba7cf79aaf1b1e23c643dc98f83ce98963dc3e52db106413fe83385ba23d"
+    },
+    {
+      "event_id": "400521",
+      "title": "FDA approves Axsome Therapeutics' AXS-05?",
+      "slug": "fda-approves-axsome-therapeutics-axs-05",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "c63fba74a69f51a0dbe535fb",
+      "end_utc": "2026-04-30T00:00:00Z",
+      "adjudication_rank": "dd84f1cc785c7c9800815a0aed41474ab0c1e99425b3b60bc65c83fd9e2893de"
+    },
+    {
+      "event_id": "34557",
+      "title": "FDA approves Outlook Therapeutics’ ONS-5010 for wet AMD?",
+      "slug": "fda-approves-outlook-therapeutics-ons-5010-for-wet-amd-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "ad9fc91a8aac71010d648b76",
+      "end_utc": "2025-08-31T16:00:00Z",
+      "adjudication_rank": "e755a5589a6cb574b597de9eaf08382c6131b61e694ec5c4493479cb769d1bff"
+    },
+    {
+      "event_id": "556024",
+      "title": "FDA approves Merck's Welireg + Keytruda or Keytruda Qlex?",
+      "slug": "fda-approves-merck-welireg-keytruda-or-keytruda-qlex-06-19-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "56d9b577d1fab7ddb625d097",
+      "end_utc": "2026-06-19T00:00:00Z",
+      "adjudication_rank": "ebfe720111c7ebc2641b31926fc1ed6fa31ed9f18d8225760a6cd617437cdcf9"
+    }
+  ]
+}

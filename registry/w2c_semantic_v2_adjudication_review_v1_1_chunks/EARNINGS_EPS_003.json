@@ -1,0 +1,198 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "EARNINGS_EPS",
+  "chunk": 3,
+  "rows": 20,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "410677",
+      "title": "Will Datadog (DDOG) beat quarterly earnings?",
+      "slug": "ddog-quarterly-earnings-nongaap-eps-05-07-2026-0pt51",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "16bdf37c1c8e4ce8b7d89edc",
+      "end_utc": "2026-05-07T13:00:00Z",
+      "adjudication_rank": "0901f36872d5f7db09993e611158e8fb3972dc87f1cf1ade652e1e07cef64e76"
+    },
+    {
+      "event_id": "364289",
+      "title": "Will CBRE Group (CBRE) beat quarterly earnings?",
+      "slug": "cbre-quarterly-earnings-nongaap-eps-04-23-2026-1pt12",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "e36bcb359f50402d92ad4910",
+      "end_utc": "2026-04-23T13:00:00Z",
+      "adjudication_rank": "09075828e25d6bcd675c9cf6c454f229f08f74294f8556216c1a68e2c21ac4a4"
+    },
+    {
+      "event_id": "146136",
+      "title": "Will Interactive Brokers (IBKR) beat quarterly earnings?",
+      "slug": "ibkr-quarterly-earnings-nongaap-eps-01-20-2026-0pt56",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "bf2f6971e11432a2ecb91479",
+      "end_utc": "2026-01-20T22:00:00Z",
+      "adjudication_rank": "094431d84f160c00809005b55639a2514accf3681b8b46632c41edcd1c82a23e"
+    },
+    {
+      "event_id": "100416",
+      "title": "Will Broadcom Inc. (AVGO) beat quarterly earnings?",
+      "slug": "avgo-quarterly-earnings-nongaap-eps-12-11-2025-1pt87",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "f579bf5ab51e319b0e374791",
+      "end_utc": "2025-12-11T22:00:00Z",
+      "adjudication_rank": "09512201a7b4931492ee4057bd4c45c2b43b41dccffe23171dafb18093111d70"
+    },
+    {
+      "event_id": "226383",
+      "title": "Will Kohls (KSS) beat quarterly earnings?",
+      "slug": "kss-quarterly-earnings-gaap-eps-03-10-2026-0pt72",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "2d9a597e1310479fd900711f",
+      "end_utc": "2026-03-10T13:00:00Z",
+      "adjudication_rank": "0962fe8ade32f40db4fa6044c7c918e254161152523d5667f9fb1de49d959e25"
+    },
+    {
+      "event_id": "64602",
+      "title": "Will Mastercard (MA) beat quarterly earnings?",
+      "slug": "ma-quarterly-earnings-nongaap-eps-10-30-2025-4pt31",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "a747cc8d9bfd01b330e1cd79",
+      "end_utc": "2025-10-30T13:00:00Z",
+      "adjudication_rank": "0996491047818dd209134a93d22aa50562a5597522fd3335aa75e37034cd31a5"
+    },
+    {
+      "event_id": "87898",
+      "title": "Will Snowflake (SNOW) beat quarterly earnings?",
+      "slug": "snow-quarterly-earnings-nongaap-eps-12-03-2025-0pt31",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "1463bd620048f7f47a9e644d",
+      "end_utc": "2025-12-03T22:00:00Z",
+      "adjudication_rank": "09de5eeae0362620c5d72d711990df8c5f527773a3d819b5c6a6682e8776a0e0"
+    },
+    {
+      "event_id": "74643",
+      "title": "Will Tyson Foods (TSN) beat quarterly earnings?",
+      "slug": "tsn-quarterly-earnings-nongaap-eps-11-10-2025-0pt83",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "bea79424a3223661d11f1a18",
+      "end_utc": "2025-11-10T14:00:00Z",
+      "adjudication_rank": "0a666fe12b5325d68e8bd89f8ff11eceb36fd7946f247fe3063c487e7339fe12"
+    },
+    {
+      "event_id": "686380",
+      "title": "Will Infosys (INFY) beat quarterly earnings?",
+      "slug": "infy-quarterly-earnings-gaap-eps-07-23-2026-0pt21",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "c3a288de5800d7decf81d05f",
+      "end_utc": "2026-07-23T13:00:00Z",
+      "adjudication_rank": "0a67f1c391d044000b093921099ea36fd5d94d8f33404fb541dda42722c36ad6"
+    },
+    {
+      "event_id": "715645",
+      "title": "Will Hyatt Hotels (H) beat quarterly earnings?",
+      "slug": "h-quarterly-earnings-nongaap-eps-07-30-2026-0pt91",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "5859cec1ba6f4b62e9429b00",
+      "end_utc": "2026-07-30T13:00:00Z",
+      "adjudication_rank": "0a75a6e467f6fbf7b681db75b92d04b9ab2d255029c53e4a2ac4c289cba65a15"
+    },
+    {
+      "event_id": "387395",
+      "title": "Will Dolby Laboratories (DLB) beat quarterly earnings?",
+      "slug": "dlb-quarterly-earnings-nongaap-eps-04-30-2026-1pt34",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "46f63739ea2793e1a670538d",
+      "end_utc": "2026-04-30T21:00:00Z",
+      "adjudication_rank": "0a7d34609a66cfc20b632bf7bac2fab9eaf837ce531ba0dfec703af9d59aa2d3"
+    },
+    {
+      "event_id": "686398",
+      "title": "Will Lockheed Martin (LMT) beat quarterly earnings?",
+      "slug": "lmt-quarterly-earnings-gaap-eps-07-23-2026-7pt23",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "9a3f46dd65e30ff61214abb4",
+      "end_utc": "2026-07-23T13:00:00Z",
+      "adjudication_rank": "0ac385649fc74bdea6914067d6bb4a26856682d9706f0222b737ebac13991c56"
+    },
+    {
+      "event_id": "525417",
+      "title": "Will Dick's Sporting Goods (DKS) beat quarterly earnings?",
+      "slug": "dks-quarterly-earnings-nongaap-eps-05-27-2026-2pt91",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "1f8ad1c3e38cc6d73aa6d857",
+      "end_utc": "2026-05-27T13:00:00Z",
+      "adjudication_rank": "0af29ca895c5adb9ba046fe1981485111caa82d5f60c73cff6ff9973692bd8bf"
+    },
+    {
+      "event_id": "64603",
+      "title": "Will Roblox (RBLX) beat quarterly earnings?",
+      "slug": "rblx-quarterly-earnings-gaap-eps-10-30-2025-neg0pt51",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "502e8220a554cbb91cefa852",
+      "end_utc": "2025-10-30T13:00:00Z",
+      "adjudication_rank": "0b029abd95b984e65f5142518c2b1db365ff967456e397946eb1348297604867"
+    },
+    {
+      "event_id": "387357",
+      "title": "Will SoFi Technologies (SOFI) beat quarterly earnings?",
+      "slug": "sofi-quarterly-earnings-gaap-eps-04-29-2026-0pt12",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "fd04e58ccedd6446abfcee28",
+      "end_utc": "2026-04-29T13:00:00Z",
+      "adjudication_rank": "0b0d171d47ec6c65cc5833db85b051e384a7a2a14987910223906bdbdc012044"
+    },
+    {
+      "event_id": "196877",
+      "title": "Will Chegg (CHGG) beat quarterly earnings?",
+      "slug": "chgg-quarterly-earnings-nongaap-eps-02-09-2026-neg0pt1",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "18a2cd644d4c54da9e96a806",
+      "end_utc": "2026-02-09T22:00:00Z",
+      "adjudication_rank": "0b2aac021b5b280531fc3fbaef08142946591bbe5216cc5bdd783aa9aafeec32"
+    },
+    {
+      "event_id": "146144",
+      "title": "Will Bank First (BFC) beat quarterly earnings?",
+      "slug": "bfc-quarterly-earnings-gaap-eps-01-20-2026-1pt8",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "efa051b5899da6e9df659f14",
+      "end_utc": "2026-01-20T22:00:00Z",
+      "adjudication_rank": "0ba8bd06516f4ace8d68bca5f82a4bacf43a93d6bf0c0b2a202ed760bd29ec16"
+    },
+    {
+      "event_id": "212240",
+      "title": "Will Eventbrite (EB) beat quarterly earnings?",
+      "slug": "eb-quarterly-earnings-gaap-eps-02-26-2026-neg0pt01",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "3302ed21862205879814cef0",
+      "end_utc": "2026-02-26T22:00:00Z",
+      "adjudication_rank": "0bebbda41b28fafff8353a7e7812191e2e763cd20dc0a8e3eeda0ee7a96ec0f1"
+    },
+    {
+      "event_id": "100629",
+      "title": "Will Lululemon (LULU) beat quarterly earnings?",
+      "slug": "lulu-quarterly-earnings-gaap-eps-12-11-2025-2pt21",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "dd239cf690f1416bdb5d4aa4",
+      "end_utc": "2025-12-11T22:00:00Z",
+      "adjudication_rank": "0c024fa5ae9e7ef208c2c761e9e7cfbf1b94fc2071af3ea3213e535c2ba69751"
+    },
+    {
+      "event_id": "410685",
+      "title": "Will Cloudflare (NET) beat quarterly earnings?",
+      "slug": "net-quarterly-earnings-nongaap-eps-05-07-2026-0pt23",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "369e6e7d6d23ab566f1bc3fe",
+      "end_utc": "2026-05-07T21:00:00Z",
+      "adjudication_rank": "0c101f280db71573311a235114649d961d6adabed0b5e6927b7ddbf9ce3a15ea"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "FDA_FINAL_PDUFA_DECISION",
+  "chunk": 4,
+  "rows": 3,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "34560",
+      "title": "FDA approves Capricor Therapeutics’ Deramiocel for Duchenne muscular dystrophy by August 31?",
+      "slug": "fda-approves-capricor-therapeutics-cap-1002-for-duchenne-muscular-dystrophy-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "afb28a49f79110128a4abdc1",
+      "end_utc": "2025-08-31T16:00:00Z",
+      "adjudication_rank": "f20dc89804fab59ec0fc4e481659dca95e84d004a086a150faed0222fd091a1f"
+    },
+    {
+      "event_id": "556092",
+      "title": "FDA approves Unicycive's Oxylanthanum carbonate?",
+      "slug": "fda-approves-unicycive-oxylanthanum-carbonate-06-29-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "7f10a93ec3ed11c01b2b36be",
+      "end_utc": "2026-06-29T00:00:00Z",
+      "adjudication_rank": "f782989a2c0cca1e6bfd6cb339f3e2361bef2f3a02f8f6b760f82d5bb1ec9c40"
+    },
+    {
+      "event_id": "34554",
+      "title": "FDA approves Telix Pharmaceuticals’ TLX250-CDx for kidney cancer imaging?",
+      "slug": "fda-approves-telix-pharmaceuticals-tlx250-cdx-for-kidney-cancer-imaging-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "e846f9de3ffc30112aa11f31",
+      "end_utc": "2025-08-27T16:00:00Z",
+      "adjudication_rank": "fc34d6c68447a7e0663915476bbdae2b0012553d838f01863cbdae58fc2d98df"
+    }
+  ]
+}

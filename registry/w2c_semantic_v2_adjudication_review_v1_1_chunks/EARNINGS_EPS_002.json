@@ -1,0 +1,198 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "EARNINGS_EPS",
+  "chunk": 2,
+  "rows": 20,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "69198",
+      "title": "Will Rivian Automotive (RIVN) beat quarterly earnings?",
+      "slug": "rivn-quarterly-earnings-gaap-eps-11-04-2025-neg0pt86",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "a25fdd5e957190aed1c5efcf",
+      "end_utc": "2025-11-04T22:00:00Z",
+      "adjudication_rank": "057c0b08967fa66264ca8d9b358f7de3e917bedaaecefe75d5f03eba0ff5b043"
+    },
+    {
+      "event_id": "686377",
+      "title": "Will Blackstone (BX) beat quarterly earnings?",
+      "slug": "bx-quarterly-earnings-gaap-eps-07-23-2026-1pt33",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "09317f14b44ec2cff5ac5c70",
+      "end_utc": "2026-07-23T13:00:00Z",
+      "adjudication_rank": "058721ee7ec265decd95f8f9651f3b28c32b2c21898e1a0e0294db06c9bcf6d8"
+    },
+    {
+      "event_id": "192666",
+      "title": "Will Rivian Automotive (RIVN) beat quarterly earnings?",
+      "slug": "rivn-quarterly-earnings-gaap-eps-02-12-2026-neg0pt8",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "b4d150cfaf3a5567c961781f",
+      "end_utc": "2026-02-12T22:00:00Z",
+      "adjudication_rank": "0587a9ce9a1a0f957a216a1935270d0c61291d2349f06bfa47fa6367e0295479"
+    },
+    {
+      "event_id": "729799",
+      "title": "Will Palantir Technologies (PLTR) beat quarterly earnings?",
+      "slug": "pltr-quarterly-earnings-nongaap-eps-08-03-2026-0pt35",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "b0e833271651016e2713bf05",
+      "end_utc": "2026-08-03T21:00:00Z",
+      "adjudication_rank": "058ce7eb005de09bfdcd743579cf2f7d01e3599fbe349be5d2229dc48130e1fb"
+    },
+    {
+      "event_id": "196862",
+      "title": "Will Estee Lauder (EL) beat quarterly earnings?",
+      "slug": "el-quarterly-earnings-nongaap-eps-02-05-2026-0pt83",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "9e7c91d450095a640c8dfe13",
+      "end_utc": "2026-02-05T14:00:00Z",
+      "adjudication_rank": "05c5013e477c0ec2ee0f8b21f1379653f4b8cd7a4b423b648b84d97089568bfe"
+    },
+    {
+      "event_id": "652170",
+      "title": "Will Unity Bancorp (UNTY) beat quarterly earnings?",
+      "slug": "unty-quarterly-earnings-gaap-eps-07-14-2026-1pt44",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "d483b681be85e330776b19f8",
+      "end_utc": "2026-07-14T13:00:00Z",
+      "adjudication_rank": "05dccdb6b7e94e4db4359b16eb79c16ce6816866ec8d4c7b0c9b6e59d0f1453f"
+    },
+    {
+      "event_id": "49945",
+      "title": "Will Delta Air Lines (DAL) beat quarterly earnings?",
+      "slug": "dal-quarterly-earnings-nongaap-eps-2025-10-09-1pt52",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "700d6f0c10ff3d622622a13f",
+      "end_utc": "2025-10-09T00:00:00Z",
+      "adjudication_rank": "05edfdd716bad111682af5835f1abf770eb7bb55c11754730a65e280269a2f91"
+    },
+    {
+      "event_id": "67829",
+      "title": "Will TKO Group Holdings (TKO) beat quarterly earnings?",
+      "slug": "tko-quarterly-earnings-gaap-eps-11-05-2025-0pt52",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "8df370e08b5a0314af0a3b34",
+      "end_utc": "2025-11-05T22:00:00Z",
+      "adjudication_rank": "060b739f4ec42b309456ea0f0ffec05a8f9e9a665e7e8b91a0e336092e8fa6a9"
+    },
+    {
+      "event_id": "146165",
+      "title": "Will 3M (MMM) beat quarterly earnings?",
+      "slug": "mmm-quarterly-earnings-nongaap-eps-01-20-2026-1pt81",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "44c0e4aabf5635e59ddcf796",
+      "end_utc": "2026-01-20T14:00:00Z",
+      "adjudication_rank": "06264e680fce6282cc1e242188226f9710e36252915fca342904484414b7ccb9"
+    },
+    {
+      "event_id": "230135",
+      "title": "Will Build-A-Bear Workshop (BBW) beat quarterly earnings?",
+      "slug": "bbw-quarterly-earnings-gaap-eps-03-12-2026-1pt27",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "0dcc1c6f6e37fb21257b8c2e",
+      "end_utc": "2026-03-12T13:00:00Z",
+      "adjudication_rank": "065bd28720064739f9615f15754e3f32edc4a156cf59910edc71ec3bea2d7b2a"
+    },
+    {
+      "event_id": "89619",
+      "title": "Will Casey's General Stores (CASY) beat quarterly earnings?",
+      "slug": "casy-quarterly-earnings-gaap-eps-12-09-2025-5pt2",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "f2b3cea996c55bcd20cfd9b2",
+      "end_utc": "2025-12-09T22:00:00Z",
+      "adjudication_rank": "0675c9b29bbb162cf6fb2acfcd78542c1aecb834d9f7e48d91c1e36562c4d71e"
+    },
+    {
+      "event_id": "90095",
+      "title": "Will Paychex (PAYX) beat quarterly earnings?",
+      "slug": "payx-quarterly-earnings-nongaap-eps-12-18-2025-1pt23",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "dca3b6be7b1956000ccb47a6",
+      "end_utc": "2025-12-18T14:00:00Z",
+      "adjudication_rank": "06e04c90c513a8fb731f91dc46337ab3dec1074972484bdd0d6eece850de5378"
+    },
+    {
+      "event_id": "56577",
+      "title": "Will AT&T (T) beat quarterly earnings?",
+      "slug": "t-quarterly-earnings-nongaap-eps-10-22-2025-0pt54",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "7d2baf1500dc031834f16ef7",
+      "end_utc": "2025-10-22T13:00:00Z",
+      "adjudication_rank": "071cc6e371cc1df329f40dc1d3a1e696ee5c18187f8ff87f2f3837f62102f011"
+    },
+    {
+      "event_id": "206313",
+      "title": "Will Autodesk (ADSK) beat quarterly earnings?",
+      "slug": "adsk-quarterly-earnings-nongaap-eps-02-26-2026-2pt64",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "b1d4a2e0e2f89892bb52cc2e",
+      "end_utc": "2026-02-26T22:00:00Z",
+      "adjudication_rank": "075a066c9f76e406c314f95211c1b697ba908903b0d7b630e634e5d83408b971"
+    },
+    {
+      "event_id": "66538",
+      "title": "Will Chime Financial (CHYM) beat quarterly earnings?",
+      "slug": "chym-quarterly-earnings-gaap-eps-11-05-2025-neg0pt24",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "0ee976e421bafb694a7bc57d",
+      "end_utc": "2025-11-05T22:00:00Z",
+      "adjudication_rank": "07bf8aaa706d798692aa5a39d403a3040d4a1b5d0ad90827cd7316cd0526e906"
+    },
+    {
+      "event_id": "729858",
+      "title": "Will Pfizer (PFE) beat quarterly earnings?",
+      "slug": "pfe-quarterly-earnings-nongaap-eps-08-04-2026-0pt68",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "df63525d2b3683b169a0fb65",
+      "end_utc": "2026-08-04T13:00:00Z",
+      "adjudication_rank": "080851d63350418d94e243a6c94555e2821e598cc81fa4ead4e78645b5a416b3"
+    },
+    {
+      "event_id": "525416",
+      "title": "Will Marvell Tech (MRVL) beat quarterly earnings?",
+      "slug": "mrvl-quarterly-earnings-nongaap-eps-05-27-2026-0pt79",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "ed060ee821d0d84746d1a807",
+      "end_utc": "2026-05-27T21:00:00Z",
+      "adjudication_rank": "08273ea1728468eafb8d251047fda74d0d9ec36e859b6ed8f785370c0ec5cb8e"
+    },
+    {
+      "event_id": "686500",
+      "title": "Will KeyCorp (KEY) beat quarterly earnings?",
+      "slug": "key-quarterly-earnings-gaap-eps-07-21-2026-0pt42",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "5635c70d0244b92f7f013d52",
+      "end_utc": "2026-07-21T13:00:00Z",
+      "adjudication_rank": "084f428fb0ba224b2bfe79e658400d40444374102d1e943479eee3925b3ede91"
+    },
+    {
+      "event_id": "49950",
+      "title": "Will Goldman Sachs (GS) beat quarterly earnings?",
+      "slug": "gs-quarterly-earnings-gaap-eps-2025-10-14-10pt47",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "96d9b40586a3d8f35fa156a1",
+      "end_utc": "2025-10-14T00:00:00Z",
+      "adjudication_rank": "087a59207b66f570dae9eca7b8bed590b173920730a371a5144ddee8f6644fca"
+    },
+    {
+      "event_id": "525455",
+      "title": "Will GitLab (GTLB) beat quarterly earnings?",
+      "slug": "gtlb-quarterly-earnings-nongaap-eps-06-02-2026-0pt2",
+      "resolved_family": "EARNINGS_EPS",
+      "independence_cluster_id": "5d2de38baa717ca3d1d317a6",
+      "end_utc": "2026-06-02T21:00:00Z",
+      "adjudication_rank": "08a0abc58df0ba93780483118bcb443793c3452dfb46c14f4a5929e433e2605d"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_CHUNK",
+  "version": "W2C-ADJ-v1.1",
+  "family": "FDA_FINAL_PDUFA_DECISION",
+  "chunk": 1,
+  "rows": 20,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "652072",
+      "title": "FDA approves Daiichi Sankyo & AstraZeneca's Enhertu?",
+      "slug": "fda-approves-daiichi-sankyo-astrazeneca-enhertu-07-07-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "adb43ec981518b070de283ea",
+      "end_utc": "2026-07-07T00:00:00Z",
+      "adjudication_rank": "007914d94770f0495071b7959973947da6b8e54a41c77954d3cf07467b039913"
+    },
+    {
+      "event_id": "400491",
+      "title": "FDA approves Merck's Doravirine/Islatravir?",
+      "slug": "fda-approves-mercks-doravirineislatravir",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "f982a2fcd1d47e3a3f22a064",
+      "end_utc": "2026-04-28T00:00:00Z",
+      "adjudication_rank": "008e9b55c4864db84fae4264da37a7b9b0b2e75dcd1305731b1589eaef689e1f"
+    },
+    {
+      "event_id": "400550",
+      "title": "FDA approves AstraZeneca's Truqap (capivasertib)?",
+      "slug": "fda-approves-astrazenecas-truqap-capivasertib",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "3f437921a604930d750e648f",
+      "end_utc": "2026-04-30T00:00:00Z",
+      "adjudication_rank": "056b039524b0847676b325eb2317e6a6a96c574c59f0fbcae67962538be6adcc"
+    },
+    {
+      "event_id": "556094",
+      "title": "FDA approves Ionis' Olezarsen?",
+      "slug": "fda-approves-ionis-olezarsen-06-30-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "f2fc6e64d38010858d48834b",
+      "end_utc": "2026-06-30T00:00:00Z",
+      "adjudication_rank": "0725a7fe5cc8d7a32b33c26f1b03a7d021c58d2ea181fac32abc744656df7c6b"
+    },
+    {
+      "event_id": "3518",
+      "title": "Will the FDA approve any COVID-19 vaccination for children under 12 by October 15? ",
+      "slug": "will-the-fda-approve-any-covid-19-vaccination-for-children-under-12-by-october-15",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "e93fb5a5abc06b6b920134a4",
+      "end_utc": "2021-10-15T00:00:00Z",
+      "adjudication_rank": "08db4b3a7e3329035e6d6f35f063c699d1d071b6e737e8ddf976e1a6c82ca430"
+    },
+    {
+      "event_id": "652107",
+      "title": "FDA approves Celcuity's Gedatolisib?",
+      "slug": "fda-approves-celcuitys-gedatolisib-07-17-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "87380ebf42a9237220bae945",
+      "end_utc": "2026-07-17T00:00:00Z",
+      "adjudication_rank": "0f9ccae70f504901c52a7ec37fdb829eb787c0cb52b8a21381b1cb65d41398aa"
+    },
+    {
+      "event_id": "556064",
+      "title": "FDA approves Arcutis' Zoryve cream?",
+      "slug": "fda-approves-arcutis-zoryve-cream-06-29-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "75d1677e94676a3f9a2cc59c",
+      "end_utc": "2026-06-29T00:00:00Z",
+      "adjudication_rank": "105875f14d95517f67e5e998379a94df2e99840f827053cf130b6fe7c9fbe052"
+    },
+    {
+      "event_id": "652256",
+      "title": "FDA approves Outlook Therapeutics' ONS-5010?",
+      "slug": "fda-approves-outlook-therapeutics-ons-5010-07-29-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "3b3954dc310841ac037f18ca",
+      "end_utc": "2026-07-29T00:00:00Z",
+      "adjudication_rank": "203a0b5ae25da80b7628c71cef73b8003a1acfdc401be298d7e162c11c5582ee"
+    },
+    {
+      "event_id": "382921",
+      "title": "FDA approves Sanofi’s Subcutaneous Sarclisa?",
+      "slug": "fda-approves-sanofis-sarclisa",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "51b91933dfb6d4f6e54398db",
+      "end_utc": "2026-04-23T00:00:00Z",
+      "adjudication_rank": "245fdea244c1664a084351f5637bb94bc7b942e8ceb382a8e7a118f8bb66f53d"
+    },
+    {
+      "event_id": "652146",
+      "title": "FDA approves Sanofi's Subcutaneous Sarclisa?",
+      "slug": "fda-approves-sanofi-subcutaneous-sarclisa-07-23-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "1408ee7ca0de0b6707951959",
+      "end_utc": "2026-07-23T00:00:00Z",
+      "adjudication_rank": "258852d665095f6098182294816f57eabef7a045d46eb992f4a9a9df1dec35eb"
+    },
+    {
+      "event_id": "6089",
+      "title": "Will Pfizer's COVID-19 vaccine be the first to receive FDA approval or Emergency Use Authorization (EUA)?",
+      "slug": "will-pfizer-s-covid-19-vaccine-be-the-first-to-receive-fda-approval-or-emergency-use-authorization-eua",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "d6b8563b4b913702f7e49408",
+      "end_utc": "2022-02-08T00:00:00Z",
+      "adjudication_rank": "26d2b597ed6e3e6b8bb806546a63b89ee9f5bc6159b97f960ed2232819e8c35c"
+    },
+    {
+      "event_id": "556033",
+      "title": "FDA approves Arcalyst technology transfer?",
+      "slug": "fda-approves-kiniksa-regeneron-arcalyst-06-19-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "8418fde49ea1d74d15b76d92",
+      "end_utc": "2026-06-19T00:00:00Z",
+      "adjudication_rank": "2c3e9109168bbd704c592123b56ea23ae649f959b52ff2c86e2e72a3c9ebc71f"
+    },
+    {
+      "event_id": "555980",
+      "title": "FDA approves Vepdegestrant?",
+      "slug": "fda-approves-arvinas-vepdegestrant-06-05-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "01f84828dad3fa3d86782667",
+      "end_utc": "2026-06-05T00:00:00Z",
+      "adjudication_rank": "2d15fb047a8b2f038c6e7622a2117d8e31730b6bbb28deaf2cc50cb8ad480efb"
+    },
+    {
+      "event_id": "382447",
+      "title": "FDA approves a psychedelic for medical use in 2026?",
+      "slug": "fda-approves-a-psychedelic-for-medical-use-in-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "821fe6553e4b76ebf34109ce",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "331416136ba0908a87b4380534a8a13de6adc2a3c2cde557dcedaa7b177bbbb6"
+    },
+    {
+      "event_id": "34552",
+      "title": "FDA approves PTC Therapeutics’ Vatiquinone for Friedreich’s ataxia?",
+      "slug": "fda-approves-ptc-therapeutics-vatiquinone-for-friedreichs-ataxia-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "037fcc2fb089b154b83d19f8",
+      "end_utc": "2025-08-19T16:00:00Z",
+      "adjudication_rank": "349c446cb892d8f6b484f87dd13a92b0f645d38cdc0bcc7e586f7bfd000e3120"
+    },
+    {
+      "event_id": "431125",
+      "title": "FDA approves Daiichi Sankyo & AstraZeneca's Enhertu?",
+      "slug": "fda-approves-daiichi-sankyo-astrazenecas-enhertu",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "a977ce071a9cb995762158d4",
+      "end_utc": "2026-05-18T00:00:00Z",
+      "adjudication_rank": "366fc0b631e267d87efaa16cd98cdd3331ae7760692044e67baf19d886beee21"
+    },
+    {
+      "event_id": "652097",
+      "title": "FDA approves Corcept Therapeutics' Relacorilant?",
+      "slug": "fda-approves-corcept-therapeutics-relacorilant-07-11-2026",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "c5f192cc783a1274f847fd93",
+      "end_utc": "2026-07-11T00:00:00Z",
+      "adjudication_rank": "377d09bfaa4c9c3bad60e64876fdd32e048fdbd31d9fdb12f41824985bbd034d"
+    },
+    {
+      "event_id": "34565",
+      "title": "FDA approves Leqembi auto-injection for early Alzheimer’s?",
+      "slug": "fda-approves-leqembi-auto-injection-for-early-alzheimers-by-august-31",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "7a131f1a7b2818c024c6e035",
+      "end_utc": "2025-08-31T16:00:00Z",
+      "adjudication_rank": "37ac361c3d0c5bde62692f9b788769f1a8a1fd0c0ee025d1e3816380d77bc769"
+    },
+    {
+      "event_id": "34570",
+      "title": "FDA approves UX111?",
+      "slug": "fda-approves-ux111",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "1de2125d996966dfebb09651",
+      "end_utc": "2025-08-18T16:00:00Z",
+      "adjudication_rank": "37cfa1a1647d1be6570035881281dac7f631c8ab524d1292d058d94061f0c07b"
+    },
+    {
+      "event_id": "503876",
+      "title": "FDA approves Cingulate's Ctx-1301?",
+      "slug": "fda-approves-cingulates-ctx-1301",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "independence_cluster_id": "89fdecc973cbcb19b3ef8a50",
+      "end_utc": "2026-05-31T00:00:00Z",
+      "adjudication_rank": "4282d66fb974880fdc1ff9771ff835b3e184804422441ade7f67a216038f8032"
+    }
+  ]
+}
