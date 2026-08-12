@@ -1,0 +1,23 @@
+{
+  "artifact":"W2C_ADJUDICATION_BYTE_FREEZE",
+  "version":"W2C-ADJF-v1.0",
+  "date":"2026-08-12",
+  "status":"PENDING_CI_BYTE_VALIDATION",
+  "parent_freeze":"W2C-SVF-v2.0",
+  "source_commit":"ee70ef3d10922e427371e878dca80a4d2f94fc06",
+  "performance_blind":true,
+  "science_reopened":false,
+  "real_queue_read_before_freeze":false,
+  "synthetic_validation":{"workflow_run_id":31624919009,"job_id":94208735151,"status":"PASS_17_OF_17","real_queue_read":false,"performance_data_read":false,"network_accessed":false},
+  "frozen_blobs":[
+    {"role":"adjudication_protocol","path":"registry/w2c_semantic_v2_adjudication_protocol_v1_0.json","git_blob_sha1":"c7ca6900773db6431c72059abbe86a03b3e88370"},
+    {"role":"controlled_reveal_exporter","path":"scripts/w2c_semantic_v2_adjudication_export.py","git_blob_sha1":"7b28d2c20bcbb35e5c71357c3c71f51ba965ff0e"},
+    {"role":"decision_materializer","path":"scripts/w2c_semantic_v2_adjudication_materialize.py","git_blob_sha1":"f144fd87426689254c0b4e08edb7895f0dad82b7"},
+    {"role":"synthetic_validator","path":"scripts/w2c_semantic_v2_adjudication_synthetic.py","git_blob_sha1":"264883bd66c93acd6fe4e8eac5c348641bda9a12"}
+  ],
+  "frozen_input":{"path":"registry/w2c_semantic_v2_adjudication_queue.csv.gz","git_blob_sha1":"60fdc9784dc189e4b588a56ad70eec3c7c5f23d7","rows":329},
+  "freeze_bundle_id_sha256":"fa452d4b682d9058eabf30592026be0637a868b561ef67d7bf7696b35ea296f2",
+  "freeze_bundle_formula":"SHA256('W2C-ADJF-v1.0|<protocol>|<exporter>|<materializer>|<synthetic>|<input>')",
+  "immutability_rule":"Any byte change to protocol/exporter/materializer or input invalidates W2C-ADJF-v1.0 before adjudication; a new version and synthetic gate are required.",
+  "authorized_after_ci_pass":"Reveal exactly the seven allowed review fields for all 329 initial rows. Semantic review must remain network-free and performance-blind."
+}
