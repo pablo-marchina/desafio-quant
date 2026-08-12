@@ -1,0 +1,68 @@
+name: W2C Performance Blind Discovery v1.1
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'registry/w2c_execution_trigger_v1_1.json'
+
+permissions:
+  contents: write
+
+jobs:
+  discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen v1.1 bytes before network access
+        run: |
+          test "$(git hash-object registry/w2c_discovery_protocol_v1_1.json)" = "465f6238947402d53024fe2b5899163bd4d4eae9"
+          test "$(git hash-object scripts/w2c_performance_blind_discovery.py)" = "3234e7df84aee8e7ef680fa846e746930dd0420d"
+          test "$(git hash-object scripts/w2c_performance_blind_discovery_v1_1.py)" = "8acdc3d754acccb3f31fa5370bdecc16caa8e6ee"
+          python -m py_compile scripts/w2c_performance_blind_discovery.py scripts/w2c_performance_blind_discovery_v1_1.py
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w2c_discovery_protocol_v1_1.json'))
+          f=json.load(open('registry/w2c_discovery_freeze_manifest_v1_1.json'))
+          assert p['version']=='W2C-DISC-v1.1'
+          assert p['pagination']['keyset_max_pages']==2000
+          assert p['v1_0_family_counts_opened'] is False
+          assert p['performance_blind'] is True
+          assert f['change_scope'].startswith('Pagination bound only')
+          PY
+      - name: Execute frozen performance-blind discovery v1.1
+        run: python scripts/w2c_performance_blind_discovery_v1_1.py
+      - name: Validate firewall and no-scoring outputs
+        run: |
+          python - <<'PY'
+          import json
+          m=json.load(open('registry/w2c_discovery_summary.json'))
+          assert m['protocol_version']=='W2C-DISC-v1.1'
+          assert m['parent_freeze']=='W2PF-v1.0'
+          assert m['performance_blind'] is True
+          assert m['science_reopened'] is False
+          assert m['argos_performance_read'] is False
+          assert m['realized_linked_asset_returns_read'] is False
+          assert m['ias_scores_computed'] is False
+          assert m['feasibility_gates_scored'] is False
+          assert m['w3_family_selected'] is False
+          assert len(m['families'])==10
+          PY
+      - name: Materialize discovery evidence safely on current main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w2c_discovery_events.csv.gz registry/w2c_discovery_validation_queue.csv.gz registry/w2c_discovery_summary.csv registry/w2c_discovery_query_audit.csv registry/w2c_discovery_summary.json
+          if git diff --cached --quiet; then
+            echo 'No discovery output changes.'
+            exit 0
+          fi
+          git commit -m 'w2c: materialize v1.1 performance-blind discovery evidence'
+          git pull --rebase origin main
+          git push origin HEAD:main
