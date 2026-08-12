@@ -1,0 +1,11 @@
+{
+  "artifact":"W2C_PIT_A_EXECUTION_TRIGGER",
+  "version":"W2C-PIT-A-TRIGGER-v1.0",
+  "date":"2026-08-12",
+  "freeze":"W2C-PIT-AF-v1.0",
+  "freeze_workflow_run_id":31621758001,
+  "semantic_input_blob":"131e19d0ff3e17c3b25ddd92420139d8b61f026d",
+  "rows":509,
+  "performance_blind":true,
+  "authorized_scope":"PUBLIC_POLYMARKET_PLATFORM_HISTORY_ONLY"
+}
