@@ -66,7 +66,13 @@
     "rule": "Collectors and gate scorers must fail closed if a forbidden local path is opened. IAS/SMAA code is not invoked in PIT-v2."
   },
   "network_missingness": {
-    "event_states": ["PASS", "FAIL", "UNRESOLVED", "AMBIGUOUS", "NOT_APPLICABLE"],
+    "event_states": [
+      "PASS",
+      "FAIL",
+      "UNRESOLVED",
+      "AMBIGUOUS",
+      "NOT_APPLICABLE"
+    ],
     "rate_lower_bound": "confirmed_pass / full_frozen_denominator",
     "rate_upper_bound": "(confirmed_pass + unresolved_capable_of_passing) / full_frozen_denominator",
     "threshold_rule": "PASS iff lower_bound >= threshold; FAIL iff upper_bound < threshold; otherwise INDETERMINATE.",
@@ -78,7 +84,14 @@
     "gamma": {
       "base": "https://gamma-api.polymarket.com",
       "use": "event/market identifier resolution only: event id, conditionId, clobTokenIds, order-book metadata and resolutionSource metadata",
-      "forbidden_as_pit_proof": ["startDate", "endDate", "current volume", "lifetime volume", "current liquidity", "acceptingOrdersTimestamp alone"]
+      "forbidden_as_pit_proof": [
+        "startDate",
+        "endDate",
+        "current volume",
+        "lifetime volume",
+        "current liquidity",
+        "acceptingOrdersTimestamp alone"
+      ]
     },
     "data_api": {
       "base": "https://data-api.polymarket.com",
@@ -123,7 +136,12 @@
       "negative_action_rule": "A non-approval/CRL outcome requires auditable primary evidence from FDA when public or from the affected issuer when the FDA document is not public; otherwise UNRESOLVED/AMBIGUOUS."
     },
     "MACRO_STATISTICAL_RELEASE": {
-      "source_hierarchy": ["BLS", "BEA", "U.S. Census Bureau", "other named U.S. statistical agency only if explicitly frozen by event mapping"],
+      "source_hierarchy": [
+        "BLS",
+        "BEA",
+        "U.S. Census Bureau",
+        "other named U.S. statistical agency only if explicitly frozen by event mapping"
+      ],
       "revelation_rule": "Use the final official release date/time, including documented rescheduling or revised calendars. Stale originally scheduled dates do not override an official revision.",
       "resolution_requirements": "The event metric, reference period, threshold/comparison and official reported value must be objectively mapped to the corresponding agency release."
     }
@@ -137,19 +155,59 @@
     "no_return_fields_allowed": true
   },
   "event_level_fields": [
-    "event_id", "resolved_family", "independence_cluster_id", "title", "slug", "semantic_end_utc",
-    "pm_condition_ids", "pm_token_ids", "pm_mapping_state", "pm_mapping_conflict",
-    "public_revelation_utc", "revelation_precision", "safe_cutoff_utc", "revelation_source_type", "revelation_source_url", "revelation_response_sha256",
-    "pm_price_witness_pre_cutoff_utc", "pm_price_witness_minus_24h_or_earlier_utc", "pm_earliest_verified_history_utc", "pre_cutoff_history_hours_lower_bound", "pm_platform_state",
-    "resolution_state", "resolution_source_type", "resolution_source_url", "resolution_response_sha256", "resolution_ambiguous",
-    "linked_asset", "linked_asset_mapping_state", "linked_asset_mapping_basis", "linked_asset_mapping_source_url",
-    "asset_data_state", "asset_data_first_date", "asset_data_last_date", "asset_data_rows", "asset_data_response_sha256",
-    "network_unresolved_components", "mandatory_field_state", "pit_event_eligible"
+    "event_id",
+    "resolved_family",
+    "independence_cluster_id",
+    "title",
+    "slug",
+    "semantic_end_utc",
+    "pm_condition_ids",
+    "pm_token_ids",
+    "pm_mapping_state",
+    "pm_mapping_conflict",
+    "public_revelation_utc",
+    "revelation_precision",
+    "safe_cutoff_utc",
+    "revelation_source_type",
+    "revelation_source_url",
+    "revelation_response_sha256",
+    "pm_price_witness_pre_cutoff_utc",
+    "pm_price_witness_minus_24h_or_earlier_utc",
+    "pm_earliest_verified_history_utc",
+    "pre_cutoff_history_hours_lower_bound",
+    "pm_platform_state",
+    "resolution_state",
+    "resolution_source_type",
+    "resolution_source_url",
+    "resolution_response_sha256",
+    "resolution_ambiguous",
+    "linked_asset",
+    "linked_asset_mapping_state",
+    "linked_asset_mapping_basis",
+    "linked_asset_mapping_source_url",
+    "asset_data_state",
+    "asset_data_first_date",
+    "asset_data_last_date",
+    "asset_data_rows",
+    "asset_data_response_sha256",
+    "network_unresolved_components",
+    "mandatory_field_state",
+    "pit_event_eligible",
+    "pm_price_witness_pre_cutoff",
+    "pm_pre_cutoff_state",
+    "pm_price_witness_24h",
+    "pm_24h_state",
+    "history_state",
+    "f2_event_pass",
+    "f2_state",
+    "safe_cutoff_state",
+    "pit_event_eligible_state",
+    "mandatory_account_gated_dependency"
   ],
   "gates": {
     "F1_contractability": {
-      "pre_revelation_contract_rate_min": 0.80,
-      "analysis_window_24h_rate_min": 0.80,
+      "pre_revelation_contract_rate_min": 0.8,
+      "analysis_window_24h_rate_min": 0.8,
       "median_pre_cutoff_history_hours_lower_bound_min": 48.0,
       "pass_definition": "Uses conservative lower-bound rates over the full frozen family denominator; median uses verified lower-bound hours among records with resolved revelation and timestamped platform history, while unresolved median-capable rows propagate INDETERMINATE when they could change the threshold conclusion."
     },
@@ -164,14 +222,15 @@
       "distinct_revelation_date_clusters_min": 30,
       "independence_unit": "independence_cluster_id",
       "date_cluster": "authoritative public revelation calendar date, never Polymarket endDate",
-      "claim_limit": "This is a floor for W3 protocol drafting, not a statistical-power claim."
+      "claim_limit": "This is a floor for W3 protocol drafting, not a statistical-power claim.",
+      "uncertainty_rule": "PIT-eligible count and revelation-date cluster count use lower/upper bounds. PASS only if both conservative lower bounds clear thresholds; FAIL only if an optimistic upper bound cannot clear a threshold; otherwise INDETERMINATE."
     },
     "F4_resolution": {
       "objective_primary_source_rate_min": 0.95,
       "ambiguous_eligible_events_max": 0
     },
     "F5_linked_asset": {
-      "preoutcome_mapping_rate_min": 0.90,
+      "preoutcome_mapping_rate_min": 0.9,
       "tradeable_instrument_required": true,
       "realized_return_mapping_forbidden": true
     },
@@ -193,7 +252,11 @@
     }
   },
   "pit_event_eligible_rule": "An event is PIT-eligible only when F1 event-level pre-revelation/24h conditions, F2 event observability/mapping, F4 objective non-ambiguous resolution, F5 linked-asset mapping, F6 asset-data availability, F7 safe cutoff, and F8 schema completeness all pass. F9 is evaluated at family/pipeline level.",
-  "family_gate_outcomes": ["PASS", "FAIL", "INDETERMINATE"],
+  "family_gate_outcomes": [
+    "PASS",
+    "FAIL",
+    "INDETERMINATE"
+  ],
   "scoring_order": [
     "freeze population and collectors",
     "collect raw PIT evidence",
