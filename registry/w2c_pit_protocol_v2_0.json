@@ -1,0 +1,219 @@
+{
+  "artifact": "W2C_PIT_FEASIBILITY_PROTOCOL",
+  "version": "W2C-PIT-v2.0",
+  "date": "2026-08-12",
+  "status": "PREREGISTRATION_SYNTHETIC_VALIDATION_PENDING",
+  "science_reopened": false,
+  "performance_blind": true,
+  "execution_authorized": false,
+  "purpose": "Materialize point-in-time platform, public-revelation/resolution, linked-asset mapping and data-availability evidence for the exact 260 semantically accepted events before any F1-F9, IAS, SMAA ranking, or W3 selection is read.",
+  "parent_authorities": {
+    "scientific_truth": "FST-v1.0 / SF-v3.0",
+    "w2_protocol_freeze": "W2PF-v1.0",
+    "semantic_freeze": "W2C-SVF-v2.0",
+    "adjudication_freeze": "W2C-ADJF-v1.1",
+    "adjudication_materialization": "W2C-ADJ-MAT-v1.1"
+  },
+  "population": {
+    "source_path": "registry/w2c_semantic_v2_accepted_clusters_v1_1.csv",
+    "source_git_blob_sha1": "a71cb2d00872ce36bf59ffcef9dc5575c1185a5b",
+    "include_families": [
+      "EARNINGS_EPS",
+      "FDA_FINAL_PDUFA_DECISION",
+      "MACRO_STATISTICAL_RELEASE"
+    ],
+    "required_counts": {
+      "EARNINGS_EPS": 100,
+      "FDA_FINAL_PDUFA_DECISION": 63,
+      "MACRO_STATISTICAL_RELEASE": 97
+    },
+    "required_total": 260,
+    "denominator_rule": "Every included semantic event remains in the family denominator. Missing, network-failed, ambiguous, or unsupported evidence never removes a row."
+  },
+  "performance_firewall": {
+    "repo_read_allowlist": [
+      "registry/w2c_semantic_v2_accepted_clusters_v1_1.csv",
+      "registry/w2c_pit_protocol_v2_0.json",
+      "registry/w2c_pit_v2_freeze_manifest.json"
+    ],
+    "forbidden_local_paths_or_tokens": [
+      "registry/w2a_results",
+      "registry/w2a_funded_portfolio_run_v1.json",
+      "registry/art030",
+      "data/art030",
+      "r1_performance",
+      "r3_performance",
+      "brier",
+      "log_loss",
+      "active_terminal_wealth",
+      "linked_asset_realized_return",
+      "pnl"
+    ],
+    "forbidden_concepts": [
+      "ARGOS PnL",
+      "R1/R3 performance",
+      "Brier/log loss",
+      "H2 incremental performance",
+      "realized linked-asset returns used to select or rank families"
+    ],
+    "allowed_concepts": [
+      "public platform timestamps",
+      "primary-source publication/revelation timestamps",
+      "objective resolution evidence",
+      "pre-outcome structural linked-asset identity mapping",
+      "data-availability metadata without realized-return computation"
+    ],
+    "rule": "Collectors and gate scorers must fail closed if a forbidden local path is opened. IAS/SMAA code is not invoked in PIT-v2."
+  },
+  "network_missingness": {
+    "event_states": ["PASS", "FAIL", "UNRESOLVED", "AMBIGUOUS", "NOT_APPLICABLE"],
+    "rate_lower_bound": "confirmed_pass / full_frozen_denominator",
+    "rate_upper_bound": "(confirmed_pass + unresolved_capable_of_passing) / full_frozen_denominator",
+    "threshold_rule": "PASS iff lower_bound >= threshold; FAIL iff upper_bound < threshold; otherwise INDETERMINATE.",
+    "zero_conflict_rule": "For max-zero conflict/ambiguity gates, PASS requires zero confirmed conflicts and zero unresolved records capable of containing a conflict; any confirmed conflict is FAIL; otherwise INDETERMINATE.",
+    "network_failure_rule": "HTTP 429/5xx, timeout, DNS, parse failure, source removal, or robots/access failure is UNRESOLVED, never evidence of absence."
+  },
+  "layer_A_polymarket_platform": {
+    "role": "Prove timestamped public market observability before authoritative public revelation.",
+    "gamma": {
+      "base": "https://gamma-api.polymarket.com",
+      "use": "event/market identifier resolution only: event id, conditionId, clobTokenIds, order-book metadata and resolutionSource metadata",
+      "forbidden_as_pit_proof": ["startDate", "endDate", "current volume", "lifetime volume", "current liquidity", "acceptingOrdersTimestamp alone"]
+    },
+    "data_api": {
+      "base": "https://data-api.polymarket.com",
+      "endpoint": "/trades",
+      "use": "public timestamped trade corroboration; takerOnly=false",
+      "limit": 10000,
+      "offset_cap": 10000,
+      "truncation_semantics": "A capped/truncated response cannot establish the true first trade; it is only an observed witness."
+    },
+    "clob": {
+      "base": "https://clob.polymarket.com",
+      "endpoint": "/prices-history",
+      "use": "primary timestamped platform witness for pre-revelation windows",
+      "query_semantics": "market=token_id; interval=all when available; fidelity=1 minute; bounded startTs/endTs queries around frozen revelation cutoff are preferred",
+      "authenticated_trades_forbidden": true
+    },
+    "event_pass_A": "At least one timestamped public CLOB price-history observation at or before safe_cutoff. Public Data API trade history may corroborate but is not mandatory when a price witness exists.",
+    "raw_evidence": "Store request URL excluding secrets, UTC fetch time, HTTP status, response SHA-256, endpoint, event_id/token_id, pagination/truncation state and parsed witness timestamps."
+  },
+  "layer_B_primary_revelation_resolution": {
+    "common_rule": "public_revelation is the earliest verified authoritative public timestamp. A later source cannot be used if an earlier authoritative source may exist but has not been resolved.",
+    "precision": {
+      "SECOND": "exact source timestamp; safe_cutoff = revelation - 1 second",
+      "MINUTE": "safe_cutoff = start of source minute - 1 second",
+      "DATE_CONSERVATIVE": "safe_cutoff = start of authoritative source-local calendar date - 1 second; timezone must be explicit",
+      "UNRESOLVED": "no safe cutoff is created"
+    },
+    "EARNINGS_EPS": {
+      "revelation_hierarchy": [
+        "issuer investor-relations earnings release timestamp",
+        "SEC EDGAR 8-K/6-K earnings exhibit acceptance timestamp"
+      ],
+      "resolution_requirements": "Issuer identity, reporting period, EPS basis/metric and reported value must be objectively supported by issuer IR and/or SEC primary filing. If primary sources conflict materially, AMBIGUOUS.",
+      "sec_mapping": "Ticker-to-CIK is cross-checked; SEC ticker association alone is not treated as infallible identity proof."
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "revelation_hierarchy": [
+        "FDA Drugs@FDA approval/action package or FDA public announcement",
+        "issuer primary press release/SEC filing describing the FDA action"
+      ],
+      "resolution_requirements": "Actual FDA action is required. PDUFA target/deadline alone is never treated as decision or resolution evidence.",
+      "negative_action_rule": "A non-approval/CRL outcome requires auditable primary evidence from FDA when public or from the affected issuer when the FDA document is not public; otherwise UNRESOLVED/AMBIGUOUS."
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "source_hierarchy": ["BLS", "BEA", "U.S. Census Bureau", "other named U.S. statistical agency only if explicitly frozen by event mapping"],
+      "revelation_rule": "Use the final official release date/time, including documented rescheduling or revised calendars. Stale originally scheduled dates do not override an official revision.",
+      "resolution_requirements": "The event metric, reference period, threshold/comparison and official reported value must be objectively mapped to the corresponding agency release."
+    }
+  },
+  "layer_C_linked_asset_and_data_availability": {
+    "mapping_time_rule": "Linked asset identity is determined from event/issuer/sponsor/metric identity and frozen structural rules before any realized linked-asset return is read.",
+    "EARNINGS_EPS": "Map to the issuer's primary U.S.-listed common equity when tradeable; cross-check issuer identity via issuer/SEC metadata.",
+    "FDA_FINAL_PDUFA_DECISION": "Map to the applicant/sponsor's U.S.-listed common equity or clearly documented listed parent. Private/ambiguous sponsor mappings do not pass F5.",
+    "MACRO_STATISTICAL_RELEASE": "Map deterministically to SPY as a broad U.S. equity-risk proxy for feasibility only; no claim that SPY is the most sensitive instrument and no return is read during W2-C.",
+    "asset_data_probe": "Availability-only daily OHLCV metadata may use the project's disclosed reproducible Yahoo Finance chart-v8 operational source. The probe stores timestamps/row counts/hash/missingness only and is forbidden from computing or persisting returns.",
+    "no_return_fields_allowed": true
+  },
+  "event_level_fields": [
+    "event_id", "resolved_family", "independence_cluster_id", "title", "slug", "semantic_end_utc",
+    "pm_condition_ids", "pm_token_ids", "pm_mapping_state", "pm_mapping_conflict",
+    "public_revelation_utc", "revelation_precision", "safe_cutoff_utc", "revelation_source_type", "revelation_source_url", "revelation_response_sha256",
+    "pm_price_witness_pre_cutoff_utc", "pm_price_witness_minus_24h_or_earlier_utc", "pm_earliest_verified_history_utc", "pre_cutoff_history_hours_lower_bound", "pm_platform_state",
+    "resolution_state", "resolution_source_type", "resolution_source_url", "resolution_response_sha256", "resolution_ambiguous",
+    "linked_asset", "linked_asset_mapping_state", "linked_asset_mapping_basis", "linked_asset_mapping_source_url",
+    "asset_data_state", "asset_data_first_date", "asset_data_last_date", "asset_data_rows", "asset_data_response_sha256",
+    "network_unresolved_components", "mandatory_field_state", "pit_event_eligible"
+  ],
+  "gates": {
+    "F1_contractability": {
+      "pre_revelation_contract_rate_min": 0.80,
+      "analysis_window_24h_rate_min": 0.80,
+      "median_pre_cutoff_history_hours_lower_bound_min": 48.0,
+      "pass_definition": "Uses conservative lower-bound rates over the full frozen family denominator; median uses verified lower-bound hours among records with resolved revelation and timestamped platform history, while unresolved median-capable rows propagate INDETERMINATE when they could change the threshold conclusion."
+    },
+    "F2_pm_pit_observability": {
+      "coverage_min": 0.95,
+      "semantic_conflicts_max": 0,
+      "event_pass": "timestamped CLOB price witness exists at/before safe_cutoff and event/token mapping has no confirmed conflict"
+    },
+    "F3_sampleability_floor": {
+      "validated_independent_events_min": 50,
+      "pit_eligible_events_min": 40,
+      "distinct_revelation_date_clusters_min": 30,
+      "independence_unit": "independence_cluster_id",
+      "date_cluster": "authoritative public revelation calendar date, never Polymarket endDate",
+      "claim_limit": "This is a floor for W3 protocol drafting, not a statistical-power claim."
+    },
+    "F4_resolution": {
+      "objective_primary_source_rate_min": 0.95,
+      "ambiguous_eligible_events_max": 0
+    },
+    "F5_linked_asset": {
+      "preoutcome_mapping_rate_min": 0.90,
+      "tradeable_instrument_required": true,
+      "realized_return_mapping_forbidden": true
+    },
+    "F6_pit_asset_data": {
+      "coverage_min": 0.95,
+      "returns_computed_or_stored_max": 0
+    },
+    "F7_safe_cutoff": {
+      "rate_min": 1.0,
+      "strictly_before_public_revelation_required": true
+    },
+    "F8_mandatory_input_coverage": {
+      "rate_min": 1.0,
+      "meaning": "All mandatory schema fields have explicit values/states. UNRESOLVED is a value and does not itself make F8 missing, but it can prevent other gates from passing."
+    },
+    "F9_reproducibility": {
+      "mandatory_proprietary_or_account_gated_dependency_allowed": false,
+      "authenticated_clob_trades_allowed_as_mandatory_input": false
+    }
+  },
+  "pit_event_eligible_rule": "An event is PIT-eligible only when F1 event-level pre-revelation/24h conditions, F2 event observability/mapping, F4 objective non-ambiguous resolution, F5 linked-asset mapping, F6 asset-data availability, F7 safe cutoff, and F8 schema completeness all pass. F9 is evaluated at family/pipeline level.",
+  "family_gate_outcomes": ["PASS", "FAIL", "INDETERMINATE"],
+  "scoring_order": [
+    "freeze population and collectors",
+    "collect raw PIT evidence",
+    "freeze raw evidence materialization",
+    "compute F1-F9 using frozen formulas",
+    "freeze F1-F9 results",
+    "only then allow structural IAS evidence scoring",
+    "only after IAS evidence freeze run SMAA/ranking",
+    "only after ranking and all F1-F9 decide GO/NO-GO W3"
+  ],
+  "prohibitions": [
+    "No family deletion because evidence is missing or inconvenient.",
+    "No use of Gamma start/end dates, current volume, or current liquidity as PIT proof.",
+    "No use of PDUFA target date as actual FDA decision timestamp.",
+    "No stale macro release schedule when an official rescheduling exists.",
+    "No realized linked-asset return read or persisted in W2-C.",
+    "No F1-F9 threshold change after real evidence is collected.",
+    "No IAS/SMAA/ranking execution before PIT evidence and F1-F9 are frozen.",
+    "No W3 execution before a separate W3 protocol freeze."
+  ],
+  "synthetic_validation_required": true,
+  "freeze_rule": "PIT-v2 collectors, this protocol, candidate population identity/counts, source rules, missingness bounds, gate formulas and performance firewall must pass synthetic/adversarial validation and be byte-frozen before any real PIT-v2 network collection."
+}
