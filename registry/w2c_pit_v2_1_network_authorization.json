@@ -1,0 +1,44 @@
+{
+  "artifact": "W2C_PIT_V2_1_NETWORK_AUTHORIZATION",
+  "version": "W2C-PIT-NET-AUTH-v2.1",
+  "date": "2026-08-12",
+  "status": "AUTHORIZED_LAYER_B_C_ONLY",
+  "requires_freeze_bundle_sha256": "741ab5985bbf34c454cc8050bbecb001123ecf3110ba1bb5e9f5cab079da4a68",
+  "requires_freeze_validation_run_id": 31643817474,
+  "requires_freeze_validation_conclusion": "success",
+  "layer_b_c_network_execution_authorized": true,
+  "permitted_components": [
+    "scripts/w2c_pit_v2_1_route_population.py",
+    "scripts/w2c_pit_v2_1_primary_asset_collect.py",
+    "scripts/w2c_pit_v2_1_build_combined.py"
+  ],
+  "permitted_network_hosts": [
+    "www.sec.gov",
+    "data.sec.gov",
+    "www.fda.gov",
+    "www.bls.gov",
+    "www.bea.gov",
+    "query1.finance.yahoo.com"
+  ],
+  "f1_f9_real_execution_authorized": false,
+  "ias_real_scoring_authorized": false,
+  "smaa_ranking_authorized": false,
+  "w3_protocol_drafting_authorized": false,
+  "w3_execution_authorized": false,
+  "prohibitions": [
+    "No Layer A recollection or alternate Polymarket endpoint.",
+    "No source, routing, threshold or gate change after observed coverage.",
+    "No execution of scripts/w2c_pit_v2_1_gate_score.py.",
+    "No IAS or SMAA computation.",
+    "No realized linked-asset return, PnL, beta, correlation or event-response computation.",
+    "No W3 selection or execution."
+  ],
+  "output_scope": [
+    "registry/w2c_pit_v2_1_primary_source_queue.csv",
+    "registry/w2c_pit_v2_1_primary_asset_events.csv.gz",
+    "registry/w2c_pit_v2_1_primary_asset_request_manifest.jsonl.gz",
+    "registry/w2c_pit_v2_1_primary_asset_summary.json",
+    "registry/w2c_pit_v2_1_combined_events.csv",
+    "registry/w2c_pit_v2_1_combined_summary.json"
+  ]
+}
