@@ -1,0 +1,29 @@
+{
+  "artifact": "W2C_PIT_V2_PLATFORM_MATERIALIZATION",
+  "version": "W2C-PIT-PLATFORM-RUN-v2.0",
+  "protocol_version": "W2C-PIT-v2.0",
+  "performance_blind": true,
+  "science_reopened": false,
+  "rows": 260,
+  "family_summary": {
+    "EARNINGS_EPS": {
+      "n": 100,
+      "NO_PRICE_HISTORY_OBSERVED": 82,
+      "PASS_HISTORY_OBSERVED": 18
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "n": 63,
+      "NO_PRICE_HISTORY_OBSERVED": 56,
+      "PASS_HISTORY_OBSERVED": 7
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "n": 97,
+      "NO_PRICE_HISTORY_OBSERVED": 78,
+      "PASS_HISTORY_OBSERVED": 19
+    }
+  },
+  "f1_f9_scored": false,
+  "ias_computed": false,
+  "w3_selected": false,
+  "linked_asset_realized_returns_read": false
+}
