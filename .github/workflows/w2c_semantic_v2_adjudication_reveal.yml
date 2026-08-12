@@ -1,0 +1,45 @@
+name: W2C Frozen Adjudication Controlled Reveal
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_semantic_v2_adjudication_reveal_trigger.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reveal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify adjudication byte freeze before real queue read
+        run: python scripts/w2c_semantic_v2_adjudication_freeze_validate.py
+      - name: Export only frozen allowed review fields
+        run: python scripts/w2c_semantic_v2_adjudication_export.py
+      - name: Validate controlled reveal firewall
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          p='registry/w2c_semantic_v2_adjudication_review/manifest.json'
+          x=json.load(open(p))
+          assert x['input_rows']==329 and x['total_rows']==329
+          assert x['forbidden_fields_emitted'] is False
+          assert x['network_accessed'] is False and x['performance_data_read'] is False
+          assert sum(f['rows'] for f in x['families'])==329
+          for f in x['families']:
+              assert pathlib.Path(f['path']).stat().st_size>0
+          print(json.dumps(x,indent=2))
+          PY
+      - name: Persist exact review-only evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-adjudication-v1-review
+          git add registry/w2c_semantic_v2_adjudication_review/
+          git commit -m 'w2c: persist controlled adjudication review fields'
+          git push --force origin HEAD:refs/heads/w2c-adjudication-v1-review
