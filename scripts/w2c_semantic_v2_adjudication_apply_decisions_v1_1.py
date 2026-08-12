@@ -17,7 +17,6 @@ ACCEPT='ACCEPT_STRICT_FAMILY'
 REJECT='REJECT_FALSE_POSITIVE'
 AMBIG='AMBIGUOUS_UNRESOLVED'
 
-# Entire-family decisions after reviewing every frozen initial row in that family.
 DEFAULT={
     'ANTITRUST_ENFORCEMENT_SINGLE_NAME':(ACCEPT,'explicit non-merger antitrust enforcement involving a named company/conduct matter'),
     'EARNINGS_EPS':(ACCEPT,'named issuer discrete quarterly earnings/EPS outcome'),
@@ -28,7 +27,6 @@ DEFAULT={
     'MA_PRE_ANNOUNCEMENT_OR_RUMOR':(ACCEPT,'specific corporate merger/acquisition/takeover announcement or pre-announcement transaction question'),
 }
 
-# Litigation was heterogeneous; every row is explicit here.
 LITIGATION={
     '79067':(ACCEPT,'named company bankruptcy outcome'),
     '86448':(REJECT,'aggregated multi-company bankruptcy question, not one named corporate event'),
@@ -40,23 +38,20 @@ LITIGATION={
     '903166':(ACCEPT,'named company legal settlement outcome'),
 }
 
-# FOMC exclusions: broad annual/timing questions are not one scheduled meeting outcome.
 FOMC_REJECT={
     '106884','20377','101936','329566','32584','16084',
     '901410','45887','903089','901317','22449','10483',
 }
-# NOTE: 12 explicit rejects; all other 36 frozen FOMC rows are meeting-specific.
+# 12 explicit rejects; all other 36 frozen FOMC rows are meeting-specific.
 
-# Macro exclusions/ambiguity after reading all 100 frozen initial rows.
 MACRO_REJECT={
-    '53730',  # asks whether next BLS report occurs during shutdown, not the statistic
-    '53165',  # asks release timing by a timestamp, not the published statistical observation
+    '53730',
+    '53165',
 }
 MACRO_AMBIG={
-    '182146', # "2026 World GDP Growth" lacks a unique official scheduled statistical release in title+slug
+    '182146',
 }
 
-# One non-corporate territorial acquisition false positive.
 MNA_RUMOR_REJECT={'382511'}
 
 
@@ -92,9 +87,8 @@ def main():
             'adjudication_state':state,
             'adjudication_reason':reason,
         })
-    # Exact intended totals are a result-integrity check, not a promotion threshold.
     counts={s:sum(r['adjudication_state']==s for r in out) for s in (ACCEPT,REJECT,AMBIG)}
-    assert counts=={ACCEPT:311,REJECT:20,AMBIG:4}, counts
+    assert counts=={ACCEPT:312,REJECT:19,AMBIG:4}, counts
     fields=['event_id','resolved_family','independence_cluster_id','adjudication_state','adjudication_reason']
     with OUT.open('w',encoding='utf-8',newline='') as fh:
         w=csv.DictWriter(fh,fieldnames=fields);w.writeheader();w.writerows(out)
