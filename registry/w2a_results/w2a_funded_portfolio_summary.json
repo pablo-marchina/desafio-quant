@@ -1,0 +1,122 @@
+{
+  "artifact": "W2A_FUNDED_PORTFOLIO_RESULT",
+  "capital": {
+    "K_star_raw_commitment": 9.027000000000001,
+    "lambda_equal_event_notional": 0.11077877478675084,
+    "mean_utilization_active_sessions": 0.2818038422047291,
+    "mean_utilization_all_sessions": 0.18975736108258137,
+    "median_utilization_active_sessions": 0.22200066467264867,
+    "median_utilization_all_sessions": 0.11100033233632434,
+    "min_free_cash": 0.0038912996759512403,
+    "min_free_cash_date": "2025-11-10",
+    "min_matched_spy_free_cash": 0.0073430757991008455,
+    "min_matched_spy_free_cash_date": "2025-11-10",
+    "peak_committed_capital_utilization": 1.0,
+    "starting_capital": 1.0
+  },
+  "costs": {
+    "long_roundtrip": 0.002,
+    "primary_total_cost_dollars_on_C0": 0.009693142793840698,
+    "short_roundtrip": 0.0035,
+    "timing": "50pct_entry_50pct_exit_reserved"
+  },
+  "exposure_and_turnover": {
+    "entry_only_turnover_initial_capital": 3.7664783427495285,
+    "gross_turnover_initial_capital": 7.587574751868107,
+    "max_concurrency_date": "2025-11-10",
+    "max_concurrent_positions": 9,
+    "peak_abs_net_mtm_exposure": 0.5760078579074887,
+    "peak_gross_date": "2025-11-12",
+    "peak_gross_mtm_exposure": 1.0158422697211948
+  },
+  "funded_performance": {
+    "active_terminal_wealth": -0.02453043084752604,
+    "double_cost_active_terminal_wealth_diagnostic": -0.03422357364136674,
+    "double_cost_terminal_nav_diagnostic": 0.9922747679073485,
+    "matched_spy_terminal_nav": 1.0264983415487152,
+    "matched_spy_total_return": 0.02649834154871522,
+    "max_drawdown": -0.06384129727475374,
+    "max_drawdown_date": "2026-02-23",
+    "terminal_nav": 1.0019679107011892,
+    "time_under_water_max_sessions": 136,
+    "total_return": 0.0019679107011891794
+  },
+  "h2_unchanged": "FAIL_UNDER_FROZEN_EXP07I",
+  "historical_frozen_champion_unchanged": "C0_NO_TRADE",
+  "identities": {
+    "active_terminal_formula_from_legacy_market_adjusted_net": -0.02453043084752399,
+    "active_terminal_residual": -2.050443148604586e-15,
+    "matched_spy_nav_formula": 1.026498341548714,
+    "matched_spy_nav_residual": 1.1102230246251565e-15,
+    "terminal_nav_formula": 1.00196791070119,
+    "terminal_nav_residual": -8.881784197001252e-16
+  },
+  "input": {
+    "calendar_sessions": 199,
+    "holding_sessions": 10,
+    "longs": 21,
+    "shorts": 13,
+    "trades": 34
+  },
+  "science_reopened": false,
+  "secondary_risk": {
+    "annualized_sortino_sqrt252": 0.09760953014186484,
+    "annualized_volatility_sqrt252": 0.061616644848371926,
+    "daily_active_pnl_std": 0.0038857366263775786,
+    "daily_sortino_mar0": 0.00614882243679137,
+    "daily_volatility": 0.0038814837831186015,
+    "hac_long_run_variance": 1.3480479111441521e-05,
+    "hac_sharpe_lag10": 0.07515329744169824,
+    "mean_daily_active_pnl": -0.00012326849672123638,
+    "mean_daily_return": 1.7382027554326395e-05
+  },
+  "status": "PASS_FUNDED_PORTFOLIO_ACCOUNTING",
+  "uncertainty": {
+    "10": {
+      "mean_block_length": 10,
+      "mean_daily_active_pnl_ci95": [
+        -0.0006121491120992549,
+        0.0003495638538536168
+      ],
+      "mean_daily_active_pnl_observed": -0.00012326849672123638,
+      "replications": 20000,
+      "seed": 20260812,
+      "terminal_active_pnl_ci95": [
+        -0.12181767330775173,
+        0.06956320691686975
+      ],
+      "terminal_active_pnl_observed": -0.02453043084752604
+    },
+    "20": {
+      "mean_block_length": 20,
+      "mean_daily_active_pnl_ci95": [
+        -0.0006067102688316146,
+        0.0003513093207809343
+      ],
+      "mean_daily_active_pnl_observed": -0.00012326849672123638,
+      "replications": 20000,
+      "seed": 20260812,
+      "terminal_active_pnl_ci95": [
+        -0.12073534349749131,
+        0.06991055483540592
+      ],
+      "terminal_active_pnl_observed": -0.02453043084752604
+    },
+    "5": {
+      "mean_block_length": 5,
+      "mean_daily_active_pnl_ci95": [
+        -0.0006312904199379813,
+        0.0003381086047478592
+      ],
+      "mean_daily_active_pnl_observed": -0.00012326849672123638,
+      "replications": 20000,
+      "seed": 20260812,
+      "terminal_active_pnl_ci95": [
+        -0.12562679356765827,
+        0.06728361234482398
+      ],
+      "terminal_active_pnl_observed": -0.02453043084752604
+    }
+  },
+  "version": "W2A-FP-v1.0"
+}
