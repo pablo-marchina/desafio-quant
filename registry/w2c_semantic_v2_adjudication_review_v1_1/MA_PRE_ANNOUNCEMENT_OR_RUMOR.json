@@ -1,0 +1,125 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_PART",
+  "version": "W2C-ADJ-v1.1",
+  "family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+  "rows": 12,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "192925",
+      "title": "Tesla and xAI merger officially announced by June 30?",
+      "slug": "tesla-and-xai-merger-officially-announced-by-june-30",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "6227b01c5d79f91da0674250",
+      "end_utc": "2026-06-30T00:00:00Z",
+      "adjudication_rank": "044a71f69096094904f5dd806e7652d4da4a0ce24c733b3258a0972a7a2029ad"
+    },
+    {
+      "event_id": "15616",
+      "title": "Honda and Nissan merger announced before February?",
+      "slug": "will-honda-and-nissan-merge",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "c506cf92fad769c82e4de82d",
+      "end_utc": "2025-01-31T12:00:00Z",
+      "adjudication_rank": "09b62740c8cff4c7d629ba23ca6bc2867a40d93752f38462f58da3feceee1291"
+    },
+    {
+      "event_id": "192962",
+      "title": "Tesla and SpaceX merger officially announced by...?",
+      "slug": "tesla-and-spacex-merger-officially-announced-by-june-30",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "0e6d124ca729f3966ebaaa56",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "23c304f5dbdd90180efd1f0b1731719e6f9d8dd5cc58ce21c8bd747e99748c18"
+    },
+    {
+      "event_id": "14371",
+      "title": "X and Truth Social merger announced before August?",
+      "slug": "x-and-truth-social-merger-announced-before-august",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "874f91776c0abfea2f5181f2",
+      "end_utc": "2025-07-31T12:00:00Z",
+      "adjudication_rank": "2e1217462903ac04c0f351dcc7b17d5ac71713611b2739b39547157e15853e40"
+    },
+    {
+      "event_id": "100076",
+      "title": "Paramount x Warner Bros. acquisition announced by June 30?",
+      "slug": "paramount-acquires-warner-bros-discovery-by-june-30",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "513ba52839b8e72e6d6ea6f0",
+      "end_utc": "2026-06-30T00:00:00Z",
+      "adjudication_rank": "3944615851e65126b6a46509355774cfc4689dc5ad8e1e92772d590668d29691"
+    },
+    {
+      "event_id": "4682",
+      "title": "Will Twitter announce a Musk acquisition by June 1, 2022?",
+      "slug": "will-twitter-agree-to-a-musk-acquisition-by-june-1-2022",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "5ca9f1917825283bef7c2282",
+      "end_utc": "2022-06-01T00:00:00Z",
+      "adjudication_rank": "405d055556dbe65a9a058ca2b0d4661f1dcb6f6e7d5b5f6a60777296a6449517"
+    },
+    {
+      "event_id": "4793",
+      "title": "Will an FTX acquisition of Robinhood be announced by September 20?",
+      "slug": "will-an-ftx-acquisition-of-robinhood-be-announced-by-september-20",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "995c6b31be15747b9bb45038",
+      "end_utc": "2022-09-20T00:00:00Z",
+      "adjudication_rank": "4a51162f3e5c1a6393d2ae5ee0ed73c332e325694df563d90e781e8af9f1df41"
+    },
+    {
+      "event_id": "382331",
+      "title": "LIV Golf merger/acquisition announced by June 30?",
+      "slug": "liv-golf-mergeracquisition-announced-by-june-30",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "64371a2a819ae41bf18137f3",
+      "end_utc": "2026-07-01T00:00:00Z",
+      "adjudication_rank": "58833007aff199a95cf2cf0d11ab4831a88312a54686aea7f9040dd829bd7f1c"
+    },
+    {
+      "event_id": "103773",
+      "title": "Chubb and AIG merger announced by January 31?",
+      "slug": "chubb-and-aig-merger-announced-by-january-31",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "7cc9891c27f7a11fb4108dc7",
+      "end_utc": "2026-01-31T00:00:00Z",
+      "adjudication_rank": "66791fb9b0caf85c6c65e7f28c4240295ea3fe560adb4cc825ccbb69a0e5d3c7"
+    },
+    {
+      "event_id": "580279",
+      "title": "Will Trump announce an acquisition of part of the Chagos Islands before 2027? ",
+      "slug": "will-trump-announce-an-acquisition-of-part-of-the-chagos-islands-before-2027-20260609184517049",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "3277a32e3e4cdac21ead8933",
+      "end_utc": "",
+      "adjudication_rank": "839d8db930bc5c1fe41cddb8b80e04a944f53c3bdad00cb97fdafc0de70df413"
+    },
+    {
+      "event_id": "192851",
+      "title": "SpaceX and xAI merger officially announced by June 30?",
+      "slug": "spacex-and-xai-merger-offcially-announced-by-june-30",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "0eddfb30fe1b0ffc1a9959c6",
+      "end_utc": "2026-06-30T00:00:00Z",
+      "adjudication_rank": "a1ace1721b8778dd8486ae3cace7069c67323a5d02337429e6821d343c454a1c"
+    },
+    {
+      "event_id": "601984",
+      "title": "MPS x Intesa Sanpaolo merger/acquisition announced in 2026?",
+      "slug": "mps-x-intesa-sanpaolo-mergeracquisition-announced-in-2026-20260612212324741",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "independence_cluster_id": "a66ed9ca196ad9064cb14f7c",
+      "end_utc": "2027-01-01T04:59:00Z",
+      "adjudication_rank": "b1c997bac758eb5243f50ccc4ea7ec54b0684945836f51385dbb9010e1414b5c"
+    }
+  ]
+}

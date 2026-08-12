@@ -1,0 +1,449 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_PART",
+  "version": "W2C-ADJ-v1.1",
+  "family": "FOMC_DECISION",
+  "rows": 48,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "27824",
+      "title": "Fed decision in October?",
+      "slug": "fed-decision-in-october",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "04fe24d34d541afaa576c705",
+      "end_utc": "2025-10-29T12:00:00Z",
+      "adjudication_rank": "04307d3e06294075042f1a0b9800b3f8179046ec95990a422095a1061bdebc6e"
+    },
+    {
+      "event_id": "606422",
+      "title": "Fed Decision in October?",
+      "slug": "fed-decision-in-october-20260617190323537",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "e07b3a03248326a69a94bd33",
+      "end_utc": "2026-10-28T23:59:00Z",
+      "adjudication_rank": "22a3a9767ee52d4f7923bd7008acb63c708d6abae4f3980386f48b9ba6483387"
+    },
+    {
+      "event_id": "34716",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "733c77a210a271bd06201a3b",
+      "end_utc": "2025-07-30T16:00:00Z",
+      "adjudication_rank": "2922cbb16859119b22709289121e3046ab875b26b49432a72ff26bd619e481d5"
+    },
+    {
+      "event_id": "11878",
+      "title": "Fed decision in December?",
+      "slug": "fed-interest-rates-december-2024",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "be1af396dbe19648b2b91d34",
+      "end_utc": "2024-12-18T12:00:00Z",
+      "adjudication_rank": "2b6cb6667a0304da2248cc706e2405fa161b4f54d93600f83d22eb0ca96777fc"
+    },
+    {
+      "event_id": "162306",
+      "title": "Fed Decision & Dissent Combo in January?",
+      "slug": "fed-decision-dissent-combo-in-january",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "81245b8ad2fa21553b5a11d3",
+      "end_utc": "2026-01-28T00:00:00Z",
+      "adjudication_rank": "2ff4a582242138ab7c762f8c5cbf070ab02ea846ee78f0420b577b70d5a7fc8d"
+    },
+    {
+      "event_id": "778684",
+      "title": "How many dissent at the January Fed meeting?",
+      "slug": "how-many-dissent-at-the-january-fed-meeting-20260730001232359",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "08b4d9dd4e0f6c9e684d78d8",
+      "end_utc": "2027-01-27T23:59:00Z",
+      "adjudication_rank": "3044a7afd82c3f1c4369a99f72c717acd1ed6f70d8a70bfffd49f2a24d2358fa"
+    },
+    {
+      "event_id": "21255",
+      "title": "Fed decision in July?",
+      "slug": "fed-decision-in-july",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "3530d13a11a8b19812324155",
+      "end_utc": "2025-07-30T12:00:00Z",
+      "adjudication_rank": "37882e9fbde51ed5d8082b101c03c7da12ca8513ecf4e3395bd0f3d153b67e30"
+    },
+    {
+      "event_id": "192022",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting-247",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "204b4b55ca48e53eb96298b6",
+      "end_utc": "2026-03-18T00:00:00Z",
+      "adjudication_rank": "3bdd666927b07a35066550a2460ccf2635c2c02a0a45ac3a75758602d1cead31"
+    },
+    {
+      "event_id": "106884",
+      "title": "Fed rate cut by...?",
+      "slug": "fed-rate-cut-by-629",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "38ac7fefee1f13b15e01e0cd",
+      "end_utc": "2026-06-17T00:00:00Z",
+      "adjudication_rank": "447a267724303bd4754502e5a28be2a64ec905edbbdd8ee26e89929aa8c58703"
+    },
+    {
+      "event_id": "770451",
+      "title": "Fed Decision in January?",
+      "slug": "fed-decision-in-january-20260729233815502",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "c3ff02beeb9eb4b32f5d71c0",
+      "end_utc": "2027-01-27T23:59:00Z",
+      "adjudication_rank": "49ab47d261b9919674de9e620643de4667dec949fe4462e6a1a51724a711c0d2"
+    },
+    {
+      "event_id": "14220",
+      "title": "Fed decision in January?",
+      "slug": "fed-interest-rates-january-2025",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "181f47fc38f02ebb52460080",
+      "end_utc": "2025-01-29T12:00:00Z",
+      "adjudication_rank": "4b50104399915f3ef7cf89b6513b200586b5b36b0c0df17d4070ba65a69df3c0"
+    },
+    {
+      "event_id": "20377",
+      "title": "Fed rate cut in 2025?",
+      "slug": "fed-rate-cut-in-2025",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "d73ec91e45c2197814e75ebd",
+      "end_utc": "2025-12-31T12:00:00Z",
+      "adjudication_rank": "5180f1b3bc5a4e84f6950542bf6c94d39d0c96e51bb7ec8bc3094fd9c2a6b70d"
+    },
+    {
+      "event_id": "75478",
+      "title": "Fed decision in April?",
+      "slug": "fed-decision-in-april",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "e302a38937c3bd7cb0ad8e70",
+      "end_utc": "2026-04-29T00:00:00Z",
+      "adjudication_rank": "526ebaaf396d5d694b9675332428edfa095736d69723e036622641670021011f"
+    },
+    {
+      "event_id": "602230",
+      "title": "How many dissent at the July Fed meeting?",
+      "slug": "how-many-dissent-at-the-july-fed-meeting-20260616001900143",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "ce6ad8c32fa591d894bc2224",
+      "end_utc": "2026-07-29T15:59:00Z",
+      "adjudication_rank": "59d2c55df8afc6c9d0f0c3c3dd044f75e00ae9cd09565ca60d381b3195ebafad"
+    },
+    {
+      "event_id": "101936",
+      "title": "Fed rate hike in 2026?",
+      "slug": "fed-rate-hike-in-2026",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "d7b6d64cac964d747ea14f4f",
+      "end_utc": "2026-12-09T00:00:00Z",
+      "adjudication_rank": "5cb5572a7dc9569f078bc08225046601888feca5fdf9645134c8473722be354f"
+    },
+    {
+      "event_id": "329566",
+      "title": "Fed rate hike by...?",
+      "slug": "fed-rate-hike-by",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "b19f474cc451042a9d18cfb7",
+      "end_utc": "2026-10-29T00:00:00Z",
+      "adjudication_rank": "5e39432bad3b33f7d633b8919ad86e278fb4d99f0a891154b4bc76f97921d15a"
+    },
+    {
+      "event_id": "32584",
+      "title": "Fed rate cut by...?",
+      "slug": "fed-rate-cut-by-467",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "1f718f6819f59d69e3adfe90",
+      "end_utc": "2025-12-10T00:00:00Z",
+      "adjudication_rank": "6d8ee2a889517b3dc331671015c3a30207ba39170b4508d2a15c325cea1ffa56"
+    },
+    {
+      "event_id": "101772",
+      "title": "Fed Decision in June?",
+      "slug": "fed-decision-in-june-825",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "ef3b972bb0d8b2bf28636dff",
+      "end_utc": "2026-06-17T00:00:00Z",
+      "adjudication_rank": "751304befb3422181304f7ae10269b53675360c0f9d6253f6225fa9a4e9e219b"
+    },
+    {
+      "event_id": "16084",
+      "title": "Fed rate hike in 2025?",
+      "slug": "fed-rate-hike-in-2025",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "ae1680daa6bd6375ab8a51ba",
+      "end_utc": "2025-12-10T12:00:00Z",
+      "adjudication_rank": "7954fb81ecdbde0db0dde1df45e99554ccf1fb758b9af2c7f62f2d169d90e45f"
+    },
+    {
+      "event_id": "102643",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting-645",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "6b22bb416251663b43b9d1ff",
+      "end_utc": "2026-01-28T00:00:00Z",
+      "adjudication_rank": "80168b2e23de1a3765b387ed7ced4e8b9094f81d1559ce0e3d38e15f1da986c3"
+    },
+    {
+      "event_id": "37537",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting-526",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "b3422a4193bf8a16b0439d3d",
+      "end_utc": "2025-09-17T00:00:00Z",
+      "adjudication_rank": "83fb9282e3528f47f1739586868139c036d11e0688e1ad71fbd28b2721e1458d"
+    },
+    {
+      "event_id": "45883",
+      "title": "Fed decision in January?",
+      "slug": "fed-decision-in-january",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "8fb577c43ccd286a1f0aa83c",
+      "end_utc": "2026-01-28T00:00:00Z",
+      "adjudication_rank": "8430b792782644eb1b09097f7facf0c16286be951b4d0ae745c578abb529915a"
+    },
+    {
+      "event_id": "192697",
+      "title": "Will Stephen Miran dissent the next Fed decision?",
+      "slug": "will-stephen-miran-dissent-the-next-fed-decision",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "38a508dcc07269b5afde6a02",
+      "end_utc": "2026-03-18T00:00:00Z",
+      "adjudication_rank": "89a8c2aff49f0d53a7b6cfdc7d4980d71b2287b394df32b935a49f19894e4626"
+    },
+    {
+      "event_id": "432088",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting-822",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "e6b7123afe07f7f1efd6edaf",
+      "end_utc": "2026-06-17T00:00:00Z",
+      "adjudication_rank": "8bc6c830acfa0c25c6467e0707ae8d65e0393d6846ff6df2fde43484db99ab3c"
+    },
+    {
+      "event_id": "901410",
+      "title": "Will the Fed cut rates in March?",
+      "slug": "will-the-fed-cut-rates-in-march",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "85d0b3125a443dbc5d128a8c",
+      "end_utc": "2023-03-31T00:00:00Z",
+      "adjudication_rank": "8cc2fdd97798eb58e786723769f11308628cc8d1072b63ccbc98208210556126"
+    },
+    {
+      "event_id": "45887",
+      "title": "Fed rate cut by...?",
+      "slug": "fed-rate-cut-by-359",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "b4c0160a857ab8d09b7c2508",
+      "end_utc": "2026-01-28T00:00:00Z",
+      "adjudication_rank": "8db358f8c749f85f64c1a7353fbe2fca9d13022083f2c174857eecc4156f6c9f"
+    },
+    {
+      "event_id": "45886",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting-337",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "0bf4be4c2288d1aa19bf2779",
+      "end_utc": "2025-10-29T00:00:00Z",
+      "adjudication_rank": "91a166d57863817d15919a429a1847bb0fc3550d28f36dd0cf5c133cbff85e30"
+    },
+    {
+      "event_id": "11862",
+      "title": "Fed cuts rates by 75 basis points in Sept meeting?",
+      "slug": "will-the-fed-cut-rates-by-75-basis-points-in-september",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "d9885a8c9b84b8b8c12e1474",
+      "end_utc": "2024-09-17T12:00:00Z",
+      "adjudication_rank": "93c284f886b9929f074c5d57ee7148b7d7813db5f5124d7d03cf9bac79fbfa12"
+    },
+    {
+      "event_id": "389834",
+      "title": "Kevin Warsh cuts rates at first Fed meeting?",
+      "slug": "kevin-warsh-cuts-rates-at-first-fed-meeting",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "952a67c2f33038ba8e8ab757",
+      "end_utc": "2026-06-17T20:03:05Z",
+      "adjudication_rank": "a0c742695753a558b62f337a5f9ff121ca9ab998a885bc5bea955588de5110d8"
+    },
+    {
+      "event_id": "192696",
+      "title": "Will Christopher Waller dissent the next Fed Decision?",
+      "slug": "will-waller-dissent-the-next-fed-decision",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "b641a36570c7c120ff272ceb",
+      "end_utc": "2026-03-18T00:00:00Z",
+      "adjudication_rank": "b4294c0d37066cbfb77dc514ef23f364d92a787d01383e8b76c9916416a71da0"
+    },
+    {
+      "event_id": "903089",
+      "title": "Fed rate cut by...?",
+      "slug": "fed-rate-cut-by",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "58a9f1e516e5404975835aee",
+      "end_utc": "2024-09-18T12:00:00Z",
+      "adjudication_rank": "b657bcacc61ad3dfa2dec6bc7870aa1b03397739d4a7aede835316234b280ac5"
+    },
+    {
+      "event_id": "901317",
+      "title": "Will the Fed cut rates in 2023?",
+      "slug": "will-the-fed-cut-rates-in-2023",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "9f79f9becacfdca3ddf2901f",
+      "end_utc": "2023-12-31T00:00:00Z",
+      "adjudication_rank": "beac4042df7148caf1d1f2a95b8615bc6648ff4407454f2e6c25bad09897296e"
+    },
+    {
+      "event_id": "22449",
+      "title": "Fed rate cut by June meeting?",
+      "slug": "fed-rate-cut-by-june-meeting",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "6b8abf69524429c94db82ac6",
+      "end_utc": "2025-06-18T12:00:00Z",
+      "adjudication_rank": "c0e4bda37e18bcb44def12c2f5d4bf661ccf028f8ec93523e72ce9d0cbe909ff"
+    },
+    {
+      "event_id": "287482",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting-113",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "e8cd9540c2dd7386e3300e3a",
+      "end_utc": "2026-04-29T00:00:00Z",
+      "adjudication_rank": "c4308afe0ba41508b36fb101d3c4b10bffef9d90d97c6ed181a288db6f7bcc37"
+    },
+    {
+      "event_id": "17140",
+      "title": "Fed decision in May?",
+      "slug": "fed-decision-in-may-2025",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "4ee85ad08c7f58e53e4e2851",
+      "end_utc": "2025-05-07T12:00:00Z",
+      "adjudication_rank": "c466f2d26bea32238655acd07d10593f52925c9bf3481a556397c24c3a00847f"
+    },
+    {
+      "event_id": "35090",
+      "title": "Fed decision in December?",
+      "slug": "fed-decision-in-december",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "3d19bfa6f7a6211eb6694593",
+      "end_utc": "2025-12-10T00:00:00Z",
+      "adjudication_rank": "c914f2d1a64db6bcf5a572e4cc79fb75b62952f238842f376ffdbbf2786a02d7"
+    },
+    {
+      "event_id": "287395",
+      "title": "Fed Decision in July?",
+      "slug": "fed-decision-in-july-181",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "431ff727b5cecef00e9a60b5",
+      "end_utc": "2026-07-29T00:00:00Z",
+      "adjudication_rank": "ce66007b2ab2412d53afc09145af06c7413596a1a6c95b69f5f51894fb595224"
+    },
+    {
+      "event_id": "17792",
+      "title": "Fed decision in June?",
+      "slug": "fed-decision-in-june",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "c117265f22c9b1f2a0a8a7d0",
+      "end_utc": "2025-06-18T12:00:00Z",
+      "adjudication_rank": "d31f00e52d79d23dc269ff99f1514d1981abbb05f90a5570248dcb39587cb29f"
+    },
+    {
+      "event_id": "91091",
+      "title": "Fed decision & dissent combo in December?",
+      "slug": "fed-decision-dissent-combo-in-december",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "18c5e22b98bdb41d6201718e",
+      "end_utc": "2025-12-12T00:00:00Z",
+      "adjudication_rank": "d48cdbca4390bda5d3d10ccf9d268ac68ca795ecc3bbc809b39e1ddfd2a9e786"
+    },
+    {
+      "event_id": "24087",
+      "title": "Fed decision in September?",
+      "slug": "fed-decision-in-september",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "97fc86afa14ef56481bc6a54",
+      "end_utc": "2025-09-17T12:00:00Z",
+      "adjudication_rank": "db0482824afd9f2018c1176e6a500d3784bcafa4498900cc085198bc07d00978"
+    },
+    {
+      "event_id": "39673",
+      "title": "Will Lisa Cook vote at the next FOMC meeting?",
+      "slug": "will-lisa-cook-vote-at-the-next-fomc-meeting",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "1fec4efa40dfdebc8a4ae20b",
+      "end_utc": "2025-09-17T00:00:00Z",
+      "adjudication_rank": "db3f9f10534226e1141e7642048d432aacdbe5ea21c3054e952999207031a140"
+    },
+    {
+      "event_id": "432066",
+      "title": "Fed Decision in September?",
+      "slug": "fed-decision-in-september-568",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "b11b0541621118d99e140fbd",
+      "end_utc": "2026-09-16T00:00:00Z",
+      "adjudication_rank": "e356cc3914507e2b823a8034d441c541149e87480cd0b89f70a2edadbf2979ef"
+    },
+    {
+      "event_id": "67284",
+      "title": "Fed decision in March?",
+      "slug": "fed-decision-in-march-885",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "0c72a01b7d3bc18feace23f7",
+      "end_utc": "2026-03-18T00:00:00Z",
+      "adjudication_rank": "e6cc97f92355615b06fa2b40f87ff33671fe81a4eb985e98f518226bc7e981cd"
+    },
+    {
+      "event_id": "770454",
+      "title": "How many dissent at the December Fed meeting?",
+      "slug": "how-many-dissent-at-the-december-fed-meeting-20260730000304473",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "e3486853b53105ef8ad5416c",
+      "end_utc": "2026-12-09T23:59:00Z",
+      "adjudication_rank": "ec55e815a1b9c3c723f5bee05f4a94b5810705a5fc1ccac3c03bf78ba478a373"
+    },
+    {
+      "event_id": "770450",
+      "title": "Fed Decision in December?",
+      "slug": "fed-decision-in-december-20260729232808632",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "d5efc7780491cea0b322b328",
+      "end_utc": "2026-12-09T23:59:00Z",
+      "adjudication_rank": "efb5d13190c28b53c1ab64d7445158628b462ef4b754229de14c4163fe417e72"
+    },
+    {
+      "event_id": "10483",
+      "title": "Fed rate hike in 2024?",
+      "slug": "fed-rate-hike-in-2024",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "b9b143035c03a57288aa80dd",
+      "end_utc": "2024-12-18T12:00:00Z",
+      "adjudication_rank": "f4765c309a542de1e246bf8f20544fb3eb4b59d765fbdb90296a7a434beee6b8"
+    },
+    {
+      "event_id": "67950",
+      "title": "How many dissent at the next Fed meeting?",
+      "slug": "how-many-dissent-at-the-next-fed-meeting-265",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "2550521fde0462ca472f82df",
+      "end_utc": "2025-12-10T00:00:00Z",
+      "adjudication_rank": "fac172cdbb2488db9dee9424d0bf548043c458632f7e49baf3e6d3e5193bb276"
+    },
+    {
+      "event_id": "15665",
+      "title": "Fed decision in March?",
+      "slug": "fed-decision-in-march",
+      "resolved_family": "FOMC_DECISION",
+      "independence_cluster_id": "c51266ea0c13ae018c897c1c",
+      "end_utc": "2025-03-19T12:00:00Z",
+      "adjudication_rank": "fc1f569f49e4a634fcf3c2f7264edb2cb21fde42c4e892733ecc4036872c414f"
+    }
+  ]
+}

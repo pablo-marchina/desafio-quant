@@ -1,0 +1,26 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_PART",
+  "version": "W2C-ADJ-v1.1",
+  "family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+  "rows": 1,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "11902",
+      "title": "X drops antitrust case in 2024?",
+      "slug": "x-drops-antitrust-case-in-2024",
+      "resolved_family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "independence_cluster_id": "52c1aaa9c115d71e6cb2ed16",
+      "end_utc": "2024-12-31T12:00:00Z",
+      "adjudication_rank": "bb5b06ce950ac221daa2227dcd4e86a668b0611027f9dde0b205016ba72ea3e5"
+    }
+  ]
+}

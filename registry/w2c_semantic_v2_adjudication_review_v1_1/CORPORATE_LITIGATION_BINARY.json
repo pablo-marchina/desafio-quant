@@ -1,0 +1,89 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_PART",
+  "version": "W2C-ADJ-v1.1",
+  "family": "CORPORATE_LITIGATION_BINARY",
+  "rows": 8,
+  "allowed_fields": [
+    "event_id",
+    "title",
+    "slug",
+    "resolved_family",
+    "independence_cluster_id",
+    "end_utc",
+    "adjudication_rank"
+  ],
+  "records": [
+    {
+      "event_id": "79067",
+      "title": "Will MicroStrategy announce bankruptcy before 2027?",
+      "slug": "will-microstrategy-announce-bankruptcy-before-2027",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "c29fb3ac7fbaeccda37c7f0a",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "0465023f66ac1d5470f41362c4d7f9eaec762e9da9d91571690269b2ca175822"
+    },
+    {
+      "event_id": "86448",
+      "title": "Which companies announce bankruptcy before 2027?",
+      "slug": "which-companies-announce-bankruptcy-before-2027",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "359104592ceb5ac86f9f1e88",
+      "end_utc": "2026-12-31T00:00:00Z",
+      "adjudication_rank": "772eafa6863ea9564c0386067b1549d23e4a6d301aaf5d312a4bc142457e00fd"
+    },
+    {
+      "event_id": "903632",
+      "title": "OpenAI settlement with Elon Musk before July?",
+      "slug": "openai-settlement-with-elon-musk-before-july",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "340015b326be6183542b52dc",
+      "end_utc": "2024-06-30T00:00:00Z",
+      "adjudication_rank": "7886710d6b0dc00fa3e02e6be4725c7503f7c094a351096b36e68fb189d0e64a"
+    },
+    {
+      "event_id": "15472",
+      "title": "Will Elon Musk settle lawsuit with OpenAI before 2025?",
+      "slug": "openai-settlement-with-elon-musk-in-2024",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "273736620a63029826b82c98",
+      "end_utc": "2024-12-31T12:00:00Z",
+      "adjudication_rank": "bc869f3412807d3fe49089879644aa0a7850dffe90f236ca46a25547c2e4692f"
+    },
+    {
+      "event_id": "21319",
+      "title": "Baldoni x Lively lawsuit dismissed before July?",
+      "slug": "baldoni-x-lively-lawsuit-dismissed-before-july",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "4df212cc639413bab380bad4",
+      "end_utc": "2025-06-30T12:00:00Z",
+      "adjudication_rank": "c421c4d43c66e7e80610039ce7ebb100a8feacbf5014150dda9b94edbb28781b"
+    },
+    {
+      "event_id": "903794",
+      "title": "Trump $83.3m verdict reduced on appeal?",
+      "slug": "trump-83pt3m-verdict-reduced-on-appeal",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "142512d70d0a2380f218bb83",
+      "end_utc": "2024-12-30T12:00:00Z",
+      "adjudication_rank": "ed124976f6a74711ad9966fdb9255471dff48d8cb0d5eb294eea175a5e8b05d7"
+    },
+    {
+      "event_id": "11002",
+      "title": "Will Trump appeal his hush money conviction?",
+      "slug": "will-trump-appeal-his-hush-money-conviction",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "c4cec09b3f9d48e247e61e28",
+      "end_utc": "2024-11-04T12:00:00Z",
+      "adjudication_rank": "f5843997f24a574300f94ba6238b857d0ecdd72a9489c8392e6e8eb49ac9c926"
+    },
+    {
+      "event_id": "903166",
+      "title": "OpenAI settlement with NYT by March?",
+      "slug": "openai-settlement-with-nyt-by-march",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "independence_cluster_id": "66855891b4d4c92f8ae92421",
+      "end_utc": "2024-03-31T00:00:00Z",
+      "adjudication_rank": "fa355a391f70073cdd941791585ca1b2a275b67aab62708ecb3eb8a29b777204"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "artifact": "W2C_ADJUDICATION_REVIEW_MANIFEST",
+  "version": "W2C-ADJ-v1.1",
+  "input_rows": 335,
+  "families": [
+    {
+      "family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/ANTITRUST_ENFORCEMENT_SINGLE_NAME.json",
+      "rows": 1
+    },
+    {
+      "family": "CORPORATE_LITIGATION_BINARY",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/CORPORATE_LITIGATION_BINARY.json",
+      "rows": 8
+    },
+    {
+      "family": "EARNINGS_EPS",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/EARNINGS_EPS.json",
+      "rows": 100
+    },
+    {
+      "family": "FDA_FINAL_PDUFA_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/FDA_FINAL_PDUFA_DECISION.json",
+      "rows": 63
+    },
+    {
+      "family": "FOMC_DECISION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/FOMC_DECISION.json",
+      "rows": 48
+    },
+    {
+      "family": "MACRO_STATISTICAL_RELEASE",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/MACRO_STATISTICAL_RELEASE.json",
+      "rows": 100
+    },
+    {
+      "family": "MA_PENDING_COMPLETION",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/MA_PENDING_COMPLETION.json",
+      "rows": 3
+    },
+    {
+      "family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "path": "registry/w2c_semantic_v2_adjudication_review_v1_1/MA_PRE_ANNOUNCEMENT_OR_RUMOR.json",
+      "rows": 12
+    }
+  ],
+  "total_rows": 335,
+  "forbidden_fields_emitted": false,
+  "network_accessed": false,
+  "performance_data_read": false
+}
