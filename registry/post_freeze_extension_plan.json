@@ -1,99 +1,42 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v1.5",
+  "version": "PFEP-v1.6",
   "date": "2026-08-12",
-  "status": "W2A_GATE0_BLOCKED_W2C_DISCOVERY_MATERIALIZED",
-  "operational_phase": "W2C_SEMANTIC_VALIDATION_PROTOCOL_PENDING",
+  "status": "W2A_GATE0_BLOCKED_W2C_SEMANTIC_PREREGISTERED",
+  "operational_phase": "W2C_SEMANTIC_SYNTHETIC_VALIDATION_PENDING",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0",
-    "h1": "SUPPORTED_IN_TESTED_SAMPLE",
     "h2": "FAIL_UNDER_FROZEN_EXP07I",
-    "h3": "BLOCKED_BY_H2_FAIL_NO_RESCUE",
-    "h4": "BLOCKED_BY_H2_FAIL",
-    "h5": "BLOCKED_BY_H4",
     "probabilistic_champion": "M2",
     "economic_champion": "C0_NO_TRADE",
     "frozen_bundle_sha256": "c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885",
-    "qa_approved_pdf_sha256": "5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561",
-    "baseline_must_remain_recoverable": true
+    "qa_approved_pdf_sha256": "5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561"
   },
-  "w2_protocol_freeze": {
-    "version": "W2PF-v1.0",
-    "status": "PASS_W2_PROTOCOL_BYTE_FREEZE",
-    "manifest": "registry/w2_protocol_freeze_manifest.json",
-    "freeze_bundle_id_sha256": "e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b",
-    "w2a_git_blob_sha1": "639f900eb876d6e46ecbeb10c1b3b3e6c3621a28",
-    "w2b_git_blob_sha1": "cb9a9638f236c6c61c97f86805de9bf666209b21",
-    "contracts_modified_by_execution": false
-  },
-  "w2a": {
+  "W2A": {
     "status": "BLOCKED_GATE0_PROVENANCE_GAP",
-    "gate0_record": "registry/w2a_gate0_reconciliation.json",
-    "human_record": "docs/42_w2a_gate0_reconciliation.md",
-    "result": "FAIL_GATE0_MISSING_AUTHORITATIVE_ART025_TRADE_LEVEL_LEDGER",
-    "portfolio_metrics_computed": false,
-    "vendor_price_substitution_used": false,
-    "resume_condition": "Recover authoritative original ART-025 row-level materialization with provenance, then rerun Gate0 under unchanged W2PF-v1.0."
+    "gate0": "registry/w2a_gate0_reconciliation.json",
+    "rule": "Remain parked until an authoritative original ART-025 row-level ledger is recovered. No reconstruction from a new price vendor is authorized."
   },
-  "w2c": {
-    "status": "DISCOVERY_MATERIALIZED_MANUAL_SEMANTIC_VALIDATION_PENDING",
-    "active_discovery_protocol": "W2C-DISC-v2.0",
-    "discovery_freeze": "W2C-DF-v2.0",
-    "materialization": "registry/w2c_discovery_materialization_v2_0.json",
-    "evidence_workflow_run_id": 31610392101,
-    "evidence_branch_commit": "0d4686d187f149672d1fd56022baa8e71fef7757",
-    "promoted_main_commit": "b53e6cbc04026a64dbb807cb80ee26eb7ae7cb80",
-    "candidate_rows": 4364,
-    "unique_events_seen_all_channels": 13491,
-    "pagination_routes": 154,
-    "truncated_routes": 4,
-    "count_semantics": "RAW_UNVALIDATED_LOWER_BOUND_DISCOVERY_CANDIDATES",
-    "ias_scores_computed": false,
-    "feasibility_gates_scored": false,
-    "w3_family_selected": false
-  },
-  "authorized_now": {
-    "W2A": "NO_FUNDED_PORTFOLIO_OUTPUT_UNTIL_GATE0_PROVENANCE_GAP_IS_RESOLVED",
-    "W2C": "DRAFT_AND_FREEZE_OUTCOME_BLIND_SEMANTIC_VALIDATION_PROTOCOL; THEN VALIDATE_DISCOVERY_QUEUE",
-    "IAS_REAL_SCORING": "BLOCKED_UNTIL_SEMANTIC_VALIDATION_AND_REQUIRED_PIT_EVIDENCE_MATERIALIZATION_ARE_COMPLETE",
-    "F1_F9": "BLOCKED_UNTIL_VALIDATED_INDEPENDENT_EVENT_EVIDENCE_EXISTS",
-    "W3": "NOT_AUTHORIZED_FOR_EXECUTION; NO_FAMILY_SELECTION_FROM_RAW_DISCOVERY_COUNTS"
-  },
-  "immutability": {
-    "rule": "Any byte change to W2PF-v1.0 contracts invalidates that freeze for affected work. W2C discovery v2.0 output is a fixed evidence snapshot; do not replace it because another snapshot has more favorable counts.",
-    "w2c_lineage": [
-      "W2C-DISC-v1.0 failed before family output at 400-page archive bound",
-      "W2C-DISC-v1.1 failed before family output at 2000-page archive bound",
-      "W2C-DISC-v2.0 was frozen before family output and uses bounded lower-bound discovery with truncation telemetry",
-      "run 31610392101 is the persisted authoritative W2C-DISC-v2.0 discovery snapshot"
-    ]
+  "W2C": {
+    "discovery": "PASS_PERFORMANCE_BLIND_DISCOVERY_MATERIALIZED_MANUAL_VALIDATION_PENDING",
+    "discovery_materialization": "registry/w2c_discovery_materialization_v2_0.json",
+    "semantic_protocol": "registry/w2c_semantic_validation_protocol_v1_0.json",
+    "semantic_protocol_version": "W2C-SV-v1.0",
+    "semantic_status": "PREREGISTERED_BEFORE_REAL_SEMANTIC_RESULTS",
+    "semantic_synthetic_validator": "scripts/w2c_semantic_validation_synthetic.py",
+    "semantic_real_execution_authorized": false,
+    "pit_feasibility": "BLOCKED_PENDING_SEMANTIC_VALIDATION",
+    "f1_f9": "BLOCKED_PENDING_PIT_EVIDENCE",
+    "ias": "BLOCKED_PENDING_F1_F9_EVIDENCE_MATERIALIZATION",
+    "ranking": "BLOCKED_PENDING_IAS",
+    "w3_go_no_go": "BLOCKED_PENDING_RANKING_AND_ALL_F1_F9"
   },
   "global_prohibitions": [
-    "No post-hoc rescue of FAIL_UNDER_FROZEN_EXP07I.",
-    "No W2A vendor reconstruction presented as exact ART-025 provenance.",
-    "No funded NAV/Sharpe/MDD/turnover before Gate0 passes.",
-    "No family selection or IAS scoring using ARGOS PnL, Brier, log loss, H2 incremental results, or realized linked-asset returns.",
-    "No IAS or F1-F9 inference from raw discovery candidate counts.",
-    "No editing the frozen W2 contract bytes and merely updating expected hashes.",
-    "No W3 execution directly from W2 discovery or eventual W2 GO."
+    "No W2-A funded metrics before Gate0 passes under unchanged W2PF-v1.0.",
+    "No semantic sampling based on PnL, Brier, log loss, realized linked-asset returns, IAS scores, or feasibility outcomes.",
+    "No IAS/F1-F9 scoring before semantic and PIT evidence are materialized under frozen protocols.",
+    "No W3 execution directly from W2; W2 GO may authorize only W3 protocol drafting."
   ],
-  "sequence": [
-    "BASELINE_AND_ROADMAP_SYNC_COMPLETED",
-    "W2A_W2B_METHOD_RESEARCH_COMPLETED",
-    "W2A_W2B_PROTOCOL_DRAFTING_COMPLETED",
-    "W2_SYNTHETIC_ADVERSARIAL_VALIDATION_COMPLETED_38_OF_38",
-    "W2_PROTOCOL_BYTE_FREEZE_VALIDATED",
-    "W2A_GATE0_EXECUTED_FAIL_CLOSED_PROVENANCE_GAP",
-    "W2C_PERFORMANCE_BLIND_DISCOVERY_V2_MATERIALIZED",
-    "FREEZE_W2C_SEMANTIC_VALIDATION_PROTOCOL_NEXT",
-    "VALIDATE_W2C_CANDIDATE_SEMANTICS_OUTCOME_BLIND",
-    "MATERIALIZE_REQUIRED_PIT_FEASIBILITY_AND_IAS_EVIDENCE",
-    "SCORE_REAL_IAS_AND_F1_F9_UNDER_FROZEN_W2B",
-    "GO_NO_GO_W3_PROTOCOL_DRAFT",
-    "IF_GO_DRAFT_AND_FREEZE_W3_WITH_PROSPECTIVE_ADEQUACY",
-    "IF_GO_EXECUTE_W3",
-    "FINAL_REPORT_REASSESSMENT_AND_REQA_IF_CHANGED"
-  ],
-  "next_action": "Freeze an outcome-blind semantic-validation protocol for the W2C v2.0 discovery queue. In parallel, search only for provenance-preserving recovery of the original ART-025 row-level materialization; do not reconstruct it from a new vendor."
+  "next_action": "Run synthetic adversarial validation of W2C-SV-v1.0. If and only if it passes, byte-freeze protocol+runner, then execute real semantic validation on the already materialized 4,364-candidate snapshot."
 }
