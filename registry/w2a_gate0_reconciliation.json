@@ -1,0 +1,46 @@
+{
+  "artifact": "W2A_GATE0_RECONCILIATION",
+  "version": "W2A-G0-v1.0",
+  "date": "2026-08-12",
+  "status": "FAIL_GATE0_MISSING_AUTHORITATIVE_ART025_TRADE_LEVEL_LEDGER",
+  "parent_freeze": "W2PF-v1.0",
+  "w2a_frozen_git_blob_sha1": "639f900eb876d6e46ecbeb10c1b3b3e6c3621a28",
+  "science_reopened": false,
+  "portfolio_metrics_computed": false,
+  "vendor_price_substitution_used": false,
+  "reason": "The frozen W2A contract requires exact row-level ART-025 trade identities, endpoint prices and legacy returns. The authoritative ART-025 workbook preserves aggregate results/protocol/audit tabs but no trade-level ledger; no separate authoritative ART-025 ledger was found in Drive or repository history.",
+  "checks": {
+    "ART025_workbook_found": true,
+    "ART025_drive_id": "16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA",
+    "ART025_tabs": ["00_Resumo", "01_Gates", "02_Primary_Comparison", "03_All_Metrics", "04_R1_Sensitivities", "05_R1_vs_B1", "06_Auditoria", "07_Protocolo"],
+    "ART025_trade_level_tab_found": false,
+    "ART025_drive_revision_count": 1,
+    "ART025_historical_revision_with_trade_ledger_found": false,
+    "ART024_protocol_found": true,
+    "ART024_drive_id": "1ztvcEdAO4GVL2Oq_BWS0JprzJgn-tHJKsBU8yQmfuLg",
+    "ART023_trade_ledger_found": true,
+    "ART023_drive_id": "1fNcVAW7OgqGrpAg_p9gbIoM6Y1fHgnuAIEvF80jvr6I",
+    "ART023_usable_as_ART025_ledger": false,
+    "ART023_rejection_reason": "ART-023 is the earlier EXP-06 trade ledger with different pre-event entry/exit semantics; using it as ART-025 would violate exact Gate0 provenance.",
+    "repository_current_ART025_trade_ledger_found": false,
+    "repository_history_ART025_trade_ledger_found": false
+  },
+  "aggregate_consistency_evidence": {
+    "eligible_opportunities": 108,
+    "executed_trades": 34,
+    "longs": 21,
+    "shorts": 13,
+    "historical_decision": "COMPLETED_NO_R1_PROMOTION",
+    "economic_champion": "C0_NO_TRADE"
+  },
+  "missing_required_row_level_fields": [
+    "trade_id", "event_key", "sign", "entry_session", "exit_session",
+    "asset_entry_adjusted_open", "asset_adjusted_close_by_session",
+    "spy_entry_adjusted_open", "spy_adjusted_close_by_session",
+    "legacy_gross_return", "legacy_net_return", "legacy_market_adjusted_net_return",
+    "price_source_snapshot_id_or_hash"
+  ],
+  "gate0_policy": "Fail closed. Do not reconstruct endpoints from a new vendor, infer trade rows from aggregate metrics, or substitute ART-023 rows.",
+  "authorized_next_action": "Recover an authoritative original ART-025 row-level materialization (local file/notebook/export/source snapshot) with provenance. If recovered, rerun Gate0 under unchanged W2PF-v1.0. Until then, funded NAV/Sharpe/MDD/turnover are not reportable.",
+  "historical_truth_boundary": "No change to H2 FAIL, M2, C0_NO_TRADE, FST-v1.0 or SF-v3.0."
+}
