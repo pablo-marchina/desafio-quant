@@ -1,0 +1,49 @@
+{
+  "artifact": "W3_GO_NO_GO_CONTRACT",
+  "version": "W3-GATE-v1.0",
+  "date": "2026-08-12",
+  "status": "PREREGISTERED_PRE_COMBINATION_EXECUTION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "inherits": {
+    "ias_protocol_bundle_sha256": "a008d1bcf45c200708f97d8ea7089a15a773a1a3590dc112633760ac3c13b0dd",
+    "ias_result_blob": "360521ba7a2973ea1685a50c55ad5636abc631ba",
+    "pit_f1_f9_blob": "1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa"
+  },
+  "go_rule": "A family is W3_GO_CANDIDATE iff IAS robust_high is true AND PIT feasibility is established under the frozen PIT-v2.1 protocol AND every F1-F9 gate is PASS.",
+  "non_go_rules": {
+    "pit_tested_any_nonpass": "NO_GO_CURRENT_PROTOCOL",
+    "pit_not_tested_for_exact_family": "FEASIBILITY_NOT_ESTABLISHED",
+    "ias_not_robust_high": "STRUCTURAL_HIGH_IAS_NOT_ESTABLISHED",
+    "ecg_D_or_evidence_gate_false": "STRUCTURAL_EVIDENCE_INCOMPLETE"
+  },
+  "pit_exact_family_mapping": {
+    "EARNINGS_EPS": "EARNINGS_EPS",
+    "FDA_FINAL_PDUFA_DECISION": "FDA_FINAL_PDUFA_DECISION",
+    "MACRO_STATISTICAL_RELEASE": "MACRO_STATISTICAL_RELEASE"
+  },
+  "pit_not_established_exact_families": [
+    "FDA_ADVISORY_COMMITTEE",
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+    "MA_PENDING_COMPLETION",
+    "MA_REGULATORY_CLEARANCE",
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+    "FOMC_DECISION",
+    "CORPORATE_LITIGATION_BINARY"
+  ],
+  "no_cross_family_imputation": true,
+  "no_euas_imputation": true,
+  "no_nearest_family_proxy": true,
+  "w3_execution_rule": "Even a W3_GO_CANDIDATE would authorize only separate W3 protocol drafting and byte-freeze, never immediate W3 execution.",
+  "global_decision": {
+    "GO": "At least one exact family satisfies go_rule.",
+    "NO_GO": "No exact family satisfies go_rule.",
+    "no_go_label": "NO_GO_NO_W3_PROTOCOL_CANDIDATE"
+  },
+  "interpretation_limits": [
+    "NO_GO is a current evidence and reproducibility decision, not proof that information asymmetry is absent.",
+    "FEASIBILITY_NOT_ESTABLISHED is not FAIL and does not lower IAS.",
+    "NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER does not prevent reporting robust-high families; it only blocks a singular strongest-family claim.",
+    "No W3 backtest or strategy execution occurs under this contract."
+  ]
+}
