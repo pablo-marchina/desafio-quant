@@ -1,0 +1,118 @@
+{
+  "artifact": "W2C_PIT_PLATFORM_EVIDENCE_RUN",
+  "version": "W2C-PIT-A-RUN-v1.0",
+  "protocol_version": "W2C-PIT-A-v1.0",
+  "performance_blind": true,
+  "science_reopened": false,
+  "input_rows": 509,
+  "output_rows": 509,
+  "family_summary": {
+    "": {
+      "selected_events": 2,
+      "gamma_coverage_count": 2,
+      "platform_history_observed_count": 1,
+      "trade_observed_count": 1,
+      "price_history_observed_count": 1,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.5
+    },
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "selected_events": 11,
+      "gamma_coverage_count": 11,
+      "platform_history_observed_count": 11,
+      "trade_observed_count": 11,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 1.0
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "selected_events": 80,
+      "gamma_coverage_count": 80,
+      "platform_history_observed_count": 77,
+      "trade_observed_count": 77,
+      "trade_history_truncated_count": 6,
+      "price_history_observed_count": 11,
+      "network_unresolved_count": 1,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.9625
+    },
+    "EARNINGS_EPS": {
+      "selected_events": 80,
+      "gamma_coverage_count": 80,
+      "platform_history_observed_count": 80,
+      "trade_observed_count": 80,
+      "trade_history_truncated_count": 1,
+      "price_history_observed_count": 13,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 1.0
+    },
+    "FDA_ADVISORY_COMMITTEE": {
+      "selected_events": 66,
+      "gamma_coverage_count": 66,
+      "platform_history_observed_count": 62,
+      "trade_observed_count": 62,
+      "price_history_observed_count": 9,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.9393939393939394
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "selected_events": 5,
+      "gamma_coverage_count": 5,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.0
+    },
+    "FOMC_DECISION": {
+      "selected_events": 66,
+      "gamma_coverage_count": 66,
+      "platform_history_observed_count": 65,
+      "trade_observed_count": 65,
+      "trade_history_truncated_count": 22,
+      "price_history_observed_count": 10,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.9848484848484849
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "selected_events": 80,
+      "gamma_coverage_count": 80,
+      "platform_history_observed_count": 70,
+      "trade_observed_count": 69,
+      "trade_history_truncated_count": 1,
+      "price_history_observed_count": 5,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.875
+    },
+    "MA_PENDING_COMPLETION": {
+      "selected_events": 80,
+      "gamma_coverage_count": 80,
+      "platform_history_observed_count": 78,
+      "trade_observed_count": 77,
+      "trade_history_truncated_count": 27,
+      "price_history_observed_count": 29,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.975
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "selected_events": 23,
+      "gamma_coverage_count": 23,
+      "platform_history_observed_count": 21,
+      "trade_observed_count": 19,
+      "price_history_observed_count": 5,
+      "trade_history_truncated_count": 1,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 0.9130434782608695
+    },
+    "MA_REGULATORY_CLEARANCE": {
+      "selected_events": 16,
+      "gamma_coverage_count": 16,
+      "platform_history_observed_count": 16,
+      "trade_observed_count": 16,
+      "price_history_observed_count": 3,
+      "gamma_coverage_rate": 1.0,
+      "platform_history_observed_rate": 1.0
+    }
+  },
+  "f1_f9_scored": false,
+  "ias_computed": false,
+  "linked_asset_realized_returns_read": false,
+  "w3_family_selected": false,
+  "interpretation": "PIT-A is public Polymarket historical-observability evidence only. Official revelation/resolution/mapping evidence remains blocked pending PIT-B freeze."
+}
