@@ -1,0 +1,20 @@
+{
+  "artifact": "W2C_DISCOVERY_EXECUTION_FAILURE",
+  "protocol_version": "W2C-DISC-v1.1",
+  "run_id": 31607510963,
+  "date": "2026-08-12",
+  "status": "FAIL_BEFORE_FAMILY_OUTPUT_KEYSET_PAGE_BOUND",
+  "failure_stage": "FULL_CLOSED_EVENT_KEYSET_CRAWL",
+  "configured_keyset_limit": 500,
+  "configured_keyset_max_pages": 2000,
+  "minimum_paginated_records_implied": 1000000,
+  "family_counts_opened": false,
+  "ias_scores_computed": false,
+  "feasibility_gates_scored": false,
+  "argos_performance_read": false,
+  "science_reopened": false,
+  "error": "RuntimeError: keyset exceeded max_pages=2000",
+  "methodological_conclusion": "Archive exhaustion is not a defensible requirement for lower-bound discovery. A bounded crawl can add candidates but cannot establish completeness or absence.",
+  "authorized_remediation": "Create W2C-DISC-v2.0 that makes keyset channels bounded lower-bound discovery with explicit truncation telemetry; preserve the ten-family taxonomy, query dictionary, classifier and performance firewall.",
+  "prohibited_remediation": "Do not change family terms or remove families based on counts; no family results existed in v1.0 or v1.1."
+}
