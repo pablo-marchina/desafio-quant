@@ -1,0 +1,30 @@
+name: W2C PIT v2 Protocol Synthetic Validation
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_protocol_v2_0.json'
+      - 'scripts/w2c_pit_v2_synthetic_validation.py'
+      - 'scripts/w2c_pit_v2_population_validate.py'
+      - '.github/workflows/w2c_pit_v2_protocol_synthetic.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen candidate population identity and cardinality
+        run: python scripts/w2c_pit_v2_population_validate.py
+      - name: Run PIT-v2 synthetic and adversarial validation
+        run: python scripts/w2c_pit_v2_synthetic_validation.py
+      - name: Assert no real PIT-v2 evidence was materialized
+        run: |
+          test ! -e registry/w2c_pit_v2_events.csv.gz
+          test ! -e registry/w2c_pit_v2_family_gates.json
+          test ! -e registry/w2c_ias_scores.csv
