@@ -2,14 +2,16 @@
   "artifact":"W2C_SEMANTIC_V2_BYTE_FREEZE",
   "version":"W2C-SVF-v2.0",
   "date":"2026-08-12",
-  "status":"PENDING_CI_BYTE_VALIDATION",
+  "status":"PASS_W2C_SEMANTIC_V2_BYTE_FREEZE",
   "parent_freeze":"W2PF-v1.0",
   "supersedes_invalidated_freeze":"W2C-SVF-v1.0",
   "source_commit":"e6b0d7c1f197e41f471aebd9a155b6f88270cdd2",
+  "freeze_commit":"a6703dad694e98e5dfa477708bba794dec787487",
   "performance_blind":true,
   "science_reopened":false,
   "real_v2_candidate_results_seen_before_freeze":false,
   "synthetic_validation":{"workflow_run_id":31623395976,"job_id":94203553384,"status":"PASS_56_OF_56","real_candidate_data_read":false,"performance_data_read":false,"f1_f9_read":false,"ias_read":false},
+  "freeze_validation":{"workflow_run_id":31623558138,"job_id":94204111699,"conclusion":"success","repository_hygiene_run_id":31623558134,"repository_hygiene_conclusion":"success"},
   "frozen_blobs":[
     {"role":"base_protocol","path":"registry/w2c_semantic_validation_protocol_v2_0.json","git_blob_sha1":"3e37686e3099124ece5706b96dd36d13b98a0f41"},
     {"role":"pre_real_precision_amendment","path":"registry/w2c_semantic_v2_precision_amendment.json","git_blob_sha1":"f6cb2b776d80a101d7a976b8e764638761b58b94"},
@@ -21,5 +23,5 @@
   "freeze_bundle_id_sha256":"1f08979250aeb3dfc3274f622c6cbcaeeb647f16d0fcefe99c0a65ee7e615c3f",
   "freeze_bundle_formula":"SHA256('W2C-SVF-v2.0|<base_protocol>|<amendment>|<base_runner>|<strict_runner>|<synthetic>|<input_blob>')",
   "immutability_rule":"Any byte change to a frozen semantic component invalidates W2C-SVF-v2.0 and requires new protocol version + complete synthetic validation before any new real candidate execution.",
-  "authorized_after_ci_pass":"Run the authoritative strict runner once on exactly the frozen original 4,364-row discovery snapshot. Outputs remain provisional until separately frozen outcome-blind adjudication; no F1-F9/PIT/IAS/ranking/W3 is authorized."
+  "authorized_now":"Run the authoritative strict runner once on exactly the frozen original 4,364-row discovery snapshot. Outputs remain provisional until separately frozen outcome-blind adjudication; no F1-F9/PIT/IAS/ranking/W3 is authorized."
 }
