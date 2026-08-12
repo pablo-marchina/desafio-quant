@@ -1,0 +1,36 @@
+name: W2C PIT v2.1 Byte Freeze
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_v2_1_freeze_manifest.json'
+      - 'registry/w2c_pit_protocol_v2_1.json'
+      - 'registry/w2c_pit_v2_0_supersession.json'
+      - 'registry/w2c_pit_v2_1_gate_contract.json'
+      - 'registry/w2c_pit_v2_layer_a_evidence_freeze.json'
+      - 'registry/w2c_pit_v2_platform_events.csv.gz'
+      - 'registry/w2c_pit_v2_platform_request_manifest.jsonl.gz'
+      - 'registry/w2c_pit_v2_platform_summary.json'
+      - 'registry/w2c_semantic_v2_accepted_clusters_v1_1.csv'
+      - 'scripts/w2c_pit_v2_population_validate.py'
+      - 'scripts/w2c_pit_v2_1_route_population.py'
+      - 'scripts/w2c_pit_v2_1_primary_asset_collect.py'
+      - 'scripts/w2c_pit_v2_1_build_combined.py'
+      - 'scripts/w2c_pit_v2_1_gate_score.py'
+      - 'scripts/w2c_pit_v2_1_synthetic_validation.py'
+      - 'scripts/w2c_pit_v2_1_execution_synthetic.py'
+      - 'scripts/w2c_pit_v2_1_freeze_validate.py'
+      - '.github/workflows/w2c_pit_v2_1_execution_synthetic.yml'
+      - '.github/workflows/w2c_pit_v2_1_freeze.yml'
+  workflow_dispatch:
+jobs:
+  validate-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recalculate byte freeze and adversarial gates
+        run: python scripts/w2c_pit_v2_1_freeze_validate.py

@@ -1,0 +1,58 @@
+{
+  "artifact": "W2C_PIT_V2_1_BYTE_FREEZE_MANIFEST",
+  "version": "W2C-PIT-FREEZE-v2.1",
+  "date": "2026-08-12",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_CI_VALIDATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "frozen_asof_utc": "2026-08-12T20:00:00Z",
+  "population_total": 260,
+  "population_counts": {
+    "EARNINGS_EPS": 100,
+    "FDA_FINAL_PDUFA_DECISION": 63,
+    "MACRO_STATISTICAL_RELEASE": 97
+  },
+  "right_censored_counts": {
+    "EARNINGS_EPS": 0,
+    "FDA_FINAL_PDUFA_DECISION": 3,
+    "MACRO_STATISTICAL_RELEASE": 9
+  },
+  "layer_a_evidence_bundle_sha256": "faf7499294e2864bc47081fb8b375c33a83af07f8ac27c01dd756ac239c2e759",
+  "digest_algorithm": "sha256(sorted(path + TAB + git_blob_sha1 + LF))",
+  "bundle_sha256": "741ab5985bbf34c454cc8050bbecb001123ecf3110ba1bb5e9f5cab079da4a68",
+  "objects": {
+    ".github/workflows/w2c_pit_v2_1_execution_synthetic.yml": "0f561e120a24d2bfa72cd4cdc427820f4a93abaf",
+    "registry/w2c_pit_protocol_v2_1.json": "6271f9651a5c059b6af7985ffbd56279c8214a29",
+    "registry/w2c_pit_v2_0_supersession.json": "8c5ef46b09a4b6b71bf4b8c15fb2b07574dcc5d1",
+    "registry/w2c_pit_v2_1_gate_contract.json": "c77bea3e0f5704f91f0cf792f446019372715962",
+    "registry/w2c_pit_v2_layer_a_evidence_freeze.json": "4bf57efdc75e331f53ae90584342e70ea45b865d",
+    "registry/w2c_pit_v2_platform_events.csv.gz": "5e062a0c2ba1fe267a111b16b89415f2155a1c27",
+    "registry/w2c_pit_v2_platform_request_manifest.jsonl.gz": "010bbfc5ef69b8920a6e5759a86f22309e015e46",
+    "registry/w2c_pit_v2_platform_summary.json": "339c2ebd568ff19335473eaf489c7b7a50e576a2",
+    "registry/w2c_semantic_v2_accepted_clusters_v1_1.csv": "a71cb2d00872ce36bf59ffcef9dc5575c1185a5b",
+    "scripts/w2c_pit_v2_1_build_combined.py": "f019bbd41867212a7e4a08caaefa73b34339a409",
+    "scripts/w2c_pit_v2_1_execution_synthetic.py": "67e795807d313e7c840462dcd967cee276da0ee9",
+    "scripts/w2c_pit_v2_1_gate_score.py": "4cb6ef2446d7f9dcc683a57f6b611f678710c829",
+    "scripts/w2c_pit_v2_1_primary_asset_collect.py": "4286249d52f523f3cb124d186748bac00b098125",
+    "scripts/w2c_pit_v2_1_route_population.py": "50a310ddce27ab87bd2db66e200b7573909e8ba6",
+    "scripts/w2c_pit_v2_1_synthetic_validation.py": "e2f19ccf2712d6569af52bc99486f14b39db87b1",
+    "scripts/w2c_pit_v2_population_validate.py": "e7b6b0ab1cded37913620ca4882219e45cfda341"
+  },
+  "authorization": {
+    "layer_b_c_network_execution": false,
+    "f1_f9_real_execution": false,
+    "ias_real_scoring": false,
+    "smaa_ranking": false,
+    "w3_protocol_drafting": false,
+    "w3_execution": false
+  },
+  "freeze_semantics": [
+    "No object listed in objects may change after this manifest validates without an explicit versioned supersession.",
+    "Layer A is reused byte-identically; no alternate endpoint, recollection or coverage rescue is allowed.",
+    "Network/rate failures remain UNRESOLVED and are not evidence of absence.",
+    "RIGHT_CENSORED_ASOF remains in the master population and is not failure.",
+    "No F1-F9 result is computed until Layer B/C outputs and the combined evidence table are separately frozen.",
+    "No IAS/SMAA result is computed until F1-F9 results are frozen.",
+    "No W3 execution occurs without a separate W3 preregistration and byte freeze."
+  ]
+}
