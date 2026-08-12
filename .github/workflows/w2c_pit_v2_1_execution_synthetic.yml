@@ -1,0 +1,43 @@
+name: W2C PIT v2.1 Execution Synthetic
+on:
+  push:
+    paths:
+      - 'scripts/w2c_pit_v2_1_primary_asset_collect.py'
+      - 'scripts/w2c_pit_v2_1_build_combined.py'
+      - 'scripts/w2c_pit_v2_1_execution_synthetic.py'
+      - 'scripts/w2c_pit_v2_1_gate_score.py'
+      - 'scripts/w2c_pit_v2_1_route_population.py'
+      - 'registry/w2c_pit_protocol_v2_1.json'
+      - 'registry/w2c_pit_v2_1_gate_contract.json'
+      - '.github/workflows/w2c_pit_v2_1_execution_synthetic.yml'
+  workflow_dispatch:
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate exact frozen population and Layer A blobs
+        run: |
+          python scripts/w2c_pit_v2_population_validate.py
+          python - <<'PY'
+          import json,subprocess
+          p=json.load(open('registry/w2c_pit_protocol_v2_1.json'))
+          for path,key in [
+            ('registry/w2c_pit_v2_platform_events.csv.gz','events_blob'),
+            ('registry/w2c_pit_v2_platform_request_manifest.jsonl.gz','request_manifest_blob'),
+            ('registry/w2c_pit_v2_platform_summary.json','summary_blob')]:
+              got=subprocess.check_output(['git','rev-parse',f'HEAD:{path}'],text=True).strip()
+              assert got==p['layer_A_reuse'][key],(path,got,p['layer_A_reuse'][key])
+          print('PASS exact Layer A reuse')
+          PY
+      - name: Validate v2.1 protocol/scorer adversarial suite
+        run: python scripts/w2c_pit_v2_1_synthetic_validation.py
+      - name: Validate Layer B/C and combined builder without network
+        run: python scripts/w2c_pit_v2_1_execution_synthetic.py
+      - name: Repository hygiene and frozen submission integrity
+        run: python scripts/repository_hygiene_validate.py
