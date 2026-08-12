@@ -1,7 +1,7 @@
 # ARGOS — Roadmap de extensão pós-freeze
 
-**Status:** `PLANNING_ONLY_NOT_PREREGISTERED`  
-**Data:** 2026-08-11  
+**Status:** `METHOD_RESEARCH_COMPLETE_PROTOCOLS_NOT_FROZEN`  
+**Data:** 2026-08-12  
 **Autoridade científica preservada:** `FST-v1.0 / SF-v3.0 / ART-029 / ART-030`  
 **Science reopened:** `false`
 
@@ -26,161 +26,168 @@ A extensão começa a partir destes fatos, que não podem ser reclassificados po
 - earnings/EPS é o laboratório demonstrado de maior score conjunto no EUAS-v1.1 (72), não necessariamente a família de maior assimetria pura;
 - o PDF QA-approved é checkpoint seguro e não deve ser alterado durante a pesquisa exploratória.
 
-## 3. W2-A — Portfolio Backtest Integrity Upgrade
+## 3. Pesquisa metodológica pré-freeze — concluída
+
+A fase de pesquisa metodológica de W2-A/W2-B foi concluída sem calcular novo P&L de portfólio e sem atribuir scores IAS a famílias reais.
+
+Artefatos:
+
+- `docs/36_w2a_portfolio_backtest_methodology_research.md`;
+- `docs/37_w2b_ias_methodology_research.md`;
+- `registry/post_freeze_methodology_research_v1.json`.
+
+Estado: `RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING`.
+
+Isso **não** é um protocolo congelado. O próximo estágio é transformar as recomendações em protocolos completos, submetê-los a revisão adversarial e validá-los com casos sintéticos antes de qualquer nova execução/scoring real.
+
+## 4. W2-A — Portfolio Backtest Integrity Upgrade
 
 ### Pergunta
 
 Como as **mesmas regras econômicas já congeladas** se comportam quando posições simultâneas, capital ocupado e NAV são contabilizados explicitamente?
 
-### Fronteira
+### Conclusão da pesquisa
 
-Antes da execução, um protocolo próprio deve congelar:
+A abordagem recomendada é uma **reconstrução de contabilidade financiada**, não um otimizador de portfólio.
 
-- população econômica reutilizada;
-- sinais/direções já existentes;
-- entry/exit já existentes;
-- custos primários já existentes (20 bps long / 35 bps short);
-- regra mecânica de capital-base e sizing;
-- tratamento de posições sobrepostas;
-- calendário de mark-to-market;
-- benchmark;
-- métricas e sensibilidades autorizadas.
+O protocolo a ser congelado deve preservar o R1 primário:
 
-### Proibido
+- 108 oportunidades;
+- 34 trades;
+- 21 long / 13 short;
+- T−1;
+- 10 sessões;
+- equal event notional;
+- 20 bps long / 35 bps short;
+- entradas/saídas e direções congeladas.
 
-- mudar threshold, horizonte, direção ou modelo porque o resultado ficou ruim;
-- escolher sizing depois de olhar Sharpe/MDD;
-- selecionar somente eventos/trades vencedores;
-- usar uma nova equity curve para reclassificar H2;
-- apresentar `max_additive_drawdown_opportunity` antigo como max drawdown de portfólio.
+Candidato principal de contabilidade:
 
-### Outputs esperados
+- uma unidade de notional por trade antes da normalização;
+- capital histórico normalizado pelo pico de notional absoluto simultâneo, apenas como **accounting normalization**;
+- short proceeds não reutilizados para leverage;
+- 100% do notional short reservado como colateral contábil;
+- cash idle = 0%;
+- MTM diário com adjusted closes e nenhuma interpolação;
+- matched-SPY pseudo-book com o mesmo calendário/sinais/notional;
+- primeiro gate = reconciliação exata de P&L trade a trade com ART-025.
 
-- ledger diário de posições;
-- cash / gross / net exposure;
-- daily NAV;
-- turnover;
-- capital utilization;
-- retorno acumulado/CAGR quando semanticamente aplicável;
-- volatilidade, Sharpe, Sortino;
-- max drawdown financeiro;
-- benchmark-relative metrics;
-- sensitivity previamente congelada de custos/capital, se autorizada pelo protocolo.
+Sharpe/Sortino/MDD só passam a existir legitimamente depois de existir a NAV financiada. Sharpe naïve anualizado por `sqrt(252)` não é recomendado sob dependência serial causada por posições sobrepostas.
 
-### Gate de saída
+Detalhes e referências: `docs/36_w2a_portfolio_backtest_methodology_research.md`.
 
-`PASS_PORTFOLIO_ACCOUNTING_REPRODUCIBLE` significa somente que o backtest financiado é reproduzível e semanticamente correto; **não significa que a estratégia é boa**.
-
-## 4. W2-B — Information-Asymmetry Score (IAS)
+## 5. W2-B — Information-Asymmetry Score (IAS)
 
 ### Motivo
 
-O EUAS-v1.1 é um score conjunto de laboratório. Ele incorpora assimetria, timing, asset sensitivity, liquidez, sampleability, resolução, observabilidade e penalidades. Portanto, `EUAS #1` não é equivalente a `maior assimetria informacional`.
+O EUAS-v1.1 é um score conjunto de laboratório. Portanto, `EUAS #1` não equivale a `maior assimetria informacional`.
 
-### Objetivo
+### Conclusão da pesquisa
 
-Criar um instrumento separado que avalie **assimetria informacional estrutural** sem deixar liquidez/sampleability dominarem o conceito.
+IAS deve ser tratado como um **índice formativo de assimetria estrutural**, separado de feasibility.
 
-### Antes de pontuar qualquer família
+Dimensões candidatas, ainda não congeladas:
 
-Devem ser congelados:
+- `PAC` — Privileged Access Concentration;
+- `LSO` — Latent-State Opacity;
+- `SIB` — Specialized Interpretation Barrier;
+- `TAW` — Temporal Asymmetry Window;
+- `PSI` — Public Saturation Inverse.
 
-- definição operacional de assimetria;
-- dimensões e anchors;
-- pesos ou regra de agregação;
-- fontes de evidência aceitas;
-- tratamento de evidência contraditória;
-- missing-data semantics;
-- hard feasibility gates separados do IAS;
-- tie-breakers e sensitivity protocol.
+Elementos como liquidez, sampleability, resolução objetiva, linked-asset sensitivity e contractability ficam fora da magnitude IAS e passam a ser **hard feasibility gates**.
 
-### Dimensões candidatas para pesquisa, ainda não congeladas
+A força da literatura/evidência também não deve adicionar pontos diretamente ao IAS. A recomendação é um `Evidence Confidence Grade` separado, que controla a incerteza do anchor.
 
-- concentração potencial de informação pré-evento;
-- número/tipo de agentes com acesso privilegiado ou especializado;
-- saturação de informação pública;
-- previsibilidade do calendário;
-- discrição/objetividade da resolução;
-- possibilidade de informação escapar antes do anúncio oficial;
-- força da ligação causal evento → ativo;
-- evidência de cross-market lead/lag ou informed trading em literatura primária.
+Para reduzir dependência de pesos arbitrários, a recomendação é combinar:
 
-Esses itens são **hipóteses de design**, não o protocolo final.
+- central index transparente, provavelmente equal-weight se validado sinteticamente;
+- SMAA/global weight uncertainty;
+- incerteza dos anchors derivada do ECG;
+- leave-one-dimension-out;
+- perturbações locais.
 
-## 5. W2-C — Deep Event-Universe Census
+Detalhes e referências: `docs/37_w2b_ias_methodology_research.md`.
 
-### Prioridade de descoberta
+## 6. Taxonomia granular candidata para IAS/W2-C
 
-1. `MA_DEAL_COMPLETION_REGULATORY_CLEARANCE`;
-2. `FDA_APPROVAL_ADVISORY`;
-3. `MA_ANNOUNCEMENT_RUMOR`;
-4. `ANTITRUST_REGULATORY`;
-5. `EARNINGS_EPS` como controle/benchmark de laboratório;
-6. `MACRO_FED_CPI` como contraste de alta liquidez e alta saturação pública;
-7. litigation/legal apenas quando houver ligação financeira material clara.
+A pesquisa mostrou que algumas famílias do EUAS são largas demais para o mecanismo de assimetria. Candidatos, ainda não congelados:
 
-### M&A completion — expansão semântica obrigatória
+1. `EARNINGS_EPS`;
+2. `FDA_ADVISORY_COMMITTEE`;
+3. `FDA_FINAL_PDUFA_DECISION`;
+4. `MA_PRE_ANNOUNCEMENT_OR_RUMOR`;
+5. `MA_PENDING_COMPLETION`;
+6. `MA_REGULATORY_CLEARANCE`;
+7. `ANTITRUST_ENFORCEMENT_SINGLE_NAME`;
+8. `FOMC_DECISION`;
+9. `MACRO_STATISTICAL_RELEASE`;
+10. `CORPORATE_LITIGATION_BINARY`.
 
-O censo não pode depender apenas de palavras “merger/acquisition”. Deve cobrir, de forma pré-definida e performance-blind, classes como:
+Motivos centrais:
 
-- regulatory approval / clearance;
-- FTC / DOJ / EC / CMA e reguladores setoriais;
-- shareholder vote;
-- tender offer;
-- financing condition;
-- court injunction / deal litigation com impacto no closing;
-- closing deadline / outside date;
-- material adverse effect quando objetivamente contratável;
-- completion/termination.
+- FDA advisory e decisão final podem ter janelas informacionais diferentes;
+- M&A anúncio e pending completion têm mecanismos diferentes;
+- FOMC e releases estatísticos não devem compartilhar automaticamente um score IAS.
 
-### Regras
+## 7. W2-C — Deep Event-Universe Census
 
-- nenhum outcome/retorno/P&L do ARGOS entra na descoberta;
-- busca com baixa cobertura não pode ser interpretada automaticamente como ausência da família;
-- raw discovery, semantic validation e manual review são camadas distintas;
-- contagem só pode promover gates quando a semântica estiver validada;
-- toda família precisa de provenance e limitações explícitas.
+O censo só começa depois do freeze do protocolo IAS/discovery.
 
-## 6. W3 — Novo experimento preregistrado
+Canais oficiais Polymarket candidatos a integrar a descoberta performance-blind:
+
+- series/recurrence;
+- tags + related tags;
+- public-search com dicionário congelado;
+- title/slug queries congeladas;
+- keyset crawl bounded/fail-closed;
+- regras semânticas específicas por família;
+- validação manual.
+
+Cada evento deve registrar todos os canais pelos quais foi descoberto. Baixa descoberta continua significando `FEASIBILITY_NOT_ESTABLISHED`, nunca `ASYMMETRY_LOW` automaticamente.
+
+## 8. W3 — Novo experimento preregistrado
 
 Um novo teste só é autorizado se W2-B/W2-C produzirem uma família que satisfaça simultaneamente:
 
-- assimetria informacional suficientemente forte sob o protocolo IAS congelado;
+- assimetria estrutural suficientemente forte sob protocolo já congelado;
+- evidência/confiança mínima já congelada;
 - contractability/observabilidade suficiente;
 - sampleability suficiente;
 - linked-asset mapping defensável;
 - PIT data contract viável;
 - resolução objetiva suficiente;
-- ausência de dependência obrigatória não reproduzível.
+- ausência de dependência obrigatória não reproduzível;
+- robustez do ranking/GO sob regras definidas **antes** de scores reais.
 
-Se houver GO, o próximo experimento deve receber um novo identificador de hipótese/trial. **Não será H2 reaberto.**
+Se houver GO, o próximo experimento terá novo identificador. **Não será H2 reaberto.**
 
-Antes de abrir outcomes/performance, devem ser congelados população, cutoffs, feature architecture, modelos, benchmarks, custos, métricas, inference, stop rules e regras de promoção.
+## 9. Sequência operacional atualizada
 
-## 7. Sequência operacional
+1. baseline e roadmap — **concluído**;
+2. pesquisa metodológica W2-A/W2-B — **concluída**;
+3. draft do protocolo W2-A;
+4. revisão adversarial e testes sintéticos W2-A;
+5. draft do protocolo IAS + discovery W2-C;
+6. revisão adversarial e testes sintéticos IAS;
+7. freeze W2-A;
+8. freeze IAS/W2-C;
+9. executar W2-A;
+10. executar W2-C performance-blind;
+11. preencher IAS + feasibility gates;
+12. emitir `GO_NEW_EXPERIMENT` ou `NO_GO_INSUFFICIENT_EVIDENCE`;
+13. somente se GO: preregistrar e executar W3;
+14. reavaliar o PDF baseline; qualquer nova versão exige novo hash e QA completo.
 
-1. consolidar baseline e roadmap — **este documento**;
-2. pesquisa metodológica para W2-A e W2-B;
-3. freeze do protocolo de portfolio accounting;
-4. freeze do protocolo IAS;
-5. executar W2-A;
-6. executar W2-C de forma performance-blind;
-7. preencher IAS + feasibility gates;
-8. emitir decisão `GO_NEW_EXPERIMENT` ou `NO_GO_INSUFFICIENT_EVIDENCE`;
-9. somente se GO: preregistrar W3;
-10. executar W3 sem alterações pós-outcome;
-11. revisar se o PDF baseline deve ou não ser substituído; qualquer nova versão exige novo hash e QA completo.
-
-## 8. Critério de encerramento
+## 10. Critério de encerramento
 
 A extensão termina quando:
 
 - o backtest financiado está reproduzível e auditável;
 - “melhor laboratório” e “maior assimetria” estão conceitualmente e quantitativamente separados;
-- M&A completion/FDA e demais famílias prioritárias têm decisão baseada em evidência suficiente ou limitação explicitamente documentada;
+- famílias prioritárias têm decisão baseada em evidência suficiente ou limitação explicitamente documentada;
 - existe GO/NO-GO ex ante para novo experimento;
 - nenhum resultado antigo foi reinterpretado por conveniência.
 
-## 9. Anti-contamination rule
+## 11. Anti-contamination rule
 
-Qualquer trabalho que use performance do ARGOS para escolher família, score IAS, threshold de viabilidade, subgrupo, horizonte ou feature **invalida a função confirmatória da extensão** e deve ser rotulado como exploratório, nunca como substituição da ciência congelada.
+Qualquer trabalho que use performance do ARGOS para escolher família, score IAS, threshold de viabilidade, subgrupo, horizonte, feature, capital base ou sizing **invalida a função confirmatória da extensão** e deve ser rotulado como exploratório, nunca como substituição da ciência congelada.
