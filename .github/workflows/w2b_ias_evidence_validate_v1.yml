@@ -1,0 +1,29 @@
+name: W2B IAS Evidence Validate v1
+on:
+  push:
+    paths:
+      - 'registry/w2b_ias_evidence_matrix_v1.csv'
+      - 'registry/w2b_ias_source_registry_v1.json'
+      - 'scripts/w2b_ias_evidence_validate_v1.py'
+      - '.github/workflows/w2b_ias_evidence_validate_v1.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Revalidate IAS protocol freeze
+        run: python scripts/w2b_ias_protocol_freeze_validate_v1_0.py
+      - name: Validate evidence matrix and source registry
+        run: python scripts/w2b_ias_evidence_validate_v1.py
+      - name: Assert real scoring still not authorized
+        run: |
+          test ! -e registry/w2b_ias_execution_authorization_v1.json
+          test ! -e registry/w2b_ias_smaa_results_v1.json
+      - name: Preserve frozen submission hygiene
+        run: python scripts/repository_hygiene_validate.py
