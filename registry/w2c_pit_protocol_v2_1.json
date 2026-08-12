@@ -1,0 +1,186 @@
+{
+  "artifact": "W2C_PIT_FEASIBILITY_PROTOCOL",
+  "version": "W2C-PIT-v2.1",
+  "date": "2026-08-12",
+  "status": "PREREGISTRATION_PRE_REAL_LAYER_B_C",
+  "science_reopened": false,
+  "performance_blind": true,
+  "execution_authorized": false,
+  "supersedes": "W2C-PIT-v2.0 for Layer B, Layer C and real F1-F9 only",
+  "preserves": [
+    "exact 260-event population",
+    "all F1-F9 numeric thresholds",
+    "exact frozen Layer A evidence blobs and collection method",
+    "IAS construct/threshold boundaries",
+    "performance firewall"
+  ],
+  "frozen_asof_utc": "2026-08-12T20:00:00Z",
+  "population": {
+    "path": "registry/w2c_semantic_v2_accepted_clusters_v1_1.csv",
+    "git_blob_sha1": "a71cb2d00872ce36bf59ffcef9dc5575c1185a5b",
+    "total": 260,
+    "counts": {"EARNINGS_EPS": 100, "FDA_FINAL_PDUFA_DECISION": 63, "MACRO_STATISTICAL_RELEASE": 97},
+    "master_population_rule": "All 260 rows remain in the master evidence table. No right-censored, unresolved, ambiguous, missing, failed, or inconvenient event is deleted."
+  },
+  "right_censoring": {
+    "state": "RIGHT_CENSORED_ASOF",
+    "definition": "semantic_end_utc strictly after frozen_asof_utc before any authoritative revelation/resolution evidence is expected to exist",
+    "frozen_structure": {
+      "past_or_due": {"EARNINGS_EPS": 100, "FDA_FINAL_PDUFA_DECISION": 60, "MACRO_STATISTICAL_RELEASE": 88},
+      "right_censored": {"EARNINGS_EPS": 0, "FDA_FINAL_PDUFA_DECISION": 3, "MACRO_STATISTICAL_RELEASE": 9}
+    },
+    "rule": "RIGHT_CENSORED_ASOF is not FAIL and not network missingness. It remains explicit in the full-population table and is excluded only from gate denominators that require an already-due revelation/resolution."
+  },
+  "layer_A_reuse": {
+    "status": "FROZEN_BYTE_IDENTICAL_NO_RECOLLECTION",
+    "evidence_bundle_sha256": "faf7499294e2864bc47081fb8b375c33a83af07f8ac27c01dd756ac239c2e759",
+    "events_blob": "5e062a0c2ba1fe267a111b16b89415f2155a1c27",
+    "request_manifest_blob": "010bbfc5ef69b8920a6e5759a86f22309e015e46",
+    "summary_blob": "339c2ebd568ff19335473eaf489c7b7a50e576a2",
+    "rule": "No new platform endpoint, alternate history source, recollection, or post-coverage rescue is allowed in v2.1. Safe-cutoff comparison is performed only against these exact observations."
+  },
+  "performance_firewall": {
+    "forbidden": [
+      "ARGOS PnL",
+      "R1/R3 performance",
+      "Brier/log loss",
+      "H2 incremental metrics",
+      "realized linked-asset returns",
+      "family selection or source routing using subsequent asset performance"
+    ],
+    "allowed": [
+      "semantic population metadata",
+      "frozen Layer A timestamp observations",
+      "authoritative public source metadata/content",
+      "pre-outcome structural issuer/sponsor/jurisdiction mapping",
+      "price-data availability metadata without returns"
+    ]
+  },
+  "missingness": {
+    "states": ["PASS", "FAIL", "UNRESOLVED", "AMBIGUOUS", "RIGHT_CENSORED_ASOF", "NOT_APPLICABLE"],
+    "network_failure": "UNRESOLVED, never evidence of absence",
+    "rate_lower": "confirmed_pass / frozen_evaluable_denominator",
+    "rate_upper": "(confirmed_pass + unresolved_capable_of_passing) / frozen_evaluable_denominator",
+    "rate_decision": "PASS iff lower>=threshold; FAIL iff upper<threshold; otherwise INDETERMINATE",
+    "zero_problem_decision": "PASS only with zero confirmed problem and zero unresolved capable of hiding a problem; confirmed problem=FAIL; otherwise INDETERMINATE"
+  },
+  "safe_cutoff": {
+    "SECOND": "verified authoritative timestamp minus 1 second",
+    "MINUTE": "start of verified authoritative minute minus 1 second",
+    "DATE_CONSERVATIVE": "start of authoritative source-local calendar date minus 1 second",
+    "UNRESOLVED": "no safe cutoff",
+    "rule": "Use earliest verified authoritative public timestamp. If credible earlier authoritative release may exist but is unresolved, later evidence cannot silently define a permissive cutoff."
+  },
+  "earnings": {
+    "primary_sources": ["issuer investor-relations release", "SEC EDGAR 8-K/6-K earnings exhibit"],
+    "sec_timestamp": "acceptanceDateTime",
+    "revelation_rule": "earliest verified authoritative public timestamp; issuer date-only evidence uses DATE_CONSERVATIVE rather than assuming the later SEC acceptance time",
+    "resolution_rule": "issuer identity, reporting period, EPS metric/basis and reported value must be objectively supported; material source conflict=AMBIGUOUS",
+    "linked_asset_rule": "issuer primary U.S.-listed common equity when tradeable; issuer identity cross-checked before outcome/performance use"
+  },
+  "fda": {
+    "primary_sources": ["FDA Drugs@FDA/action package/public announcement", "issuer primary press release or SEC filing describing actual FDA action"],
+    "revelation_rule": "actual FDA action evidence only; PDUFA target/deadline is never decision evidence",
+    "negative_action_rule": "CRL/non-approval requires auditable FDA public evidence when available or affected issuer primary evidence; otherwise UNRESOLVED/AMBIGUOUS",
+    "linked_asset_rule": "applicant/sponsor U.S.-listed common equity or clearly documented listed parent; private or ambiguous sponsor mapping does not pass F5"
+  },
+  "macro": {
+    "jurisdiction_counts_frozen": {
+      "UNITED_STATES": 70,
+      "UNITED_KINGDOM": 5,
+      "EURO_AREA": 4,
+      "JAPAN": 4,
+      "BRAZIL": 3,
+      "GERMANY": 3,
+      "SOUTH_KOREA": 2,
+      "INDIA": 2,
+      "MEXICO": 2,
+      "CHINA": 1,
+      "UNRESOLVED": 1
+    },
+    "source_routing": {
+      "UNITED_STATES": ["BLS for CPI/PPI/labor", "BEA for GDP/PCE", "U.S. Census Bureau only for exact Census series"],
+      "UNITED_KINGDOM": ["Office for National Statistics"],
+      "EURO_AREA": ["Eurostat"],
+      "GERMANY": ["Destatis"],
+      "BRAZIL": ["IBGE"],
+      "JAPAN": ["Cabinet Office ESRI for GDP", "Statistics Bureau of Japan for CPI/labor"],
+      "SOUTH_KOREA": ["Bank of Korea for GDP", "KOSTAT for CPI/labor"],
+      "CHINA": ["National Bureau of Statistics of China"],
+      "MEXICO": ["INEGI"],
+      "INDIA": ["MoSPI only when the exact official series maps to MoSPI"],
+      "UNRESOLVED": []
+    },
+    "source_rule": "No U.S. fallback for a non-U.S. or unresolved jurisdiction. If the market's exact statistic is proprietary/nonofficial and no authoritative public equivalent matches semantics, do not substitute a nearby series; mark resolution UNRESOLVED or FAIL according to the frozen gate semantics.",
+    "release_rule": "Use final official release date/time including official rescheduling/revised calendars; stale scheduled dates do not override a documented official revision.",
+    "linked_asset_proxy": {
+      "UNITED_STATES": "SPY",
+      "UNITED_KINGDOM": "EWU",
+      "EURO_AREA": "EZU",
+      "GERMANY": "EWG",
+      "BRAZIL": "EWZ",
+      "JAPAN": "EWJ",
+      "SOUTH_KOREA": "EWY",
+      "CHINA": "MCHI",
+      "MEXICO": "EWW",
+      "INDIA": "INDA",
+      "UNRESOLVED": null
+    },
+    "proxy_claim_limit": "These U.S.-listed broad-equity ETFs are deterministic feasibility proxies, not claims of maximum event sensitivity. No realized return is read in W2-C."
+  },
+  "asset_data": {
+    "operational_source": "project-disclosed Yahoo Finance chart-v8 daily OHLCV source",
+    "allowed_outputs": ["symbol", "request timestamp", "HTTP state", "first date", "last date", "row count", "missingness", "response SHA-256"],
+    "forbidden_outputs": ["return", "abnormal return", "PnL", "beta", "correlation", "event response", "performance rank"],
+    "rule": "availability only; no return is computed or persisted"
+  },
+  "gate_denominators": {
+    "F1": "DUE_ASOF only; due unresolved evidence remains denominator as unresolved; RIGHT_CENSORED_ASOF excluded",
+    "F2": "DUE_ASOF only; due unresolved evidence remains denominator as unresolved; RIGHT_CENSORED_ASOF excluded",
+    "F3_independent_events": "FULL_FROZEN_POPULATION independence_cluster_id count",
+    "F3_pit_eligible_and_date_clusters": "DUE_ASOF only with lower/upper bounds for unresolved eligibility/revelation date",
+    "F4": "DUE_ASOF only",
+    "F5": "FULL_FROZEN_POPULATION because structural linked-asset mapping does not require outcome",
+    "F6": "DUE_ASOF only",
+    "F7": "DUE_ASOF only",
+    "F8": "FULL_FROZEN_POPULATION; RIGHT_CENSORED_ASOF is an explicit complete state",
+    "F9": "FULL_PIPELINE_FAMILY_LEVEL"
+  },
+  "thresholds_unchanged_from_v2_0": {
+    "F1": {"pre_revelation_contract_rate_min": 0.80, "analysis_window_24h_rate_min": 0.80, "median_pre_cutoff_history_hours_lower_bound_min": 48.0},
+    "F2": {"coverage_min": 0.95, "semantic_conflicts_max": 0},
+    "F3": {"validated_independent_events_min": 50, "pit_eligible_events_min": 40, "distinct_revelation_date_clusters_min": 30},
+    "F4": {"objective_primary_source_rate_min": 0.95, "ambiguous_eligible_events_max": 0},
+    "F5": {"preoutcome_mapping_rate_min": 0.90, "tradeable_instrument_required": true, "realized_return_mapping_forbidden": true},
+    "F6": {"coverage_min": 0.95, "returns_computed_or_stored_max": 0},
+    "F7": {"rate_min": 1.0, "strictly_before_public_revelation_required": true},
+    "F8": {"rate_min": 1.0},
+    "F9": {"mandatory_proprietary_or_account_gated_dependency_allowed": false}
+  },
+  "pit_event_eligible": "For DUE_ASOF events only: confirmed pre-revelation and >=24h Layer A witness under the frozen method, conflict-free mapping, objective non-ambiguous primary resolution, structural linked asset, asset-data availability, safe cutoff, schema complete, and no mandatory account-gated dependency.",
+  "scoring_sequence": [
+    "freeze v2.1 protocol and Layer B/C code",
+    "authorize and collect Layer B/C only",
+    "freeze exact raw/combined evidence",
+    "execute frozen F1-F9 scorer",
+    "freeze F1-F9",
+    "freeze IAS evidence/scoring implementation",
+    "execute IAS then SMAA/ranking",
+    "freeze ranking",
+    "decide GO/NO-GO W3",
+    "if GO, separately preregister and freeze W3 before execution"
+  ],
+  "prohibitions": [
+    "No Layer A recollection or alternate witness after observed coverage.",
+    "No threshold change from v2.0.",
+    "No exclusion of right-censored rows from the master population.",
+    "No treating right censoring as failure.",
+    "No U.S. source or SPY fallback for non-U.S. macro after jurisdiction is known.",
+    "No nearby official series substituted for a semantically different proprietary statistic.",
+    "No realized linked-asset returns in W2-C.",
+    "No F1-F9 execution before combined evidence freeze.",
+    "No IAS/SMAA before F1-F9 freeze.",
+    "No W3 execution before separate W3 freeze."
+  ],
+  "freeze_rule": "Protocol, jurisdiction router, censoring logic, Layer B/C collectors, combined-evidence builder, F1-F9 scorer and synthetic tests must be byte-frozen before Layer B/C network execution."
+}
