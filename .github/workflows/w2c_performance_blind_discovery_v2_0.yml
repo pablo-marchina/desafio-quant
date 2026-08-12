@@ -6,6 +6,7 @@ on:
     paths:
       - 'registry/w2c_execution_trigger_v2_0.json'
       - 'registry/w2c_execution_retrigger_v2_0.json'
+      - 'registry/w2c_execution_retrigger_v2_0_r3.json'
 
 permissions:
   contents: write
@@ -65,7 +66,7 @@ jobs:
           assert t['broad_archive_exhaustion_required'] is False
           assert t['route_count']>0
           PY
-      - name: Materialize v2.0 discovery evidence safely on current main
+      - name: Persist exact output snapshot on evidence branch
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -74,9 +75,5 @@ jobs:
             echo 'No discovery output changes.'
             exit 0
           fi
-          git commit -m 'w2c: materialize v2.0 lower-bound discovery evidence'
-          # The generated CSVs are normalized to LF in Git; discard any residual
-          # working-tree-only CRLF representation before rebasing the committed bytes.
-          git reset --hard HEAD
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git commit -m 'w2c: persist exact v2.0 evidence snapshot'
+          git push --force origin HEAD:refs/heads/w2c-v2-evidence-snapshot
