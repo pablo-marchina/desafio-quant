@@ -1,9 +1,9 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v1.3",
+  "version": "PFEP-v1.4",
   "date": "2026-08-12",
-  "status": "W2_PROTOCOLS_BYTE_FROZEN_PENDING_FREEZE_CI",
-  "operational_phase": "W2_PROTOCOL_BYTE_FREEZE",
+  "status": "W2_PROTOCOLS_BYTE_FROZEN_VALIDATED",
+  "operational_phase": "W2_CONTROLLED_EXECUTION_AUTHORIZED",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0",
@@ -19,23 +19,26 @@
     "baseline_must_remain_recoverable": true
   },
   "w2_protocol_freeze": {
+    "version": "W2PF-v1.0",
+    "status": "PASS_W2_PROTOCOL_BYTE_FREEZE",
     "manifest": "registry/w2_protocol_freeze_manifest.json",
     "human_doc": "docs/41_w2_protocol_byte_freeze.md",
     "validator": "scripts/w2_protocol_freeze_validate.py",
     "workflow": ".github/workflows/w2_protocol_freeze.yml",
-    "version": "W2PF-v1.0",
     "source_commit": "ede3b4c9b88b1c699424e0f3bcc76ddb37b404bc",
+    "freeze_commit": "22650e86f7df236d1c800cc8a593d9010b2c3b06",
+    "freeze_workflow_run_id": 31604844056,
+    "repository_hygiene_run_id": 31604844058,
     "freeze_bundle_id_sha256": "e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b",
     "w2a_git_blob_sha1": "639f900eb876d6e46ecbeb10c1b3b3e6c3621a28",
     "w2b_git_blob_sha1": "cb9a9638f236c6c61c97f86805de9bf666209b21",
-    "source_synthetic_gate": "PASS_38_OF_38_SYNTHETIC_CASES_READY_FOR_FREEZE",
     "contracts_modified_by_freeze": false
   },
-  "authorizations_after_successful_freeze_ci": {
-    "W2A": "EXECUTE_REAL_FUNDED_ACCOUNTING_ONLY_IF_GATE0_RECONCILIATION_PASSES; NO STRATEGY SEARCH OR H2 REINTERPRETATION",
-    "W2C": "START_PERFORMANCE_BLIND_DISCOVERY_AND_EVIDENCE_MATERIALIZATION_UNDER_FROZEN_W2B_FIREWALL",
-    "IAS_REAL_SCORING": "ONLY_AFTER_W2C_EVIDENCE_MATERIALIZATION; USE_FROZEN_W2B_BYTES",
-    "W3": "NOT_AUTHORIZED; A W2 GO MAY ONLY AUTHORIZE A SEPARATE W3 PROTOCOL DRAFT"
+  "authorized_now": {
+    "W2A": "RUN_GATE0_RECONCILIATION_THEN_FUNDED_ACCOUNTING_IF_GATE0_PASSES",
+    "W2C": "RUN_PERFORMANCE_BLIND_DISCOVERY_AND_EVIDENCE_MATERIALIZATION",
+    "IAS_REAL_SCORING": "ONLY_AFTER_W2C_EVIDENCE_MATERIALIZATION_USING_W2PF_V1_0",
+    "W3": "NOT_AUTHORIZED_FOR_EXECUTION; W2 GO MAY ONLY AUTHORIZE W3 PROTOCOL DRAFTING"
   },
   "immutability": {
     "rule": "Any byte change to either frozen contract invalidates W2PF-v1.0 for that contract.",
@@ -60,8 +63,7 @@
     "W2A_W2B_METHOD_RESEARCH_COMPLETED",
     "W2A_W2B_PROTOCOL_DRAFTING_COMPLETED",
     "W2_SYNTHETIC_ADVERSARIAL_VALIDATION_COMPLETED_38_OF_38",
-    "W2_PROTOCOL_BYTE_FREEZE_CREATED",
-    "W2_PROTOCOL_FREEZE_CI_MUST_PASS",
+    "W2_PROTOCOL_BYTE_FREEZE_VALIDATED",
     "EXECUTE_W2A_GATE0_THEN_FUNDED_ACCOUNTING",
     "EXECUTE_W2C_PERFORMANCE_BLIND_DISCOVERY",
     "SCORE_REAL_IAS_AND_FEASIBILITY_UNDER_FROZEN_W2B",
@@ -70,5 +72,5 @@
     "IF_GO_EXECUTE_W3",
     "FINAL_REPORT_REASSESSMENT_AND_REQA_IF_CHANGED"
   ],
-  "next_action_after_freeze_ci": "Run W2-A Gate 0 reconciliation and begin W2-C performance-blind discovery in separate controlled workstreams under W2PF-v1.0."
+  "next_action": "Run W2-A Gate 0 reconciliation and begin W2-C performance-blind discovery as separate controlled workstreams under W2PF-v1.0."
 }

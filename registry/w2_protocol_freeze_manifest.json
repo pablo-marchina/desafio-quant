@@ -2,10 +2,11 @@
   "artifact": "W2_PROTOCOL_BYTE_FREEZE",
   "version": "W2PF-v1.0",
   "date": "2026-08-12",
-  "status": "FROZEN_BYTE_IDENTICAL_PENDING_FREEZE_CI",
+  "status": "PASS_W2_PROTOCOL_BYTE_FREEZE",
   "science_reopened": false,
   "freeze_semantics": "The reviewed protocol draft bytes are frozen exactly as they existed at the source commit. Their embedded NOT_FROZEN labels are historical pre-freeze state and are intentionally not edited; this external manifest is the authoritative freeze act.",
   "source_commit": "ede3b4c9b88b1c699424e0f3bcc76ddb37b404bc",
+  "freeze_commit": "22650e86f7df236d1c800cc8a593d9010b2c3b06",
   "source_synthetic_validation": {
     "workflow": "W2 Protocol Synthetic Validation",
     "run_id": 31603830603,
@@ -16,9 +17,12 @@
     "real_argos_performance_read": false,
     "real_ias_family_scores_read": false
   },
-  "source_repository_hygiene": {
-    "run_id": 31603830432,
-    "conclusion": "success"
+  "freeze_validation": {
+    "workflow": "W2 Protocol Byte Freeze",
+    "run_id": 31604844056,
+    "conclusion": "success",
+    "repository_hygiene_run_id": 31604844058,
+    "repository_hygiene_conclusion": "success"
   },
   "frozen_contracts": [
     {
