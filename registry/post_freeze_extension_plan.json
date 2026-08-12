@@ -1,9 +1,9 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v1.0",
-  "date": "2026-08-11",
-  "status": "PLANNING_ONLY_NOT_PREREGISTERED",
-  "operational_phase": "POST_FREEZE_EXTENSION_PLANNING",
+  "version": "PFEP-v1.1",
+  "date": "2026-08-12",
+  "status": "METHOD_RESEARCH_COMPLETE_PROTOCOLS_NOT_FROZEN",
+  "operational_phase": "POST_FREEZE_PROTOCOL_DRAFTING",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0",
@@ -26,20 +26,34 @@
     "euas_does_not_mean": "highest pure information asymmetry",
     "ias_future_question": "Which event family has the strongest structural information-asymmetry potential under a separately frozen protocol?"
   },
+  "methodology_research": {
+    "status": "COMPLETE_PRE_FREEZE",
+    "machine_readable": "registry/post_freeze_methodology_research_v1.json",
+    "w2a_doc": "docs/36_w2a_portfolio_backtest_methodology_research.md",
+    "w2b_doc": "docs/37_w2b_ias_methodology_research.md",
+    "performance_results_computed": false,
+    "ias_family_scores_computed": false,
+    "protocols_frozen": false
+  },
   "workstreams": [
     {
       "id": "W2A_PORTFOLIO_BACKTEST_INTEGRITY",
-      "status": "PLANNED_PROTOCOL_NOT_FROZEN",
+      "status": "RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING",
       "goal": "Re-account the already frozen economic rules as a financed portfolio with explicit overlap, capital, NAV, exposures, turnover and portfolio risk metrics.",
-      "outcome_access": "ALLOWED_ONLY_FOR_REACCOUNTING_ALREADY_FROZEN_TRADES",
+      "outcome_access": "ALLOWED_ONLY_FOR_REACCOUNTING_ALREADY_FROZEN_TRADES_AFTER_PROTOCOL_FREEZE",
+      "research_recommendation": "Funded accounting reconstruction of the exact R1 primary trade set; first gate is exact legacy PnL reconciliation, not profitability.",
       "must_freeze_before_execution": [
+        "authoritative_trade_set_identity",
         "capital_base_and_sizing_rule",
         "overlap_policy",
-        "mark_to_market_calendar",
-        "cash_and_exposure_accounting",
+        "cash_and_short_collateral_accounting",
+        "mark_to_market_calendar_and_price_semantics",
+        "transaction_cost_path_semantics",
         "benchmark_semantics",
         "portfolio_metrics",
-        "cost_sensitivities_if_any"
+        "dependence_aware_inference",
+        "cost_sensitivities_if_any",
+        "reconciliation_tolerances"
       ],
       "immutable_from_baseline": [
         "signal_direction",
@@ -52,45 +66,61 @@
     },
     {
       "id": "W2B_INFORMATION_ASYMMETRY_SCORE",
-      "status": "PLANNED_PROTOCOL_NOT_FROZEN",
-      "goal": "Create a pure information-asymmetry protocol distinct from EUAS feasibility/laboratory quality.",
+      "status": "RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING",
+      "goal": "Create a pure structural information-asymmetry protocol distinct from EUAS feasibility/laboratory quality.",
       "performance_blind": true,
+      "research_recommendation": "Formative IAS profile with separate evidence confidence, independent feasibility gates, synthetic pre-validation and global weight/rank robustness via SMAA.",
+      "candidate_dimensions_not_frozen": [
+        "PAC_PRIVILEGED_ACCESS_CONCENTRATION",
+        "LSO_LATENT_STATE_OPACITY",
+        "SIB_SPECIALIZED_INTERPRETATION_BARRIER",
+        "TAW_TEMPORAL_ASYMMETRY_WINDOW",
+        "PSI_PUBLIC_SATURATION_INVERSE"
+      ],
       "must_freeze_before_family_scoring": [
         "operational_definition",
+        "event_family_taxonomy",
         "dimensions",
         "anchors",
-        "weights_or_aggregation_rule",
+        "central_aggregation_rule",
+        "SMAA_weight_space_or_distribution",
         "accepted_evidence_types",
+        "evidence_confidence_grades",
+        "evidence_confidence_to_uncertainty_mapping",
         "missing_evidence_semantics",
         "feasibility_gates",
-        "tie_breakers",
+        "rank_robustness_requirements",
+        "synthetic_GO_NO_GO_calibration",
         "sensitivity_protocol"
       ]
     },
     {
       "id": "W2C_DEEP_EVENT_UNIVERSE_CENSUS",
       "status": "PLANNED_DISCOVERY_NOT_STARTED",
-      "goal": "Expand performance-blind discovery and manual validation for high-asymmetry candidate event families.",
+      "goal": "Expand performance-blind discovery and manual validation for granular high-asymmetry candidate event families after the IAS/discovery protocol is frozen.",
       "performance_blind": true,
-      "priority": [
-        "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE",
-        "FDA_APPROVAL_ADVISORY",
-        "MA_ANNOUNCEMENT_RUMOR",
-        "ANTITRUST_REGULATORY",
+      "candidate_granular_taxonomy_not_frozen": [
         "EARNINGS_EPS",
-        "MACRO_FED_CPI"
+        "FDA_ADVISORY_COMMITTEE",
+        "FDA_FINAL_PDUFA_DECISION",
+        "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+        "MA_PENDING_COMPLETION",
+        "MA_REGULATORY_CLEARANCE",
+        "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+        "FOMC_DECISION",
+        "MACRO_STATISTICAL_RELEASE",
+        "CORPORATE_LITIGATION_BINARY"
       ],
-      "ma_completion_semantic_expansion": [
-        "regulatory_approval_clearance",
-        "FTC_DOJ_EC_CMA_sector_regulators",
-        "shareholder_vote",
-        "tender_offer",
-        "financing_condition",
-        "court_injunction_deal_litigation",
-        "closing_deadline_outside_date",
-        "objective_material_adverse_effect",
-        "completion_termination"
-      ]
+      "candidate_discovery_channels_not_frozen": [
+        "Gamma series and recurrence",
+        "Gamma tags and related tags",
+        "Gamma public-search frozen query dictionary",
+        "exact title/slug frozen query dictionary",
+        "bounded keyset crawl with fail-closed guards",
+        "family-specific semantic rules",
+        "manual semantic validation"
+      ],
+      "coverage_rule": "Store all discovery-channel provenance per event; low discovery counts never imply zero asymmetry or family absence."
     },
     {
       "id": "W3_NEW_PREREGISTERED_EXPERIMENT",
@@ -115,14 +145,17 @@
     "No post-hoc rescue of FAIL_UNDER_FROZEN_EXP07I.",
     "No family selection using ARGOS performance.",
     "No IAS scoring using ARGOS outcome, return, Brier, log loss or PnL.",
-    "No post-outcome threshold, subgroup, feature, horizon or sizing selection presented as confirmatory.",
+    "No post-outcome threshold, subgroup, feature, horizon, sizing or capital-base selection presented as confirmatory.",
+    "No invented PIT borrow fee, microstructure history or other unavailable data.",
     "No replacement of the QA-approved PDF baseline without a new hash and complete QA."
   ],
   "sequence": [
-    "BASELINE_AND_ROADMAP_SYNC",
-    "W2A_W2B_METHOD_RESEARCH",
+    "BASELINE_AND_ROADMAP_SYNC_COMPLETED",
+    "W2A_W2B_METHOD_RESEARCH_COMPLETED",
+    "DRAFT_AND_ADVERSARIALLY_REVIEW_W2A_PROTOCOL",
+    "DRAFT_AND_ADVERSARIALLY_REVIEW_IAS_PROTOCOL_WITH_SYNTHETIC_CASES",
     "FREEZE_W2A_PROTOCOL",
-    "FREEZE_IAS_PROTOCOL",
+    "FREEZE_IAS_AND_W2C_DISCOVERY_PROTOCOL",
     "EXECUTE_W2A",
     "EXECUTE_W2C_PERFORMANCE_BLIND",
     "SCORE_IAS_AND_FEASIBILITY",
@@ -131,5 +164,5 @@
     "IF_GO_EXECUTE_W3",
     "FINAL_REPORT_REASSESSMENT_AND_REQA_IF_CHANGED"
   ],
-  "next_action": "Research and freeze W2A portfolio-accounting protocol and W2B IAS protocol before any new execution or family scoring."
+  "next_action": "Draft and adversarially review the W2A funded-accounting protocol and the W2B IAS/W2C discovery protocol using synthetic validation only; freeze both before computing new portfolio outputs, expanded census evidence used for scoring, or real IAS family scores."
 }
