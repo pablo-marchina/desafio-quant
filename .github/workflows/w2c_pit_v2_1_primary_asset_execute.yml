@@ -1,0 +1,88 @@
+name: W2C PIT v2.1 Layer BC Execute
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_v2_1_network_authorization.json'
+      - '.github/workflows/w2c_pit_v2_1_primary_asset_execute.yml'
+  workflow_dispatch:
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Revalidate PIT-v2.1 byte freeze before first Layer B/C request
+        run: python scripts/w2c_pit_v2_1_freeze_validate.py
+      - name: Validate Layer-B/C-only authorization
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.load(open('registry/w2c_pit_v2_1_network_authorization.json'))
+          f=json.load(open('registry/w2c_pit_v2_1_freeze_manifest.json'))
+          v=json.load(open('registry/w2c_pit_v2_1_freeze_validation.json'))
+          assert a['artifact']=='W2C_PIT_V2_1_NETWORK_AUTHORIZATION'
+          assert a['status']=='AUTHORIZED_LAYER_B_C_ONLY'
+          assert a['requires_freeze_bundle_sha256']==f['bundle_sha256']==v['bundle_sha256']=='741ab5985bbf34c454cc8050bbecb001123ecf3110ba1bb5e9f5cab079da4a68'
+          assert a['requires_freeze_validation_run_id']==v['github_actions_run_id']==31643817474
+          assert v['github_actions_conclusion']=='success'
+          assert a['layer_b_c_network_execution_authorized'] is True
+          assert a['f1_f9_real_execution_authorized'] is False
+          assert a['ias_real_scoring_authorized'] is False
+          assert a['smaa_ranking_authorized'] is False
+          assert a['w3_execution_authorized'] is False
+          assert not Path('registry/w2c_pit_v2_1_family_gates.json').exists()
+          print('PASS Layer B/C-only authorization')
+          PY
+      - name: Materialize deterministic v2.1 routing queue
+        run: python scripts/w2c_pit_v2_1_route_population.py
+      - name: Collect frozen Layer B/C primary and asset-availability evidence
+        run: python scripts/w2c_pit_v2_1_primary_asset_collect.py
+      - name: Build combined evidence table without scoring
+        run: python scripts/w2c_pit_v2_1_build_combined.py
+      - name: Validate output firewall and cardinality
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          from pathlib import Path
+          q=list(csv.DictReader(open('registry/w2c_pit_v2_1_primary_source_queue.csv',encoding='utf-8')))
+          p=list(csv.DictReader(gzip.open('registry/w2c_pit_v2_1_primary_asset_events.csv.gz','rt',encoding='utf-8')))
+          c=list(csv.DictReader(open('registry/w2c_pit_v2_1_combined_events.csv',encoding='utf-8')))
+          ps=json.load(open('registry/w2c_pit_v2_1_primary_asset_summary.json'))
+          cs=json.load(open('registry/w2c_pit_v2_1_combined_summary.json'))
+          for rows in (q,p,c):
+              assert len(rows)==260 and len({r['event_id'] for r in rows})==260
+          assert ps['rows']==cs['rows']==260
+          assert ps['performance_blind'] is True and cs['performance_blind'] is True
+          assert ps['f1_f9_scored'] is False and ps['ias_computed'] is False and ps['smaa_computed'] is False and ps['w3_selected'] is False
+          assert cs['f1_f9_scored'] is False and cs['ias_computed'] is False and cs['smaa_computed'] is False and cs['w3_selected'] is False
+          assert ps['linked_asset_movement_values_persisted'] is False
+          forbidden_cols={'return','realized_return','abnormal_return','pnl','beta','correlation','event_response'}
+          cols={x.lower() for x in c[0].keys()}
+          assert not (cols & forbidden_cols), cols & forbidden_cols
+          assert not Path('registry/w2c_pit_v2_1_family_gates.json').exists()
+          assert not Path('registry/w2c_ias_scores.csv').exists()
+          assert not Path('registry/w2c_smaa_ranking.json').exists()
+          print(json.dumps({'primary':ps,'combined':cs},indent=2))
+          PY
+      - name: Persist exact Layer B/C and combined evidence to evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-pit-v2-1-layer-bc-results
+          git add \
+            registry/w2c_pit_v2_1_primary_source_queue.csv \
+            registry/w2c_pit_v2_1_primary_asset_events.csv.gz \
+            registry/w2c_pit_v2_1_primary_asset_request_manifest.jsonl.gz \
+            registry/w2c_pit_v2_1_primary_asset_summary.json \
+            registry/w2c_pit_v2_1_combined_events.csv \
+            registry/w2c_pit_v2_1_combined_summary.json
+          git commit -m 'w2c: persist PIT-v2.1 Layer B/C evidence without scoring'
+          git push --force origin HEAD:w2c-pit-v2-1-layer-bc-results
