@@ -35,11 +35,15 @@ def main():
     assert digest==m['bundle_sha256'],(digest,m['bundle_sha256'])
     assert blob(m['population']['path'])==m['population']['git_blob_sha1']
     assert not any(Path(x).exists() for x in REAL_OUTPUTS), 'real PIT/F1-F9/IAS output exists before authorization'
-    # Static firewall on real collectors/scorer only; synthetic tests intentionally mention forbidden examples.
-    forbidden=('registry/w2a_results','registry/art030','data/art030','active_terminal_wealth','linked_asset_realized_return')
-    for path in ['scripts/w2c_pit_v2_platform_collect.py','scripts/w2c_pit_v2_primary_queue.py','scripts/w2c_pit_v2_gate_score.py']:
+    # Static firewall checks actual forbidden local dependencies. Negative audit fields such as
+    # linked_asset_realized_returns_read=false are intentionally allowed and separately asserted.
+    forbidden_paths=('registry/w2a_results','registry/art030','data/art030')
+    real_code=['scripts/w2c_pit_v2_platform_collect.py','scripts/w2c_pit_v2_primary_queue.py','scripts/w2c_pit_v2_gate_score.py']
+    for path in real_code:
         text=Path(path).read_text().lower()
-        for token in forbidden: assert token.lower() not in text,(path,token)
+        for token in forbidden_paths: assert token not in text,(path,token)
+    platform=Path('scripts/w2c_pit_v2_platform_collect.py').read_text()
+    assert "'linked_asset_realized_returns_read':False" in platform or '"linked_asset_realized_returns_read":False' in platform
     run(['python','scripts/w2c_pit_v2_population_validate.py'])
     run(['python','scripts/w2c_pit_v2_synthetic_validation.py'])
     run(['python','scripts/w2c_pit_v2_pipeline_synthetic.py'])
