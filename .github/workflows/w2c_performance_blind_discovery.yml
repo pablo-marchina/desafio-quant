@@ -1,0 +1,66 @@
+name: W2C Performance Blind Discovery
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'registry/w2c_execution_trigger.json'
+
+permissions:
+  contents: write
+
+jobs:
+  discovery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen W2C bytes before network access
+        run: |
+          test "$(git hash-object registry/w2c_discovery_protocol.json)" = "60cc473f15f3fff924718a082c8db4e71a5b2ded"
+          test "$(git hash-object scripts/w2c_performance_blind_discovery.py)" = "3234e7df84aee8e7ef680fa846e746930dd0420d"
+          python -m py_compile scripts/w2c_performance_blind_discovery.py
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w2c_discovery_protocol.json'))
+          f=json.load(open('registry/w2c_discovery_freeze_manifest.json'))
+          assert p['version']=='W2C-DISC-v1.0'
+          assert p['status']=='FROZEN_BEFORE_NEW_W2C_COUNTS'
+          assert p['performance_blind'] is True
+          assert p['parent_freeze']=='W2PF-v1.0'
+          assert 'IAS scoring' in f['forbidden_during_run']
+          PY
+      - name: Execute frozen performance-blind discovery
+        run: python scripts/w2c_performance_blind_discovery.py
+      - name: Validate firewall and no-scoring outputs
+        run: |
+          python - <<'PY'
+          import json
+          m=json.load(open('registry/w2c_discovery_summary.json'))
+          assert m['protocol_version']=='W2C-DISC-v1.0'
+          assert m['parent_freeze']=='W2PF-v1.0'
+          assert m['performance_blind'] is True
+          assert m['science_reopened'] is False
+          assert m['argos_performance_read'] is False
+          assert m['realized_linked_asset_returns_read'] is False
+          assert m['ias_scores_computed'] is False
+          assert m['feasibility_gates_scored'] is False
+          assert m['w3_family_selected'] is False
+          assert len(m['families'])==10
+          PY
+      - name: Materialize discovery evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w2c_discovery_events.csv.gz registry/w2c_discovery_validation_queue.csv.gz registry/w2c_discovery_summary.csv registry/w2c_discovery_query_audit.csv registry/w2c_discovery_summary.json
+          if git diff --cached --quiet; then
+            echo 'No discovery output changes.'
+          else
+            git commit -m 'w2c: materialize performance-blind discovery evidence'
+            git push
+          fi
