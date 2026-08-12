@@ -16,21 +16,52 @@ Frozen bundle SHA-256: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea35
 
 H2 permanece `FAIL_UNDER_FROZEN_EXP07I`; `C0_NO_TRADE` permanece champion econômico histórico.
 
-## Extensão pós-freeze
+## Extensão pós-freeze — estado atual
 
-`post_freeze_extension_plan.json` está em `PFEP-v1.2` e governa apenas o trabalho novo.
+`post_freeze_extension_plan.json` está em `PFEP-v1.5` / `W2A_GATE0_BLOCKED_W2C_DISCOVERY_MATERIALIZED`.
 
-### Pesquisa
+### W2 protocol freeze
 
-- `post_freeze_methodology_research_v1.json`
+- `w2_protocol_freeze_manifest.json` — `W2PF-v1.0`, byte freeze autoritativo.
+- `w2a_portfolio_accounting_protocol_draft.json` — bytes autoritativos W2-A, blob `639f900e...`.
+- `w2b_ias_protocol_draft.json` — bytes autoritativos IAS/feasibility, blob `cb9a9638...`.
+- `w2_protocol_synthetic_validation_combined.json` — 38/38 pré-freeze.
 
-### Protocol drafts — synthetically validated, not frozen
+### W2-A
 
-- `w2a_portfolio_accounting_protocol_draft.json` — NAV/cash/shorts/matched-SPY/turnover/MDD/HAC/bootstrap/reconciliation W2-A.
-- `w2b_ias_protocol_draft.json` — PAC/LSO/SIB/TAW/PSI, ECG uncertainty, SMAA, taxonomy, F1–F9 e GO/NO-GO.
-- `w2_protocol_synthetic_validation_combined.json` — `PASS_38_OF_38_SYNTHETIC_CASES_READY_FOR_FREEZE`.
+- `w2a_gate0_reconciliation.json` — `FAIL_GATE0_MISSING_AUTHORITATIVE_ART025_TRADE_LEVEL_LEDGER`.
 
-Esses drafts **não autorizam** real W2-A output, real IAS scoring ou execução W3. O próximo ato válido é congelá-los byte a byte ou criar nova versão + rerun sintético.
+Nenhum portfolio metric foi autorizado após essa falha. Não reconstruir ART-025 por vendor novo; somente provenance-preserving recovery pode reabrir Gate 0 sob o mesmo W2PF-v1.0.
+
+### W2-C discovery
+
+Lineage preservada:
+
+- `w2c_discovery_protocol.json` / `w2c_discovery_v1_0_execution_failure.json` — v1.0 parou antes de family output no page bound.
+- `w2c_discovery_protocol_v1_1.json` / `w2c_discovery_v1_1_execution_failure.json` — v1.1 também parou antes de family output.
+- `w2c_discovery_protocol_v2_0.json` + `w2c_discovery_freeze_manifest_v2_0.json` — bounded lower-bound discovery congelado antes de resultados por família.
+- `w2c_discovery_materialization_v2_0.json` — provenance do snapshot autoritativo persistido pelo run `31610392101`.
+- `w2c_discovery_events.csv.gz` — raw candidate evidence.
+- `w2c_discovery_validation_queue.csv.gz` — fila ainda `PENDING` de semantic validation.
+- `w2c_discovery_summary.json` / `.csv` — summary raw, não IAS/F1–F9.
+- `w2c_discovery_query_audit.csv` — cobertura por query/canal.
+- `w2c_discovery_pagination_telemetry.json` — 154 rotas, 4 truncadas; rotas truncadas têm lower-bound semantics.
+
+### Firewall vigente
+
+W2-C materializado mantém:
+
+- `argos_performance_read=false`;
+- `realized_linked_asset_returns_read=false`;
+- `ias_scores_computed=false`;
+- `feasibility_gates_scored=false`;
+- `w3_family_selected=false`.
+
+Raw candidate counts **não podem** ser tratados como população, IAS, F1–F9 ou escolha de W3.
+
+## Próximo registry a criar
+
+Um protocolo de **semantic validation outcome-blind**, congelado antes de converter a fila W2-C em eventos validados. Ele deve definir inclusion/exclusion, multi-family resolution, event independence, deterministic review/sampling, evidence fields, uncertainty e truncation semantics.
 
 ## Wave 1 / autoria
 
@@ -41,10 +72,6 @@ Registries `model_complexity_*`, `economic_backtest_*`, `event_universe_*`, `wav
 - `art028_*` — materialização outcome-blind/label-free.
 - `art029_*` — protocolo confirmatório pré-outcome; não editar retroativamente.
 - `art030_*` — execução que decidiu `FAIL_H2`.
-
-## Information completeness / cross-strategy audit
-
-Arquivos `ic02_*` a `ic07_*`, `information_completeness_*`, `cross_strategy_*`, `implementation_audit*` e `pass_a/pass_b*` preservam disponibilidade, PIT, semântica, gates e seleção arquitetural outcome-blind.
 
 ## Política
 
@@ -57,4 +84,4 @@ Arquivos `ic02_*` a `ic07_*`, `information_completeness_*`, `cross_strategy_*`, 
 - ECG-D é unresolved, não score baixo;
 - W2 GO autoriza apenas W3 protocol drafting; W3 exige freeze próprio.
 
-**Precedência:** submission freeze → PDF QA → post-freeze plan → research → synthetically validated protocol drafts → future byte freezes → future executions.
+**Precedência:** submission freeze → PDF QA → W2PF-v1.0 → controlled W2 execution records → future semantic-validation freeze → future validated evidence/IAS/F1–F9.
