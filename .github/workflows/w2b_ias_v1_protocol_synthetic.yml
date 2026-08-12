@@ -1,0 +1,34 @@
+name: W2B IAS v1 Protocol Synthetic
+on:
+  push:
+    paths:
+      - 'registry/w2b_ias_protocol_draft.json'
+      - 'registry/w2b_ias_real_scoring_contract_v1_0.json'
+      - 'scripts/w2b_ias_contract_synthetic_validation.py'
+      - 'scripts/w2b_ias_score_v1_0.py'
+      - 'scripts/w2b_ias_score_synthetic_v1.py'
+      - '.github/workflows/w2b_ias_v1_protocol_synthetic.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate inherited protocol blob
+        run: test "$(git rev-parse HEAD:registry/w2b_ias_protocol_draft.json)" = "cb9a9638f236c6c61c97f86805de9bf666209b21"
+      - name: Run original IAS construct synthetic suite
+        run: python scripts/w2b_ias_contract_synthetic_validation.py
+      - name: Run real scorer synthetic suite
+        run: python scripts/w2b_ias_score_synthetic_v1.py
+      - name: Assert no real scoring artifacts exist yet
+        run: |
+          test ! -e registry/w2b_ias_evidence_matrix_v1.csv
+          test ! -e registry/w2b_ias_smaa_results_v1.json
+          test ! -e registry/w2b_ias_execution_authorization_v1.json
+      - name: Preserve frozen submission hygiene
+        run: python scripts/repository_hygiene_validate.py
