@@ -1,0 +1,407 @@
+{
+  "artifact": "W2C_PIT_V2_1_F1_F9_RESULTS",
+  "version": "W2C-PIT-F1F9-v2.1",
+  "protocol": "W2C-PIT-v2.1",
+  "gate_contract": "W2C-PIT-GATES-v2.1",
+  "frozen_asof_utc": "2026-08-12T20:00:00Z",
+  "science_reopened": false,
+  "performance_blind": true,
+  "families": {
+    "EARNINGS_EPS": {
+      "full_n": 100,
+      "due_n": 100,
+      "right_censored_n": 0,
+      "gates": {
+        "F1": "FAIL",
+        "F2": "FAIL",
+        "F3": "FAIL",
+        "F4": "INDETERMINATE",
+        "F5": "PASS",
+        "F6": "PASS",
+        "F7": "INDETERMINATE",
+        "F8": "PASS",
+        "F9": "PASS"
+      },
+      "overall_feasibility": "NO_GO_CURRENT_PROTOCOL",
+      "details": {
+        "F1_pre": {
+          "status": "FAIL",
+          "pass": 0,
+          "unresolved_capable": 18,
+          "n": 100,
+          "lower": 0.0,
+          "upper": 0.18,
+          "threshold": 0.8
+        },
+        "F1_24h": {
+          "status": "FAIL",
+          "pass": 0,
+          "unresolved_capable": 18,
+          "n": 100,
+          "lower": 0.0,
+          "upper": 0.18,
+          "threshold": 0.8
+        },
+        "F1_history": {
+          "status": "INDETERMINATE",
+          "resolved_values": 0,
+          "unresolved_capable": 18,
+          "lower": 0.0,
+          "upper": "INF",
+          "threshold": 48.0
+        },
+        "F2_rate": {
+          "status": "FAIL",
+          "pass": 0,
+          "unresolved_capable": 18,
+          "n": 100,
+          "lower": 0.0,
+          "upper": 0.18,
+          "threshold": 0.95
+        },
+        "F2_zero_conflict": {
+          "status": "PASS",
+          "confirmed_problem": 0,
+          "unresolved_capable": 0,
+          "max_allowed": 0
+        },
+        "F3_independent": {
+          "status": "PASS",
+          "lower": 100,
+          "upper": 100,
+          "floor": 50
+        },
+        "F3_eligible": {
+          "status": "FAIL",
+          "lower": 0,
+          "upper": 18,
+          "floor": 40
+        },
+        "F3_date_clusters": {
+          "status": "FAIL",
+          "lower": 0,
+          "upper": 18,
+          "floor": 30
+        },
+        "F4_rate": {
+          "status": "INDETERMINATE",
+          "pass": 92,
+          "unresolved_capable": 8,
+          "n": 100,
+          "lower": 0.92,
+          "upper": 1.0,
+          "threshold": 0.95
+        },
+        "F4_zero_ambiguity_non_circular": {
+          "status": "INDETERMINATE",
+          "confirmed_problem": 0,
+          "unresolved_capable": 1,
+          "max_allowed": 0
+        },
+        "F4_candidate_pass": 0,
+        "F4_candidate_unresolved": 18,
+        "F5_rate": {
+          "status": "PASS",
+          "pass": 98,
+          "unresolved_capable": 2,
+          "n": 100,
+          "lower": 0.98,
+          "upper": 1.0,
+          "threshold": 0.9
+        },
+        "F6_rate": {
+          "status": "PASS",
+          "pass": 98,
+          "unresolved_capable": 2,
+          "n": 100,
+          "lower": 0.98,
+          "upper": 1.0,
+          "threshold": 0.95
+        },
+        "F7_rate": {
+          "status": "INDETERMINATE",
+          "pass": 0,
+          "unresolved_capable": 100,
+          "n": 100,
+          "lower": 0.0,
+          "upper": 1.0,
+          "threshold": 1.0
+        },
+        "F8_rate": {
+          "status": "PASS",
+          "pass": 100,
+          "unresolved_capable": 0,
+          "n": 100,
+          "lower": 1.0,
+          "upper": 1.0,
+          "threshold": 1.0
+        }
+      }
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "full_n": 63,
+      "due_n": 60,
+      "right_censored_n": 3,
+      "gates": {
+        "F1": "FAIL",
+        "F2": "FAIL",
+        "F3": "FAIL",
+        "F4": "INDETERMINATE",
+        "F5": "INDETERMINATE",
+        "F6": "INDETERMINATE",
+        "F7": "INDETERMINATE",
+        "F8": "PASS",
+        "F9": "PASS"
+      },
+      "overall_feasibility": "NO_GO_CURRENT_PROTOCOL",
+      "details": {
+        "F1_pre": {
+          "status": "FAIL",
+          "pass": 0,
+          "unresolved_capable": 5,
+          "n": 60,
+          "lower": 0.0,
+          "upper": 0.08333333333333333,
+          "threshold": 0.8
+        },
+        "F1_24h": {
+          "status": "FAIL",
+          "pass": 0,
+          "unresolved_capable": 5,
+          "n": 60,
+          "lower": 0.0,
+          "upper": 0.08333333333333333,
+          "threshold": 0.8
+        },
+        "F1_history": {
+          "status": "INDETERMINATE",
+          "resolved_values": 0,
+          "unresolved_capable": 5,
+          "lower": 0.0,
+          "upper": "INF",
+          "threshold": 48.0
+        },
+        "F2_rate": {
+          "status": "FAIL",
+          "pass": 0,
+          "unresolved_capable": 5,
+          "n": 60,
+          "lower": 0.0,
+          "upper": 0.08333333333333333,
+          "threshold": 0.95
+        },
+        "F2_zero_conflict": {
+          "status": "PASS",
+          "confirmed_problem": 0,
+          "unresolved_capable": 0,
+          "max_allowed": 0
+        },
+        "F3_independent": {
+          "status": "PASS",
+          "lower": 63,
+          "upper": 63,
+          "floor": 50
+        },
+        "F3_eligible": {
+          "status": "FAIL",
+          "lower": 0,
+          "upper": 5,
+          "floor": 40
+        },
+        "F3_date_clusters": {
+          "status": "FAIL",
+          "lower": 0,
+          "upper": 5,
+          "floor": 30
+        },
+        "F4_rate": {
+          "status": "INDETERMINATE",
+          "pass": 0,
+          "unresolved_capable": 60,
+          "n": 60,
+          "lower": 0.0,
+          "upper": 1.0,
+          "threshold": 0.95
+        },
+        "F4_zero_ambiguity_non_circular": {
+          "status": "INDETERMINATE",
+          "confirmed_problem": 0,
+          "unresolved_capable": 5,
+          "max_allowed": 0
+        },
+        "F4_candidate_pass": 0,
+        "F4_candidate_unresolved": 5,
+        "F5_rate": {
+          "status": "INDETERMINATE",
+          "pass": 6,
+          "unresolved_capable": 54,
+          "n": 63,
+          "lower": 0.09523809523809523,
+          "upper": 0.9523809523809523,
+          "threshold": 0.9
+        },
+        "F6_rate": {
+          "status": "INDETERMINATE",
+          "pass": 6,
+          "unresolved_capable": 54,
+          "n": 60,
+          "lower": 0.1,
+          "upper": 1.0,
+          "threshold": 0.95
+        },
+        "F7_rate": {
+          "status": "INDETERMINATE",
+          "pass": 0,
+          "unresolved_capable": 60,
+          "n": 60,
+          "lower": 0.0,
+          "upper": 1.0,
+          "threshold": 1.0
+        },
+        "F8_rate": {
+          "status": "PASS",
+          "pass": 63,
+          "unresolved_capable": 0,
+          "n": 63,
+          "lower": 1.0,
+          "upper": 1.0,
+          "threshold": 1.0
+        }
+      }
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "full_n": 97,
+      "due_n": 88,
+      "right_censored_n": 9,
+      "gates": {
+        "F1": "FAIL",
+        "F2": "FAIL",
+        "F3": "FAIL",
+        "F4": "INDETERMINATE",
+        "F5": "PASS",
+        "F6": "PASS",
+        "F7": "INDETERMINATE",
+        "F8": "PASS",
+        "F9": "PASS"
+      },
+      "overall_feasibility": "NO_GO_CURRENT_PROTOCOL",
+      "details": {
+        "F1_pre": {
+          "status": "FAIL",
+          "pass": 5,
+          "unresolved_capable": 5,
+          "n": 88,
+          "lower": 0.056818181818181816,
+          "upper": 0.11363636363636363,
+          "threshold": 0.8
+        },
+        "F1_24h": {
+          "status": "FAIL",
+          "pass": 5,
+          "unresolved_capable": 5,
+          "n": 88,
+          "lower": 0.056818181818181816,
+          "upper": 0.11363636363636363,
+          "threshold": 0.8
+        },
+        "F1_history": {
+          "status": "INDETERMINATE",
+          "resolved_values": 5,
+          "unresolved_capable": 5,
+          "lower": 19.9993055,
+          "upper": "INF",
+          "threshold": 48.0
+        },
+        "F2_rate": {
+          "status": "FAIL",
+          "pass": 5,
+          "unresolved_capable": 5,
+          "n": 88,
+          "lower": 0.056818181818181816,
+          "upper": 0.11363636363636363,
+          "threshold": 0.95
+        },
+        "F2_zero_conflict": {
+          "status": "PASS",
+          "confirmed_problem": 0,
+          "unresolved_capable": 0,
+          "max_allowed": 0
+        },
+        "F3_independent": {
+          "status": "PASS",
+          "lower": 97,
+          "upper": 97,
+          "floor": 50
+        },
+        "F3_eligible": {
+          "status": "FAIL",
+          "lower": 5,
+          "upper": 10,
+          "floor": 40
+        },
+        "F3_date_clusters": {
+          "status": "FAIL",
+          "lower": 4,
+          "upper": 9,
+          "floor": 30
+        },
+        "F4_rate": {
+          "status": "INDETERMINATE",
+          "pass": 37,
+          "unresolved_capable": 51,
+          "n": 88,
+          "lower": 0.42045454545454547,
+          "upper": 1.0,
+          "threshold": 0.95
+        },
+        "F4_zero_ambiguity_non_circular": {
+          "status": "INDETERMINATE",
+          "confirmed_problem": 0,
+          "unresolved_capable": 5,
+          "max_allowed": 0
+        },
+        "F4_candidate_pass": 5,
+        "F4_candidate_unresolved": 5,
+        "F5_rate": {
+          "status": "PASS",
+          "pass": 96,
+          "unresolved_capable": 1,
+          "n": 97,
+          "lower": 0.9896907216494846,
+          "upper": 1.0,
+          "threshold": 0.9
+        },
+        "F6_rate": {
+          "status": "PASS",
+          "pass": 87,
+          "unresolved_capable": 1,
+          "n": 88,
+          "lower": 0.9886363636363636,
+          "upper": 1.0,
+          "threshold": 0.95
+        },
+        "F7_rate": {
+          "status": "INDETERMINATE",
+          "pass": 37,
+          "unresolved_capable": 51,
+          "n": 88,
+          "lower": 0.42045454545454547,
+          "upper": 1.0,
+          "threshold": 1.0
+        },
+        "F8_rate": {
+          "status": "PASS",
+          "pass": 97,
+          "unresolved_capable": 0,
+          "n": 97,
+          "lower": 1.0,
+          "upper": 1.0,
+          "threshold": 1.0
+        }
+      }
+    }
+  },
+  "ias_execution_authorized": false,
+  "smaa_execution_authorized": false,
+  "w3_execution_authorized": false
+}

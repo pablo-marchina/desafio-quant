@@ -1,0 +1,40 @@
+{
+  "artifact": "W2C_PIT_V2_1_F1_F9_FREEZE",
+  "version": "W2C-PIT-F1F9-FREEZE-v2.1",
+  "date": "2026-08-12",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_CI_VALIDATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "source_execution": {
+    "workflow_run_id": 31644716810,
+    "workflow_job_id": 94275476222,
+    "workflow_conclusion": "success",
+    "result_branch": "w2c-pit-v2-1-f1f9-results",
+    "result_commit": "e4824c3e3a91291ca8e5ba5d6deb1c9fb482c8d6"
+  },
+  "requires_scientific_bundle_sha256": "741ab5985bbf34c454cc8050bbecb001123ecf3110ba1bb5e9f5cab079da4a68",
+  "requires_evidence_bundle_sha256": "d73591e1fc511313b0c36f34d0abe14e483d11d98efa3beeebed932b21a0bb84",
+  "result_path": "registry/w2c_pit_v2_1_family_gates.json",
+  "result_blob_sha1": "1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa",
+  "families": ["EARNINGS_EPS", "FDA_FINAL_PDUFA_DECISION", "MACRO_STATISTICAL_RELEASE"],
+  "frozen_family_overall_feasibility": {
+    "EARNINGS_EPS": "NO_GO_CURRENT_PROTOCOL",
+    "FDA_FINAL_PDUFA_DECISION": "NO_GO_CURRENT_PROTOCOL",
+    "MACRO_STATISTICAL_RELEASE": "NO_GO_CURRENT_PROTOCOL"
+  },
+  "confirmed_shared_failures": ["F1", "F2", "F3"],
+  "interpretation_guardrail": "NO_GO_CURRENT_PROTOCOL is a feasibility result under the frozen PIT-v2.1 design, not a claim that structural information asymmetry is low. IAS remains a separate formative construct and must be scored independently of these gate outcomes except when applying the final W3 feasibility decision.",
+  "authorization": {
+    "ias_real_scoring": false,
+    "smaa_ranking": false,
+    "w3_protocol_drafting": false,
+    "w3_execution": false
+  },
+  "freeze_semantics": [
+    "The result is promoted by exact Git blob identity and is not regenerated during freeze.",
+    "No F1-F9 threshold, denominator, missingness rule or family result may change without an explicit versioned supersession.",
+    "IAS structural scoring must not use F1-F9 outcomes as score inputs.",
+    "F1-F9 may be used only as the separate operational feasibility layer at final GO/NO-GO W3.",
+    "SMAA and W3 remain prohibited until IAS protocol/result sequencing is satisfied."
+  ]
+}
