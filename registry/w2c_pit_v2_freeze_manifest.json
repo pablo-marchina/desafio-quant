@@ -1,0 +1,61 @@
+{
+  "artifact": "W2C_PIT_V2_BYTE_FREEZE",
+  "version": "W2C-PIT-FREEZE-v2.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_CANDIDATE_PENDING_CI_NETWORK_NOT_AUTHORIZED",
+  "science_reopened": false,
+  "performance_blind": true,
+  "network_collection_authorized": false,
+  "f1_f9_execution_authorized": false,
+  "ias_execution_authorized": false,
+  "w3_execution_authorized": false,
+  "bundle_sha256": "ae6256e89ea40bf4174113f371570736eb5843e024b4e54deba6da92cb7ed4b8",
+  "bundle_canonicalization": "SHA256 of UTF-8 sorted lines: <path>\\t<git_blob_sha1>\\n for every frozen_git_blobs entry.",
+  "scientific_authority": {
+    "submission_truth": "FST-v1.0 / SF-v3.0",
+    "submission_bundle_sha256": "c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885",
+    "h2": "FAIL_UNDER_FROZEN_EXP07I",
+    "economic_champion": "C0_NO_TRADE",
+    "science_reopened": false
+  },
+  "population": {
+    "path": "registry/w2c_semantic_v2_accepted_clusters_v1_1.csv",
+    "git_blob_sha1": "a71cb2d00872ce36bf59ffcef9dc5575c1185a5b",
+    "total": 260,
+    "counts": {
+      "EARNINGS_EPS": 100,
+      "FDA_FINAL_PDUFA_DECISION": 63,
+      "MACRO_STATISTICAL_RELEASE": 97
+    }
+  },
+  "frozen_git_blobs": {
+    ".github/workflows/w2c_pit_v2_protocol_synthetic.yml": "dc11052fde071d99163621ad7dde96b41aa367c7",
+    "registry/w2c_pit_protocol_v2_0.json": "67e2686320af960da0a982a425215ab1fc1601a1",
+    "registry/w2c_semantic_v2_accepted_clusters_v1_1.csv": "a71cb2d00872ce36bf59ffcef9dc5575c1185a5b",
+    "scripts/w2c_pit_v2_gate_score.py": "88e7eba15796747b1d4d37707e93308449acc899",
+    "scripts/w2c_pit_v2_pipeline_synthetic.py": "ca328b32eba804646ae72575915cd43c7f44a27c",
+    "scripts/w2c_pit_v2_platform_collect.py": "7917222a2ea66a6865cb072a00e8665624f46a10",
+    "scripts/w2c_pit_v2_population_validate.py": "e7b6b0ab1cded37913620ca4882219e45cfda341",
+    "scripts/w2c_pit_v2_primary_queue.py": "695c5639c7dac9320bb09c575ad56c5428bc4b1c",
+    "scripts/w2c_pit_v2_synthetic_validation.py": "c8b0afabbad8d5c0f5a96879990fb2a63cf5d7a0"
+  },
+  "pre_freeze_validation": {
+    "workflow": "W2C PIT v2 Protocol Synthetic Validation",
+    "run_id": 31636270026,
+    "conclusion": "success",
+    "protocol_cases_passed": 32,
+    "protocol_cases_total": 32,
+    "pipeline_synthetic_status": "PASS",
+    "real_network_called": false,
+    "real_pit_output_materialized": false,
+    "f1_f9_materialized": false,
+    "ias_materialized": false
+  },
+  "freeze_rules": [
+    "Any change to a frozen_git_blobs object invalidates this bundle and requires a new protocol version, complete no-network synthetic validation, and a new byte freeze before further real collection.",
+    "Real network collection requires a separate authorization artifact created only after this freeze workflow succeeds.",
+    "F1-F9 may not execute until the real raw PIT evidence materialization is itself frozen.",
+    "IAS/SMAA may not execute until F1-F9 results are frozen.",
+    "W3 may not execute without a separate W3 protocol freeze and GO decision."
+  ]
+}
