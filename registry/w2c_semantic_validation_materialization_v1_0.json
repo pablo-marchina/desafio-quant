@@ -1,0 +1,61 @@
+{
+  "artifact": "W2C_SEMANTIC_VALIDATION_MATERIALIZATION",
+  "version": "W2C-SV-MAT-v1.0",
+  "date": "2026-08-12",
+  "status": "PASS_FROZEN_SEMANTIC_VALIDATION_MATERIALIZED",
+  "parent_freeze": "W2PF-v1.0",
+  "semantic_freeze": "W2C-SVF-v1.0",
+  "performance_blind": true,
+  "science_reopened": false,
+  "execution": {
+    "workflow_run_id": 31620926375,
+    "job_id": 94195277133,
+    "conclusion": "success",
+    "evidence_branch": "w2c-semantic-v1-evidence",
+    "evidence_commit": "0ec19f1e869c68bdbf0e29b2300e0683f620f9f4",
+    "evidence_tree": "4427e95db1046f0fe2f423e65c5bc64bed9d4286"
+  },
+  "input": {
+    "candidate_rows": 4364,
+    "unique_event_ids": 3787,
+    "snapshot_git_blob_sha1": "b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b"
+  },
+  "semantic_status_counts": {
+    "VALID_UNIQUE_FAMILY": 3197,
+    "REASSIGNED_BY_FROZEN_PRECEDENCE": 5,
+    "INVALID_NO_STRICT_FAMILY": 565,
+    "AMBIGUOUS_MULTI_FAMILY": 2,
+    "DUPLICATE_INDEPENDENCE_CLUSTER": 18
+  },
+  "independent_clusters": {
+    "EARNINGS_EPS": 1750,
+    "FDA_ADVISORY_COMMITTEE": 66,
+    "FDA_FINAL_PDUFA_DECISION": 5,
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 23,
+    "MA_PENDING_COMPLETION": 223,
+    "MA_REGULATORY_CLEARANCE": 16,
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 11,
+    "FOMC_DECISION": 66,
+    "MACRO_STATISTICAL_RELEASE": 756,
+    "CORPORATE_LITIGATION_BINARY": 286
+  },
+  "deterministic_review_queue": {
+    "rows": 509,
+    "target_per_family": 80,
+    "small_families_use_all": true
+  },
+  "output_blobs": [
+    {"path":"registry/w2c_semantic_validation_events.csv.gz","git_blob_sha1":"63ef1e5359c484ae987045323bb2369a2b3ba61e"},
+    {"path":"registry/w2c_semantic_validation_clusters.csv.gz","git_blob_sha1":"3ad0c64bd98945deb0d31ea8e39b91c9d649c801"},
+    {"path":"registry/w2c_semantic_review_queue.csv.gz","git_blob_sha1":"131e19d0ff3e17c3b25ddd92420139d8b61f026d"},
+    {"path":"registry/w2c_semantic_validation_summary.json","git_blob_sha1":"3fdaf2fcbe19dd8d5eb773ad7eb13c818e14329d"}
+  ],
+  "firewall": {
+    "ias_scores_computed": false,
+    "feasibility_gates_scored": false,
+    "linked_asset_realized_returns_read": false,
+    "w3_family_selected": false
+  },
+  "interpretation_boundary": "Semantic counts and deterministic review samples are not F1-F9 outcomes, IAS scores, feasibility conclusions or family-selection evidence. PIT evidence must be collected under a separately preregistered and frozen protocol.",
+  "next_gate": "Preregister, adversarially validate and byte-freeze a PIT evidence protocol before any PIT network collection."
+}

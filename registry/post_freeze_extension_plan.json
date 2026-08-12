@@ -1,9 +1,9 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v1.7",
+  "version": "PFEP-v1.8",
   "date": "2026-08-12",
-  "status": "W2A_GATE0_BLOCKED_W2C_SEMANTIC_FROZEN",
-  "operational_phase": "W2C_SEMANTIC_REAL_EXECUTION_AUTHORIZED",
+  "status": "W2A_GATE0_BLOCKED_W2C_SEMANTIC_MATERIALIZED",
+  "operational_phase": "W2C_PIT_PROTOCOL_PREREGISTRATION_PENDING",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0",
@@ -20,14 +20,12 @@
   },
   "W2C": {
     "discovery": "PASS_PERFORMANCE_BLIND_DISCOVERY_MATERIALIZED",
-    "discovery_materialization": "registry/w2c_discovery_materialization_v2_0.json",
-    "semantic_protocol": "registry/w2c_semantic_validation_protocol_v1_0.json",
-    "semantic_protocol_version": "W2C-SV-v1.0",
-    "semantic_freeze": "registry/w2c_semantic_validation_freeze_manifest_v1_0.json",
-    "semantic_freeze_version": "W2C-SVF-v1.0",
-    "semantic_synthetic_status": "PASS_28_OF_28",
-    "semantic_real_execution_authorized": true,
-    "pit_feasibility": "BLOCKED_PENDING_SEMANTIC_MATERIALIZATION_AND_PIT_PROTOCOL_FREEZE",
+    "semantic_freeze": "W2C-SVF-v1.0",
+    "semantic_execution": "PASS_FROZEN_SEMANTIC_VALIDATION_MATERIALIZED",
+    "semantic_materialization": "registry/w2c_semantic_validation_materialization_v1_0.json",
+    "semantic_independent_clusters_total": 3202,
+    "semantic_review_queue_rows": 509,
+    "pit_feasibility": "PREREGISTRATION_REQUIRED_BEFORE_NETWORK_COLLECTION",
     "f1_f9": "BLOCKED_PENDING_PIT_EVIDENCE",
     "ias": "BLOCKED_PENDING_F1_F9_EVIDENCE_MATERIALIZATION",
     "ranking": "BLOCKED_PENDING_IAS",
@@ -35,10 +33,11 @@
   },
   "global_prohibitions": [
     "No W2-A funded metrics before Gate0 passes under unchanged W2PF-v1.0.",
-    "No semantic sampling based on PnL, Brier, log loss, realized linked-asset returns, IAS scores, or feasibility outcomes.",
-    "No PIT collection before semantic outputs are materialized and a separate PIT protocol is frozen.",
-    "No IAS/F1-F9 scoring before semantic and PIT evidence are materialized under frozen protocols.",
+    "No PIT network collection until PIT protocol and runner pass synthetic validation and byte-freeze.",
+    "No family selection based on semantic sample size alone.",
+    "No IAS/F1-F9 scoring before PIT evidence is materialized under frozen rules.",
+    "No linked-asset realized returns for family selection.",
     "No W3 execution directly from W2; W2 GO may authorize only W3 protocol drafting."
   ],
-  "next_action": "Execute frozen W2C-SV-v1.0 on exactly the frozen W2C-MAT-v2.0 input snapshot, materialize exact outputs, then preregister and freeze the PIT evidence protocol before any PIT network collection."
+  "next_action": "Preregister PIT evidence collection over the deterministic semantic review queue, validate it synthetically, byte-freeze it, then materialize PIT evidence before F1-F9 scoring."
 }
