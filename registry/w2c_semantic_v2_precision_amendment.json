@@ -1,26 +1,17 @@
 {
   "artifact":"W2C_SEMANTIC_V2_PRECISION_AMENDMENT",
-  "version":"W2C-SV-v2.0-A2",
+  "version":"W2C-SV-v2.0-A3",
   "date":"2026-08-12",
   "status":"PRE_REAL_SYNTHETIC_REPAIR",
   "parent_protocol":"W2C-SV-v2.0",
   "real_v2_candidate_results_seen":false,
   "performance_data_seen":false,
   "amendments":[
-    {
-      "id":"A1_ANTITRUST_EXPLICIT_SEMANTICS",
-      "trigger":"Synthetic attack showed that generic DOJ investigation language could be misclassified as antitrust enforcement.",
-      "rule":"ANTITRUST_ENFORCEMENT_SINGLE_NAME requires explicit title+slug language containing antitrust, competition authority, competition regulator, or monopoly in addition to an enforcement action. DOJ/FTC identity alone cannot establish antitrust semantics.",
-      "direction":"stricter_precision"
-    },
-    {
-      "id":"A2_FDA_INFLECTION",
-      "trigger":"Synthetic attack showed that common title form 'FDA approves X' was rejected because base regex included approve/approved but not approves.",
-      "rule":"FDA final action recognizes approve/approves/approval/approved and authorize/authorizes/authorization while preserving the advisory/final distinction.",
-      "direction":"lexical_equivalence_not_scope_expansion"
-    }
+    {"id":"A1_ANTITRUST_EXPLICIT_SEMANTICS","trigger":"Generic DOJ investigation synthetic case could be misclassified as antitrust.","rule":"Require explicit antitrust/competition-authority/competition-regulator/monopoly language in title+slug in addition to an enforcement action.","direction":"stricter_precision"},
+    {"id":"A2_FDA_INFLECTION","trigger":"Common title form FDA approves X was rejected.","rule":"Recognize approve/approves/approval/approved and authorize/authorizes/authorization while preserving advisory/final separation.","direction":"lexical_equivalence_not_scope_expansion"},
+    {"id":"A3_SLUG_NORMALIZATION","trigger":"Allowed slug words joined by hyphens could not match natural-language family regexes.","rule":"Before classification only, convert hyphen and underscore separators in title+slug to spaces. No query/tag/series/source field is added.","direction":"lexical_normalization_only"}
   ],
-  "precision_direction":"No relaxation based on real v2 counts is permitted after the first real v2 execution. Any such change requires a new protocol version.",
+  "precision_direction":"No relaxation based on real v2 counts is permitted after first real v2 execution; changes then require a new protocol version.",
   "authoritative_runner":"scripts/w2c_semantic_validation_v2_strict.py",
   "authoritative_synthetic_validator":"scripts/w2c_semantic_validation_v2_synthetic_strict.py"
 }

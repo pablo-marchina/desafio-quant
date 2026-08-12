@@ -4,6 +4,7 @@
 A1: generic DOJ/FTC investigation language cannot qualify as antitrust without
 explicit antitrust/competition/monopoly language.
 A2: inflected FDA final-action wording such as "FDA approves" is recognized.
+A3: title+slug lexical normalization converts '-' and '_' to spaces only.
 """
 from __future__ import annotations
 import importlib.util,re
@@ -15,6 +16,9 @@ EXPLICIT_ANTITRUST=re.compile(r'\b(antitrust|competition authority|competition r
 FDA_ACTOR=re.compile(r'\b(fda|food and drug administration|pdufa)\b',re.I)
 FDA_FINAL_ACTION=re.compile(r'\b(approve|approves|approval|approved|authorize|authorizes|authorization|emergency use authorization|eua|pdufa|action date|complete response|crl)\b',re.I)
 FDA_ADVISORY=re.compile(r'\b(advisory committee|adcom|advisory panel|panel vote)\b',re.I)
+def classification_text(row):
+    raw=f"{row.get('title','')} {row.get('slug','')}".strip()
+    return re.sub(r'[-_]+',' ',raw)
 def strict_matches(text):
     hits=_orig(text)
     if 'ANTITRUST_ENFORCEMENT_SINGLE_NAME' in hits and not EXPLICIT_ANTITRUST.search(text):
@@ -24,8 +28,8 @@ def strict_matches(text):
     if FDA_ADVISORY.search(text) and not FDA_FINAL_ACTION.search(text):
         hits.discard('FDA_FINAL_PDUFA_DECISION')
     return hits
+base.classification_text=classification_text
 base.strict_matches=strict_matches
-classification_text=base.classification_text
 resolve=base.resolve
 cluster_id=base.cluster_id
 norm_subject=base.norm_subject
