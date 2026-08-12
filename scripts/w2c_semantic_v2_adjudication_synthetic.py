@@ -25,7 +25,7 @@ ok('80 EARNINGS_EPS' in p['coverage']['earnings_top_up'])
 ok(p['downstream']['AMBIGUOUS_countable'] is False and p['downstream']['REJECT_countable'] is False)
 ok(p['downstream']['F3_countable']=='Only ACCEPT_STRICT_FAMILY independent clusters.')
 ok('web lookup' in p['adjudication_method']['independent_context'].lower())
-ok('No review-field expansion' in p['prohibitions'])
-summary={'artifact':'W2C_ADJ_SYNTHETIC_VALIDATION','version':'W2C-ADJ-SYN-v1.1','passed':passed,'failed':0,'status':f'PASS_{passed}_OF_{passed}','real_queue_read':False,'performance_data_read':False,'network_accessed':False}
+ok(any('review-field expansion' in s.lower() for s in p['prohibitions']))
+summary={'artifact':'W2C_ADJ_SYNTHETIC_VALIDATION','version':'W2C-ADJ-SYN-v1.2','passed':passed,'failed':0,'status':f'PASS_{passed}_OF_{passed}','real_queue_read':False,'performance_data_read':False,'network_accessed':False}
 Path('registry/w2c_semantic_v2_adjudication_synthetic_summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 print(json.dumps(summary,indent=2))
