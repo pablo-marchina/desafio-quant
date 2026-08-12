@@ -1,0 +1,19 @@
+{
+  "artifact": "W2B_IAS_EXECUTION_AUTHORIZATION",
+  "version": "W2B-IAS-AUTH-v1.0",
+  "date": "2026-08-12",
+  "authorized": true,
+  "single_purpose": "Execute the already-frozen W2B-IAS-v1.0 scorer on the already-frozen 50-row evidence matrix and publish only the IAS/SMAA result to w2b-ias-v1-results.",
+  "protocol_blob": "cb9a9638f236c6c61c97f86805de9bf666209b21",
+  "protocol_bundle_sha256": "a008d1bcf45c200708f97d8ea7089a15a773a1a3590dc112633760ac3c13b0dd",
+  "scorer_blob": "2567dcef47b9c26819eb526649ff4e21eeb9bf57",
+  "evidence_matrix_blob": "9797dd2ac6ed31ef9c0da6b9c7d290dd85bd656c",
+  "source_registry_blob": "0508374770eb35ccbf54c83bef0206e175ce0986",
+  "evidence_bundle_sha256": "0ce8200c4a3feb4f783f33f4e1caba78ea954ce0c36ac09438d46ddbfc93f91b",
+  "smaa_samples": 200000,
+  "seed": 20260812,
+  "performance_blind": true,
+  "f1_f9_read_authorized": false,
+  "w3_decision_authorized": false,
+  "post_execution_rule": "Freeze and independently validate the exact IAS/SMAA output before any F1-F9 combination or W3 decision."
+}
