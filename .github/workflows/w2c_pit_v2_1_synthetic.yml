@@ -1,0 +1,48 @@
+name: W2C PIT v2.1 Synthetic Validation
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_protocol_v2_1.json'
+      - 'registry/w2c_pit_v2_1_gate_contract.json'
+      - 'scripts/w2c_pit_v2_1_route_population.py'
+      - 'scripts/w2c_pit_v2_1_gate_score.py'
+      - 'scripts/w2c_pit_v2_1_synthetic_validation.py'
+      - '.github/workflows/w2c_pit_v2_1_synthetic.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify Layer A exact frozen blobs before v2.1 tests
+        run: |
+          test "$(git rev-parse HEAD:registry/w2c_pit_v2_platform_events.csv.gz)" = "5e062a0c2ba1fe267a111b16b89415f2155a1c27"
+          test "$(git rev-parse HEAD:registry/w2c_pit_v2_platform_request_manifest.jsonl.gz)" = "010bbfc5ef69b8920a6e5759a86f22309e015e46"
+          test "$(git rev-parse HEAD:registry/w2c_pit_v2_platform_summary.json)" = "339c2ebd568ff19335473eaf489c7b7a50e576a2"
+      - name: Run PIT-v2.1 synthetic/adversarial validation
+        run: python scripts/w2c_pit_v2_1_synthetic_validation.py
+      - name: Materialize routing queue and assert no performance fields
+        run: |
+          python scripts/w2c_pit_v2_1_route_population.py
+          python - <<'PY'
+          import csv
+          rows=list(csv.DictReader(open('registry/w2c_pit_v2_1_primary_source_queue.csv',encoding='utf-8')))
+          assert len(rows)==260
+          forbidden=('pnl','return','brier','log_loss','active_terminal_wealth')
+          assert not any(any(x in k.lower() for x in forbidden) for k in rows[0])
+          print('PASS 260 routed rows; no performance fields')
+          PY
+      - name: Assert no real v2.1 Layer B/C or F1-F9 output exists
+        run: |
+          test ! -e registry/w2c_pit_v2_1_combined_events.csv
+          test ! -e registry/w2c_pit_v2_1_family_gates.json
+          test ! -e registry/w2c_ias_scores.csv
+      - name: Preserve frozen submission hygiene
+        run: python scripts/repository_hygiene_validate.py
