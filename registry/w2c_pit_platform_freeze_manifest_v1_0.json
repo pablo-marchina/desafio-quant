@@ -1,0 +1,33 @@
+{
+  "artifact": "W2C_PIT_A_BYTE_FREEZE",
+  "version": "W2C-PIT-AF-v1.0",
+  "date": "2026-08-12",
+  "status": "PENDING_CI_BYTE_VALIDATION",
+  "parent_freezes": ["W2PF-v1.0", "W2C-SVF-v1.0"],
+  "source_commit": "a2d32e83e9634a371e3a164d70cc4ed4cc4446dd",
+  "performance_blind": true,
+  "science_reopened": false,
+  "real_pit_network_access_before_freeze": false,
+  "synthetic_validation": {
+    "workflow_run_id": 31621626446,
+    "job_id": 94197622186,
+    "status": "PASS_29_OF_29",
+    "real_semantic_queue_read": false,
+    "network_accessed": false,
+    "performance_data_read": false
+  },
+  "frozen_blobs": [
+    {"role":"pit_a_protocol","path":"registry/w2c_pit_platform_protocol_v1_0.json","git_blob_sha1":"5a09de7c4793dda22fdacc134960d9289623f186"},
+    {"role":"pit_a_runner","path":"scripts/w2c_pit_platform_v1_0.py","git_blob_sha1":"e1393d0f78f6bace313d5425b8a44ac1d28f631f"},
+    {"role":"pit_a_synthetic_validator","path":"scripts/w2c_pit_platform_synthetic.py","git_blob_sha1":"217bc7b96fe0f793334fbd4d9f519954d12efaf5"}
+  ],
+  "frozen_input": {
+    "path":"registry/w2c_semantic_review_queue.csv.gz",
+    "git_blob_sha1":"131e19d0ff3e17c3b25ddd92420139d8b61f026d",
+    "rows":509
+  },
+  "freeze_bundle_id_sha256":"99edee7b9a2ee500df5188d74ce1b19febc5f47eff0f9d16e6096bc6b2e9652c",
+  "freeze_bundle_formula":"SHA256('W2C-PIT-AF-v1.0|<protocol_blob>|<runner_blob>|<synthetic_blob>')",
+  "immutability_rule":"Any byte change to protocol/runner invalidates this freeze and requires a new version plus complete synthetic revalidation before real PIT network collection.",
+  "authorized_after_ci_pass":"Run PIT-A on exactly the 509-row frozen semantic review queue. PIT-B, F1-F9, IAS, ranking, linked-asset realized returns and W3 remain unauthorized."
+}

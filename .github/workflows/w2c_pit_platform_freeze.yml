@@ -1,0 +1,37 @@
+name: W2C PIT-A Byte Freeze
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_pit_platform_protocol_v1_0.json'
+      - 'scripts/w2c_pit_platform_v1_0.py'
+      - 'scripts/w2c_pit_platform_synthetic.py'
+      - 'registry/w2c_pit_platform_freeze_manifest_v1_0.json'
+      - 'scripts/w2c_pit_platform_freeze_validate.py'
+      - '.github/workflows/w2c_pit_platform_freeze.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate PIT-A frozen bytes and input
+        run: python scripts/w2c_pit_platform_freeze_validate.py
+      - name: Re-run all PIT-A synthetic attacks
+        run: python scripts/w2c_pit_platform_synthetic.py
+      - name: Assert synthetic firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w2c_pit_platform_synthetic_summary.json'))
+          assert x['status']=='PASS_29_OF_29'
+          assert x['real_semantic_queue_read'] is False
+          assert x['network_accessed'] is False
+          assert x['performance_data_read'] is False
+          PY
