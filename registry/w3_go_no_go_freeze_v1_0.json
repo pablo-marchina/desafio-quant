@@ -1,0 +1,22 @@
+{
+  "artifact": "W3_GO_NO_GO_FREEZE",
+  "version": "W3-GATE-FREEZE-v1.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_PRE_REAL_COMBINATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "bundle_sha256": "c4db745a4c38a80743ec29779f638f5ebf79ff8f7f0df0a30c9ab682ae34aac2",
+  "bundle_hash_rule": "SHA256 over lexicographically sorted UTF-8 lines path:git_blob_sha1\\n.",
+  "frozen_objects": {
+    "registry/w3_go_no_go_contract_v1_0.json": "398b4c9da36407796cf19f88ef087e05ce2c0302",
+    "scripts/w3_go_no_go_synthetic_v1.py": "00dbc715837daa5e2c1834a7a43c285f1aad9277",
+    "scripts/w3_go_no_go_v1.py": "161bc7853e4473a042f0c82704ed573fc53c396c"
+  },
+  "frozen_inputs": {
+    "ias_result_blob": "360521ba7a2973ea1685a50c55ad5636abc631ba",
+    "pit_f1_f9_blob": "1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa"
+  },
+  "real_combination_executed": false,
+  "w3_execution_authorized": false,
+  "rule": "Only this frozen decision engine may combine the exact IAS/SMAA and F1-F9 blobs. The output can authorize at most future W3 protocol drafting, never W3 execution."
+}
