@@ -1,0 +1,74 @@
+{
+  "artifact": "W2C_SEMANTIC_VALIDATION_RUN",
+  "version": "W2C-SV-RUN-v1.0",
+  "protocol_version": "W2C-SV-v1.0",
+  "performance_blind": true,
+  "science_reopened": false,
+  "input_candidate_rows": 4364,
+  "unique_event_ids": 3787,
+  "semantic_status_counts": {
+    "AMBIGUOUS_MULTI_FAMILY": 2,
+    "DUPLICATE_INDEPENDENCE_CLUSTER": 18,
+    "INVALID_NO_STRICT_FAMILY": 565,
+    "REASSIGNED_BY_FROZEN_PRECEDENCE": 5,
+    "VALID_UNIQUE_FAMILY": 3197
+  },
+  "family_counts": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "resolved_events": 13,
+      "independent_clusters": 11,
+      "review_selected": 11
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "resolved_events": 288,
+      "independent_clusters": 286,
+      "review_selected": 80
+    },
+    "EARNINGS_EPS": {
+      "resolved_events": 1757,
+      "independent_clusters": 1750,
+      "review_selected": 80
+    },
+    "FDA_ADVISORY_COMMITTEE": {
+      "resolved_events": 66,
+      "independent_clusters": 66,
+      "review_selected": 66
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "resolved_events": 5,
+      "independent_clusters": 5,
+      "review_selected": 5
+    },
+    "FOMC_DECISION": {
+      "resolved_events": 66,
+      "independent_clusters": 66,
+      "review_selected": 66
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "resolved_events": 763,
+      "independent_clusters": 756,
+      "review_selected": 80
+    },
+    "MA_PENDING_COMPLETION": {
+      "resolved_events": 223,
+      "independent_clusters": 223,
+      "review_selected": 80
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "resolved_events": 23,
+      "independent_clusters": 23,
+      "review_selected": 23
+    },
+    "MA_REGULATORY_CLEARANCE": {
+      "resolved_events": 16,
+      "independent_clusters": 16,
+      "review_selected": 16
+    }
+  },
+  "review_queue_rows": 509,
+  "ias_scores_computed": false,
+  "feasibility_gates_scored": false,
+  "linked_asset_realized_returns_read": false,
+  "w3_family_selected": false,
+  "interpretation": "Deterministic semantic validation only. Review-selected rows are a performance-blind evidence queue; no IAS/F1-F9/W3 conclusion is authorized."
+}
