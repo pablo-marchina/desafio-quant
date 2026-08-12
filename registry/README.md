@@ -40,18 +40,34 @@ Estes arquivos **não alteram a verdade científica** e registram a Wave 1 / aut
 
 Nenhum número de performance foi autorizado por ser favorável; o resultado negativo e o no-trade permanecem.
 
-## 3. Extensão pós-freeze em planejamento
+## 3. Extensão pós-freeze — estado atual
 
-`post_freeze_extension_plan.json` é o estado machine-readable do novo trabalho. Ele é **subordinado** ao freeze de submissão e não pode modificar FST-v1.0, SF-v3.0, ART-029 ou ART-030.
+### `post_freeze_extension_plan.json`
 
-Workstreams planejados:
+Estado operacional da extensão. Versão atual `PFEP-v1.1`, fase `POST_FREEZE_PROTOCOL_DRAFTING`.
 
-- `W2A_PORTFOLIO_BACKTEST_INTEGRITY` — contabilidade de portfólio financiado para regras econômicas já congeladas.
-- `W2B_INFORMATION_ASYMMETRY_SCORE` — separar assimetria informacional pura do score conjunto EUAS.
-- `W2C_DEEP_EVENT_UNIVERSE_CENSUS` — descoberta performance-blind com prioridade em M&A completion/regulatory clearance e FDA.
-- `W3_NEW_PREREGISTERED_EXPERIMENT` — somente após GO ex ante; nenhuma seleção por performance de ARGOS.
+Ele é **subordinado** ao freeze de submissão e não pode modificar FST-v1.0, SF-v3.0, ART-029 ou ART-030.
 
-O arquivo é um **planning contract**, não um protocolo confirmatório congelado. Protocolos, pesos, thresholds, regras de capital e critérios GO/NO-GO finais precisam de artefatos próprios, versionados **antes** da execução correspondente.
+### `post_freeze_methodology_research_v1.json`
+
+Síntese machine-readable da pesquisa pré-freeze concluída para W2-A e W2-B/IAS.
+
+Flags críticas:
+
+- `performance_results_computed: false`;
+- `ias_family_scores_computed: false`;
+- `protocols_frozen: false`.
+
+Estado: `RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING`.
+
+### Workstreams
+
+- `W2A_PORTFOLIO_BACKTEST_INTEGRITY` — pesquisa concluída; próximo passo é protocol draft + revisão adversarial. O gate zero recomendado é reconciliação exata do R1 primário antes de qualquer métrica de NAV/Sharpe/MDD.
+- `W2B_INFORMATION_ASYMMETRY_SCORE` — pesquisa concluída; próximo passo é congelar constructo, anchors, ECG, feasibility e robustez usando validação sintética antes de scores reais.
+- `W2C_DEEP_EVENT_UNIVERSE_CENSUS` — ainda não iniciado; discovery só após freeze do protocolo IAS/discovery.
+- `W3_NEW_PREREGISTERED_EXPERIMENT` — bloqueado até GO ex ante; nenhuma seleção por performance do ARGOS.
+
+Os documentos humanos correspondentes são `docs/35_post_freeze_extension_roadmap.md`, `docs/36_w2a_portfolio_backtest_methodology_research.md` e `docs/37_w2b_ias_methodology_research.md`.
 
 ## 4. Information completeness
 
@@ -93,6 +109,6 @@ Pontos essenciais:
 ## 8. Regra de precedência
 
 **Submissão:** final scientific truth → submission freeze → manifest/claims/numbers → PDF QA → artefatos individuais.  
-**Extensão:** toda a cadeia acima permanece imutável → `post_freeze_extension_plan.json` → futuros protocolos pré-resultado → futuros resultados.
+**Extensão:** toda a cadeia acima permanece imutável → `post_freeze_extension_plan.json` → pesquisa metodológica → futuros protocolos pré-resultado → futuros resultados.
 
 Nenhum registry novo pode alterar retroativamente a interpretação autorizada de H1–H5 sem um erro factual/proveniência demonstrado.
