@@ -17,7 +17,7 @@
     "FTC_MERGER_CONF": {"title":"FTC Protocol for Coordination in Merger Investigations","url":"https://www.ftc.gov/advice-guidance/competition-guidance/protocol-coordination-merger-investigations","type":"official_process","supports":["MA_REGULATORY_CLEARANCE","ANTITRUST_ENFORCEMENT_SINGLE_NAME"]},
     "FTC_MERGERS_GUIDE": {"title":"FTC Mergers Guide","url":"https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/mergers","type":"official_process","supports":["MA_PENDING_COMPLETION","MA_REGULATORY_CLEARANCE","ANTITRUST_ENFORCEMENT_SINGLE_NAME"]},
     "SEC_SHLANSKY_MA": {"title":"SEC v. David J. Shlansky insider trading release","url":"https://www.sec.gov/enforcement-litigation/litigation-releases/lr-19332","type":"official_enforcement","supports":["MA_PRE_ANNOUNCEMENT_OR_RUMOR"]},
-    "SEC_MA_CONDITIONS_2025": {"title":"SEC-filed 8-K merger closing conditions","url":"https://www.sec.gov/Archives/edgar/data/1842718/000119312525215824/d26134d8k.htm","type":"issuer_primary_filing","supports":["MA_PENDING_COMPLETION"]},
+    "SEC_MA_CONDITIONS_2025": {"title":"SEC-filed 8-K merger closing conditions","url":"https://www.sec.gov/Archives/edgar/data/1842718/000119312525215824/d26134d8k.htm","type":"issuer_primary_filing","supports":["MA_PRE_ANNOUNCEMENT_OR_RUMOR","MA_PENDING_COMPLETION"],"support_note":"For MA_PRE_ANNOUNCEMENT_OR_RUMOR this source is adjacent-process corroboration only, not a direct anchor-setting source."},
     "SEC_MA_CONDITIONS_2026": {"title":"SEC-filed 8-K merger regulatory closing conditions","url":"https://www.sec.gov/Archives/edgar/data/875320/000119312526296710/d113650d8k.htm","type":"issuer_primary_filing","supports":["MA_PENDING_COMPLETION","MA_REGULATORY_CLEARANCE"]},
     "FED_FOMC_CONF": {"title":"Federal Reserve FOMC external communications and confidential information principles","url":"https://www.federalreserve.gov/monetarypolicy/files/FOMC20120620material.htm","type":"official_process","supports":["FOMC_DECISION"]},
     "FED_FOMC_PUBLIC": {"title":"Federal Reserve FOMC public disclosure FAQ","url":"https://www.federalreserve.gov/faqs/federal-open-market-committee-fomc-not-public.htm","type":"official_process","supports":["FOMC_DECISION"]},
@@ -31,6 +31,7 @@
     "Sources support structural process claims only.",
     "No ARGOS economic or forecasting outcome is used.",
     "A source being available does not automatically imply ECG-A.",
-    "Insufficient same-family evidence is represented as ECG-D rather than a low numeric anchor."
+    "Insufficient same-family evidence is represented as ECG-D rather than a low numeric anchor.",
+    "Adjacent-process corroboration cannot alone set an anchor or upgrade ECG."
   ]
 }
