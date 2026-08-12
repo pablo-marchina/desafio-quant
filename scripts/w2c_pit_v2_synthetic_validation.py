@@ -93,6 +93,8 @@ def run():
     ok('28 F8 explicit unresolved state is schema-complete','UNRESOLVED is a value' in p['gates']['F8_mandatory_input_coverage']['meaning'])
     ok('29 no W3 execution before separate freeze','No W3 execution before a separate W3 protocol freeze.' in p['prohibitions'])
     ok('30 sequence keeps IAS after F1-F9 freeze',p['scoring_order'].index('freeze F1-F9 results') < p['scoring_order'].index('only then allow structural IAS evidence scoring'))
+    ok('31 F3 unresolved eligibility uses lower-upper bounds','lower/upper bounds' in p['gates']['F3_sampleability_floor']['uncertainty_rule'])
+    ok('32 scorer schema freezes PIT eligibility state','pit_event_eligible_state' in p['event_level_fields'])
 
     out={'artifact':'W2C_PIT_V2_SYNTHETIC_VALIDATION','version':'W2C-PIT-SYN-v2.0','status':'PASS','cases':len(cases),'passed':len(cases),'case_names':cases,'science_reopened':False,'performance_blind':True}
     Path('registry/w2c_pit_v2_synthetic_validation.json').write_text(json.dumps(out,indent=2)+'\n')
