@@ -1,0 +1,24 @@
+{
+  "artifact":"W2C_ADJUDICATION_V1_1_BYTE_FREEZE",
+  "version":"W2C-ADJF-v1.1",
+  "date":"2026-08-12",
+  "status":"PENDING_CI_BYTE_VALIDATION",
+  "parent_freeze":"W2C-SVF-v2.0",
+  "supersedes_invalidated_freeze":"W2C-ADJF-v1.0",
+  "source_commit":"21d3c0218d36949e37c73a526d5d855b67290805",
+  "performance_blind":true,
+  "science_reopened":false,
+  "real_titles_read_before_freeze":false,
+  "synthetic_validation":{"workflow_run_id":31625962538,"job_id":94212273234,"status":"PASS_19_OF_19","real_queue_read":false,"titles_read":false,"performance_data_read":false,"network_accessed":false},
+  "frozen_blobs":[
+    {"role":"adjudication_protocol","path":"registry/w2c_semantic_v2_adjudication_protocol_v1_1.json","git_blob_sha1":"2f8035b00aa8f4dc1eed7fe9d5a1a6aadd04b91c"},
+    {"role":"controlled_reveal_exporter","path":"scripts/w2c_semantic_v2_adjudication_export_v1_1.py","git_blob_sha1":"515dedcdaaf4a4a597114472b7ba4acd33ed996b"},
+    {"role":"decision_materializer","path":"scripts/w2c_semantic_v2_adjudication_materialize_v1_1.py","git_blob_sha1":"e9695e2fffe4e5c6eae7bf8fe5871247e31bb632"},
+    {"role":"synthetic_validator","path":"scripts/w2c_semantic_v2_adjudication_synthetic_v1_1.py","git_blob_sha1":"796f0311ae6ced2a6aaeeadb96e43cd9185ac05d"}
+  ],
+  "frozen_input":{"path":"registry/w2c_semantic_v2_adjudication_queue.csv.gz","git_blob_sha1":"60fdc9784dc189e4b588a56ad70eec3c7c5f23d7","rows":335,"unique_event_ids":335,"unique_cluster_ids":335},
+  "freeze_bundle_id_sha256":"3dd326c81c5482f35234a1a53faf3e140f4685c2809ead25b07a6fb4cdc51c7b",
+  "freeze_bundle_formula":"SHA256('W2C-ADJF-v1.1|<protocol>|<exporter>|<materializer>|<synthetic>|<input>')",
+  "immutability_rule":"Any byte change to protocol/exporter/materializer/synthetic or input invalidates W2C-ADJF-v1.1 and requires a new version before title reveal.",
+  "authorized_after_ci_pass":"Reveal exactly seven allowed fields for all 335 initial rows; no network, PIT, F1-F9, IAS, ranking or performance data."
+}
