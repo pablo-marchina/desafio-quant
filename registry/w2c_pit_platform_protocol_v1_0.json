@@ -1,0 +1,62 @@
+{
+  "artifact": "W2C_PIT_PLATFORM_EVIDENCE_PROTOCOL",
+  "version": "W2C-PIT-A-v1.0",
+  "date": "2026-08-12",
+  "status": "PREREGISTRATION_BEFORE_REAL_PIT_NETWORK_COLLECTION",
+  "parent_freezes": ["W2PF-v1.0", "W2C-SVF-v1.0"],
+  "semantic_input": {
+    "path": "registry/w2c_semantic_review_queue.csv.gz",
+    "git_blob_sha1": "131e19d0ff3e17c3b25ddd92420139d8b61f026d",
+    "rows": 509,
+    "scope": "review-selected representative semantic clusters only"
+  },
+  "performance_blind": true,
+  "science_reopened": false,
+  "purpose": "Materialize public historical Polymarket observability for the deterministic semantic evidence queue without using Gamma start/end dates or current lifetime volume as substitutes for point-in-time market evidence.",
+  "source_contract": {
+    "gamma_event": "GET https://gamma-api.polymarket.com/events/{event_id}; identifier resolution only: nested market IDs, conditionId, clobTokenIds, enableOrderBook, acceptingOrdersTimestamp and resolutionSource metadata.",
+    "data_trades": "GET https://data-api.polymarket.com/trades?eventId={event_id}&limit=10000&offset=0&takerOnly=false; public timestamped trade evidence. If exactly 10000 rows are returned, history is flagged truncated and the observed minimum is not claimed to be the true first trade.",
+    "clob_prices_history": "GET https://clob.polymarket.com/prices-history?market={token_id}&interval=max; public timestamped historical price observations per CLOB token.",
+    "authentication": "None for Gamma, Data API, or CLOB public market-data endpoints used here.",
+    "rate_policy": "Sequential requests; >=0.05 seconds between requests; exponential retry on 429/5xx/network errors; maximum 5 attempts.",
+    "timeout_seconds": 25
+  },
+  "timestamp_semantics": {
+    "gamma_accepting_orders_timestamp": "Historical platform metadata evidence that the market was configured to accept orders; stored separately because current Gamma metadata may have been edited after close.",
+    "trade_observation_timestamp": "Minimum timestamp among public Data API trade rows returned for the event. If trade history is truncated, it is an observed lower-bound witness only, not the true first trade.",
+    "price_observation_timestamp": "Minimum timestamp returned by CLOB price history across all nested market tokens; this proves a historical price observation, not necessarily the first trade.",
+    "platform_earliest_evidence": "Minimum non-null timestamp across accepting-orders metadata, observed public trades, and CLOB price history. It is evidence of platform observability only.",
+    "forbidden_proxy": ["Gamma event startDate", "Gamma event endDate", "current/lifetime volume", "current liquidity"]
+  },
+  "required_outputs_per_event": [
+    "event_id", "resolved_family", "independence_cluster_id", "title", "semantic_end_utc",
+    "gamma_fetch_status", "nested_market_count", "orderbook_enabled_market_count", "condition_ids", "clob_token_ids",
+    "accepting_orders_timestamp_min", "public_trade_rows_observed", "trade_history_truncated", "first_public_trade_observed_utc",
+    "tokens_with_price_history", "first_public_price_observed_utc", "platform_earliest_evidence_utc",
+    "platform_historical_observation_present", "network_error_count"
+  ],
+  "event_pit_a_status": {
+    "PASS_PLATFORM_HISTORY_OBSERVED": "At least one timestamped public trade or CLOB historical price observation exists. acceptingOrdersTimestamp alone is supportive metadata but cannot create PASS.",
+    "METADATA_ONLY_UNRESOLVED": "Only Gamma activation metadata is available; no timestamped trade/price observation was recovered.",
+    "NO_PLATFORM_HISTORY_RECOVERED": "No timestamped historical market observation and no activation metadata recovered.",
+    "NETWORK_UNRESOLVED": "Required requests did not complete after frozen retries; never convert a network failure to absence."
+  },
+  "family_summary": {
+    "report": ["selected_events", "gamma_coverage", "platform_history_observed_count", "platform_history_observed_rate", "trade_observed_count", "price_history_observed_count", "network_unresolved_count"],
+    "not_a_gate_yet": true,
+    "reason": "F1/F2/F7 require a separately materialized official public-revelation timestamp and safe-cutoff layer. F1-F9 are not scored in PIT-A."
+  },
+  "prohibitions": [
+    "No ARGOS PnL/Brier/log loss/H2/economic performance reads.",
+    "No linked-asset realized returns.",
+    "No use of Gamma startDate/endDate as proof of first trade, market presence before news, or safe cutoff.",
+    "No use of current/lifetime volume or liquidity as PIT liquidity.",
+    "No F1-F9, IAS, robust ranking, or W3 selection in this stage.",
+    "No dropping a family because PIT-A coverage looks inconvenient; missing network evidence remains unresolved."
+  ],
+  "outputs": [
+    "registry/w2c_pit_platform_events.csv.gz",
+    "registry/w2c_pit_platform_summary.json"
+  ],
+  "next_boundary": "After PIT-A materialization, preregister PIT-B for primary-source revelation/resolution timestamps and preoutcome linked-asset mapping before scoring F1-F9."
+}
