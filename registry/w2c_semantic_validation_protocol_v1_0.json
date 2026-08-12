@@ -1,0 +1,139 @@
+{
+  "artifact": "W2C_SEMANTIC_VALIDATION_PROTOCOL",
+  "version": "W2C-SV-v1.0",
+  "date": "2026-08-12",
+  "status": "PREREGISTRATION_BEFORE_REAL_SEMANTIC_RESULTS",
+  "parent_freeze": "W2PF-v1.0",
+  "discovery_snapshot": "W2C-MAT-v2.0",
+  "performance_blind": true,
+  "science_reopened": false,
+  "objective": "Convert lower-bound Polymarket discovery candidates into a reproducible high-precision semantic evidence set without reading ARGOS performance, realized linked-asset returns, IAS scores, or feasibility outcomes.",
+  "unit_of_review": "Polymarket event_id with all nominated family rows collapsed before classification.",
+  "allowed_inputs": [
+    "family nominations from frozen W2C-DISC-v2.0",
+    "event_id",
+    "title",
+    "slug",
+    "resolution_source",
+    "tags",
+    "series_ids",
+    "start_utc",
+    "end_utc",
+    "discovery_channels",
+    "queries_matched"
+  ],
+  "forbidden_inputs": [
+    "ARGOS PnL",
+    "Brier",
+    "log loss",
+    "H2 incremental metrics",
+    "R1/R3 economic performance",
+    "linked-asset realized returns",
+    "IAS dimension anchors assigned to real families",
+    "F1-F9 pass/fail outcomes"
+  ],
+  "semantic_states": [
+    "VALID_UNIQUE_FAMILY",
+    "REASSIGNED_BY_FROZEN_PRECEDENCE",
+    "INVALID_NO_STRICT_FAMILY",
+    "AMBIGUOUS_MULTI_FAMILY",
+    "DUPLICATE_INDEPENDENCE_CLUSTER"
+  ],
+  "family_rules": {
+    "EARNINGS_EPS": {
+      "must": ["earnings|eps|earnings per share"],
+      "exclude": ["fda|pdufa|fomc|cpi|merger|acquisition|antitrust|court|lawsuit"],
+      "meaning": "A named issuer's scheduled earnings/EPS release or directly resolved earnings/EPS outcome; excludes stock-price-after-earnings questions and non-earnings corporate events."
+    },
+    "FDA_ADVISORY_COMMITTEE": {
+      "must_all_groups": ["fda|food and drug administration|drug|biologic", "advisory committee|adcom|advisory panel|panel vote"],
+      "meaning": "An FDA advisory-committee meeting, recommendation, or vote. FDA advisory advice is distinct from the agency's final decision."
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "must_all_groups": ["fda|food and drug administration|pdufa", "approval|approve|decision|action date|complete response|crl|authorize"],
+      "exclude_unless_final_explicit": ["advisory committee|adcom|panel vote"],
+      "meaning": "A final FDA regulatory action/approval decision, including PDUFA/action-date decisions; excludes advisory-committee outcomes unless the text separately and explicitly asks about the later final FDA action."
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "must_all_groups": ["merger|acquisition|acquire|takeover|buyout|bid", "rumor|rumour|announce|announcement|offer|bid|acquire"],
+      "exclude": ["close|closing|completion|shareholder vote|tender offer|ftc|doj|cma|antitrust|regulatory clearance|competition authority"],
+      "meaning": "Whether a merger/acquisition/bid will be announced or emerge before a definitive transaction exists publicly."
+    },
+    "MA_PENDING_COMPLETION": {
+      "must_all_groups": ["merger|acquisition|deal|takeover|buyout|transaction", "close|closing|complete|completion|shareholder vote|tender offer|outside date|terminate|termination"],
+      "exclude_if_regulatory_decision_is_question": ["ftc|doj|cma|european commission|antitrust|regulatory clearance|competition authority"],
+      "meaning": "An already announced transaction whose remaining binary state is closing/completion or a non-regulatory closing condition."
+    },
+    "MA_REGULATORY_CLEARANCE": {
+      "must_all_groups": ["merger|acquisition|deal|transaction", "ftc|doj|cma|european commission|antitrust|regulatory|competition", "approve|approval|clear|clearance|block|challenge|second request|phase 2"],
+      "meaning": "A specific announced M&A transaction whose binary uncertainty is merger-control or other regulatory clearance/blocking."
+    },
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "must_all_groups": ["antitrust|ftc|doj|competition regulator|competition authority|monopoly", "lawsuit|sue|trial|case|ruling|fine|settlement|investigation|enforcement|injunction"],
+      "exclude_if_specific_merger": ["merger|acquisition|deal|transaction"],
+      "meaning": "Non-merger antitrust enforcement focused on a named company or conduct matter."
+    },
+    "FOMC_DECISION": {
+      "must_all_groups": ["fomc|federal reserve|\bfed\b", "rate|target range|decision|cut|hike|hold|basis point"],
+      "exclude": ["cpi|consumer price index|ppi|payroll|jobs report|gdp|retail sales|unemployment rate"],
+      "meaning": "A scheduled FOMC monetary-policy decision, not a statistical release or Fed speech."
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "must": ["cpi|consumer price index|ppi|producer price index|nonfarm payroll|payrolls|jobs report|employment situation|gdp|gross domestic product|retail sales|unemployment rate"],
+      "exclude": ["fomc|federal reserve rate|fed rate|rate decision|rate cut|rate hike"],
+      "meaning": "A scheduled official macroeconomic statistical release with a discrete published observation."
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "must": ["court|lawsuit|verdict|injunction|settlement|ruling|trial|appeal"],
+      "exclude": ["antitrust|ftc|doj|merger|acquisition|pdufa|fda approval"],
+      "meaning": "A discrete non-antitrust, non-M&A corporate litigation outcome affecting a named company."
+    }
+  },
+  "precedence": [
+    ["MA_REGULATORY_CLEARANCE", "MA_PENDING_COMPLETION"],
+    ["MA_PENDING_COMPLETION", "MA_PRE_ANNOUNCEMENT_OR_RUMOR"],
+    ["ANTITRUST_ENFORCEMENT_SINGLE_NAME", "CORPORATE_LITIGATION_BINARY"],
+    ["FDA_FINAL_PDUFA_DECISION", "FDA_ADVISORY_COMMITTEE"],
+    ["FOMC_DECISION", "MACRO_STATISTICAL_RELEASE"]
+  ],
+  "precedence_rule": "A precedence winner may be used only when its own strict inclusion rule passes and the lower-priority match exists solely because of shared vocabulary. Otherwise mark AMBIGUOUS_MULTI_FAMILY; never force a family to maximize sample size.",
+  "independence_cluster": {
+    "purpose": "Count one real-world decision/release once even when Polymarket has multiple thresholds/outcomes/events.",
+    "key": "family + UTC end-date day + normalized semantic subject after removing numeric thresholds, percentages, currencies, yes/no boilerplate and generic probability wording",
+    "conservative_collision_rule": "If two events map to the same key, count one independent cluster and retain all member event_ids for audit. Under-counting is preferred to false independence.",
+    "multi_market_event_rule": "Multiple markets nested under one Polymarket event_id are never independent events."
+  },
+  "deterministic_review_queue": {
+    "order": "SHA256(family + '|' + independence_cluster_id)",
+    "target_valid_clusters_per_family": 80,
+    "top_up_rule": "Traverse the fixed hash order until 80 semantically valid independent clusters are selected or the family is exhausted. All ambiguous cases are also emitted to the review queue but do not count toward the 80.",
+    "small_family_rule": "If fewer than 80 valid independent clusters exist, select all.",
+    "performance_based_sampling_forbidden": true
+  },
+  "acceptance_for_downstream_pit": {
+    "eligible_states": ["VALID_UNIQUE_FAMILY", "REASSIGNED_BY_FROZEN_PRECEDENCE"],
+    "ambiguous_allowed": false,
+    "duplicate_members_count_as_independent": false,
+    "minimum_semantic_fields_present": ["event_id", "resolved_family", "title", "end_utc", "independence_cluster_id"]
+  },
+  "source_semantics": {
+    "polymarket_event_is_container": true,
+    "polymarket_market_is_tradable_binary_unit": true,
+    "startDate_is_not_first_trade": true,
+    "lifetime_volume_is_not_PIT_liquidity": true
+  },
+  "outputs": [
+    "registry/w2c_semantic_validation_events.csv.gz",
+    "registry/w2c_semantic_validation_clusters.csv.gz",
+    "registry/w2c_semantic_validation_summary.json",
+    "registry/w2c_semantic_review_queue.csv.gz"
+  ],
+  "next_boundary": "Semantic validation may create a PIT evidence queue only. It may not calculate IAS, F1-F9, linked-asset realized returns, or W3 selection.",
+  "references": [
+    "Polymarket official API data model: event is a container and market is the tradable binary outcome.",
+    "FDA official advisory-committee guidance: advisory recommendations are distinct from FDA final decisions.",
+    "Federal Reserve official FOMC calendars: FOMC decisions are scheduled policy events.",
+    "BLS official release calendars: CPI/PPI/Employment statistical releases have scheduled publication times.",
+    "FTC official merger-review process: specific merger clearance is distinct from non-merger antitrust enforcement."
+  ]
+}
