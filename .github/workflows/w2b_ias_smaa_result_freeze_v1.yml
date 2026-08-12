@@ -1,0 +1,25 @@
+name: W2B IAS SMAA Result Freeze v1
+on:
+  push:
+    paths:
+      - 'registry/w2b_ias_smaa_result_freeze_v1_0.json'
+      - 'registry/w2b_ias_smaa_results_v1.json'
+      - 'scripts/w2b_ias_smaa_result_freeze_validate_v1.py'
+      - '.github/workflows/w2b_ias_smaa_result_freeze_v1.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify frozen method bundle
+        run: python scripts/w2b_ias_frozen_bundle_integrity_v1.py
+      - name: Verify exact IAS SMAA result
+        run: python scripts/w2b_ias_smaa_result_freeze_validate_v1.py
+      - name: Preserve frozen submission hygiene
+        run: python scripts/repository_hygiene_validate.py
