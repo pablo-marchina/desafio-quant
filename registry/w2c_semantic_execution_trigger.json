@@ -1,0 +1,10 @@
+{
+  "artifact": "W2C_SEMANTIC_EXECUTION_TRIGGER",
+  "version": "W2C-SV-TRIGGER-v1.0",
+  "date": "2026-08-12",
+  "semantic_freeze": "W2C-SVF-v1.0",
+  "freeze_validation_run_id": 31620749583,
+  "input_snapshot_blob": "b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b",
+  "performance_blind": true,
+  "authorized_scope": "SEMANTIC_VALIDATION_ONLY"
+}
