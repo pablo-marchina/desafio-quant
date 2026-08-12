@@ -25,21 +25,30 @@ A pasta `docs/` mistura documentação ativa, relatórios de gates e histórico 
 
 ## Trabalho operacional atual — extensão pós-freeze
 
-`POST_FREEZE_EXTENSION_PLANNING`
+`POST_FREEZE_PROTOCOL_DRAFTING`
 
-A Wave 1 foi concluída e o PDF baseline já passou QA. O trabalho novo é separado da submissão científica congelada e está documentado em:
+A Wave 1 e o PDF baseline estão concluídos. A pesquisa metodológica de W2-A/W2-B também foi concluída, mas **nenhum protocolo novo foi congelado** e nenhum resultado novo de portfólio/IAS foi calculado.
 
-- `35_post_freeze_extension_roadmap.md` — sequência, fronteiras e gates da extensão;
-- `../registry/post_freeze_extension_plan.json` — estado machine-readable.
+Documentação ativa da extensão:
 
-A extensão tem quatro etapas planejadas:
+| Arquivo | Uso |
+|---|---|
+| `35_post_freeze_extension_roadmap.md` | sequência, fronteiras, gates e estado atual da extensão |
+| `36_w2a_portfolio_backtest_methodology_research.md` | pesquisa pré-freeze para contabilidade financiada do backtest |
+| `37_w2b_ias_methodology_research.md` | pesquisa pré-freeze para IAS, evidência, robustez e discovery |
+| `../registry/post_freeze_methodology_research_v1.json` | síntese machine-readable das decisões de pesquisa |
+| `../registry/post_freeze_extension_plan.json` | estado machine-readable e próximo gate |
 
-1. **W2-A Portfolio Backtest Integrity Upgrade** — transformar a contabilização event-level já congelada em um portfólio financiado sem mudar as regras de trading após ver resultados.
-2. **W2-B Information-Asymmetry Score (IAS)** — criar um protocolo separado para assimetria informacional pura; EUAS continua respondendo à pergunta diferente de “melhor laboratório conjunto”.
-3. **W2-C Deep Event-Universe Census** — aprofundar M&A completion/regulatory clearance, FDA e famílias relacionadas de forma performance-blind.
-4. **W3 New Preregistered Experiment** — somente se uma família passar gates ex ante; nenhum rescue de H2.
+### Estado de cada workstream
 
-**Importante:** o protocolo de W2-A e o IAS ainda **não estão congelados** neste snapshot. O roadmap apenas fixa a ordem, as fronteiras e o anti-contamination policy. Pesos, thresholds e regras quantitativas finais devem ser definidos e versionados antes da execução correspondente.
+1. **W2-A Portfolio Backtest Integrity Upgrade:** `RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING`. Recomendação: reconstruir o mesmo R1 primário como livro financiado; reconciliação exata dos 34 trades é gate zero.
+2. **W2-B Information-Asymmetry Score:** `RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING`. Recomendação: IAS formativo de assimetria estrutural, evidência/confiança separada e feasibility fora do score.
+3. **W2-C Deep Event-Universe Census:** `PLANNED_DISCOVERY_NOT_STARTED`. Só começa depois do freeze do IAS/discovery protocol.
+4. **W3 New Preregistered Experiment:** `BLOCKED_PENDING_W2_GO_GATE`. Nenhum rescue de H2.
+
+### Fronteira atual
+
+Os próximos artefatos devem ser **protocol drafts**, revisados adversarialmente e testados em casos sintéticos antes de congelamento. Não usar famílias reais para calibrar anchors, pesos, thresholds GO/NO-GO, sizing ou capital base.
 
 ## Baseline de relatório
 
@@ -60,7 +69,7 @@ Para claims/números/estado científico da submissão, prevalecem:
 - `../registry/final_submission_freeze_validation.json`
 - `../registry/final_report_pdf_qa.json`
 
-Os arquivos de Wave 1, framing e extensão pós-freeze **não substituem o freeze científico**. W1 governa avaliação/framing; o roadmap pós-freeze governa apenas trabalho novo.
+Os arquivos de Wave 1, framing e extensão pós-freeze **não substituem o freeze científico**. W1 governa avaliação/framing; W2 pesquisa e protocolos governam apenas trabalho novo.
 
 ## Histórico e pesquisa
 
@@ -78,5 +87,5 @@ Em especial:
 Para responder **“o que ficou provado na submissão?”**, comece em `00_current_truth.md` e no registry final.  
 Para responder **“como chegamos aqui?”**, use os relatórios históricos.  
 Para responder **“por que earnings foi um laboratório defensável?”**, use `33` + EUAS.  
-Para responder **“qual lacuna estamos fechando agora?”**, use `35` + `post_freeze_extension_plan.json`.  
+Para responder **“qual lacuna estamos fechando agora?”**, use `35`–`37` + registries pós-freeze.  
 Para responder **“o que pode entrar no PDF baseline?”**, use claims/números finais + authoring evidence pack + QA do PDF.
