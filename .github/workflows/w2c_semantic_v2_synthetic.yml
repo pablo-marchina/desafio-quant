@@ -1,0 +1,39 @@
+name: W2C Semantic v2 Synthetic Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_semantic_validation_protocol_v2_0.json'
+      - 'scripts/w2c_semantic_validation_v2_0.py'
+      - 'scripts/w2c_semantic_validation_v2_synthetic.py'
+      - '.github/workflows/w2c_semantic_v2_synthetic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile v2 without real candidate read
+        run: python -m py_compile scripts/w2c_semantic_validation_v2_0.py scripts/w2c_semantic_validation_v2_synthetic.py
+      - name: Run v2 outcome-blind adversarial suite
+        run: python scripts/w2c_semantic_validation_v2_synthetic.py
+      - name: Assert v2 firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w2c_semantic_v2_synthetic_summary.json'))
+          assert x['failed']==0
+          assert x['real_candidate_data_read'] is False
+          assert x['performance_data_read'] is False
+          assert x['f1_f9_read'] is False
+          assert x['ias_read'] is False
+          print(x['status'])
+          PY

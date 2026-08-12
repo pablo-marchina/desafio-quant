@@ -1,0 +1,95 @@
+{
+  "artifact": "W2C_SEMANTIC_VALIDATION_PROTOCOL",
+  "version": "W2C-SV-v2.0",
+  "date": "2026-08-12",
+  "status": "QA_REPAIR_PREREGISTRATION_BEFORE_V2_REAL_RESULTS",
+  "parent_freeze": "W2PF-v1.0",
+  "supersedes_for_future_use": "W2C-SV-v1.0",
+  "v1_invalidation": "registry/w2c_semantic_v1_invalidation.json",
+  "discovery_input": {
+    "path": "registry/w2c_discovery_validation_queue.csv.gz",
+    "git_blob_sha1": "b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b",
+    "sha256": "ee5d29c1b92b4c9b1f3367355a67f22b28785aace1356a7b489457dfed896d94",
+    "candidate_rows": 4364
+  },
+  "performance_blind": true,
+  "science_reopened": false,
+  "repair_rationale": "Outcome-blind title audit detected query-label leakage in v1 before any F1-F9, IAS, ranking, linked-asset return or W3 decision. v2 is a precision-oriented QA repair, not a sample-size optimization.",
+  "classification_information_firewall": {
+    "may_vote_for_family": ["title", "slug"],
+    "audit_only_must_not_vote": ["queries_matched", "discovery_channel", "tags", "series_ids", "resolution_source", "start_utc", "end_utc", "volume", "liquidity"],
+    "performance_inputs_forbidden": ["ARGOS PnL", "Brier", "log loss", "H2 incremental metrics", "economic strategy returns", "linked-asset realized returns", "IAS", "F1-F9 outcomes"]
+  },
+  "family_rules": {
+    "EARNINGS_EPS": {
+      "positive": ["\\beps\\b", "earnings per share", "beat (quarterly )?earnings", "miss (quarterly )?earnings", "report (quarterly )?earnings", "quarterly earnings"],
+      "hard_exclude": ["what will .* say", "what .* mention", "during .* earnings call", "fda", "pdufa", "fomc", "cpi", "merger", "acquisition", "antitrust", "lawsuit"]
+    },
+    "FDA_ADVISORY_COMMITTEE": {
+      "require_all": ["\\b(fda|food and drug administration)\\b", "\\b(advisory committee|adcom|advisory panel|panel vote)\\b"],
+      "meaning": "Advisory committee meeting/recommendation/vote only; generic FDA approval is not advisory."
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "require_all": ["\\b(fda|food and drug administration|pdufa)\\b", "\\b(approve|approval|approved|authorize|authorization|emergency use authorization|eua|pdufa|action date|complete response|crl)\\b"],
+      "advisory_exception": "If advisory terms also appear, final-action terms must explicitly refer to a distinct final FDA decision; otherwise ambiguous/reject."
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "require_all": ["\\b(merger|acquisition|acquire|takeover)\\b", "\\b(announce|announced|announcement|rumou?r|bid|offer)\\b"],
+      "hard_exclude": ["\\b(close|closing|completion|shareholder vote|tender offer|ftc|doj|antitrust|regulatory clearance|competition authority|european commission)\\b"]
+    },
+    "MA_PENDING_COMPLETION": {
+      "require_all": ["\\b(merger|acquisition|takeover|transaction)\\b", "\\b(close|closing|complete|completion|shareholder vote|tender offer|outside date|terminate|termination)\\b"],
+      "hard_exclude": ["\\b(ftc|doj|antitrust|regulatory clearance|competition authority|european commission)\\b"]
+    },
+    "MA_REGULATORY_CLEARANCE": {
+      "require_all": ["\\b(merger|acquisition|transaction|takeover)\\b", "\\b(ftc|doj|antitrust|regulatory|competition authority|competition regulator|european commission|\\bcma\\b)\\b", "\\b(approve|approval|clear|clearance|block|challenge|second request|phase 2|remedy|remedies)\\b"]
+    },
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "require_all": ["\\b(antitrust|ftc|doj|competition authority|competition regulator|monopoly)\\b", "\\b(lawsuit|sue|settle|settlement|divest|sell|investigation|enforcement|ruling|injunction|case|fine)\\b"],
+      "hard_exclude": ["\\b(merger|acquisition|transaction|takeover)\\b", "earnings call", "app store.*rank"]
+    },
+    "FOMC_DECISION": {
+      "require_all": ["\\b(fomc|federal reserve|fed)\\b", "\\b(decision|meeting|target rate|target range|rate cut|cut rates|rate hike|hike rates|hold rates|dissent)\\b"],
+      "hard_exclude": ["emergency rate cut", "how many .*cuts.*year", "derivative", "favou?red", "cpi", "consumer price index", "payroll", "gdp", "retail sales"]
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "positive": ["\\bcpi\\b", "consumer price index", "u\\.?s\\.? inflation", "\\bppi\\b", "producer price index", "nonfarm payroll", "payrolls", "jobs added", "jobs report", "employment situation", "unemployment rate", "\\bgdp\\b", "gross domestic product", "retail sales"],
+      "hard_exclude": ["\\bfomc\\b", "fed decision", "rate decision", "rate cut", "rate hike", "\\bvs\\.?\\b", "championship", "esports", "halftime"]
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "positive": ["lawsuit", "verdict", "injunction", "settlement", "court ruling", "court decision", "appeal", "bankruptcy", "chapter 11"],
+      "hard_exclude": ["\\bvs\\.?\\b", "championship", "clay court", "court lions", "arrested", "sentencing", "supreme court vacancy", "election interference trial date", "antitrust", "ftc", "doj", "merger", "acquisition"]
+    }
+  },
+  "multi_family_policy": {
+    "same_mechanism_precedence": [
+      ["MA_REGULATORY_CLEARANCE", "MA_PENDING_COMPLETION", "MA_PRE_ANNOUNCEMENT_OR_RUMOR"],
+      ["FDA_FINAL_PDUFA_DECISION", "FDA_ADVISORY_COMMITTEE"]
+    ],
+    "rule": "Use precedence only when the highest-priority family's own strict title+slug rule passes and lower hits arise from shared mechanism vocabulary. Cross-mechanism hits remain AMBIGUOUS_MULTI_FAMILY."
+  },
+  "independence": {
+    "cluster_key": "resolved_family + UTC end-date day + normalized title subject after removing numeric thresholds and generic probability boilerplate",
+    "conservative": true,
+    "multiple_markets_under_same_event_are_one": true,
+    "duplicate_cluster_members_do_not_count_independently": true
+  },
+  "adjudication": {
+    "required_before_F3": true,
+    "states": ["ACCEPT_STRICT_FAMILY", "REJECT_FALSE_POSITIVE", "AMBIGUOUS_UNRESOLVED"],
+    "queue_order": "SHA256(resolved_family + '|' + independence_cluster_id)",
+    "initial_target_clusters_per_family": 100,
+    "small_family_rule": "all provisional clusters if fewer than 100",
+    "top_up_rule": "If fewer than 80 accepted clusters remain after adjudication and more provisional clusters exist, continue in the same frozen hash order until 80 accepts or exhaustion.",
+    "review_material": ["event_id", "title", "slug", "resolved_family", "family rule text", "end_utc"],
+    "forbidden_review_material": ["queries_matched", "performance", "realized asset returns", "IAS", "F1-F9"],
+    "AI_assistance_disclosure": "If an LLM assists adjudication, record MODEL_ASSISTED_OUTCOME_BLIND_SEMANTIC_ADJUDICATION; do not label it manual-human review."
+  },
+  "outputs": [
+    "registry/w2c_semantic_v2_events.csv.gz",
+    "registry/w2c_semantic_v2_clusters.csv.gz",
+    "registry/w2c_semantic_v2_summary.json",
+    "registry/w2c_semantic_v2_adjudication_queue.csv.gz"
+  ],
+  "downstream_boundary": "Provisional v2 classification cannot score F1-F9. Only adjudicated ACCEPT_STRICT_FAMILY clusters may enter the future PIT evidence queue."
+}

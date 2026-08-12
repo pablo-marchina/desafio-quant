@@ -1,0 +1,30 @@
+{
+  "artifact":"W2C_SEMANTIC_V1_INVALIDATION",
+  "version":"W2C-SV-INCIDENT-v1.0",
+  "date":"2026-08-12",
+  "status":"INVALIDATED_FAIL_CLOSED",
+  "invalidated_freeze":"W2C-SVF-v1.0",
+  "invalidated_materialization":"W2C-SV-MAT-v1.0",
+  "invalidated_downstream":"W2C-PIT-AF-v1.0 and any PIT-A evidence derived from its 509-row input",
+  "science_reopened":false,
+  "performance_data_involved":false,
+  "cause":"Semantic classifier concatenated queries_matched into classification text. Discovery query terms therefore leaked the nominated family label into the classifier and could satisfy strict regexes even when the event title itself was unrelated.",
+  "outcome_blind_detection":"A deterministic title-only audit sample of the frozen semantic review queue exposed category contamination before F1-F9/IAS/ranking/W3.",
+  "examples":[
+    {"observed_family":"MACRO_STATISTICAL_RELEASE","title":"Mobile Legends Bang Bang: Aurora Gaming PH vs Omega Esports (BO3) - MPL Philippines Regular Season","expected":"REJECT"},
+    {"observed_family":"MA_REGULATORY_CLEARANCE","title":"CMA Awards: Female Vocalist of the Year","expected":"REJECT"},
+    {"observed_family":"MA_PENDING_COMPLETION","title":"Azerbaijan x Armenia peace deal in 2025?","expected":"REJECT"},
+    {"observed_family":"CORPORATE_LITIGATION_BINARY","title":"US Men's Clay Court Championships: Roman Andres Burruchaga vs Brandon Nakashima","expected":"REJECT"},
+    {"observed_family":"EARNINGS_EPS","title":"What will Trump say during signing at 2pm?","expected":"REJECT"},
+    {"observed_family":"FDA_ADVISORY_COMMITTEE","title":"FDA approves Camurus' Oclaiz?","expected":"REASSIGN_FDA_FINAL"}
+  ],
+  "required_fix":[
+    "New semantic protocol version; never edit W2C-SV-v1.0 bytes.",
+    "Classification text limited to title+slug; queries/tags/series/resolution source cannot vote for family membership.",
+    "Tighten family-specific lexical rules against demonstrated false positives.",
+    "Add every demonstrated failure mode to synthetic adversarial tests.",
+    "Require deterministic manual adjudication before a cluster can count as validated for F3.",
+    "Rerun synthetic tests, byte-freeze v2, rerun semantic materialization from the original frozen 4,364-row discovery snapshot, and only then create a new PIT protocol/input freeze."
+  ],
+  "historical_truth_boundary":"No change to H2 FAIL, M2, C0_NO_TRADE, FST-v1.0 or SF-v3.0."
+}
