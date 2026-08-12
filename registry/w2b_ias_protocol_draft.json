@@ -1,0 +1,155 @@
+{
+  "artifact": "W2B_IAS_FEASIBILITY_PROTOCOL_DRAFT",
+  "version": "W2B-IAS-DRAFT-v1.0",
+  "date": "2026-08-12",
+  "status": "PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE_NOT_FROZEN",
+  "science_reopened": false,
+  "execution_authorized": false,
+  "performance_blind": true,
+  "operational_definition": "Structural information asymmetry is the extent to which the event-generation process creates materially unequal information sets before public/common revelation. IAS measures that structure; feasibility is evaluated separately.",
+  "dimensions": {
+    "PAC": {
+      "name": "Privileged Access Concentration",
+      "anchors": {
+        "0": "No process-based earlier access to decisive state; decisive information is public.",
+        "1": "Only public latency/technology advantage; no restricted material state.",
+        "2": "Earlier access is diffuse across many actors or concerns partial non-decisive state.",
+        "3": "A bounded multi-party set has documented earlier access to material partial state.",
+        "4": "A small bounded set has earlier access to material or near-decisive state.",
+        "5": "A highly concentrated decision/control set knows or determines decisive state well before public revelation."
+      },
+      "safety": "PAC is a structural process score and never implies illegal conduct by a named person."
+    },
+    "LSO": {
+      "name": "Latent-State Opacity",
+      "anchors": {
+        "0": "Outcome is mechanical from continuously public observables.",
+        "1": "Mostly public state with only a minor/short latent component.",
+        "2": "Material latent state exists but frequent public updates strongly constrain it.",
+        "3": "Decisive state is materially latent between intermittent public updates.",
+        "4": "Most decisive state develops inside a private, internal, negotiation, or regulatory process.",
+        "5": "Decisive state is fundamentally opaque until a discrete reveal."
+      }
+    },
+    "SIB": {
+      "name": "Specialized Interpretation Barrier",
+      "anchors": {
+        "0": "Mechanical, standardized, or machine-readable interpretation.",
+        "1": "Basic domain knowledge or simple threshold interpretation.",
+        "2": "Professional finance/statistics knowledge using standard tools.",
+        "3": "Substantial domain expertise and multi-source synthesis required.",
+        "4": "Narrow scientific, legal, technical, or regulatory specialist expertise required.",
+        "5": "Highly specialized case-specific interpretation remains difficult even for outside professionals."
+      }
+    },
+    "TAW": {
+      "name": "Temporal Asymmetry Window",
+      "definition": "Duration for which a meaningful unequal-information state can plausibly exist; never prediction-market contract lead time.",
+      "anchors_minutes": {
+        "0": "<=5",
+        "1": ">5 and <=60",
+        "2": ">60 and <=1440",
+        "3": ">1440 and <=10080",
+        "4": ">10080 and <=43200",
+        "5": ">43200"
+      }
+    },
+    "PSI": {
+      "name": "Public Saturation Inverse",
+      "anchors": {
+        "0": "Near-continuous dense monitoring and standardized forecasts across multiple independent public channels.",
+        "1": "Dense consensus, multiple public signals, and broad coverage.",
+        "2": "Broad coverage and standardized forecasts, but meaningful idiosyncratic uncertainty remains.",
+        "3": "Moderate or fragmented public forecasting/coverage.",
+        "4": "Sparse specialist coverage and limited standardized forecasts.",
+        "5": "Little or no standardized pre-event forecasting apparatus."
+      },
+      "low_anchor_evidence_rule": "Scores 0 or 1 require at least two distinct public information/forecast channels."
+    }
+  },
+  "construct_boundary": {
+    "excluded_from_ias_magnitude": ["prediction-market liquidity","sampleability","contractability","resolution objectivity","linked-asset sensitivity","cross-market lead-lag","ARGOS performance","publication count"],
+    "reason": "These determine testability, execution, or evidence confidence rather than structural asymmetry itself."
+  },
+  "evidence_confidence_grade": {
+    "A": {"meaning":"Direct same-family high-quality evidence plus strong institutional/process support or independent corroboration.","sampling":"triangular clipped to [0,5] around anchor with half-width 0.5"},
+    "B": {"meaning":"Strong same-family mechanism/evidence with a material directness or coverage limitation.","sampling":"triangular clipped to [0,5] around anchor with half-width 1.0"},
+    "C": {"meaning":"Adjacent-family, theoretical, or limited-case evidence.","sampling":"triangular clipped to [0,5] around anchor with half-width 2.0"},
+    "D": {"meaning":"Insufficient evidence.","sampling":"anchor must be null; Uniform(0,5); family/dimension remains unresolved rather than scored low."}
+  },
+  "evidence_gate": {
+    "ecg_D_allowed": 0,
+    "minimum_dimensions_ECG_A_or_B": 3,
+    "effect": "Families failing this gate cannot support a comparative highest-asymmetry claim or W3 protocol eligibility."
+  },
+  "central_aggregation": {
+    "rule": "IAS_central=(PAC+LSO+SIB+TAW+PSI)/5 only when no ECG-D is present.",
+    "scale_assumption": "Operational 0-5 levels are treated as approximately equally spaced for the central index; sensitivity analysis is mandatory.",
+    "high_threshold": 3.0
+  },
+  "smaa": {
+    "weight_distribution": "Dirichlet(1,1,1,1,1), uniform over the full five-dimensional simplex",
+    "samples_real_scoring": 200000,
+    "seed": 20260812,
+    "common_weight_vector_across_families_per_draw": true,
+    "ecg_value_draws_independent_across_family_dimension": true,
+    "outputs": ["mean simulated IAS","P(IAS>=3)","rank-1 acceptability","rank<=2 acceptability","full rank acceptability vector"],
+    "robust_high_requirement": "IAS_central>=3 and P(IAS>=3)>=0.75 and evidence gate passes."
+  },
+  "comparative_claim_gate": {
+    "minimum_evidence_qualified_families": 2,
+    "leader_rank1_acceptability_min": 0.50,
+    "leader_margin_vs_runnerup_min": 0.05,
+    "failure_label": "NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER",
+    "ecg_D_families": "excluded as unresolved"
+  },
+  "event_taxonomy": [
+    "EARNINGS_EPS",
+    "FDA_ADVISORY_COMMITTEE",
+    "FDA_FINAL_PDUFA_DECISION",
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+    "MA_PENDING_COMPLETION",
+    "MA_REGULATORY_CLEARANCE",
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+    "FOMC_DECISION",
+    "MACRO_STATISTICAL_RELEASE",
+    "CORPORATE_LITIGATION_BINARY"
+  ],
+  "taxonomy_rule": "Do not merge/split a family after real scoring to improve rank or feasibility. Any post-freeze taxonomy change becomes exploratory/new-version work.",
+  "feasibility_gates": {
+    "F1_contractability": {"pre_revelation_contract_rate_min":0.80,"analysis_window_24h_rate_min":0.80,"median_pre_cutoff_history_hours_min":48.0},
+    "F2_pm_pit_observability": {"coverage_min":0.95,"semantic_conflicts_max":0},
+    "F3_sampleability_floor": {"validated_independent_events_min":50,"pit_eligible_events_min":40,"distinct_date_clusters_min":30,"semantics":"Floor authorizes W3 protocol drafting only; it is not a claim of statistical power."},
+    "F4_resolution": {"objective_primary_source_rate_min":0.95,"ambiguous_eligible_events_max":0},
+    "F5_linked_asset": {"preoutcome_mapping_rate_min":0.90,"tradeable_instrument_required":true,"realized_return_mapping_forbidden":true},
+    "F6_pit_asset_data": {"coverage_min":0.95},
+    "F7_safe_cutoff": {"rate_min":1.0},
+    "F8_mandatory_input_coverage": {"rate_min":1.0},
+    "F9_reproducibility": {"mandatory_proprietary_or_account_gated_dependency_allowed":false}
+  },
+  "go_no_go": {
+    "family_status_if_all_pass": "ELIGIBLE_TO_DRAFT_W3_PROTOCOL",
+    "requirements": ["evidence gate","IAS_central>=3","P(IAS>=3)>=0.75","F1-F9 all pass"],
+    "execution_authorized": false,
+    "if_none": "NO_GO_NO_W3_PROTOCOL_CANDIDATE",
+    "w3_execution_requires_separate_freeze": ["estimand/hypothesis","population/cutoffs","prospective power/precision or simulation-based adequacy","feature/model architecture","benchmark","costs","inference","multiplicity","stop rules","promotion rules"]
+  },
+  "multi_candidate_selection": {
+    "practical_IAS_tie": "All eligible families within strictly less than 0.05 rank-1 acceptability of the top eligible family.",
+    "tie_break_order": ["higher PIT-eligible event count","higher preoutcome linked-asset mapping rate","longer median pre-cutoff PM history","lexical family id"],
+    "performance_tie_breaker_allowed": false,
+    "claim_rule": "Feasibility tie-breaking selects a future experiment only; it does not create a highest-asymmetry claim when comparative-claim gate fails."
+  },
+  "discovery_firewall": {
+    "forbidden_inputs": ["ARGOS PnL","linked-asset realized returns used to choose families","Brier","log loss","H2 incremental metrics","R1/R3 performance"],
+    "allowed": ["institutional process evidence","primary literature","structural linked-asset mapping before outcomes","prediction-market contract/history metadata"],
+    "missing_discovery_semantics": "Missing or low discovery is FEASIBILITY_NOT_ESTABLISHED, never IAS=0."
+  },
+  "synthetic_validation": {"script":"scripts/w2b_ias_contract_synthetic_validation.py","cases":18,"passed":18,"status":"PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE"},
+  "references": [
+    {"source":"OECD/JRC Handbook on Constructing Composite Indicators","year":2008},
+    {"source":"Lahdelma, Hokkanen & Salminen, SMAA","doi":"10.1016/S0377-2217(97)00163-X"},
+    {"source":"Tervonen & Lahdelma, Implementing SMAA","doi":"10.1016/j.ejor.2005.12.037"}
+  ],
+  "freeze_rule": "Freeze only after byte-level review of this draft plus synthetic validator. Any substantive change requires a new version and complete synthetic revalidation before real-family scoring."
+}

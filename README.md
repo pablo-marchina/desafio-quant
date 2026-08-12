@@ -1,126 +1,86 @@
 # ARGOS — Desafio Itaú Asset Quant AI 2026
 
-Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0**. Para preservar a trilha histórica, a fase autorizada pelo freeze continua registrada como `FINAL_REPORT_AUTHORING_AND_QA`; o trabalho operacional atual é uma extensão **pós-freeze** separada, em `POST_FREEZE_PROTOCOL_DRAFTING`.
+Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0**. A fase histórica autorizada pelo freeze continua `FINAL_REPORT_AUTHORING_AND_QA`; a extensão pós-freeze está separada e não modifica a verdade científica.
 
-> **Anonimato:** este repositório identifica seus autores pelo GitHub e **não deve ser citado nem linkado no PDF final**.
+> **Anonimato:** este repositório identifica seus autores pelo GitHub e não deve ser citado/linkado no PDF final.
 
 ## Estado científico congelado
 
-- **Tese:** `TF-v1.0` / `ART-027_FREEZE_v1.0`.
-- **Final Scientific Truth:** `FST-v1.0`.
-- **Submission Freeze:** `SF-v3.0`.
-- **Implementação empírica:** Polymarket + earnings/EPS + ações individuais dos EUA.
-- **H1:** `SUPPORTED_IN_TESTED_SAMPLE`.
-- **H2:** `FAIL_UNDER_FROZEN_EXP07I`.
-- **H3:** `BLOCKED_BY_H2_FAIL_NO_RESCUE`.
-- **H4:** `BLOCKED_BY_H2_FAIL`.
-- **H5:** `BLOCKED_BY_H4`.
-- **Champion probabilístico:** `M2`.
-- **Champion econômico:** `C0_NO_TRADE`.
-- **Blockers científicos para a submissão:** nenhum.
-- **Limitação de outcome restante:** `BLSH|2025-09-17`, mantida fail-closed; 116/117 eventos possuem validação oficial independente e 116/116 validados concordam com a resolução contratual.
+- H1: `SUPPORTED_IN_TESTED_SAMPLE`
+- H2: `FAIL_UNDER_FROZEN_EXP07I`
+- H3: `BLOCKED_BY_H2_FAIL_NO_RESCUE`
+- H4: `BLOCKED_BY_H2_FAIL`
+- H5: `BLOCKED_BY_H4`
+- champion probabilístico: `M2`
+- champion econômico: `C0_NO_TRADE`
+- official EPS independente: 116/117; 116/116 validados concordantes; residual `BLSH|2025-09-17`
+- frozen bundle: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`
 
-O resultado congelado não é uma estratégia long/short promovida: a probabilidade agregada da Polymarket teve valor preditivo frente aos baselines públicos gratuitos testados, mas a camada congelada de movimentos não acrescentou informação incremental demonstrável além de M2. O stop rule encerra a cadeia testada em **no-trade**.
+Autoridade primária: `registry/final_scientific_truth.json`, seguida por `registry/final_submission_answers_sf_v3.json`, claims/numbers/manifest e `registry/final_submission_freeze_validation.json`.
 
-## Baseline de submissão preservado
+O resultado congelado continua negativo para a incrementalidade H2. Nenhuma extensão pode transformar esse resultado em alpha pós-hoc.
 
-O relatório de cinco páginas já possui QA independente registrado em `registry/final_report_pdf_qa.json` com status `PASS_FINAL_REPORT_PDF_QA_READY_FOR_SUBMISSION` e veredito `PASS_READY_FOR_SUBMISSION`.
+## PDF baseline preservado
 
-- page set autoritativo: `report/pages_submission/`;
-- PDF aprovado: `ARGOS_Desafio_Quant_AI_2026_FINAL.pdf`;
-- SHA-256 do PDF aprovado: `5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561`;
-- exatamente 5 páginas, 16:9, anonimato e renderização validados.
+`registry/final_report_pdf_qa.json` registra `PASS_READY_FOR_SUBMISSION`. O PDF QA-approved possui SHA-256 `5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561`, 5 páginas, 16:9 e anonimato validado. Qualquer PDF futuro exige novo hash e QA completo.
 
-Esse PDF é **checkpoint seguro**, não autorização para reescrever a ciência. Qualquer versão posterior deve preservar o baseline, regenerar hash e repetir o QA.
+## Extensão pós-freeze — estado atual
 
-## Extensão pós-freeze atual
+`registry/post_freeze_extension_plan.json` está em `PFEP-v1.2` / `POST_FREEZE_PROTOCOLS_SYNTHETICALLY_VALIDATED_READY_FOR_FREEZE`.
 
-A pesquisa metodológica pré-freeze de W2-A e W2-B/IAS foi concluída **sem calcular novo P&L de portfólio, sem pontuar famílias reais no IAS e sem congelar protocolos**. O estado atual é `POST_FREEZE_PROTOCOL_DRAFTING`.
+A pesquisa metodológica de W2-A e W2-B foi concluída; os dois protocol drafts foram transformados em contratos executáveis e atacados somente com dados sintéticos. **Nenhum novo P&L de portfólio e nenhum score IAS de família real foi aberto.**
 
-### W2-A — Portfolio Backtest Integrity Upgrade
+### W2-A
 
-A recomendação de pesquisa é reconstruir o **mesmo R1 primário congelado** como um portfólio financiado, não criar um novo otimizador. A reconciliação exata dos 34 trades (21 long / 13 short) com ART-025 será o gate zero; NAV, exposição, turnover, max drawdown e métricas de risco só serão reportáveis depois dessa reconciliação e de um protocolo próprio congelado.
+- machine-readable: `registry/w2a_portfolio_accounting_protocol_draft.json`
+- humano: `docs/38_w2a_portfolio_accounting_contract_draft.md`
+- validator: `scripts/w2a_portfolio_contract_synthetic_validation.py`
+- synthetic gate: **20/20 PASS**
 
-### W2-B — Information-Asymmetry Score
+O draft preserva exatamente o R1 primário; normaliza capital por compromisso ex ante do schedule, restringe short proceeds, usa matched-SPY e cash/no-leverage gates, define NAV/MDD/turnover/exposures e usa additive active P&L para stationary bootstrap. Status: **ready for freeze, not frozen/executable on real data yet**.
 
-A pesquisa concluiu que IAS não deve ser “EUAS com outros pesos”. O candidato é um índice **formativo de assimetria estrutural**, separado dos gates de viabilidade, com cinco dimensões ainda não congeladas: `PAC`, `LSO`, `SIB`, `TAW` e `PSI`. A força da evidência ficará em uma camada separada de confiança, e a robustez de ranking deverá testar incerteza de pesos/anchors em vez de depender de um único vetor especialista.
+### W2-B / IAS
 
-### W2-C / W3
+- machine-readable: `registry/w2b_ias_protocol_draft.json`
+- humano: `docs/39_w2b_ias_feasibility_contract_draft.md`
+- validator: `scripts/w2b_ias_contract_synthetic_validation.py`
+- synthetic gate: **18/18 PASS**
 
-O deep census só começará depois do freeze do protocolo IAS/discovery. Um novo experimento continuará bloqueado até uma família passar, ex ante, tanto os critérios de assimetria quanto os gates de viabilidade. Nenhum desses passos reabre H2.
+O draft define anchors 0–5 para `PAC/LSO/SIB/TAW/PSI`, ECG→uncertainty, equal-weight central IAS, SMAA global, taxonomy granular, feasibility F1–F9, claim gate e GO/NO-GO. Passar W2 autoriza apenas draftar W3; execução W3 exige freeze próprio.
 
-Artefatos atuais:
+### Adversarial gate
 
-- roadmap: `docs/35_post_freeze_extension_roadmap.md`;
-- pesquisa W2-A: `docs/36_w2a_portfolio_backtest_methodology_research.md`;
-- pesquisa W2-B/IAS: `docs/37_w2b_ias_methodology_research.md`;
-- síntese machine-readable da pesquisa: `registry/post_freeze_methodology_research_v1.json`;
-- estado da extensão: `registry/post_freeze_extension_plan.json`.
+`docs/40_w2_protocol_adversarial_review.md` + `registry/w2_protocol_synthetic_validation_combined.json`: **38/38 PASS**, `science_reopened=false`, `real_argos_performance_read=false`, `real_ias_family_scores_read=false`.
 
-**Regra absoluta:** nenhum artefato dessa extensão pode alterar retrospectivamente `FAIL_UNDER_FROZEN_EXP07I`, promover um subgrupo de earnings ou transformar um resultado negativo antigo em alpha.
+A próxima ação válida é **byte-freeze dos dois drafts revisados**. Qualquer alteração substantiva antes disso exige nova versão e rerun dos 38 casos.
 
-## Fonte de verdade
+## Navegação
 
-Para a submissão congelada, leia nesta ordem:
+- `STATUS.yaml` — estado científico/histórico do freeze.
+- `docs/README.md` — mapa de documentação.
+- `registry/README.md` — precedência dos registries.
+- `scripts/README.md` — executáveis e validators.
+- `.github/workflows/README.md` — workflows/gates.
+- `docs/29_final_scientific_truth_submission_freeze.md` — freeze humano.
+- `docs/35_post_freeze_extension_roadmap.md` — roadmap atual.
+- `docs/36`–`37` — pesquisa metodológica pré-freeze.
+- `docs/38`–`40` — protocol drafts e adversarial review.
 
-1. `STATUS.yaml` — estado científico/operacional do freeze.
-2. `registry/final_scientific_truth.json` — verdade científica final.
-3. `registry/final_submission_answers_sf_v3.json` — sete respostas finais congeladas.
-4. `registry/final_submission_claims.csv` — fronteira de claims permitidos/proibidos.
-5. `registry/final_submission_numbers.csv` — números autorizados para a entrega.
-6. `registry/final_submission_manifest.json` — manifesto de hashes e identidades.
-7. `registry/final_submission_freeze_validation.json` — prova do gate final executado.
-8. `registry/final_report_pdf_qa.json` — QA do PDF baseline.
-9. `docs/29_final_scientific_truth_submission_freeze.md` — leitura humana do freeze.
+## Política de governança
 
-Para trabalho pós-freeze, use adicionalmente `registry/post_freeze_extension_plan.json`, `registry/post_freeze_methodology_research_v1.json` e `docs/35`–`37`. Eles têm autoridade apenas sobre a **extensão**, nunca sobre a verdade científica congelada.
+- nunca sobrescrever protocolos históricos para refletir resultados posteriores;
+- nunca usar P&L/Brier/log loss/H2 para escolher família IAS;
+- nunca escolher sizing/capital-base W2-A usando realized outcomes;
+- não inventar borrow fee, L2 histórico ou dados PIT indisponíveis;
+- preservar resultados negativos, NO-GO e falhas;
+- qualquer W3 precisa de hipótese/estimand, população, cutoffs, adequacy prospectiva, modelos, benchmark, custos, inferência, multiplicidade, stop/promotion rules congelados antes dos outcomes.
 
-Bundle final congelado: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`.
-
-## Estrutura do repositório
-
-```text
-.
-├── README.md                  # entrada e navegação
-├── STATUS.yaml                # estado científico congelado + execução histórica
-├── data/                      # datasets derivados auditáveis necessários à reprodução
-├── docs/                      # documentação ativa + histórico científico + extensão pós-freeze
-├── registry/                  # contratos, manifests, gates, claims, hashes e summaries
-├── report/                    # figures e page sets do relatório
-├── scripts/                   # pipelines e validadores reproduzíveis
-├── templates/                 # templates metodológicos
-└── .github/workflows/         # execuções reproduzíveis e gates de CI
-```
-
-Consulte os índices locais em `docs/README.md`, `registry/README.md`, `scripts/README.md` e `.github/workflows/README.md`.
-
-## Política de limpeza
-
-**Não deletar nem reescrever evidência histórica para deixar o repositório “bonito”.** Resultados negativos, protocolos pré-resultados, outputs superados e falhas documentadas fazem parte da trilha de auditoria.
-
-- separar claramente **autoritativo atual** de **histórico**;
-- preservar o baseline de submissão e sua trilha de hashes;
-- não usar extensão pós-freeze para reclassificar H1–H5 antigos;
-- manter raw/derivados e hashes necessários à reprodução;
-- evitar arquivos locais, caches, secrets e outputs temporários no Git;
-- impedir que documentação antiga ou pesquisa futura substitua o freeze final.
-
-## Validação atual
-
-Para verificar a integridade **pós-finalização**, rode:
+## Validação do `main`
 
 ```bash
 python scripts/repository_hygiene_validate.py
+python scripts/w2a_portfolio_contract_synthetic_validation.py
+python scripts/w2b_ias_contract_synthetic_validation.py
 ```
 
-Esse validador confirma que os 8 blobs do `final_submission_manifest.json` continuam byte-idênticos, que o bundle SHA permanece congelado e que a navegação ativa continua alinhada a FST-v1.0/SF-v3.0. A extensão pós-freeze é deliberadamente adicional e não muda os hashes do bundle.
-
-`final_submission_freeze_validate.py` é preservado como **validador histórico do momento de freeze** e continua esperando a fase `FINAL_REPORT_AUTHORING_AND_QA` autorizada pelo manifesto.
-
-## Regra de precedência
-
-Para o conteúdo submetido: **ART-027/TF-v1.0 → FST-v1.0 → CT-v4.0 → SF-v3.0 → manifesto/claims/números finais → QA do PDF → artefatos individuais → documentação histórica**.
-
-Para a extensão pós-freeze: **freeze acima permanece imutável → post_freeze_extension_plan → pesquisa metodológica → futuros protocolos pré-resultado → futuros resultados**.
-
-Nenhum novo threshold, subgrupo, feature, modelo, universo ou experimento pós-ART-030 pode alterar a verdade congelada da submissão sem erro factual/proveniência demonstrado.
+`repository_hygiene_validate.py` continua verificando byte-identidade dos 8 blobs do frozen bundle e a navegação FST-v1.0/SF-v3.0. O novo workflow `W2 Protocol Synthetic Validation` verifica que os drafts continuam passando 38/38 sem abrir dados reais.

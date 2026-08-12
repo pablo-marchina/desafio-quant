@@ -1,0 +1,53 @@
+name: W2 Protocol Synthetic Validation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/w2a_portfolio_contract_synthetic_validation.py'
+      - 'scripts/w2b_ias_contract_synthetic_validation.py'
+      - 'registry/w2a_portfolio_accounting_protocol_draft.json'
+      - 'registry/w2b_ias_protocol_draft.json'
+      - 'registry/w2_protocol_synthetic_validation_combined.json'
+      - 'docs/38_w2a_portfolio_accounting_contract_draft.md'
+      - 'docs/39_w2b_ias_feasibility_contract_draft.md'
+      - 'docs/40_w2_protocol_adversarial_review.md'
+      - '.github/workflows/w2_protocol_synthetic_validation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-contract-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile validators
+        run: |
+          python -m py_compile scripts/w2a_portfolio_contract_synthetic_validation.py
+          python -m py_compile scripts/w2b_ias_contract_synthetic_validation.py
+      - name: Execute synthetic-only validators
+        run: |
+          python scripts/w2a_portfolio_contract_synthetic_validation.py > /tmp/w2a.json
+          python scripts/w2b_ias_contract_synthetic_validation.py > /tmp/w2b.json
+      - name: Validate anti-contamination and 38/38 contract gate
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open('/tmp/w2a.json'))
+          b=json.load(open('/tmp/w2b.json'))
+          c=json.load(open('registry/w2_protocol_synthetic_validation_combined.json'))
+          assert a['status']=='PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE'
+          assert a['cases_total']==20 and a['cases_pass']==20 and a['cases_fail']==0
+          assert a['real_argos_performance_read'] is False and a['science_reopened'] is False
+          assert b['status']=='PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE'
+          assert b['cases_total']==18 and b['cases_pass']==18 and b['cases_fail']==0
+          assert b['real_family_scores_read'] is False and b['argos_performance_read'] is False and b['science_reopened'] is False
+          assert c['status']=='PASS_38_OF_38_SYNTHETIC_CASES_READY_FOR_FREEZE'
+          assert c['total_cases']==38 and c['total_pass']==38
+          assert c['real_argos_performance_read'] is False and c['real_ias_family_scores_read'] is False and c['science_reopened'] is False
+          print('PASS_W2_SYNTHETIC_38_OF_38_READY_FOR_FREEZE')
+          PY

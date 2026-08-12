@@ -1,65 +1,37 @@
 # Scripts map
 
-Os scripts preservam a execução científica e os gates do ARGOS. Scripts históricos continuam no `main` para permitir auditoria; não são “dead code” se reproduzem uma etapa congelada.
+Scripts históricos permanecem no `main` para reproduzir a sequência científica; não os altere para refletir resultados posteriores.
 
-## Validação atual do `main`
+## Health checks atuais
 
 ```bash
 python scripts/repository_hygiene_validate.py
+python scripts/w2a_portfolio_contract_synthetic_validation.py
+python scripts/w2b_ias_contract_synthetic_validation.py
 ```
 
-O validator pós-finalização verifica:
+`repository_hygiene_validate.py` protege FST-v1.0/SF-v3.0, ART-030, EPS/GenAI e os 8 blobs do frozen submission bundle.
 
-- FST-v1.0/SF-v3.0;
-- ART-030 `FAIL_H2` + stop rule;
-- EPS 116/117 e BLSH residual;
-- GenAI ledger final;
-- os **8 Git blob SHAs** do `final_submission_manifest.json`;
-- bundle SHA-256 congelado;
-- `STATUS.yaml` em `FINAL_REPORT_AUTHORING_AND_QA`;
-- ausência de linguagem stale nos documentos ativos.
+## W2 synthetic-only validators
 
-## Validador histórico do freeze
+- `w2a_portfolio_contract_synthetic_validation.py` — implementa o núcleo do funded-accounting contract e tenta falsificá-lo com 20 cenários sintéticos. Não lê real ARGOS P&L.
+- `w2b_ias_contract_synthetic_validation.py` — implementa anchors/ECG/SMAA/feasibility/GO semantics e tenta falsificá-los com 18 cenários sintéticos. Não lê scores de famílias reais nem ARGOS performance.
 
-`final_submission_freeze_validate.py` foi desenhado para o instante **pré-finalizer**. Ele exige `current_phase: FINAL_SCIENTIFIC_TRUTH_SUBMISSION_FREEZE`, gera `final_submission_freeze_validation.json` e foi executado com sucesso antes da transição final de `STATUS.yaml`.
+Status combinado: **38/38 PASS READY FOR FREEZE**. Esses scripts validam drafts; não são autorização para execução real.
 
-Por isso, não use esse script como health check do `main` pós-freeze. Ele permanece preservado como evidência da sequência correta de governança.
+## Pipelines científicos congelados
 
-## Pipelines científicos principais
+- `art028_*` — feasibility/materialização outcome-blind.
+- `art029_*` — freeze H2 antes dos outcomes.
+- `art030_*` — execução H2.
+- `ic*`, `information_completeness_*`, `pass_a*`, `pass_b*` — contracts/gates pré-experimento.
+- `finalize_*` — transições históricas de `STATUS.yaml`; não executar arbitrariamente.
 
-- `art028_movement_data_feasibility.py` — materialização outcome-blind das features.
-- `art028_finalize_architecture.py` — arquitetura pós-materialização ainda outcome-blind.
-- `art029_freeze_exp07i_protocol.py` — protocolo confirmatório antes dos outcomes.
-- `art030_exp07i_h2_execution.py` — execução confirmatória H2.
-- `art030_runner.py` — runner de ART-030.
+## Regras
 
-## Information completeness
-
-Scripts `ic02_*`, `ic03_*`, `ic04_*`, `ic06_*`, `ic07_*` e `information_completeness_gate.py` preservam os contratos de dados usados antes do audit de técnicas.
-
-## Cross-strategy audit
-
-- `implementation_audit_pass_a.py`
-- `implementation_audit_pass_b.py`
-- auxiliares de feature matrix/coverage/correlation.
-
-Essas etapas foram outcome-blind e fazem parte da evidência de governança.
-
-## Status finalizers
-
-Scripts `finalize_*_status.py` são migrações históricas de `STATUS.yaml` associadas a gates específicos. Não executá-los arbitrariamente após FST-v1.0: representam transições de fase já concluídas.
-
-O único estado vigente é o que está no `STATUS.yaml` atual.
-
-## Política de execução
-
-1. Rodar artefatos científicos históricos no commit/protocolo correspondente.
-2. Não alterar input congelado para “fazer passar”.
-3. Preservar seeds, hashes e parâmetros.
-4. Não usar outcomes em scripts explicitamente outcome-blind.
-5. Não substituir campos canônicos IC-03 por vendor semantics rejeitadas.
-6. Não executar novos experimentos para alterar SF-v3.0; a fase atual é relatório/QA.
-
-## Dependências
-
-Os workflows do GitHub Actions documentam o ambiente real usado em cada execução. Ao reproduzir um artefato histórico, prefira o workflow/commit correspondente em vez de assumir que o ambiente atual é idêntico.
+1. Preservar seeds/hashes/parâmetros dos artefatos históricos.
+2. Nunca usar outcomes em scripts marcados outcome/performance-blind.
+3. Qualquer mudança substantiva nos W2 protocol drafts exige nova versão e rerun de todos os 38 synthetic cases.
+4. Real W2-A somente depois do byte-freeze W2-A e Gate 0 de reconciliação.
+5. Real IAS/W2-C somente depois do byte-freeze IAS/discovery.
+6. W3 só depois de freeze independente com prospective adequacy.

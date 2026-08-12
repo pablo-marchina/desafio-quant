@@ -1,0 +1,22 @@
+{
+  "artifact": "W2_PROTOCOL_SYNTHETIC_VALIDATION_COMBINED",
+  "version": "W2-SYN-COMB-v1.0",
+  "date": "2026-08-12",
+  "status": "PASS_38_OF_38_SYNTHETIC_CASES_READY_FOR_FREEZE",
+  "science_reopened": false,
+  "real_argos_performance_read": false,
+  "real_ias_family_scores_read": false,
+  "w2a": {"status":"PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE","cases_total":20,"cases_pass":20},
+  "w2b": {"status":"PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE","cases_total":18,"cases_pass":18},
+  "total_cases": 38,
+  "total_pass": 38,
+  "adversarial_corrections": [
+    "W2A drawdown high-water mark includes starting capital 1.0.",
+    "W2A capital normalization uses ex-ante committed initial capital, never realized MTM prices.",
+    "W2A catastrophic short cash deficit triggers no-leverage gate instead of ex-post recapitalization.",
+    "W2A primary dependence-aware bootstrap operates on additive active PnL increments vs matched-SPY; Sharpe remains secondary descriptive.",
+    "W2B ECG-D families are unresolved and excluded from highest-asymmetry comparative claims.",
+    "W2B practical rank-1 ties are resolved for experiment selection using pre-frozen feasibility, not ARGOS performance.",
+    "W2B GO authorizes W3 protocol drafting only; W3 execution still requires a separately frozen W3 design and adequacy simulation."
+  ]
+}
