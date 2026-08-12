@@ -1,0 +1,43 @@
+{
+  "artifact": "W2C_DISCOVERY_SECOND_VALID_EXECUTION_RECORD",
+  "protocol_version": "W2C-DISC-v2.0",
+  "run_id": 31609782123,
+  "date": "2026-08-12",
+  "snapshot_utc": "2026-08-12T14:59:04Z",
+  "execution_status": "PASS_DISCOVERY_AND_FIREWALL_OUTPUT_MATERIALIZATION_FAILED",
+  "frozen_byte_gate": "PASS",
+  "discovery_step": "PASS",
+  "firewall_no_scoring_step": "PASS",
+  "materialization_step": "FAIL_GIT_WORKTREE_STATE_AFTER_LOCAL_OUTPUT_COMMIT",
+  "science_reopened": false,
+  "performance_blind": true,
+  "argos_performance_read": false,
+  "realized_linked_asset_returns_read": false,
+  "ias_scores_computed": false,
+  "feasibility_gates_scored": false,
+  "w3_family_selected": false,
+  "total_closed_events_broad_crawl_unique": 10000,
+  "unique_events_seen_all_channels": 13489,
+  "candidate_rows": 4362,
+  "raw_unvalidated_candidate_counts": {
+    "EARNINGS_EPS": 1789,
+    "FDA_ADVISORY_COMMITTEE": 100,
+    "FDA_FINAL_PDUFA_DECISION": 230,
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 56,
+    "MA_PENDING_COMPLETION": 287,
+    "MA_REGULATORY_CLEARANCE": 275,
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 90,
+    "FOMC_DECISION": 184,
+    "MACRO_STATISTICAL_RELEASE": 1054,
+    "CORPORATE_LITIGATION_BINARY": 297
+  },
+  "stability_vs_first_valid_execution": {
+    "all_non_macro_family_candidate_counts_identical": true,
+    "macro_candidate_count_delta": -2,
+    "total_candidate_row_delta": -2,
+    "interpretation": "Snapshot variation is recorded descriptively only and is not used to choose or tune a family/query/protocol."
+  },
+  "materialization_failure": "Even after git reset --hard HEAD, git pull --rebase reported unstaged changes. Discovery outputs had already been committed locally and firewall checks passed.",
+  "authorized_remediation": "Keep the frozen discovery bytes unchanged. Persist a subsequent exact snapshot to a dedicated evidence branch without rebasing, then promote the six output blob identities onto current main via a separate Git tree commit.",
+  "second_run_output_files_not_persisted": true
+}
