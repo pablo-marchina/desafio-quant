@@ -1,0 +1,16 @@
+{
+  "artifact": "W2C_DISCOVERY_EXECUTION_TRIGGER",
+  "version": "W2C-TRIGGER-v1.1",
+  "date": "2026-08-12",
+  "authorized_protocol": "W2C-DISC-v1.1",
+  "discovery_freeze": "W2C-DF-v1.1",
+  "parent_freeze": "W2PF-v1.0",
+  "protocol_git_blob_sha1": "465f6238947402d53024fe2b5899163bd4d4eae9",
+  "base_runner_git_blob_sha1": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+  "wrapper_git_blob_sha1": "8acdc3d754acccb3f31fa5370bdecc16caa8e6ee",
+  "change_from_v1_0": "pagination bound only; 400 -> 2000 pages",
+  "v1_0_family_counts_opened": false,
+  "performance_blind": true,
+  "ias_scoring_authorized": false,
+  "w3_selection_authorized": false
+}
