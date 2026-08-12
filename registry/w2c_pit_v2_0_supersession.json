@@ -1,0 +1,73 @@
+{
+  "artifact": "W2C_PIT_V2_0_SUPERSESSION",
+  "version": "W2C-PIT-SUPERSESSION-v2.0-to-v2.1",
+  "date": "2026-08-12",
+  "status": "SUPERSEDED_FOR_LAYER_B_C_AND_F1_F9_BEFORE_REAL_EXECUTION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "superseded_protocol": "W2C-PIT-v2.0",
+  "successor_protocol": "W2C-PIT-v2.1",
+  "scope": {
+    "layer_A_polymarket_platform": "VALID_FROZEN_AND_REUSABLE_BYTE_IDENTICALLY",
+    "layer_B_primary_revelation_resolution": "SUPERSEDED_BEFORE_REAL_EXECUTION",
+    "layer_C_linked_asset_data_availability": "SUPERSEDED_BEFORE_REAL_EXECUTION",
+    "F1_F9_real_scoring": "FORBIDDEN_UNDER_V2_0",
+    "IAS_SMAA_W3": "NOT_EXECUTED_AND_REMAIN_BLOCKED"
+  },
+  "reasons_discovered_pre_layer_B": [
+    {
+      "id": "GLOBAL_MACRO_SCOPE",
+      "finding": "The frozen MACRO_STATISTICAL_RELEASE population contains multiple jurisdictions, while v2.0 Layer B routed macro evidence only through U.S. BLS/BEA/Census and Layer C fixed SPY for all macro events.",
+      "risk": "This would mechanically create false unresolved/fail states and invalid linked-asset mappings for non-U.S. events.",
+      "performance_information_used": false
+    },
+    {
+      "id": "RIGHT_CENSORING_ASOF",
+      "finding": "At frozen evaluation time 2026-08-12T20:00:00Z, 12/260 events have semantic_end_utc in the future: 3 FDA and 9 macro.",
+      "risk": "Treating not-yet-due events as failed revelation/resolution would bias F1/F2/F4/F6/F7 downward.",
+      "performance_information_used": false
+    }
+  ],
+  "population_structure_audit": {
+    "run_id": 31637451373,
+    "asof_utc": "2026-08-12T20:00:00Z",
+    "total": 260,
+    "past_or_due": {"EARNINGS_EPS": 100, "FDA_FINAL_PDUFA_DECISION": 60, "MACRO_STATISTICAL_RELEASE": 88},
+    "right_censored": {"EARNINGS_EPS": 0, "FDA_FINAL_PDUFA_DECISION": 3, "MACRO_STATISTICAL_RELEASE": 9},
+    "macro_jurisdictions": {
+      "UNITED_STATES": 70,
+      "UNITED_KINGDOM": 5,
+      "EURO_AREA": 4,
+      "JAPAN": 4,
+      "BRAZIL": 3,
+      "GERMANY": 3,
+      "SOUTH_KOREA": 2,
+      "INDIA": 2,
+      "MEXICO": 2,
+      "CHINA": 1,
+      "UNRESOLVED": 1
+    }
+  },
+  "preserved_layer_A": {
+    "evidence_freeze": "W2C-PIT-LAYER-A-FREEZE-v2.0",
+    "evidence_bundle_sha256": "faf7499294e2864bc47081fb8b375c33a83af07f8ac27c01dd756ac239c2e759",
+    "execution_run_id": 31636731245,
+    "evidence_commit": "572dc4e85202ff6fb1e0c2516035422bce1a4ba5",
+    "promotion_commit": "cf182280dc8887bd7c2e3de8af5bfa1c1719039c",
+    "exact_git_blobs": {
+      "registry/w2c_pit_v2_platform_events.csv.gz": "5e062a0c2ba1fe267a111b16b89415f2155a1c27",
+      "registry/w2c_pit_v2_platform_request_manifest.jsonl.gz": "010bbfc5ef69b8920a6e5759a86f22309e015e46",
+      "registry/w2c_pit_v2_platform_summary.json": "339c2ebd568ff19335473eaf489c7b7a50e576a2"
+    },
+    "rule": "The successor may only reuse these exact Layer A blobs. No recollection, endpoint substitution, or rescue witness is allowed after the observed collection coverage."
+  },
+  "execution_history_guard": {
+    "layer_B_real_executed_under_v2_0": false,
+    "layer_C_real_executed_under_v2_0": false,
+    "F1_F9_real_scored_under_v2_0": false,
+    "IAS_real_scored": false,
+    "SMAA_real_ranking_run": false,
+    "W3_selected_or_executed": false
+  },
+  "change_control": "v2.1 may correct only jurisdiction routing, right-censoring/evaluable denominators, and linked-asset structural mapping needed by those corrections. The frozen 260-event population, F1-F9 thresholds, Layer A evidence, IAS protocol boundaries, and performance firewall cannot be improved using observed outcomes."
+}
