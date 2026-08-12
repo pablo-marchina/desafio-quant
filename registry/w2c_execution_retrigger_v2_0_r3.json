@@ -1,0 +1,15 @@
+{
+  "artifact": "W2C_DISCOVERY_EXECUTION_RETRIGGER",
+  "version": "W2C-RETRIGGER-v2.0-r3",
+  "date": "2026-08-12",
+  "reason": "Persist one exact W2C-DF-v2.0 output snapshot to a dedicated evidence branch after two runs passed discovery/firewall but failed only during publication to main.",
+  "prior_valid_run_ids": [31609286354, 31609782123],
+  "protocol_git_blob_sha1": "f9c8706899f93c072ae0329ed719b119b477b68c",
+  "base_runner_git_blob_sha1": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+  "wrapper_git_blob_sha1": "547a9357a8827822959bc9b79fedbdea7139b8a3",
+  "discovery_semantics_changed": false,
+  "publication_only_change": "Push local output commit to w2c-v2-evidence-snapshot branch; no rebase or main mutation inside the research job.",
+  "performance_blind": true,
+  "ias_scoring_authorized": false,
+  "w3_selection_authorized": false
+}
