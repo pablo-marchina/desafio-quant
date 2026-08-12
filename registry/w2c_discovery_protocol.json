@@ -1,0 +1,78 @@
+{
+  "artifact": "W2C_PERFORMANCE_BLIND_DISCOVERY_PROTOCOL",
+  "version": "W2C-DISC-v1.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_BEFORE_NEW_W2C_COUNTS",
+  "parent_freeze": "W2PF-v1.0",
+  "parent_freeze_bundle_id_sha256": "e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b",
+  "science_reopened": false,
+  "performance_blind": true,
+  "purpose": "Discover candidate Polymarket events for the ten frozen IAS families without reading ARGOS performance or realized linked-asset returns.",
+  "taxonomy": [
+    "EARNINGS_EPS",
+    "FDA_ADVISORY_COMMITTEE",
+    "FDA_FINAL_PDUFA_DECISION",
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+    "MA_PENDING_COMPLETION",
+    "MA_REGULATORY_CLEARANCE",
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+    "FOMC_DECISION",
+    "MACRO_STATISTICAL_RELEASE",
+    "CORPORATE_LITIGATION_BINARY"
+  ],
+  "query_map": {
+    "EARNINGS_EPS": ["earnings", "EPS", "quarterly earnings", "earnings per share"],
+    "FDA_ADVISORY_COMMITTEE": ["FDA advisory committee", "FDA AdCom", "advisory committee drug", "FDA panel"],
+    "FDA_FINAL_PDUFA_DECISION": ["PDUFA", "FDA approval", "FDA decision", "drug approval"],
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": ["acquisition rumor", "merger rumor", "takeover rumor", "acquisition announcement", "merger announcement", "buyout"],
+    "MA_PENDING_COMPLETION": ["deal close", "deal closing", "merger close", "acquisition close", "deal completion", "shareholder vote acquisition", "tender offer", "outside date merger"],
+    "MA_REGULATORY_CLEARANCE": ["FTC merger approval", "DOJ merger approval", "CMA merger approval", "European Commission merger", "antitrust clearance merger", "regulatory approval acquisition", "merger clearance"],
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": ["FTC antitrust", "DOJ antitrust", "antitrust lawsuit", "antitrust trial", "monopoly case", "competition regulator"],
+    "FOMC_DECISION": ["FOMC", "Fed rate decision", "Federal Reserve decision", "Fed rate cut", "Fed rate hike"],
+    "MACRO_STATISTICAL_RELEASE": ["CPI", "consumer price index", "nonfarm payrolls", "jobs report", "GDP release", "PPI", "retail sales", "unemployment rate"],
+    "CORPORATE_LITIGATION_BINARY": ["court ruling company", "lawsuit settlement", "court injunction", "corporate verdict", "corporate lawsuit"]
+  },
+  "discovery_channels": [
+    "FULL_CLOSED_EVENT_KEYSET_CRAWL",
+    "FROZEN_TITLE_SEARCH_KEYSET",
+    "FROZEN_PUBLIC_SEARCH",
+    "PUBLIC_SEARCH_TAG_TO_RELATED_TAG_EVENT_EXPANSION",
+    "FROZEN_TERM_MATCHED_SERIES_TO_EVENT_EXPANSION"
+  ],
+  "source_api": "official public Polymarket Gamma API",
+  "pagination": {
+    "keyset_limit": 500,
+    "keyset_max_pages": 400,
+    "public_search_limit_per_type": 50,
+    "public_search_max_pages": 20,
+    "series_limit": 500,
+    "series_max_pages": 20,
+    "tag_slugs_per_query_max": 10
+  },
+  "candidate_semantics": "Discovery candidates only. A targeted-query hit or structural text-classifier hit can nominate a family; manual semantic validation is mandatory before feasibility gates or IAS scoring.",
+  "multi_family_semantics": "A raw event may be nominated to multiple families; later manual validation must resolve inclusion without changing the frozen taxonomy or query dictionary.",
+  "forbidden_inputs": [
+    "ARGOS PnL",
+    "R1/R3 performance",
+    "Brier",
+    "log loss",
+    "H2 incremental metrics",
+    "realized linked-asset returns used to choose families"
+  ],
+  "allowed_inputs": [
+    "Polymarket event/market/tag/series metadata",
+    "institutional/process evidence",
+    "primary literature",
+    "structural linked-asset mapping defined before outcomes"
+  ],
+  "outputs": [
+    "registry/w2c_discovery_events.csv.gz",
+    "registry/w2c_discovery_summary.csv",
+    "registry/w2c_discovery_query_audit.csv",
+    "registry/w2c_discovery_validation_queue.csv.gz",
+    "registry/w2c_discovery_summary.json"
+  ],
+  "no_scoring_rule": "This run MUST NOT calculate IAS points, SMAA ranks, F1-F9 pass/fail, or select a W3 family.",
+  "missing_semantics": "Low/zero discovery means FEASIBILITY_NOT_ESTABLISHED, never IAS=0 or family absence.",
+  "freeze_rule": "Any substantive change after new W2C counts are opened requires W2C-DISC-v2+ and must be labeled as a new discovery wave; v1.0 counts remain auditable."
+}
