@@ -1,0 +1,187 @@
+{
+  "artifact": "POST_FREEZE_METHODOLOGY_RESEARCH",
+  "version": "PFMR-v1.0",
+  "date": "2026-08-12",
+  "status": "RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING",
+  "scientific_reopen": false,
+  "performance_results_computed": false,
+  "ias_family_scores_computed": false,
+  "protocols_frozen": false,
+  "authority": {
+    "scientific_truth": "FST-v1.0 / SF-v3.0",
+    "h2": "FAIL_UNDER_FROZEN_EXP07I",
+    "economic_champion": "C0_NO_TRADE",
+    "frozen_bundle_sha256": "c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885"
+  },
+  "w2a": {
+    "status": "RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING",
+    "research_doc": "docs/36_w2a_portfolio_backtest_methodology_research.md",
+    "purpose": "Reconstruct a financed daily portfolio from the exact frozen ART-025 R1 primary trade set without changing the strategy.",
+    "immutable_primary": {
+      "eligible_opportunities": 108,
+      "executed_trades": 34,
+      "long": 21,
+      "short": 13,
+      "signal_horizon": "T-1",
+      "holding_sessions": 10,
+      "long_round_trip_cost_bps": 20,
+      "short_round_trip_cost_bps": 35,
+      "sizing_semantics": "equal event notional",
+      "benchmark": "matched SPY plus C0_NO_TRADE"
+    },
+    "recommended_protocol_candidates": {
+      "portfolio_primitive": "one absolute notional unit per frozen trade before normalization",
+      "funded_normalization": "scale by peak simultaneous absolute unit notional so historical peak gross exposure equals 1.0; accounting normalization only, not a deployable forward sizing policy",
+      "cash_return": 0.0,
+      "short_proceeds_rehypothecation": false,
+      "short_initial_collateral_fraction": 1.0,
+      "mark_to_market": "frozen adjusted open entry; intermediate adjusted closes; frozen adjusted close exit; constant shares; no interpolation",
+      "cost_path_candidate": "split frozen round-trip cost 50/50 entry/exit if exact final-PnL reconciliation holds; otherwise preserve exact legacy cost semantics",
+      "primary_benchmark": "matched-SPY pseudo-book using identical dates, signs, notionals and overlap schedule",
+      "primary_outputs": [
+        "daily_nav",
+        "terminal_return",
+        "active_return_vs_matched_spy",
+        "financial_max_drawdown",
+        "gross_exposure",
+        "net_exposure",
+        "capital_utilization",
+        "turnover",
+        "max_concurrent_positions",
+        "time_under_water"
+      ],
+      "secondary_outputs": [
+        "daily_volatility",
+        "sharpe_dependence_aware",
+        "sortino",
+        "active_sharpe"
+      ],
+      "inference_candidate": "stationary/dependent block bootstrap with pre-frozen automatic block-length estimator and pre-frozen fallback",
+      "optional_cost_stress_candidate": "2x frozen 20/35 bps costs; no trade/sizing changes"
+    },
+    "rejected_shortcuts": [
+      "naive sqrt(252) Sharpe without serial-dependence treatment",
+      "DSR with invented or incomplete trial count",
+      "invented static borrow fee",
+      "capital-base optimization on Sharpe/MDD/return",
+      "dropping frozen trades due to a new overlap cap",
+      "relabeling max_additive_drawdown_opportunity as portfolio max drawdown"
+    ],
+    "must_resolve_before_freeze": [
+      "exact ART-025 market-adjusted sign formula for shorts",
+      "intermediate adjusted-price availability for all 34 trades",
+      "cash/collateral edge cases under peak-overlap normalization",
+      "block-bootstrap automatic selector and fallback validated on synthetic data",
+      "exact numeric reconciliation tolerances",
+      "whether 2x cost stress is included"
+    ]
+  },
+  "w2b": {
+    "status": "RESEARCH_COMPLETE_PROTOCOL_DRAFT_PENDING",
+    "research_doc": "docs/37_w2b_ias_methodology_research.md",
+    "construct_type": "FORMATIVE_STRUCTURAL_INFORMATION_ASYMMETRY",
+    "central_principle": "IAS measures structural asymmetry; feasibility remains outside the IAS magnitude.",
+    "candidate_dimensions_not_frozen": [
+      {
+        "id": "PAC",
+        "name": "Privileged Access Concentration"
+      },
+      {
+        "id": "LSO",
+        "name": "Latent-State Opacity"
+      },
+      {
+        "id": "SIB",
+        "name": "Specialized Interpretation Barrier"
+      },
+      {
+        "id": "TAW",
+        "name": "Temporal Asymmetry Window"
+      },
+      {
+        "id": "PSI",
+        "name": "Public Saturation Inverse"
+      }
+    ],
+    "excluded_from_ias_magnitude": [
+      "cross_market_timing_opportunity",
+      "linked_asset_sensitivity",
+      "prediction_market_liquidity",
+      "sampleability",
+      "resolution_objectivity",
+      "published_informed_trading_evidence_as_direct_score_points"
+    ],
+    "evidence_layer_candidate": {
+      "name": "Evidence Confidence Grade",
+      "grades": ["A", "B", "C", "D"],
+      "principle": "evidence strength controls uncertainty/confidence around structural anchors rather than adding economic score points"
+    },
+    "aggregation_candidates_not_frozen": {
+      "central": "equal-weight mean of five 0-5 structural anchors if synthetic validation supports interval-like anchors",
+      "robustness": "SMAA/global weight-space analysis with ECG-driven anchor uncertainty",
+      "additional": [
+        "local +/-1 perturbation",
+        "leave-one-dimension-out",
+        "aggregation-rule sensitivity if multiple admissible rules remain"
+      ],
+      "ordinal_fallback": "evaluate ordinal-compatible SMAA if 0-5 anchors cannot be defended as interval-like"
+    },
+    "candidate_taxonomy_not_frozen": [
+      "EARNINGS_EPS",
+      "FDA_ADVISORY_COMMITTEE",
+      "FDA_FINAL_PDUFA_DECISION",
+      "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "MA_PENDING_COMPLETION",
+      "MA_REGULATORY_CLEARANCE",
+      "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "FOMC_DECISION",
+      "MACRO_STATISTICAL_RELEASE",
+      "CORPORATE_LITIGATION_BINARY"
+    ],
+    "feasibility_gates_outside_ias": [
+      "ex_ante_pm_contractability",
+      "pit_pm_observability",
+      "independent_event_sampleability",
+      "resolution_objectivity",
+      "linked_asset_materiality",
+      "pit_linked_asset_data",
+      "execution_data_availability_for_intended_technique",
+      "no_mandatory_unreproducible_dependency"
+    ],
+    "w2c_discovery_candidate": [
+      "Gamma series/recurrence",
+      "Gamma tags and related tags",
+      "Gamma public-search frozen dictionary",
+      "exact title/slug frozen dictionary",
+      "bounded keyset crawl with fail-closed guards",
+      "family-specific semantic rules",
+      "manual semantic validation",
+      "store discovery-channel provenance per event"
+    ],
+    "synthetic_validation_required": true,
+    "real_family_scores_must_remain_hidden_until_protocol_freeze": true,
+    "must_resolve_before_freeze": [
+      "0-5 deterministic anchors using synthetic archetypes",
+      "interval versus ordinal treatment",
+      "ECG-to-anchor-uncertainty mapping",
+      "admissible SMAA weight region/distribution",
+      "final family split/merge taxonomy",
+      "minimum evidence confidence for ranked status",
+      "W3 GO rule calibrated on synthetic archetypes",
+      "frozen W2C discovery dictionaries and semantic rules"
+    ]
+  },
+  "research_conclusions": [
+    "W2A should be a funded accounting reconstruction, not a portfolio optimizer.",
+    "Exact legacy trade-PnL reconciliation is the first W2A gate; risk metrics are downstream.",
+    "Serial dependence from overlapping positions makes naive annualized Sharpe unsuitable.",
+    "Borrow fees must not be invented; missing PIT borrow data remains a limitation.",
+    "IAS must be separate from EUAS and modeled as a formative structural construct.",
+    "A single spread/PIN/volume proxy is insufficient as ground truth for event-family asymmetry.",
+    "Evidence confidence should affect uncertainty, not directly reward the IAS score.",
+    "FOMC versus statistical macro, FDA advisory versus final FDA decision, and M&A announcement versus completion should be evaluated as separate IAS families.",
+    "Global ranking robustness through SMAA is preferred over dependence on one expert-selected weight vector.",
+    "W3 remains blocked until real-family scoring occurs under a frozen IAS protocol and separate feasibility gates."
+  ],
+  "next_action": "Draft and adversarially review W2A and IAS protocols using only synthetic validation, then freeze both before any W2A portfolio outputs, expanded W2C counts used for scoring, or real IAS family scores are computed."
+}
