@@ -1,0 +1,742 @@
+{
+  "artifact": "W2B_IAS_SMAA_RESULTS",
+  "comparative_claim": {
+    "label": "NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER",
+    "leader": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+    "leader_rank1": 0.45704,
+    "margin": 0.05257499999999998,
+    "permitted": false,
+    "runnerup": "FDA_FINAL_PDUFA_DECISION",
+    "runnerup_rank1": 0.404465
+  },
+  "f1_f9_read": false,
+  "families": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "IAS_central": 3.8,
+      "P_IAS_ge_3": 0.99525,
+      "anchors": {
+        "LSO": 4,
+        "PAC": 4,
+        "PSI": 3,
+        "SIB": 4,
+        "TAW": 4
+      },
+      "ecg": {
+        "LSO": "A",
+        "PAC": "A",
+        "PSI": "B",
+        "SIB": "A",
+        "TAW": "B"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Strong direct confidentiality evidence.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-regulatory-process",
+          "primary_source_ids": "FTC_MERGERS_GUIDE;FTC_MERGER_CONF",
+          "rationale": "FTC guidance states merger-investigation information is confidential and even the existence of an investigation can be undisclosed, creating substantial latent regulatory state."
+        },
+        "PAC": {
+          "adjudication_note": "Applied to single-name enforcement structure, not a claim about a particular investigation.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-regulatory-process",
+          "primary_source_ids": "FTC_MERGER_CONF;FTC_MERGERS_GUIDE",
+          "rationale": "Agency staff and investigated parties can possess nonpublic investigative information before an enforcement decision becomes public."
+        },
+        "PSI": {
+          "adjudication_note": "Moderate/fragmented coverage.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-regulatory-process",
+          "primary_source_ids": "FTC_MERGERS_GUIDE",
+          "rationale": "Public legal and industry analysis exists, but standardized probabilistic forecasting is fragmented across individual enforcement matters."
+        },
+        "SIB": {
+          "adjudication_note": "Narrow specialist interpretation.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-regulatory-process",
+          "primary_source_ids": "FTC_MERGERS_GUIDE;FTC_MERGER_REVIEW",
+          "rationale": "Antitrust enforcement outcomes depend on specialized legal, economic and market-structure analysis."
+        },
+        "TAW": {
+          "adjudication_note": "7-30 day band conservative.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-regulatory-process",
+          "primary_source_ids": "FTC_MERGER_REVIEW;FTC_MERGERS_GUIDE",
+          "rationale": "Investigations and information requests can extend for weeks before a challenge, closure or negotiated outcome."
+        }
+      },
+      "mean_simulated_IAS": 3.7996569528308393,
+      "rank1_acceptability": 0.03427,
+      "rank_acceptability_vector": [
+        0.03427,
+        0.11722,
+        0.27495,
+        0.32042,
+        0.19534,
+        0.05627,
+        0.00151,
+        2e-05,
+        0.0,
+        0.0
+      ],
+      "rank_le2_acceptability": 0.15149,
+      "robust_high": true
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "IAS_central": null,
+      "P_IAS_ge_3": 0.779075,
+      "anchors": {
+        "LSO": 4,
+        "PAC": null,
+        "PSI": 4,
+        "SIB": 5,
+        "TAW": null
+      },
+      "ecg": {
+        "LSO": "B",
+        "PAC": "D",
+        "PSI": "C",
+        "SIB": "B",
+        "TAW": "D"
+      },
+      "evidence_gate": false,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Direct confidentiality mechanism, but broad family heterogeneity limits ECG.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "broad-court-process",
+          "primary_source_ids": "USCOURTS_LR26",
+          "rationale": "Protective orders and sealed or restricted discovery can keep material case evidence outside public access while litigation proceeds."
+        },
+        "PAC": {
+          "adjudication_note": "Insufficient same-family evidence; unresolved rather than scored low.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "broad-court-process",
+          "primary_source_ids": "USCOURTS_LR26",
+          "rationale": "Official court rules establish restricted discovery but do not establish a stable same-family concentration level across the broad corporate binary-litigation taxonomy."
+        },
+        "PSI": {
+          "adjudication_note": "Weak directness represented by ECG-C.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "adjacent-inference",
+          "primary_source_ids": "USCOURTS_LR26",
+          "rationale": "Public forecasting is generally case-specific and sparse, but the available official court source does not directly measure forecasting saturation across corporate binary cases."
+        },
+        "SIB": {
+          "adjudication_note": "High barrier but broad-family directness limitation.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "broad-court-process",
+          "primary_source_ids": "USCOURTS_LR26",
+          "rationale": "Case-specific litigation outcomes can require specialized legal and evidentiary interpretation difficult for outside non-specialists."
+        },
+        "TAW": {
+          "adjudication_note": "Unresolved duration by design.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "broad-court-process",
+          "primary_source_ids": "USCOURTS_LR26",
+          "rationale": "The broad taxonomy spans procedural timelines from short motions to multi-year matters; available evidence does not justify one stable asymmetry-window anchor."
+        }
+      },
+      "mean_simulated_IAS": 3.4680004820268335,
+      "rank1_acceptability": 0.06745,
+      "rank_acceptability_vector": [
+        0.06745,
+        0.120585,
+        0.13476,
+        0.094185,
+        0.152335,
+        0.144115,
+        0.081855,
+        0.056455,
+        0.059055,
+        0.089205
+      ],
+      "rank_le2_acceptability": 0.188035,
+      "robust_high": false
+    },
+    "EARNINGS_EPS": {
+      "IAS_central": 2.6,
+      "P_IAS_ge_3": 0.20131,
+      "anchors": {
+        "LSO": 3,
+        "PAC": 4,
+        "PSI": 1,
+        "SIB": 2,
+        "TAW": 3
+      },
+      "ecg": {
+        "LSO": "B",
+        "PAC": "A",
+        "PSI": "B",
+        "SIB": "B",
+        "TAW": "B"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Conservative midpoint between mostly public and predominantly private state.",
+          "corroborating_source_ids": "SEC_RAYTHEON_FD",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "SEC_REG_FD",
+          "rationale": "Quarterly results are internally assembled before announcement, but substantial business and market information is public beforehand, so opacity is material rather than near-total."
+        },
+        "PAC": {
+          "adjudication_note": "Structural access only; no allegation about any specific ARGOS event.",
+          "corroborating_source_ids": "SSRN_EARNINGS_PM",
+          "evidence_scope": "same-family",
+          "primary_source_ids": "SEC_REG_FD;SEC_RAYTHEON_FD",
+          "rationale": "A bounded issuer insider group can possess material quarterly earnings information before public dissemination; Regulation FD and enforcement evidence directly establish the restricted-information mechanism."
+        },
+        "PSI": {
+          "adjudication_note": "Two distinct public forecasting channels documented.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-multiple-channels",
+          "primary_source_ids": "NBER_ANALYST_NOISE;SSRN_EARNINGS_PM",
+          "rationale": "Public analyst forecasts and a separate prediction-market forecasting channel create dense standardized pre-event expectations, although idiosyncratic uncertainty remains."
+        },
+        "SIB": {
+          "adjudication_note": "Professional expertise is relevant but not narrowly scientific or legal.",
+          "corroborating_source_ids": "SEC_REG_FD",
+          "evidence_scope": "same-family-research",
+          "primary_source_ids": "NBER_ANALYST_NOISE",
+          "rationale": "Professional earnings forecasting uses standard financial analysis and analyst information; original research documents a mature forecasting apparatus rather than a narrow specialist-only barrier."
+        },
+        "TAW": {
+          "adjudication_note": "Scored 1-7 day band conservatively.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "SEC_REG_FD;SEC_RAYTHEON_FD",
+          "rationale": "Material internal earnings information can exist before announcement over a multi-day reporting and disclosure cycle, but a month-plus decisive-information window is not established consistently across firms."
+        }
+      },
+      "mean_simulated_IAS": 2.598964800239449,
+      "rank1_acceptability": 0.0,
+      "rank_acceptability_vector": [
+        0.0,
+        3.5e-05,
+        0.000155,
+        0.00079,
+        0.00396,
+        0.041055,
+        0.09285,
+        0.260075,
+        0.496545,
+        0.104535
+      ],
+      "rank_le2_acceptability": 3.5e-05,
+      "robust_high": false
+    },
+    "FDA_ADVISORY_COMMITTEE": {
+      "IAS_central": 3.4,
+      "P_IAS_ge_3": 0.87026,
+      "anchors": {
+        "LSO": 3,
+        "PAC": 3,
+        "PSI": 3,
+        "SIB": 5,
+        "TAW": 3
+      },
+      "ecg": {
+        "LSO": "A",
+        "PAC": "A",
+        "PSI": "B",
+        "SIB": "A",
+        "TAW": "B"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Public briefing release prevents a 4-5 opacity anchor.",
+          "corroborating_source_ids": "FDA_ADCOMM_OVERVIEW",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_ADCOMM_QA",
+          "rationale": "Material review state is developed through nonpublic scientific review before public briefing materials and the open meeting, but substantial materials become public shortly before the meeting."
+        },
+        "PAC": {
+          "adjudication_note": "Does not imply improper use of information.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_ADCOMM_OVERVIEW;FDA_ADCOMM_QA",
+          "rationale": "FDA staff, committee members and sponsor participants receive and review case-specific scientific materials before the open meeting, creating a bounded multi-party earlier-access set."
+        },
+        "PSI": {
+          "adjudication_note": "Moderate/fragmented public forecasting assigned conservatively.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_ADCOMM_OVERVIEW;FDA_ADCOMM_QA",
+          "rationale": "Public coverage and external scientific analysis exist, but standardized forecasting is less dense and less uniform than earnings or scheduled monetary-policy decisions."
+        },
+        "SIB": {
+          "adjudication_note": "Exact high-specialization anchor.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_ADCOMM_OVERVIEW;FDA_ADCOMM_QA",
+          "rationale": "Committee review is explicitly scientific and technical and relies on specialist expertise applied to case-specific evidence."
+        },
+        "TAW": {
+          "adjudication_note": "Conservative 1-7 day band.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_ADCOMM_QA",
+          "rationale": "Committee participants can review case materials before the public meeting; public briefing materials are generally released shortly before the meeting, bounding the strongest asymmetry window to days rather than months."
+        }
+      },
+      "mean_simulated_IAS": 3.366978384198915,
+      "rank1_acceptability": 0.002495,
+      "rank_acceptability_vector": [
+        0.002495,
+        0.03372,
+        0.05565,
+        0.070065,
+        0.18669,
+        0.333325,
+        0.17038,
+        0.0896,
+        0.046265,
+        0.01181
+      ],
+      "rank_le2_acceptability": 0.036215,
+      "robust_high": true
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "IAS_central": 4.2,
+      "P_IAS_ge_3": 0.997835,
+      "anchors": {
+        "LSO": 5,
+        "PAC": 4,
+        "PSI": 4,
+        "SIB": 5,
+        "TAW": 3
+      },
+      "ecg": {
+        "LSO": "A",
+        "PAC": "A",
+        "PSI": "B",
+        "SIB": "A",
+        "TAW": "B"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Discrete regulatory reveal closely matches anchor 5.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_DRUG_REVIEW;FDA_CRL_RULE",
+          "rationale": "The decisive regulatory state is generated inside a case-specific FDA review and remains fundamentally nonpublic until an approval action or complete-response communication is made."
+        },
+        "PAC": {
+          "adjudication_note": "No claim that the final decision is known far in advance.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_DRUG_REVIEW;FDA_CRL_RULE",
+          "rationale": "The applicant and FDA review team participate directly in the case-specific review and formal communication process before the final public outcome, creating a small bounded set with earlier material state information."
+        },
+        "PSI": {
+          "adjudication_note": "Sparse specialist coverage rather than absence of coverage.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_DRUG_REVIEW",
+          "rationale": "Specialist public commentary exists, but there is limited standardized public forecasting of the case-specific final regulatory action compared with earnings or FOMC decisions."
+        },
+        "SIB": {
+          "adjudication_note": "Direct official description of multidisciplinary specialist review.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_DRUG_REVIEW",
+          "rationale": "Drug review combines medical, statistical, chemical and regulatory expertise and case-specific evidentiary interpretation."
+        },
+        "TAW": {
+          "adjudication_note": "Conservative 1-7 day anchor.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FDA_DRUG_REVIEW;FDA_CRL_RULE",
+          "rationale": "Material unequal information can plausibly exist during late-stage review and sponsor communications for days, but the evidence does not establish a consistent month-plus near-decisive window."
+        }
+      },
+      "mean_simulated_IAS": 4.13249374698152,
+      "rank1_acceptability": 0.404465,
+      "rank_acceptability_vector": [
+        0.404465,
+        0.329415,
+        0.12123,
+        0.08031,
+        0.04104,
+        0.01555,
+        0.005575,
+        0.001925,
+        0.000485,
+        5e-06
+      ],
+      "rank_le2_acceptability": 0.73388,
+      "robust_high": true
+    },
+    "FOMC_DECISION": {
+      "IAS_central": 3.0,
+      "P_IAS_ge_3": 0.54382,
+      "anchors": {
+        "LSO": 4,
+        "PAC": 5,
+        "PSI": 0,
+        "SIB": 3,
+        "TAW": 3
+      },
+      "ecg": {
+        "LSO": "A",
+        "PAC": "A",
+        "PSI": "A",
+        "SIB": "B",
+        "TAW": "A"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Predominantly private decision state but not opaque economic inputs.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FED_FOMC_CONF;FED_FOMC_PUBLIC",
+          "rationale": "The meeting is closed and deliberations are confidential until the statement, while extensive economic data and prior communications remain public."
+        },
+        "PAC": {
+          "adjudication_note": "Highly concentrated policy decision set; no misconduct implication.",
+          "corroborating_source_ids": "FED_FOMC_PUBLIC",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FED_FOMC_CONF",
+          "rationale": "Committee participants and authorized staff have access to confidential deliberative information and the unannounced policy decision before its scheduled public statement."
+        },
+        "PSI": {
+          "adjudication_note": "Meets low-anchor requirement with survey and market-based expectation channels.",
+          "corroborating_source_ids": "FED_FOMC_PUBLIC",
+          "evidence_scope": "same-family-multiple-channels",
+          "primary_source_ids": "NYFED_MARKET_EXPECT",
+          "rationale": "The New York Fed documents a recurring survey of primary dealers and other market participants before every FOMC meeting, alongside market-price analysis, providing multiple dense standardized expectation channels."
+        },
+        "SIB": {
+          "adjudication_note": "Substantial domain expertise, not narrow case-specific specialist barrier.",
+          "corroborating_source_ids": "FED_FOMC_PUBLIC",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "NYFED_MARKET_EXPECT",
+          "rationale": "Interpreting policy requires substantial macro-financial synthesis, but a broad professional ecosystem performs this analysis using standard tools."
+        },
+        "TAW": {
+          "adjudication_note": "Uses policy-process window, not market-contract history.",
+          "corroborating_source_ids": "FED_FOMC_PUBLIC",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FED_FOMC_CONF",
+          "rationale": "The formal communications blackout begins roughly a week before scheduled meetings and the decision is released after the meeting, supporting a multi-day structural asymmetry window."
+        }
+      },
+      "mean_simulated_IAS": 2.998024864123607,
+      "rank1_acceptability": 0.000815,
+      "rank_acceptability_vector": [
+        0.000815,
+        0.01673,
+        0.02585,
+        0.03617,
+        0.121215,
+        0.15015,
+        0.22325,
+        0.297995,
+        0.12672,
+        0.001105
+      ],
+      "rank_le2_acceptability": 0.017545,
+      "robust_high": false
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "IAS_central": 2.2,
+      "P_IAS_ge_3": 0.08017,
+      "anchors": {
+        "LSO": 3,
+        "PAC": 4,
+        "PSI": 0,
+        "SIB": 2,
+        "TAW": 2
+      },
+      "ecg": {
+        "LSO": "B",
+        "PAC": "A",
+        "PSI": "A",
+        "SIB": "B",
+        "TAW": "B"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Material latent final print, not near-total opacity.",
+          "corroborating_source_ids": "PHILLY_SPF",
+          "evidence_scope": "same-family-plus-public-forecasting",
+          "primary_source_ids": "BLS_CPI_CONF",
+          "rationale": "The finalized statistic is nonpublic until release, but many underlying economic indicators and inputs are publicly observable or forecastable beforehand."
+        },
+        "PAC": {
+          "adjudication_note": "Direct for major U.S. statistical releases; global family generalization is limited in ECG where appropriate.",
+          "corroborating_source_ids": "BLS_RELEASE_CAL",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "BLS_CPI_CONF",
+          "rationale": "BLS documents authorized personnel access to embargoed CPI data before public release and strict controls on that pre-release information."
+        },
+        "PSI": {
+          "adjudication_note": "Two distinct standardized public forecast channels documented.",
+          "corroborating_source_ids": "BLS_RELEASE_CAL",
+          "evidence_scope": "same-family-multiple-channels",
+          "primary_source_ids": "PHILLY_SPF;NYFED_MARKET_EXPECT",
+          "rationale": "Professional forecast surveys and recurring market-expectation surveys provide dense standardized public expectations for macro variables before releases."
+        },
+        "SIB": {
+          "adjudication_note": "Standard professional barrier.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "BLS_RELEASE_CAL;PHILLY_SPF",
+          "rationale": "Professional statistical and macroeconomic interpretation is required, but standardized definitions, calendars and forecasting tools are widely available."
+        },
+        "TAW": {
+          "adjudication_note": "1-24 hour band conservative.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "BLS_CPI_CONF;BLS_RELEASE_CAL",
+          "rationale": "The strongest unequal-information state around a finalized embargoed statistic is plausibly hours to about a day rather than a persistent multi-week state."
+        }
+      },
+      "mean_simulated_IAS": 2.2316067886790885,
+      "rank1_acceptability": 0.0,
+      "rank_acceptability_vector": [
+        0.0,
+        0.0,
+        2e-05,
+        7.5e-05,
+        0.000415,
+        0.00763,
+        0.02279,
+        0.04721,
+        0.17419,
+        0.74767
+      ],
+      "rank_le2_acceptability": 0.0,
+      "robust_high": false
+    },
+    "MA_PENDING_COMPLETION": {
+      "IAS_central": 3.0,
+      "P_IAS_ge_3": 0.509365,
+      "anchors": {
+        "LSO": 3,
+        "PAC": 3,
+        "PSI": 2,
+        "SIB": 3,
+        "TAW": 4
+      },
+      "ecg": {
+        "LSO": "B",
+        "PAC": "B",
+        "PSI": "B",
+        "SIB": "B",
+        "TAW": "A"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Material but not dominant opacity.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-filings",
+          "primary_source_ids": "SEC_MA_CONDITIONS_2025;SEC_MA_CONDITIONS_2026",
+          "rationale": "Important closing-condition state evolves privately while merger agreements disclose many conditions and deadlines publicly."
+        },
+        "PAC": {
+          "adjudication_note": "Bounded multi-party partial-state access.",
+          "corroborating_source_ids": "FTC_MERGER_REVIEW",
+          "evidence_scope": "same-family-filings",
+          "primary_source_ids": "SEC_MA_CONDITIONS_2025;SEC_MA_CONDITIONS_2026",
+          "rationale": "After announcement the parties and advisers have earlier access to progress on closing conditions and covenants, but the basic transaction and many conditions are already public."
+        },
+        "PSI": {
+          "adjudication_note": "Broad coverage with meaningful idiosyncratic uncertainty.",
+          "corroborating_source_ids": "FTC_MERGER_REVIEW",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "SEC_MA_CONDITIONS_2025;SEC_MA_CONDITIONS_2026",
+          "rationale": "Announced deals receive broad public coverage and market monitoring, but uncertainty remains case-specific and less standardized than macro or FOMC forecasting."
+        },
+        "SIB": {
+          "adjudication_note": "Substantial domain synthesis.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-filings",
+          "primary_source_ids": "SEC_MA_CONDITIONS_2025;SEC_MA_CONDITIONS_2026",
+          "rationale": "Completion requires synthesis of legal conditions, regulatory status, financing and corporate disclosures."
+        },
+        "TAW": {
+          "adjudication_note": "7-30 day structural band; conservative versus longer deal timelines.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-filings",
+          "primary_source_ids": "SEC_MA_CONDITIONS_2025;SEC_MA_CONDITIONS_2026",
+          "rationale": "Public merger agreements routinely provide closing windows spanning weeks or months while conditions remain outstanding, creating a sustained interval in which progress can differ across information sets."
+        }
+      },
+      "mean_simulated_IAS": 2.9996910283157305,
+      "rank1_acceptability": 0.00027,
+      "rank_acceptability_vector": [
+        0.00027,
+        0.001665,
+        0.00648,
+        0.018005,
+        0.058615,
+        0.13782,
+        0.390135,
+        0.24465,
+        0.09669,
+        0.04567
+      ],
+      "rank_le2_acceptability": 0.001935,
+      "robust_high": false
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "IAS_central": 4.2,
+      "P_IAS_ge_3": 0.99769,
+      "anchors": {
+        "LSO": 5,
+        "PAC": 5,
+        "PSI": 4,
+        "SIB": 3,
+        "TAW": 4
+      },
+      "ecg": {
+        "LSO": "A",
+        "PAC": "A",
+        "PSI": "B",
+        "SIB": "B",
+        "TAW": "B"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Direct confidential-negotiation evidence.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-enforcement",
+          "primary_source_ids": "SEC_SHLANSKY_MA",
+          "rationale": "The decisive negotiation state is private and can remain fundamentally opaque until a discrete deal announcement."
+        },
+        "PAC": {
+          "adjudication_note": "Structural process score; does not infer misconduct in ordinary transactions.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-enforcement",
+          "primary_source_ids": "SEC_SHLANSKY_MA",
+          "rationale": "Confidential merger negotiations are known to a highly concentrated transaction set before public announcement; SEC enforcement directly documents this mechanism."
+        },
+        "PSI": {
+          "adjudication_note": "Not scored 5 because rumor and sector monitoring can exist.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "SEC_SHLANSKY_MA",
+          "rationale": "Before announcement there is no standardized public consensus apparatus for a transaction that is not yet public; rumor coverage may exist but is sparse and case-specific."
+        },
+        "SIB": {
+          "adjudication_note": "Moderate-high interpretation barrier.",
+          "corroborating_source_ids": "SEC_MA_CONDITIONS_2025",
+          "evidence_scope": "adjacent-process",
+          "primary_source_ids": "SEC_SHLANSKY_MA",
+          "rationale": "Assessing deal likelihood requires material corporate-finance, legal and strategic synthesis, but not uniformly narrow specialist expertise."
+        },
+        "TAW": {
+          "adjudication_note": "Conservative relative to potentially longer negotiations.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-enforcement",
+          "primary_source_ids": "SEC_SHLANSKY_MA",
+          "rationale": "Confidential negotiations can persist across a multi-week transaction process before announcement, supporting a 7-30 day asymmetry window without assuming month-plus duration in every case."
+        }
+      },
+      "mean_simulated_IAS": 4.132413175987096,
+      "rank1_acceptability": 0.45704,
+      "rank_acceptability_vector": [
+        0.45704,
+        0.26336,
+        0.105025,
+        0.057785,
+        0.04484,
+        0.05972,
+        0.01015,
+        0.00203,
+        5e-05,
+        0.0
+      ],
+      "rank_le2_acceptability": 0.7204,
+      "robust_high": true
+    },
+    "MA_REGULATORY_CLEARANCE": {
+      "IAS_central": 3.8,
+      "P_IAS_ge_3": 0.99553,
+      "anchors": {
+        "LSO": 4,
+        "PAC": 4,
+        "PSI": 3,
+        "SIB": 4,
+        "TAW": 4
+      },
+      "ecg": {
+        "LSO": "A",
+        "PAC": "A",
+        "PSI": "B",
+        "SIB": "A",
+        "TAW": "B"
+      },
+      "evidence_gate": true,
+      "evidence_rows": {
+        "LSO": {
+          "adjudication_note": "Predominantly private regulatory state.",
+          "corroborating_source_ids": "FTC_MERGER_REVIEW",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FTC_MERGER_CONF;FTC_MERGERS_GUIDE",
+          "rationale": "A large portion of the decisive regulatory assessment develops within a confidential investigation, while some procedural milestones and legal standards are public."
+        },
+        "PAC": {
+          "adjudication_note": "Small bounded institutional and party set.",
+          "corroborating_source_ids": "SEC_MA_CONDITIONS_2026",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FTC_MERGER_REVIEW;FTC_MERGER_CONF",
+          "rationale": "Reviewing agencies and merging parties exchange nonpublic materials and engage directly during clearance and Second Request processes before public resolution."
+        },
+        "PSI": {
+          "adjudication_note": "Moderate/fragmented forecasting.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FTC_MERGER_REVIEW;FTC_MERGERS_GUIDE",
+          "rationale": "Public antitrust analysis and deal coverage exist, but forecasts are fragmented and case-specific rather than continuously standardized."
+        },
+        "SIB": {
+          "adjudication_note": "Narrow legal/economic specialist expertise.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FTC_MERGER_REVIEW;FTC_MERGERS_GUIDE",
+          "rationale": "Clearance assessment requires specialized antitrust, industry and regulatory analysis."
+        },
+        "TAW": {
+          "adjudication_note": "7-30 day band used conservatively.",
+          "corroborating_source_ids": "",
+          "evidence_scope": "same-family-process",
+          "primary_source_ids": "FTC_MERGER_REVIEW;FTC_MERGERS_GUIDE",
+          "rationale": "Statutory waiting periods, Second Requests and negotiated review extensions create multi-week periods before a clearance or challenge outcome."
+        }
+      },
+      "mean_simulated_IAS": 3.7996799951304907,
+      "rank1_acceptability": 0.033195,
+      "rank_acceptability_vector": [
+        0.033195,
+        0.11727,
+        0.27588,
+        0.322195,
+        0.19555,
+        0.054365,
+        0.001505,
+        4e-05,
+        0.0,
+        0.0
+      ],
+      "rank_le2_acceptability": 0.150465,
+      "robust_high": true
+    }
+  },
+  "performance_blind": true,
+  "protocol": "W2B-IAS-v1.0",
+  "samples": 200000,
+  "science_reopened": false,
+  "seed": 20260812,
+  "version": "W2B-IAS-SMAA-v1.0",
+  "w3_decision_computed": false
+}
