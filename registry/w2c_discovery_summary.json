@@ -1,0 +1,197 @@
+{
+  "artifact": "W2C_PERFORMANCE_BLIND_DISCOVERY_RUN",
+  "version": "W2C-DISC-RUN-v1.0",
+  "snapshot_utc": "2026-08-12T15:05:36Z",
+  "protocol_version": "W2C-DISC-v2.0",
+  "protocol_sha256": "704c8d7f16178cfd091d7cd5f5a9dc2792ac821c2f87f7762238ee7e8b742adc",
+  "parent_freeze": "W2PF-v1.0",
+  "performance_blind": true,
+  "science_reopened": false,
+  "argos_performance_read": false,
+  "realized_linked_asset_returns_read": false,
+  "ias_scores_computed": false,
+  "feasibility_gates_scored": false,
+  "w3_family_selected": false,
+  "source": "official Polymarket Gamma API",
+  "total_closed_events_broad_crawl": 10000,
+  "unique_events_seen_all_channels": 13491,
+  "candidate_rows": 4364,
+  "families": [
+    {
+      "family": "EARNINGS_EPS",
+      "candidate_events": 1789,
+      "events_with_lead_hours": 1772,
+      "lead_hours_median": 297.077569,
+      "lead_ge_24h_count": 1731,
+      "lead_ge_24h_rate_unvalidated": 0.9768623024830699,
+      "events_with_volume": 1725,
+      "volume_ge_1k": 1551,
+      "volume_ge_10k": 837,
+      "volume_ge_100k": 184,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "FDA_ADVISORY_COMMITTEE",
+      "candidate_events": 100,
+      "events_with_lead_hours": 100,
+      "lead_hours_median": 552.31121,
+      "lead_ge_24h_count": 98,
+      "lead_ge_24h_rate_unvalidated": 0.98,
+      "events_with_volume": 100,
+      "volume_ge_1k": 91,
+      "volume_ge_10k": 54,
+      "volume_ge_100k": 31,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "FDA_FINAL_PDUFA_DECISION",
+      "candidate_events": 230,
+      "events_with_lead_hours": 230,
+      "lead_hours_median": 173.421981,
+      "lead_ge_24h_count": 229,
+      "lead_ge_24h_rate_unvalidated": 0.9956521739130435,
+      "events_with_volume": 224,
+      "volume_ge_1k": 208,
+      "volume_ge_10k": 144,
+      "volume_ge_100k": 50,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "candidate_events": 56,
+      "events_with_lead_hours": 55,
+      "lead_hours_median": 1152.0,
+      "lead_ge_24h_count": 54,
+      "lead_ge_24h_rate_unvalidated": 0.9818181818181818,
+      "events_with_volume": 54,
+      "volume_ge_1k": 50,
+      "volume_ge_10k": 39,
+      "volume_ge_100k": 17,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "MA_PENDING_COMPLETION",
+      "candidate_events": 287,
+      "events_with_lead_hours": 281,
+      "lead_hours_median": 870.43512,
+      "lead_ge_24h_count": 266,
+      "lead_ge_24h_rate_unvalidated": 0.9466192170818505,
+      "events_with_volume": 280,
+      "volume_ge_1k": 254,
+      "volume_ge_10k": 235,
+      "volume_ge_100k": 161,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "MA_REGULATORY_CLEARANCE",
+      "candidate_events": 275,
+      "events_with_lead_hours": 275,
+      "lead_hours_median": 174.136259,
+      "lead_ge_24h_count": 270,
+      "lead_ge_24h_rate_unvalidated": 0.9818181818181818,
+      "events_with_volume": 264,
+      "volume_ge_1k": 251,
+      "volume_ge_10k": 202,
+      "volume_ge_100k": 82,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "candidate_events": 90,
+      "events_with_lead_hours": 89,
+      "lead_hours_median": 1366.029083,
+      "lead_ge_24h_count": 86,
+      "lead_ge_24h_rate_unvalidated": 0.9662921348314607,
+      "events_with_volume": 88,
+      "volume_ge_1k": 82,
+      "volume_ge_10k": 69,
+      "volume_ge_100k": 22,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "FOMC_DECISION",
+      "candidate_events": 184,
+      "events_with_lead_hours": 174,
+      "lead_hours_median": 1683.405371,
+      "lead_ge_24h_count": 172,
+      "lead_ge_24h_rate_unvalidated": 0.9885057471264368,
+      "events_with_volume": 179,
+      "volume_ge_1k": 179,
+      "volume_ge_10k": 170,
+      "volume_ge_100k": 122,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "MACRO_STATISTICAL_RELEASE",
+      "candidate_events": 1056,
+      "events_with_lead_hours": 1052,
+      "lead_hours_median": 340.922492,
+      "lead_ge_24h_count": 976,
+      "lead_ge_24h_rate_unvalidated": 0.9277566539923955,
+      "events_with_volume": 972,
+      "volume_ge_1k": 840,
+      "volume_ge_10k": 651,
+      "volume_ge_100k": 318,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    },
+    {
+      "family": "CORPORATE_LITIGATION_BINARY",
+      "candidate_events": 297,
+      "events_with_lead_hours": 290,
+      "lead_hours_median": 385.1164,
+      "lead_ge_24h_count": 283,
+      "lead_ge_24h_rate_unvalidated": 0.9758620689655172,
+      "events_with_volume": 294,
+      "volume_ge_1k": 270,
+      "volume_ge_10k": 238,
+      "volume_ge_100k": 130,
+      "manual_validation_required": "true",
+      "feasibility_gate_status": "NOT_SCORED"
+    }
+  ],
+  "files": {
+    "events": {
+      "path": "registry/w2c_discovery_events.csv.gz",
+      "sha256": "ee5d29c1b92b4c9b1f3367355a67f22b28785aace1356a7b489457dfed896d94"
+    },
+    "validation_queue": {
+      "path": "registry/w2c_discovery_validation_queue.csv.gz",
+      "sha256": "ee5d29c1b92b4c9b1f3367355a67f22b28785aace1356a7b489457dfed896d94"
+    },
+    "summary": {
+      "path": "registry/w2c_discovery_summary.csv",
+      "sha256": "b8003b034dd8f0fb35f6da361e4666582e92998efc42c0de516b3676bf7353fa"
+    },
+    "query_audit": {
+      "path": "registry/w2c_discovery_query_audit.csv",
+      "sha256": "8de2ebac240f7fdd13fe194810b442367f58d175ee5cf1142da9f5992799a4a4"
+    }
+  },
+  "interpretation": "Lower-bound candidate discovery only. Manual validation is mandatory; no IAS, F1-F9 or W3 selection is authorized. Truncated routes cannot prove absence or completeness.",
+  "limitations": [
+    "Current Gamma metadata can reflect post-close taxonomy/metadata edits.",
+    "start/creation-to-end lead is not proof of pre-material-news availability or first trade time.",
+    "lifetime volume and current liquidity metadata are not PIT liquidity at a frozen cutoff.",
+    "targeted search and regex nomination can create false positives/false negatives; manual validation is mandatory.",
+    "zero/low candidate counts are not evidence of zero asymmetry or family absence.",
+    "W2C-DISC-v2.0 intentionally bounds archive/query pagination and records truncation rather than requiring archive exhaustion.",
+    "Candidate counts from truncated routes are lower bounds, not population estimates."
+  ],
+  "bounded_lower_bound_discovery": true,
+  "archive_exhaustion_required": false,
+  "pagination_telemetry": {
+    "path": "registry/w2c_discovery_pagination_telemetry.json",
+    "sha256": "beb7f6fc05d56b66f3f08410ee041874923fa9fce2e24463b9334556da086981",
+    "route_count": 154,
+    "truncated_route_count": 4
+  }
+}
