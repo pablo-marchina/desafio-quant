@@ -1,0 +1,11 @@
+{
+  "artifact": "W2_PROTOCOL_BYTE_FREEZE_INDEX",
+  "version": "W2PF-v1.0",
+  "manifest": "registry/w2_protocol_freeze_manifest.json",
+  "w2a": "registry/w2a_portfolio_accounting_protocol_draft.json",
+  "w2b": "registry/w2b_ias_protocol_draft.json",
+  "validator": "scripts/w2_protocol_freeze_validate.py",
+  "workflow": ".github/workflows/w2_protocol_freeze.yml",
+  "human_record": "docs/41_w2_protocol_byte_freeze.md",
+  "freeze_bundle_id_sha256": "e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b"
+}

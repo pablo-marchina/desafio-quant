@@ -1,0 +1,51 @@
+{
+  "artifact": "W2_PROTOCOL_BYTE_FREEZE",
+  "version": "W2PF-v1.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_BYTE_IDENTICAL_PENDING_FREEZE_CI",
+  "science_reopened": false,
+  "freeze_semantics": "The reviewed protocol draft bytes are frozen exactly as they existed at the source commit. Their embedded NOT_FROZEN labels are historical pre-freeze state and are intentionally not edited; this external manifest is the authoritative freeze act.",
+  "source_commit": "ede3b4c9b88b1c699424e0f3bcc76ddb37b404bc",
+  "source_synthetic_validation": {
+    "workflow": "W2 Protocol Synthetic Validation",
+    "run_id": 31603830603,
+    "conclusion": "success",
+    "combined_status": "PASS_38_OF_38_SYNTHETIC_CASES_READY_FOR_FREEZE",
+    "w2a_cases": "20/20",
+    "w2b_cases": "18/18",
+    "real_argos_performance_read": false,
+    "real_ias_family_scores_read": false
+  },
+  "source_repository_hygiene": {
+    "run_id": 31603830432,
+    "conclusion": "success"
+  },
+  "frozen_contracts": [
+    {
+      "id": "W2A_PA_v1_0",
+      "path": "registry/w2a_portfolio_accounting_protocol_draft.json",
+      "embedded_version": "W2A-PA-DRAFT-v1.0",
+      "git_blob_sha1": "639f900eb876d6e46ecbeb10c1b3b3e6c3621a28",
+      "role": "AUTHORITATIVE_W2A_ACCOUNTING_PROTOCOL_BYTES"
+    },
+    {
+      "id": "W2B_IAS_v1_0",
+      "path": "registry/w2b_ias_protocol_draft.json",
+      "embedded_version": "W2B-IAS-DRAFT-v1.0",
+      "git_blob_sha1": "cb9a9638f236c6c61c97f86805de9bf666209b21",
+      "role": "AUTHORITATIVE_W2B_IAS_FEASIBILITY_PROTOCOL_BYTES"
+    }
+  ],
+  "freeze_bundle_id_sha256": "e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b",
+  "bundle_id_definition": "SHA256 over sorted UTF-8 records path + NUL + git_blob_sha1 + LF for the two frozen contracts.",
+  "authority_after_freeze": {
+    "w2a_real_execution": "AUTHORIZED_ONLY_UNDER_THE_FROZEN_W2A_BYTES_AND_GATE0_RECONCILIATION",
+    "w2c_performance_blind_discovery": "AUTHORIZED_ONLY_UNDER_THE_FROZEN_W2B_BYTES_AND_DISCOVERY_FIREWALL",
+    "real_ias_scoring": "AUTHORIZED_ONLY_AFTER_W2C_EVIDENCE_IS_MATERIALIZED_AND_ALL_SCORING_USES_THE_FROZEN_W2B_BYTES",
+    "w3_execution": "NOT_AUTHORIZED; W2 GO CAN ONLY AUTHORIZE A SEPARATE W3 PROTOCOL DRAFT"
+  },
+  "immutability_rule": "Any byte change to either frozen contract invalidates W2PF-v1.0 for the changed file. The change must use a new protocol version, rerun the complete synthetic adversarial suite, and create a new freeze manifest before any affected real execution/scoring.",
+  "historical_truth_boundary": "This freeze does not alter FST-v1.0, SF-v3.0, ART-029, ART-030, FAIL_UNDER_FROZEN_EXP07I, M2, or C0_NO_TRADE.",
+  "freeze_validator": "scripts/w2_protocol_freeze_validate.py",
+  "freeze_workflow": ".github/workflows/w2_protocol_freeze.yml"
+}

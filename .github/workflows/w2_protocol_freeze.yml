@@ -1,0 +1,43 @@
+name: W2 Protocol Byte Freeze
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'registry/w2a_portfolio_accounting_protocol_draft.json'
+      - 'registry/w2b_ias_protocol_draft.json'
+      - 'registry/w2_protocol_freeze_manifest.json'
+      - 'registry/w2_protocol_synthetic_validation_combined.json'
+      - 'scripts/w2a_portfolio_contract_synthetic_validation.py'
+      - 'scripts/w2b_ias_contract_synthetic_validation.py'
+      - 'scripts/w2_protocol_freeze_validate.py'
+      - '.github/workflows/w2_protocol_freeze.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  byte-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Re-run synthetic adversarial gates
+        run: |
+          python scripts/w2a_portfolio_contract_synthetic_validation.py > /tmp/w2a.json
+          python scripts/w2b_ias_contract_synthetic_validation.py > /tmp/w2b.json
+          python - <<'PY'
+          import json
+          a=json.load(open('/tmp/w2a.json'))
+          b=json.load(open('/tmp/w2b.json'))
+          assert a['status']=='PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE'
+          assert a['cases_total']==20 and a['cases_pass']==20 and a['cases_fail']==0
+          assert a['real_argos_performance_read'] is False and a['science_reopened'] is False
+          assert b['status']=='PASS_SYNTHETIC_VALIDATION_READY_FOR_FREEZE'
+          assert b['cases_total']==18 and b['cases_pass']==18 and b['cases_fail']==0
+          assert b['real_family_scores_read'] is False and b['argos_performance_read'] is False and b['science_reopened'] is False
+          PY
+      - name: Validate exact frozen bytes
+        run: python scripts/w2_protocol_freeze_validate.py

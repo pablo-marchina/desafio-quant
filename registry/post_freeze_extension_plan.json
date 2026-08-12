@@ -1,9 +1,9 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v1.2",
+  "version": "PFEP-v1.3",
   "date": "2026-08-12",
-  "status": "PROTOCOL_DRAFTS_SYNTHETICALLY_VALIDATED_READY_FOR_FREEZE",
-  "operational_phase": "POST_FREEZE_PROTOCOLS_SYNTHETICALLY_VALIDATED_READY_FOR_FREEZE",
+  "status": "W2_PROTOCOLS_BYTE_FROZEN_PENDING_FREEZE_CI",
+  "operational_phase": "W2_PROTOCOL_BYTE_FREEZE",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0",
@@ -18,50 +18,41 @@
     "qa_approved_pdf_sha256": "5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561",
     "baseline_must_remain_recoverable": true
   },
-  "protocol_drafts": {
-    "w2a": {
-      "path": "registry/w2a_portfolio_accounting_protocol_draft.json",
-      "doc": "docs/38_w2a_portfolio_accounting_contract_draft.md",
-      "validator": "scripts/w2a_portfolio_contract_synthetic_validation.py",
-      "status": "PASS_20_OF_20_READY_FOR_FREEZE_NOT_FROZEN",
-      "real_execution_authorized": false
-    },
-    "w2b": {
-      "path": "registry/w2b_ias_protocol_draft.json",
-      "doc": "docs/39_w2b_ias_feasibility_contract_draft.md",
-      "validator": "scripts/w2b_ias_contract_synthetic_validation.py",
-      "status": "PASS_18_OF_18_READY_FOR_FREEZE_NOT_FROZEN",
-      "real_family_scoring_authorized": false
-    },
-    "adversarial_review": "docs/40_w2_protocol_adversarial_review.md",
-    "combined_validation": "registry/w2_protocol_synthetic_validation_combined.json",
-    "combined_status": "PASS_38_OF_38_SYNTHETIC_CASES_READY_FOR_FREEZE"
+  "w2_protocol_freeze": {
+    "manifest": "registry/w2_protocol_freeze_manifest.json",
+    "human_doc": "docs/41_w2_protocol_byte_freeze.md",
+    "validator": "scripts/w2_protocol_freeze_validate.py",
+    "workflow": ".github/workflows/w2_protocol_freeze.yml",
+    "version": "W2PF-v1.0",
+    "source_commit": "ede3b4c9b88b1c699424e0f3bcc76ddb37b404bc",
+    "freeze_bundle_id_sha256": "e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b",
+    "w2a_git_blob_sha1": "639f900eb876d6e46ecbeb10c1b3b3e6c3621a28",
+    "w2b_git_blob_sha1": "cb9a9638f236c6c61c97f86805de9bf666209b21",
+    "source_synthetic_gate": "PASS_38_OF_38_SYNTHETIC_CASES_READY_FOR_FREEZE",
+    "contracts_modified_by_freeze": false
   },
-  "w2a_binding_draft_points": [
-    "Capital scale uses ex-ante frozen schedule/sign-cost commitment only, never realized prices or PnL.",
-    "Short sale proceeds are restricted and cannot fund new positions; negative free cash fails closed.",
-    "Starting capital C0=1 is the initial drawdown high-water mark.",
-    "Matched-SPY uses identical sign/dates/notional/overlap and is the primary active comparator.",
-    "Primary uncertainty bootstrap uses additive active daily PnL, not a difference of separately compounded percentage returns.",
-    "HAC Sharpe and Sortino are secondary descriptive metrics.",
-    "Gate 0 legacy reconciliation precedes all real portfolio reporting."
-  ],
-  "w2b_binding_draft_points": [
-    "IAS dimensions are PAC, LSO, SIB, TAW and PSI; feasibility does not add IAS points.",
-    "ECG A/B/C maps to triangular anchor uncertainty; ECG-D is unresolved Uniform(0,5), not a zero score.",
-    "Central score is equal-weight mean when evidence complete; global robustness uses Dirichlet(1,1,1,1,1) SMAA.",
-    "Robust-high requires IAS central >=3 and P(IAS>=3)>=0.75 plus evidence gate.",
-    "Highest-asymmetry claim requires rank-1 acceptability >=0.50 and >=0.05 margin over runner-up.",
-    "All F1-F9 feasibility gates pass before a family can be eligible to draft W3.",
-    "W2 GO authorizes W3 protocol drafting only; W3 execution requires an independently frozen adequacy-tested design.",
-    "Practical IAS ties are resolved for experiment selection by pre-frozen feasibility, never ARGOS performance."
-  ],
+  "authorizations_after_successful_freeze_ci": {
+    "W2A": "EXECUTE_REAL_FUNDED_ACCOUNTING_ONLY_IF_GATE0_RECONCILIATION_PASSES; NO STRATEGY SEARCH OR H2 REINTERPRETATION",
+    "W2C": "START_PERFORMANCE_BLIND_DISCOVERY_AND_EVIDENCE_MATERIALIZATION_UNDER_FROZEN_W2B_FIREWALL",
+    "IAS_REAL_SCORING": "ONLY_AFTER_W2C_EVIDENCE_MATERIALIZATION; USE_FROZEN_W2B_BYTES",
+    "W3": "NOT_AUTHORIZED; A W2 GO MAY ONLY AUTHORIZE A SEPARATE W3 PROTOCOL DRAFT"
+  },
+  "immutability": {
+    "rule": "Any byte change to either frozen contract invalidates W2PF-v1.0 for that contract.",
+    "required_response_to_change": [
+      "new_protocol_version",
+      "documented_change_rationale",
+      "complete_synthetic_adversarial_revalidation",
+      "new_freeze_manifest",
+      "no affected real execution before new freeze"
+    ]
+  },
   "global_prohibitions": [
     "No post-hoc rescue of FAIL_UNDER_FROZEN_EXP07I.",
     "No W2A normalization or sizing selected using realized returns or NAV.",
     "No family selection or IAS scoring using ARGOS PnL, Brier, log loss, H2 incremental results, or realized linked-asset returns.",
     "No invented historical borrow fee or mandatory unavailable input.",
-    "No real W2A output or real IAS family score before byte-freezing the corresponding reviewed protocol.",
+    "No editing the frozen contract bytes and merely updating expected hashes.",
     "No W3 execution directly from a W2 GO decision."
   ],
   "sequence": [
@@ -69,15 +60,15 @@
     "W2A_W2B_METHOD_RESEARCH_COMPLETED",
     "W2A_W2B_PROTOCOL_DRAFTING_COMPLETED",
     "W2_SYNTHETIC_ADVERSARIAL_VALIDATION_COMPLETED_38_OF_38",
-    "FREEZE_W2A_PROTOCOL_NEXT",
-    "FREEZE_W2B_IAS_AND_DISCOVERY_PROTOCOL_NEXT",
-    "EXECUTE_W2A_ONLY_AFTER_FREEZE",
-    "EXECUTE_W2C_PERFORMANCE_BLIND_ONLY_AFTER_FREEZE",
-    "SCORE_REAL_IAS_AND_FEASIBILITY",
+    "W2_PROTOCOL_BYTE_FREEZE_CREATED",
+    "W2_PROTOCOL_FREEZE_CI_MUST_PASS",
+    "EXECUTE_W2A_GATE0_THEN_FUNDED_ACCOUNTING",
+    "EXECUTE_W2C_PERFORMANCE_BLIND_DISCOVERY",
+    "SCORE_REAL_IAS_AND_FEASIBILITY_UNDER_FROZEN_W2B",
     "GO_NO_GO_W3_PROTOCOL_DRAFT",
     "IF_GO_DRAFT_AND_FREEZE_W3_WITH_PROSPECTIVE_ADEQUACY",
     "IF_GO_EXECUTE_W3",
     "FINAL_REPORT_REASSESSMENT_AND_REQA_IF_CHANGED"
   ],
-  "next_action": "Byte-freeze the reviewed W2A and W2B drafts without substantive changes, or create a new draft version and rerun all 38 synthetic cases before freeze."
+  "next_action_after_freeze_ci": "Run W2-A Gate 0 reconciliation and begin W2-C performance-blind discovery in separate controlled workstreams under W2PF-v1.0."
 }
