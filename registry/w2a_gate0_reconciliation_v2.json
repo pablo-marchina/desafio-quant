@@ -1,0 +1,37 @@
+{
+  "artifact": "W2A_GATE0_RECONCILIATION",
+  "version": "W2A-G0-v2.0",
+  "status": "PASS_GATE0_RECOVERED_ORIGINAL_ART025_AND_DAT007",
+  "science_reopened": false,
+  "supersedes_operational_status_only": "W2A-G0-v1.0 MISSING_AUTHORITATIVE_ART025_TRADE_LEDGER",
+  "why_v1_was_blocked": "The original Gate 0 search covered repository, Drive workbook/revisions, and did not locate a row-level ART-025 ledger.",
+  "recovery": "The ChatGPT Library preserved the original 2026-08-02 ARGOS_EXP06R_ART025.zip and ARGOS_DAT007_Live_Results(1).zip packages, including candidate_executed_trades.csv and the original audited DAT-007 daily equity snapshot.",
+  "authoritative_hashes": {
+    "art025_outer_zip_sha256": "15803102bfbfcb550bdbcb692765a059d4cfa9484501f015462a841073ab4fa7",
+    "art025_candidate_executed_trades_sha256": "6b3daaf29a94faca2ed318ef582e2d893eeca46a22d8b788029c446f43fd8a40",
+    "art025_execution_opportunity_panel_sha256": "b31a95c69c05beab010f537b5754fb987a4df17666218815c3bbd462aa399764",
+    "art025_protocol_sha256": "4db691c41e63880cd085efb3764f0bf3cd9f9efc8c6a0cc18b314dad8b81637e",
+    "dat007_outer_zip_sha256": "141d6611d3e2dece0b95caa09bdc8ea6347e8553966573473be6574b7ab672bc",
+    "dat007_equity_daily_sha256": "8ba5f2d2edded57c30ce698f8554e2334875765500d13b2cf83918751a50c1a5"
+  },
+  "reconciliation": {
+    "trades": 34,
+    "longs": 21,
+    "shorts": 13,
+    "holding_sessions_each": 10,
+    "daily_marks": 340,
+    "calendar_sessions": 199,
+    "max_abs_entry_asset_price_error": 1.1368683772161603e-13,
+    "max_abs_entry_spy_price_error": 1.1368683772161603e-13,
+    "max_abs_exit_asset_price_error": 0.0,
+    "max_abs_exit_spy_price_error": 0.0,
+    "max_abs_asset_return_error": 2.957703526540456e-16,
+    "max_abs_spy_return_error": 2.5673907444456745e-16,
+    "max_abs_legacy_raw_net_error": 1.95590071916385e-16,
+    "max_abs_legacy_market_adjusted_net_error": 1.8735013540549517e-16,
+    "required_tolerance": 1e-8,
+    "pass": true
+  },
+  "funded_performance_computed_at_gate0": false,
+  "interpretation": "Gate 0 is now satisfied from original source bytes. This does not alter the frozen ART-025 result; it authorizes accounting of the exact R1 trade set under W2PF-v1.0."
+}

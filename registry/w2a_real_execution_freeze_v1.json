@@ -1,0 +1,105 @@
+{
+  "artifact": "W2A_REAL_EXECUTION_BYTE_FREEZE",
+  "authorization_rule": "Real execution requires a later W2A-REA-v1.0 record referencing this freeze_bundle_id and the CI-validated freeze commit. No frozen file may change.",
+  "bundle_definition": "sha256 of sorted UTF-8 lines path:git_blob_sha\\n over frozen_files",
+  "date": "2026-08-12",
+  "execution_authorized": false,
+  "freeze_bundle_id": "06d3a5ca84014568a46e9e672ae6da9b93a6a89c842248691d70cce7d8928b75",
+  "frozen_files": [
+    {
+      "bytes": 2641,
+      "git_blob_sha": "024e535ddc8d21473063939ba88134f218ac839a",
+      "path": ".github/workflows/w2a_funded_portfolio_execute.yml",
+      "sha256": "55280d2383b27f5c6701eb4b763c75e6e0826adce7f11cfcd7d491dde363022a"
+    },
+    {
+      "bytes": 1315,
+      "git_blob_sha": "f449dbd32ea2e3512593e9259a308fe2980fdd8f",
+      "path": ".github/workflows/w2a_real_execution_freeze.yml",
+      "sha256": "07b46fdae226a9f1bbd2b355471d61fc44b4894fdeafe28404bce6723a72612c"
+    },
+    {
+      "bytes": 12852,
+      "git_blob_sha": "87b47439d9aabc9f062bc050b382564d480b0ffb",
+      "path": "data/w2a/w2a_real_inputs_v1.tar.gz",
+      "sha256": "165e56ed4580ee410b55870e7862016794dba4181e655f3a63b213cc95046129"
+    },
+    {
+      "bytes": 2362,
+      "git_blob_sha": "088718fb1d7925918c9e5cb54bd42354790644b3",
+      "path": "data/w2a/w2a_recovered_input_manifest.json",
+      "sha256": "6bb5977f221ea61d629ecf591873ec9641ae61bf32137f5916e2f44498ff9f73"
+    },
+    {
+      "bytes": 2215,
+      "git_blob_sha": "4ec810aafed1ffe2e3b531136f8630573669e793",
+      "path": "registry/w2a_gate0_reconciliation_v2.json",
+      "sha256": "53a89d3d488d20937878a9186f98bcb2cc926321d50fd5a38f141fd2b26f903b"
+    },
+    {
+      "bytes": 2577,
+      "git_blob_sha": "4f01ec5c9c9032e8d845a491fd30022cead0cebe",
+      "path": "scripts/test_w2a_funded_portfolio_engine_v1.py",
+      "sha256": "06c8b51baa8c4cddde6f74c5af937befd1af6204b97da341a8a0f8f4b63907c9"
+    },
+    {
+      "bytes": 18051,
+      "git_blob_sha": "384c3a64f57abb1cba47e05213dd922e431f9269",
+      "path": "scripts/w2a_funded_portfolio_engine_v1.py",
+      "sha256": "6ba21a51b2457ef218c6d0e429f4ef08ccf5b3f20c5bec24daa30045c24e7207"
+    },
+    {
+      "bytes": 9512,
+      "git_blob_sha": "7ad0d21a8f582c02329d4d1ad02545b7b5bf711d",
+      "path": "scripts/w2a_gate0_recover_inputs_v1.py",
+      "sha256": "7f3b93d835184101ae89ce35a8d8fa47ea7eb536a2e480a5ed130530541ca3e6"
+    },
+    {
+      "bytes": 2042,
+      "git_blob_sha": "dab781c232d5fd6f879996b65d90094929c4b773",
+      "path": "scripts/w2a_real_execution_freeze_validate.py",
+      "sha256": "899a4ca234ba613cd1edace7e2d86f73951f1d19d113303ee2bb676015949d55"
+    }
+  ],
+  "gate0": {
+    "daily_marks": 340,
+    "longs": 21,
+    "max_reconciliation_error": 1.1368683772161603e-13,
+    "required_tolerance": 1e-08,
+    "shorts": 13,
+    "status": "PASS_GATE0_RECOVERED_ORIGINAL_ART025_AND_DAT007",
+    "trades": 34,
+    "version": "W2A-G0-v2.0"
+  },
+  "numeric_runtime": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "python": "3.11"
+  },
+  "performance_outputs_computed_before_freeze": false,
+  "performance_outputs_read_before_freeze": false,
+  "science_reopened": false,
+  "scientific_boundary": "The funded result is a post-freeze accounting extension of exact ART-025 R1 trades. It cannot reopen H2 or replace C0_NO_TRADE as the frozen historical champion.",
+  "source_artifacts": {
+    "art025_library_file_id": "file_00000000eff8822fa3b24934f3e66d2b",
+    "art025_outer_zip_sha256": "15803102bfbfcb550bdbcb692765a059d4cfa9484501f015462a841073ab4fa7",
+    "dat007_library_file_id": "file_0000000018dc81f7a0977a1d50135ce5",
+    "dat007_outer_zip_sha256": "141d6611d3e2dece0b95caa09bdc8ea6347e8553966573473be6574b7ab672bc"
+  },
+  "source_parent_commit_sha": "aa4c06bfb5d93c47dbfac4d718704dc9427a2a59",
+  "status": "PRE_EXECUTION_FROZEN_PENDING_CI_VALIDATION",
+  "synthetic_engine_validation": "PASS_W2A_FUNDED_ENGINE_SYNTHETIC",
+  "transport_archive": {
+    "contains": [
+      "w2a_exchange_calendar.csv",
+      "w2a_gate0_trade_reconciliation.csv",
+      "w2a_r1_daily_marks.csv",
+      "w2a_r1_trades.csv"
+    ],
+    "deterministic": true,
+    "path": "data/w2a/w2a_real_inputs_v1.tar.gz"
+  },
+  "version": "W2A-REF-v1.0",
+  "w2a_accounting_protocol_external_freeze": "W2PF-v1.0",
+  "w2a_accounting_protocol_git_blob": "639f900eb876d6e46ecbeb10c1b3b3e6c3621a28"
+}

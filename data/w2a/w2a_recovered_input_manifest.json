@@ -1,0 +1,59 @@
+{
+  "artifact": "W2A_RECOVERED_REAL_INPUTS",
+  "files": {
+    "w2a_exchange_calendar.csv": {
+      "bytes": 5681,
+      "sha256": "0c963ec3f79730daf92548de9876897237e6703df7cbe9499d254496b22e59ce"
+    },
+    "w2a_gate0_trade_reconciliation.csv": {
+      "bytes": 4796,
+      "sha256": "b6455774ef1118b8657f368628ea382102f4a2c32e1d9639f75171622c43b42b"
+    },
+    "w2a_r1_daily_marks.csv": {
+      "bytes": 27143,
+      "sha256": "c59624dd80ad93754ea13d30481bd039eb0f8a8ed1a6b86802123814143ac1cb"
+    },
+    "w2a_r1_trades.csv": {
+      "bytes": 11818,
+      "sha256": "12d3ac09873036ce32c12b1d5e55b445a6d2c123c42673dece2c6429137886de"
+    }
+  },
+  "performance_metrics_computed": false,
+  "reconciliation": {
+    "calendar_end": "2026-07-29",
+    "calendar_sessions": 199,
+    "calendar_start": "2025-10-13",
+    "daily_mark_rows": 340,
+    "longs": 21,
+    "max_abs_errors": {
+      "asset_return_err": 2.957703526540456e-16,
+      "entry_asset_price_err": 1.1368683772161603e-13,
+      "entry_spy_price_err": 1.1368683772161603e-13,
+      "exit_asset_price_err": 0.0,
+      "exit_spy_price_err": 0.0,
+      "legacy_ma_net_err": 1.8735013540549517e-16,
+      "legacy_raw_net_err": 1.95590071916385e-16,
+      "spy_return_err": 2.5673907444456745e-16
+    },
+    "pass": true,
+    "sessions_per_trade": 10,
+    "shorts": 13,
+    "tolerance": 1e-08,
+    "trades": 34
+  },
+  "recovered_from_library": {
+    "art025_library_file": "ARGOS_EXP06R_ART025.zip",
+    "art025_library_file_id": "file_00000000eff8822fa3b24934f3e66d2b",
+    "art025_opportunity_panel_sha256": "b31a95c69c05beab010f537b5754fb987a4df17666218815c3bbd462aa399764",
+    "art025_outer_zip_sha256": "15803102bfbfcb550bdbcb692765a059d4cfa9484501f015462a841073ab4fa7",
+    "art025_protocol_sha256": "4db691c41e63880cd085efb3764f0bf3cd9f9efc8c6a0cc18b314dad8b81637e",
+    "art025_trade_ledger_sha256": "6b3daaf29a94faca2ed318ef582e2d893eeca46a22d8b788029c446f43fd8a40",
+    "dat007_daily_sha256": "8ba5f2d2edded57c30ce698f8554e2334875765500d13b2cf83918751a50c1a5",
+    "dat007_library_file": "ARGOS_DAT007_Live_Results(1).zip",
+    "dat007_library_file_id": "file_0000000018dc81f7a0977a1d50135ce5",
+    "dat007_outer_zip_sha256": "141d6611d3e2dece0b95caa09bdc8ea6347e8553966573473be6574b7ab672bc"
+  },
+  "science_reopened": false,
+  "status": "PASS_GATE0_INPUT_RECOVERY",
+  "version": "W2A-RI-v1.0"
+}
