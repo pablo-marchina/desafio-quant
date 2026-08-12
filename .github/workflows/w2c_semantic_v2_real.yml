@@ -1,0 +1,45 @@
+name: W2C Frozen Semantic v2 Execution
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_semantic_v2_execution_trigger.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  semantic_v2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify frozen v2 bytes and original 4364-row input before read
+        run: python scripts/w2c_semantic_v2_freeze_validate.py
+      - name: Execute authoritative strict v2 runner
+        run: python scripts/w2c_semantic_validation_v2_strict.py
+      - name: Validate provisional-only firewall and outputs
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          x=json.load(open('registry/w2c_semantic_v2_summary.json'))
+          assert x['performance_blind'] is True and x['science_reopened'] is False
+          assert x['input_candidate_rows']==4364
+          assert x['validated_independent_events']==0
+          assert x['f1_f9_scored'] is False and x['ias_computed'] is False
+          assert x['linked_asset_realized_returns_read'] is False and x['w3_family_selected'] is False
+          for p in ['registry/w2c_semantic_v2_events.csv.gz','registry/w2c_semantic_v2_clusters.csv.gz','registry/w2c_semantic_v2_adjudication_queue.csv.gz']:
+              assert pathlib.Path(p).stat().st_size>0
+          print(json.dumps(x,indent=2))
+          PY
+      - name: Persist exact provisional v2 evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-semantic-v2-evidence
+          git add registry/w2c_semantic_v2_events.csv.gz registry/w2c_semantic_v2_clusters.csv.gz registry/w2c_semantic_v2_summary.json registry/w2c_semantic_v2_adjudication_queue.csv.gz
+          git commit -m 'w2c: persist frozen semantic v2 provisional evidence'
+          git push --force origin HEAD:refs/heads/w2c-semantic-v2-evidence
