@@ -1,0 +1,40 @@
+{
+  "artifact": "W2C_SEMANTIC_VALIDATION_BYTE_FREEZE",
+  "version": "W2C-SVF-v1.0",
+  "date": "2026-08-12",
+  "status": "PENDING_CI_BYTE_VALIDATION",
+  "parent_freeze": "W2PF-v1.0",
+  "source_commit": "50c0b7bc0c021228df3f6797819109a7a23220bc",
+  "performance_blind": true,
+  "science_reopened": false,
+  "real_candidate_data_read_before_freeze": false,
+  "performance_data_read_before_freeze": false,
+  "synthetic_validation": {
+    "workflow_run_id": 31620445915,
+    "job_id": 94193666785,
+    "status": "PASS_28_OF_28",
+    "real_candidate_data_read": false,
+    "performance_data_read": false
+  },
+  "frozen_blobs": [
+    {
+      "role": "semantic_protocol",
+      "path": "registry/w2c_semantic_validation_protocol_v1_0.json",
+      "git_blob_sha1": "72e9ada6ef523f7339b4faf0a2a18f198b9cea3b"
+    },
+    {
+      "role": "real_semantic_runner",
+      "path": "scripts/w2c_semantic_validation_v1_0.py",
+      "git_blob_sha1": "6897c45ff086fe1128d6d44f16e0f2ca9c233f94"
+    },
+    {
+      "role": "synthetic_adversarial_validator",
+      "path": "scripts/w2c_semantic_validation_synthetic.py",
+      "git_blob_sha1": "e3ad07033cf03bdde92d1d4ed66fd0583e78d2cb"
+    }
+  ],
+  "freeze_bundle_id_sha256": "1193836b5c2f93f5daa38a0b3a2033de64c6c6189ff3b4f86ca85222ef226847",
+  "freeze_bundle_formula": "SHA256('W2C-SVF-v1.0|<protocol_blob>|<runner_blob>|<synthetic_blob>')",
+  "immutability_rule": "Any byte change to the semantic protocol or real runner invalidates W2C-SVF-v1.0 and requires a new version, complete synthetic revalidation, and a new freeze before reading real candidates.",
+  "authorized_after_ci_pass": "Execute the frozen real semantic runner on the already materialized W2C-MAT-v2.0 candidate snapshot only. No PIT, F1-F9, IAS, linked-asset realized returns, ranking or W3 selection is authorized by this freeze."
+}
