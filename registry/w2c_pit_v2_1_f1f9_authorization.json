@@ -1,0 +1,27 @@
+{
+  "artifact": "W2C_PIT_V2_1_F1_F9_EXECUTION_AUTHORIZATION",
+  "version": "W2C-PIT-F1F9-AUTH-v2.1",
+  "date": "2026-08-12",
+  "status": "AUTHORIZED_F1_F9_ONLY",
+  "requires_scientific_bundle_sha256": "741ab5985bbf34c454cc8050bbecb001123ecf3110ba1bb5e9f5cab079da4a68",
+  "requires_evidence_bundle_sha256": "d73591e1fc511313b0c36f34d0abe14e483d11d98efa3beeebed932b21a0bb84",
+  "requires_evidence_freeze_validation_run_id": 31644613489,
+  "requires_combined_events_blob": "879100adffa7df88b518ed062d88c4c30662f91d",
+  "requires_scorer_blob": "4cb6ef2446d7f9dcc683a57f6b611f678710c829",
+  "f1_f9_real_execution_authorized": true,
+  "permitted_component": "scripts/w2c_pit_v2_1_gate_score.py",
+  "permitted_input": "registry/w2c_pit_v2_1_combined_events.csv",
+  "permitted_output": "registry/w2c_pit_v2_1_family_gates.json",
+  "network_authorized": false,
+  "ias_real_scoring_authorized": false,
+  "smaa_ranking_authorized": false,
+  "w3_protocol_drafting_authorized": false,
+  "w3_execution_authorized": false,
+  "prohibitions": [
+    "No network call, source recollection, resolver change, threshold change or evidence mutation during F1-F9 execution.",
+    "No modification of the frozen scorer or gate contract.",
+    "No IAS scoring or SMAA ranking in the F1-F9 execution workflow.",
+    "No W3 protocol drafting or execution from an unfrozen F1-F9 result.",
+    "No reinterpretation of event summaries as gate results outside the frozen scorer."
+  ]
+}
