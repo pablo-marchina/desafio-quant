@@ -1,0 +1,38 @@
+name: W2C Semantic Validation Synthetic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_semantic_validation_protocol_v1_0.json'
+      - 'scripts/w2c_semantic_validation_v1_0.py'
+      - 'scripts/w2c_semantic_validation_synthetic.py'
+      - '.github/workflows/w2c_semantic_validation_synthetic.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile semantic runner
+        run: python -m py_compile scripts/w2c_semantic_validation_v1_0.py scripts/w2c_semantic_validation_synthetic.py
+      - name: Run synthetic adversarial semantic validation
+        run: python scripts/w2c_semantic_validation_synthetic.py
+      - name: Assert no real candidate read in synthetic gate
+        run: |
+          python - <<'PY'
+          import json
+          p='registry/w2c_semantic_validation_synthetic_summary.json'
+          x=json.load(open(p))
+          assert x['failed']==0
+          assert x['real_candidate_data_read'] is False
+          assert x['performance_data_read'] is False
+          print(x['status'])
+          PY
