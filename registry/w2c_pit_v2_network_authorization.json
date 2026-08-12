@@ -1,0 +1,30 @@
+{
+  "artifact": "W2C_PIT_V2_NETWORK_AUTHORIZATION",
+  "version": "W2C-PIT-NET-AUTH-v2.0",
+  "date": "2026-08-12",
+  "scope": "LAYER_A_POLYMARKET_PLATFORM_ONLY",
+  "science_reopened": false,
+  "performance_blind": true,
+  "bundle_sha256": "ae6256e89ea40bf4174113f371570736eb5843e024b4e54deba6da92cb7ed4b8",
+  "freeze_manifest_git_blob_sha1": "73624a616819ac008212a51b0076d815d0faf402",
+  "freeze_validation_run_id": 31636642788,
+  "freeze_validation_conclusion": "success",
+  "network_collection_authorized": true,
+  "authorized_endpoints": [
+    "https://gamma-api.polymarket.com/events/{event_id}",
+    "https://clob.polymarket.com/prices-history"
+  ],
+  "forbidden_in_this_authorization": [
+    "primary-source revelation/resolution adjudication",
+    "linked-asset price collection",
+    "realized linked-asset returns",
+    "F1-F9 scoring",
+    "IAS scoring",
+    "SMAA/ranking",
+    "W3 selection or execution"
+  ],
+  "f1_f9_execution_authorized": false,
+  "ias_execution_authorized": false,
+  "w3_execution_authorized": false,
+  "result_policy": "Persist exact outputs to evidence branch first. Inspect and promote exact blobs without regeneration only after the run completes. Network failure is UNRESOLVED, never absence."
+}
