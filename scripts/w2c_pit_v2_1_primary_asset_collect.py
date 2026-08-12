@@ -48,6 +48,12 @@ BLS_PATTERNS = {
     "BLS_EMPSIT": ("empsit", ("employment situation", "unemployment", "payroll", "jobs")),
 }
 
+# Run-local byte cache. The key contains the exact URL and Accept header, so the
+# cache cannot broaden source scope or alter PIT semantics. Only successful
+# responses and deterministic 404/410 absence are cached; network/rate failures
+# remain retryable and therefore remain UNRESOLVED rather than evidence of absence.
+HTTP_CACHE: dict[tuple[str, str], tuple[bytes | None, dict]] = {}
+
 def sha256(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
@@ -71,7 +77,15 @@ def tokens(s: str) -> set[str]:
     return {x for x in norm(s).split() if len(x) >= 3 and x not in stop}
 
 def request_bytes(url: str, *, timeout: int = 35, attempts: int = 4, accept: str = "*/*"):
+    key = (url, accept)
+    if key in HTTP_CACHE:
+        body, cached = HTTP_CACHE[key]
+        meta = dict(cached)
+        meta["cache_hit"] = True
+        return body, meta
+
     errors = []
+    last_status = None
     for i in range(attempts):
         fetched = utcnow()
         try:
@@ -80,9 +94,16 @@ def request_bytes(url: str, *, timeout: int = 35, attempts: int = 4, accept: str
                 body = resp.read()
                 code = getattr(resp, "status", 200)
             time.sleep(0.11)
-            return body, {"url": url, "fetched_utc": fetched, "http_status": code, "bytes": len(body), "sha256": sha256(body), "state": "PASS", "errors": errors}
+            meta = {"url": url, "fetched_utc": fetched, "http_status": code, "bytes": len(body), "sha256": sha256(body), "state": "PASS", "errors": errors, "cache_hit": False}
+            HTTP_CACHE[key] = (body, dict(meta))
+            return body, meta
         except urllib.error.HTTPError as e:
+            last_status = e.code
             errors.append(f"HTTPError:{e.code}")
+            if e.code in {404, 410}:
+                meta = {"url": url, "fetched_utc": fetched, "http_status": e.code, "bytes": 0, "sha256": "", "state": "HTTP_NOT_FOUND", "errors": errors, "cache_hit": False}
+                HTTP_CACHE[key] = (None, dict(meta))
+                return None, meta
             if e.code not in RETRYABLE or i == attempts - 1:
                 break
         except (urllib.error.URLError, TimeoutError) as e:
@@ -90,7 +111,7 @@ def request_bytes(url: str, *, timeout: int = 35, attempts: int = 4, accept: str
             if i == attempts - 1:
                 break
         time.sleep(min(0.7 * (2 ** i), 5))
-    return None, {"url": url, "fetched_utc": utcnow(), "http_status": None, "bytes": 0, "sha256": "", "state": "UNRESOLVED", "errors": errors}
+    return None, {"url": url, "fetched_utc": utcnow(), "http_status": last_status, "bytes": 0, "sha256": "", "state": "UNRESOLVED", "errors": errors, "cache_hit": False}
 
 def request_json(url: str):
     b, meta = request_bytes(url, accept="application/json")
@@ -352,6 +373,6 @@ def main():
     write_gz_csv(OUT,out); write_jsonl_gz(RAW,raw_manifest); fam=defaultdict(Counter)
     for r in out:
         f=r["resolved_family"]; fam[f]["n"]+=1; fam[f][f"revelation_{r.get('revelation_state','')}"]+=1; fam[f][f"resolution_{r.get('resolution_state','')}"]+=1; fam[f][f"assetmap_{r.get('linked_asset_mapping_state','')}"]+=1; fam[f][f"assetdata_{r.get('asset_data_state','')}"]+=1
-    summary={"artifact":"W2C_PIT_V2_1_PRIMARY_ASSET_MATERIALIZATION","version":VERSION,"protocol":p["version"],"rows":len(out),"family_summary":{k:dict(v) for k,v in sorted(fam.items())},"request_records":len(raw_manifest),"performance_blind":True,"science_reopened":False,"f1_f9_scored":False,"ias_computed":False,"smaa_computed":False,"w3_selected":False,"linked_asset_movement_values_persisted":False}; SUMMARY.write_text(json.dumps(summary,indent=2)+"\n"); print(json.dumps(summary,indent=2))
+    summary={"artifact":"W2C_PIT_V2_1_PRIMARY_ASSET_MATERIALIZATION","version":VERSION,"protocol":p["version"],"rows":len(out),"family_summary":{k:dict(v) for k,v in sorted(fam.items())},"request_records":len(raw_manifest),"unique_request_keys":len(HTTP_CACHE),"cache_hits":sum(bool(r.get("cache_hit")) for r in raw_manifest),"performance_blind":True,"science_reopened":False,"f1_f9_scored":False,"ias_computed":False,"smaa_computed":False,"w3_selected":False,"linked_asset_movement_values_persisted":False}; SUMMARY.write_text(json.dumps(summary,indent=2)+"\n"); print(json.dumps(summary,indent=2))
 
 if __name__=="__main__": main()
