@@ -1,0 +1,26 @@
+name: W2B IAS v1 Freeze
+on:
+  push:
+    paths:
+      - 'registry/w2b_ias_protocol_freeze_v1_0.json'
+      - 'scripts/w2b_ias_protocol_freeze_validate_v1_0.py'
+      - '.github/workflows/w2b_ias_v1_freeze.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate byte freeze
+        run: python scripts/w2b_ias_protocol_freeze_validate_v1_0.py
+      - name: Re-run construct synthetic suite
+        run: python scripts/w2b_ias_contract_synthetic_validation.py
+      - name: Re-run scorer synthetic suite
+        run: python scripts/w2b_ias_score_synthetic_v1.py
+      - name: Preserve frozen submission hygiene
+        run: python scripts/repository_hygiene_validate.py
