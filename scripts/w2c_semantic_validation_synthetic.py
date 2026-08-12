@@ -43,8 +43,9 @@ text = "Will the FTC grant regulatory clearance so the announced merger can clos
 st, fam = sv.resolve(sv.strict_matches(text)); assert fam == "MA_REGULATORY_CLEARANCE"; passed += 1
 text = "Will the FDA advisory committee panel vote yes before the later final FDA approval?"
 st, fam = sv.resolve(sv.strict_matches(text)); assert fam == "FDA_FINAL_PDUFA_DECISION"; passed += 1
+# A composite CPI+FOMC question is intentionally rejected fail-closed rather than forced into either family.
 text = "Will CPI rise and will the FOMC cut rates?"
-st, fam = sv.resolve(sv.strict_matches(text)); assert st == "AMBIGUOUS_MULTI_FAMILY" and not fam; passed += 1
+st, fam = sv.resolve(sv.strict_matches(text)); assert st == "INVALID_NO_STRICT_FAMILY" and not fam; passed += 1
 text = "Will DOJ block the merger in an antitrust lawsuit?"
 hits = sv.strict_matches(text); assert "ANTITRUST_ENFORCEMENT_SINGLE_NAME" not in hits; passed += 1
 text = "Will Company A announce earnings and acquire Company B?"
