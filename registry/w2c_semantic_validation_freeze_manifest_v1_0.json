@@ -2,9 +2,10 @@
   "artifact": "W2C_SEMANTIC_VALIDATION_BYTE_FREEZE",
   "version": "W2C-SVF-v1.0",
   "date": "2026-08-12",
-  "status": "PENDING_CI_BYTE_VALIDATION",
+  "status": "PASS_W2C_SEMANTIC_BYTE_FREEZE",
   "parent_freeze": "W2PF-v1.0",
   "source_commit": "50c0b7bc0c021228df3f6797819109a7a23220bc",
+  "freeze_commit": "3fa8b918049699b24aed18bff81ee331f6c0dfe8",
   "performance_blind": true,
   "science_reopened": false,
   "real_candidate_data_read_before_freeze": false,
@@ -15,6 +16,13 @@
     "status": "PASS_28_OF_28",
     "real_candidate_data_read": false,
     "performance_data_read": false
+  },
+  "freeze_validation": {
+    "workflow_run_id": 31620749583,
+    "job_id": 94194699844,
+    "conclusion": "success",
+    "repository_hygiene_run_id": 31620749578,
+    "repository_hygiene_conclusion": "success"
   },
   "frozen_blobs": [
     {
@@ -33,8 +41,14 @@
       "git_blob_sha1": "e3ad07033cf03bdde92d1d4ed66fd0583e78d2cb"
     }
   ],
+  "frozen_input_snapshot": {
+    "path": "registry/w2c_discovery_validation_queue.csv.gz",
+    "git_blob_sha1": "b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b",
+    "sha256": "ee5d29c1b92b4c9b1f3367355a67f22b28785aace1356a7b489457dfed896d94",
+    "candidate_rows": 4364
+  },
   "freeze_bundle_id_sha256": "1193836b5c2f93f5daa38a0b3a2033de64c6c6189ff3b4f86ca85222ef226847",
   "freeze_bundle_formula": "SHA256('W2C-SVF-v1.0|<protocol_blob>|<runner_blob>|<synthetic_blob>')",
   "immutability_rule": "Any byte change to the semantic protocol or real runner invalidates W2C-SVF-v1.0 and requires a new version, complete synthetic revalidation, and a new freeze before reading real candidates.",
-  "authorized_after_ci_pass": "Execute the frozen real semantic runner on the already materialized W2C-MAT-v2.0 candidate snapshot only. No PIT, F1-F9, IAS, linked-asset realized returns, ranking or W3 selection is authorized by this freeze."
+  "authorized_now": "Execute the frozen real semantic runner on exactly the frozen W2C-MAT-v2.0 candidate snapshot. No PIT, F1-F9, IAS, linked-asset realized returns, ranking or W3 selection is authorized by this freeze."
 }
