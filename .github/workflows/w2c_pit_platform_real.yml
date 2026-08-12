@@ -1,0 +1,50 @@
+name: W2C Frozen PIT-A Platform Evidence
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_pit_platform_execution_trigger.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pit_a:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen PIT-A bytes and semantic input before network
+        run: python scripts/w2c_pit_platform_freeze_validate.py
+      - name: Execute frozen public PIT-A collector
+        run: python scripts/w2c_pit_platform_v1_0.py
+      - name: Validate PIT-A firewall and outputs
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          x=json.load(open('registry/w2c_pit_platform_summary.json'))
+          assert x['performance_blind'] is True
+          assert x['science_reopened'] is False
+          assert x['input_rows']==509 and x['output_rows']==509
+          assert x['f1_f9_scored'] is False
+          assert x['ias_computed'] is False
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['w3_family_selected'] is False
+          assert pathlib.Path('registry/w2c_pit_platform_events.csv.gz').stat().st_size>0
+          print(json.dumps(x,indent=2))
+          PY
+      - name: Persist exact PIT-A evidence snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-pit-a-v1-evidence
+          git add registry/w2c_pit_platform_events.csv.gz registry/w2c_pit_platform_summary.json
+          git commit -m 'w2c: persist frozen PIT-A v1.0 evidence'
+          git push --force origin HEAD:refs/heads/w2c-pit-a-v1-evidence
