@@ -1,0 +1,23 @@
+{
+  "artifact": "W2B_IAS_EVIDENCE_FREEZE",
+  "version": "W2B-IAS-EVIDENCE-FREEZE-v1.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_PRE_REAL_SCORING",
+  "science_reopened": false,
+  "performance_blind": true,
+  "protocol_bundle_sha256": "a008d1bcf45c200708f97d8ea7089a15a773a1a3590dc112633760ac3c13b0dd",
+  "validation_run_id": 31648466625,
+  "validation_conclusion": "success",
+  "evidence_bundle_sha256": "0ce8200c4a3feb4f783f33f4e1caba78ea954ce0c36ac09438d46ddbfc93f91b",
+  "bundle_hash_rule": "SHA256 over lexicographically sorted UTF-8 lines path:git_blob_sha1\\n.",
+  "frozen_objects": {
+    "registry/w2b_ias_evidence_matrix_v1.csv": "9797dd2ac6ed31ef9c0da6b9c7d290dd85bd656c",
+    "registry/w2b_ias_source_registry_v1.json": "0508374770eb35ccbf54c83bef0206e175ce0986",
+    "scripts/w2b_ias_evidence_validate_v1.py": "cda3e613b52ad8e22d6a851bf72db5fe6f46c6a3"
+  },
+  "matrix_shape": {"families":10,"dimensions":5,"rows":50},
+  "scoring_executed": false,
+  "f1_f9_read": false,
+  "w3_decision_computed": false,
+  "immutability_rule": "Real IAS/SMAA scoring must consume these exact matrix and source-registry blobs. Any change to an anchor, ECG, rationale, source assignment or source registry requires explicit evidence supersession before a new scoring run."
+}
