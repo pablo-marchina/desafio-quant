@@ -1,0 +1,62 @@
+{
+  "artifact": "W2C_DISCOVERY_MATERIALIZATION",
+  "version": "W2C-MAT-v2.0",
+  "date": "2026-08-12",
+  "status": "PASS_PERFORMANCE_BLIND_DISCOVERY_MATERIALIZED_MANUAL_VALIDATION_PENDING",
+  "science_reopened": false,
+  "performance_blind": true,
+  "protocol": "W2C-DISC-v2.0",
+  "discovery_freeze": "W2C-DF-v2.0",
+  "parent_freeze": "W2PF-v1.0",
+  "evidence_workflow_run_id": 31610392101,
+  "evidence_workflow_conclusion": "success",
+  "evidence_branch": "w2c-v2-evidence-snapshot",
+  "evidence_commit": "0d4686d187f149672d1fd56022baa8e71fef7757",
+  "evidence_tree": "972f7212dfe38fa157b0c4fb599912f7be16a240",
+  "promoted_main_commit": "b53e6cbc04026a64dbb807cb80ee26eb7ae7cb80",
+  "snapshot_utc": "2026-08-12T15:05:36Z",
+  "frozen_input_blobs": {
+    "protocol": "f9c8706899f93c072ae0329ed719b119b477b68c",
+    "base_runner": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+    "bounded_wrapper": "547a9357a8827822959bc9b79fedbdea7139b8a3"
+  },
+  "promoted_output_blobs": [
+    {"path":"registry/w2c_discovery_events.csv.gz","git_blob_sha1":"b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b","sha256":"ee5d29c1b92b4c9b1f3367355a67f22b28785aace1356a7b489457dfed896d94"},
+    {"path":"registry/w2c_discovery_validation_queue.csv.gz","git_blob_sha1":"b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b","sha256":"ee5d29c1b92b4c9b1f3367355a67f22b28785aace1356a7b489457dfed896d94"},
+    {"path":"registry/w2c_discovery_summary.csv","git_blob_sha1":"2185ab02203f4a5868975d0fa32975f79d6f70bf","sha256":"b8003b034dd8f0fb35f6da361e4666582e92998efc42c0de516b3676bf7353fa"},
+    {"path":"registry/w2c_discovery_query_audit.csv","git_blob_sha1":"35ce751ecdebc3291c57b0d6a9ea478c40175e73","sha256":"8de2ebac240f7fdd13fe194810b442367f58d175ee5cf1142da9f5992799a4a4"},
+    {"path":"registry/w2c_discovery_summary.json","git_blob_sha1":"197ed36b8918a38df2e2967b355847f4623e239d"},
+    {"path":"registry/w2c_discovery_pagination_telemetry.json","git_blob_sha1":"319132f5e3a9c4e0824fed072439e80c98f280f4","sha256":"beb7f6fc05d56b66f3f08410ee041874923fa9fce2e24463b9334556da086981"}
+  ],
+  "coverage": {
+    "broad_context_unique_events": 10000,
+    "unique_events_seen_all_channels": 13491,
+    "candidate_rows": 4364,
+    "pagination_routes": 154,
+    "truncated_routes": 4,
+    "archive_exhaustion_required": false,
+    "count_semantics": "LOWER_BOUND_DISCOVERY_CANDIDATES"
+  },
+  "raw_unvalidated_candidate_counts": {
+    "EARNINGS_EPS": 1789,
+    "FDA_ADVISORY_COMMITTEE": 100,
+    "FDA_FINAL_PDUFA_DECISION": 230,
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 56,
+    "MA_PENDING_COMPLETION": 287,
+    "MA_REGULATORY_CLEARANCE": 275,
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 90,
+    "FOMC_DECISION": 184,
+    "MACRO_STATISTICAL_RELEASE": 1056,
+    "CORPORATE_LITIGATION_BINARY": 297
+  },
+  "firewall": {
+    "argos_performance_read": false,
+    "realized_linked_asset_returns_read": false,
+    "ias_scores_computed": false,
+    "feasibility_gates_scored": false,
+    "w3_family_selected": false
+  },
+  "interpretation_boundary": "All counts are raw, unvalidated lower-bound discovery candidates. They are not population counts, IAS scores, feasibility-gate passes, or evidence that one family should be selected for W3.",
+  "next_gate": "Freeze an outcome-blind semantic-validation protocol before converting discovery candidates into validated independent-event evidence. Only after semantic validation and required PIT evidence materialization may F1-F9 or IAS be scored.",
+  "historical_truth_boundary": "No change to H2 FAIL, M2, C0_NO_TRADE, FST-v1.0 or SF-v3.0."
+}
