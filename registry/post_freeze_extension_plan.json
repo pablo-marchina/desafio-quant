@@ -1,9 +1,9 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v1.6",
+  "version": "PFEP-v1.7",
   "date": "2026-08-12",
-  "status": "W2A_GATE0_BLOCKED_W2C_SEMANTIC_PREREGISTERED",
-  "operational_phase": "W2C_SEMANTIC_SYNTHETIC_VALIDATION_PENDING",
+  "status": "W2A_GATE0_BLOCKED_W2C_SEMANTIC_FROZEN",
+  "operational_phase": "W2C_SEMANTIC_REAL_EXECUTION_AUTHORIZED",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0",
@@ -19,14 +19,15 @@
     "rule": "Remain parked until an authoritative original ART-025 row-level ledger is recovered. No reconstruction from a new price vendor is authorized."
   },
   "W2C": {
-    "discovery": "PASS_PERFORMANCE_BLIND_DISCOVERY_MATERIALIZED_MANUAL_VALIDATION_PENDING",
+    "discovery": "PASS_PERFORMANCE_BLIND_DISCOVERY_MATERIALIZED",
     "discovery_materialization": "registry/w2c_discovery_materialization_v2_0.json",
     "semantic_protocol": "registry/w2c_semantic_validation_protocol_v1_0.json",
     "semantic_protocol_version": "W2C-SV-v1.0",
-    "semantic_status": "PREREGISTERED_BEFORE_REAL_SEMANTIC_RESULTS",
-    "semantic_synthetic_validator": "scripts/w2c_semantic_validation_synthetic.py",
-    "semantic_real_execution_authorized": false,
-    "pit_feasibility": "BLOCKED_PENDING_SEMANTIC_VALIDATION",
+    "semantic_freeze": "registry/w2c_semantic_validation_freeze_manifest_v1_0.json",
+    "semantic_freeze_version": "W2C-SVF-v1.0",
+    "semantic_synthetic_status": "PASS_28_OF_28",
+    "semantic_real_execution_authorized": true,
+    "pit_feasibility": "BLOCKED_PENDING_SEMANTIC_MATERIALIZATION_AND_PIT_PROTOCOL_FREEZE",
     "f1_f9": "BLOCKED_PENDING_PIT_EVIDENCE",
     "ias": "BLOCKED_PENDING_F1_F9_EVIDENCE_MATERIALIZATION",
     "ranking": "BLOCKED_PENDING_IAS",
@@ -35,8 +36,9 @@
   "global_prohibitions": [
     "No W2-A funded metrics before Gate0 passes under unchanged W2PF-v1.0.",
     "No semantic sampling based on PnL, Brier, log loss, realized linked-asset returns, IAS scores, or feasibility outcomes.",
+    "No PIT collection before semantic outputs are materialized and a separate PIT protocol is frozen.",
     "No IAS/F1-F9 scoring before semantic and PIT evidence are materialized under frozen protocols.",
     "No W3 execution directly from W2; W2 GO may authorize only W3 protocol drafting."
   ],
-  "next_action": "Run synthetic adversarial validation of W2C-SV-v1.0. If and only if it passes, byte-freeze protocol+runner, then execute real semantic validation on the already materialized 4,364-candidate snapshot."
+  "next_action": "Execute frozen W2C-SV-v1.0 on exactly the frozen W2C-MAT-v2.0 input snapshot, materialize exact outputs, then preregister and freeze the PIT evidence protocol before any PIT network collection."
 }
