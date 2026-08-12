@@ -1,0 +1,48 @@
+name: W2C Adjudication v1.1 Lossless Review Chunks
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/w2c_adjudication_v1_1_chunk_review.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  chunk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: w2c-adjudication-v1-1-review
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Split every review file losslessly into 20-row chunks
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          src=pathlib.Path('registry/w2c_semantic_v2_adjudication_review_v1_1')
+          out=pathlib.Path('registry/w2c_semantic_v2_adjudication_review_v1_1_chunks'); out.mkdir(exist_ok=True)
+          manifest=json.load(open(src/'manifest.json'))
+          total=0; chunks=[]
+          for f in manifest['families']:
+              x=json.load(open(f['path']))
+              rec=x['records']; assert len(rec)==f['rows']
+              for i in range(0,len(rec),20):
+                  part=rec[i:i+20]
+                  p=out/f"{f['family']}_{i//20+1:03d}.json"
+                  payload={'artifact':'W2C_ADJUDICATION_REVIEW_CHUNK','version':'W2C-ADJ-v1.1','family':f['family'],'chunk':i//20+1,'rows':len(part),'allowed_fields':x['allowed_fields'],'records':part}
+                  p.write_text(json.dumps(payload,indent=2,ensure_ascii=False)+'\n')
+                  chunks.append({'family':f['family'],'path':str(p),'rows':len(part)}); total+=len(part)
+          assert total==335
+          (out/'manifest.json').write_text(json.dumps({'artifact':'W2C_ADJUDICATION_REVIEW_CHUNK_MANIFEST','version':'W2C-ADJ-v1.1','total_rows':total,'chunks':chunks,'lossless':True,'network_accessed':False,'performance_data_read':False},indent=2)+'\n')
+          PY
+      - name: Persist lossless chunk branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-adjudication-v1-1-chunks
+          git add registry/w2c_semantic_v2_adjudication_review_v1_1_chunks/
+          git commit -m 'w2c: persist lossless review chunks'
+          git push --force origin HEAD:refs/heads/w2c-adjudication-v1-1-chunks
