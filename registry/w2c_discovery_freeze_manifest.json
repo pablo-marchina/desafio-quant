@@ -1,0 +1,36 @@
+{
+  "artifact": "W2C_DISCOVERY_FREEZE",
+  "version": "W2C-DF-v1.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_BEFORE_NEW_W2C_COUNTS",
+  "science_reopened": false,
+  "performance_blind": true,
+  "parent_freeze": "W2PF-v1.0",
+  "parent_freeze_bundle_id_sha256": "e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b",
+  "frozen_files": [
+    {
+      "path": "registry/w2c_discovery_protocol.json",
+      "git_blob_sha1": "60cc473f15f3fff924718a082c8db4e71a5b2ded",
+      "role": "AUTHORITATIVE_QUERY_TAXONOMY_CHANNEL_AND_FIREWALL_PROTOCOL"
+    },
+    {
+      "path": "scripts/w2c_performance_blind_discovery.py",
+      "git_blob_sha1": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+      "role": "AUTHORITATIVE_DISCOVERY_EXECUTABLE"
+    }
+  ],
+  "execution_rule": "New W2C counts may be opened only by executing these exact two Git blobs. Any substantive change requires W2C-DISC-v2+ and a new freeze before opening replacement counts.",
+  "forbidden_during_run": [
+    "ARGOS PnL",
+    "R1/R3 performance",
+    "Brier",
+    "log loss",
+    "H2 incremental metrics",
+    "realized linked-asset returns used to choose families",
+    "IAS scoring",
+    "SMAA ranking",
+    "F1-F9 pass/fail",
+    "W3 family selection"
+  ],
+  "interpretation_boundary": "Outputs are candidate discovery plus a manual-validation queue only. Low discovery counts never imply low IAS or family absence."
+}
