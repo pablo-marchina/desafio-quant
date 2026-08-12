@@ -1,0 +1,62 @@
+name: W2C PIT v2 Platform Execute
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_v2_network_authorization.json'
+  workflow_dispatch:
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Revalidate frozen PIT-v2 bundle before network
+        run: python scripts/w2c_pit_v2_freeze_validate.py
+      - name: Validate Layer-A-only authorization
+        run: |
+          python - <<'PY'
+          import json
+          a=json.load(open('registry/w2c_pit_v2_network_authorization.json'))
+          m=json.load(open('registry/w2c_pit_v2_freeze_manifest.json'))
+          assert a['artifact']=='W2C_PIT_V2_NETWORK_AUTHORIZATION'
+          assert a['scope']=='LAYER_A_POLYMARKET_PLATFORM_ONLY'
+          assert a['bundle_sha256']==m['bundle_sha256']=='ae6256e89ea40bf4174113f371570736eb5843e024b4e54deba6da92cb7ed4b8'
+          assert a['freeze_manifest_git_blob_sha1']=='73624a616819ac008212a51b0076d815d0faf402'
+          assert a['freeze_validation_run_id']==31636642788
+          assert a['network_collection_authorized'] is True
+          assert a['f1_f9_execution_authorized'] is False
+          assert a['ias_execution_authorized'] is False
+          assert a['w3_execution_authorized'] is False
+          print('PASS Layer A authorization')
+          PY
+      - name: Execute frozen Layer A Polymarket PIT collector
+        run: python scripts/w2c_pit_v2_platform_collect.py
+      - name: Validate Layer A output firewall and cardinality
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          rows=list(csv.DictReader(gzip.open('registry/w2c_pit_v2_platform_events.csv.gz','rt',encoding='utf-8')))
+          s=json.load(open('registry/w2c_pit_v2_platform_summary.json'))
+          assert len(rows)==260 and len({r['event_id'] for r in rows})==260
+          assert s['rows']==260
+          assert s['performance_blind'] is True
+          assert s['f1_f9_scored'] is False and s['ias_computed'] is False and s['w3_selected'] is False
+          assert s['linked_asset_realized_returns_read'] is False
+          assert not __import__('pathlib').Path('registry/w2c_pit_v2_family_gates.json').exists()
+          assert not __import__('pathlib').Path('registry/w2c_ias_scores.csv').exists()
+          print(json.dumps(s,indent=2))
+          PY
+      - name: Persist exact Layer A outputs to evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-pit-v2-platform-results
+          git add registry/w2c_pit_v2_platform_events.csv.gz registry/w2c_pit_v2_platform_request_manifest.jsonl.gz registry/w2c_pit_v2_platform_summary.json
+          git commit -m 'w2c: persist PIT-v2 Layer A platform evidence'
+          git push --force origin HEAD:w2c-pit-v2-platform-results
