@@ -1,0 +1,58 @@
+name: W2C Frozen Semantic Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'registry/w2c_semantic_execution_trigger.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  semantic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify frozen protocol runner and input snapshot before read
+        run: |
+          python scripts/w2c_semantic_validation_freeze_validate.py
+          test "$(git hash-object registry/w2c_discovery_validation_queue.csv.gz)" = "b758994ac4a31d5f1a3e9e24b71bc7d8a3a0802b"
+          python - <<'PY'
+          import hashlib
+          p='registry/w2c_discovery_validation_queue.csv.gz'
+          assert hashlib.sha256(open(p,'rb').read()).hexdigest()=='ee5d29c1b92b4c9b1f3367355a67f22b28785aace1356a7b489457dfed896d94'
+          PY
+      - name: Execute frozen semantic validation on frozen candidate snapshot
+        run: python scripts/w2c_semantic_validation_v1_0.py
+      - name: Validate semantic firewall and output structure
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          x=json.load(open('registry/w2c_semantic_validation_summary.json'))
+          assert x['performance_blind'] is True
+          assert x['science_reopened'] is False
+          assert x['ias_scores_computed'] is False
+          assert x['feasibility_gates_scored'] is False
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['w3_family_selected'] is False
+          assert x['input_candidate_rows']==4364
+          assert x['unique_event_ids'] > 0
+          for p in ['registry/w2c_semantic_validation_events.csv.gz','registry/w2c_semantic_validation_clusters.csv.gz','registry/w2c_semantic_review_queue.csv.gz']:
+              assert pathlib.Path(p).stat().st_size > 0
+          print(json.dumps(x,indent=2))
+          PY
+      - name: Persist exact semantic evidence snapshot
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-semantic-v1-evidence
+          git add registry/w2c_semantic_validation_events.csv.gz registry/w2c_semantic_validation_clusters.csv.gz registry/w2c_semantic_validation_summary.json registry/w2c_semantic_review_queue.csv.gz
+          git commit -m 'w2c: persist frozen semantic validation v1.0 evidence'
+          git push --force origin HEAD:refs/heads/w2c-semantic-v1-evidence
