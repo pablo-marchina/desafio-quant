@@ -1,0 +1,55 @@
+{
+  "artifact": "W2C_SEMANTIC_V2_ADJUDICATION_PROTOCOL",
+  "version": "W2C-ADJ-v1.0",
+  "date": "2026-08-12",
+  "status": "PREREGISTRATION_BEFORE_ADJUDICATION_QUEUE_READ",
+  "parent_freeze": "W2C-SVF-v2.0",
+  "performance_blind": true,
+  "science_reopened": false,
+  "input": {
+    "path": "registry/w2c_semantic_v2_adjudication_queue.csv.gz",
+    "git_blob_sha1": "60fdc9784dc189e4b588a56ad70eec3c7c5f23d7",
+    "rows": 329
+  },
+  "allowed_review_fields": ["event_id", "title", "slug", "resolved_family", "independence_cluster_id", "end_utc", "adjudication_rank"],
+  "forbidden_review_fields": ["queries_matched", "nominated_families", "tags", "series_ids", "resolution_source", "volume", "liquidity", "Polymarket price/trades", "PIT evidence", "linked-asset returns", "ARGOS performance", "Brier", "log loss", "IAS", "F1-F9"],
+  "decision_states": ["ACCEPT_STRICT_FAMILY", "REJECT_FALSE_POSITIVE", "AMBIGUOUS_UNRESOLVED"],
+  "general_rule": "Judge only whether title+slug unambiguously instantiate the frozen family mechanism. Accept requires a discrete event matching the family definition; reject wrong-domain/topic/generic mention/content-question/structural mismatch; use ambiguous whenever title+slug alone is insufficient. Never infer missing context to increase sample size.",
+  "family_rubric": {
+    "EARNINGS_EPS": "Accept only a named issuer's earnings/EPS release or discrete earnings/EPS result. Reject earnings-call speech/topic questions, generic financial discussion, stock-price-only questions, and other corporate events.",
+    "FDA_ADVISORY_COMMITTEE": "Accept only a specific FDA advisory committee/advisory panel meeting, recommendation or vote. Reject generic/final FDA approval decisions.",
+    "FDA_FINAL_PDUFA_DECISION": "Accept only a specific final FDA action such as approval/authorization/PDUFA/CRL. Reject advisory-only outcomes and non-FDA regulatory decisions.",
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": "Accept only whether a specific merger/acquisition/takeover/bid will be announced/emerge before a definitive public transaction. Reject already-announced closing/clearance questions.",
+    "MA_PENDING_COMPLETION": "Accept only an already-announced specific transaction whose binary uncertainty is closing/completion or a non-regulatory closing condition. Reject generic deal/news questions and regulatory-clearance-specific questions.",
+    "MA_REGULATORY_CLEARANCE": "Accept only a specific announced M&A transaction whose question is merger-control/regulatory approval, challenge or blocking.",
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": "Accept only explicit non-merger antitrust/competition enforcement concerning a named company/conduct matter. Generic DOJ/FTC investigations without explicit antitrust semantics are rejected.",
+    "FOMC_DECISION": "Accept only a specific scheduled FOMC monetary-policy decision/meeting outcome. Reject speeches, emergency unscheduled actions, annual counts, derivatives, and non-FOMC macro releases.",
+    "MACRO_STATISTICAL_RELEASE": "Accept only a specific scheduled official CPI/PPI/payroll/employment/GDP/retail-sales statistical release observation. Reject sports, markets merely mentioning currencies, forecasts not tied to an official release, and FOMC decisions.",
+    "CORPORATE_LITIGATION_BINARY": "Accept only a discrete corporate litigation/court/bankruptcy outcome affecting a named company. Reject sports 'vs/court', criminal/political cases, antitrust/M&A and generic legal news."
+  },
+  "adjudication_method": {
+    "mode": "MODEL_ASSISTED_OUTCOME_BLIND_SEMANTIC_ADJUDICATION",
+    "review_order": "ascending resolved_family then frozen adjudication_rank",
+    "independent_context": "Each row is judged from allowed fields only; no web lookup is permitted during semantic adjudication.",
+    "uncertainty_policy": "When factual context not in title+slug is required, choose AMBIGUOUS_UNRESOLVED rather than guessing.",
+    "performance_based_decision_forbidden": true
+  },
+  "coverage": {
+    "initial_queue": "Adjudicate all 329 frozen initial rows.",
+    "earnings_top_up": "If fewer than 80 EARNINGS_EPS rows are ACCEPT_STRICT_FAMILY after the initial 100 and additional provisional Earnings clusters exist, reveal the next clusters strictly by frozen adjudication_rank and adjudicate until 80 accepts or exhaustion.",
+    "other_families": "The initial queue already contains all provisional clusters for every non-Earnings family; there is no top-up outside Earnings."
+  },
+  "downstream": {
+    "F3_countable": "Only ACCEPT_STRICT_FAMILY independent clusters.",
+    "AMBIGUOUS_countable": false,
+    "REJECT_countable": false,
+    "PIT_input": "Only ACCEPT_STRICT_FAMILY rows, after adjudication materialization and a new PIT protocol freeze."
+  },
+  "required_outputs": ["registry/w2c_semantic_v2_adjudication_results.csv", "registry/w2c_semantic_v2_adjudication_summary.json", "registry/w2c_semantic_v2_accepted_clusters.csv"],
+  "prohibitions": [
+    "No semantic-v1 results may be reused.",
+    "No review-field expansion after reading the queue.",
+    "No family redefinition or threshold relaxation after accepted counts are visible.",
+    "No F1-F9, IAS, ranking, realized-return or W3 decision during adjudication."
+  ]
+}
