@@ -1,0 +1,14 @@
+{
+  "artifact":"W2C_SEMANTIC_V2_PRECISION_AMENDMENT",
+  "version":"W2C-SV-v2.0-A1",
+  "date":"2026-08-12",
+  "status":"PRE_REAL_SYNTHETIC_REPAIR",
+  "parent_protocol":"W2C-SV-v2.0",
+  "real_v2_candidate_results_seen":false,
+  "performance_data_seen":false,
+  "trigger":"Synthetic attack showed that generic DOJ investigation language could be misclassified as antitrust enforcement.",
+  "amendment":"ANTITRUST_ENFORCEMENT_SINGLE_NAME now requires explicit title+slug language containing antitrust, competition authority, competition regulator, or monopoly in addition to an enforcement action. DOJ/FTC identity alone cannot establish antitrust semantics.",
+  "precision_direction":"Stricter; may increase false negatives. This is intentional and cannot be relaxed after real v2 counts are observed without a new protocol version.",
+  "authoritative_runner":"scripts/w2c_semantic_validation_v2_strict.py",
+  "authoritative_synthetic_validator":"scripts/w2c_semantic_validation_v2_synthetic_strict.py"
+}

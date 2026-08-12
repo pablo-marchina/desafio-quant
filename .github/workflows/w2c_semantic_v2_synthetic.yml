@@ -5,8 +5,10 @@ on:
     branches: [main]
     paths:
       - 'registry/w2c_semantic_validation_protocol_v2_0.json'
+      - 'registry/w2c_semantic_v2_precision_amendment.json'
       - 'scripts/w2c_semantic_validation_v2_0.py'
-      - 'scripts/w2c_semantic_validation_v2_synthetic.py'
+      - 'scripts/w2c_semantic_validation_v2_strict.py'
+      - 'scripts/w2c_semantic_validation_v2_synthetic_strict.py'
       - '.github/workflows/w2c_semantic_v2_synthetic.yml'
   workflow_dispatch:
 
@@ -21,10 +23,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Compile v2 without real candidate read
-        run: python -m py_compile scripts/w2c_semantic_validation_v2_0.py scripts/w2c_semantic_validation_v2_synthetic.py
-      - name: Run v2 outcome-blind adversarial suite
-        run: python scripts/w2c_semantic_validation_v2_synthetic.py
+      - name: Compile strict v2 without real candidate read
+        run: python -m py_compile scripts/w2c_semantic_validation_v2_0.py scripts/w2c_semantic_validation_v2_strict.py scripts/w2c_semantic_validation_v2_synthetic_strict.py
+      - name: Run strict v2 outcome-blind adversarial suite
+        run: python scripts/w2c_semantic_validation_v2_synthetic_strict.py
       - name: Assert v2 firewall
         run: |
           python - <<'PY'
@@ -35,5 +37,6 @@ jobs:
           assert x['performance_data_read'] is False
           assert x['f1_f9_read'] is False
           assert x['ias_read'] is False
+          assert x['strict_runner']=='scripts/w2c_semantic_validation_v2_strict.py'
           print(x['status'])
           PY
