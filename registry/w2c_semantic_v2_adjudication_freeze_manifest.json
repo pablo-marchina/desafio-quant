@@ -8,7 +8,7 @@
   "performance_blind":true,
   "science_reopened":false,
   "real_queue_read_before_freeze":false,
-  "synthetic_validation":{"workflow_run_id":31624919009,"job_id":94208735151,"status":"PASS_17_OF_17","real_queue_read":false,"performance_data_read":false,"network_accessed":false},
+  "synthetic_validation":{"workflow_run_id":31624919009,"job_id":94208735151,"status":"PASS_16_OF_16","real_queue_read":false,"performance_data_read":false,"network_accessed":false},
   "frozen_blobs":[
     {"role":"adjudication_protocol","path":"registry/w2c_semantic_v2_adjudication_protocol_v1_0.json","git_blob_sha1":"c7ca6900773db6431c72059abbe86a03b3e88370"},
     {"role":"controlled_reveal_exporter","path":"scripts/w2c_semantic_v2_adjudication_export.py","git_blob_sha1":"7b28d2c20bcbb35e5c71357c3c71f51ba965ff0e"},
