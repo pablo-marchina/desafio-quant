@@ -1,0 +1,47 @@
+{
+  "artifact": "W2C_PIT_V2_1_EVIDENCE_FREEZE",
+  "version": "W2C-PIT-EVIDENCE-FREEZE-v2.1",
+  "date": "2026-08-12",
+  "status": "CANDIDATE_PENDING_INDEPENDENT_CI_VALIDATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "source_execution": {
+    "workflow_run_id": 31643971392,
+    "workflow_conclusion": "success",
+    "evidence_branch": "w2c-pit-v2-1-layer-bc-results",
+    "evidence_commit": "5b96f8b2adaa154cc1d82d95bb332139581da41e"
+  },
+  "requires_scientific_bundle_sha256": "741ab5985bbf34c454cc8050bbecb001123ecf3110ba1bb5e9f5cab079da4a68",
+  "digest_algorithm": "sha256(sorted(path + TAB + git_blob_sha1 + LF))",
+  "evidence_bundle_sha256": "d73591e1fc511313b0c36f34d0abe14e483d11d98efa3beeebed932b21a0bb84",
+  "objects": {
+    "registry/w2c_pit_v2_1_combined_events.csv": "879100adffa7df88b518ed062d88c4c30662f91d",
+    "registry/w2c_pit_v2_1_combined_summary.json": "de78150e292137935d93cda27833b170588fc78f",
+    "registry/w2c_pit_v2_1_primary_asset_events.csv.gz": "c32b12fa31c0d4dd58ce221a84ecded287aaa2c9",
+    "registry/w2c_pit_v2_1_primary_asset_request_manifest.jsonl.gz": "e9a965d9a299281a2521267af7c07b9a69f5a3ab",
+    "registry/w2c_pit_v2_1_primary_asset_summary.json": "46c0857c93f9492ab7b95bfc1a5452d30b377b87",
+    "registry/w2c_pit_v2_1_primary_source_queue.csv": "5ec23875570753bb1d99fbb98f49996a6c3d9e72"
+  },
+  "cardinality": {
+    "master_population": 260,
+    "queue_rows": 260,
+    "primary_asset_rows": 260,
+    "combined_rows": 260,
+    "unique_event_ids_required": 260
+  },
+  "observed_state_is_not_gate_result": true,
+  "authorization": {
+    "f1_f9_real_execution": false,
+    "ias_real_scoring": false,
+    "smaa_ranking": false,
+    "w3_protocol_drafting": false,
+    "w3_execution": false
+  },
+  "freeze_semantics": [
+    "The six evidence objects are promoted by exact Git blob identity; no object is regenerated during promotion.",
+    "The evidence bundle is performance-blind and contains no realized linked-asset return, PnL, beta, correlation or event-response field.",
+    "Family-level F1-F9 outcomes must not be inferred from summaries; only the already-frozen scorer may compute them after this evidence freeze validates.",
+    "No new PIT source, alternate Polymarket history source, recollection, resolver, threshold or routing change is permitted after this evidence freeze without an explicit versioned supersession.",
+    "IAS, SMAA and W3 remain prohibited until their own sequencing gates are satisfied."
+  ]
+}

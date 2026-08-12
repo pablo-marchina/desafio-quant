@@ -1,0 +1,45 @@
+{
+  "artifact": "W2C_PIT_V2_1_COMBINED_EVIDENCE",
+  "version": "W2C-PIT-COMBINED-v2.1",
+  "protocol": "W2C-PIT-v2.1",
+  "rows": 260,
+  "family_summary": {
+    "EARNINGS_EPS": {
+      "n": 100,
+      "due": 100,
+      "right_censored": 0,
+      "platform_history_observed": 18,
+      "platform_no_history_observed": 82,
+      "pit_eligible_pass": 0,
+      "pit_eligible_unresolved": 18,
+      "pit_eligible_fail": 82
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "n": 63,
+      "due": 60,
+      "right_censored": 3,
+      "platform_history_observed": 7,
+      "platform_no_history_observed": 56,
+      "pit_eligible_pass": 0,
+      "pit_eligible_unresolved": 5,
+      "pit_eligible_fail": 55
+    },
+    "MACRO_STATISTICAL_RELEASE": {
+      "n": 97,
+      "due": 88,
+      "right_censored": 9,
+      "platform_history_observed": 19,
+      "platform_no_history_observed": 78,
+      "pit_eligible_pass": 5,
+      "pit_eligible_unresolved": 5,
+      "pit_eligible_fail": 78
+    }
+  },
+  "performance_blind": true,
+  "science_reopened": false,
+  "network_called": false,
+  "f1_f9_scored": false,
+  "ias_computed": false,
+  "smaa_computed": false,
+  "w3_selected": false
+}
