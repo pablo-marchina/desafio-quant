@@ -1,0 +1,19 @@
+name: W2C Semantic Review Sample
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/w2c_semantic_review_sample.py'
+      - '.github/workflows/w2c_semantic_review_sample.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/w2c_semantic_review_sample.py
