@@ -1,0 +1,26 @@
+name: W2C PIT v2.1 Evidence Freeze
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_v2_1_primary_source_queue.csv'
+      - 'registry/w2c_pit_v2_1_primary_asset_events.csv.gz'
+      - 'registry/w2c_pit_v2_1_primary_asset_request_manifest.jsonl.gz'
+      - 'registry/w2c_pit_v2_1_primary_asset_summary.json'
+      - 'registry/w2c_pit_v2_1_combined_events.csv'
+      - 'registry/w2c_pit_v2_1_combined_summary.json'
+      - 'registry/w2c_pit_v2_1_evidence_freeze.json'
+      - 'scripts/w2c_pit_v2_1_evidence_freeze_validate.py'
+      - '.github/workflows/w2c_pit_v2_1_evidence_freeze.yml'
+  workflow_dispatch:
+jobs:
+  validate-evidence-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate exact evidence blobs and upstream scientific freeze
+        run: python scripts/w2c_pit_v2_1_evidence_freeze_validate.py
