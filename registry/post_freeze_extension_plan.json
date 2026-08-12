@@ -1,0 +1,135 @@
+{
+  "artifact": "POST_FREEZE_EXTENSION_PLAN",
+  "version": "PFEP-v1.0",
+  "date": "2026-08-11",
+  "status": "PLANNING_ONLY_NOT_PREREGISTERED",
+  "operational_phase": "POST_FREEZE_EXTENSION_PLANNING",
+  "scientific_reopen": false,
+  "submission_baseline": {
+    "scientific_authority": "FST-v1.0 / SF-v3.0",
+    "h1": "SUPPORTED_IN_TESTED_SAMPLE",
+    "h2": "FAIL_UNDER_FROZEN_EXP07I",
+    "h3": "BLOCKED_BY_H2_FAIL_NO_RESCUE",
+    "h4": "BLOCKED_BY_H2_FAIL",
+    "h5": "BLOCKED_BY_H4",
+    "probabilistic_champion": "M2",
+    "economic_champion": "C0_NO_TRADE",
+    "frozen_bundle_sha256": "c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885",
+    "qa_approved_pdf_sha256": "5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561",
+    "qa_status": "PASS_READY_FOR_SUBMISSION",
+    "baseline_must_remain_recoverable": true
+  },
+  "interpretation_boundary": {
+    "euas_question": "Which event family is the strongest demonstrated joint laboratory when asymmetry, timing, linked-asset sensitivity, liquidity, sampleability, resolution, observability and penalties are considered together?",
+    "euas_current_leader": "EARNINGS_EPS",
+    "euas_current_score": 72,
+    "euas_does_not_mean": "highest pure information asymmetry",
+    "ias_future_question": "Which event family has the strongest structural information-asymmetry potential under a separately frozen protocol?"
+  },
+  "workstreams": [
+    {
+      "id": "W2A_PORTFOLIO_BACKTEST_INTEGRITY",
+      "status": "PLANNED_PROTOCOL_NOT_FROZEN",
+      "goal": "Re-account the already frozen economic rules as a financed portfolio with explicit overlap, capital, NAV, exposures, turnover and portfolio risk metrics.",
+      "outcome_access": "ALLOWED_ONLY_FOR_REACCOUNTING_ALREADY_FROZEN_TRADES",
+      "must_freeze_before_execution": [
+        "capital_base_and_sizing_rule",
+        "overlap_policy",
+        "mark_to_market_calendar",
+        "cash_and_exposure_accounting",
+        "benchmark_semantics",
+        "portfolio_metrics",
+        "cost_sensitivities_if_any"
+      ],
+      "immutable_from_baseline": [
+        "signal_direction",
+        "trade_selection",
+        "entry_rule",
+        "exit_rule",
+        "primary_transaction_costs",
+        "historical_h2_interpretation"
+      ]
+    },
+    {
+      "id": "W2B_INFORMATION_ASYMMETRY_SCORE",
+      "status": "PLANNED_PROTOCOL_NOT_FROZEN",
+      "goal": "Create a pure information-asymmetry protocol distinct from EUAS feasibility/laboratory quality.",
+      "performance_blind": true,
+      "must_freeze_before_family_scoring": [
+        "operational_definition",
+        "dimensions",
+        "anchors",
+        "weights_or_aggregation_rule",
+        "accepted_evidence_types",
+        "missing_evidence_semantics",
+        "feasibility_gates",
+        "tie_breakers",
+        "sensitivity_protocol"
+      ]
+    },
+    {
+      "id": "W2C_DEEP_EVENT_UNIVERSE_CENSUS",
+      "status": "PLANNED_DISCOVERY_NOT_STARTED",
+      "goal": "Expand performance-blind discovery and manual validation for high-asymmetry candidate event families.",
+      "performance_blind": true,
+      "priority": [
+        "MA_DEAL_COMPLETION_REGULATORY_CLEARANCE",
+        "FDA_APPROVAL_ADVISORY",
+        "MA_ANNOUNCEMENT_RUMOR",
+        "ANTITRUST_REGULATORY",
+        "EARNINGS_EPS",
+        "MACRO_FED_CPI"
+      ],
+      "ma_completion_semantic_expansion": [
+        "regulatory_approval_clearance",
+        "FTC_DOJ_EC_CMA_sector_regulators",
+        "shareholder_vote",
+        "tender_offer",
+        "financing_condition",
+        "court_injunction_deal_litigation",
+        "closing_deadline_outside_date",
+        "objective_material_adverse_effect",
+        "completion_termination"
+      ]
+    },
+    {
+      "id": "W3_NEW_PREREGISTERED_EXPERIMENT",
+      "status": "BLOCKED_PENDING_W2_GO_GATE",
+      "goal": "Run a new independently preregistered experiment only if an alternative family passes ex-ante asymmetry and feasibility gates.",
+      "not_h2_reopen": true,
+      "must_freeze_before_outcomes": [
+        "population",
+        "cutoffs",
+        "feature_architecture",
+        "models",
+        "benchmarks",
+        "costs",
+        "metrics",
+        "inference",
+        "stop_rules",
+        "promotion_rules"
+      ]
+    }
+  ],
+  "global_prohibitions": [
+    "No post-hoc rescue of FAIL_UNDER_FROZEN_EXP07I.",
+    "No family selection using ARGOS performance.",
+    "No IAS scoring using ARGOS outcome, return, Brier, log loss or PnL.",
+    "No post-outcome threshold, subgroup, feature, horizon or sizing selection presented as confirmatory.",
+    "No replacement of the QA-approved PDF baseline without a new hash and complete QA."
+  ],
+  "sequence": [
+    "BASELINE_AND_ROADMAP_SYNC",
+    "W2A_W2B_METHOD_RESEARCH",
+    "FREEZE_W2A_PROTOCOL",
+    "FREEZE_IAS_PROTOCOL",
+    "EXECUTE_W2A",
+    "EXECUTE_W2C_PERFORMANCE_BLIND",
+    "SCORE_IAS_AND_FEASIBILITY",
+    "GO_NO_GO_NEW_EXPERIMENT",
+    "IF_GO_FREEZE_W3",
+    "IF_GO_EXECUTE_W3",
+    "FINAL_REPORT_REASSESSMENT_AND_REQA_IF_CHANGED"
+  ],
+  "next_action": "Research and freeze W2A portfolio-accounting protocol and W2B IAS protocol before any new execution or family scoring."
+}
