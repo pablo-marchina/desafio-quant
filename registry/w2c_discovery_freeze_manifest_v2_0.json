@@ -1,0 +1,43 @@
+{
+  "artifact": "W2C_DISCOVERY_FREEZE",
+  "version": "W2C-DF-v2.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_BEFORE_V2_COUNTS",
+  "science_reopened": false,
+  "performance_blind": true,
+  "parent_freeze": "W2PF-v1.0",
+  "supersedes_for_execution": "W2C-DF-v1.1",
+  "lineage": {
+    "v1_0_run_id": 31606990132,
+    "v1_1_run_id": 31607510963,
+    "family_counts_opened_before_v2": false,
+    "change_scope": "Replace archive-exhaustion failure with pre-bounded lower-bound pagination plus explicit truncation telemetry. Taxonomy, query dictionary, base classifier and performance firewall remain unchanged."
+  },
+  "frozen_files": [
+    {
+      "path": "registry/w2c_discovery_protocol_v2_0.json",
+      "git_blob_sha1": "f9c8706899f93c072ae0329ed719b119b477b68c",
+      "role": "AUTHORITATIVE_V2_PROTOCOL"
+    },
+    {
+      "path": "scripts/w2c_performance_blind_discovery.py",
+      "git_blob_sha1": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+      "role": "UNCHANGED_BASE_TAXONOMY_CLASSIFIER_AND_OUTPUT_LOGIC"
+    },
+    {
+      "path": "scripts/w2c_performance_blind_discovery_v2_0.py",
+      "git_blob_sha1": "547a9357a8827822959bc9b79fedbdea7139b8a3",
+      "role": "BOUNDED_PAGINATION_AND_TELEMETRY_WRAPPER"
+    }
+  ],
+  "bounds": {
+    "broad_keyset_max_pages": 100,
+    "targeted_keyset_max_pages": 200,
+    "keyset_limit": 500,
+    "public_search_max_pages": 20,
+    "series_max_pages": 20
+  },
+  "execution_rule": "Open v2.0 candidate counts only by executing these exact frozen blobs. Truncated routes remain lower bounds and cannot establish population completeness or absence.",
+  "forbidden_during_run": ["ARGOS PnL","R1/R3 performance","Brier","log loss","H2 incremental metrics","realized linked-asset returns used to choose families","IAS scoring","SMAA ranking","F1-F9 pass/fail","W3 family selection"],
+  "interpretation_boundary": "Discovery candidates plus manual-validation queue only."
+}
