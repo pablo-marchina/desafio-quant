@@ -1,0 +1,17 @@
+{
+  "artifact": "W2C_DISCOVERY_EXECUTION_RETRIGGER",
+  "version": "W2C-RETRIGGER-v2.0-r2",
+  "date": "2026-08-12",
+  "reason": "Rerun exact frozen W2C-DF-v2.0 bytes after run 31609286354 passed discovery/firewall but failed only while publishing committed outputs because of worktree line-ending state.",
+  "prior_run_id": 31609286354,
+  "prior_discovery_step": "PASS",
+  "prior_firewall_step": "PASS",
+  "prior_materialization_step": "FAIL",
+  "protocol_git_blob_sha1": "f9c8706899f93c072ae0329ed719b119b477b68c",
+  "base_runner_git_blob_sha1": "3234e7df84aee8e7ef680fa846e746930dd0420d",
+  "wrapper_git_blob_sha1": "547a9357a8827822959bc9b79fedbdea7139b8a3",
+  "discovery_semantics_changed": false,
+  "performance_blind": true,
+  "ias_scoring_authorized": false,
+  "w3_selection_authorized": false
+}
