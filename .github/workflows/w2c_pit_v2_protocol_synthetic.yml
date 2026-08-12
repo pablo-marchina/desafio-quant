@@ -5,6 +5,10 @@ on:
       - 'registry/w2c_pit_protocol_v2_0.json'
       - 'scripts/w2c_pit_v2_synthetic_validation.py'
       - 'scripts/w2c_pit_v2_population_validate.py'
+      - 'scripts/w2c_pit_v2_platform_collect.py'
+      - 'scripts/w2c_pit_v2_primary_queue.py'
+      - 'scripts/w2c_pit_v2_gate_score.py'
+      - 'scripts/w2c_pit_v2_pipeline_synthetic.py'
       - '.github/workflows/w2c_pit_v2_protocol_synthetic.yml'
   workflow_dispatch:
 jobs:
@@ -21,10 +25,26 @@ jobs:
           python-version: '3.11'
       - name: Validate frozen candidate population identity and cardinality
         run: python scripts/w2c_pit_v2_population_validate.py
-      - name: Run PIT-v2 synthetic and adversarial validation
+      - name: Run PIT-v2 protocol synthetic and adversarial validation
         run: python scripts/w2c_pit_v2_synthetic_validation.py
-      - name: Assert no real PIT-v2 evidence was materialized
+      - name: Run PIT-v2 collector/scorer synthetic without network
+        run: python scripts/w2c_pit_v2_pipeline_synthetic.py
+      - name: Materialize deterministic primary-source review queue without network
+        run: python scripts/w2c_pit_v2_primary_queue.py
+      - name: Validate source queue cardinality and no realized-return fields
         run: |
-          test ! -e registry/w2c_pit_v2_events.csv.gz
+          python - <<'PY'
+          import csv
+          p='registry/w2c_pit_v2_primary_source_queue.csv'
+          rows=list(csv.DictReader(open(p,encoding='utf-8')))
+          assert len(rows)==260
+          forbidden=('return','pnl','brier','log_loss')
+          assert not any(any(t in k.lower() for t in forbidden) for k in rows[0])
+          print('PASS queue 260; no performance fields')
+          PY
+      - name: Assert no real PIT-v2 network evidence or IAS result was materialized
+        run: |
+          test ! -e registry/w2c_pit_v2_platform_events.csv.gz
+          test ! -e registry/w2c_pit_v2_platform_request_manifest.jsonl.gz
           test ! -e registry/w2c_pit_v2_family_gates.json
           test ! -e registry/w2c_ias_scores.csv
