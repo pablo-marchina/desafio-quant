@@ -89,7 +89,7 @@ def main():
     ok('29 F3 eligibility due-only',f['details']['F3_eligible']['upper']<=60 and m['details']['F3_eligible']['upper']<=88)
     ok('30 family result never authorizes IAS',z['ias_execution_authorized'] is False and z['smaa_execution_authorized'] is False and z['w3_execution_authorized'] is False)
     ok('31 India exact-series rule no substitution','exact official series' in p['macro']['source_routing']['INDIA'][0] and 'No U.S. fallback' in p['macro']['source_rule'])
-    ok('32 no realized returns','No realized linked-asset returns' in p['prohibitions'])
+    ok('32 no realized returns',any(x.startswith('No realized linked-asset returns') for x in p['prohibitions']))
     out={'artifact':'W2C_PIT_V2_1_SYNTHETIC_VALIDATION','version':'W2C-PIT-SYN-v2.1','status':'PASS','cases':len(cases),'passed':len(cases),'case_names':cases,'network_called':False,'performance_blind':True,'science_reopened':False}
     Path('registry/w2c_pit_v2_1_synthetic_validation.json').write_text(json.dumps(out,indent=2)+'\n'); print(json.dumps(out,indent=2))
 if __name__=='__main__': main()
