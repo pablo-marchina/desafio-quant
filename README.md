@@ -1,6 +1,6 @@
 # ARGOS — Desafio Itaú Asset Quant AI 2026
 
-Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0**. Para preservar a trilha histórica, a fase autorizada pelo freeze continua registrada como `FINAL_REPORT_AUTHORING_AND_QA`; o trabalho operacional atual é uma extensão **pós-freeze** separada, em `POST_FREEZE_EXTENSION_PLANNING`.
+Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0**. Para preservar a trilha histórica, a fase autorizada pelo freeze continua registrada como `FINAL_REPORT_AUTHORING_AND_QA`; o trabalho operacional atual é uma extensão **pós-freeze** separada, em `POST_FREEZE_PROTOCOL_DRAFTING`.
 
 > **Anonimato:** este repositório identifica seus autores pelo GitHub e **não deve ser citado nem linkado no PDF final**.
 
@@ -35,14 +35,27 @@ Esse PDF é **checkpoint seguro**, não autorização para reescrever a ciência
 
 ## Extensão pós-freeze atual
 
-A continuação do projeto busca fechar duas lacunas metodológicas sem rescatar H2:
+A pesquisa metodológica pré-freeze de W2-A e W2-B/IAS foi concluída **sem calcular novo P&L de portfólio, sem pontuar famílias reais no IAS e sem congelar protocolos**. O estado atual é `POST_FREEZE_PROTOCOL_DRAFTING`.
 
-1. **Portfolio Backtest Integrity Upgrade** — recontabilizar as regras econômicas já congeladas como portfólio financiado, com overlaps, capital, NAV, exposição, turnover e métricas de portfólio, sem alterar sinais/thresholds/modelos/entry/exit com base no resultado.
-2. **Information-Asymmetry Universe Research** — separar “melhor laboratório operacional” de “maior assimetria informacional”, criar um protocolo específico de assimetria e aprofundar o censo performance-blind de M&A completion/regulatory clearance, FDA e demais famílias relevantes.
-3. **Novo experimento somente se gateado ex ante** — qualquer futura família alternativa só poderá entrar em um novo teste após protocolo, população, cutoffs, métricas, custos e stop rules serem congelados antes de abrir performance.
+### W2-A — Portfolio Backtest Integrity Upgrade
 
-Roadmap humano: `docs/35_post_freeze_extension_roadmap.md`  
-Estado machine-readable: `registry/post_freeze_extension_plan.json`
+A recomendação de pesquisa é reconstruir o **mesmo R1 primário congelado** como um portfólio financiado, não criar um novo otimizador. A reconciliação exata dos 34 trades (21 long / 13 short) com ART-025 será o gate zero; NAV, exposição, turnover, max drawdown e métricas de risco só serão reportáveis depois dessa reconciliação e de um protocolo próprio congelado.
+
+### W2-B — Information-Asymmetry Score
+
+A pesquisa concluiu que IAS não deve ser “EUAS com outros pesos”. O candidato é um índice **formativo de assimetria estrutural**, separado dos gates de viabilidade, com cinco dimensões ainda não congeladas: `PAC`, `LSO`, `SIB`, `TAW` e `PSI`. A força da evidência ficará em uma camada separada de confiança, e a robustez de ranking deverá testar incerteza de pesos/anchors em vez de depender de um único vetor especialista.
+
+### W2-C / W3
+
+O deep census só começará depois do freeze do protocolo IAS/discovery. Um novo experimento continuará bloqueado até uma família passar, ex ante, tanto os critérios de assimetria quanto os gates de viabilidade. Nenhum desses passos reabre H2.
+
+Artefatos atuais:
+
+- roadmap: `docs/35_post_freeze_extension_roadmap.md`;
+- pesquisa W2-A: `docs/36_w2a_portfolio_backtest_methodology_research.md`;
+- pesquisa W2-B/IAS: `docs/37_w2b_ias_methodology_research.md`;
+- síntese machine-readable da pesquisa: `registry/post_freeze_methodology_research_v1.json`;
+- estado da extensão: `registry/post_freeze_extension_plan.json`.
 
 **Regra absoluta:** nenhum artefato dessa extensão pode alterar retrospectivamente `FAIL_UNDER_FROZEN_EXP07I`, promover um subgrupo de earnings ou transformar um resultado negativo antigo em alpha.
 
@@ -60,7 +73,7 @@ Para a submissão congelada, leia nesta ordem:
 8. `registry/final_report_pdf_qa.json` — QA do PDF baseline.
 9. `docs/29_final_scientific_truth_submission_freeze.md` — leitura humana do freeze.
 
-Para trabalho pós-freeze, use adicionalmente `registry/post_freeze_extension_plan.json` e `docs/35_post_freeze_extension_roadmap.md`. Eles têm autoridade apenas sobre a **extensão**, nunca sobre a verdade científica congelada.
+Para trabalho pós-freeze, use adicionalmente `registry/post_freeze_extension_plan.json`, `registry/post_freeze_methodology_research_v1.json` e `docs/35`–`37`. Eles têm autoridade apenas sobre a **extensão**, nunca sobre a verdade científica congelada.
 
 Bundle final congelado: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`.
 
@@ -108,6 +121,6 @@ Esse validador confirma que os 8 blobs do `final_submission_manifest.json` conti
 
 Para o conteúdo submetido: **ART-027/TF-v1.0 → FST-v1.0 → CT-v4.0 → SF-v3.0 → manifesto/claims/números finais → QA do PDF → artefatos individuais → documentação histórica**.
 
-Para a extensão pós-freeze: **freeze acima permanece imutável → post_freeze_extension_plan → futuros protocolos pré-resultado → futuros resultados**.
+Para a extensão pós-freeze: **freeze acima permanece imutável → post_freeze_extension_plan → pesquisa metodológica → futuros protocolos pré-resultado → futuros resultados**.
 
 Nenhum novo threshold, subgrupo, feature, modelo, universo ou experimento pós-ART-030 pode alterar a verdade congelada da submissão sem erro factual/proveniência demonstrado.
