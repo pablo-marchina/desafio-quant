@@ -1,0 +1,22 @@
+{
+  "artifact": "W2C_PIT_V2_1_FREEZE_VALIDATION",
+  "version": "W2C-PIT-FREEZE-VALIDATION-v2.1",
+  "date": "2026-08-12",
+  "status": "PASS_FROZEN",
+  "validated_main_commit": "181ada5b7c1e67f330d08c651c4afbbb9ccdec0a",
+  "github_actions_run_id": 31643817474,
+  "github_actions_conclusion": "success",
+  "bundle_sha256": "741ab5985bbf34c454cc8050bbecb001123ecf3110ba1bb5e9f5cab079da4a68",
+  "object_count": 16,
+  "population_total": 260,
+  "layer_a_byte_identical": true,
+  "network_called_by_freeze_validation": false,
+  "performance_blind": true,
+  "science_reopened": false,
+  "layer_b_c_network_execution_authorized": false,
+  "f1_f9_real_execution_authorized": false,
+  "ias_real_scoring_authorized": false,
+  "smaa_ranking_authorized": false,
+  "w3_execution_authorized": false,
+  "note": "This validation records the independent CI gate that froze PIT-v2.1 before any Layer B/C network execution. A separate authorization artifact is required to permit Layer B/C collection only."
+}
