@@ -1,0 +1,76 @@
+{
+  "artifact": "W2A_FUNDED_PORTFOLIO_RUN",
+  "version": "W2A-FPR-v1.0",
+  "date": "2026-08-12",
+  "status": "PASS_COMPLETE_FUNDED_BACKTEST",
+  "science_reopened": false,
+  "freeze": {
+    "bundle_id": "06d3a5ca84014568a46e9e672ae6da9b93a6a89c842248691d70cce7d8928b75",
+    "freeze_commit_sha": "b0f53f26ef4e7d47a6ce0e174ffd728697cc3e06",
+    "authorization_commit_sha": "e2f3ea01dfa55aa25e73c3954581c16775cae8d8"
+  },
+  "execution": {
+    "workflow_run_id": 31633774796,
+    "job_id": 94238857722,
+    "conclusion": "success",
+    "evidence_commit_sha": "705463bd7f185783b7ac9c57690719bdc18815a5"
+  },
+  "input_identity": {
+    "gate0": "PASS_GATE0_RECOVERED_ORIGINAL_ART025_AND_DAT007",
+    "trades": 34,
+    "longs": 21,
+    "shorts": 13,
+    "holding_sessions": 10,
+    "calendar_sessions": 199
+  },
+  "output_blobs": {
+    "registry/w2a_results/w2a_funded_daily_ledger.csv": {
+      "git_blob_sha": "d5ae15253842f5856707f488f86201e8a57507e8",
+      "sha256": "7c7cf5ea0792b478226522c45bfd20e3be55c16c1e570d65504766fb621f3b2b"
+    },
+    "registry/w2a_results/w2a_funded_portfolio_summary.json": {
+      "git_blob_sha": "269e35c71e39519c1504e9f355fda3750a509ed9",
+      "sha256": "a14aa6cbf04a926eff030158a3350f59b74e877daf7bb30525fd3d853e424a46"
+    },
+    "registry/w2a_results/w2a_funded_output_manifest.json": {
+      "git_blob_sha": "440e9914495ad25c81b37090f51bb4005e3af585"
+    }
+  },
+  "funded_result": {
+    "starting_capital": 1.0,
+    "terminal_nav": 1.0019679107011892,
+    "total_return": 0.0019679107011891794,
+    "matched_spy_terminal_nav": 1.0264983415487152,
+    "matched_spy_total_return": 0.02649834154871522,
+    "active_terminal_wealth": -0.02453043084752604,
+    "max_drawdown": -0.06384129727475374,
+    "max_drawdown_date": "2026-02-23",
+    "time_under_water_max_sessions": 136,
+    "hac_sharpe_lag10": 0.07515329744169824,
+    "annualized_sortino_sqrt252": 0.09760953014186484,
+    "annualized_volatility_sqrt252": 0.061616644848371926,
+    "gross_turnover_initial_capital": 7.587574751868107,
+    "max_concurrent_positions": 9,
+    "peak_gross_mtm_exposure": 1.0158422697211948,
+    "min_free_cash": 0.0038912996759512403,
+    "lambda_equal_event_notional": 0.11077877478675084
+  },
+  "primary_uncertainty": {
+    "method": "stationary_bootstrap_additive_daily_active_pnl",
+    "replications": 20000,
+    "seed": 20260812,
+    "mean_block_length": 10,
+    "terminal_active_pnl_ci95": [-0.12181767330775173, 0.06956320691686975],
+    "terminal_active_pnl_observed": -0.02453043084752604,
+    "sensitivity_block_5_ci95": [-0.12562679356765827, 0.06728361234482398],
+    "sensitivity_block_20_ci95": [-0.12073534349749131, 0.06991055483540592]
+  },
+  "adverse_cost_diagnostic": {
+    "double_cost_terminal_nav": 0.9922747679073485,
+    "double_cost_active_terminal_wealth": -0.03422357364136674
+  },
+  "economic_interpretation": "The funded R1 book is approximately flat in absolute wealth but underperforms the matched-SPY pseudo-book by 2.453 percentage points. Risk-adjusted descriptive statistics are near zero, financial drawdown is 6.38%, and dependence-aware active-PnL bootstrap intervals include zero. The funded accounting extension does not rescue or promote R1.",
+  "promotion_decision": "NO_PROMOTION_R1",
+  "historical_frozen_champion_unchanged": "C0_NO_TRADE",
+  "h2_unchanged": "FAIL_UNDER_FROZEN_EXP07I"
+}

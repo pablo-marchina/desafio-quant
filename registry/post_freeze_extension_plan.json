@@ -1,13 +1,13 @@
 {
   "artifact":"POST_FREEZE_EXTENSION_PLAN",
-  "version":"PFEP-v2.3",
+  "version":"PFEP-v2.4",
   "date":"2026-08-12",
-  "status":"W2A_GATE0_BLOCKED_W2C_SEMANTIC_ADJUDICATION_COMPLETE",
+  "status":"W2A_FUNDED_BACKTEST_COMPLETE_W2C_SEMANTIC_ADJUDICATION_COMPLETE",
   "operational_phase":"W2C_PIT_V2_PROTOCOL_PREREGISTRATION",
   "scientific_reopen":false,
   "submission_baseline":{"scientific_authority":"FST-v1.0 / SF-v3.0","h2":"FAIL_UNDER_FROZEN_EXP07I","probabilistic_champion":"M2","economic_champion":"C0_NO_TRADE","frozen_bundle_sha256":"c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885"},
-  "W2A":{"status":"BLOCKED_GATE0_PROVENANCE_GAP","rule":"Parked until authoritative original ART-025 row-level ledger is recovered; no vendor reconstruction authorized."},
+  "W2A":{"status":"PASS_COMPLETE_FUNDED_BACKTEST","gate0":"PASS_GATE0_RECOVERED_ORIGINAL_ART025_AND_DAT007","freeze_bundle_id":"06d3a5ca84014568a46e9e672ae6da9b93a6a89c842248691d70cce7d8928b75","freeze_commit":"b0f53f26ef4e7d47a6ce0e174ffd728697cc3e06","execution_run_id":31633774796,"result_registry":"registry/w2a_funded_portfolio_run_v1.json","terminal_nav":1.0019679107011892,"total_return":0.0019679107011891794,"matched_spy_total_return":0.02649834154871522,"active_terminal_wealth":-0.02453043084752604,"max_drawdown":-0.06384129727475374,"hac_sharpe_lag10":0.07515329744169824,"promotion_decision":"NO_PROMOTION_R1","rule":"Complete funded accounting extension of the exact frozen ART-025 R1 set. It does not reopen H2 and does not replace C0_NO_TRADE as the historical economic champion."},
   "W2C":{"discovery":"PASS_MATERIALIZED","semantic_v1":"INVALIDATED_QUERY_LABEL_LEAKAGE","pit_a_v1":"INVALIDATED_UPSTREAM_DO_NOT_USE","semantic_v2_freeze":"W2C-SVF-v2.0","adjudication_freeze":"W2C-ADJF-v1.1","adjudication":"PASS_312_ACCEPTED_OF_335","adjudication_materialization":"registry/w2c_semantic_adjudication_materialization_v1_1.json","accepted_total":312,"pit_candidate_families":["EARNINGS_EPS","FDA_FINAL_PDUFA_DECISION","MACRO_STATISTICAL_RELEASE"],"pit_candidate_events":260,"families_failed_f3_n50_component":["FOMC_DECISION","MA_PRE_ANNOUNCEMENT_OR_RUMOR","CORPORATE_LITIGATION_BINARY","ANTITRUST_ENFORCEMENT_SINGLE_NAME","MA_PENDING_COMPLETION","FDA_ADVISORY_COMMITTEE","MA_REGULATORY_CLEARANCE"],"pit_v2":"PREREGISTRATION_REQUIRED","f1_f9":"BLOCKED_PENDING_PIT_V2","ias":"BLOCKED_PENDING_FEASIBILITY_EVIDENCE","ranking":"BLOCKED_PENDING_IAS","w3_go_no_go":"BLOCKED_PENDING_RANKING_AND_ALL_F1_F9"},
-  "governance":{"only_accepted_semantic_clusters_enter_pit":true,"n50_component_can_fail_without_pit":true,"n50_component_cannot_pass_full_f3_without_pit":true,"old_pit_a_v1_forbidden":true,"linked_asset_realized_returns_for_family_selection_forbidden":true},
-  "next_action":"Preregister PIT-v2 over exactly the 260 accepted events in the three n>=50 families. Separate Polymarket historical observability from primary-source revelation/resolution and preoutcome linked-asset mapping; synthetic validate and byte-freeze before network collection."
+  "governance":{"w2a_complete_no_posthoc_resizing":true,"w2a_no_promotion":true,"only_accepted_semantic_clusters_enter_pit":true,"n50_component_can_fail_without_pit":true,"n50_component_cannot_pass_full_f3_without_pit":true,"old_pit_a_v1_forbidden":true,"linked_asset_realized_returns_for_family_selection_forbidden":true},
+  "next_action":"Continue W2-C by preregistering PIT-v2 over exactly the 260 accepted events in the three n>=50 families. Separate Polymarket historical observability from primary-source revelation/resolution and preoutcome linked-asset mapping; synthetic validate and byte-freeze before network collection."
 }

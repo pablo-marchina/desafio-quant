@@ -1,0 +1,17 @@
+{
+  "artifact": "W2A_FUNDED_PORTFOLIO_OUTPUT_MANIFEST",
+  "engine_status": "PASS_FUNDED_PORTFOLIO_ACCOUNTING",
+  "files": {
+    "w2a_funded_daily_ledger.csv": {
+      "bytes": 52660,
+      "sha256": "7c7cf5ea0792b478226522c45bfd20e3be55c16c1e570d65504766fb621f3b2b"
+    },
+    "w2a_funded_portfolio_summary.json": {
+      "bytes": 4298,
+      "sha256": "a14aa6cbf04a926eff030158a3350f59b74e877daf7bb30525fd3d853e424a46"
+    }
+  },
+  "input_manifest_sha256": "6bb5977f221ea61d629ecf591873ec9641ae61bf32137f5916e2f44498ff9f73",
+  "science_reopened": false,
+  "version": "W2A-FPO-v1.0"
+}
