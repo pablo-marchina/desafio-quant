@@ -1,0 +1,36 @@
+{
+  "artifact": "W2B_IAS_SOURCE_REGISTRY",
+  "version": "W2B-IAS-SOURCES-v1.0",
+  "date": "2026-08-12",
+  "performance_blind": true,
+  "science_reopened": false,
+  "sources": {
+    "SEC_REG_FD": {"title":"SEC Selective Disclosure and Insider Trading / Regulation FD adopting release","url":"https://www.sec.gov/rules-regulations/2000/08/selective-disclosure-insider-trading","type":"official_regulatory","supports":["EARNINGS_EPS"]},
+    "SEC_RAYTHEON_FD": {"title":"SEC Raytheon Company and Franklyn A. Caine","url":"https://www.sec.gov/litigation/admin/34-46897.htm","type":"official_enforcement","supports":["EARNINGS_EPS"]},
+    "NBER_ANALYST_NOISE": {"title":"Noise in Expectations: Evidence from Analyst Forecasts","url":"https://www.nber.org/papers/w28963","type":"original_research","supports":["EARNINGS_EPS"]},
+    "SSRN_EARNINGS_PM": {"title":"Beyond the Wisdom of the Crowd: Concentrated Informed Trading in Earnings Prediction Markets","url":"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6685139","type":"original_research","supports":["EARNINGS_EPS"]},
+    "FDA_ADCOMM_OVERVIEW": {"title":"FDA Advisory Committees","url":"https://www.fda.gov/advisory-committees","type":"official_process","supports":["FDA_ADVISORY_COMMITTEE"]},
+    "FDA_ADCOMM_QA": {"title":"FDA Advisory Committee Common Questions","url":"https://www.fda.gov/advisory-committees/about-advisory-committees/advisory-committee-common-questions","type":"official_process","supports":["FDA_ADVISORY_COMMITTEE"]},
+    "FDA_DRUG_REVIEW": {"title":"FDA Drug Development and Review Process","url":"https://www.fda.gov/drugs/development-approval-process-drugs","type":"official_process","supports":["FDA_FINAL_PDUFA_DECISION"]},
+    "FDA_CRL_RULE": {"title":"FDA Complete Response Letter final rule","url":"https://www.fda.gov/media/72159/download","type":"official_regulatory","supports":["FDA_FINAL_PDUFA_DECISION"]},
+    "FTC_MERGER_REVIEW": {"title":"FTC Premerger Notification and the Merger Review Process","url":"https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/mergers/premerger-notification-merger-review-process","type":"official_process","supports":["MA_PENDING_COMPLETION","MA_REGULATORY_CLEARANCE","ANTITRUST_ENFORCEMENT_SINGLE_NAME"]},
+    "FTC_MERGER_CONF": {"title":"FTC Protocol for Coordination in Merger Investigations","url":"https://www.ftc.gov/advice-guidance/competition-guidance/protocol-coordination-merger-investigations","type":"official_process","supports":["MA_REGULATORY_CLEARANCE","ANTITRUST_ENFORCEMENT_SINGLE_NAME"]},
+    "FTC_MERGERS_GUIDE": {"title":"FTC Mergers Guide","url":"https://www.ftc.gov/advice-guidance/competition-guidance/guide-antitrust-laws/mergers","type":"official_process","supports":["MA_PENDING_COMPLETION","MA_REGULATORY_CLEARANCE","ANTITRUST_ENFORCEMENT_SINGLE_NAME"]},
+    "SEC_SHLANSKY_MA": {"title":"SEC v. David J. Shlansky insider trading release","url":"https://www.sec.gov/enforcement-litigation/litigation-releases/lr-19332","type":"official_enforcement","supports":["MA_PRE_ANNOUNCEMENT_OR_RUMOR"]},
+    "SEC_MA_CONDITIONS_2025": {"title":"SEC-filed 8-K merger closing conditions","url":"https://www.sec.gov/Archives/edgar/data/1842718/000119312525215824/d26134d8k.htm","type":"issuer_primary_filing","supports":["MA_PENDING_COMPLETION"]},
+    "SEC_MA_CONDITIONS_2026": {"title":"SEC-filed 8-K merger regulatory closing conditions","url":"https://www.sec.gov/Archives/edgar/data/875320/000119312526296710/d113650d8k.htm","type":"issuer_primary_filing","supports":["MA_PENDING_COMPLETION","MA_REGULATORY_CLEARANCE"]},
+    "FED_FOMC_CONF": {"title":"Federal Reserve FOMC external communications and confidential information principles","url":"https://www.federalreserve.gov/monetarypolicy/files/FOMC20120620material.htm","type":"official_process","supports":["FOMC_DECISION"]},
+    "FED_FOMC_PUBLIC": {"title":"Federal Reserve FOMC public disclosure FAQ","url":"https://www.federalreserve.gov/faqs/federal-open-market-committee-fomc-not-public.htm","type":"official_process","supports":["FOMC_DECISION"]},
+    "NYFED_MARKET_EXPECT": {"title":"New York Fed Survey of Market Expectations","url":"https://www.newyorkfed.org/markets/market-intelligence/survey-of-market-expectations","type":"official_survey","supports":["FOMC_DECISION","MACRO_STATISTICAL_RELEASE"]},
+    "PHILLY_SPF": {"title":"Philadelphia Fed Survey of Professional Forecasters","url":"https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/survey-of-professional-forecasters","type":"official_survey","supports":["MACRO_STATISTICAL_RELEASE"]},
+    "BLS_CPI_CONF": {"title":"BLS CPI Data Sources and Confidentiality","url":"https://www.bls.gov/opub/hom/cpi/archive/20230906/data.htm","type":"official_process","supports":["MACRO_STATISTICAL_RELEASE"]},
+    "BLS_RELEASE_CAL": {"title":"BLS Schedule of Selected Releases 2026","url":"https://www.bls.gov/schedule/2026/home.htm","type":"official_calendar","supports":["MACRO_STATISTICAL_RELEASE"]},
+    "USCOURTS_LR26": {"title":"U.S. District Court District of Oregon LR 26 Discovery / Protective Orders","url":"https://ord.uscourts.gov/index.php/rules-orders-and-notices/local-rules/civil-procedure/1846-lr-26-discovery","type":"official_court_rule","supports":["CORPORATE_LITIGATION_BINARY"]}
+  },
+  "guardrails": [
+    "Sources support structural process claims only.",
+    "No ARGOS economic or forecasting outcome is used.",
+    "A source being available does not automatically imply ECG-A.",
+    "Insufficient same-family evidence is represented as ECG-D rather than a low numeric anchor."
+  ]
+}
