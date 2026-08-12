@@ -14,7 +14,7 @@ DEFAULT={
 'MA_PRE_ANNOUNCEMENT_OR_RUMOR':(ACCEPT,'specific corporate merger/acquisition/takeover announcement or pre-announcement transaction question')}
 LITIGATION={'79067':(ACCEPT,'named company bankruptcy outcome'),'86448':(REJECT,'aggregated multi-company bankruptcy question, not one named corporate event'),'903632':(ACCEPT,'named company legal settlement outcome'),'15472':(ACCEPT,'named company lawsuit settlement outcome'),'21319':(REJECT,'personal/celebrity litigation rather than a corporate litigation event'),'903794':(REJECT,'political-person verdict rather than a corporate litigation event'),'11002':(REJECT,'political-person criminal conviction rather than a corporate litigation event'),'903166':(ACCEPT,'named company legal settlement outcome')}
 FOMC_REJECT={'106884','20377','101936','329566','32584','16084','901410','45887','903089','901317','22449','10483'}
-MACRO_REJECT={'53730','53165'};MACRO_AMBIG={'182146'};MNA_RUMOR_REJECT={'382511'}
+MACRO_REJECT={'53730','53165'};MACRO_AMBIG={'182146'};MNA_RUMOR_REJECT={'580279'}
 def decision(r):
  eid=r['event_id'];fam=r['resolved_family']
  if fam=='CORPORATE_LITIGATION_BINARY': return LITIGATION[eid]
