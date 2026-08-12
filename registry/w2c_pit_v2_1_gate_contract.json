@@ -1,0 +1,59 @@
+{
+  "artifact": "W2C_PIT_V2_1_F1_F9_GATE_CONTRACT",
+  "version": "W2C-PIT-GATES-v2.1",
+  "date": "2026-08-12",
+  "status": "PREREGISTRATION_PRE_REAL_LAYER_B_C_AND_PRE_F1_F9",
+  "science_reopened": false,
+  "performance_blind": true,
+  "parent_protocol": "W2C-PIT-v2.1",
+  "thresholds": {
+    "F1": {"pre_revelation_contract_rate_min": 0.80, "analysis_window_24h_rate_min": 0.80, "median_pre_cutoff_history_hours_lower_bound_min": 48.0},
+    "F2": {"coverage_min": 0.95, "semantic_conflicts_max": 0},
+    "F3": {"validated_independent_events_min": 50, "pit_eligible_events_min": 40, "distinct_revelation_date_clusters_min": 30},
+    "F4": {"objective_primary_source_rate_min": 0.95, "ambiguous_candidate_events_max": 0},
+    "F5": {"preoutcome_mapping_rate_min": 0.90, "tradeable_instrument_required": true},
+    "F6": {"coverage_min": 0.95, "returns_computed_or_stored_max": 0},
+    "F7": {"rate_min": 1.0},
+    "F8": {"rate_min": 1.0},
+    "F9": {"mandatory_proprietary_or_account_gated_dependency_allowed": false}
+  },
+  "denominators": {
+    "F1": "DUE_ASOF",
+    "F2": "DUE_ASOF",
+    "F3_independent": "FULL_FROZEN_POPULATION",
+    "F3_eligible": "DUE_ASOF",
+    "F3_date_clusters": "DUE_ASOF",
+    "F4_rate": "DUE_ASOF",
+    "F4_ambiguity": "DUE_ASOF_F4_CANDIDATE",
+    "F5": "FULL_FROZEN_POPULATION",
+    "F6": "DUE_ASOF",
+    "F7": "DUE_ASOF",
+    "F8": "FULL_FROZEN_POPULATION",
+    "F9": "FAMILY_PIPELINE"
+  },
+  "F4_candidate_definition": "A DUE_ASOF event that passes or remains unresolved-capable-of-passing every PIT eligibility component other than F4 resolution/objective/ambiguity itself. F4 ambiguity is evaluated on this candidate set so ambiguity cannot remove itself from its own zero-ambiguity test.",
+  "F4_candidate_required_components_excluding_F4": [
+    "F1 pre-revelation witness",
+    "F1 >=24h witness",
+    "F2 conflict-free PIT mapping/observability",
+    "F5 structural linked-asset mapping",
+    "F6 asset-data availability",
+    "F7 safe cutoff",
+    "F8 schema completeness",
+    "F9 no mandatory account-gated dependency"
+  ],
+  "right_censoring": {
+    "state": "RIGHT_CENSORED_ASOF",
+    "excluded_from": ["F1", "F2", "F3_eligible", "F3_date_clusters", "F4", "F6", "F7"],
+    "included_in": ["F3_independent", "F5", "F8"],
+    "never_interpreted_as_fail": true
+  },
+  "bounds": {
+    "rate": "PASS iff confirmed_pass/N >= threshold; FAIL iff (confirmed_pass+unresolved_capable)/N < threshold; else INDETERMINATE",
+    "zero_problem": "confirmed problem => FAIL; zero problems plus any unresolved capable of hiding a problem => INDETERMINATE; otherwise PASS",
+    "count_floor": "PASS iff lower>=floor; FAIL iff upper<floor; else INDETERMINATE",
+    "median": "Unresolved observations are assigned 0 hours for the lower-bound median and +infinity for the upper-bound median. PASS/FAIL only when both threshold implications are identified; otherwise INDETERMINATE."
+  },
+  "overall_family_feasibility": "ELIGIBLE_TO_DRAFT_W3_PROTOCOL iff F1 through F9 all PASS; any FAIL => NO_GO_CURRENT_PROTOCOL; otherwise INDETERMINATE_PENDING_EVIDENCE",
+  "claim_limit": "Passing F1-F9 establishes operational feasibility to draft W3, not alpha, predictive skill, power, or economic usefulness."
+}
