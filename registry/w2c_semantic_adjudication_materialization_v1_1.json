@@ -1,0 +1,21 @@
+{
+  "artifact":"W2C_SEMANTIC_ADJUDICATION_MATERIALIZATION",
+  "version":"W2C-ADJ-MAT-v1.1",
+  "date":"2026-08-12",
+  "status":"PASS_OUTCOME_BLIND_SEMANTIC_ADJUDICATION_COMPLETE",
+  "parent_freezes":["W2C-SVF-v2.0","W2C-ADJF-v1.1"],
+  "performance_blind":true,
+  "science_reopened":false,
+  "execution":{"workflow_run_id":31627169912,"evidence_branch":"w2c-adjudication-v1-1-results","evidence_commit":"7a8c03597de32e79e3125bab0aaab817c58d8cae"},
+  "counts":{"input_rows":335,"accepted":312,"rejected":19,"ambiguous":4},
+  "accepted_by_family":{"ANTITRUST_ENFORCEMENT_SINGLE_NAME":1,"CORPORATE_LITIGATION_BINARY":4,"EARNINGS_EPS":100,"FDA_FINAL_PDUFA_DECISION":63,"FOMC_DECISION":36,"MACRO_STATISTICAL_RELEASE":97,"MA_PENDING_COMPLETION":0,"MA_PRE_ANNOUNCEMENT_OR_RUMOR":11,"FDA_ADVISORY_COMMITTEE":0,"MA_REGULATORY_CLEARANCE":0},
+  "top_up_required":false,
+  "f3_n50_pre_pit_screen":{"EARNINGS_EPS":"PASS_N_VALIDATED_ONLY","FDA_FINAL_PDUFA_DECISION":"PASS_N_VALIDATED_ONLY","MACRO_STATISTICAL_RELEASE":"PASS_N_VALIDATED_ONLY","FOMC_DECISION":"FAIL_N_VALIDATED_LT_50","MA_PRE_ANNOUNCEMENT_OR_RUMOR":"FAIL_N_VALIDATED_LT_50","CORPORATE_LITIGATION_BINARY":"FAIL_N_VALIDATED_LT_50","ANTITRUST_ENFORCEMENT_SINGLE_NAME":"FAIL_N_VALIDATED_LT_50","MA_PENDING_COMPLETION":"FAIL_N_VALIDATED_LT_50","FDA_ADVISORY_COMMITTEE":"FAIL_N_VALIDATED_LT_50","MA_REGULATORY_CLEARANCE":"FAIL_N_VALIDATED_LT_50"},
+  "pit_candidates":["EARNINGS_EPS","FDA_FINAL_PDUFA_DECISION","MACRO_STATISTICAL_RELEASE"],
+  "pit_input_events":260,
+  "f1_f9_scored":false,
+  "ias_computed":false,
+  "linked_asset_realized_returns_read":false,
+  "w3_family_selected":false,
+  "interpretation":"The n>=50 component of frozen F3 can eliminate families below 50 without PIT collection. Passing n>=50 alone is not an F3 pass; PIT-eligible>=40 and date clusters>=30 remain required. Only the three n>=50 families advance to PIT evidence collection."
+}

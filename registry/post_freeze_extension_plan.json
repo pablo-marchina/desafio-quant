@@ -1,13 +1,13 @@
 {
   "artifact":"POST_FREEZE_EXTENSION_PLAN",
-  "version":"PFEP-v2.2",
+  "version":"PFEP-v2.3",
   "date":"2026-08-12",
-  "status":"W2A_GATE0_BLOCKED_W2C_ADJUDICATION_V1_0_INVALIDATED",
-  "operational_phase":"W2C_ADJUDICATION_V1_1_SYNTHETIC_PENDING",
+  "status":"W2A_GATE0_BLOCKED_W2C_SEMANTIC_ADJUDICATION_COMPLETE",
+  "operational_phase":"W2C_PIT_V2_PROTOCOL_PREREGISTRATION",
   "scientific_reopen":false,
   "submission_baseline":{"scientific_authority":"FST-v1.0 / SF-v3.0","h2":"FAIL_UNDER_FROZEN_EXP07I","probabilistic_champion":"M2","economic_champion":"C0_NO_TRADE","frozen_bundle_sha256":"c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885"},
-  "W2A":{"status":"BLOCKED_GATE0_PROVENANCE_GAP","rule":"Parked until authoritative original ART-025 row-level ledger is recovered."},
-  "W2C":{"discovery":"PASS_MATERIALIZED","semantic_v1":"INVALIDATED_QUERY_LABEL_LEAKAGE","pit_a_v1":"INVALIDATED_UPSTREAM","semantic_v2_freeze":"W2C-SVF-v2.0","semantic_v2_materialization":"registry/w2c_semantic_v2_materialization_v1_1.json","semantic_v2_provisional_clusters":1582,"semantic_v2_validated_clusters":0,"adjudication_v1_0":"INVALIDATED_BEFORE_FIRST_TITLE_REVEAL_CARDINALITY_MISMATCH","adjudication_v1_1_protocol":"registry/w2c_semantic_v2_adjudication_protocol_v1_1.json","adjudication_v1_1_initial_rows":335,"adjudication_v1_1_real_reveal_authorized":false,"pit_feasibility":"BLOCKED_PENDING_ADJUDICATION_AND_NEW_PIT_FREEZE","f1_f9":"BLOCKED","ias":"BLOCKED","ranking":"BLOCKED","w3_go_no_go":"BLOCKED"},
-  "governance":{"no_titles_revealed_before_v1_1":true,"only_adjudicated_accepts_count_for_F3":true,"no_web_during_semantic_adjudication":true,"generic_hash_ordered_top_up_if_accepts_lt_80_and_pool_remains":true},
-  "next_action":"Run W2C-ADJ-v1.1 synthetic gate without reading titles. If pass, byte-freeze protocol/exporter/materializer/input, then execute controlled reveal of exactly seven allowed fields for all 335 initial rows."
+  "W2A":{"status":"BLOCKED_GATE0_PROVENANCE_GAP","rule":"Parked until authoritative original ART-025 row-level ledger is recovered; no vendor reconstruction authorized."},
+  "W2C":{"discovery":"PASS_MATERIALIZED","semantic_v1":"INVALIDATED_QUERY_LABEL_LEAKAGE","pit_a_v1":"INVALIDATED_UPSTREAM_DO_NOT_USE","semantic_v2_freeze":"W2C-SVF-v2.0","adjudication_freeze":"W2C-ADJF-v1.1","adjudication":"PASS_312_ACCEPTED_OF_335","adjudication_materialization":"registry/w2c_semantic_adjudication_materialization_v1_1.json","accepted_total":312,"pit_candidate_families":["EARNINGS_EPS","FDA_FINAL_PDUFA_DECISION","MACRO_STATISTICAL_RELEASE"],"pit_candidate_events":260,"families_failed_f3_n50_component":["FOMC_DECISION","MA_PRE_ANNOUNCEMENT_OR_RUMOR","CORPORATE_LITIGATION_BINARY","ANTITRUST_ENFORCEMENT_SINGLE_NAME","MA_PENDING_COMPLETION","FDA_ADVISORY_COMMITTEE","MA_REGULATORY_CLEARANCE"],"pit_v2":"PREREGISTRATION_REQUIRED","f1_f9":"BLOCKED_PENDING_PIT_V2","ias":"BLOCKED_PENDING_FEASIBILITY_EVIDENCE","ranking":"BLOCKED_PENDING_IAS","w3_go_no_go":"BLOCKED_PENDING_RANKING_AND_ALL_F1_F9"},
+  "governance":{"only_accepted_semantic_clusters_enter_pit":true,"n50_component_can_fail_without_pit":true,"n50_component_cannot_pass_full_f3_without_pit":true,"old_pit_a_v1_forbidden":true,"linked_asset_realized_returns_for_family_selection_forbidden":true},
+  "next_action":"Preregister PIT-v2 over exactly the 260 accepted events in the three n>=50 families. Separate Polymarket historical observability from primary-source revelation/resolution and preoutcome linked-asset mapping; synthetic validate and byte-freeze before network collection."
 }
