@@ -1,0 +1,76 @@
+name: W2C PIT v2.1 F1-F9 Execute
+on:
+  push:
+    paths:
+      - 'registry/w2c_pit_v2_1_f1f9_authorization.json'
+      - '.github/workflows/w2c_pit_v2_1_f1f9_execute.yml'
+  workflow_dispatch:
+jobs:
+  execute-f1f9:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Revalidate exact frozen evidence and upstream scientific bundle
+        run: python scripts/w2c_pit_v2_1_evidence_freeze_validate.py
+      - name: Validate F1-F9-only authorization and exact scorer/input blobs
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          from pathlib import Path
+          a=json.load(open('registry/w2c_pit_v2_1_f1f9_authorization.json'))
+          e=json.load(open('registry/w2c_pit_v2_1_evidence_freeze.json'))
+          v=json.load(open('registry/w2c_pit_v2_1_evidence_freeze_validation.json'))
+          assert a['status']=='AUTHORIZED_F1_F9_ONLY'
+          assert a['f1_f9_real_execution_authorized'] is True
+          assert a['network_authorized'] is False
+          assert a['ias_real_scoring_authorized'] is False
+          assert a['smaa_ranking_authorized'] is False
+          assert a['w3_protocol_drafting_authorized'] is False
+          assert a['w3_execution_authorized'] is False
+          assert a['requires_evidence_bundle_sha256']==e['evidence_bundle_sha256']==v['evidence_bundle_sha256']=='d73591e1fc511313b0c36f34d0abe14e483d11d98efa3beeebed932b21a0bb84'
+          scorer=subprocess.check_output(['git','rev-parse','HEAD:scripts/w2c_pit_v2_1_gate_score.py'],text=True).strip()
+          combined=subprocess.check_output(['git','rev-parse','HEAD:registry/w2c_pit_v2_1_combined_events.csv'],text=True).strip()
+          assert scorer==a['requires_scorer_blob']=='4cb6ef2446d7f9dcc683a57f6b611f678710c829'
+          assert combined==a['requires_combined_events_blob']=='879100adffa7df88b518ed062d88c4c30662f91d'
+          assert not Path('registry/w2c_pit_v2_1_family_gates.json').exists()
+          text=Path('scripts/w2c_pit_v2_1_gate_score.py').read_text().lower()
+          for marker in ['urllib','requests','http://','https://','socket.']:
+              assert marker not in text,marker
+          print('PASS F1-F9-only authorization')
+          PY
+      - name: Execute frozen F1-F9 scorer
+        run: python scripts/w2c_pit_v2_1_gate_score.py
+      - name: Validate result firewall and structure
+        run: |
+          python - <<'PY'
+          import json
+          z=json.load(open('registry/w2c_pit_v2_1_family_gates.json'))
+          assert z['artifact']=='W2C_PIT_V2_1_F1_F9_RESULTS'
+          assert z['version']=='W2C-PIT-F1F9-v2.1'
+          assert z['protocol']=='W2C-PIT-v2.1'
+          assert z['gate_contract']=='W2C-PIT-GATES-v2.1'
+          assert z['performance_blind'] is True and z['science_reopened'] is False
+          assert z['ias_execution_authorized'] is False
+          assert z['smaa_execution_authorized'] is False
+          assert z['w3_execution_authorized'] is False
+          assert set(z['families'])=={'EARNINGS_EPS','FDA_FINAL_PDUFA_DECISION','MACRO_STATISTICAL_RELEASE'}
+          for fam,r in z['families'].items():
+              assert set(r['gates'])=={f'F{i}' for i in range(1,10)}
+              assert r['overall_feasibility'] in {'ELIGIBLE_TO_DRAFT_W3_PROTOCOL','NO_GO_CURRENT_PROTOCOL','INDETERMINATE_PENDING_EVIDENCE'}
+          print(json.dumps(z,indent=2))
+          PY
+      - name: Persist exact F1-F9 result to result branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w2c-pit-v2-1-f1f9-results
+          git add registry/w2c_pit_v2_1_family_gates.json
+          git commit -m 'w2c: persist frozen PIT-v2.1 F1-F9 results'
+          git push --force origin HEAD:w2c-pit-v2-1-f1f9-results
