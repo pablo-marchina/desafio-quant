@@ -1,0 +1,44 @@
+{
+  "artifact": "W2C_PIT_V2_LAYER_A_EVIDENCE_FREEZE",
+  "version": "W2C-PIT-LAYER-A-FREEZE-v2.0",
+  "date": "2026-08-12",
+  "status": "FROZEN_EXACT_EVIDENCE_PROMOTED_WITHOUT_REGENERATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "source_execution": {
+    "workflow": "W2C PIT v2 Platform Execute",
+    "run_id": 31636731245,
+    "job_id": 94248826759,
+    "conclusion": "success",
+    "evidence_branch": "w2c-pit-v2-platform-results",
+    "evidence_commit": "572dc4e85202ff6fb1e0c2516035422bce1a4ba5"
+  },
+  "parent_protocol": {
+    "version": "W2C-PIT-v2.0",
+    "freeze_bundle_sha256": "ae6256e89ea40bf4174113f371570736eb5843e024b4e54deba6da92cb7ed4b8",
+    "freeze_validation_run_id": 31636642788
+  },
+  "evidence_bundle_sha256": "faf7499294e2864bc47081fb8b375c33a83af07f8ac27c01dd756ac239c2e759",
+  "bundle_canonicalization": "SHA256 of UTF-8 sorted lines: <path>\\t<git_blob_sha1>\\n",
+  "exact_git_blobs": {
+    "registry/w2c_pit_v2_platform_events.csv.gz": "5e062a0c2ba1fe267a111b16b89415f2155a1c27",
+    "registry/w2c_pit_v2_platform_request_manifest.jsonl.gz": "010bbfc5ef69b8920a6e5759a86f22309e015e46",
+    "registry/w2c_pit_v2_platform_summary.json": "339c2ebd568ff19335473eaf489c7b7a50e576a2"
+  },
+  "materialized_rows": 260,
+  "collection_only_summary": {
+    "EARNINGS_EPS": {"n": 100, "PASS_HISTORY_OBSERVED": 18, "NO_PRICE_HISTORY_OBSERVED": 82},
+    "FDA_FINAL_PDUFA_DECISION": {"n": 63, "PASS_HISTORY_OBSERVED": 7, "NO_PRICE_HISTORY_OBSERVED": 56},
+    "MACRO_STATISTICAL_RELEASE": {"n": 97, "PASS_HISTORY_OBSERVED": 19, "NO_PRICE_HISTORY_OBSERVED": 78}
+  },
+  "interpretation_guardrails": [
+    "These collection counts are not F1 or F2 gate results because authoritative revelation cutoffs have not yet been materialized.",
+    "Layer A evidence and collection method are frozen and may not be changed after observing coverage.",
+    "PIT-v2.1 may reuse these exact Layer A blobs only; it may not recollect or add a new platform witness to rescue coverage.",
+    "No F1-F9, IAS, SMAA/ranking, or W3 result is authorized by this artifact."
+  ],
+  "f1_f9_scored": false,
+  "ias_computed": false,
+  "w3_selected": false,
+  "linked_asset_realized_returns_read": false
+}
