@@ -1,0 +1,12 @@
+{
+  "artifact":"W2C_ADJUDICATION_V1_1_REVEAL_TRIGGER",
+  "version":"W2C-ADJ-v1.1-REVEAL-v1.0",
+  "date":"2026-08-12",
+  "freeze":"W2C-ADJF-v1.1",
+  "freeze_workflow_run_id":31626133682,
+  "input_blob":"60fdc9784dc189e4b588a56ad70eec3c7c5f23d7",
+  "rows":335,
+  "authorized_fields":["event_id","title","slug","resolved_family","independence_cluster_id","end_utc","adjudication_rank"],
+  "performance_blind":true,
+  "network_forbidden":true
+}
