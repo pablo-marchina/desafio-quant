@@ -1,0 +1,29 @@
+{
+  "artifact": "W4B_ATTRITION_SUMMARY",
+  "conservation_checks": {
+    "K0=K1+semantic_exclusions": true,
+    "KH0=CORE+noncore": true,
+    "OT0=verified_exact_groups+nonverified": true
+  },
+  "exclusion_rows": 12,
+  "family_rows": 85,
+  "forecastex_backtestable_claim_authorized": false,
+  "forecastex_canonical_census_events": 481,
+  "gate_decision": "PASS_W4B_ATTRITION_MATERIALIZED",
+  "interpretation": "W4-B population/identity attrition plus Kalshi-only frozen T-10d->T0 history qualification. ForecastEx and Polymarket remain census-only until venue-specific PIT-history qualification; no N_final_backtestable claim is authorized here.",
+  "kalshi_canonical_events": 391,
+  "kalshi_core_t10_to_t1h_events": 132,
+  "kalshi_full_ladder_events": 101,
+  "linked_asset_realized_returns_read": false,
+  "n_final_backtestable_authorized": false,
+  "performance_blind": true,
+  "polymarket_backtestable_claim_authorized": false,
+  "polymarket_canonical_census_events": 1591,
+  "pretruth_candidate_merge_lower_bound": 2130,
+  "pretruth_exact_cross_venue_groups": 2275,
+  "pretruth_upper_bound": 2275,
+  "protocol_version": "W4B-AT-v1.0",
+  "stage_rows": 24,
+  "truth_verified_unique_official_events": 344,
+  "version": "W4B-AT-RESULT-v1.0"
+}

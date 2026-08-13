@@ -1,0 +1,13 @@
+track,transition,exclusion_reason,n,mutually_exclusive_additive,note
+KALSHI_SEMANTIC,K0->K1,semantic_false_positive_or_zero_strict_family,1022,YES,
+KALSHI_SEMANTIC,K0->K1,semantic_ambiguous_multi_family,0,YES,
+KALSHI_SEMANTIC,K1->K2,within_venue_alias_or_strike_collapse,277,YES,Unit changes from event rows to canonical events
+KALSHI_HISTORY,KH0->KH2,history_no_t10d,188,YES,
+KALSHI_HISTORY,KH0->KH2,history_no_near_t0,66,YES,
+KALSHI_HISTORY,KH0->KH2,history_partial,2,YES,
+KALSHI_HISTORY,KH0->KH2,history_no_history,3,YES,
+CROSS_VENUE,XV0->XV1,cross_venue_exact_alias_collapse,188,YES,Unit changes venue canonical records to exact groups
+CROSS_VENUE,XV1->OFFICIAL_TRUTH,cross_venue_candidate_duplicate_pending_before_truth,177,NO,"Edge count, non-additive diagnostic"
+OFFICIAL_TRUTH,OT0->OT1,official_truth_unresolved,1743,YES,
+OFFICIAL_TRUTH,OT0->OT1,official_truth_reject_not_same_semantic_event,0,YES,
+OFFICIAL_TRUTH,OT0->OT1,not_historical_yet,100,YES,
