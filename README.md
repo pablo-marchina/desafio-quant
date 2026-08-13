@@ -1,6 +1,6 @@
 # ARGOS — Desafio Itaú Asset Quant AI 2026
 
-Repositório operacional e reprodutível do ARGOS. A ciência confirmatória permanece congelada em `FST-v1.0 / SF-v3.0 / ART-029 / ART-030`; a extensão W4 permanece performance-blind até o controlled outcome reveal.
+Repositório operacional e reprodutível do ARGOS. A ciência confirmatória permanece congelada em `FST-v1.0 / SF-v3.0 / ART-029 / ART-030`, com fase autoritativa `FINAL_REPORT_AUTHORING_AND_QA`. Autoridade científica primária: `registry/final_scientific_truth.json`. A extensão W4 permanece performance-blind até o controlled outcome reveal.
 
 ## Estado operacional atual
 
