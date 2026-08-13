@@ -1,0 +1,59 @@
+name: W4 Backtest Expansion Census
+
+on:
+  push:
+    paths:
+      - 'registry/w4_backtest_expansion_research_protocol_v1.json'
+      - 'scripts/w4_backtest_expansion_census_v1.py'
+      - '.github/workflows/w4_backtest_expansion_census.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  census:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate performance-blind protocol
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w4_backtest_expansion_research_protocol_v1.json'))
+          assert p['version']=='W4-BER-v1.0'
+          assert p['performance_blind'] is True
+          forbidden=' '.join(p['forbidden_inputs']).lower()
+          assert 'realized returns' in forbidden
+          assert p['target_design_goal']['minimum_independent_events']==300
+          print('PASS_W4_EXPANSION_PROTOCOL_GATE')
+          PY
+      - name: Execute performance-blind capacity census
+        run: python scripts/w4_backtest_expansion_census_v1.py
+      - name: Validate outputs and firewall
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          s=json.load(open('registry/w4_backtest_expansion_census_summary_v1.json'))
+          assert s['performance_blind'] is True
+          assert s['realized_linked_asset_returns_read'] is False
+          assert s['venues']['KALSHI']['unique_classified_events'] >= 0
+          assert s['venues']['MANIFOLD']['unique_classified_markets'] >= 0
+          assert pathlib.Path('registry/w4_backtest_expansion_census_candidates_v1.csv').exists()
+          print('PASS_W4_EXPANSION_CENSUS_FIREWALL')
+          PY
+      - name: Persist evidence branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4-backtest-expansion-census-v1
+          git add registry/w4_backtest_expansion_census_candidates_v1.csv registry/w4_backtest_expansion_census_summary_v1.json
+          git commit -m 'results: materialize W4 performance-blind expansion census v1'
+          git push -f origin w4-backtest-expansion-census-v1
