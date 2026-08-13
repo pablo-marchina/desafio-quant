@@ -32,7 +32,7 @@ jobs:
           assert blob('registry/w4b_official_event_truth_state_clarification_v1_0_1.json')=='6459e5407dcf331c13d6e84f7bb26244779b0c15'
           assert blob('scripts/w4b_official_event_truth_verify_v1.py')=='868cd5c52d202f0ea2543ebc3a43349bc7d88e91'
           assert blob('registry/w4b_official_event_truth_verifier_hardening_v1_0_2.json')=='f41420f6abb716e15b11c034202e5c59db100de3'
-          assert blob('scripts/w4b_official_event_truth_verify_v1_0_2.py')=='a9b54d4c4c54956f8a6ee916832b284672bb49d9'
+          assert blob('scripts/w4b_official_event_truth_verify_v1_0_2.py')=='d0f491d68d3171b377433ed5b3871acb441755c9'
           print('PASS_W4B_OFFICIAL_TRUTH_HARDENED_VERIFY_FREEZE')
           PY
       - name: Verify evidence decisions and mint official event truth
