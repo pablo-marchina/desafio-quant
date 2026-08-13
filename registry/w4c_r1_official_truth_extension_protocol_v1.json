@@ -1,0 +1,276 @@
+{
+  "artifact": "W4C_R1_OFFICIAL_TRUTH_EXTENSION_PROTOCOL",
+  "version": "W4C-R1-OTE-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_BEFORE_ANY_R1_OFFICIAL_SOURCE_LOOKUP_OR_RECLASSIFICATION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "purpose": "Extend official-event identity evidence for the immutable W4-C R1 backlog of 1,743 W4-B UNRESOLVED_OFFICIAL_TRUTH exact groups, without mutating W4-B truth, changing frozen event semantics, or inspecting linked-asset realized outcomes or prediction-market performance.",
+  "sequence_prerequisites": {
+    "w4c_saturation_summary": {
+      "path": "registry/w4c_saturation_summary_v1.json",
+      "git_blob_sha": "dbacded97e6ce274aa21e5f18c484827bf8c7051",
+      "required_gate_decision": "PASS_W4C_SATURATION_GATE_CONTINUE",
+      "required_decision": "CONTINUE_EXPANSION_NOT_SATURATED",
+      "required_next_priority_route": "R1_OFFICIAL_TRUTH_EXTENSION"
+    },
+    "r1_descriptive_profile": {
+      "path": "registry/w4c_r1_official_truth_unresolved_profile_v1.json",
+      "git_blob_sha": "12c19e9596429884e20e5ef7ceacde399dc2760b",
+      "required_gate_decision": "PASS_W4C_R1_DESCRIPTIVE_PROFILE_FROZEN",
+      "required_status": "FROZEN_DESCRIPTIVE_PROFILE_ONLY"
+    },
+    "w4b_official_truth_protocol": {
+      "path": "registry/w4b_official_event_truth_protocol_v1.json",
+      "git_blob_sha": "66001a06e1fd928d39a3f9d75672bd76158db735",
+      "relationship": "R1 inherits the W4-B family semantics, source hierarchy and W4OT1 identity formula; it may tighten or extend deterministic evidence-retrieval rules but may not relax authority requirements or rewrite W4-B results."
+    }
+  },
+  "eligible_universe_binding": {
+    "source_path": "registry/w4b_official_event_truth_unresolved_v1.csv.gz",
+    "source_git_blob_sha": "ba1a8ca49ce7befdbffec9715fda34dcbfb295cd",
+    "source_sha256_bytes": "a5d5f980225b4b21a16fc95f758eb75c5b3e12999e825444b76d6b85fc31cd77",
+    "required_input_state": "UNRESOLVED_OFFICIAL_TRUTH",
+    "eligible_exact_groups": 1743,
+    "unique_exact_group_ids": 1743,
+    "duplicate_exact_group_ids": 0,
+    "sorted_group_ids_serialization": "UTF-8 exact_group_id values sorted lexicographically, joined by LF, with one terminal LF",
+    "sorted_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+    "excluded_not_historical_yet_groups": 100,
+    "w4b_verified_exact_groups_immutable": 432,
+    "w4b_verified_unique_official_events_immutable": 344,
+    "new_exact_group_ids_allowed": false,
+    "drop_or_substitute_eligible_ids_allowed": false,
+    "family_reclassification_allowed": false,
+    "w4ce1_rewrite_allowed": false,
+    "w4b_w4ot1_rewrite_allowed": false
+  },
+  "frozen_backlog_profile": {
+    "review_mode_counts": {
+      "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 1456,
+      "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 287
+    },
+    "family_counts": {
+      "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 6,
+      "CORPORATE_LITIGATION_BINARY": 56,
+      "CPI_INFLATION_RELEASE": 109,
+      "EARNINGS_EPS": 1355,
+      "FDA_FINAL_PDUFA_DECISION": 22,
+      "FOMC_DECISION": 19,
+      "GDP_RELEASE": 42,
+      "MA_PENDING_COMPLETION": 1,
+      "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 15,
+      "MA_REGULATORY_CLEARANCE": 1,
+      "PAYROLLS_JOBS_RELEASE": 6,
+      "PCE_RELEASE": 13,
+      "RETAIL_SALES_RELEASE": 18,
+      "UNEMPLOYMENT_RELEASE": 80
+    },
+    "interpretation": "These counts define work allocation only. They are not priority weights based on performance and may not be changed after R1 evidence is observed."
+  },
+  "identity_and_semantic_invariants": {
+    "family_semantics": "Use the frozen W4-B resolved_family and pretruth subject semantics exactly as recorded. R1 cannot reinterpret an event into another family to obtain a match.",
+    "pretruth_date": "Preserve pretruth_event_reference_date as provenance. A verified official occurrence date may differ and the delta must be recorded; the pretruth ID is never rewritten.",
+    "official_event_id_formula": "W4OT1- + first_20_hex(SHA256(resolved_family + '|' + official_event_reference_date + '|' + official_subject_key))",
+    "existing_w4b_official_ids": "If an R1 exact group maps to an already-existing W4-B W4OT1 identity, record it as an alias-to-existing-official-event. It contributes zero marginal unique official-event N and does not mutate the W4-B record.",
+    "new_r1_official_ids": "A new W4OT1 identity may be minted only from authoritative occurrence/date/subject evidence under this protocol. It remains W4-C extension evidence and never retroactively changes W4-B counts.",
+    "directional_or_numeric_outcome_not_needed": true
+  },
+  "source_authority_contract": {
+    "policy": "Only primary official authorities or the explicit W4-B fallbacks below may vote. Search engines, prediction-market pages, news media, aggregators and model outputs may assist navigation but never constitute verification evidence.",
+    "fixed_authority_domains": {
+      "BLS": ["bls.gov"],
+      "DOL_ETA": ["dol.gov"],
+      "BEA": ["bea.gov"],
+      "CENSUS": ["census.gov"],
+      "FEDERAL_RESERVE": ["federalreserve.gov"],
+      "FDA": ["fda.gov"],
+      "FEDERAL_REGISTER": ["federalregister.gov"],
+      "SEC_EDGAR": ["sec.gov"],
+      "FTC": ["ftc.gov"],
+      "DOJ": ["justice.gov"]
+    },
+    "conditional_authorities": {
+      "OFFICIAL_REGULATOR": "Must be the named government competition/regulatory authority for the event and use an explicit official government/regulator domain captured in evidence.",
+      "OFFICIAL_COURT": "Must be the court or official judiciary/docket authority for the identified case; commercial docket mirrors cannot vote.",
+      "ISSUER_IR": "May vote only where the W4-B hierarchy explicitly permits issuer evidence and the issuer identity/domain is deterministically bound to the frozen subject/entity."
+    },
+    "family_hierarchy": {
+      "CPI_INFLATION_RELEASE": ["BLS archived CPI release", "BLS release schedule"],
+      "PAYROLLS_JOBS_RELEASE": ["BLS archived Employment Situation release", "BLS release schedule"],
+      "UNEMPLOYMENT_RELEASE_US_UNEMPLOYMENT_RATE": ["BLS archived Employment Situation release", "BLS release schedule"],
+      "UNEMPLOYMENT_RELEASE_US_INITIAL_JOBLESS_CLAIMS": ["DOL ETA Unemployment Insurance Weekly Claims release/archive"],
+      "GDP_RELEASE": ["BEA GDP release", "BEA official release schedule/archive"],
+      "PCE_RELEASE": ["BEA Personal Income and Outlays release", "BEA official release schedule/archive"],
+      "RETAIL_SALES_RELEASE": ["Census Advance Monthly Sales for Retail and Food Services release", "Census official release schedule/archive"],
+      "FOMC_DECISION": ["Federal Reserve FOMC statement or implementation note", "Federal Reserve FOMC meeting calendar/archive"],
+      "FDA_FINAL_PDUFA_DECISION": ["FDA Drugs@FDA/action documents", "FDA official announcement/database", "SEC/issuer filing describing the FDA action only when the FDA primary action document is not publicly retrievable"],
+      "EARNINGS_EPS": ["SEC EDGAR 8-K/10-Q/10-K/6-K filing containing or attaching the earnings release", "issuer investor-relations earnings release"],
+      "MA_PRE_ANNOUNCEMENT_OR_RUMOR": ["SEC filing or issuer announcement for the actual announced transaction when applicable", "issuer official announcement"],
+      "MA_PENDING_COMPLETION": ["SEC filing or issuer closing/termination announcement", "issuer official transaction page"],
+      "MA_REGULATORY_CLEARANCE": ["FTC/DOJ/other named official competition regulator decision", "SEC/issuer filing describing regulator action only when regulator primary document is unavailable"],
+      "ANTITRUST_ENFORCEMENT_SINGLE_NAME": ["FTC/DOJ/official competition-regulator case or release", "official court document", "SEC filing only as corroboration"],
+      "CORPORATE_LITIGATION_BINARY": ["official court opinion/order/docket document", "SEC filing or issuer official release only where the court document is not publicly retrievable"]
+    },
+    "source_hierarchy_may_not_be_relaxed_after_freeze": true
+  },
+  "stratum_A_nonmacro_extension": {
+    "eligible_groups": 1456,
+    "review_mode": "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED",
+    "families": {
+      "EARNINGS_EPS": 1355,
+      "CORPORATE_LITIGATION_BINARY": 56,
+      "FDA_FINAL_PDUFA_DECISION": 22,
+      "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 15,
+      "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 6,
+      "MA_PENDING_COMPLETION": 1,
+      "MA_REGULATORY_CLEARANCE": 1
+    },
+    "common_match_rule": "Verification requires one uniquely supported real-world event identity consistent with the frozen family and subject/entity semantics. Multiple plausible official events, unresolved entity identity, semantic-phase mismatch, or insufficient primary evidence remain UNRESOLVED_R1; ambiguity may never be broken using market settlement, price, PnL or linked-asset returns.",
+    "earnings_rule": "Identify the issuer and reporting event using frozen venue metadata plus SEC/issuer occurrence metadata. Match on issuer plus reporting period when the period is available; otherwise require a unique issuer earnings event temporally and semantically supported by frozen metadata. Do not use, extract for voting, or persist actual EPS/revenue values to establish identity; numeric strike/threshold text is not an official-event identity key.",
+    "litigation_rule": "Require deterministic case/matter identity or a uniquely identified material legal event tied to the frozen entity and semantic event. Generic company litigation mentions are insufficient. Preserve case identifiers when official evidence provides them.",
+    "fda_rule": "Require deterministic sponsor/product/action identity and authoritative FDA occurrence evidence. Approval/nonapproval direction is not needed for identity and must not be used for route selection.",
+    "ma_rule": "Preserve the frozen transaction phase. Pre-announcement/rumor, pending completion and regulatory clearance are distinct semantic event types and may never be interchanged to obtain a match.",
+    "antitrust_rule": "Require the named company/matter plus an official regulator or court enforcement event consistent with the frozen family."
+  },
+  "stratum_B_macro_schedule_extension": {
+    "eligible_groups": 287,
+    "review_mode": "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH",
+    "prior_failure_reason": "zero primary official occurrences within frozen +/-3 calendar-day window",
+    "policy": "First use explicit target period/date semantics already present in frozen venue metadata when available. Only if those semantics do not uniquely identify an official occurrence may the fixed family-specific fallback window below be used. Every match must remain unique within its window and subject/family; otherwise it remains UNRESOLVED_R1.",
+    "fallback_absolute_calendar_day_windows": {
+      "CPI_INFLATION_RELEASE": 14,
+      "PAYROLLS_JOBS_RELEASE": 14,
+      "UNEMPLOYMENT_RELEASE_US_UNEMPLOYMENT_RATE": 14,
+      "UNEMPLOYMENT_RELEASE_US_INITIAL_JOBLESS_CLAIMS": 3,
+      "GDP_RELEASE": 21,
+      "PCE_RELEASE": 14,
+      "RETAIL_SALES_RELEASE": 14,
+      "FOMC_DECISION": 21
+    },
+    "weekly_claims_rule": "The +/-3 day identity window remains unchanged for weekly initial jobless claims. R1 may improve exhaustive official archive traversal, but may not widen the weekly window after evidence is observed.",
+    "period_semantics_rule": "If frozen venue metadata explicitly identifies a release month, quarter, meeting or reference period, official evidence must correspond to that same period. A nearby release for a different period is not a match.",
+    "uniqueness_rule": "Exactly one authoritative official occurrence may satisfy the frozen subject/period and fallback window. Zero or multiple candidates remain unresolved.",
+    "macro_values_prohibited": "Release values, surprises, revisions and directional results are unnecessary for identity and may not be persisted in R1 evidence outputs or used for matching decisions."
+  },
+  "frozen_metadata_allowed_for_matching": {
+    "allowed": [
+      "W4-B exact_group_id and W4CE1 signature",
+      "resolved_family",
+      "pretruth_event_reference_date",
+      "pretruth_subject_key/normalized subject",
+      "venue names",
+      "frozen venue event/market titles, slugs, descriptions and date metadata already materialized before R1",
+      "existing W4-B candidate-edge and exact-group membership metadata"
+    ],
+    "forbidden": [
+      "prediction-market settlement result",
+      "prediction-market outcome price or final price",
+      "prediction-market volume/liquidity/open interest for verification priority",
+      "linked-asset realized return",
+      "ARGOS PnL or model performance",
+      "post-R1 performance information"
+    ]
+  },
+  "evidence_capture_contract": {
+    "required_per_verified_r1_group": [
+      "exact_group_id",
+      "resolved_family",
+      "pretruth_event_reference_date",
+      "pretruth_subject_key",
+      "r1_verification_state",
+      "official_event_id",
+      "official_event_reference_date",
+      "official_event_timestamp_utc_if_published",
+      "official_subject_key",
+      "source_authority",
+      "source_url",
+      "retrieved_at_utc",
+      "source_body_sha256_or_document_hash_when_retrievable",
+      "evidence_excerpt_hash_or_structured_field_reference",
+      "verification_reason",
+      "review_mode",
+      "reference_date_delta_days",
+      "match_rule_used",
+      "alias_to_existing_w4b_official_event"
+    ],
+    "r1_states": [
+      "VERIFIED_R1_OFFICIAL_TRUTH",
+      "UNRESOLVED_R1_OFFICIAL_TRUTH",
+      "REJECT_R1_NOT_SAME_SEMANTIC_EVENT"
+    ],
+    "source_capture": "Hash the retrieved official body/document whenever technically possible. If deterministic body capture is blocked, record authority, URL, retrieval time, access status and a reproducible structured evidence reference; never fabricate hashes.",
+    "navigation_only_sources": "Non-official search/index services may only locate candidate official URLs. Their snippets or metadata cannot vote or be stored as truth evidence."
+  },
+  "automation_and_review_policy": {
+    "deterministic_first": true,
+    "batching_allowed": true,
+    "manual_review_allowed": true,
+    "model_assisted_review_allowed": true,
+    "manual_or_model_review_disclosure_required": true,
+    "model_can_vote_without_primary_evidence": false,
+    "fixed_schema_required": true,
+    "fail_closed_on_parser_or_identity_ambiguity": true,
+    "no_family_specific_rule_changes_after_first_r1_verified_count_is_observed": true
+  },
+  "separate_outputs_no_w4b_overwrite": {
+    "records": "registry/w4c_r1_official_truth_extension_records_v1.csv.gz",
+    "source_manifest": "registry/w4c_r1_official_truth_extension_source_manifest_v1.csv.gz",
+    "official_groups": "registry/w4c_r1_official_truth_extension_groups_v1.csv.gz",
+    "unresolved": "registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz",
+    "summary": "registry/w4c_r1_official_truth_extension_summary_v1.json",
+    "closeout": "registry/w4c_r1_official_truth_extension_closeout_v1.json",
+    "w4b_artifacts_must_remain_byte_identical": true
+  },
+  "marginal_capacity_accounting": {
+    "r1_verified_exact_groups": "Count of the 1,743 eligible exact_group_id values with VERIFIED_R1_OFFICIAL_TRUTH.",
+    "r1_verified_unique_official_events": "Count of unique W4OT1 official_event_id values among R1 verified records.",
+    "r1_aliases_to_existing_w4b_official_events": "R1 verified groups whose W4OT1 already exists in the immutable W4-B 344-event official universe.",
+    "r1_new_unique_official_events_vs_w4b": "Unique R1 W4OT1 IDs not present in the immutable W4-B official-event universe. This is the only R1 quantity eligible to be called marginal unique official-event gain.",
+    "combined_w4b_plus_r1_truth_unique_events": "344 + r1_new_unique_official_events_vs_w4b. This is an official-truth coverage count only and is not N_final_backtestable.",
+    "no_pseudo_replication": true
+  },
+  "gate": {
+    "required_decision": "PASS_W4C_R1_OFFICIAL_TRUTH_EXTENSION_MATERIALIZED",
+    "all_1743_ids_accounted_exactly_once": true,
+    "zero_unknown_or_added_exact_group_ids": true,
+    "zero_w4b_artifact_mutations": true,
+    "zero_family_reclassifications": true,
+    "zero_w4ce1_rewrites": true,
+    "all_verified_rows_have_allowed_authoritative_evidence": true,
+    "all_verified_rows_have_reproducible_evidence_reference": true,
+    "zero_official_identity_transitivity_contradictions": true,
+    "marginal_unique_gain_reported_against_immutable_w4b_344": true,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "post_gate_rule": {
+    "next_step": "Reapply the frozen W4-C marginal-capacity/saturation logic using R1 truth-extension outputs and remaining route capacity before deciding whether to proceed to R2.",
+    "automatic_transition_to_R2": false,
+    "automatic_outcome_reveal": false
+  },
+  "firewall": {
+    "new_official_source_lookup_before_protocol_freeze": false,
+    "r1_reclassification_before_protocol_freeze": false,
+    "prediction_market_settlement_result_allowed_to_vote": false,
+    "prediction_market_price_volume_liquidity_allowed_to_vote": false,
+    "linked_asset_realized_return_allowed": false,
+    "ARGOS_PnL_or_model_performance_allowed": false,
+    "official_macro_release_values_needed_for_identity": false,
+    "w4b_truth_mutation_allowed": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "governance": {
+    "protocol_may_not_be_relaxed_after_r1_evidence_is_observed": true,
+    "eligible_id_set_may_not_change": true,
+    "source_hierarchy_may_not_be_relaxed": true,
+    "macro_fallback_windows_may_not_change_after_freeze": true,
+    "nonmacro_match_rules_may_not_change_after_freeze": true,
+    "technical_errata_allowed_only_for_transport_parser_or_serialization_failures": true,
+    "technical_errata_must_state_whether_any_r1_verification_results_were_observed": true,
+    "performance_based_search_priority_forbidden": true,
+    "w4b_truth_remains_immutable": true,
+    "science_reopened": false
+  }
+}
