@@ -1,0 +1,31 @@
+{
+  "artifact": "W4C_SATURATION_GATE_SUMMARY",
+  "decision": "CONTINUE_EXPANSION_NOT_SATURATED",
+  "gate_decision": "PASS_W4C_SATURATION_GATE_CONTINUE",
+  "interpretation": "W4-C applies the preregistered continue-if-any saturation rule to frozen W4-B attrition and pre-outcome source/family registries. CONTINUE preserves W4-B and requires separately frozen extension routes; it does not authorize N_final_backtestable or outcome reveal.",
+  "linked_asset_realized_returns_read": false,
+  "n_final_backtestable_authorized": false,
+  "next_priority_route": "R1_OFFICIAL_TRUTH_EXTENSION",
+  "open_material_routes": 7,
+  "open_route_ids": [
+    "R1_OFFICIAL_TRUTH_EXTENSION",
+    "R2_POLYMARKET_PIT_HISTORY",
+    "R3_FORECASTEX_PIT_HISTORY",
+    "R4_P0_FAMILY_EXPANSION",
+    "R5_POLYMARKET_V1_ARCHIVE",
+    "R6_P1_PRIMARY_VENUE_ACCESS",
+    "R7_ROBUSTNESS_VENUE"
+  ],
+  "outcome_reveal_authorized": false,
+  "performance_blind": true,
+  "prediction_market_performance_read": false,
+  "protocol_version": "W4C-SAT-v1.0",
+  "route_tests_total": 7,
+  "saturated": false,
+  "science_reopened": false,
+  "version": "W4C-SAT-RESULT-v1.0",
+  "w4b_forecastex_census_capacity": 481,
+  "w4b_polymarket_census_capacity": 1591,
+  "w4b_pretruth_exact_groups": 2275,
+  "w4b_truth_verified_unique_official_events_immutable": 344
+}
