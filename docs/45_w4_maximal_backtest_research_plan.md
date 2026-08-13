@@ -1,7 +1,7 @@
 # W4 — Maximal Backtest Research Plan
 
-**Status:** `ACTIVE_W4_B_FORECASTEX_PRE_OUTCOME`  
-**Plano machine-readable:** `registry/w4_maximal_backtest_research_plan_v1.json`  
+**Status:** `ACTIVE_W4_C_R1_PRE_OUTCOME`  
+**Plano machine-readable:** `registry/w4_maximal_backtest_research_plan_v1.json` (`W4-MBRP-v1.1`)  
 **Science reopened:** `false`  
 **Performance-blind:** `true`
 
@@ -11,82 +11,61 @@ Construir o maior universo histórico defensável, PIT e reproduzível possível
 
 A unidade inferencial padrão permanece `canonical_event_id`. Contratos, strikes, venues, ativos, horizontes, quotes, trades e ticks podem aumentar informação por evento, mas não aumentam automaticamente N independente.
 
-Os marcos 300 / 500 / 1000 são milestones, não stop rules. A expansão termina pelo Saturation Gate.
+Os marcos 300 / 500 / 1000 continuam sendo milestones, não stop rules.
 
 ## Estado atual
 
-### W4-R
-
-**ATIVO / support track.** Primeira wave de pesquisa de fontes, venues e expansão de famílias já foi materializada.
-
 ### W4-A
 
-**PASS / COMPLETO.**
-
-- 12.940 séries Kalshi retornadas;
-- 488 séries raw classificadas;
-- 488/488 com live+historical completos;
-- 0 route errors;
-- probe trades/candles: 30/30 success;
-- 0 HTTP 400.
+**PASS / COMPLETO.** Validação técnica Kalshi concluída.
 
 ### W4-B
 
-**ATIVO no ForecastEx.**
+**PASS / FECHADO.**
 
-Etapas já concluídas:
+- Kalshi: 391 eventos canônicos; 132 core T−10d→T−1h; 101 full ladder;
+- ForecastEx: 481 eventos de census;
+- Polymarket: 1.591 eventos de census;
+- cross-venue: 2.463 registros → 2.275 exact groups;
+- official truth: 432 exact groups verificados → 344 eventos oficiais únicos;
+- 1.743 `UNRESOLVED_OFFICIAL_TRUTH`;
+- 100 `NOT_HISTORICAL_YET`;
+- final attrition: `PASS_W4B_ATTRITION_MATERIALIZED`;
+- `N_final_backtestable` não autorizado.
 
-1. semantic protocol freeze — PASS;
-2. Kalshi semantic cleaning — PASS;
-3. 488 séries reavaliadas;
-4. 1.690 candidate events;
-5. 668 strict acceptances;
-6. 391 independent `canonical_event_id`;
-7. 277 aliases colapsados;
-8. 0 ambiguidades e 0 API errors;
-9. Kalshi full-population T−10d→T0 — PASS materializado;
-10. 391 eventos / 5.196 tickers / 0 `API_UNRESOLVED`.
+### W4-C
 
-Etapa ativa:
+O Saturation Gate retornou `PASS_W4C_SATURATION_GATE_CONTINUE` / `CONTINUE_EXPANSION_NOT_SATURATED`. Existem 7 rotas materiais abertas e a prioridade é `R1_OFFICIAL_TRUTH_EXTENSION`.
 
-- ForecastEx official archive census — run `31694324574`, passo `Execute official archive census`.
+O perfil descritivo R1 já foi congelado:
 
-Etapas bloqueadas em sequência:
+- 1.743 grupos elegíveis;
+- 1.743 IDs únicos;
+- 0 duplicados;
+- hash: `4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe`;
+- 1.456 grupos non-macro fail-closed;
+- 287 grupos macro sem match primário na janela W4-B;
+- nenhuma reclassificação;
+- nenhum N adicional autorizado.
 
-- Polymarket recensus;
-- cross-venue dedup;
-- official event truth;
-- W4-B final attrition.
+## Rotas W4-C
 
-A cadeia de promoção/persistência dessas etapas foi hardened e conflitos reais permanecem fail-closed.
+1. `R1_OFFICIAL_TRUTH_EXTENSION` — ativo; **protocol freeze é o próximo gate**;
+2. `R2_POLYMARKET_PIT_HISTORY`;
+3. `R3_FORECASTEX_PIT_HISTORY`;
+4. `R4_P0_FAMILY_EXPANSION`;
+5. `R5_POLYMARKET_V1_ARCHIVE`;
+6. `R6_P1_PRIMARY_VENUE_ACCESS`;
+7. `R7_ROBUSTNESS_VENUE`.
 
-## Cadeia operacional congelada
-
-`ForecastEx PASS -> promotion -> Polymarket -> promotion -> dedup -> promotion -> official truth -> promotion -> W4-B final attrition`
-
-Não é permitido pular uma etapa ou usar resultado parcial como PASS.
-
-## W4-C — Saturation and marginal-capacity audit
-
-Começa somente após o closeout W4-B.
-
-W4-B produz a attrition table pré-outcome. W4-C mede contribuição marginal por venue/família/fonte e decide se ainda existe ganho material em N, PIT, depth, breadth ou provenance.
-
-## W4-D até W4-K
-
-Após W4-C:
-
-- **W4-D** canonical event-centric data lake;
-- **W4-E** maximal pre-outcome feature materialization;
-- **W4-F** outcome-blind adequacy/simulation;
-- **W4-G** full W4 protocol freeze;
-- **W4-H** single controlled outcome reveal;
-- **W4-I** BT-A / BT-B / BT-C + event-response + microstructure quando viável;
-- **W4-J** maximal robustness/falsification/inference battery;
-- **W4-K** scientific truth freeze.
+R2-R7 só avançam conforme ganho marginal e reaplicação do Saturation Gate.
 
 ## Próxima ação operacional
 
-Fechar o ForecastEx census sob a semântica congelada. Em caso de PASS materializado, avançar pela cadeia hardened até o W4-B final attrition. Depois iniciar W4-C Saturation Gate.
+Congelar um protocolo separado de extensão R1, bound ao conjunto exato dos 1.743 IDs e ao hash congelado. Somente depois desse freeze pode começar a execução R1. Ao final, medir ganho marginal em eventos oficiais únicos e reaplicar a lógica de saturação antes de R2.
 
-A W4 continua sendo um programa pós-freeze separado; não reinterpreta o resultado científico anterior.
+## W4-D até W4-K
+
+Depois de W4-C: canonical data lake → maximal features → outcome-blind adequacy/simulation → full protocol freeze → controlled reveal → funded backtests → robustness/falsification/inference → scientific truth freeze.
+
+A ciência confirmatória original permanece imutável; W4 continua sendo um programa pós-freeze separado.
