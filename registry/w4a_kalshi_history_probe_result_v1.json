@@ -1,0 +1,578 @@
+{
+  "artifact": "W4A_KALSHI_HISTORY_PROBE_RESULT",
+  "attempted_endpoint_requests": 30,
+  "contract_400_count": 0,
+  "date_utc": "2026-08-13T04:52:18.055854+00:00",
+  "endpoint_success_rate": 1.0,
+  "interpretation": "Technical pre-outcome API feasibility probe only. It does not establish semantic validity, full-population T-10d coverage, official event truth, linked-asset mapping or N_final_backtestable.",
+  "linked_asset_outcomes_read": false,
+  "market_probes": 15,
+  "market_results": [
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1761141600,
+        "last_ts": 1762005600,
+        "ok": true,
+        "rows": 236
+      },
+      "families": [
+        "CORPORATE_LITIGATION_BINARY"
+      ],
+      "market_close_time": "2025-11-01T14:00:00Z",
+      "market_open_time": "2025-09-24T18:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXABCDISNEYSUE",
+      "ticker": "KXABCDISNEYSUE-25",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1761145609,
+        "last_ts": 1761840978,
+        "ok": true,
+        "rows": 42,
+        "truncated": false
+      },
+      "window_end_ts": 1762005600,
+      "window_start_ts": 1761141600
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1783447200,
+        "last_ts": 1784304000,
+        "ok": true,
+        "rows": 69
+      },
+      "families": [
+        "MA_PRE_ANNOUNCEMENT_OR_RUMOR"
+      ],
+      "market_close_time": "2026-07-17T16:26:34Z",
+      "market_open_time": "2026-05-27T02:00:00Z",
+      "route": "live",
+      "series_ticker": "KXACQANNOUNCEANNUAL",
+      "ticker": "KXACQANNOUNCEANNUAL-27JAN01-ANYDELI",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1783821537,
+        "last_ts": 1784263968,
+        "ok": true,
+        "rows": 38,
+        "truncated": false
+      },
+      "window_end_ts": 1784305594,
+      "window_start_ts": 1783441594
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1766383200,
+        "last_ts": 1767240000,
+        "ok": true,
+        "rows": 202
+      },
+      "families": [
+        "MA_PRE_ANNOUNCEMENT_OR_RUMOR"
+      ],
+      "market_close_time": "2026-01-01T04:59:00Z",
+      "market_open_time": "2025-08-12T17:20:00Z",
+      "route": "historical",
+      "series_ticker": "KXACQANNOUNCECHROME",
+      "ticker": "KXACQANNOUNCECHROME-25",
+      "trade_probe": {
+        "error": null,
+        "first_ts": null,
+        "last_ts": null,
+        "ok": true,
+        "rows": 0,
+        "truncated": false
+      },
+      "window_end_ts": 1767243540,
+      "window_start_ts": 1766379540
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1766383200,
+        "last_ts": 1767240000,
+        "ok": true,
+        "rows": 203
+      },
+      "families": [
+        "ANTITRUST_ENFORCEMENT_SINGLE_NAME"
+      ],
+      "market_close_time": "2026-01-01T04:59:00Z",
+      "market_open_time": "2025-06-18T20:45:00Z",
+      "route": "historical",
+      "series_ticker": "KXANTITRUSTOAIMSFT",
+      "ticker": "KXANTITRUSTOAIMSFT-25",
+      "trade_probe": {
+        "error": null,
+        "first_ts": null,
+        "last_ts": null,
+        "ok": true,
+        "rows": 0,
+        "truncated": false
+      },
+      "window_end_ts": 1767243540,
+      "window_start_ts": 1766379540
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1775437200,
+        "last_ts": 1776294000,
+        "ok": true,
+        "rows": 232
+      },
+      "families": [
+        "EARNINGS_EPS"
+      ],
+      "market_close_time": "2026-04-16T00:50:09Z",
+      "market_open_time": "2026-03-02T15:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXBEZELD",
+      "ticker": "KXBEZELD-26",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1775438195,
+        "last_ts": 1776299582,
+        "ok": true,
+        "rows": 726,
+        "truncated": false
+      },
+      "window_end_ts": 1776300609,
+      "window_start_ts": 1775436609
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1778763600,
+        "last_ts": 1779055200,
+        "ok": true,
+        "rows": 77
+      },
+      "families": [
+        "RETAIL_SALES_RELEASE"
+      ],
+      "market_close_time": "2026-05-18T01:59:00Z",
+      "market_open_time": "2026-05-14T12:11:00Z",
+      "route": "historical",
+      "series_ticker": "KXCHRETAIL",
+      "ticker": "KXCHRETAIL-26MAY17-T-0.5",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1778764858,
+        "last_ts": 1778768278,
+        "ok": true,
+        "rows": 2,
+        "truncated": false
+      },
+      "window_end_ts": 1779069540,
+      "window_start_ts": 1778205540
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1779843600,
+        "last_ts": 1780527600,
+        "ok": true,
+        "rows": 143
+      },
+      "families": [
+        "FDA_ADVISORY_COMMITTEE"
+      ],
+      "market_close_time": "2026-06-03T23:08:04Z",
+      "market_open_time": "2026-05-27T00:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXEARNINGSMENTIONAVGO",
+      "ticker": "KXEARNINGSMENTIONAVGO-26JUN03-ACQU",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1780012933,
+        "last_ts": 1780527505,
+        "ok": true,
+        "rows": 75,
+        "truncated": false
+      },
+      "window_end_ts": 1780528084,
+      "window_start_ts": 1779664084
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1767103200,
+        "last_ts": 1767963600,
+        "ok": true,
+        "rows": 210
+      },
+      "families": [
+        "UNEMPLOYMENT_RELEASE"
+      ],
+      "market_close_time": "2026-01-09T13:29:00Z",
+      "market_open_time": "2025-12-10T15:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXECONSTATU3",
+      "ticker": "KXECONSTATU3-25DEC-T3.3",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1767401249,
+        "last_ts": 1767965273,
+        "ok": true,
+        "rows": 5,
+        "truncated": false
+      },
+      "window_end_ts": 1767965340,
+      "window_start_ts": 1767101340
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1785801600,
+        "last_ts": 1786104000,
+        "ok": true,
+        "rows": 52
+      },
+      "families": [
+        "UNEMPLOYMENT_RELEASE"
+      ],
+      "market_close_time": "2026-08-07T12:29:00Z",
+      "market_open_time": "2025-12-15T15:00:00Z",
+      "route": "live",
+      "series_ticker": "KXECONSTATU3",
+      "ticker": "KXECONSTATU3-26JUL-T3.3",
+      "trade_probe": {
+        "error": null,
+        "first_ts": null,
+        "last_ts": null,
+        "ok": true,
+        "rows": 0,
+        "truncated": false
+      },
+      "window_end_ts": 1786105740,
+      "window_start_ts": 1785241740
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1766390400,
+        "last_ts": 1767250800,
+        "ok": true,
+        "rows": 209
+      },
+      "families": [
+        "ANTITRUST_ENFORCEMENT_SINGLE_NAME"
+      ],
+      "market_close_time": "2026-01-01T07:12:30.062894Z",
+      "market_open_time": "2024-10-28T14:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXFTCANTITRUST",
+      "ticker": "KXFTCANTITRUST-26-M",
+      "trade_probe": {
+        "error": null,
+        "first_ts": null,
+        "last_ts": null,
+        "ok": true,
+        "rows": 0,
+        "truncated": false
+      },
+      "window_end_ts": 1767251550,
+      "window_start_ts": 1766387550
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1770177600,
+        "last_ts": 1770436800,
+        "ok": true,
+        "rows": 63
+      },
+      "families": [
+        "PAYROLLS_JOBS_RELEASE"
+      ],
+      "market_close_time": "2026-02-07T04:59:00Z",
+      "market_open_time": "2026-02-04T03:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXJOBSRELEASE",
+      "ticker": "KXJOBSRELEASE-26MAR-26FEB07",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1770229716,
+        "last_ts": 1770438991,
+        "ok": true,
+        "rows": 16,
+        "truncated": false
+      },
+      "window_end_ts": 1770440340,
+      "window_start_ts": 1769576340
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1766379600,
+        "last_ts": 1767240000,
+        "ok": true,
+        "rows": 235
+      },
+      "families": [
+        "PAYROLLS_JOBS_RELEASE"
+      ],
+      "market_close_time": "2026-01-01T04:59:00Z",
+      "market_open_time": "2025-08-12T17:15:00Z",
+      "route": "historical",
+      "series_ticker": "KXPAYROLLCANCEL",
+      "ticker": "KXPAYROLLCANCEL-25",
+      "trade_probe": {
+        "error": null,
+        "first_ts": null,
+        "last_ts": null,
+        "ok": true,
+        "rows": 0,
+        "truncated": false
+      },
+      "window_end_ts": 1767243540,
+      "window_start_ts": 1766379540
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1737478800,
+        "last_ts": 1738285200,
+        "ok": true,
+        "rows": 9
+      },
+      "families": [
+        "PCE_RELEASE"
+      ],
+      "market_close_time": "2025-01-31T13:25:00Z",
+      "market_open_time": "2024-12-20T15:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXPCECORE",
+      "ticker": "KXPCECORE-24DEC-T0.0",
+      "trade_probe": {
+        "error": null,
+        "first_ts": null,
+        "last_ts": null,
+        "ok": true,
+        "rows": 0,
+        "truncated": false
+      },
+      "window_end_ts": 1738329900,
+      "window_start_ts": 1737465900
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1784559600,
+        "last_ts": 1785412800,
+        "ok": true,
+        "rows": 51
+      },
+      "families": [
+        "PCE_RELEASE"
+      ],
+      "market_close_time": "2026-07-30T12:25:00Z",
+      "market_open_time": "2025-11-06T15:00:00Z",
+      "route": "live",
+      "series_ticker": "KXPCECORE",
+      "ticker": "KXPCECORE-26JUN-T0.0",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1784578522,
+        "last_ts": 1785411732,
+        "ok": true,
+        "rows": 26,
+        "truncated": false
+      },
+      "window_end_ts": 1785414300,
+      "window_start_ts": 1784550300
+    },
+    {
+      "candle_probe": {
+        "error": null,
+        "first_ts": 1694098800,
+        "last_ts": 1694664000,
+        "ok": true,
+        "rows": 14
+      },
+      "families": [
+        "RETAIL_SALES_RELEASE"
+      ],
+      "market_close_time": "2023-09-14T12:25:00Z",
+      "market_open_time": "2023-08-15T14:00:00Z",
+      "route": "historical",
+      "series_ticker": "KXRETAIL",
+      "ticker": "RETAIL-23AUG-T-0.2",
+      "trade_probe": {
+        "error": null,
+        "first_ts": 1694213086,
+        "last_ts": 1694661870,
+        "ok": true,
+        "rows": 12,
+        "truncated": false
+      },
+      "window_end_ts": 1694694300,
+      "window_start_ts": 1693830300
+    }
+  ],
+  "performance_blind": true,
+  "protocol_version": "W4A-KHP-v1.0",
+  "raw_semantic_counts_promoted": false,
+  "selected_series": [
+    {
+      "families": [
+        "FDA_FINAL_PDUFA_DECISION"
+      ],
+      "series_ticker": "538APPROVE"
+    },
+    {
+      "families": [
+        "FDA_FINAL_PDUFA_DECISION"
+      ],
+      "series_ticker": "538APPROVEMAX"
+    },
+    {
+      "families": [
+        "CORPORATE_LITIGATION_BINARY"
+      ],
+      "series_ticker": "APPLEUS"
+    },
+    {
+      "families": [
+        "GDP_RELEASE"
+      ],
+      "series_ticker": "CHINAUSGDP"
+    },
+    {
+      "families": [
+        "GDP_RELEASE"
+      ],
+      "series_ticker": "CNGDP"
+    },
+    {
+      "families": [
+        "CPI_INFLATION_RELEASE"
+      ],
+      "series_ticker": "CPI"
+    },
+    {
+      "families": [
+        "CPI_INFLATION_RELEASE"
+      ],
+      "series_ticker": "CPIAPPAREL"
+    },
+    {
+      "families": [
+        "FOMC_DECISION"
+      ],
+      "series_ticker": "DOLLARFED"
+    },
+    {
+      "families": [
+        "FOMC_DECISION"
+      ],
+      "series_ticker": "FEDHIKE"
+    },
+    {
+      "families": [
+        "UNEMPLOYMENT_RELEASE"
+      ],
+      "series_ticker": "JOBLESS"
+    },
+    {
+      "families": [
+        "CORPORATE_LITIGATION_BINARY"
+      ],
+      "series_ticker": "KXABCDISNEYSUE"
+    },
+    {
+      "families": [
+        "MA_PRE_ANNOUNCEMENT_OR_RUMOR"
+      ],
+      "series_ticker": "KXACQANNOUNCEANNUAL"
+    },
+    {
+      "families": [
+        "MA_PRE_ANNOUNCEMENT_OR_RUMOR"
+      ],
+      "series_ticker": "KXACQANNOUNCECHROME"
+    },
+    {
+      "families": [
+        "ANTITRUST_ENFORCEMENT_SINGLE_NAME"
+      ],
+      "series_ticker": "KXANTITRUSTOAIMSFT"
+    },
+    {
+      "families": [
+        "EARNINGS_EPS"
+      ],
+      "series_ticker": "KXBASEDAPPREV"
+    },
+    {
+      "families": [
+        "EARNINGS_EPS"
+      ],
+      "series_ticker": "KXBEZELD"
+    },
+    {
+      "families": [
+        "RETAIL_SALES_RELEASE"
+      ],
+      "series_ticker": "KXCHRETAIL"
+    },
+    {
+      "families": [
+        "FDA_ADVISORY_COMMITTEE"
+      ],
+      "series_ticker": "KXEARNINGSMENTIONAVGO"
+    },
+    {
+      "families": [
+        "UNEMPLOYMENT_RELEASE"
+      ],
+      "series_ticker": "KXECONSTATU3"
+    },
+    {
+      "families": [
+        "ANTITRUST_ENFORCEMENT_SINGLE_NAME"
+      ],
+      "series_ticker": "KXFTCANTITRUST"
+    },
+    {
+      "families": [
+        "PAYROLLS_JOBS_RELEASE"
+      ],
+      "series_ticker": "KXJOBSRELEASE"
+    },
+    {
+      "families": [
+        "PAYROLLS_JOBS_RELEASE"
+      ],
+      "series_ticker": "KXPAYROLLCANCEL"
+    },
+    {
+      "families": [
+        "PCE_RELEASE"
+      ],
+      "series_ticker": "KXPCECORE"
+    },
+    {
+      "families": [
+        "RETAIL_SALES_RELEASE"
+      ],
+      "series_ticker": "KXRETAIL"
+    },
+    {
+      "families": [
+        "PCE_RELEASE"
+      ],
+      "series_ticker": "PCECORE"
+    }
+  ],
+  "selected_unique_series": 25,
+  "selection_error_count": 0,
+  "selection_errors": [],
+  "successful_endpoint_requests": 30,
+  "technical_gate_decision": "PASS_TECHNICAL_HISTORY_ENDPOINT_GATE",
+  "version": "W4A-KHPR-v1.0"
+}
