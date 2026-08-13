@@ -1,0 +1,37 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_VERIFIER_HARDENING",
+  "version": "W4B-OET-VH-v1.0.2",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_ANY_OFFICIAL_TRUTH_DECISIONS",
+  "parent_protocol": "W4B-OET-v1.0",
+  "parent_state_clarification": "W4B-OET-E1-v1.0.1",
+  "official_truth_decisions_observed_before_hardening": false,
+  "scientific_contract_changes": false,
+  "hardening": {
+    "review_mode_required": "Every decision row must disclose review_mode; verified evidence may not be silently manual/model assisted.",
+    "fixed_authority_domain_binding": {
+      "BLS": ["bls.gov"],
+      "DOL_ETA": ["dol.gov"],
+      "BEA": ["bea.gov"],
+      "CENSUS": ["census.gov"],
+      "FEDERAL_RESERVE": ["federalreserve.gov"],
+      "FDA": ["fda.gov"],
+      "FEDERAL_REGISTER": ["federalregister.gov"],
+      "SEC_EDGAR": ["sec.gov"],
+      "FTC": ["ftc.gov"],
+      "DOJ": ["justice.gov"]
+    },
+    "official_regulator_policy": "OFFICIAL_REGULATOR must use a government/official institutional domain ending in .gov, .gov.uk, .europa.eu or another explicitly reviewed government TLD/domain documented in verification_reason.",
+    "official_court_policy": "OFFICIAL_COURT must use a court/government domain or an explicitly documented official judiciary domain; nonofficial aggregators cannot satisfy VERIFIED_OFFICIAL_TRUTH.",
+    "issuer_ir_policy": "ISSUER_IR remains issuer-domain specific and therefore cannot use a global suffix allowlist; review_mode and verification_reason must explicitly identify the issuer/IR authority."
+  },
+  "unchanged": [
+    "source hierarchy by family",
+    "W4OT1 formula",
+    "verification state definitions",
+    "candidate-edge adjudication rules",
+    "unresolved/rejected/not-historical rows excluded from verified N",
+    "prediction-market performance firewall",
+    "linked-asset realized-return firewall"
+  ]
+}
