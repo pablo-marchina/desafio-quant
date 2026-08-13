@@ -1,0 +1,68 @@
+name: W4-B Official Macro Source Probe Once
+on:
+  push:
+    paths:
+      - '.github/workflows/w4b_official_macro_source_probe_once.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Probe frozen primary-source schedule routes without decisions or values
+        run: |
+          python - <<'PY'
+          import hashlib,re,time
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError,URLError
+
+          UA='ARGOS-W4B-official-truth-source-probe/1.0 research-contact'
+          targets=[]
+          for y in range(2021,2027):
+              targets.append((f'BLS_{y}',f'https://www.bls.gov/schedule/{y}/home.htm',['Consumer Price Index','Employment Situation']))
+          targets += [
+              ('BLS_CPI_CURRENT','https://www.bls.gov/schedule/news_release/cpi.htm',['Consumer Price Index']),
+              ('BLS_EMPSIT_CURRENT','https://www.bls.gov/schedule/news_release/empsit.htm',['Employment Situation']),
+              ('FED_FOMC','https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm',['FOMC','Statement']),
+          ]
+          for y in range(2021,2026):
+              targets.append((f'BEA_{y}',f'https://www.bea.gov/news/schedule/full-{y}',['Gross Domestic Product','Personal Income and Outlays']))
+          targets += [
+              ('BEA_CURRENT','https://www.bea.gov/news/schedule/full',['Gross Domestic Product','Personal Income and Outlays']),
+              ('CENSUS_ECON_CAL','https://www.census.gov/economic-indicators/calendar-listview.html',['Advance Monthly Sales for Retail and Food Services']),
+              ('DOL_ETA_0','https://www.dol.gov/newsroom/releases/eta?page=0',['Unemployment Insurance Weekly Claims Report']),
+              ('DOL_ETA_1','https://www.dol.gov/newsroom/releases/eta?page=1',['Unemployment Insurance Weekly Claims Report']),
+          ]
+
+          def fetch(url):
+              last=None
+              for i in range(4):
+                  try:
+                      req=Request(url,headers={'User-Agent':UA,'Accept':'text/html,application/xhtml+xml'})
+                      with urlopen(req,timeout=45) as r:
+                          body=r.read(); return getattr(r,'status',200),r.headers.get('Content-Type',''),body,None
+                  except HTTPError as e:
+                      last=f'HTTP_{e.code}'
+                      if e.code<500 and e.code!=429: return e.code,e.headers.get('Content-Type',''),e.read(),last
+                  except (URLError,TimeoutError,OSError) as e:
+                      last=type(e).__name__+':'+str(e)[:120]
+                  time.sleep(1.5*(i+1))
+              return None,'',b'',last
+
+          ok=0
+          for name,url,keywords in targets:
+              status,ctype,body,err=fetch(url)
+              text=body.decode('utf-8','ignore')
+              kw={k:text.lower().count(k.lower()) for k in keywords}
+              iso_dates=len(re.findall(r'\b20\d{2}-\d{2}-\d{2}\b',text))
+              month_dates=len(re.findall(r'\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},\s+20\d{2}\b',text,re.I))
+              if status==200 and any(kw.values()): ok+=1
+              print({'name':name,'status':status,'content_type':ctype.split(';')[0],'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest() if body else '', 'keyword_counts':kw,'iso_date_tokens':iso_dates,'month_date_tokens':month_dates,'error':err},flush=True)
+          print('PRIMARY_ROUTE_KEYWORD_PASS_COUNT',ok,'OF',len(targets))
+          assert ok>=10, f'insufficient_primary_source_routes:{ok}/{len(targets)}'
+          PY
