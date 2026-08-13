@@ -61,5 +61,6 @@ jobs:
             registry/w4b_attrition_exclusion_reasons_v1.csv \
             registry/w4b_attrition_summary_v1.json
           git commit -m 'results: materialize W4-B final attrition table v1'
-          git pull --rebase origin main
+          # Execution starts from the triggering main commit. A concurrent main
+          # change must fail the push instead of rebasing scientific outputs.
           git push origin HEAD:main
