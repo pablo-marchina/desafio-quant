@@ -1,0 +1,65 @@
+name: W4-B Final Attrition Table
+on:
+  push:
+    paths:
+      - 'registry/w4b_official_event_truth_closeout_v1.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  attrition:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate sequence and frozen attrition identities
+        run: |
+          python - <<'PY'
+          import json,subprocess,os
+          c=json.load(open('registry/w4b_official_event_truth_closeout_v1.json'))
+          f=json.load(open('registry/w4b_attrition_table_freeze_v1.json'))
+          def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
+          assert c['technical_gate_decision']=='PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED'
+          assert f['status']=='FROZEN_BEFORE_W4B_FINAL_ATTRITION_EXECUTION'
+          assert blob('registry/w4b_attrition_table_protocol_v1.json')=='342d5a501ec5bde7f754df67c1899ead821a2669'
+          assert blob('scripts/w4b_attrition_table_v1.py')=='448ae7f66acda856458078ff5ae8906bcbf0f2af'
+          for p in [
+            'registry/w4b_kalshi_history_closeout_authoritative.json',
+            'registry/w4b_forecastex_census_summary_v1.json',
+            'registry/w4b_polymarket_recensus_summary_v1.json',
+            'registry/w4b_cross_venue_dedup_summary_v1.json',
+            'registry/w4b_official_event_truth_summary_v1.json'
+          ]: assert os.path.exists(p), p
+          print('PASS_W4B_ATTRITION_SEQUENCE_AND_FREEZE')
+          PY
+      - name: Execute frozen attrition accounting
+        run: python scripts/w4b_attrition_table_v1.py
+      - name: Validate attrition gate and overclaim firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_attrition_summary_v1.json'))
+          assert x['gate_decision']=='PASS_W4B_ATTRITION_MATERIALIZED'
+          assert all(x['conservation_checks'].values())
+          assert x['forecastex_backtestable_claim_authorized'] is False
+          assert x['polymarket_backtestable_claim_authorized'] is False
+          assert x['n_final_backtestable_authorized'] is False
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          print(json.dumps(x,indent=2,sort_keys=True))
+          print('PASS_W4B_FINAL_ATTRITION')
+          PY
+      - name: Persist attrition outputs on main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4b_attrition_table_v1.csv \
+            registry/w4b_attrition_by_family_v1.csv \
+            registry/w4b_attrition_exclusion_reasons_v1.csv \
+            registry/w4b_attrition_summary_v1.json
+          git commit -m 'results: materialize W4-B final attrition table v1'
+          git pull --rebase origin main
+          git push origin HEAD:main
