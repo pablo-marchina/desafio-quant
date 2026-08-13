@@ -1,0 +1,40 @@
+{
+  "accepted_unique_canonical_events": 1591,
+  "artifact": "W4B_POLYMARKET_RECENSUS_CLOSEOUT",
+  "clob_price_history_read": false,
+  "date": "2026-08-13",
+  "files": {
+    "w4b_polymarket_recensus_ambiguous_v1.csv.gz": {
+      "blob_sha1": "b06a9e22d677a83c2ae86a4668879a1121fa658c",
+      "sha256": "160bb6710db7ba3048394f6c6664f2d782b14a8f74267413cef479535cc74573"
+    },
+    "w4b_polymarket_recensus_events_v1.csv.gz": {
+      "blob_sha1": "96473cdebc7926e4631b211be89db6d7f3ddddeb",
+      "sha256": "97647c2bc6575b382285c45f5f05151d3d31dafd722289e062979e5c5991ee1e"
+    },
+    "w4b_polymarket_recensus_page_manifest_v1.csv.gz": {
+      "blob_sha1": "be057656e92a291114bc9271d0749cee9c165067",
+      "sha256": "1752b427dcf894a6eb93c1d88f21872c2658fb64ac24ef8354fdf6b821675f09"
+    },
+    "w4b_polymarket_recensus_summary_v1.json": {
+      "blob_sha1": "3d4db35ee3b98968af0b0527d9caa0cc437379ec",
+      "sha256": "eb3268f2c4f1d8fe723d1502ac10ca9ed73625e9c43a9dec5aae458c92d0b750"
+    },
+    "w4b_polymarket_recensus_venue_events_v1.csv.gz": {
+      "blob_sha1": "94e47178d9f2f6214b4538f6d78ca27c53d18b0f",
+      "sha256": "91d51ce3451033086164fb69a036a1add626191a7444b9cd12dd0fd1fcf5f6a7"
+    },
+    "w4b_polymarket_w2_overlap_v1.csv.gz": {
+      "blob_sha1": "c22e545263aa50c7d3247771ba3c37cf707cb61b",
+      "sha256": "d600a91916151244d0b54cd37d09e9fc3acfc0bb369d07afcb3d534986c80a00"
+    }
+  },
+  "linked_asset_realized_returns_read": false,
+  "pages_fetched": 8106,
+  "performance_blind": true,
+  "source_head_sha": "7748befffbdc3732000ccd6f3cd07b58bad78876",
+  "source_workflow_run_id": 31732895538,
+  "technical_gate_decision": "PASS_POLYMARKET_RECENSUS_MATERIALIZED",
+  "unique_gamma_event_ids": 810515,
+  "version": "W4B-PM-CLOSE-v1.0.1"
+}
