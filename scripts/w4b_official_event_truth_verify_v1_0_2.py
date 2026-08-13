@@ -41,7 +41,7 @@ def authority_domain_valid(auth,parsed,reason):
     if auth=='OFFICIAL_REGULATOR':
         return host.endswith('.gov') or host_matches_suffix(host,'gov.uk') or host_matches_suffix(host,'europa.eu') or ('EXPLICIT_OFFICIAL_DOMAIN:' in (reason or ''))
     if auth=='OFFICIAL_COURT':
-        return host.endswith('.gov') or 'court' in host or ('EXPLICIT_OFFICIAL_DOMAIN:' in (reason or ''))
+        return host.endswith('.gov') or ('EXPLICIT_OFFICIAL_DOMAIN:' in (reason or ''))
     if auth=='ISSUER_IR':
         return bool(host) and ('ISSUER_IR_AUTHORITY:' in (reason or ''))
     return False
