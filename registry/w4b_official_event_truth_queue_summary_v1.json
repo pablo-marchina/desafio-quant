@@ -1,0 +1,26 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_QUEUE_SUMMARY",
+  "candidate_component_rows": 215,
+  "family_counts": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 6,
+    "CORPORATE_LITIGATION_BINARY": 58,
+    "CPI_INFLATION_RELEASE": 232,
+    "EARNINGS_EPS": 1355,
+    "FDA_FINAL_PDUFA_DECISION": 22,
+    "FOMC_DECISION": 75,
+    "GDP_RELEASE": 119,
+    "MA_PENDING_COMPLETION": 2,
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 18,
+    "MA_REGULATORY_CLEARANCE": 1,
+    "PAYROLLS_JOBS_RELEASE": 31,
+    "PCE_RELEASE": 42,
+    "RETAIL_SALES_RELEASE": 49,
+    "UNEMPLOYMENT_RELEASE": 265
+  },
+  "linked_asset_realized_returns_read": false,
+  "official_truth_decisions_read": false,
+  "performance_blind": true,
+  "queue_rows": 2275,
+  "singleton_rows": 2060,
+  "version": "W4B-OET-Q-v1.0"
+}
