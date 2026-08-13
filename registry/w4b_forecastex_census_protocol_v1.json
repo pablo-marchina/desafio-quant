@@ -1,0 +1,86 @@
+{
+  "artifact": "W4B_FORECASTEX_CENSUS_PROTOCOL",
+  "version": "W4B-FX-C-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_BEFORE_FORECASTEX_CENSUS_EXECUTION",
+  "sequence_prerequisite": {
+    "required_prior_stage": "W4-B Kalshi full-population T-10d->T0",
+    "required_history_version": "W4B-KH-RESULT-v1.0.2",
+    "required_history_decision": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED",
+    "required_history_api_unresolved_count": 0,
+    "policy": "ForecastEx census must not execute unless the authoritative Kalshi history closeout on main proves these conditions."
+  },
+  "source_contract": {
+    "venue": "ForecastEx",
+    "official_data_page": "https://forecastex.com/data",
+    "download_endpoint": "https://forecastex.com/api/download?type={type}&date={YYYYMMDD}",
+    "types": ["summary", "prices"],
+    "pairs_policy": "Pairs files are not required to establish census cardinality and are deferred to later PIT/microstructure materialization; they cannot affect semantic inclusion here.",
+    "official_ui_semantics": {
+      "pairs": "daily pairs data refreshed intraday",
+      "prices": "daily closing prices for all events",
+      "summary": "daily product summary"
+    },
+    "verified_headers": {
+      "summary": ["product_id", "product_name", "product_category", "total_pairs"],
+      "prices_identifier_prefix": ["event_contract", "subtype", "expiration_date", "date"],
+      "prices_fields_forbidden_to_vote": ["start_price", "high_price", "low_price", "end_price", "settlement_price", "pair_quantity", "open_interest", "vwap"]
+    }
+  },
+  "archive_enumeration": {
+    "method": "Calendar-complete official endpoint enumeration, not current-market scraping.",
+    "start_date_inclusive": "2024-01-01",
+    "end_date_rule": "latest date displayed by the official /data page at execution time",
+    "date_probe": "Request summary first for every UTC calendar date in range. HTTP 200 CSV => archive date exists; HTTP 404 => no official file for that date; other unresolved HTTP/network error fails the census.",
+    "prices_fetch": "For every archive date with a summary file, request the corresponding prices file. Missing prices after its official availability window is recorded as archive incompleteness and fails the census materialization gate.",
+    "hashing": "Record SHA256, byte size, HTTP status, Content-Type and Content-Disposition for every accepted official file.",
+    "survivorship_policy": "No inference from currently visible markets; all official historical dates are enumerated."
+  },
+  "semantic_contract": {
+    "parent": "registry/w4b_semantic_canonicalization_protocol_v1.json",
+    "family_rules": "Byte-identical family rules and same-mechanism precedence from W4B-SC-v1.0. No ForecastEx-specific family expansion is permitted.",
+    "may_vote": ["product_id", "product_name", "product_category", "event_contract identifier text"],
+    "audit_only_must_not_vote": ["archive_date", "expiration_date", "subtype", "total_pairs"],
+    "forbidden_to_vote": ["start_price", "high_price", "low_price", "end_price", "settlement_price", "pair_quantity", "open_interest", "vwap", "any linked-asset realized outcome", "ARGOS performance"],
+    "classification": "Exactly one strict frozen family => ACCEPT_STRICT_FAMILY; same-mechanism precedence may resolve overlap; cross-mechanism overlap => AMBIGUOUS; zero families => REJECT.",
+    "ambiguous_policy": "FAIL_CLOSED"
+  },
+  "venue_event_unit": {
+    "definition": "One ForecastEx real-world release/decision occurrence, collapsing Yes/No subtypes and all numeric strike contracts.",
+    "provisional_key": "resolved_family + expiration_date + family-specific macro subject key; for non-macro families use normalized nonnumeric subject text.",
+    "duplicate_daily_rows": "The same event_contract appearing in multiple daily files is one contract observation, never another event.",
+    "strike_policy": "All strikes for the same product/release occurrence are one venue event."
+  },
+  "canonicalization": {
+    "stage": "VENUE_AGNOSTIC_SIGNATURE_V1",
+    "id_formula": "W4CE1- + first_20_hex(SHA256(resolved_family + '|' + event_reference_date + '|' + normalized_subject_key))",
+    "event_reference_date": "ForecastEx expiration_date normalized to UTC calendar date for this pre-official-truth stage; missing/unparseable date => CANONICALIZATION_AMBIGUOUS.",
+    "macro_subject_key": "Use the same family-specific US release key semantics as W4B-SC-v1.0 so same-day Kalshi/ForecastEx aliases can converge on the same signature where they represent the same occurrence.",
+    "cross_venue_claim_limit": "A matching canonical_event_id is a deterministic candidate duplicate, not final cross-venue truth until the later dedicated dedup stage."
+  },
+  "outputs": {
+    "file_manifest": "registry/w4b_forecastex_file_manifest_v1.csv.gz",
+    "products": "registry/w4b_forecastex_products_v1.csv",
+    "contracts": "registry/w4b_forecastex_contracts_v1.csv.gz",
+    "events": "registry/w4b_forecastex_events_v1.csv.gz",
+    "ambiguous": "registry/w4b_forecastex_ambiguous_v1.csv.gz",
+    "summary": "registry/w4b_forecastex_census_summary_v1.json"
+  },
+  "gate": {
+    "all_calendar_dates_accounted": true,
+    "all_existing_summary_dates_hashed": true,
+    "all_required_prices_dates_hashed": true,
+    "zero_unresolved_transport_errors": true,
+    "zero_canonical_id_collisions_across_distinct_family_or_date": true,
+    "performance_blind": true,
+    "linked_asset_realized_returns_read": false,
+    "n_claim": "ForecastEx accepted canonical counts are venue census capacity only, not N_final_backtestable."
+  },
+  "governance": {
+    "science_reopened": false,
+    "protocol_rewrite_after_real_forecastex_counts_forbidden": true,
+    "family_dictionary_may_change": false,
+    "selection_by_liquidity_volume_price_or_open_interest_forbidden": true,
+    "official_event_truth_deferred_to_user_fixed_later_stage": true
+  }
+}
