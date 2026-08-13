@@ -57,23 +57,14 @@ def year_from_iso(s):
         return None
 
 
-def census_kalshi(max_pages=500):
-    base = "https://api.elections.kalshi.com/trade-api/v2/events"
-    # fallback domain documented in current API docs
-    fallback = "https://external-api.kalshi.com/trade-api/v2/events"
+def census_kalshi(max_pages=2500):
+    # Current official docs: GET /events uses external-api.kalshi.com and max limit=200.
+    domain = "https://external-api.kalshi.com/trade-api/v2/events"
     rows, cursor, page = [], "", 0
-    domain = base
     while page < max_pages:
-        q = {"limit": 1000, "status": "settled"}
+        q = {"limit": 200, "status": "settled"}
         if cursor: q["cursor"] = cursor
-        try:
-            obj = get_json(domain + "?" + urlencode(q))
-        except Exception:
-            if domain == base:
-                domain = fallback
-                obj = get_json(domain + "?" + urlencode(q))
-            else:
-                raise
+        obj = get_json(domain + "?" + urlencode(q))
         evs = obj.get("events", [])
         if not evs: break
         for e in evs:
@@ -85,7 +76,7 @@ def census_kalshi(max_pages=500):
         cursor = obj.get("cursor") or ""
         page += 1
         if not cursor: break
-    return rows, {"pages": page, "domain": domain}
+    return rows, {"pages": page, "domain": domain, "page_limit":200, "truncated": bool(cursor)}
 
 
 def census_manifold(max_pages=300):
@@ -106,11 +97,10 @@ def census_manifold(max_pages=300):
         before = int(last) - 1
         page += 1
         if len(arr) < 1000: break
-    return rows, {"pages": page}
+    return rows, {"pages": page, "truncated": page >= max_pages}
 
 
 def existing_polymarket_counts():
-    # Use frozen/modeled results only; do not touch performance.
     plan = json.loads((REG / "post_freeze_extension_plan.json").read_text())
     accepted = plan.get("W2C", {}).get("accepted_total")
     tested = plan.get("W2C", {}).get("pit_candidate_events")
@@ -158,7 +148,7 @@ def main():
             "keyword-classified counts are discovery capacity, not semantic-valid population",
             "cross-venue duplicates are not removed",
             "Manifold is robustness-only until separately authorized",
-            "no count authorizes a trading rule",
+            "no count authorizes a trading rule"
         ]
     }
     (REG / "w4_backtest_expansion_census_summary_v1.json").write_text(json.dumps(summary, indent=2, sort_keys=True)+"\n", encoding="utf-8")
