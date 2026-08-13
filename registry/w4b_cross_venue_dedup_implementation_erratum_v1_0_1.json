@@ -1,0 +1,22 @@
+{
+  "artifact": "W4B_CROSS_VENUE_DEDUP_IMPLEMENTATION_ERRATUM",
+  "version": "W4B-XVD-E1-v1.0.1",
+  "date": "2026-08-13",
+  "status": "RECORDED_BEFORE_ANY_CROSS_VENUE_DEDUP_EXECUTION",
+  "parent_protocol": "W4B-XVD-v1.0",
+  "scientific_contract_changes": false,
+  "execution_results_observed_before_erratum": false,
+  "issue": "The initial executor skipped candidate comparisons whenever the two exact groups had identical venue sets. That is stricter than the frozen protocol: two distinct exact groups can each contain the same multi-venue set and still be candidate duplicates.",
+  "correction": "Skip a pair only when the union of venues across both exact groups contains fewer than two distinct venues. All frozen family/date/Jaccard thresholds and no-auto-merge rules remain unchanged.",
+  "unchanged": [
+    "exact W4CE1 auto-dedup rule",
+    "macro same-subject <=3 day candidate rule",
+    "nonmacro exact-subject <=14 day candidate rule",
+    "nonmacro Jaccard >=0.80 <=14 day candidate rule",
+    "candidate edges remain unresolved pre-official-truth",
+    "performance firewall",
+    "no official truth at dedup stage",
+    "no linked-asset outcomes",
+    "all output definitions and N bounds"
+  ]
+}
