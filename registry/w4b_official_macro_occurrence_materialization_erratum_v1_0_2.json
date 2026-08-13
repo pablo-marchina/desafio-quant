@@ -1,0 +1,29 @@
+{
+  "artifact": "W4B_OFFICIAL_MACRO_OCCURRENCE_MATERIALIZATION_ERRATUM",
+  "version": "W4B-OET-MACRO-OCC-ERRATUM-v1.0.2",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_SECOND_PARSER_COVERAGE_FAIL_BEFORE_ANY_OCCURRENCE_RESULT_OR_DECISIONS",
+  "failed_run_id": 31738214010,
+  "failed_stage": "BLS_EMPLOYMENT_DOM_EXTRACTION",
+  "observed_failure": "The first DOM-title erratum recovered 71 CPI occurrence dates but only one Employment Situation date, proving that DOM text-node adjacency is not structurally consistent across BLS release rows.",
+  "technical_fix": "Parse only HTML table rows and require the authoritative calendar date and release title to occur in the same <tr>. Navigation elements cannot emit occurrences because they are outside dated table rows.",
+  "scientific_contract_changes": false,
+  "science_reopened": false,
+  "official_truth_decisions_observed_before_erratum": false,
+  "release_values_read_or_persisted": false,
+  "prediction_market_outcomes_read": false,
+  "linked_asset_realized_returns_read": false,
+  "performance_blind": true,
+  "macro_protocol_blob_sha1": "49ebc0d7888149833fd1c741ac172dcbd0b0413d",
+  "workflow_blob_sha1": "9c813b820925fc27978c20621cbc3fb0dcd0ff94",
+  "executor_blobs": {
+    "scripts/w4b_official_macro_parse_common_v1.py": "3adb609e07348c878e64f19375d9f54f90af843f",
+    "scripts/w4b_official_macro_occurrences_bls_v1.py": "22c14e138029ab182c3a35c29305b1acef8a3514",
+    "scripts/w4b_official_macro_occurrences_fed_bea_v1.py": "d879b642e6a8803bca32f1ab8544b3b17888ac1f",
+    "scripts/w4b_official_macro_occurrences_census_dol_v1.py": "a792be1366f54cd75696ad538434e0a75f995862",
+    "scripts/w4b_official_macro_occurrences_merge_v1.py": "141359f2d6ca801c9d8e6ff51ab9057282caeb62"
+  },
+  "prior_erratum_workflow_blob_sha1": "342f938ed6694ed686d7349f0a733bb440573d69",
+  "prior_bls_parser_blob_sha1": "51b716bcca0be55e5146d069b35cba61934c7e94",
+  "policy": "This erratum changes BLS HTML parsing mechanics only. Family/subject eligibility, sources, authority, +/-3 day matching rule, performance firewall, no-values rule and all downstream truth semantics are unchanged."
+}
