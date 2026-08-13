@@ -1,0 +1,116 @@
+{
+  "artifact": "BACKTEST_EXPANSION_RESEARCH",
+  "version": "BERP-v1.1",
+  "date": "2026-08-12",
+  "science_reopened": false,
+  "performance_blind_for_source_selection": true,
+  "historical_w2a_unchanged": true,
+  "research_decision": "GO_EXPANSION_RESEARCH",
+  "baseline": {
+    "funded_w2a_trades": 34,
+    "r1_opportunities": 108,
+    "frozen_h2_oos_events": 75,
+    "w2c_semantic_accepts": 312,
+    "w2c_pit_candidate_events": 260,
+    "w2c_raw_candidates": 4364,
+    "historical_decision": "NO_PROMOTION_R1"
+  },
+  "scale_scenarios": [
+    {"population": "CURRENT_FUNDED_R1", "n": 34, "multiple_vs_34": 1.0},
+    {"population": "ALL_FROZEN_H2_OOS", "n": 75, "multiple_vs_34": 2.2058823529411766},
+    {"population": "ALL_R1_DEFINED_OPPORTUNITIES", "n": 108, "multiple_vs_34": 3.176470588235294},
+    {"population": "CURRENT_PIT_CANDIDATES", "n": 260, "multiple_vs_34": 7.647058823529412},
+    {"population": "ALL_SEMANTIC_ACCEPTS", "n": 312, "multiple_vs_34": 9.176470588235293},
+    {"population": "MATURE_RESEARCH_TARGET", "n": 500, "multiple_vs_34": 14.705882352941176},
+    {"population": "STRETCH_TARGET", "n": 1000, "multiple_vs_34": 29.41176470588235}
+  ],
+  "precision_planning_heuristic": {
+    "source": "Frozen ART-025 R1 opportunity-level CI; planning only, not prospective power authority",
+    "baseline_n": 108,
+    "approx_ci95_half_width_percentage_points": 0.765,
+    "assumption": "uncertainty scales as inverse sqrt N; ignores additional clustering/heterogeneity and is optimistic",
+    "n_for_half_width": {
+      "0.50pp": 253,
+      "0.40pp": 396,
+      "0.30pp": 703,
+      "0.25pp": 1012,
+      "0.20pp": 1582
+    },
+    "rule": "Replace with dependence-aware simulation adequacy after expanded census is frozen and before new OOS outcomes."
+  },
+  "primary_backtest_candidate": {
+    "id": "BT-E2",
+    "name": "ALL_EVENT_CONTINUOUS_PORTFOLIO",
+    "reason": "Directly removes threshold-induced sample collapse with fewer modeling degrees of freedom than cross-venue or hierarchical alternatives.",
+    "unit_of_independence": "event_id/date_cluster",
+    "exposure_rule_status": "TO_BE_SELECTED_IN_TRAINING_OR_SYNTHETIC_SIMULATION_AND_FROZEN_BEFORE_NEW_OOS_RETURNS",
+    "candidate_monotone_mappings": [
+      "CENTERED_PROBABILITY_2P_MINUS_1",
+      "STANDARDIZED_PRE_EVENT_SURPRISE_VS_PUBLIC_CONSENSUS",
+      "FAMILY_DATE_RANK_NORMALIZED_SCORE",
+      "CLIPPED_MONOTONE_MAPPING_LEARNED_ON_PAST_BLOCKS_ONLY"
+    ]
+  },
+  "secondary_backtests": [
+    "BT-E1_REPLICATION_BRIDGE",
+    "BT-E3_CROSS_VENUE_DISTRIBUTIONAL_PORTFOLIO",
+    "BT-E4_FAMILY_NEUTRAL_CROSS_SECTIONAL_EVENT_PORTFOLIO",
+    "BT-E5_HIERARCHICAL_PREDICTIVE_EVENT_MODEL"
+  ],
+  "source_strategy": {
+    "KALSHI": "PRIMARY_RETROSPECTIVE_EXPANSION; official Series/Event/Market hierarchy and historical market/candlestick endpoints",
+    "POLYMARKET_V2": "PRIMARY_RETROSPECTIVE_EXPANSION; separate series-first recensus, never overwrite PIT-v2.1",
+    "MANIFOLD": "ROBUSTNESS_ONLY unless later promoted prospectively; free dumps non-commercial and stale July 2024, API alpha",
+    "METACULUS": "PERMISSION_GATED_EXTERNAL_FORECAST_BENCHMARK; not automatic ingestion",
+    "FORECASTEX_CME_IBKR": "PROSPECTIVE_ARCHIVER_PRIORITY; retrospective history through IBKR is constrained after contract expiration"
+  },
+  "feature_expansion": [
+    "DISTRIBUTIONAL_LADDERS_AS_ONE_EVENT_FEATURE_SET",
+    "MULTI_VENUE_CONSENSUS_AND_DISAGREEMENT",
+    "MULTI_ASSET_EVENT_RESPONSE_WITH_EVENT_CLUSTERING",
+    "MULTI_HORIZON_RESPONSE_SURFACE_WITH_PRESPECIFIED_MULTIPLICITY_CONTROL",
+    "PROBABILITY_TRAJECTORY_FEATURES_WITHIN_EVENT"
+  ],
+  "inference_requirements": [
+    "PRIMARY_N_IS_INDEPENDENT_EVENT_OR_DATE_CLUSTER",
+    "NO_PSEUDOREPLICATION_FROM_ASSETS_HORIZONS_OR_CONTRACT_THRESHOLDS",
+    "DATE_CLUSTER_AWARE_INFERENCE",
+    "DEPENDENCE_AWARE_BOOTSTRAP_OR_CLUSTER_ROBUST_METHOD",
+    "HAC_SERIAL_CORRELATION_AWARE_PORTFOLIO_REPORTING",
+    "MULTIPLICITY_CONTROL_FOR_FAMILIES_HORIZONS_AND_MODEL_VARIANTS",
+    "ROLLING_OR_EXPANDING_OOS_WITH_OVERLAP_EMBARGO_FOR_LEARNED_MODELS"
+  ],
+  "sample_targets": {
+    "minimum_useful_independent_oos_events": 150,
+    "preferred": 300,
+    "mature": 500,
+    "stretch": 1000
+  },
+  "kalshi_census": {
+    "scientific_base_script": "scripts/backtest_expansion_kalshi_census_v1.py",
+    "scientific_base_blob": "95c1ecf4cc8fd40c1de505165c7b6a7f9e4d8406",
+    "concurrent_runner": "scripts/backtest_expansion_kalshi_census_v1_1.py",
+    "run_id": 31662250944,
+    "status_at_registry_creation": "IN_PROGRESS_NO_COUNTS_USED_FOR_RESEARCH_DESIGN",
+    "performance_blind": true,
+    "asset_returns_read": false
+  },
+  "next_actions_ordered": [
+    "MATERIALIZE_AND_AUDIT_KALSHI_CENSUS_WITHOUT_RETURN_DATA",
+    "PREREGISTER_POLYMARKET_SERIES_FIRST_RECENSUS_V2",
+    "CANONICALIZE_CROSS_VENUE_EVENTS_AND_MEASURE_OVERLAP",
+    "MEASURE_PIT_HISTORY_RECOVERABILITY_AT_T10_T5_T3_T1",
+    "RUN_DEPENDENCE_AWARE_SIMULATION_ADEQUACY_FOR_CANDIDATE_SAMPLE_SIZES",
+    "FREEZE_BT_E2_EXPOSURE_MAPPING_COSTS_ASSET_MAP_HORIZONS_AND_INFERENCE",
+    "ONLY_THEN_OPEN_NEW_LINKED_ASSET_RETURNS_AND_EXECUTE_EXPANDED_BACKTEST"
+  ],
+  "new_asset_return_backtest_authorized": false,
+  "hard_constraints": [
+    "NO_ASSET_RETURNS_OR_PNL_FOR_VENUE_FAMILY_EVENT_HORIZON_SELECTION",
+    "NO_PSEUDOREPLICATION",
+    "DO_NOT_REWRITE_W2A_OR_PIT_V2_1",
+    "NO_FINAL_OOS_TUNING",
+    "NO_WINNER_PICKING_ACROSS_BACKTESTS_WITHOUT_PROMOTION_AND_MULTIPLICITY_CONTRACT",
+    "LICENSE_AND_TERMS_MUST_ALLOW_EACH_EXTERNAL_SOURCE"
+  ]
+}
