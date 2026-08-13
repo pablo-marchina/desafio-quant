@@ -1,0 +1,64 @@
+name: W4-B Promote ForecastEx Census
+on:
+  workflow_run:
+    workflows: ['W4-B ForecastEx Census']
+    types: [completed]
+permissions:
+  contents: write
+jobs:
+  promote:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Fetch ForecastEx evidence branch
+        run: |
+          git fetch origin w4b-forecastex-census-v1
+          git checkout origin/w4b-forecastex-census-v1 -- \
+            registry/w4b_forecastex_file_manifest_v1.csv.gz \
+            registry/w4b_forecastex_products_v1.csv \
+            registry/w4b_forecastex_contracts_v1.csv.gz \
+            registry/w4b_forecastex_events_v1.csv.gz \
+            registry/w4b_forecastex_ambiguous_v1.csv.gz \
+            registry/w4b_forecastex_census_summary_v1.json
+      - name: Validate and create ForecastEx closeout
+        env:
+          SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+          SOURCE_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,subprocess
+          from pathlib import Path
+          R=Path('registry'); x=json.load(open(R/'w4b_forecastex_census_summary_v1.json'))
+          assert x['gate_decision']=='PASS_FORECASTEX_CENSUS_MATERIALIZED'
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['price_volume_oi_settlement_used_for_selection'] is False
+          assert not x['summary_transport_unresolved'] and not x['prices_transport_unresolved']
+          assert not x['schema_errors'] and not x['canonical_collisions']
+          files=['w4b_forecastex_file_manifest_v1.csv.gz','w4b_forecastex_products_v1.csv','w4b_forecastex_contracts_v1.csv.gz','w4b_forecastex_events_v1.csv.gz','w4b_forecastex_ambiguous_v1.csv.gz','w4b_forecastex_census_summary_v1.json']
+          def blob(p): return subprocess.check_output(['git','hash-object',str(p)],text=True).strip()
+          manifests={f:{'blob_sha1':blob(R/f),'sha256':hashlib.sha256((R/f).read_bytes()).hexdigest()} for f in files}
+          close={
+            'artifact':'W4B_FORECASTEX_CENSUS_CLOSEOUT','version':'W4B-FX-CLOSE-v1.0','date':'2026-08-13',
+            'technical_gate_decision':x['gate_decision'],'accepted_unique_canonical_events':x['accepted_unique_canonical_events'],
+            'archive_dates_with_summary':x['archive_dates_with_summary'],'calendar_days_accounted':x['calendar_days_accounted'],
+            'performance_blind':True,'linked_asset_realized_returns_read':False,
+            'source_workflow_run_id':int(os.environ['SOURCE_RUN_ID']),'source_head_sha':os.environ['SOURCE_HEAD_SHA'],
+            'files':manifests
+          }
+          (R/'w4b_forecastex_census_closeout_v1.json').write_text(json.dumps(close,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(close,indent=2,sort_keys=True))
+          PY
+      - name: Promote to main and trigger Polymarket
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w4b_forecastex_*_v1* registry/w4b_forecastex_census_closeout_v1.json
+          git commit -m 'results: promote passed W4-B ForecastEx census v1'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
