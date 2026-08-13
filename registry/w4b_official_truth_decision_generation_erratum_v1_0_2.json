@@ -1,0 +1,23 @@
+{
+  "artifact": "W4B_OFFICIAL_TRUTH_DECISION_GENERATION_ERRATUM",
+  "version": "W4B-OET-DECGEN-ERRATUM-v1.0.2",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_OCCURRENCE_SUMMARY_BLOB_PROVENANCE_MISMATCH_BEFORE_ANY_DECISION_RESULT",
+  "failed_run_id": 31739222264,
+  "failed_stage": "OCCURRENCE_SUMMARY_BLOB_IDENTITY_CHECK",
+  "observed_failure": "The authoritative occurrence CSV blob and evidence commit matched, but the occurrence summary blob recorded in the original freeze was stale. The run stopped before decision generation.",
+  "correct_occurrence_evidence_commit": "181bb80efe3555aa91252faf856951908f55c9e8",
+  "correct_occurrence_csv_blob_sha1": "6ceae579a62a54b6932a95b25cd0af34e3999f83",
+  "incorrect_occurrence_summary_blob_sha1": "8bfa5342801245a630563656f3024fd5856b03e9",
+  "correct_occurrence_summary_blob_sha1": "a19904873da2751c0e29943f9928e08c6e0cd85b",
+  "decision_generator_blob_sha1": "c30f5f6bccea970b03b8f9f06204f305c6cb625a",
+  "workflow_blob_sha1": "f6ad3ce5e641f62e186c15e03f788b8533b5a445",
+  "scientific_contract_changes": false,
+  "science_reopened": false,
+  "decision_results_observed_before_erratum": false,
+  "performance_blind": true,
+  "linked_asset_realized_returns_read": false,
+  "prediction_market_outcomes_read": false,
+  "economic_release_values_read": false,
+  "policy": "This erratum corrects occurrence-summary provenance only. The authoritative occurrence CSV, matching contract, queue, template, generator, as-of date and all scientific firewalls are unchanged."
+}
