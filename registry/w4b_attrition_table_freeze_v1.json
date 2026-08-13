@@ -1,0 +1,27 @@
+{
+  "artifact": "W4B_ATTRITION_TABLE_FREEZE",
+  "version": "W4B-ATF-v1.0",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_W4B_FINAL_ATTRITION_EXECUTION",
+  "protocol": {
+    "path": "registry/w4b_attrition_table_protocol_v1.json",
+    "blob_sha1": "342d5a501ec5bde7f754df67c1899ead821a2669"
+  },
+  "executor": {
+    "path": "scripts/w4b_attrition_table_v1.py",
+    "blob_sha1": "448ae7f66acda856458078ff5ae8906bcbf0f2af"
+  },
+  "sequence_lock": "Execution requires PASS official-event-truth closeout and the authoritative Kalshi history closeout pointer plus ForecastEx, Polymarket and cross-venue result artifacts on main.",
+  "conservation_checks_frozen": [
+    "K0 = K1 + semantic false-positive exclusions + semantic ambiguity exclusions",
+    "KH0 = CORE_T10_TO_T1H predicate count + non-core count",
+    "OT0 = verified exact groups + non-verified exact groups"
+  ],
+  "claim_firewall": {
+    "forecastex_backtestable_claim_authorized": false,
+    "polymarket_backtestable_claim_authorized": false,
+    "n_final_backtestable_authorized": false,
+    "linked_asset_realized_returns_closed": true,
+    "performance_blind": true
+  }
+}
