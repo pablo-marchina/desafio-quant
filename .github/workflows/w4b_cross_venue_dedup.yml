@@ -1,0 +1,83 @@
+name: W4-B Cross-Venue Pre-Truth Dedup
+on:
+  push:
+    paths:
+      - 'registry/w4b_polymarket_recensus_closeout_v1.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  dedup:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate sequence gate, inputs and frozen identities
+        run: |
+          python - <<'PY'
+          import json,subprocess,os
+          pm=json.load(open('registry/w4b_polymarket_recensus_closeout_v1.json'))
+          f=json.load(open('registry/w4b_cross_venue_dedup_freeze_v1.json'))
+          p=json.load(open('registry/w4b_cross_venue_dedup_protocol_v1.json'))
+          e=json.load(open('registry/w4b_cross_venue_dedup_implementation_erratum_v1_0_1.json'))
+          def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
+          assert pm['technical_gate_decision']=='PASS_POLYMARKET_RECENSUS_MATERIALIZED'
+          assert f['status']=='FROZEN_BEFORE_CROSS_VENUE_DEDUP_EXECUTION'
+          assert p['version']=='W4B-XVD-v1.0'
+          assert e['execution_results_observed_before_erratum'] is False
+          assert e['scientific_contract_changes'] is False
+          assert blob('registry/w4b_cross_venue_dedup_protocol_v1.json')=='5c9e727705d1e14d790f17a7fd76c334a90d0522'
+          assert blob('scripts/w4b_cross_venue_dedup_v1.py')=='b8563416c5e9f8af4d13d3cac9151bfe5de39c7c'
+          assert blob('registry/w4b_cross_venue_dedup_implementation_erratum_v1_0_1.json')=='05425fc833a504c160bfcce760b4840726803487'
+          assert blob('scripts/w4b_cross_venue_dedup_v1_0_1.py')=='d17f5ee080093a9fc5113c3df0e130d1b61d814b'
+          for path in ['registry/w4b_kalshi_semantic_events_v1_1.csv.gz','registry/w4b_forecastex_events_v1.csv.gz','registry/w4b_polymarket_recensus_events_v1.csv.gz']:
+              assert os.path.exists(path), path
+          print('PASS_W4B_CROSS_VENUE_SEQUENCE_AND_FREEZE')
+          PY
+      - name: Execute pre-official-truth dedup
+        id: dedup
+        continue-on-error: true
+        run: python scripts/w4b_cross_venue_dedup_v1_0_1.py
+      - name: Validate result firewall and bounds
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_cross_venue_dedup_summary_v1.json'))
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['official_event_truth_read'] is False
+          assert x['venue_price_volume_liquidity_read'] is False
+          assert x['final_unique_n_authorized'] is False
+          assert x['candidate_merge_lower_bound_n'] <= x['pretruth_upper_bound_n']
+          print(json.dumps({k:x[k] for k in ['venue_canonical_record_counts','pre_dedup_venue_record_sum','exact_dedup_n','exact_cross_venue_multi_venue_groups','exact_match_counts_by_venue_pair','candidate_duplicate_edges','candidate_edge_types','candidate_components_total','candidate_merge_lower_bound_n','pretruth_upper_bound_n','gate_decision']},indent=2,sort_keys=True))
+          print('PASS_W4B_CROSS_VENUE_RESULT_FIREWALL')
+          PY
+      - name: Persist evidence branch
+        if: always()
+        run: |
+          test -f registry/w4b_cross_venue_dedup_summary_v1.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-cross-venue-dedup-v1
+          git add \
+            registry/w4b_cross_venue_records_v1.csv.gz \
+            registry/w4b_cross_venue_exact_groups_v1.csv.gz \
+            registry/w4b_cross_venue_candidate_edges_v1.csv.gz \
+            registry/w4b_cross_venue_candidate_components_v1.csv.gz \
+            registry/w4b_cross_venue_dedup_summary_v1.json
+          git commit -m 'results: materialize W4-B cross-venue pre-truth dedup v1'
+          git push -f origin w4b-cross-venue-dedup-v1
+      - name: Enforce pre-truth dedup gate
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_cross_venue_dedup_summary_v1.json'))
+          assert x['gate_decision']=='PASS_CROSS_VENUE_PRETRUTH_DEDUP_MATERIALIZED'
+          assert not x['w4ce1_signature_collisions']
+          assert not x['invalid_input_signature_records']
+          print('PASS_W4B_CROSS_VENUE_PRETRUTH_DEDUP')
+          PY
