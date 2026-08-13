@@ -1,0 +1,39 @@
+{
+  "accepted_unique_canonical_events": 481,
+  "archive_dates_with_summary": 589,
+  "artifact": "W4B_FORECASTEX_CENSUS_CLOSEOUT",
+  "calendar_days_accounted": 955,
+  "date": "2026-08-13",
+  "files": {
+    "w4b_forecastex_ambiguous_v1.csv.gz": {
+      "blob_sha1": "6aa22bc32eb55ff49a0361c8fc69dccc02c7989d",
+      "sha256": "0d75e7ca83ed3ff18bffec67920c31f1920037c7d06c6e4afa5b79eddd6728cb"
+    },
+    "w4b_forecastex_census_summary_v1.json": {
+      "blob_sha1": "5c618ea08fadd643a3eb00f24a82b913dd095b3e",
+      "sha256": "691abae35b848f8aa65a2afe851e7339b7cccbb1d2fbeff3270aedbc7f81a743"
+    },
+    "w4b_forecastex_contracts_v1.csv.gz": {
+      "blob_sha1": "e8476cfcec6d7d12a6c97b44249caf15bb487b46",
+      "sha256": "c60f5ab16b4a72d0ab86649c7e7d33becf4887cefa179bb953aaa94fb7534250"
+    },
+    "w4b_forecastex_events_v1.csv.gz": {
+      "blob_sha1": "f8d74544074d900db552da245baa1247000f3404",
+      "sha256": "448e2dcadcc990b25b124956267a2ccfc956c20564d9eccd3336a25132927c5b"
+    },
+    "w4b_forecastex_file_manifest_v1.csv.gz": {
+      "blob_sha1": "ab74f360aae3ebcaba1fbf31658178a47f8c61e5",
+      "sha256": "c90b88930615d2f4e1beeac5d7f134e4459e8709263f757d9d61f9490645d151"
+    },
+    "w4b_forecastex_products_v1.csv": {
+      "blob_sha1": "8709f3da6ba932781d538d49ef1fad02bf780096",
+      "sha256": "8d65b4d66ecb49f38111cb6e1d3552f821feea57977b2c41a4c04bdf3d89a861"
+    }
+  },
+  "linked_asset_realized_returns_read": false,
+  "performance_blind": true,
+  "source_head_sha": "c2ef6f6988498c6fd21d351b03f610233e5dfdc6",
+  "source_workflow_run_id": 31694324574,
+  "technical_gate_decision": "PASS_FORECASTEX_CENSUS_MATERIALIZED",
+  "version": "W4B-FX-CLOSE-v1.0"
+}
