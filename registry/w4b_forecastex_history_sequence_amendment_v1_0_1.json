@@ -1,0 +1,33 @@
+{
+  "artifact": "W4B_FORECASTEX_HISTORY_SEQUENCE_AMENDMENT",
+  "version": "W4B-FX-SEQ-E1-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_ANY_FORECASTEX_CENSUS_EXECUTION",
+  "parent_forecastex_protocol": "W4B-FX-C-v1.0",
+  "scientific_contract_changes": false,
+  "forecastex_census_results_observed_before_amendment": false,
+  "reason": "The ForecastEx protocol was frozen while Kalshi history v1.0.2 was the intended technical predecessor. v1.0.2 later failed before scientific result materialization because raw Kalshi ticker path segments were not percent-encoded. The transport-only v1.0.3 supersedes it without changing the frozen Kalshi history science.",
+  "old_sequence_prerequisite": {
+    "closeout_path": "registry/w4b_kalshi_history_closeout_v1_0_2.json",
+    "history_version": "W4B-KH-RESULT-v1.0.2"
+  },
+  "authoritative_sequence_prerequisite": {
+    "closeout_path": "registry/w4b_kalshi_history_closeout_v1_0_3.json",
+    "history_version": "W4B-KH-RESULT-v1.0.3",
+    "required_decision": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED",
+    "required_api_unresolved_count": 0,
+    "required_canonical_events_audited": 391,
+    "required_unique_market_tickers_audited": 5196
+  },
+  "unchanged": [
+    "ForecastEx archive enumeration",
+    "ForecastEx semantic rules",
+    "ForecastEx canonical_event_id formula",
+    "ForecastEx field firewall",
+    "ForecastEx transport and schema gates",
+    "all Kalshi scientific T0/horizon/staleness/history-class definitions",
+    "performance blindness",
+    "linked-asset outcomes closed"
+  ],
+  "governance": "ForecastEx remains blocked unless authoritative history v1.0.3 passes. This amendment does not assert that v1.0.3 has passed; it only defines which predecessor may authorize ForecastEx."
+}
