@@ -1,0 +1,44 @@
+name: W4-B Official Event Truth Queue
+on:
+  push:
+    paths:
+      - 'registry/w4b_cross_venue_dedup_closeout_v1.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  queue:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate sequence and frozen truth identities
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          c=json.load(open('registry/w4b_cross_venue_dedup_closeout_v1.json'))
+          f=json.load(open('registry/w4b_official_event_truth_freeze_v1.json'))
+          def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
+          assert c['technical_gate_decision']=='PASS_CROSS_VENUE_PRETRUTH_DEDUP_MATERIALIZED'
+          assert f['status']=='FROZEN_BEFORE_ANY_OFFICIAL_TRUTH_DECISIONS'
+          assert blob('registry/w4b_official_event_truth_protocol_v1.json')=='66001a06e1fd928d39a3f9d75672bd76158db735'
+          assert blob('registry/w4b_official_event_truth_state_clarification_v1_0_1.json')=='6459e5407dcf331c13d6e84f7bb26244779b0c15'
+          assert blob('scripts/w4b_official_event_truth_queue_v1.py')=='500580822ee974475064a6a9f92a4eae63bd220e'
+          assert blob('scripts/w4b_official_event_truth_verify_v1.py')=='868cd5c52d202f0ea2543ebc3a43349bc7d88e91'
+          print('PASS_W4B_OFFICIAL_TRUTH_QUEUE_FREEZE')
+          PY
+      - name: Materialize deterministic evidence queue
+        run: python scripts/w4b_official_event_truth_queue_v1.py
+      - name: Persist queue and blank decision template on main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4b_official_event_truth_queue_v1.csv.gz \
+            registry/w4b_official_event_truth_decisions_template_v1.csv \
+            registry/w4b_official_event_truth_queue_summary_v1.json
+          git commit -m 'W4-B: materialize official truth evidence queue'
+          git pull --rebase origin main
+          git push origin HEAD:main
