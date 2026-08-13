@@ -1,0 +1,60 @@
+name: W4-C Saturation Gate
+on:
+  push:
+    paths: ['registry/w4c_saturation_gate_freeze_v1.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  saturation:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Validate W4-C freeze and byte identities
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          f=json.load(open('registry/w4c_saturation_gate_freeze_v1.json'))
+          b=lambda p:subprocess.check_output(['git','hash-object',p],text=True).strip()
+          assert f['status']=='FROZEN_BEFORE_W4C_SATURATION_GATE_EXECUTION'
+          assert f['science_reopened'] is False and f['performance_blind'] is True
+          assert f['linked_asset_realized_returns_read'] is False and f['prediction_market_performance_read'] is False
+          assert f['n_final_backtestable_authorized'] is False
+          for p,sha in f['input_blobs'].items(): assert b(p)==sha,(p,b(p),sha)
+          assert b('registry/w4c_saturation_gate_protocol_v1.json')==f['protocol_blob_sha1']=='f52385ecd92e91fa2545605ae21bdad8aaf77239'
+          assert b('scripts/w4c_saturation_gate_v1.py')==f['executor_blob_sha1']
+          assert b('.github/workflows/w4c_saturation_gate.yml')==f['workflow_blob_sha1']
+          assert not os.path.exists('registry/w4c_saturation_summary_v1.json')
+          a=json.load(open('registry/w4b_attrition_summary_v1.json'))
+          assert a['gate_decision']=='PASS_W4B_ATTRITION_MATERIALIZED' and a['n_final_backtestable_authorized'] is False
+          print('PASS_W4C_SATURATION_FREEZE')
+          PY
+      - name: Execute preregistered saturation audit
+        run: python scripts/w4c_saturation_gate_v1.py
+      - name: Validate W4-C gate and outcome firewall
+        run: |
+          python - <<'PY'
+          import csv,json
+          x=json.load(open('registry/w4c_saturation_summary_v1.json'))
+          with open('registry/w4c_saturation_route_audit_v1.csv',encoding='utf-8',newline='') as f:r=list(csv.DictReader(f))
+          assert x['gate_decision'] in {'PASS_W4C_SATURATION_GATE_CONTINUE','PASS_W4C_SATURATION_GATE_STOP'}
+          assert x['decision'] in {'CONTINUE_EXPANSION_NOT_SATURATED','STOP_SATURATED'}
+          assert x['route_tests_total']==7 and len(r)==7
+          assert x['open_material_routes']==sum(z['is_open']=='YES' for z in r)
+          assert x['saturated']==(x['open_material_routes']==0)
+          assert x['n_final_backtestable_authorized'] is False and x['outcome_reveal_authorized'] is False
+          assert x['science_reopened'] is False and x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False and x['prediction_market_performance_read'] is False
+          assert x['w4b_truth_verified_unique_official_events_immutable']==344
+          print(json.dumps(x,indent=2,sort_keys=True)); print('PASS_W4C_SATURATION_GATE')
+          PY
+      - name: Persist W4-C saturation result on main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w4c_saturation_route_audit_v1.csv registry/w4c_saturation_summary_v1.json
+          git commit -m 'results: materialize W4-C saturation gate v1'
+          git push origin HEAD:main
