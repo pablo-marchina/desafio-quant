@@ -22,11 +22,11 @@ replacements = [
     ),
     (
         'hurl = f"{BASE}/historical/markets/{ticker}/candlesticks?{q}"',
-        'hurl = f"{BASE}/historical/markets/{quote(ticker, safe=chr(39)+chr(39))}/candlesticks?{q}"',
+        "hurl = f\"{BASE}/historical/markets/{quote(ticker, safe='')}/candlesticks?{q}\"",
     ),
     (
         'lurl = f"{BASE}/series/{series_ticker}/markets/{ticker}/candlesticks?{q}"',
-        'lurl = f"{BASE}/series/{quote(series_ticker, safe=chr(39)+chr(39))}/markets/{quote(ticker, safe=chr(39)+chr(39))}/candlesticks?{q}"',
+        "lurl = f\"{BASE}/series/{quote(series_ticker, safe='')}/markets/{quote(ticker, safe='')}/candlesticks?{q}\"",
     ),
     ('with ThreadPoolExecutor(max_workers=8) as ex:', 'with ThreadPoolExecutor(max_workers=4) as ex:'),
     ('w4b_kalshi_history_market_v1.csv.gz', 'w4b_kalshi_history_market_v1_0_3.csv.gz'),
