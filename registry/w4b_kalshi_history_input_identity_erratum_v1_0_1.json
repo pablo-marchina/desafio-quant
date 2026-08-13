@@ -1,0 +1,31 @@
+{
+  "artifact": "W4B_KALSHI_HISTORY_INPUT_IDENTITY_ERRATUM",
+  "version": "W4B-KH-E1-v1.0.1",
+  "date": "2026-08-13",
+  "status": "RECORDED_BEFORE_ANY_HISTORY_API_EXECUTION",
+  "supersedes_only": "Expected canonical event count in W4B-KH-v1.0 / W4B-KHF-v1.0.",
+  "original_expected_count": 387,
+  "authoritative_semantic_summary_count": 391,
+  "authoritative_semantic_summary_path": "registry/w4b_kalshi_semantic_summary_v1_1.json",
+  "authoritative_semantic_summary_git_blob_sha1": "17f05eb601a7184e1a14f5230c73cf56cf730da0",
+  "authoritative_semantic_events_git_blob_sha1": "45c26c02c53a5f5d43c56775aae29ec8858b4f64",
+  "failed_preflight_run_id": 31670392498,
+  "failed_step": "Validate frozen history contract and input identity",
+  "history_api_calls_before_erratum": 0,
+  "reason": "The preregistration used a stale expected-count observation. The byte-identical authoritative semantic summary on main reports 391 accepted_unique_canonical_events. The preflight assertion failed before the execution step, so no candlestick/history result existed when this erratum was made.",
+  "scientific_contract_changes": false,
+  "unchanged": [
+    "semantic input blobs",
+    "full-population requirement",
+    "all constituent market tickers requirement",
+    "operational T0 definition",
+    "T-10d to T-1h horizon ladder",
+    "staleness tolerances",
+    "route-resolution policy",
+    "history classes",
+    "performance firewall",
+    "no linked-asset outcomes",
+    "no Kalshi settlement results persisted"
+  ],
+  "governance": "Preserve v1.0 and its failed preflight. Authoritative history execution must use v1.0.1 with only input-count identity corrected."
+}

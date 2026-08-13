@@ -1,0 +1,32 @@
+{
+  "artifact": "W4B_KALSHI_FULL_POPULATION_HISTORY_FREEZE_V1_0_1",
+  "version": "W4B-KHF-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_AUTHORITATIVE_HISTORY_V1_0_1_EXECUTION",
+  "parent_main_commit": "0b63f788d53a5e4560b7a869de525094120c5cd8",
+  "supersedes_execution_only": "W4B-KHF-v1.0 failed preflight before history execution; its scientific contract remains preserved.",
+  "frozen_scientific_implementation": {
+    "registry/w4b_kalshi_full_population_history_protocol_v1.json": "5cf4e3c9f81b9c88e7d9219864d45f826c9914f5",
+    "scripts/w4b_kalshi_full_population_history_v1.py": "36fe13e884d0cb600be03edac6c0d730ab3d0009"
+  },
+  "identity_erratum": {
+    "registry/w4b_kalshi_history_input_identity_erratum_v1_0_1.json": "7f263bd6f98d77d85aac719a13a650f49b61c5aa",
+    "corrected_expected_canonical_events": 391,
+    "history_api_calls_before_erratum": 0
+  },
+  "authoritative_input_blobs": {
+    "registry/w4b_kalshi_semantic_events_v1_1.csv.gz": "45c26c02c53a5f5d43c56775aae29ec8858b4f64",
+    "registry/w4b_kalshi_semantic_summary_v1_1.json": "17f05eb601a7184e1a14f5230c73cf56cf730da0"
+  },
+  "new_execution_blobs": {
+    "scripts/w4b_kalshi_full_population_history_v1_0_1.py": "269dda9e85f8b3c93fb32704aaddd3d1cc326950",
+    ".github/workflows/w4b_kalshi_full_population_history_v1_0_1.yml": "4a9569b26121c28b6afa3b8e25807b96efc39cc9"
+  },
+  "firewall": {
+    "real_history_result_observed_before_v1_0_1_freeze": false,
+    "scientific_contract_changed": false,
+    "linked_asset_realized_returns_closed": true,
+    "performance_blind": true,
+    "all_constituent_market_tickers_required": true
+  }
+}
