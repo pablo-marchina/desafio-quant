@@ -1,6 +1,6 @@
 # ARGOS — Desafio Itaú Asset Quant AI 2026
 
-Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0 / ART-029 / ART-030**. A extensão pós-freeze é separada e não modifica a verdade científica.
+Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0 / ART-029 / ART-030**. A fase histórica autorizada pelo freeze continua `FINAL_REPORT_AUTHORING_AND_QA`; a extensão pós-freeze é separada e não modifica a verdade científica.
 
 > **Anonimato:** este repositório identifica seus autores pelo GitHub e não deve ser citado/linkado no PDF final.
 
@@ -14,6 +14,8 @@ Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória
 - champion probabilístico: `M2`
 - champion econômico: `C0_NO_TRADE`
 - frozen bundle: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`
+
+Autoridade científica primária: `registry/final_scientific_truth.json`.
 
 O resultado H2 continua negativo. Nenhuma extensão abaixo pode ser usada como resgate pós-hoc.
 
