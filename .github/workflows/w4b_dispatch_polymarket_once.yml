@@ -1,0 +1,34 @@
+name: W4-B Dispatch Polymarket Once
+on:
+  push:
+    paths:
+      - '.github/workflows/w4b_dispatch_polymarket_once.yml'
+permissions:
+  actions: write
+  contents: read
+jobs:
+  dispatch:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Dispatch frozen Polymarket recensus on main
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json, os, urllib.request
+          url = 'https://api.github.com/repos/pablo-marchina/desafio-quant/actions/workflows/333356398/dispatches'
+          req = urllib.request.Request(
+              url,
+              data=json.dumps({'ref': 'main'}).encode(),
+              method='POST',
+              headers={
+                  'Authorization': f"Bearer {os.environ['GH_TOKEN']}",
+                  'Accept': 'application/vnd.github+json',
+                  'X-GitHub-Api-Version': '2022-11-28',
+                  'Content-Type': 'application/json',
+              },
+          )
+          with urllib.request.urlopen(req, timeout=30) as r:
+              assert r.status == 204, r.status
+          print('PASS_DISPATCHED_W4B_POLYMARKET_RECENSUS')
+          PY
