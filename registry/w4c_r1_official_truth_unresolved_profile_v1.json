@@ -1,0 +1,230 @@
+{
+  "artifact": "W4C_R1_OFFICIAL_TRUTH_UNRESOLVED_PROFILE",
+  "descriptive_profile": {
+    "by_family_and_review_mode": {
+      "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+        "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 6
+      },
+      "CORPORATE_LITIGATION_BINARY": {
+        "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 56
+      },
+      "CPI_INFLATION_RELEASE": {
+        "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 109
+      },
+      "EARNINGS_EPS": {
+        "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 1355
+      },
+      "FDA_FINAL_PDUFA_DECISION": {
+        "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 22
+      },
+      "FOMC_DECISION": {
+        "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 19
+      },
+      "GDP_RELEASE": {
+        "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 42
+      },
+      "MA_PENDING_COMPLETION": {
+        "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 1
+      },
+      "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+        "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 15
+      },
+      "MA_REGULATORY_CLEARANCE": {
+        "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 1
+      },
+      "PAYROLLS_JOBS_RELEASE": {
+        "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 6
+      },
+      "PCE_RELEASE": {
+        "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 13
+      },
+      "RETAIL_SALES_RELEASE": {
+        "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 18
+      },
+      "UNEMPLOYMENT_RELEASE": {
+        "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 80
+      }
+    },
+    "by_family_and_verification_reason": {
+      "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+        "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 6
+      },
+      "CORPORATE_LITIGATION_BINARY": {
+        "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 56
+      },
+      "CPI_INFLATION_RELEASE": {
+        "zero primary official occurrences within frozen +/-3 calendar-day window": 109
+      },
+      "EARNINGS_EPS": {
+        "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 1355
+      },
+      "FDA_FINAL_PDUFA_DECISION": {
+        "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 22
+      },
+      "FOMC_DECISION": {
+        "zero primary official occurrences within frozen +/-3 calendar-day window": 19
+      },
+      "GDP_RELEASE": {
+        "zero primary official occurrences within frozen +/-3 calendar-day window": 42
+      },
+      "MA_PENDING_COMPLETION": {
+        "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 1
+      },
+      "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+        "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 15
+      },
+      "MA_REGULATORY_CLEARANCE": {
+        "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 1
+      },
+      "PAYROLLS_JOBS_RELEASE": {
+        "zero primary official occurrences within frozen +/-3 calendar-day window": 6
+      },
+      "PCE_RELEASE": {
+        "zero primary official occurrences within frozen +/-3 calendar-day window": 13
+      },
+      "RETAIL_SALES_RELEASE": {
+        "zero primary official occurrences within frozen +/-3 calendar-day window": 18
+      },
+      "UNEMPLOYMENT_RELEASE": {
+        "zero primary official occurrences within frozen +/-3 calendar-day window": 80
+      }
+    },
+    "by_pretruth_reference_year": {
+      "2021": 31,
+      "2022": 6,
+      "2023": 4,
+      "2024": 15,
+      "2025": 618,
+      "2026": 1069
+    },
+    "by_resolved_family": {
+      "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 6,
+      "CORPORATE_LITIGATION_BINARY": 56,
+      "CPI_INFLATION_RELEASE": 109,
+      "EARNINGS_EPS": 1355,
+      "FDA_FINAL_PDUFA_DECISION": 22,
+      "FOMC_DECISION": 19,
+      "GDP_RELEASE": 42,
+      "MA_PENDING_COMPLETION": 1,
+      "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 15,
+      "MA_REGULATORY_CLEARANCE": 1,
+      "PAYROLLS_JOBS_RELEASE": 6,
+      "PCE_RELEASE": 13,
+      "RETAIL_SALES_RELEASE": 18,
+      "UNEMPLOYMENT_RELEASE": 80
+    },
+    "by_review_mode": {
+      "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 287,
+      "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 1456
+    },
+    "by_venue_set": {
+      "FORECASTEX": 148,
+      "FORECASTEX|KALSHI": 17,
+      "FORECASTEX|POLYMARKET": 8,
+      "KALSHI": 114,
+      "KALSHI|POLYMARKET": 4,
+      "POLYMARKET": 1452
+    },
+    "by_verification_reason": {
+      "nonmacro automatic verification is outside W4B-OET-MACRO-v1.0 and remains fail-closed": 1456,
+      "zero primary official occurrences within frozen +/-3 calendar-day window": 287
+    },
+    "missing_pretruth_subject_keys": 0,
+    "pretruth_reference_date_max": "2026-08-13",
+    "pretruth_reference_date_min": "2021-03-15",
+    "pretruth_reference_date_missing": 0,
+    "pretruth_reference_date_nonempty": 1743,
+    "source_and_official_field_nonempty_counts": {
+      "evidence_excerpt_hash_or_structured_field_reference": 0,
+      "official_event_id": 0,
+      "official_event_reference_date": 0,
+      "official_event_timestamp_utc_if_published": 0,
+      "official_subject_key": 1743,
+      "source_authority": 0,
+      "source_body_sha256_or_document_hash": 0,
+      "source_url": 0
+    },
+    "unique_pretruth_subject_keys": 1425
+  },
+  "eligibility_invariants": {
+    "duplicate_group_ids": 0,
+    "group_id_column": "exact_group_id",
+    "sorted_group_ids_serialization": "UTF-8 exact_group_id values sorted lexicographically, joined by LF, with one terminal LF",
+    "sorted_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+    "source_row_schema": [
+      "exact_group_id",
+      "resolved_family",
+      "pretruth_event_reference_date",
+      "pretruth_subject_key",
+      "venues",
+      "verification_state",
+      "official_event_id",
+      "official_event_reference_date",
+      "official_event_timestamp_utc_if_published",
+      "official_subject_key",
+      "source_authority",
+      "source_url",
+      "source_body_sha256_or_document_hash",
+      "evidence_excerpt_hash_or_structured_field_reference",
+      "verification_reason",
+      "review_mode",
+      "reference_date_delta_days"
+    ],
+    "unique_group_ids": 1743
+  },
+  "firewall": {
+    "linked_asset_realized_returns_read": false,
+    "new_official_sources_read": false,
+    "official_identity_merge_performed": false,
+    "pnl_read": false,
+    "prediction_market_performance_read": false,
+    "prediction_market_settlement_results_read": false,
+    "reclassification_performed": false,
+    "w4b_artifacts_modified": false,
+    "w4ce1_ids_rewritten": false,
+    "w4ot1_ids_rewritten": false
+  },
+  "interpretation": "The 1,743 groups are the immutable W4-C R1 eligible backlog. Counts here are descriptive only and authorize no additional verified official truth N.",
+  "prohibitions_for_this_artifact": [
+    "No new official-source lookup",
+    "No verification-state reclassification",
+    "No exact-group or official-event identity rewrite",
+    "No mutation of W4-B artifacts",
+    "No linked-asset realized outcomes",
+    "No prediction-market performance, settlement results, or PnL"
+  ],
+  "purpose": "Describe exactly the W4-B UNRESOLVED_OFFICIAL_TRUTH universe before any W4-C R1 truth extension. This artifact does not reclassify groups or read new truth sources.",
+  "science_reopened": false,
+  "scope": {
+    "eligible_groups": 1743,
+    "eligible_verification_state": "UNRESOLVED_OFFICIAL_TRUTH",
+    "excluded_not_historical_yet_groups": 100,
+    "w4b_nonverified_rows_in_source_file": 1843,
+    "w4b_pretruth_exact_groups": 2275,
+    "w4b_verified_exact_groups_immutable_context": 432,
+    "w4b_verified_unique_official_events_immutable_context": 344
+  },
+  "source_bindings": {
+    "source_main_commit": "48f30548cc90cc3f968380d9b09ba0cfaa3c7053",
+    "w4b_official_truth_closeout": {
+      "git_blob_sha": "3f6b042c7c7e83ea052a1383a9336bad6d31aa28",
+      "path": "registry/w4b_official_event_truth_closeout_v1.json",
+      "sha256_bytes": "ef6e5e3649351e4a9fd70121892dfb7647adc8ad7a59918f4edc270ef8da2719"
+    },
+    "w4b_official_truth_summary": {
+      "gate_decision": "PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED",
+      "git_blob_sha": "bdef6077e6d4ddc2ee111f4c0dbab39162af8d30",
+      "path": "registry/w4b_official_event_truth_summary_v1.json",
+      "sha256_bytes": "94d23bba92e888fc304174cba62c13b2cf87cf2b333682d74e2b82b9401ab17d",
+      "version": "W4B-OET-RESULT-v1.0.2"
+    },
+    "w4b_official_truth_unresolved": {
+      "git_blob_sha": "ba1a8ca49ce7befdbffec9715fda34dcbfb295cd",
+      "path": "registry/w4b_official_event_truth_unresolved_v1.csv.gz",
+      "sha256_bytes": "a5d5f980225b4b21a16fc95f758eb75c5b3e12999e825444b76d6b85fc31cd77"
+    }
+  },
+  "status": "FROZEN_DESCRIPTIVE_PROFILE_ONLY",
+  "technical_gate_decision": "PASS_W4C_R1_DESCRIPTIVE_PROFILE_FROZEN",
+  "version": "W4C-R1-OTP-v1.0"
+}
