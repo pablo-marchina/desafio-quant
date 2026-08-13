@@ -1,6 +1,6 @@
 # ARGOS — Desafio Itaú Asset Quant AI 2026
 
-Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0 / ART-029 / ART-030**. A extensão pós-freeze atual é a **W4 — Maximal Backtest Research**, separada da verdade científica original e mantida performance-blind até um futuro outcome reveal controlado.
+Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0 / ART-029 / ART-030** e sua fase autoritativa permanece `FINAL_REPORT_AUTHORING_AND_QA`. Separadamente, a extensão pós-freeze operacional atual é a **W4 — Maximal Backtest Research**, mantida performance-blind até um futuro outcome reveal controlado.
 
 > **Anonimato:** este repositório identifica seus autores pelo GitHub e não deve ser citado/linkado no PDF final.
 
