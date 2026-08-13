@@ -4,30 +4,29 @@ Repositório operacional e reprodutível do ARGOS. A ciência confirmatória per
 
 ## Estado operacional atual
 
-Plano: `registry/post_freeze_extension_plan.json` — **PFEP-v4.2**.
+Plano: `registry/post_freeze_extension_plan.json` — **PFEP-v4.3**.
 
-**Fase:** `W4_B_MULTI_VENUE_CENSUS_FORECASTEX_ACTIVE`.
+**Fase:** `W4_C_R1_PROTOCOL_FREEZE_NEXT`.
 
 ### Progresso W4
 
-- W4-R research support: **ativo**; primeira wave de fontes/venues/famílias materializada.
+- W4-R research support: **ativo**.
 - W4-A Kalshi technical validation: **PASS**.
-- W4-B semantic protocol: **PASS**.
-- W4-B Kalshi semantic cleaning: **PASS** — 488 séries reavaliadas, 1.690 candidatos, 668 aceitações estritas.
-- W4-B canonicalization: **PASS** — 391 `canonical_event_id`, 277 aliases colapsados, 0 ambiguidades.
-- W4-B Kalshi full-population T−10d→T0: **PASS materializado** — 391 eventos, 5.196 tickers, 0 `API_UNRESOLVED`.
-- W4-B ForecastEx: **em execução** — run `31694324574`, passo `Execute official archive census`.
-- Polymarket: bloqueado até PASS ForecastEx.
-- Cross-venue dedup: bloqueado até PASS Polymarket.
-- Official event truth: bloqueado até PASS dedup.
-- W4-B final attrition: bloqueado até PASS official truth.
-- W4-C saturation/marginal-capacity: pendente do closeout W4-B.
+- W4-B: **PASS / FECHADO**.
+- Kalshi: 391 eventos canônicos; 132 core T−10d→T−1h; 101 full ladder.
+- ForecastEx: **PASS** — 481 eventos de census.
+- Polymarket: **PASS** — 1.591 eventos de census.
+- Cross-venue dedup: **PASS** — 2.463 registros → 2.275 exact groups.
+- Official event truth: **PASS** — 432 exact groups verificados → 344 eventos oficiais únicos; 1.743 unresolved; 100 not historical yet.
+- W4-B final attrition: **PASS** — nenhum `N_final_backtestable` autorizado.
+- W4-C Saturation Gate: **PASS / CONTINUE** — `CONTINUE_EXPANSION_NOT_SATURATED`, 7 rotas materiais abertas.
+- R1 official-truth extension: prioridade atual.
+- R1 descriptive profile: **PASS / FROZEN** — 1.743 grupos, 1.743 IDs únicos, 0 duplicados.
+- Próximo gate: congelar o protocolo separado R1 antes de qualquer execução da extensão.
 
 ### Cadeia autoritativa atual
 
-`ForecastEx PASS -> hardened promotion -> Polymarket -> hardened promotion -> cross-venue dedup -> hardened promotion -> official truth -> hardened promotion -> W4-B final attrition -> W4-C saturation gate`
-
-Toda a cadeia de promoção foi hardened contra o problema operacional de dirty worktree/rebase encontrado no Kalshi; conflitos reais continuam fail-closed.
+`W4-B CLOSEOUT -> W4-C SATURATION CONTINUE -> R1 PROFILE FROZEN -> R1 PROTOCOL FREEZE -> R1 EXECUTION -> MARGINAL-CAPACITY / SATURATION REASSESSMENT -> R2-R7 IF JUSTIFIED`
 
 ## Objetivo W4
 
@@ -44,8 +43,10 @@ Construir o maior universo histórico defensável, PIT e reproduzível possível
 
 Nenhum novo linked-asset outcome é autorizado antes de W4-H. O resultado confirmatório anterior permanece imutável: H2 = `FAIL_UNDER_FROZEN_EXP07I`, champion probabilístico = `M2`, champion econômico histórico = `C0_NO_TRADE`.
 
+O W4-B permanece imutável durante as extensões W4-C. O perfil R1 congelado não reclassificou nenhum grupo, não consultou novas fontes oficiais e não autorizou N adicional.
+
 ## Ordem restante
 
-W4-B ForecastEx -> Polymarket -> dedup -> official truth -> final attrition -> W4-C saturation -> W4-D canonical data lake -> W4-E feature materialization -> W4-F adequacy/simulation -> W4-G full freeze -> W4-H controlled reveal -> W4-I backtests -> W4-J validation -> W4-K scientific truth freeze.
+W4-C R1 protocol freeze -> R1 execution -> saturation reassessment -> R2-R7 conforme ganho marginal -> W4-D canonical data lake -> W4-E feature materialization -> W4-F adequacy/simulation -> W4-G full freeze -> W4-H controlled reveal -> W4-I backtests -> W4-J validation -> W4-K scientific truth freeze.
 
 > Anonimato: este repositório identifica seus autores pelo GitHub e não deve ser citado/linkado no PDF final.
