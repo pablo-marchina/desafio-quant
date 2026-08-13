@@ -1,0 +1,53 @@
+name: W4-B ForecastEx Public Data Access Probe
+on:
+  push:
+    paths:
+      - 'scripts/w4b_forecastex_access_probe_v1.py'
+      - '.github/workflows/w4b_forecastex_access_probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  access-probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate probe firewall
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('scripts/w4b_forecastex_access_probe_v1.py').read_text()
+          assert "census_executed':False" in s
+          assert "forecast_ex_prices_persisted':False" in s
+          assert "linked_asset_realized_returns_read':False" in s
+          print('PASS_FORECASTEX_ACCESS_PROBE_FIREWALL')
+          PY
+      - name: Discover official public CSV access pattern and schema only
+        id: probe
+        continue-on-error: true
+        run: python scripts/w4b_forecastex_access_probe_v1.py
+      - name: Persist access-probe evidence branch
+        if: always()
+        run: |
+          test -f registry/w4b_forecastex_access_probe_v1.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-forecastex-access-probe-v1
+          git add registry/w4b_forecastex_access_probe_v1.json
+          git commit -m 'results: materialize ForecastEx public data access probe'
+          git push -f origin w4b-forecastex-access-probe-v1
+      - name: Enforce access gate
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_forecastex_access_probe_v1.json'))
+          assert x['census_executed'] is False
+          assert x['forecast_ex_prices_persisted'] is False
+          assert x['gate_decision']=='PASS_PUBLIC_CSV_ACCESS_IDENTIFIED'
+          assert x['successful_csv_access_patterns']
+          print('PASS_FORECASTEX_PUBLIC_CSV_ACCESS_IDENTIFIED')
+          PY
