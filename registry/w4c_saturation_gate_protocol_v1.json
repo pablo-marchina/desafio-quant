@@ -1,0 +1,82 @@
+{
+  "artifact": "W4C_SATURATION_GATE_PROTOCOL",
+  "version": "W4C-SAT-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_AFTER_W4B_ATTRITION_BEFORE_W4C_GATE_EXECUTION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "linked_asset_realized_returns_read": false,
+  "prediction_market_performance_read": false,
+  "n_final_backtestable_authorized": false,
+  "parent_contract": {
+    "file": "registry/w4_maximal_backtest_research_plan_v1.json",
+    "blob_sha1": "b9338dac71db5fcbe08fb6ce57225b24ad1b416b",
+    "rule": "Continue expansion if any route can materially add independent canonical events, PIT-valid coverage, pre-event temporal depth, economically justified breadth, distributional/cross-venue information, or provenance/reproducibility. Stop only if all remaining routes are immaterial, fail quality gates, are economically unjustified, or are infeasible."
+  },
+  "frozen_inputs": {
+    "data_source_registry": {"file": "registry/w4_maximal_data_source_registry_v1.json", "blob_sha1": "522c1c0ee4fcc1b084bfe88951a2f49893eb79d3"},
+    "family_expansion_registry": {"file": "registry/w4_family_expansion_research_v1.json", "blob_sha1": "2813d874c33e94f52c8c088d34b26323d0e76df4"},
+    "w4b_attrition": {"file": "registry/w4b_attrition_summary_v1.json", "blob_sha1": "a7cfb074a52bea7c38a5fcb33433e7db68440503"},
+    "official_truth": {"file": "registry/w4b_official_event_truth_summary_v1.json", "blob_sha1": "bdef6077e6d4ddc2ee111f4c0dbab39162af8d30"}
+  },
+  "route_tests": [
+    {
+      "id": "R1_OFFICIAL_TRUTH_EXTENSION",
+      "priority_rank": 1,
+      "dimension": ["independent_event_n", "provenance_reproducibility"],
+      "continue_if": "W4-B contains any UNRESOLVED_OFFICIAL_TRUTH groups and the pre-outcome source registry contains primary corporate/event-truth authorities.",
+      "required_new_freeze": "Separate W4-C truth-extension protocol; W4-B official truth remains immutable."
+    },
+    {
+      "id": "R2_POLYMARKET_PIT_HISTORY",
+      "priority_rank": 2,
+      "dimension": ["pit_valid_coverage", "pre_event_temporal_depth", "distributional_cross_venue_information"],
+      "continue_if": "Polymarket canonical census N is positive while polymarket_backtestable_claim_authorized is false.",
+      "required_new_freeze": "Venue-specific PIT history/snapshot protocol before any linked-asset outcome reveal."
+    },
+    {
+      "id": "R3_FORECASTEX_PIT_HISTORY",
+      "priority_rank": 3,
+      "dimension": ["pit_valid_coverage", "pre_event_temporal_depth", "cross_venue_information"],
+      "continue_if": "ForecastEx canonical census N is positive while forecastex_backtestable_claim_authorized is false.",
+      "required_new_freeze": "ForecastEx timestamp/history qualification protocol."
+    },
+    {
+      "id": "R4_P0_FAMILY_EXPANSION",
+      "priority_rank": 4,
+      "dimension": ["independent_event_n", "economically_justified_breadth"],
+      "continue_if": "The frozen family-expansion registry contains any P0 candidate still gated for a separate family census.",
+      "required_new_freeze": "Separate family dictionary and census; never edit W4-BER-v1.0 in place."
+    },
+    {
+      "id": "R5_POLYMARKET_V1_ARCHIVE",
+      "priority_rank": 5,
+      "dimension": ["pre_event_temporal_depth", "provenance_reproducibility", "distributional_information"],
+      "continue_if": "POLYMARKET_V1_ARCHIVE remains at a P0 archive-access/reconciliation gate in the frozen data-source registry.",
+      "required_new_freeze": "Identifier reconciliation and archive provenance protocol; official APIs remain semantic authority."
+    },
+    {
+      "id": "R6_P1_PRIMARY_VENUE_ACCESS",
+      "priority_rank": 6,
+      "dimension": ["independent_event_n", "economically_justified_breadth"],
+      "continue_if": "Any prediction_market_primary source remains at P1_DATA_ACCESS_GATE with non-NONE independent-N or breadth gain.",
+      "required_new_freeze": "Per-venue data-access/PIT protocol before population inclusion."
+    },
+    {
+      "id": "R7_ROBUSTNESS_VENUE",
+      "priority_rank": 7,
+      "dimension": ["validation_depth", "informational_breadth"],
+      "continue_if": "A robustness-only venue remains unexecuted with HIGH external-validity/depth/breadth gain.",
+      "required_new_freeze": "Separate robustness protocol; never pool with primary real-money N without authorization."
+    }
+  ],
+  "decision_rule": {
+    "CONTINUE_EXPANSION_NOT_SATURATED": "At least one route_test is open.",
+    "STOP_SATURATED": "All route_tests are closed or fail materiality/PIT/provenance/economic-feasibility requirements.",
+    "outcome_reveal_authorized_by_this_gate": false
+  },
+  "immutable_W4B": {
+    "truth_verified_unique_official_events": 344,
+    "rule": "W4-C extensions may add separately versioned evidence but must never rewrite the W4-B attrition or official-truth result."
+  }
+}
