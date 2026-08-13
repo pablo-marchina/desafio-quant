@@ -1,131 +1,109 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v4.0",
+  "version": "PFEP-v4.1",
   "date": "2026-08-13",
-  "status": "W4_MAXIMAL_BACKTEST_RESEARCH_ACTIVE_PRE_OUTCOME_FREEZE",
-  "operational_phase": "W4_R_MAXIMAL_BACKTEST_RESEARCH_AND_CAPACITY_CENSUS",
+  "status": "W4_R_FIRST_PASS_MATERIALIZED_W4_A_TECHNICAL_PASS_W4_B_NEXT",
+  "operational_phase": "W4_B_SEMANTIC_MULTI_VENUE_CENSUS_PRE_OUTCOME",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0 / ART-029 / ART-030",
+    "authoritative_phase": "FINAL_REPORT_AUTHORING_AND_QA",
     "h1": "SUPPORTED_IN_TESTED_SAMPLE",
     "h2": "FAIL_UNDER_FROZEN_EXP07I",
     "h3": "BLOCKED_BY_H2_FAIL_NO_RESCUE",
     "h4": "BLOCKED_BY_H2_FAIL",
     "h5": "BLOCKED_BY_H4",
     "probabilistic_champion": "M2",
-    "economic_champion": "C0_NO_TRADE",
+    "economic_champion_historical": "C0_NO_TRADE",
     "frozen_bundle_sha256": "c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885"
   },
   "historical_extension_state": {
-    "W2A": {
-      "status": "PASS_COMPLETE_FUNDED_BACKTEST_NO_PROMOTION",
-      "result_registry": "registry/w2a_funded_portfolio_run_v1.json",
-      "terminal_nav": 1.0019679107011892,
-      "total_return": 0.0019679107011891794,
-      "matched_spy_total_return": 0.02649834154871522,
-      "max_drawdown": -0.06384129727475374,
-      "hac_sharpe_lag10": 0.07515329744169824,
-      "promotion_decision": "NO_PROMOTION_R1"
-    },
-    "W2C": {
-      "status": "PIT_V2_1_F1_F9_COMPLETE_FROZEN",
-      "accepted_total": 312,
-      "pit_candidate_events": 260,
-      "result_registry": "registry/w2c_pit_v2_1_family_gates.json",
-      "tested_family_results": {
-        "EARNINGS_EPS": "NO_GO_CURRENT_PROTOCOL",
-        "FDA_FINAL_PDUFA_DECISION": "NO_GO_CURRENT_PROTOCOL",
-        "MACRO_STATISTICAL_RELEASE": "NO_GO_CURRENT_PROTOCOL"
-      },
-      "families_without_exact_pit_v2_1_f1_f9": [
-        "FDA_ADVISORY_COMMITTEE",
-        "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
-        "MA_PENDING_COMPLETION",
-        "MA_REGULATORY_CLEARANCE",
-        "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
-        "FOMC_DECISION",
-        "CORPORATE_LITIGATION_BINARY"
-      ],
-      "missing_exact_family_semantics": "FEASIBILITY_NOT_ESTABLISHED; never impute PASS."
-    },
-    "W2B_IAS": {
-      "status": "COMPLETE_FROZEN",
-      "result_registry": "registry/w2b_ias_smaa_results_v1.json",
-      "samples": 200000,
-      "seed": 20260812,
-      "comparative_claim": "NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER",
-      "leader": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
-      "leader_rank1_acceptability": 0.45704,
-      "runnerup": "FDA_FINAL_PDUFA_DECISION",
-      "runnerup_rank1_acceptability": 0.404465,
-      "leader_margin": 0.05257499999999998,
-      "firewall": "IAS/SMAA was computed without reading F1-F9 or ARGOS performance."
-    },
-    "W3": {
-      "status": "FINAL_DECISION_GATE_FROZEN_PENDING_REAL_COMBINATION",
-      "contract": "registry/w3_go_no_go_contract_v1_0.json",
-      "engine": "scripts/w3_go_no_go_v1.py",
-      "freeze_manifest": "registry/w3_go_no_go_freeze_v1_0.json",
-      "freeze_bundle_sha256": "c4db745a4c38a80743ec29779f638f5ebf79ff8f7f0df0a30c9ab682ae34aac2",
-      "real_combination_executed": false,
-      "w3_execution_authorized": false,
-      "non_authoritative_pre_execution_inference": "NO_GO_NO_W3_PROTOCOL_CANDIDATE",
-      "relationship_to_W4": "W4 capacity/data research is a separate performance-blind post-freeze research program. It does not claim W3 authorization and does not reopen outcomes."
-    }
+    "W2A": "PASS_COMPLETE_FUNDED_BACKTEST_NO_PROMOTION",
+    "W2C": "PIT_V2_1_F1_F9_COMPLETE_FROZEN",
+    "W2B_IAS": "COMPLETE_FROZEN_NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER",
+    "W3": "FINAL_DECISION_GATE_FROZEN_PENDING_REAL_COMBINATION",
+    "relationship_to_W4": "W4 is a separate performance-blind capacity/data/backtest research program; it does not authorize W3 or reopen the frozen submission truth."
   },
   "W4": {
-    "status": "ACTIVE_RESEARCH_PRE_OUTCOME_FREEZE",
+    "status": "ACTIVE_PRE_OUTCOME_W4_B_NEXT",
     "research_protocol": "registry/w4_backtest_expansion_research_protocol_v1.json",
     "maximal_research_plan": "registry/w4_maximal_backtest_research_plan_v1.json",
-    "research_document": "docs/45_w4_maximal_backtest_research_plan.md",
+    "maximal_data_source_registry": "registry/w4_maximal_data_source_registry_v1.json",
+    "family_expansion_research": "registry/w4_family_expansion_research_v1.json",
     "science_reopened": false,
     "performance_blind": true,
-    "goal": "Maximize defensible independent event N, PIT temporal depth, informational breadth and validation depth before any new linked-asset outcome reveal.",
-    "milestones_not_stop_rules": {
-      "minimum_independent_events": 300,
-      "preferred_independent_events": 500,
-      "stretch_independent_events": 1000
-    },
+    "goal": "Maximize defensible independent canonical_event_id N, PIT temporal depth, informational breadth and validation depth before any linked-asset outcome reveal.",
+    "milestones_not_stop_rules": {"minimum": 300, "preferred": 500, "stretch": 1000},
     "stop_condition": "Saturation gate, not fixed N.",
-    "current_head_before_plan_update": "7fdb8cd877dc11c523bc23616f87ca5f2ff0b77d",
-    "current_blocker": {
-      "workflow": "W4 Kalshi Series-First Census",
-      "run_id": 31664562033,
-      "step": "Execute series-first Kalshi capacity census",
-      "conclusion": "failure",
-      "error_class": "HTTP_400_HISTORICAL_MARKETS_REQUEST",
-      "fix_scope": "API request/routing only; frozen family dictionary and performance firewall remain immutable."
+    "canonical_independence_rule": "canonical_event_id remains the default inferential unit. Markets, strikes, venues, assets, horizons, trades, quotes and ticks add information but not independent N automatically.",
+    "W4_R": {
+      "status": "FIRST_PASS_MATERIALIZED_CONTINUES_IN_PARALLEL",
+      "registry": "registry/w4_maximal_data_source_registry_v1.json",
+      "document": "docs/49_w4_maximal_data_source_research.md",
+      "family_expansion_registry": "registry/w4_family_expansion_research_v1.json",
+      "family_expansion_document": "docs/52_w4_family_expansion_research.md",
+      "priority_routes": [
+        "Kalshi official historical market/trade/candle data",
+        "ForecastEx daily/intraday event-contract files",
+        "Polymarket official recensus plus reconciled large on-chain archives",
+        "official event-truth sources across SEC/BLS/BEA/Fed/Census/FDA/DOJ/FTC",
+        "systematic CFTC DCM DATA_ACCESS_GATE audit",
+        "cost-gated linked-asset microstructure/options data",
+        "separate outcome-blind family expansion including Housing Starts/Building Permits and high-frequency EIA candidates"
+      ]
+    },
+    "W4_A": {
+      "status": "PASS_TECHNICAL_CAPACITY_AND_HISTORY_ENDPOINTS_SEMANTIC_VALIDATION_PENDING",
+      "closure_registry": "registry/w4a_kalshi_technical_closure_v1.json",
+      "capacity_result": "registry/w4_kalshi_series_first_capacity_v1.json",
+      "capacity_workflow_run": 31667723040,
+      "series_total_returned": 12940,
+      "classified_unique_series_raw": 488,
+      "complete_live_historical_routes": 488,
+      "route_errors": 0,
+      "history_probe_protocol": "registry/w4a_kalshi_history_probe_protocol_v1.json",
+      "history_probe_result": "registry/w4a_kalshi_history_probe_result_v1.json",
+      "history_probe_run": 31668356059,
+      "endpoint_requests": 30,
+      "endpoint_successes": 30,
+      "contract_400_errors": 0,
+      "semantic_warning": "Raw keyword counts contain confirmed false positives and are discovery upper bounds only; they are not semantic-valid or final-backtestable N."
+    },
+    "W4_B": {
+      "status": "NEXT_NOT_YET_OUTCOME_BEARING",
+      "required_sequence": [
+        "freeze separate semantic validation/adjudication protocol without editing W4-BER-v1.0",
+        "boundary-aware candidate generation plus family/entity/subject guards",
+        "materialize exact-family accept/reject evidence",
+        "canonicalize accepted markets/strikes/venues to canonical_event_id",
+        "run full-population Kalshi T-10d to T0 history-depth audit on accepted events",
+        "census ForecastEx and Polymarket under equivalent performance-blind semantics",
+        "attach official event-truth evidence",
+        "measure raw to semantic to independent to PIT to asset-mappable attrition"
+      ]
     },
     "execution_order": [
-      "W4-R maximal backtest research",
-      "W4-A repair and validate Kalshi series-first census",
-      "W4-B exhaustive multi-venue census",
+      "W4-R maximal research (continuous support track)",
+      "W4-A Kalshi technical validation (PASS)",
+      "W4-B semantic multi-venue census (NEXT)",
       "W4-C attrition and saturation audit",
-      "W4-D canonical data lake",
-      "W4-E maximal feature materialization",
-      "W4-F outcome-blind adequacy and simulation",
+      "W4-D canonical event-centric data lake",
+      "W4-E maximal pre-outcome feature materialization",
+      "W4-F outcome-blind adequacy/simulation",
       "W4-G full protocol freeze",
       "W4-H single controlled outcome reveal",
       "W4-I backtest battery with funded accounting",
-      "W4-J maximal robustness/falsification/inference battery",
+      "W4-J robustness/falsification/inference battery",
       "W4-K W4 scientific truth freeze"
-    ],
-    "canonical_independence_rule": "canonical_event_id remains the inferential unit; contracts, strikes, venues, assets, horizons, quotes, trades and ticks increase information per event but not independent N by default.",
-    "backtest_battery": [
-      "BT-A Expanded Discrete Replication",
-      "BT-B Continuous All-Event Portfolio",
-      "BT-C Distributional Multi-Venue",
-      "Event-response surface",
-      "Microstructure event study where PIT history is sufficient"
     ]
   },
   "governance": {
     "science_reopened": false,
     "h2_immutable": true,
     "c0_no_trade_immutable_historical_champion": true,
-    "w4_performance_blind_until_controlled_reveal": true,
-    "linked_asset_realized_returns_for_source_family_feature_selection_forbidden": true,
-    "family_dictionary_posthoc_inflation_forbidden": true,
+    "linked_asset_realized_returns_closed_until_W4_H": true,
+    "original_w4_family_dictionary_immutable": true,
+    "new_family_expansion_requires_separate_preregistration": true,
     "pseudo_replication_forbidden": true,
     "canonical_event_id_default_inferential_unit": true,
     "negative_and_no_go_results_preserved": true,
@@ -133,30 +111,15 @@
   },
   "progress_summary": {
     "completed": [
-      "Original confirmatory science frozen with H2 FAIL and C0_NO_TRADE historical champion",
-      "W2-A funded accounting completed with NO_PROMOTION_R1",
-      "W2-C discovery/semantic/adjudication/PIT-v2.1/F1-F9 completed for eligible exact families",
-      "W2-B IAS/ECG/SMAA completed and frozen",
-      "W3 decision contract/engine/synthetic suite frozen before real combination",
-      "W4-BER-v1.0 performance-blind expansion research preregistered",
-      "Initial W4 quantitative expansion research documented"
+      "W4-R first source/venue/data-layer research registry materialized",
+      "W4-R separate outcome-blind family expansion research materialized",
+      "W4-A Kalshi historical request bug corrected without changing frozen semantics",
+      "W4-A series-first capacity run completed: 488/488 classified series complete across live+historical routes, zero route errors",
+      "W4-A preregistered trade/candle history probe completed: 30/30 endpoint calls successful, zero HTTP 400 contract errors",
+      "W4-A raw counts explicitly quarantined as semantic-unvalidated upper bounds"
     ],
-    "active": [
-      "W4-R maximal backtest research",
-      "W4-A Kalshi series-first census repair"
-    ],
-    "pending": [
-      "Materialize deterministic Kalshi capacity census",
-      "Build exhaustive venue/data-source registry",
-      "Complete multi-venue census and attrition table",
-      "Apply saturation gate",
-      "Build canonical event-centric data lake",
-      "Materialize maximal pre-outcome features",
-      "Run outcome-blind adequacy/simulation",
-      "Freeze full outcome-bearing W4 protocol",
-      "Open outcomes once and execute the frozen backtest battery",
-      "Run maximal validation battery and freeze W4 scientific truth"
-    ]
+    "active": ["W4-R continuing source/family research as support track"],
+    "next": ["W4-B semantic multi-venue census and canonicalization"]
   },
-  "next_action": "Repair the Kalshi historical request path without changing the frozen W4 family dictionary or reading linked-asset outcomes; re-run and materialize the series-first capacity census; then build the exhaustive venue/data-source registry and multi-venue attrition census before any outcome-bearing protocol is frozen."
+  "next_action": "Preregister and freeze the W4-B semantic validation/adjudication layer without editing the original W4-BER-v1.0 dictionary; then materialize semantic-valid Kalshi canonical events, audit full-population T-10d to T0 history, and run equivalent ForecastEx/Polymarket multi-venue census before W4-C attrition/saturation."
 }
