@@ -1,0 +1,91 @@
+{
+  "artifact": "W4C_R1_OFFICIAL_TRUTH_EXTENSION_FREEZE",
+  "version": "W4C-R1-OTE-FREEZE-v1.0",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_ANY_R1_OFFICIAL_SOURCE_LOOKUP_OR_RECLASSIFICATION",
+  "science_reopened": false,
+  "freeze_parent_main_commit_before_protocol": "a556e688ed7650a16aa8f0ea6f4e4c6f5edb2ff2",
+  "protocol_commit": "7d1255205a06430a3282b6cad2858bcb30322e09",
+  "frozen_protocol": {
+    "path": "registry/w4c_r1_official_truth_extension_protocol_v1.json",
+    "git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "version": "W4C-R1-OTE-v1.0",
+    "required_status": "PREREGISTERED_BEFORE_ANY_R1_OFFICIAL_SOURCE_LOOKUP_OR_RECLASSIFICATION"
+  },
+  "frozen_eligibility": {
+    "profile_path": "registry/w4c_r1_official_truth_unresolved_profile_v1.json",
+    "profile_git_blob_sha": "12c19e9596429884e20e5ef7ceacde399dc2760b",
+    "unresolved_source_path": "registry/w4b_official_event_truth_unresolved_v1.csv.gz",
+    "unresolved_source_git_blob_sha": "ba1a8ca49ce7befdbffec9715fda34dcbfb295cd",
+    "unresolved_source_sha256_bytes": "a5d5f980225b4b21a16fc95f758eb75c5b3e12999e825444b76d6b85fc31cd77",
+    "eligible_state": "UNRESOLVED_OFFICIAL_TRUTH",
+    "eligible_exact_groups": 1743,
+    "unique_exact_group_ids": 1743,
+    "duplicate_exact_group_ids": 0,
+    "sorted_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+    "excluded_not_historical_yet_groups": 100
+  },
+  "upstream_bindings": {
+    "w4b_official_truth_protocol": {
+      "path": "registry/w4b_official_event_truth_protocol_v1.json",
+      "git_blob_sha": "66001a06e1fd928d39a3f9d75672bd76158db735",
+      "version": "W4B-OET-v1.0"
+    },
+    "w4c_saturation_summary": {
+      "path": "registry/w4c_saturation_summary_v1.json",
+      "git_blob_sha": "dbacded97e6ce274aa21e5f18c484827bf8c7051",
+      "required_gate_decision": "PASS_W4C_SATURATION_GATE_CONTINUE",
+      "required_decision": "CONTINUE_EXPANSION_NOT_SATURATED"
+    },
+    "w4b_official_truth_immutable_context": {
+      "verified_exact_groups": 432,
+      "verified_unique_official_events": 344,
+      "unresolved_official_truth": 1743,
+      "not_historical_yet": 100
+    }
+  },
+  "frozen_strata": {
+    "nonmacro_not_automated": 1456,
+    "macro_schedule_misses": 287
+  },
+  "frozen_macro_fallback_windows_calendar_days": {
+    "CPI_INFLATION_RELEASE": 14,
+    "PAYROLLS_JOBS_RELEASE": 14,
+    "UNEMPLOYMENT_RELEASE_US_UNEMPLOYMENT_RATE": 14,
+    "UNEMPLOYMENT_RELEASE_US_INITIAL_JOBLESS_CLAIMS": 3,
+    "GDP_RELEASE": 21,
+    "PCE_RELEASE": 14,
+    "RETAIL_SALES_RELEASE": 14,
+    "FOMC_DECISION": 21
+  },
+  "pre_freeze_observation_declarations": {
+    "r1_official_source_lookup_performed_before_freeze": false,
+    "r1_verification_or_reclassification_performed_before_freeze": false,
+    "r1_verified_count_observed_before_freeze": false,
+    "r1_marginal_unique_gain_observed_before_freeze": false,
+    "linked_asset_realized_returns_read": false,
+    "prediction_market_performance_read": false,
+    "prediction_market_settlement_results_read": false,
+    "ARGOS_PnL_read": false
+  },
+  "immutability_rules": {
+    "eligible_id_set_may_not_change": true,
+    "resolved_family_may_not_change": true,
+    "w4ce1_ids_may_not_change": true,
+    "w4b_truth_artifacts_may_not_change": true,
+    "source_hierarchy_may_not_be_relaxed": true,
+    "macro_fallback_windows_may_not_change": true,
+    "nonmacro_match_rules_may_not_change": true,
+    "performance_based_search_priority_forbidden": true,
+    "technical_errata_only_before_scientific_result_or_with_explicit_result_observation_disclosure": true
+  },
+  "execution_authorization": {
+    "r1_evidence_collection_authorized_after_this_freeze": true,
+    "new_exact_group_ids_authorized": false,
+    "w4b_mutation_authorized": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false,
+    "required_result_gate": "PASS_W4C_R1_OFFICIAL_TRUTH_EXTENSION_MATERIALIZED"
+  },
+  "next_action": "Implement an executor that validates every frozen blob/hash and the exact 1,743-ID digest before the first R1 official-source request; then collect R1 evidence under W4C-R1-OTE-v1.0 without mutating W4-B."
+}
