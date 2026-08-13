@@ -1,0 +1,76 @@
+{
+  "artifact": "W4B_POLYMARKET_RECENSUS_PROTOCOL",
+  "version": "W4B-PM-R-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_BEFORE_POLYMARKET_RECENSUS_EXECUTION",
+  "sequence_prerequisite": {
+    "required_prior_stage": "W4-B ForecastEx census",
+    "required_closeout": "registry/w4b_forecastex_census_closeout_v1.json",
+    "required_decision": "PASS_FORECASTEX_CENSUS_MATERIALIZED",
+    "policy": "Polymarket recensus must not execute until ForecastEx census is closed on main."
+  },
+  "source_contract": {
+    "venue": "Polymarket international",
+    "official_gamma_base": "https://gamma-api.polymarket.com",
+    "endpoint": "/events/keyset",
+    "query": {"closed": true},
+    "pagination": "Use next_cursor as after_cursor until exhausted; offset is forbidden.",
+    "reason": "Official documentation states closed markets/events are excluded by default unless closed=true and recommends events-based complete discovery; keyset pagination is the current stable exhaustive route.",
+    "clob_price_history_read_in_this_stage": false
+  },
+  "population": {
+    "definition": "Every closed event returned by exhaustive official Gamma keyset pagination, with associated markets supplied in the event payload.",
+    "no_tag_or_volume_prefilter": true,
+    "no_date_prefilter": true,
+    "no_existing_w2_whitelist": true,
+    "w2_role": "Existing W2-C semantic/adjudication artifacts are audit-only overlap evidence and may not suppress newly discovered events or force inclusion."
+  },
+  "semantic_contract": {
+    "parent": "registry/w4b_semantic_canonicalization_protocol_v1.json",
+    "family_rules": "Byte-identical W4B-SC-v1.0 strict rules and same-mechanism precedence.",
+    "may_vote": ["event title", "event subtitle", "event slug", "associated market question", "associated market groupItemTitle"],
+    "audit_only_must_not_vote": ["tags", "series", "event id", "market id", "conditionId", "resolutionSource", "startDate", "endDate", "createdAt", "closedAt"],
+    "forbidden_to_vote": ["volume", "liquidity", "openInterest", "outcomePrices", "lastTradePrice", "bestBid", "bestAsk", "spread", "CLOB price history", "linked-asset realized returns", "ARGOS performance", "W2 performance/IAS/F1-F9"],
+    "classification": "Exactly one strict family => ACCEPT_STRICT_FAMILY; same-mechanism precedence may resolve overlap; cross-mechanism overlap => AMBIGUOUS; zero => REJECT.",
+    "ambiguous_policy": "FAIL_CLOSED"
+  },
+  "venue_event_unit": {
+    "definition": "One Gamma event is one venue event before canonicalization; all associated threshold/outcome markets remain aliases under that event.",
+    "multi_event_alias_policy": "Distinct Gamma event IDs that canonicalize to the same W4CE1 id are same-occurrence aliases and collapse before any N claim."
+  },
+  "canonicalization": {
+    "id_formula": "W4CE1- + first_20_hex(SHA256(resolved_family + '|' + event_reference_date + '|' + normalized_subject_key))",
+    "event_reference_date": "First valid Gamma endDate UTC calendar date; missing/unparseable endDate => CANONICALIZATION_AMBIGUOUS at this pre-official-truth stage.",
+    "subject_key": "Reuse byte-identical subject_key implementation from scripts/w4b_kalshi_semantic_canonicalize_v1.py; macro releases therefore use the same US family keys.",
+    "cross_venue_claim_limit": "Canonical equality is a deterministic duplicate candidate only; final alias adjudication occurs in the next cross-venue dedup stage."
+  },
+  "transport_gate": {
+    "retry": "Bounded exponential retry for 429/5xx/network errors.",
+    "4xx_policy": "Unexpected 4xx is unresolved and fails materialization.",
+    "pagination_truncation_allowed": false,
+    "duplicate_event_id_policy": "Deduplicate repeated API rows by Gamma event id and record duplicate count; duplicate rows do not add N.",
+    "zero_unresolved_pages_required": true
+  },
+  "outputs": {
+    "page_manifest": "registry/w4b_polymarket_recensus_page_manifest_v1.csv.gz",
+    "events": "registry/w4b_polymarket_recensus_events_v1.csv.gz",
+    "ambiguous": "registry/w4b_polymarket_recensus_ambiguous_v1.csv.gz",
+    "w2_overlap": "registry/w4b_polymarket_w2_overlap_v1.csv.gz",
+    "summary": "registry/w4b_polymarket_recensus_summary_v1.json"
+  },
+  "gate": {
+    "exhaustive_cursor_termination": true,
+    "zero_unresolved_pages": true,
+    "zero_canonical_signature_collisions": true,
+    "performance_blind": true,
+    "linked_asset_realized_returns_read": false,
+    "n_claim": "Accepted Polymarket canonical counts remain venue census capacity, not cross-venue unique N or N_final_backtestable."
+  },
+  "governance": {
+    "science_reopened": false,
+    "family_dictionary_may_change": false,
+    "protocol_rewrite_after_real_recensus_counts_forbidden": true,
+    "selection_by_volume_liquidity_price_or_prior_performance_forbidden": true,
+    "price_history_deferred": true
+  }
+}
