@@ -1,0 +1,68 @@
+{
+  "artifact": "W4_BACKTEST_EXPANSION_RESEARCH_PROTOCOL",
+  "version": "W4-BER-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_PRE_CENSUS",
+  "science_reopened": false,
+  "performance_blind": true,
+  "goal": "Quantify how much the historical backtest universe can be expanded before designing any new trading rule.",
+  "venues": {
+    "KALSHI": {
+      "role": "PRIMARY_EXPANSION_CANDIDATE",
+      "population": "settled events returned by the public Events API",
+      "historical_price_support": "live/historical market candlesticks and historical trades",
+      "unit": "event_ticker"
+    },
+    "POLYMARKET": {
+      "role": "PRIMARY_EXISTING_VENUE",
+      "population": "reuse already-materialized W2-C performance-blind discovery and semantic results; no new return read",
+      "unit": "independent semantic event cluster"
+    },
+    "MANIFOLD": {
+      "role": "ROBUSTNESS_EXPANSION_CANDIDATE",
+      "population": "resolved binary markets returned by the public API",
+      "historical_price_support": "bets/trades API and non-commercial bulk dumps",
+      "unit": "market id",
+      "restriction": "do not pool with regulated/real-money venues in the primary backtest without a separate protocol"
+    }
+  },
+  "frozen_family_dictionary": {
+    "EARNINGS_EPS": ["earnings", "eps", "quarterly results", "revenue"],
+    "FDA_FINAL_PDUFA_DECISION": ["fda", "pdufa", "approval", "complete response letter", "crl"],
+    "FDA_ADVISORY_COMMITTEE": ["advisory committee", "adcom"],
+    "FOMC_DECISION": ["fomc", "federal reserve", "fed rate", "interest rate decision"],
+    "CPI_INFLATION_RELEASE": ["cpi", "consumer price index", "inflation rate"],
+    "PAYROLLS_JOBS_RELEASE": ["nonfarm payroll", "payrolls", "jobs report", "employment report"],
+    "UNEMPLOYMENT_RELEASE": ["unemployment rate", "jobless claims", "initial claims"],
+    "GDP_RELEASE": ["gdp", "gross domestic product"],
+    "PCE_RELEASE": ["pce", "personal consumption expenditures"],
+    "RETAIL_SALES_RELEASE": ["retail sales"],
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": ["acquire", "acquisition", "merger", "takeover", "buyout"],
+    "MA_PENDING_COMPLETION": ["close the acquisition", "deal close", "merger complete", "acquisition complete"],
+    "MA_REGULATORY_CLEARANCE": ["regulatory approval", "clear the merger", "approve the merger", "antitrust clearance"],
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": ["antitrust", "competition authority", "ftc challenge", "doj challenge"],
+    "CORPORATE_LITIGATION_BINARY": ["lawsuit", "litigation", "court ruling", "injunction"]
+  },
+  "census_outputs": [
+    "raw venue totals",
+    "classified event counts by venue/family/year",
+    "number of recurring Kalshi series per family",
+    "Manifold token mix and resolved-binary counts",
+    "existing Polymarket accepted counts carried forward without performance reads",
+    "lower-bound union capacity before cross-venue deduplication"
+  ],
+  "forbidden_inputs": [
+    "linked-asset realized returns",
+    "ARGOS PnL",
+    "Brier/log loss/H2 performance",
+    "family selection based on realized alpha",
+    "post-census keyword edits intended to inflate a family"
+  ],
+  "promotion_rule": "This census may prioritize data-engineering work only. It cannot authorize a trading strategy or W4 backtest until a separate population, signal, portfolio, inference and multiplicity protocol is preregistered and frozen.",
+  "target_design_goal": {
+    "minimum_independent_events": 300,
+    "preferred_independent_events": 500,
+    "stretch_independent_events": 1000,
+    "note": "targets are collection/design goals, not claims that these Ns are currently available"
+  }
+}
