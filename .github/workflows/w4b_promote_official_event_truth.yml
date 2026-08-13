@@ -1,0 +1,74 @@
+name: W4-B Promote Official Event Truth
+on:
+  workflow_run:
+    workflows: ['W4-B Official Event Truth Verify']
+    types: [completed]
+permissions:
+  contents: write
+jobs:
+  promote:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Fetch official truth evidence branch
+        run: |
+          git fetch origin w4b-official-event-truth-v1
+          git checkout origin/w4b-official-event-truth-v1 -- \
+            registry/w4b_official_event_truth_records_v1.csv.gz \
+            registry/w4b_official_event_truth_source_manifest_v1.csv.gz \
+            registry/w4b_official_event_truth_edge_adjudication_v1.csv.gz \
+            registry/w4b_official_event_truth_groups_v1.csv.gz \
+            registry/w4b_official_event_truth_unresolved_v1.csv.gz \
+            registry/w4b_official_event_truth_summary_v1.json
+      - name: Validate and create official truth closeout
+        env:
+          SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+          SOURCE_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          python - <<'PY'
+          import hashlib,json,os,subprocess
+          from pathlib import Path
+          R=Path('registry'); x=json.load(open(R/'w4b_official_event_truth_summary_v1.json'))
+          assert x['version']=='W4B-OET-RESULT-v1.0.2'
+          assert x['gate_decision']=='PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED'
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['prediction_market_performance_read'] is False
+          assert x['prediction_market_settlement_result_used'] is False
+          assert x['decision_rows_accounted']==x['pretruth_exact_groups']
+          assert not x['transitivity_or_identity_contradictions']
+          files=['w4b_official_event_truth_records_v1.csv.gz','w4b_official_event_truth_source_manifest_v1.csv.gz','w4b_official_event_truth_edge_adjudication_v1.csv.gz','w4b_official_event_truth_groups_v1.csv.gz','w4b_official_event_truth_unresolved_v1.csv.gz','w4b_official_event_truth_summary_v1.json']
+          def blob(p): return subprocess.check_output(['git','hash-object',str(p)],text=True).strip()
+          manifests={f:{'blob_sha1':blob(R/f),'sha256':hashlib.sha256((R/f).read_bytes()).hexdigest()} for f in files}
+          close={
+            'artifact':'W4B_OFFICIAL_EVENT_TRUTH_CLOSEOUT','version':'W4B-OET-CLOSE-v1.0.2','date':'2026-08-13',
+            'technical_gate_decision':x['gate_decision'],'pretruth_exact_groups':x['pretruth_exact_groups'],
+            'verified_exact_groups':x['verified_exact_groups'],'verified_unique_official_events':x['verified_unique_official_events'],
+            'verification_state_counts':x['verification_state_counts'],'performance_blind':True,
+            'linked_asset_realized_returns_read':False,'prediction_market_performance_read':False,
+            'source_workflow_run_id':int(os.environ['SOURCE_RUN_ID']),'source_head_sha':os.environ['SOURCE_HEAD_SHA'],
+            'files':manifests
+          }
+          (R/'w4b_official_event_truth_closeout_v1.json').write_text(json.dumps(close,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(close,indent=2,sort_keys=True))
+          PY
+      - name: Promote to main and trigger final attrition
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4b_official_event_truth_records_v1.csv.gz \
+            registry/w4b_official_event_truth_source_manifest_v1.csv.gz \
+            registry/w4b_official_event_truth_edge_adjudication_v1.csv.gz \
+            registry/w4b_official_event_truth_groups_v1.csv.gz \
+            registry/w4b_official_event_truth_unresolved_v1.csv.gz \
+            registry/w4b_official_event_truth_summary_v1.json \
+            registry/w4b_official_event_truth_closeout_v1.json
+          git commit -m 'results: promote passed W4-B official event truth v1.0.2'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
