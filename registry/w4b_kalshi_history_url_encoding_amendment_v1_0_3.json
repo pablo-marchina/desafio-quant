@@ -1,0 +1,46 @@
+{
+  "artifact": "W4B_KALSHI_HISTORY_URL_ENCODING_AMENDMENT",
+  "version": "W4B-KH-TR-v1.0.3",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_V1_0_2_TRANSPORT_CRASH_BEFORE_V1_0_3_EXECUTION",
+  "parent_scientific_protocol": "W4B-KH-v1.0",
+  "parent_identity_erratum": "W4B-KH-E1-v1.0.1",
+  "parent_transport_amendment": "W4B-KH-TR-v1.0.2",
+  "failed_run_id": 31675337490,
+  "observed_failure": {
+    "canonical_events_started": 391,
+    "unique_market_tickers_started": 5196,
+    "initial_pass_unresolved_before_recovery": 10,
+    "exception": "http.client.InvalidURL",
+    "example_raw_market_ticker": "GDP-232022 Q4-T0.0",
+    "cause": "Raw market/series tickers were interpolated into URL path segments without percent-encoding; spaces/control characters therefore failed URL validation before an HTTP response existed.",
+    "scientific_result_materialized": false
+  },
+  "amendment_scope": "HTTP_PATH_ENCODING_AND_FAILURE_PERSISTENCE_ONLY",
+  "scientific_contract_changes": false,
+  "transport_changes": {
+    "path_segment_encoding": "urllib.parse.quote(value, safe='') for market_ticker and series_ticker path segments",
+    "parallel_workers": 4,
+    "serial_recovery_rounds": 2,
+    "serial_recovery_scope": "Only requests whose initial or preceding result is API_UNRESOLVED",
+    "serial_exception_policy": "Any residual exception is converted to API_UNRESOLVED diagnostic so the frozen zero-unresolved gate, not process abortion, decides materialization.",
+    "route_resolution": "unchanged historical-first; live only after historical 404"
+  },
+  "unchanged": [
+    "391 authoritative canonical_event_id input set",
+    "5196 constituent market tickers requirement",
+    "operational T0 definition",
+    "264h request window",
+    "60-minute candlestick interval",
+    "T-240h through T-1h horizon ladder",
+    "all staleness tolerances",
+    "latest-at-or-before horizon rule",
+    "event aggregation and history classes",
+    "distributional-core rule",
+    "zero API_UNRESOLVED pass requirement",
+    "performance blindness",
+    "linked-asset outcomes closed",
+    "Kalshi settlement results not persisted"
+  ],
+  "governance": "This repair changes URL serialization only. Raw ticker identity remains unchanged in outputs and counting. No semantic, temporal, inclusion, horizon, staleness, denominator or N rule may change in response to the failed transport attempt."
+}
