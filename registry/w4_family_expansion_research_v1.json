@@ -1,0 +1,187 @@
+{
+  "artifact": "W4_FAMILY_EXPANSION_RESEARCH",
+  "version": "W4-FER-v1.0",
+  "date": "2026-08-13",
+  "status": "RESEARCH_CANDIDATES_ONLY_PRE_CENSUS_PRE_OUTCOME",
+  "science_reopened": false,
+  "performance_blind": true,
+  "linked_asset_outcomes_read": false,
+  "original_w4_family_dictionary_immutable": true,
+  "purpose": "Research additional recurring event families that could materially increase independent canonical_event_id N without modifying the already-used W4-BER-v1.0 dictionary.",
+  "admission_rule": "A candidate family may enter a future expansion census only through a separately preregistered dictionary/protocol chosen from recurrence, prediction-venue coverage, official PIT event truth, economic asset mapping, historical depth, provenance and acquisition feasibility. Realized linked-asset returns, ARGOS PnL and post-hoc alpha are forbidden selection inputs.",
+  "priority_candidates": [
+    {
+      "family": "HOUSING_STARTS_RELEASE",
+      "priority": "P0",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["ForecastEx US Housing Starts recurring product"],
+      "official_truth": "U.S. Census Bureau New Residential Construction",
+      "official_release_time": "typically 08:30 ET on the scheduled release workday",
+      "historical_truth_depth": "official historical releases/time series extend for decades",
+      "linked_asset_hypotheses_pre_outcome": ["homebuilder equities/ETFs", "rates", "broad equities", "USD"],
+      "n_gain_hypothesis": "HIGH_RELATIVE_TO_CURRENT_MACRO_SET",
+      "gate": "P0_FAMILY_CENSUS"
+    },
+    {
+      "family": "BUILDING_PERMITS_RELEASE",
+      "priority": "P0",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["ForecastEx US Building Permits recurring product"],
+      "official_truth": "U.S. Census Bureau New Residential Construction / Building Permits Survey",
+      "historical_truth_depth": "monthly history plus release schedule and archived tables",
+      "linked_asset_hypotheses_pre_outcome": ["homebuilder equities/ETFs", "rates", "broad equities", "USD"],
+      "n_gain_hypothesis": "HIGH_RELATIVE_TO_CURRENT_MACRO_SET",
+      "gate": "P0_FAMILY_CENSUS"
+    },
+    {
+      "family": "DURABLE_GOODS_RELEASE",
+      "priority": "P1",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["not yet proven at population scale"],
+      "official_truth": "U.S. Census Bureau Advance Report on Durable Goods",
+      "historical_truth_depth": "official Economic Indicators time series and release archive",
+      "linked_asset_hypotheses_pre_outcome": ["industrial equities/ETFs", "rates", "broad equities", "USD"],
+      "n_gain_hypothesis": "MEDIUM_TO_HIGH_IF_VENUE_COVERAGE_PASSES",
+      "gate": "DATA_ACCESS_AND_VENUE_COVERAGE"
+    },
+    {
+      "family": "NEW_HOME_SALES_RELEASE",
+      "priority": "P1",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["not yet proven at population scale"],
+      "official_truth": "U.S. Census Bureau New Residential Sales",
+      "historical_truth_depth": "official release schedule and historical time series",
+      "linked_asset_hypotheses_pre_outcome": ["homebuilder equities/ETFs", "rates", "broad equities"],
+      "n_gain_hypothesis": "MEDIUM_IF_VENUE_COVERAGE_PASSES",
+      "gate": "DATA_ACCESS_AND_VENUE_COVERAGE"
+    },
+    {
+      "family": "US_TRADE_BALANCE_RELEASE",
+      "priority": "P1",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["not yet proven at population scale"],
+      "official_truth": "U.S. Census Bureau / BEA International Trade in Goods and Services",
+      "historical_truth_depth": "official Economic Indicators time series and releases",
+      "linked_asset_hypotheses_pre_outcome": ["USD", "rates", "broad equities", "trade-sensitive sectors"],
+      "n_gain_hypothesis": "MEDIUM_IF_VENUE_COVERAGE_PASSES",
+      "gate": "DATA_ACCESS_AND_VENUE_COVERAGE"
+    },
+    {
+      "family": "PPI_RELEASE",
+      "priority": "P1",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["not yet proven at population scale"],
+      "official_truth": "U.S. Bureau of Labor Statistics Producer Price Index",
+      "historical_truth_depth": "long BLS series; ALFRED/FRED real-time/vintage API can support revision-aware cross-checks",
+      "linked_asset_hypotheses_pre_outcome": ["rates", "USD", "broad equities", "inflation-sensitive assets"],
+      "n_gain_hypothesis": "HIGH_IF_VENUE_COVERAGE_PASSES",
+      "gate": "DATA_ACCESS_AND_VENUE_COVERAGE"
+    },
+    {
+      "family": "JOLTS_RELEASE",
+      "priority": "P1",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["not yet proven at population scale"],
+      "official_truth": "U.S. Bureau of Labor Statistics Job Openings and Labor Turnover Survey",
+      "historical_truth_depth": "official historical series/releases; vintage cross-check possible",
+      "linked_asset_hypotheses_pre_outcome": ["rates", "USD", "broad equities"],
+      "n_gain_hypothesis": "HIGH_IF_VENUE_COVERAGE_PASSES",
+      "gate": "DATA_ACCESS_AND_VENUE_COVERAGE"
+    },
+    {
+      "family": "INDUSTRIAL_PRODUCTION_RELEASE",
+      "priority": "P1",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["not yet proven at population scale"],
+      "official_truth": "Federal Reserve Industrial Production and Capacity Utilization",
+      "historical_truth_depth": "long official series; real-time/vintage cross-check possible",
+      "linked_asset_hypotheses_pre_outcome": ["industrial equities/ETFs", "rates", "USD", "broad equities"],
+      "n_gain_hypothesis": "MEDIUM_IF_VENUE_COVERAGE_PASSES",
+      "gate": "DATA_ACCESS_AND_VENUE_COVERAGE"
+    },
+    {
+      "family": "EIA_CRUDE_INVENTORY_RELEASE",
+      "priority": "P1",
+      "frequency": "weekly",
+      "prediction_venue_evidence": ["must be established across Kalshi/ForecastEx/other event venues"],
+      "official_truth": "U.S. Energy Information Administration Weekly Petroleum Status Report",
+      "official_release_time": "normally Wednesday 10:30 ET with holiday exceptions",
+      "historical_truth_depth": "weekly archived reports plus EIA API",
+      "linked_asset_hypotheses_pre_outcome": ["WTI crude futures", "energy equities/ETFs", "refining spreads"],
+      "n_gain_hypothesis": "VERY_HIGH_IF_PREDICTION_VENUE_COVERAGE_PASSES",
+      "gate": "P1_HIGH_N_VENUE_COVERAGE"
+    },
+    {
+      "family": "EIA_NATURAL_GAS_STORAGE_RELEASE",
+      "priority": "P1",
+      "frequency": "weekly",
+      "prediction_venue_evidence": ["must be established across Kalshi/ForecastEx/other event venues"],
+      "official_truth": "U.S. Energy Information Administration Weekly Natural Gas Storage Report",
+      "official_release_time": "normally Thursday 10:30 ET with holiday exceptions",
+      "historical_truth_depth": "weekly history extends back decades",
+      "linked_asset_hypotheses_pre_outcome": ["Henry Hub natural gas futures", "natural-gas equities/ETFs"],
+      "n_gain_hypothesis": "VERY_HIGH_IF_PREDICTION_VENUE_COVERAGE_PASSES",
+      "gate": "P1_HIGH_N_VENUE_COVERAGE"
+    },
+    {
+      "family": "USDA_WASDE_RELEASE",
+      "priority": "P1",
+      "frequency": "monthly",
+      "prediction_venue_evidence": ["must be established across event venues"],
+      "official_truth": "USDA World Agricultural Supply and Demand Estimates",
+      "official_release_time": "12:00 ET on scheduled release dates",
+      "historical_truth_depth": "official archive from 1973; consolidated historical data available",
+      "linked_asset_hypotheses_pre_outcome": ["corn futures", "soybean futures", "wheat futures", "cotton futures", "agriculture ETFs where justified"],
+      "n_gain_hypothesis": "HIGH_IF_PREDICTION_VENUE_COVERAGE_PASSES",
+      "gate": "P1_COMMODITY_VENUE_COVERAGE"
+    },
+    {
+      "family": "NON_US_CENTRAL_BANK_DECISION",
+      "priority": "P2",
+      "frequency": "scheduled recurring",
+      "prediction_venue_evidence": ["must be established venue by venue and central bank by central bank"],
+      "official_truth": "respective central-bank decision calendars/statements",
+      "historical_truth_depth": "generally long official statement history",
+      "linked_asset_hypotheses_pre_outcome": ["FX", "sovereign rates", "country equity index"],
+      "n_gain_hypothesis": "HIGH_IF_MULTI_VENUE_COVERAGE_EXISTS",
+      "gate": "SEPARATE_CENTRAL_BANK_DICTIONARY_AND_COUNTRY_MAPPING"
+    }
+  ],
+  "supporting_infrastructure": [
+    {
+      "source": "FRED/ALFRED real-time API",
+      "role": "revision/vintage cross-check",
+      "note": "series/vintagedates exposes release/revision dates and series/observations accepts real-time periods/vintage dates; use as provenance support, not as a substitute for source-agency release truth when exact release documents are available"
+    },
+    {
+      "source": "Census Economic Indicators API/release archives",
+      "role": "housing, durable goods, trade and related recurring official truth"
+    },
+    {
+      "source": "EIA API v2 and weekly report archives",
+      "role": "energy recurring official truth"
+    },
+    {
+      "source": "USDA WASDE archive",
+      "role": "agricultural recurring official truth"
+    }
+  ],
+  "family_expansion_gate": {
+    "required_before_any_outcome": [
+      "separate family dictionary preregistered and frozen",
+      "population-scale prediction-venue coverage measured performance-blind",
+      "official PIT truth source and release-time semantics materialized",
+      "canonical_event_id rules frozen",
+      "economically justified linked-asset mapping class frozen",
+      "historical pre-event prediction-market depth measured",
+      "marginal N contribution measured after deduplication with original families and other venues"
+    ],
+    "never_allowed": [
+      "editing W4-BER-v1.0 in place",
+      "choosing families because linked assets performed well",
+      "counting multiple thresholds of one release as independent events",
+      "counting core/headline values released simultaneously as separate independent dates without a separate estimand"
+    ]
+  },
+  "next_research": "Run performance-blind venue-coverage census for P0/P1 candidate families, beginning with ForecastEx Housing Starts/Building Permits and Kalshi all-series metadata, then EIA/USDA candidates."
+}
