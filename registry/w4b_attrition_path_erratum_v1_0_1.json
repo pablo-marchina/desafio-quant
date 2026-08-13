@@ -1,0 +1,22 @@
+{
+  "artifact": "W4B_ATTRITION_PATH_ERRATUM",
+  "version": "W4B-AT-PATH-ERRATUM-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_PATH_RESOLUTION_FAILURE_BEFORE_ANY_ATTRITION_RESULT",
+  "failed_run_id": 31739545514,
+  "failed_stage": "KALSHI_CLOSEOUT_PATH_RESOLUTION",
+  "observed_failure": "The frozen accounting helper prepended REG to Kalshi closeout paths that already begin with registry/, producing registry/registry/... and FileNotFoundError before any attrition output was materialized.",
+  "technical_fix": "Import the byte-identical frozen accounting module and override only j()/gz() with path-aware resolution: repository-relative paths beginning with registry/ resolve from repository root; bare names resolve from registry/. Then call the unchanged frozen main().",
+  "scientific_contract_changes": false,
+  "science_reopened": false,
+  "attrition_results_observed_before_erratum": false,
+  "performance_blind": true,
+  "linked_asset_realized_returns_read": false,
+  "protocol_blob_sha1": "342d5a501ec5bde7f754df67c1899ead821a2669",
+  "original_script_blob_sha1": "448ae7f66acda856458078ff5ae8906bcbf0f2af",
+  "path_wrapper_blob_sha1": "f63292dc71e05a4e736553d50297f24d12a33d08",
+  "workflow_blob_sha1": "dbf0c4efaa8f1bb90ea9b9fed5adfe12e1655fad",
+  "official_truth_closeout_blob_sha1": "3f6b042c7c7e83ea052a1383a9336bad6d31aa28",
+  "kalshi_authoritative_pointer_blob_sha1": "c47003ced57bc55565e7c35ae8eddea72856a626",
+  "policy": "This erratum changes filesystem path resolution only. All stage definitions, conservation equations, family reconciliation, exclusion accounting, upstream counts, overclaim firewalls and gate logic remain owned by the byte-identical frozen script scripts/w4b_attrition_table_v1.py."
+}
