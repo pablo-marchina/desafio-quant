@@ -1,0 +1,37 @@
+{
+  "artifact": "W4B_CROSS_VENUE_DEDUP_SUMMARY",
+  "candidate_components_total": 2130,
+  "candidate_duplicate_edges": 177,
+  "candidate_edge_types": {
+    "SAME_SUBJECT_NEAR_DATE": 177
+  },
+  "candidate_merge_lower_bound_n": 2130,
+  "candidate_multi_group_components": 70,
+  "cross_venue_alias_records_collapsed_exactly": 188,
+  "date_utc": "2026-08-13T19:18:50.765832+00:00",
+  "exact_cross_venue_multi_venue_groups": 161,
+  "exact_dedup_n": 2275,
+  "exact_match_counts_by_venue_pair": {
+    "FORECASTEX|KALSHI": 122,
+    "FORECASTEX|POLYMARKET": 50,
+    "KALSHI|POLYMARKET": 43
+  },
+  "final_unique_n_authorized": false,
+  "gate_decision": "PASS_CROSS_VENUE_PRETRUTH_DEDUP_MATERIALIZED",
+  "interpretation": "Exact W4CE1 aliases are collapsed automatically. Near-date semantic candidates remain unresolved and only define pre-official-truth N bounds; final cross-venue unique N is forbidden until official truth adjudication.",
+  "invalid_input_signature_records": [],
+  "linked_asset_realized_returns_read": false,
+  "official_event_truth_read": false,
+  "performance_blind": true,
+  "pre_dedup_venue_record_sum": 2463,
+  "pretruth_upper_bound_n": 2275,
+  "protocol_version": "W4B-XVD-v1.0",
+  "venue_canonical_record_counts": {
+    "FORECASTEX": 481,
+    "KALSHI": 391,
+    "POLYMARKET": 1591
+  },
+  "venue_price_volume_liquidity_read": false,
+  "version": "W4B-XVD-RESULT-v1.0",
+  "w4ce1_signature_collisions": []
+}

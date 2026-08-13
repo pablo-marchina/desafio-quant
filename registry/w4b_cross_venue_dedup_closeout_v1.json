@@ -1,0 +1,38 @@
+{
+  "artifact": "W4B_CROSS_VENUE_DEDUP_CLOSEOUT",
+  "candidate_duplicate_edges": 177,
+  "candidate_merge_lower_bound_n": 2130,
+  "date": "2026-08-13",
+  "exact_dedup_n": 2275,
+  "files": {
+    "w4b_cross_venue_candidate_components_v1.csv.gz": {
+      "blob_sha1": "5c611ca2c51b02765dfc696c331164ba80d2e0f6",
+      "sha256": "e9465891da95f36e8f147f8293011640ef0a42ff088c58f15946a795b4bf2e95"
+    },
+    "w4b_cross_venue_candidate_edges_v1.csv.gz": {
+      "blob_sha1": "8e02f7f5c0eb2cb528ba0c469e0f71b931bf74e0",
+      "sha256": "37772ca319133e57fd123dd5790933b31165dcf12ef5c173cb91b3b6aafa9403"
+    },
+    "w4b_cross_venue_dedup_summary_v1.json": {
+      "blob_sha1": "7dd95669b5559d5b1f5126145efd977e28fda5cd",
+      "sha256": "7ac1034ea87383c351412b4ef333715e7ac3144587da0e546f8ac0601d82439f"
+    },
+    "w4b_cross_venue_exact_groups_v1.csv.gz": {
+      "blob_sha1": "b7733f36adf15d53075c4ac2b1c8ea2e5cb9bb54",
+      "sha256": "4fa1ba26fb28ca60e024df7481c6fd33a69347ee2af17146ffb6438aeb1efb7d"
+    },
+    "w4b_cross_venue_records_v1.csv.gz": {
+      "blob_sha1": "b424c14d0f05a0e2620714fae2d234bbcb25f013",
+      "sha256": "b57223c8a3d1846efdb7119f32672fc223de93acc592dfcc9bab17a0c6c9279a"
+    }
+  },
+  "final_unique_n_authorized": false,
+  "linked_asset_realized_returns_read": false,
+  "performance_blind": true,
+  "pre_dedup_venue_record_sum": 2463,
+  "pretruth_upper_bound_n": 2275,
+  "source_head_sha": "2061b7019b93b292a74d789c6575cd0a7d4ae369",
+  "source_workflow_run_id": 31735189069,
+  "technical_gate_decision": "PASS_CROSS_VENUE_PRETRUTH_DEDUP_MATERIALIZED",
+  "version": "W4B-XVD-CLOSE-v1.0"
+}
