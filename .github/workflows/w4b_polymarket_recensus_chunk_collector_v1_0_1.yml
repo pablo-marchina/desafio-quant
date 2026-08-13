@@ -51,7 +51,7 @@ jobs:
             fi
           fi
       - name: Collect next bounded segment of same keyset chain
-        run: python scripts/w4b_polymarket_recensus_chunked_v1_0_1.py collect --max-pages 1500
+        run: python scripts/w4b_polymarket_recensus_chunked_v1_0_1.py collect --max-pages 500
       - name: Read runtime state
         id: state
         run: |
