@@ -1,0 +1,79 @@
+name: W4-B Kalshi Semantic Canonicalization v1.1
+on:
+  push:
+    paths:
+      - 'registry/w4b_semantic_completeness_amendment_v1_1.json'
+      - 'registry/w4b_semantic_completeness_freeze_v1_1.json'
+      - 'scripts/w4b_kalshi_semantic_canonicalize_v1_1.py'
+      - '.github/workflows/w4b_kalshi_semantic_v1_1.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  semantic:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate pre-result completeness amendment
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w4b_semantic_canonicalization_protocol_v1.json'))
+          a=json.load(open('registry/w4b_semantic_completeness_amendment_v1_1.json'))
+          f=json.load(open('registry/w4b_semantic_completeness_freeze_v1_1.json'))
+          assert p['version']=='W4B-SC-v1.0'
+          assert a['version']=='W4B-SC-A1-v1.1'
+          assert a['v1_real_result_observed_before_amendment'] is False
+          assert set(a['unchanged']) >= {'strict family regex rules','canonical_event_id formula','performance firewall'}
+          assert f['status']=='FROZEN_PRE_AUTHORITATIVE_V1_1_EXECUTION'
+          print('PASS_W4B_COMPLETENESS_AMENDMENT')
+          PY
+      - name: Run frozen adversarial semantic tests
+        run: |
+          python - <<'PY'
+          import importlib.util
+          spec=importlib.util.spec_from_file_location('m','scripts/w4b_kalshi_semantic_canonicalize_v1_1.py')
+          m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+          assert 'EARNINGS_EPS' not in m.boundary_candidates('Winter Olympics Total Podium Sweeps')
+          assert m.strict_families('jd vance approval rating') == []
+          assert m.strict_families('Bank of CHINA policy interest rate decision') == []
+          assert 'CPI_INFLATION_RELEASE' in m.strict_families('US CPI inflation release for June')
+          assert 'FDA_FINAL_PDUFA_DECISION' in m.strict_families('Will FDA approve Drug X by its PDUFA action date?')
+          assert 'FOMC_DECISION' in m.strict_families('Federal Reserve FOMC interest rate decision')
+          print('PASS_W4B_V1_1_ADVERSARIAL_TESTS')
+          PY
+      - name: Execute exhaustive 488-series semantic cleaning
+        run: python scripts/w4b_kalshi_semantic_canonicalize_v1_1.py
+      - name: Validate authoritative semantic result
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          x=json.load(open('registry/w4b_kalshi_semantic_summary_v1_1.json'))
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['raw_classified_unique_series']==488
+          assert x['retrieved_candidate_series']==488
+          assert x['api_error_count']==0
+          assert x['route_truncation_count']==0
+          assert x['gate_decision']=='PASS_SEMANTIC_MATERIALIZATION'
+          with gzip.open('registry/w4b_kalshi_semantic_events_v1_1.csv.gz','rt') as f:
+              hdr=next(csv.reader(f))
+          forbidden={'settlement_result','settlement_value','linked_asset_return','linked_asset_price_after_event','ARGOS_PnL'}
+          assert not (forbidden & set(hdr))
+          print('PASS_W4B_AUTHORITATIVE_KALSHI_SEMANTICS')
+          PY
+      - name: Persist authoritative evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-kalshi-semantic-v1-1
+          git add \
+            registry/w4b_kalshi_semantic_series_v1_1.csv \
+            registry/w4b_kalshi_semantic_events_v1_1.csv.gz \
+            registry/w4b_kalshi_semantic_ambiguous_v1_1.csv.gz \
+            registry/w4b_kalshi_semantic_summary_v1_1.json
+          git commit -m 'results: materialize W4-B Kalshi semantics v1.1'
+          git push -f origin w4b-kalshi-semantic-v1-1

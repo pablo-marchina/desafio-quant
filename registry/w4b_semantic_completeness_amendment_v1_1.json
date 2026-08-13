@@ -1,0 +1,25 @@
+{
+  "artifact": "W4B_SEMANTIC_COMPLETENESS_AMENDMENT",
+  "authority": "W4B-SC-v1.0 rules plus this recall amendment govern the authoritative Kalshi semantic materialization v1.1. v1 output, if later completed, is diagnostic/non-authoritative.",
+  "base_protocol": "registry/w4b_semantic_canonicalization_protocol_v1.json",
+  "base_protocol_git_blob_sha1": "a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5",
+  "date": "2026-08-13",
+  "only_change": {
+    "from": "retrieve only raw series with a boundary hit in series_title/category",
+    "to": "retrieve all 488 W4-A raw candidate series and apply the exact same frozen event-level strict rules to every event"
+  },
+  "rationale": "Completeness audit identified a recall risk before reading any v1 semantic output: restricting retrieval to boundary hits in series_title/category can miss a true event discovered through tags whose market text would satisfy the frozen strict family rule. W4 maximizes defensible N, so all 488 W4-A raw candidate series must receive the same strict event-level evaluation.",
+  "status": "PREREGISTERED_BEFORE_ANY_V1_REAL_RESULT_WAS_READ",
+  "unchanged": [
+    "15-family frozen dictionary",
+    "strict family regex rules",
+    "precedence",
+    "allowed/forbidden semantic evidence",
+    "canonical_event_id formula",
+    "fail-closed ambiguity policy",
+    "performance firewall"
+  ],
+  "v1_execution_run_id": 31669549682,
+  "v1_real_result_observed_before_amendment": false,
+  "version": "W4B-SC-A1-v1.1"
+}

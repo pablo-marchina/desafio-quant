@@ -1,0 +1,19 @@
+{
+  "artifact": "W4B_SEMANTIC_COMPLETENESS_FREEZE",
+  "authoritative_scope": "All 488 W4-A raw candidate series; exact frozen strict family rules unchanged.",
+  "base_protocol_blob_sha1": "a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5",
+  "date": "2026-08-13",
+  "firewall": {
+    "canonical_id_change": false,
+    "family_rule_change": false,
+    "linked_asset_realized_returns_closed": true,
+    "performance_blind": true
+  },
+  "amendment_blob_sha1": "9b2db2f13eaa1e36279b8b0b6e71a3f3a610942a",
+  "parent_commit": "e5aec355146b299bab268b14ae43ce8896dd7964",
+  "real_v1_result_read_before_freeze": false,
+  "script_blob_sha1": "0adcbb8b3462bfba523b27079436b8867a2e7dbc",
+  "status": "FROZEN_PRE_AUTHORITATIVE_V1_1_EXECUTION",
+  "version": "W4B-SCF-v1.1",
+  "workflow_blob_sha1": "180eb162a6b2c0286004f365cc608637688dcaf7"
+}
