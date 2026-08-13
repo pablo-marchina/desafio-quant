@@ -1,0 +1,42 @@
+{
+  "artifact": "W4B_POLYMARKET_RECENSUS_FREEZE",
+  "version": "W4B-PM-RF-v1.0",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_POLYMARKET_RECENSUS_EXECUTION",
+  "protocol": {
+    "path": "registry/w4b_polymarket_recensus_protocol_v1.json",
+    "blob_sha1": "c8427c2f3083b5781018d20e3d02a1fe662c59f8"
+  },
+  "executor": {
+    "path": "scripts/w4b_polymarket_recensus_v1.py",
+    "blob_sha1": "e92f9d107e12a624692c579fefdccec61c6c652d"
+  },
+  "semantic_parent": {
+    "protocol_path": "registry/w4b_semantic_canonicalization_protocol_v1.json",
+    "protocol_blob_sha1": "a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5",
+    "implementation_path": "scripts/w4b_kalshi_semantic_canonicalize_v1.py",
+    "implementation_blob_sha1": "b0e76b75e7c3c2b044dcbcb7982afaa7ec023b6c"
+  },
+  "w2_audit_input": {
+    "path": "registry/w2c_semantic_v2_accepted_clusters_v1_1.csv",
+    "blob_sha1": "a71cb2d00872ce36bf59ffcef9dc5575c1185a5b",
+    "role": "OVERLAP_AUDIT_ONLY_NOT_INCLUSION_AUTHORITY"
+  },
+  "source_contract": {
+    "endpoint": "https://gamma-api.polymarket.com/events/keyset",
+    "limit": 500,
+    "closed": true,
+    "pagination": "next_cursor -> after_cursor until omitted",
+    "offset_forbidden": true,
+    "clob_price_history_read": false
+  },
+  "sequence_lock": "Execution requires registry/w4b_forecastex_census_closeout_v1.json on main with PASS_FORECASTEX_CENSUS_MATERIALIZED.",
+  "firewall": {
+    "performance_blind": true,
+    "linked_asset_realized_returns_closed": true,
+    "volume_liquidity_prices_open_interest_forbidden_to_vote": true,
+    "w2_performance_forbidden": true,
+    "family_rules_frozen": true,
+    "canonical_id_formula_frozen": true
+  }
+}
