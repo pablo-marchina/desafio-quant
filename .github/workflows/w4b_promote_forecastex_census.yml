@@ -59,6 +59,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add registry/w4b_forecastex_*_v1* registry/w4b_forecastex_census_closeout_v1.json
           git commit -m 'results: promote passed W4-B ForecastEx census v1'
-          git fetch origin main
-          git rebase origin/main
+          # Checkout occurs from the current main when this promotion starts. Avoid
+          # rebasing through a dirty legacy worktree; the push itself remains a
+          # fail-closed fast-forward guard if main changes concurrently.
           git push origin HEAD:main
