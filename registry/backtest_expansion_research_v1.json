@@ -1,0 +1,71 @@
+{
+  "artifact": "BACKTEST_EXPANSION_RESEARCH",
+  "version": "BERP-v1.0",
+  "date": "2026-08-12",
+  "science_reopened": false,
+  "performance_blind_for_source_selection": true,
+  "baseline": {
+    "funded_w2a_trades": 34,
+    "funded_w2a_long": 21,
+    "funded_w2a_short": 13,
+    "r1_opportunities": 108,
+    "frozen_h2_oos_events": 75,
+    "w2c_semantic_accepts": 312,
+    "w2c_pit_candidate_events": 260,
+    "w2c_raw_candidates": 4364,
+    "w2c_unique_observed_events_channels": 13491,
+    "historical_decision": "NO_PROMOTION_R1"
+  },
+  "scale_scenarios": [
+    {"population": "CURRENT_FUNDED_R1", "n": 34, "multiple_vs_34": 1.0},
+    {"population": "ALL_FROZEN_H2_OOS", "n": 75, "multiple_vs_34": 2.2058823529411766},
+    {"population": "ALL_R1_DEFINED_OPPORTUNITIES", "n": 108, "multiple_vs_34": 3.176470588235294},
+    {"population": "CURRENT_PIT_CANDIDATES", "n": 260, "multiple_vs_34": 7.647058823529412},
+    {"population": "ALL_SEMANTIC_ACCEPTS", "n": 312, "multiple_vs_34": 9.176470588235293},
+    {"population": "RESEARCH_TARGET_FLOOR", "n": 500, "multiple_vs_34": 14.705882352941176},
+    {"population": "STRETCH_TARGET", "n": 1000, "multiple_vs_34": 29.41176470588235}
+  ],
+  "expansion_axes": {
+    "A": "ALL_EVENT_CONTINUOUS_PORTFOLIO",
+    "B": "KALSHI_HISTORICAL_CENSUS",
+    "C": "POLYMARKET_SERIES_FIRST_HISTORICAL_RECONSTRUCTION",
+    "D": "MANIFOLD_ROBUSTNESS_UNIVERSE",
+    "E": "METACULUS_EXTERNAL_FORECAST_BENCHMARK_PERMISSION_GATED",
+    "F": "DISTRIBUTIONAL_CONTRACT_LADDERS",
+    "G": "MULTI_VENUE_CONSENSUS_DISAGREEMENT",
+    "H": "MULTI_ASSET_EVENT_RESPONSE",
+    "I": "MULTI_HORIZON_RESPONSE_SURFACE",
+    "J": "DEPENDENCE_AWARE_HIERARCHICAL_INFERENCE"
+  },
+  "candidate_backtests": {
+    "BT_E1": "REPLICATION_BRIDGE",
+    "BT_E2": "ALL_EVENT_CONTINUOUS_PORTFOLIO_RECOMMENDED_PRIMARY",
+    "BT_E3": "CROSS_VENUE_DISTRIBUTIONAL_PORTFOLIO",
+    "BT_E4": "FAMILY_NEUTRAL_CROSS_SECTIONAL_EVENT_PORTFOLIO",
+    "BT_E5": "HIERARCHICAL_PREDICTIVE_EVENT_MODEL"
+  },
+  "sample_targets": {
+    "minimum_useful_oos_independent_events": 150,
+    "preferred": 300,
+    "mature": 500,
+    "stretch": 1000
+  },
+  "source_priority": [
+    "KALSHI",
+    "POLYMARKET_RECONSTRUCTION_V2",
+    "CROSS_VENUE_MATCHING",
+    "MANIFOLD_ROBUSTNESS",
+    "METACULUS_PERMISSION_GATED_BENCHMARK"
+  ],
+  "primary_next_empirical_action": "RUN_PERFORMANCE_BLIND_KALSHI_METADATA_AND_HISTORICAL_AVAILABILITY_CENSUS",
+  "new_asset_return_backtest_authorized": false,
+  "hard_constraints": [
+    "NO_ASSET_RETURNS_OR_PNL_FOR_SOURCE_FAMILY_EVENT_HORIZON_SELECTION",
+    "NO_PSEUDOREPLICATION_FROM_MULTIPLE_CONTRACTS_ASSETS_OR_HORIZONS",
+    "DO_NOT_REWRITE_W2A_OR_CURRENT_PIT_V2_1_RESULTS",
+    "NO_CONTINUOUS_EXPOSURE_TUNING_ON_FINAL_OOS",
+    "MULTIPLICITY_AND_PROMOTION_CONTRACT_REQUIRED_FOR_MODEL_VARIANTS",
+    "LICENSE_AND_TERMS_MUST_ALLOW_EACH_EXTERNAL_DATA_SOURCE"
+  ],
+  "research_decision": "GO_EXPANSION_RESEARCH"
+}
