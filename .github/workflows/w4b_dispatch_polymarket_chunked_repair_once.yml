@@ -12,6 +12,7 @@ jobs:
     steps:
       - name: Dispatch chunk collector on main
         run: |
+          # transport retry after checkpoint page 7500; science remains frozen
           curl --fail-with-body -L -X POST \
             -H 'Accept: application/vnd.github+json' \
             -H 'Authorization: Bearer ${{ github.token }}' \
