@@ -69,6 +69,6 @@ jobs:
             registry/w4b_official_event_truth_summary_v1.json \
             registry/w4b_official_event_truth_closeout_v1.json
           git commit -m 'results: promote passed W4-B official event truth v1.0.2'
-          git fetch origin main
-          git rebase origin/main
+          # Promotion starts from current main. A non-fast-forward push fails
+          # safely instead of invoking rebase on a dirty legacy worktree.
           git push origin HEAD:main
