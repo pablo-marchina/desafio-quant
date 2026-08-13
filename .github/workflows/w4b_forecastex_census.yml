@@ -2,7 +2,7 @@ name: W4-B ForecastEx Census
 on:
   push:
     paths:
-      - 'registry/w4b_kalshi_history_closeout_v1_0_2.json'
+      - 'registry/w4b_kalshi_history_closeout_v1_0_3.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -19,25 +19,33 @@ jobs:
         run: |
           python - <<'PY'
           import json,subprocess
-          h=json.load(open('registry/w4b_kalshi_history_closeout_v1_0_2.json'))
+          h=json.load(open('registry/w4b_kalshi_history_closeout_v1_0_3.json'))
           f=json.load(open('registry/w4b_forecastex_census_freeze_v1.json'))
+          a=json.load(open('registry/w4b_forecastex_history_sequence_amendment_v1_0_1.json'))
           p=json.load(open('registry/w4b_forecastex_census_protocol_v1.json'))
           def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
-          assert h['history_version']=='W4B-KH-RESULT-v1.0.2'
+          assert h['history_version']=='W4B-KH-RESULT-v1.0.3'
           assert h['technical_gate_decision']=='PASS_FULL_POPULATION_HISTORY_MATERIALIZED'
           assert h['api_unresolved_count']==0
+          assert h['canonical_events_audited']==391
+          assert h['unique_market_tickers_audited']==5196
           assert f['status']=='FROZEN_BEFORE_FORECASTEX_CENSUS_EXECUTION'
+          assert a['status']=='FROZEN_BEFORE_ANY_FORECASTEX_CENSUS_EXECUTION'
+          assert a['scientific_contract_changes'] is False
+          assert a['forecastex_census_results_observed_before_amendment'] is False
           assert p['version']=='W4B-FX-C-v1.0'
           assert blob('registry/w4b_forecastex_census_protocol_v1.json')=='598de7878784e4dcdede60bfbad2f992890c1dbd'
           assert blob('scripts/w4b_forecastex_census_v1.py')=='512bb2bc53fefb50a30baf90d1c2fe41db7d6327'
+          assert blob('registry/w4b_forecastex_history_sequence_amendment_v1_0_1.json')=='146bde1db8fc695a405a031c2976a99c2219f21a'
+          assert blob('scripts/w4b_forecastex_census_v1_0_1.py')=='315831f0cb46ec088f75cda169f829b23980a7bc'
           assert blob('registry/w4b_semantic_canonicalization_protocol_v1.json')=='a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5'
           assert blob('scripts/w4b_kalshi_semantic_canonicalize_v1.py')=='b0e76b75e7c3c2b044dcbcb7982afaa7ec023b6c'
-          print('PASS_W4B_FORECASTEX_SEQUENCE_AND_FREEZE')
+          print('PASS_W4B_FORECASTEX_SEQUENCE_V1_0_1_AND_FREEZE')
           PY
       - name: Execute official archive census
         id: census
         continue-on-error: true
-        run: python scripts/w4b_forecastex_census_v1.py
+        run: python scripts/w4b_forecastex_census_v1_0_1.py
       - name: Validate result firewall
         if: always()
         run: |
@@ -50,7 +58,7 @@ jobs:
           for path in ['registry/w4b_forecastex_contracts_v1.csv.gz','registry/w4b_forecastex_events_v1.csv.gz']:
               with gzip.open(path,'rt',encoding='utf-8') as f: hdr=set(next(csv.reader(f)))
               forbidden={'start_price','high_price','low_price','end_price','settlement_price','pair_quantity','open_interest','vwap','linked_asset_return','ARGOS_PnL'}
-              assert not (hdr & forbidden)
+              assert not (forbidden & hdr)
           print(json.dumps({k:x[k] for k in ['calendar_days_accounted','archive_dates_with_summary','products_observed','unique_contract_identifier_rows','accepted_unique_canonical_events','accepted_family_counts','ambiguous_contract_rows','gate_decision']},indent=2,sort_keys=True))
           print('PASS_W4B_FORECASTEX_RESULT_FIREWALL')
           PY
