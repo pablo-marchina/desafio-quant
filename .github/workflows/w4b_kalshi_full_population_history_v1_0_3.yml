@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'registry/w4b_kalshi_full_population_history_freeze_v1_0_3.json'
+      - 'registry/w4b_kalshi_history_persistence_repair_v1_0_3_p1.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,13 +13,15 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Validate frozen repair identities and compile patched source without network
         run: |
           python - <<'PY'
-          import json,subprocess
+          import json,subprocess,os
           p=json.load(open('registry/w4b_kalshi_full_population_history_protocol_v1.json'))
           e=json.load(open('registry/w4b_kalshi_history_input_identity_erratum_v1_0_1.json'))
           a2=json.load(open('registry/w4b_kalshi_history_transport_recovery_amendment_v1_0_2.json'))
@@ -39,6 +42,12 @@ jobs:
           assert blob('registry/w4b_kalshi_semantic_summary_v1_1.json')=='17f05eb601a7184e1a14f5230c73cf56cf730da0'
           assert blob('registry/w4b_kalshi_history_url_encoding_amendment_v1_0_3.json')=='e21dea88d0a1962fb3986a7a1eaeec280c580479'
           assert blob('scripts/w4b_kalshi_full_population_history_v1_0_3.py')=='b2861fcf1e2e337bf7c98b9a4828bc1866737e90'
+          if os.path.exists('registry/w4b_kalshi_history_persistence_repair_v1_0_3_p1.json'):
+              pr=json.load(open('registry/w4b_kalshi_history_persistence_repair_v1_0_3_p1.json'))
+              assert pr['scientific_contract_changes'] is False
+              assert pr['rerun_executor_blob_sha1']=='b2861fcf1e2e337bf7c98b9a4828bc1866737e90'
+              assert pr['prior_scientific_gate_decision']=='PASS_FULL_POPULATION_HISTORY_MATERIALIZED'
+              assert pr['prior_api_unresolved_count']==0
           print('PASS_W4B_HISTORY_V1_0_3_FREEZE_IDENTITIES')
           PY
           W4B_VALIDATE_ONLY=1 python scripts/w4b_kalshi_full_population_history_v1_0_3.py
@@ -76,13 +85,23 @@ jobs:
           assert not (forbidden & hdr)
           print('PASS_W4B_HISTORY_V1_0_3_RESULT_FIREWALL')
           PY
-      - name: Persist result or diagnostic evidence branch
+      - name: Persist result or diagnostic evidence branch from current main
         if: always()
         run: |
           test -f registry/w4b_kalshi_history_summary_v1_0_3.json
+          mkdir -p /tmp/w4b-history-v1-0-3
+          cp registry/w4b_kalshi_history_market_v1_0_3.csv.gz /tmp/w4b-history-v1-0-3/
+          cp registry/w4b_kalshi_history_event_v1_0_3.csv.gz /tmp/w4b-history-v1-0-3/
+          cp registry/w4b_kalshi_history_summary_v1_0_3.json /tmp/w4b-history-v1-0-3/
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git checkout -B w4b-kalshi-history-v1-0-3
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
+          git checkout -B w4b-kalshi-history-v1-0-3 origin/main
+          cp /tmp/w4b-history-v1-0-3/w4b_kalshi_history_market_v1_0_3.csv.gz registry/
+          cp /tmp/w4b-history-v1-0-3/w4b_kalshi_history_event_v1_0_3.csv.gz registry/
+          cp /tmp/w4b-history-v1-0-3/w4b_kalshi_history_summary_v1_0_3.json registry/
           git add \
             registry/w4b_kalshi_history_market_v1_0_3.csv.gz \
             registry/w4b_kalshi_history_event_v1_0_3.csv.gz \
