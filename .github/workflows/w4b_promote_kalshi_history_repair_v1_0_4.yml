@@ -1,0 +1,83 @@
+name: W4-B Promote Kalshi History Repair v1.0.4
+on:
+  push:
+    paths:
+      - '.github/workflows/w4b_promote_kalshi_history_repair_v1_0_4.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  promote:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Fetch authoritative evidence branch
+        run: |
+          git fetch origin w4b-kalshi-history-v1-0-3
+          git checkout origin/w4b-kalshi-history-v1-0-3 -- \
+            registry/w4b_kalshi_history_market_v1_0_3.csv.gz \
+            registry/w4b_kalshi_history_event_v1_0_3.csv.gz \
+            registry/w4b_kalshi_history_summary_v1_0_3.json
+      - name: Validate immutable scientific result and create closeout
+        run: |
+          python - <<'PY'
+          import hashlib,json,subprocess
+          from pathlib import Path
+          R=Path('registry')
+          x=json.load(open(R/'w4b_kalshi_history_summary_v1_0_3.json'))
+          assert x['version']=='W4B-KH-RESULT-v1.0.3'
+          assert x['canonical_events_audited']==391
+          assert x['unique_market_tickers_audited']==5196
+          assert x['api_unresolved_count']==0
+          assert x['technical_gate_decision']=='PASS_FULL_POPULATION_HISTORY_MATERIALIZED'
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['kalshi_settlement_results_persisted'] is False
+          paths={
+            'summary_path':'registry/w4b_kalshi_history_summary_v1_0_3.json',
+            'event_path':'registry/w4b_kalshi_history_event_v1_0_3.csv.gz',
+            'market_path':'registry/w4b_kalshi_history_market_v1_0_3.csv.gz'
+          }
+          def blob(p): return subprocess.check_output(['git','hash-object',p],text=True).strip()
+          def sha256(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          assert blob(paths['summary_path'])=='6571a5bbe8f30eeda4b7c7a5e8fc94abbc2e67d0'
+          assert blob(paths['event_path'])=='d8a0b4d173aa2340e355c6a894377a29b186bed4'
+          assert blob(paths['market_path'])=='9ce67a23703d0215e9079db68b21c5c98e1d1bcc'
+          close={
+            'artifact':'W4B_KALSHI_HISTORY_CLOSEOUT','version':'W4B-KH-CLOSE-v1.0.3','date':'2026-08-13',
+            'history_version':x['version'],'technical_gate_decision':x['technical_gate_decision'],
+            'canonical_events_audited':391,'unique_market_tickers_audited':5196,'api_unresolved_count':0,
+            'performance_blind':True,'linked_asset_realized_returns_read':False,
+            'source_workflow_run_id':31679332108,'source_head_sha':'aa19e87beb32a0d4afbe459855c6e56bd855ad27',
+            **paths,
+            'summary_blob_sha1':blob(paths['summary_path']),'event_blob_sha1':blob(paths['event_path']),'market_blob_sha1':blob(paths['market_path']),
+            'summary_sha256':sha256(paths['summary_path']),'event_sha256':sha256(paths['event_path']),'market_sha256':sha256(paths['market_path'])
+          }
+          (R/'w4b_kalshi_history_closeout_v1_0_3.json').write_text(json.dumps(close,indent=2,sort_keys=True)+'\n')
+          pointer={
+            'artifact':'W4B_KALSHI_HISTORY_AUTHORITATIVE_POINTER','date':'2026-08-13',
+            'history_version':x['version'],'technical_gate_decision':x['technical_gate_decision'],'api_unresolved_count':0,
+            **paths,'closeout_path':'registry/w4b_kalshi_history_closeout_v1_0_3.json'
+          }
+          (R/'w4b_kalshi_history_closeout_authoritative.json').write_text(json.dumps(pointer,indent=2,sort_keys=True)+'\n')
+          print('PASS_IMMUTABLE_KALSHI_HISTORY_REPAIR_INPUT')
+          PY
+      - name: Promote to main with clean worktree
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4b_kalshi_history_market_v1_0_3.csv.gz \
+            registry/w4b_kalshi_history_event_v1_0_3.csv.gz \
+            registry/w4b_kalshi_history_summary_v1_0_3.json \
+            registry/w4b_kalshi_history_closeout_v1_0_3.json \
+            registry/w4b_kalshi_history_closeout_authoritative.json
+          git commit -m 'results: promote passed W4-B Kalshi history v1.0.3'
+          git reset --hard HEAD
+          git clean -fd
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
