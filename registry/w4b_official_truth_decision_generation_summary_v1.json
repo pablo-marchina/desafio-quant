@@ -1,0 +1,43 @@
+{
+  "artifact": "W4B_OFFICIAL_TRUTH_DECISION_GENERATION_SUMMARY",
+  "as_of_date": "2026-08-13",
+  "decision_state_counts": {
+    "NOT_HISTORICAL_YET": 100,
+    "UNRESOLVED_OFFICIAL_TRUTH": 1743,
+    "VERIFIED_OFFICIAL_TRUTH": 432
+  },
+  "economic_release_values_read": false,
+  "historical_macro_candidates_by_family": {
+    "CPI_INFLATION_RELEASE": 202,
+    "FOMC_DECISION": 69,
+    "GDP_RELEASE": 85,
+    "PAYROLLS_JOBS_RELEASE": 31,
+    "PCE_RELEASE": 38,
+    "RETAIL_SALES_RELEASE": 42,
+    "UNEMPLOYMENT_RELEASE": 252
+  },
+  "linked_asset_realized_returns_read": false,
+  "matching_rule": "same exact family+subject; exactly one primary occurrence within +/-3 calendar days; otherwise unresolved; future after 2026-08-13 is NOT_HISTORICAL_YET",
+  "nonmacro_automatically_verified": false,
+  "occurrence_rows": 688,
+  "performance_blind": true,
+  "prediction_market_performance_read": false,
+  "prediction_market_settlement_result_used": false,
+  "queue_rows": 2275,
+  "verified_absolute_date_delta_counts": {
+    "0": 301,
+    "1": 93,
+    "2": 20,
+    "3": 18
+  },
+  "verified_by_family": {
+    "CPI_INFLATION_RELEASE": 93,
+    "FOMC_DECISION": 50,
+    "GDP_RELEASE": 43,
+    "PAYROLLS_JOBS_RELEASE": 25,
+    "PCE_RELEASE": 25,
+    "RETAIL_SALES_RELEASE": 24,
+    "UNEMPLOYMENT_RELEASE": 172
+  },
+  "version": "W4B-OET-DECGEN-v1.0"
+}

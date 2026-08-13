@@ -1,0 +1,58 @@
+{
+  "artifact": "W4B_OFFICIAL_MACRO_OCCURRENCE_SUMMARY",
+  "date": "2026-08-13",
+  "gate_decision": "PASS_OFFICIAL_MACRO_OCCURRENCES_MATERIALIZED",
+  "linked_asset_realized_returns_read": false,
+  "occurrence_counts": {
+    "CPI_INFLATION_RELEASE|US_CPI": 71,
+    "FOMC_DECISION|US_FOMC": 46,
+    "GDP_RELEASE|US_GDP": 72,
+    "PAYROLLS_JOBS_RELEASE|US_PAYROLLS": 71,
+    "PCE_RELEASE|US_PCE": 71,
+    "RETAIL_SALES_RELEASE|US_RETAIL_SALES": 48,
+    "UNEMPLOYMENT_RELEASE|US_INITIAL_JOBLESS_CLAIMS": 238,
+    "UNEMPLOYMENT_RELEASE|US_UNEMPLOYMENT_RATE": 71
+  },
+  "occurrence_ranges": {
+    "CPI_INFLATION_RELEASE|US_CPI": {
+      "max": "2026-12-10",
+      "min": "2021-01-13"
+    },
+    "FOMC_DECISION|US_FOMC": {
+      "max": "2026-07-29",
+      "min": "2021-01-27"
+    },
+    "GDP_RELEASE|US_GDP": {
+      "max": "2026-12-23",
+      "min": "2021-01-28"
+    },
+    "PAYROLLS_JOBS_RELEASE|US_PAYROLLS": {
+      "max": "2026-12-04",
+      "min": "2021-01-08"
+    },
+    "PCE_RELEASE|US_PCE": {
+      "max": "2026-12-23",
+      "min": "2021-01-29"
+    },
+    "RETAIL_SALES_RELEASE|US_RETAIL_SALES": {
+      "max": "2026-12-16",
+      "min": "2023-01-18"
+    },
+    "UNEMPLOYMENT_RELEASE|US_INITIAL_JOBLESS_CLAIMS": {
+      "max": "2026-08-13",
+      "min": "2021-01-07"
+    },
+    "UNEMPLOYMENT_RELEASE|US_UNEMPLOYMENT_RATE": {
+      "max": "2026-12-04",
+      "min": "2021-01-08"
+    }
+  },
+  "occurrence_rows": 688,
+  "parser_coverage_failures": {},
+  "performance_blind": true,
+  "prediction_market_outcomes_read": false,
+  "release_values_read_or_persisted": false,
+  "source_failures": [],
+  "source_manifest_rows": 53,
+  "version": "W4B-OET-MACRO-OCC-RESULT-v1.0"
+}
