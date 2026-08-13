@@ -1,0 +1,55 @@
+name: W4-A Kalshi History Probe
+on:
+  push:
+    paths:
+      - 'registry/w4a_kalshi_history_probe_protocol_v1.json'
+      - 'registry/w4_kalshi_series_first_capacity_v1.json'
+      - 'scripts/w4a_kalshi_history_probe_v1.py'
+      - '.github/workflows/w4a_kalshi_history_probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate preregistered firewall
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w4a_kalshi_history_probe_protocol_v1.json'))
+          assert p['version']=='W4A-KHP-v1.0'
+          assert p['performance_blind'] is True
+          assert p['linked_asset_outcomes_allowed'] is False
+          assert p['sampling']['series_per_family']==2
+          assert p['window']['lookback_days']==10
+          assert p['window']['candle_period_minutes']==60
+          print('PASS_W4A_KALSHI_HISTORY_PROBE_PROTOCOL')
+          PY
+      - name: Execute technical history probe
+        run: python scripts/w4a_kalshi_history_probe_v1.py
+      - name: Validate result firewall and gate
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4a_kalshi_history_probe_result_v1.json'))
+          assert x['performance_blind'] is True
+          assert x['linked_asset_outcomes_read'] is False
+          assert x['raw_semantic_counts_promoted'] is False
+          assert x['attempted_endpoint_requests'] > 0
+          assert x['contract_400_count'] == 0
+          assert x['technical_gate_decision'] == 'PASS_TECHNICAL_HISTORY_ENDPOINT_GATE'
+          print('PASS_W4A_KALSHI_HISTORY_ENDPOINT_GATE')
+          PY
+      - name: Persist evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4a-kalshi-history-probe-v1
+          git add registry/w4a_kalshi_history_probe_result_v1.json
+          git commit -m 'results: materialize W4-A Kalshi history probe v1'
+          git push -f origin w4a-kalshi-history-probe-v1

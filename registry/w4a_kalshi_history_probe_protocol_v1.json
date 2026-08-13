@@ -1,0 +1,41 @@
+{
+  "artifact": "W4A_KALSHI_HISTORY_PROBE_PROTOCOL",
+  "version": "W4A-KHP-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_PRE_EXECUTION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "linked_asset_outcomes_allowed": false,
+  "input": "registry/w4_kalshi_series_first_capacity_v1.json",
+  "purpose": "Validate public Kalshi trade and candlestick API routing/depth mechanics before semantic W4-B, without promoting any event to the backtest population.",
+  "sampling": {
+    "families": "all families present in the raw Kalshi capacity artifact",
+    "series_per_family": 2,
+    "series_selection": "lexicographically first unique series_ticker within each raw frozen-dictionary family; deduplicate across families",
+    "market_selection_per_series": "up to one lexicographically first non-MVE historical market and one lexicographically first non-MVE live-settled market"
+  },
+  "window": {
+    "lookback_days": 10,
+    "candle_period_minutes": 60,
+    "end_time": "market close_time, else latest_expiration_time, else expected_expiration_time"
+  },
+  "routes": {
+    "historical_trades": "/historical/trades?ticker=...&min_ts=...&max_ts=...",
+    "live_trades": "/markets/trades?ticker=...&min_ts=...&max_ts=...",
+    "historical_candles": "/historical/markets/{ticker}/candlesticks",
+    "live_candles": "/series/{series_ticker}/markets/{ticker}/candlesticks"
+  },
+  "technical_gate": {
+    "minimum_endpoint_success_rate": 0.9,
+    "maximum_http_400_contract_errors": 0,
+    "nonempty_data_required": false,
+    "reason": "Zero trades/candles can be a legitimate market outcome; this gate tests API contract/access, while coverage is reported descriptively."
+  },
+  "forbidden": [
+    "linked-asset realized returns",
+    "ARGOS PnL",
+    "semantic acceptance based on probe richness",
+    "editing the frozen W4 family dictionary after seeing probe results",
+    "counting probe markets as N_final_backtestable"
+  ]
+}
