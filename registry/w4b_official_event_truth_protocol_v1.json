@@ -1,0 +1,99 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_PROTOCOL",
+  "version": "W4B-OET-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_BEFORE_CROSS_VENUE_DEDUP_RESULTS",
+  "sequence_prerequisite": {
+    "required_prior_stage": "W4-B cross-venue pre-truth dedup",
+    "required_closeout": "registry/w4b_cross_venue_dedup_closeout_v1.json",
+    "required_decision": "PASS_CROSS_VENUE_PRETRUTH_DEDUP_MATERIALIZED"
+  },
+  "purpose": "Establish authoritative real-world event identity, occurrence/release date-time where available, and primary-source provenance; then adjudicate pre-truth candidate duplicate links. This stage must not inspect linked-asset realized returns or select events based on prediction-market performance.",
+  "identity_policy": {
+    "pretruth_ids_immutable": true,
+    "rule": "Never silently rewrite W4CE1 IDs. Map one or more pretruth exact groups to a separately minted official_event_id after authoritative evidence.",
+    "official_event_id_formula": "W4OT1- + first_20_hex(SHA256(resolved_family + '|' + official_event_reference_date + '|' + official_subject_key))",
+    "official_event_reference_date": "UTC calendar date of the authoritative occurrence/release/decision. Preserve exact source timestamp separately when the official source publishes it.",
+    "official_subject_key": "Use the frozen W4-B family-specific subject semantics. For macro releases use the existing US_* subject key; for entity-specific events preserve the normalized subject/entity identity supported by official evidence.",
+    "date_correction": "A venue end/expiration date may differ from the official occurrence date. Record the delta and mapping; do not mutate or delete the pretruth ID."
+  },
+  "source_hierarchy": {
+    "CPI_INFLATION_RELEASE": ["BLS archived CPI news release", "BLS release schedule"],
+    "PAYROLLS_JOBS_RELEASE": ["BLS archived Employment Situation news release", "BLS release schedule"],
+    "UNEMPLOYMENT_RELEASE": {
+      "US_UNEMPLOYMENT_RATE": ["BLS archived Employment Situation news release", "BLS release schedule"],
+      "US_INITIAL_JOBLESS_CLAIMS": ["U.S. Department of Labor Employment and Training Administration Unemployment Insurance Weekly Claims release"]
+    },
+    "GDP_RELEASE": ["BEA GDP news release", "BEA official release schedule"],
+    "PCE_RELEASE": ["BEA Personal Income and Outlays news release", "BEA official release schedule"],
+    "RETAIL_SALES_RELEASE": ["U.S. Census Bureau Advance Monthly Sales for Retail and Food Services release", "Census official retail release schedule"],
+    "FOMC_DECISION": ["Federal Reserve FOMC statement/implementation note", "Federal Reserve FOMC meeting calendar"],
+    "FDA_ADVISORY_COMMITTEE": ["FDA Advisory Committee meeting announcement/calendar", "FDA meeting materials", "Federal Register meeting notice"],
+    "FDA_FINAL_PDUFA_DECISION": ["FDA Drugs@FDA approval/action documents", "FDA official announcement/database", "SEC/issuer filing describing FDA action only when the FDA action document is not public"],
+    "EARNINGS_EPS": ["SEC EDGAR 8-K/10-Q/10-K/6-K filing containing or attaching earnings release", "issuer investor-relations earnings release"],
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": ["SEC filing/issuer announcement for actual announced transaction when applicable", "issuer official announcement"],
+    "MA_PENDING_COMPLETION": ["SEC filing/issuer closing or termination announcement", "issuer official transaction page"],
+    "MA_REGULATORY_CLEARANCE": ["FTC/DOJ/other named official competition regulator decision", "SEC/issuer filing describing the regulator action when regulator primary document is unavailable"],
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": ["FTC/DOJ/official competition-regulator case/release", "official court document", "SEC filing only as corroboration"],
+    "CORPORATE_LITIGATION_BINARY": ["official court opinion/order/docket document", "SEC filing/issuer official release for settlement or material case outcome when court document is not publicly retrievable"]
+  },
+  "evidence_contract": {
+    "required_per_verified_event": [
+      "exact_group_id(s)",
+      "resolved_family",
+      "official_event_id",
+      "official_subject_key",
+      "official_event_reference_date",
+      "official_event_timestamp_utc_if_published",
+      "source_authority",
+      "source_url",
+      "retrieved_at_utc",
+      "source_body_sha256_or_document_hash_when_retrievable",
+      "evidence_excerpt_hash_or_structured_field_reference",
+      "verification_state",
+      "verification_reason"
+    ],
+    "verification_states": ["VERIFIED_OFFICIAL_TRUTH", "UNRESOLVED_OFFICIAL_TRUTH", "REJECT_NOT_SAME_SEMANTIC_EVENT"],
+    "source_capture": "Hash the retrieved official body/document whenever technically possible. If anti-bot or access restrictions prevent deterministic capture, record URL, authority, retrieval timestamp, HTTP/access status and structured evidence reference; never fabricate a hash.",
+    "future_or_not_yet_occurred": "An event whose official occurrence is after the W4-B historical cutoff or has not yet occurred cannot become final historical backtest N; retain it as NOT_HISTORICAL_YET rather than forcing a truth label."
+  },
+  "candidate_edge_adjudication": {
+    "input": "registry/w4b_cross_venue_candidate_edges_v1.csv.gz",
+    "states": ["CONFIRMED_SAME_OFFICIAL_EVENT", "CONFIRMED_DISTINCT_OFFICIAL_EVENTS", "UNRESOLVED_OFFICIAL_IDENTITY"],
+    "same_rule": "Two exact groups merge only if authoritative evidence maps both to the same official_event_id.",
+    "distinct_rule": "Two exact groups remain distinct if both are verified and map to different official_event_id values.",
+    "unresolved_rule": "If either side lacks adequate authoritative identity evidence, do not merge and do not claim the component as final-independent N.",
+    "transitivity": "Final official-event groups are connected components of CONFIRMED_SAME_OFFICIAL_EVENT edges plus exact W4CE1 aliases. Distinct edges must not exist within a final component; such a contradiction fails the gate."
+  },
+  "firewall": {
+    "prediction_market_settlement_result_allowed_to_vote": false,
+    "prediction_market_price_volume_liquidity_allowed": false,
+    "linked_asset_realized_return_allowed": false,
+    "ARGOS_PnL_or_model_performance_allowed": false,
+    "official_macro_release_values_needed_for_identity": false,
+    "policy": "Prefer dates/times/titles/identifiers. Economic release values, linked-asset responses, and prediction-market outcomes are unnecessary for identity and remain closed unless a later protocol explicitly authorizes them."
+  },
+  "outputs": {
+    "truth_records": "registry/w4b_official_event_truth_records_v1.csv.gz",
+    "source_manifest": "registry/w4b_official_event_truth_source_manifest_v1.csv.gz",
+    "edge_adjudication": "registry/w4b_official_event_truth_edge_adjudication_v1.csv.gz",
+    "final_groups": "registry/w4b_official_event_truth_groups_v1.csv.gz",
+    "unresolved": "registry/w4b_official_event_truth_unresolved_v1.csv.gz",
+    "summary": "registry/w4b_official_event_truth_summary_v1.json"
+  },
+  "gate": {
+    "zero_same_vs_distinct_transitivity_contradictions": true,
+    "all_final_groups_have_verified_official_truth": true,
+    "all_final_groups_have_primary_or_explicitly_allowed_fallback_source": true,
+    "unresolved_events_are_excluded_from_verified_final_n": true,
+    "final_verified_unique_n_definition": "Count of unique official_event_id values among VERIFIED_OFFICIAL_TRUTH records after candidate-edge adjudication.",
+    "required_decision": "PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED"
+  },
+  "governance": {
+    "science_reopened": false,
+    "source_hierarchy_may_not_be_relaxed_after_counts": true,
+    "candidate_edge_thresholds_may_not_change": true,
+    "no_performance_based_truth_search_priority": true,
+    "manual_or_model_assisted_evidence_review_must_be_disclosed": true
+  }
+}
