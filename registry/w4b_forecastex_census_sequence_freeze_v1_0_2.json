@@ -1,0 +1,32 @@
+{
+  "artifact": "W4B_FORECASTEX_CENSUS_SEQUENCE_FREEZE",
+  "version": "W4B-FX-CF-v1.0.2",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_ANY_FORECASTEX_CENSUS_EXECUTION",
+  "supersedes_sequence_freeze": "W4B-FX-CF-v1.0.1",
+  "parent_protocol_blob_sha1": "598de7878784e4dcdede60bfbad2f992890c1dbd",
+  "parent_executor_blob_sha1": "512bb2bc53fefb50a30baf90d1c2fe41db7d6327",
+  "sequence_amendment_blob_sha1": "146bde1db8fc695a405a031c2976a99c2219f21a",
+  "archive_completeness_amendment_blob_sha1": "3c91b1776fef24b2540f3ba0adc66d55409f63b3",
+  "authoritative_executor": {
+    "path": "scripts/w4b_forecastex_census_v1_0_2.py",
+    "blob_sha1": "ff58ea512d96769cad9c4b429a4b0b0abe5f9067"
+  },
+  "workflow": {
+    "path": ".github/workflows/w4b_forecastex_census.yml",
+    "blob_sha1": "87d1c9af7e2a3f0c1ed6611df50ec4a269038545",
+    "trigger": "registry/w4b_kalshi_history_closeout_v1_0_3.json"
+  },
+  "archive_end_rule": "UTC execution date minus one calendar day with every date explicitly accounted by 200/404/unresolved",
+  "authoritative_predecessor": {
+    "history_version": "W4B-KH-RESULT-v1.0.3",
+    "closeout_path": "registry/w4b_kalshi_history_closeout_v1_0_3.json",
+    "canonical_events_required": 391,
+    "market_tickers_required": 5196,
+    "api_unresolved_required": 0,
+    "decision_required": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED"
+  },
+  "forecastex_census_results_observed": false,
+  "semantic_contract_changes": false,
+  "archive_enumeration_change": "PRE_RESULT_RECALL_EXPANSION_ONLY"
+}
