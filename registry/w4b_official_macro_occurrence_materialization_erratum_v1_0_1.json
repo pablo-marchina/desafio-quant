@@ -1,0 +1,29 @@
+{
+  "artifact": "W4B_OFFICIAL_MACRO_OCCURRENCE_MATERIALIZATION_ERRATUM",
+  "version": "W4B-OET-MACRO-OCC-ERRATUM-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_PARSER_COVERAGE_FAIL_BEFORE_ANY_OCCURRENCE_RESULT_OR_DECISIONS",
+  "failed_run_id": 31738056059,
+  "failed_stage": "BLS_DOM_TITLE_EXTRACTION",
+  "observed_failure": "BLS source transport succeeded but parser emitted zero occurrences because release anchor text and the trailing 'for <period>' are separate DOM text nodes.",
+  "technical_fix": "Accept the exact BLS linked titles 'Consumer Price Index' and 'Employment Situation' when and only when an official calendar date is present within the frozen 8-node vicinity. Navigation anchors without a nearby calendar date cannot emit an occurrence.",
+  "scientific_contract_changes": false,
+  "science_reopened": false,
+  "official_truth_decisions_observed_before_erratum": false,
+  "release_values_read_or_persisted": false,
+  "prediction_market_outcomes_read": false,
+  "linked_asset_realized_returns_read": false,
+  "performance_blind": true,
+  "macro_protocol_blob_sha1": "49ebc0d7888149833fd1c741ac172dcbd0b0413d",
+  "workflow_blob_sha1": "342f938ed6694ed686d7349f0a733bb440573d69",
+  "executor_blobs": {
+    "scripts/w4b_official_macro_parse_common_v1.py": "3adb609e07348c878e64f19375d9f54f90af843f",
+    "scripts/w4b_official_macro_occurrences_bls_v1.py": "51b716bcca0be55e5146d069b35cba61934c7e94",
+    "scripts/w4b_official_macro_occurrences_fed_bea_v1.py": "d879b642e6a8803bca32f1ab8544b3b17888ac1f",
+    "scripts/w4b_official_macro_occurrences_census_dol_v1.py": "a792be1366f54cd75696ad538434e0a75f995862",
+    "scripts/w4b_official_macro_occurrences_merge_v1.py": "141359f2d6ca801c9d8e6ff51ab9057282caeb62"
+  },
+  "original_freeze_workflow_blob_sha1": "b56a69877c3e5ab1207de23d27ae7c6ade315c2f",
+  "original_bls_parser_blob_sha1": "01bf6a7c5e0dd7ec1440d7316c6a7f3cbbfa0250",
+  "policy": "This erratum changes parser mechanics only. Family/subject eligibility, primary authorities, source universe, +/-3 day truth rule, performance firewall and no-values rule are unchanged."
+}
