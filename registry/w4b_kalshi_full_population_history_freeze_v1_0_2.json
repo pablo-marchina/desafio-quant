@@ -1,0 +1,46 @@
+{
+  "artifact": "W4B_KALSHI_FULL_POPULATION_HISTORY_FREEZE_V1_0_2",
+  "version": "W4B-KHF-v1.0.2",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_AUTHORITATIVE_HISTORY_V1_0_2_EXECUTION",
+  "parent_main_commit": "bead099d02854035bac751a546e7e7965aed6d58",
+  "scientific_contract": {
+    "protocol_path": "registry/w4b_kalshi_full_population_history_protocol_v1.json",
+    "protocol_blob_sha1": "5cf4e3c9f81b9c88e7d9219864d45f826c9914f5",
+    "base_implementation_path": "scripts/w4b_kalshi_full_population_history_v1.py",
+    "base_implementation_blob_sha1": "36fe13e884d0cb600be03edac6c0d730ab3d0009",
+    "scientific_contract_changed": false
+  },
+  "authoritative_semantic_input": {
+    "events_path": "registry/w4b_kalshi_semantic_events_v1_1.csv.gz",
+    "events_blob_sha1": "45c26c02c53a5f5d43c56775aae29ec8858b4f64",
+    "summary_path": "registry/w4b_kalshi_semantic_summary_v1_1.json",
+    "summary_blob_sha1": "17f05eb601a7184e1a14f5230c73cf56cf730da0",
+    "canonical_events": 391,
+    "constituent_market_tickers": 5196
+  },
+  "transport_amendment": {
+    "path": "registry/w4b_kalshi_history_transport_recovery_amendment_v1_0_2.json",
+    "blob_sha1": "315643867567271e77b8c7bc77806c7659f16c96",
+    "scope": "TRANSPORT_COMPLETENESS_ONLY"
+  },
+  "execution": {
+    "wrapper_path": "scripts/w4b_kalshi_full_population_history_v1_0_2.py",
+    "wrapper_blob_sha1": "ee584a5d67bec9c5e3e7c9a659570228b1fdfd37",
+    "workflow_path": ".github/workflows/w4b_kalshi_full_population_history_v1_0_2.yml",
+    "workflow_blob_sha1": "83c2618e257d687eb7d271e1d1e1b9710e846288"
+  },
+  "gate": {
+    "canonical_events_required": 391,
+    "constituent_market_tickers_required": 5196,
+    "api_unresolved_required": 0,
+    "decision_required": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED"
+  },
+  "firewall": {
+    "performance_blind": true,
+    "linked_asset_realized_returns_closed": true,
+    "kalshi_settlement_results_not_persisted": true,
+    "no_family_or_event_selection_changes": true,
+    "no_horizon_or_threshold_changes": true
+  }
+}
