@@ -3,12 +3,22 @@ on:
   workflow_run:
     workflows: ['W4-B Polymarket Exhaustive Recensus', 'W4-B Polymarket Exhaustive Recensus Finalize v1.0.1']
     types: [completed]
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        description: 'Authoritative successful Polymarket finalizer run ID'
+        required: true
+        type: string
+      source_head_sha:
+        description: 'Authoritative successful Polymarket finalizer head SHA'
+        required: true
+        type: string
 permissions:
   contents: write
   actions: write
 jobs:
   promote:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -27,8 +37,8 @@ jobs:
             registry/w4b_polymarket_recensus_summary_v1.json
       - name: Validate and create Polymarket closeout
         env:
-          SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
-          SOURCE_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          SOURCE_RUN_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.source_run_id || github.event.workflow_run.id }}
+          SOURCE_HEAD_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.source_head_sha || github.event.workflow_run.head_sha }}
         run: |
           python - <<'PY'
           import hashlib,json,os,subprocess
@@ -44,7 +54,7 @@ jobs:
           def blob(p): return subprocess.check_output(['git','hash-object',str(p)],text=True).strip()
           manifests={f:{'blob_sha1':blob(R/f),'sha256':hashlib.sha256((R/f).read_bytes()).hexdigest()} for f in files}
           close={
-            'artifact':'W4B_POLYMARKET_RECENSUS_CLOSEOUT','version':'W4B-PM-CLOSE-v1.0','date':'2026-08-13',
+            'artifact':'W4B_POLYMARKET_RECENSUS_CLOSEOUT','version':'W4B-PM-CLOSE-v1.0.1','date':'2026-08-13',
             'technical_gate_decision':x['gate_decision'],'accepted_unique_canonical_events':x['accepted_unique_canonical_events'],
             'unique_gamma_event_ids':x['unique_gamma_event_ids'],'pages_fetched':x['pages_fetched'],
             'performance_blind':True,'linked_asset_realized_returns_read':False,'clob_price_history_read':False,
@@ -66,7 +76,7 @@ jobs:
             registry/w4b_polymarket_w2_overlap_v1.csv.gz \
             registry/w4b_polymarket_recensus_summary_v1.json \
             registry/w4b_polymarket_recensus_closeout_v1.json
-          git commit -m 'results: promote passed W4-B Polymarket recensus v1'
+          git commit -m 'results: promote passed W4-B Polymarket recensus v1.0.1'
           git push origin HEAD:main
       - name: Dispatch frozen cross-venue dedup
         run: |
