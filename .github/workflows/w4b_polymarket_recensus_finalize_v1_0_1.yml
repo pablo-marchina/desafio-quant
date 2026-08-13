@@ -1,0 +1,89 @@
+name: W4-B Polymarket Exhaustive Recensus Finalize v1.0.1
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  finalize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate sequence, frozen science and runtime erratum
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          fx=json.load(open('registry/w4b_forecastex_census_closeout_v1.json'))
+          e=json.load(open('registry/w4b_polymarket_recensus_runtime_erratum_v1_0_1.json'))
+          def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
+          assert fx['technical_gate_decision']=='PASS_FORECASTEX_CENSUS_MATERIALIZED'
+          assert e['status']=='FROZEN_AFTER_TRANSPORT_CANCELLATION_BEFORE_ANY_FINAL_RECENSUS_RESULT'
+          assert e['scientific_contract_changes'] is False and e['science_reopened'] is False
+          assert blob('registry/w4b_polymarket_recensus_protocol_v1.json')=='c8427c2f3083b5781018d20e3d02a1fe662c59f8'
+          assert blob('scripts/w4b_polymarket_recensus_v1.py')=='e92f9d107e12a624692c579fefdccec61c6c652d'
+          assert blob('registry/w4b_polymarket_recensus_runtime_erratum_v1_0_1.json')=='f4355b51b7cc53e3f744160f5df1ddca3ba92a85'
+          assert blob('scripts/w4b_polymarket_recensus_chunked_v1_0_1.py')=='f866a07a15220b5d8a447741e6ae1e576b53c99d'
+          print('PASS_W4B_POLYMARKET_FINALIZER_FREEZE')
+          PY
+      - name: Restore terminal checkpoint
+        run: |
+          git fetch origin w4b-polymarket-recensus-checkpoint-v1
+          git checkout origin/w4b-polymarket-recensus-checkpoint-v1 -- registry/w4b_pm_checkpoint_v1_0_1
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_pm_checkpoint_v1_0_1/state.json'))
+          assert x['terminal'] is True
+          assert not x['unresolved']
+          print({'page_no':x['page_no'],'chunks':len(x['chunks']),'terminal':x['terminal']})
+          PY
+      - name: Materialize authoritative recensus result
+        run: python scripts/w4b_polymarket_recensus_chunked_v1_0_1.py finalize
+      - name: Validate result firewall
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          x=json.load(open('registry/w4b_polymarket_recensus_summary_v1.json'))
+          assert x['version']=='W4B-PM-R-RESULT-v1.0.1'
+          assert x['gate_decision']=='PASS_POLYMARKET_RECENSUS_MATERIALIZED'
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['clob_price_history_read'] is False
+          assert x['selection_by_volume_liquidity_or_price'] is False
+          assert not x['pagination_unresolved'] and not x['canonical_collisions']
+          with gzip.open('registry/w4b_polymarket_recensus_venue_events_v1.csv.gz','rt',encoding='utf-8') as f:
+              hdr=set(next(csv.reader(f)))
+          forbidden={'volume','liquidity','openInterest','outcomePrices','lastTradePrice','bestBid','bestAsk','spread','price','linked_asset_return','ARGOS_PnL'}
+          assert not (hdr & forbidden)
+          print(json.dumps({k:x[k] for k in ['pages_fetched','raw_event_rows','unique_gamma_event_ids','accepted_unique_canonical_events','accepted_family_counts','ambiguous_venue_event_rows','w2_overlap_event_id','w2_overlap_slug_only','w2_new_gamma_events','gate_decision']},indent=2,sort_keys=True))
+          print('PASS_W4B_POLYMARKET_RESULT_FIREWALL')
+          PY
+      - name: Persist authoritative evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-polymarket-recensus-v1 main
+          git add \
+            registry/w4b_polymarket_recensus_page_manifest_v1.csv.gz \
+            registry/w4b_polymarket_recensus_venue_events_v1.csv.gz \
+            registry/w4b_polymarket_recensus_events_v1.csv.gz \
+            registry/w4b_polymarket_recensus_ambiguous_v1.csv.gz \
+            registry/w4b_polymarket_w2_overlap_v1.csv.gz \
+            registry/w4b_polymarket_recensus_summary_v1.json
+          git commit -m 'results: materialize W4-B Polymarket exhaustive recensus v1.0.1'
+          git push -f origin w4b-polymarket-recensus-v1
+      - name: Enforce recensus gate
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_polymarket_recensus_summary_v1.json'))
+          assert x['gate_decision']=='PASS_POLYMARKET_RECENSUS_MATERIALIZED'
+          assert not x['pagination_unresolved']
+          assert not x['canonical_collisions']
+          print('PASS_W4B_POLYMARKET_RECENSUS')
+          PY

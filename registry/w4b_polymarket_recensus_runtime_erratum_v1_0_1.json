@@ -1,0 +1,40 @@
+{
+  "artifact": "W4B_POLYMARKET_RECENSUS_RUNTIME_ERRATUM",
+  "version": "W4B-PM-R-ERRATUM-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_TRANSPORT_CANCELLATION_BEFORE_ANY_FINAL_RECENSUS_RESULT",
+  "source_failed_run_id": 31697830672,
+  "source_failed_job_id": 94439586185,
+  "observed_transport_progress_only": {
+    "pages_logged_before_runner_shutdown": 7180,
+    "unique_gamma_event_ids_logged_before_runner_shutdown": 718000,
+    "final_population_size_observed": false,
+    "semantic_or_canonical_result_observed": false,
+    "gate_result_observed": false
+  },
+  "failure_class": "HOSTED_RUNNER_SHUTDOWN_BEFORE_TERMINAL_CURSOR",
+  "scientific_contract_changes": false,
+  "science_reopened": false,
+  "unchanged_contract": [
+    "official Gamma /events/keyset endpoint",
+    "closed=true population",
+    "next_cursor -> after_cursor until terminal exhaustion",
+    "no offset",
+    "no tag/date/volume/liquidity prefilter",
+    "byte-identical W4B semantic rules and W4CE1 canonicalization",
+    "W2 audit-only overlap role",
+    "zero unresolved pages required",
+    "zero canonical signature collisions required",
+    "performance blind firewall",
+    "no CLOB price history",
+    "no linked-asset realized returns"
+  ],
+  "runtime_only_changes": [
+    "split the same sequential keyset cursor chain into bounded runner chunks",
+    "persist reduced performance-blind venue rows and page manifests on a checkpoint branch",
+    "resume from the exact opaque next_cursor emitted by the prior chunk",
+    "run one finalizer only after terminal next_cursor exhaustion",
+    "chunks never authorize a scientific PASS or N claim"
+  ],
+  "authoritative_gate": "PASS_POLYMARKET_RECENSUS_MATERIALIZED"
+}

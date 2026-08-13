@@ -1,0 +1,85 @@
+name: W4-B Polymarket Recensus Chunk Collector v1.0.1
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: w4b-polymarket-recensus-chunked-v1-0-1
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen science and runtime erratum
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          fx=json.load(open('registry/w4b_forecastex_census_closeout_v1.json'))
+          e=json.load(open('registry/w4b_polymarket_recensus_runtime_erratum_v1_0_1.json'))
+          def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
+          assert fx['technical_gate_decision']=='PASS_FORECASTEX_CENSUS_MATERIALIZED'
+          assert e['status']=='FROZEN_AFTER_TRANSPORT_CANCELLATION_BEFORE_ANY_FINAL_RECENSUS_RESULT'
+          assert e['scientific_contract_changes'] is False and e['science_reopened'] is False
+          assert e['observed_transport_progress_only']['final_population_size_observed'] is False
+          assert e['observed_transport_progress_only']['semantic_or_canonical_result_observed'] is False
+          assert e['observed_transport_progress_only']['gate_result_observed'] is False
+          assert blob('registry/w4b_polymarket_recensus_protocol_v1.json')=='c8427c2f3083b5781018d20e3d02a1fe662c59f8'
+          assert blob('scripts/w4b_polymarket_recensus_v1.py')=='e92f9d107e12a624692c579fefdccec61c6c652d'
+          assert blob('registry/w4b_polymarket_recensus_runtime_erratum_v1_0_1.json')=='f4355b51b7cc53e3f744160f5df1ddca3ba92a85'
+          assert blob('scripts/w4b_polymarket_recensus_chunked_v1_0_1.py')=='f866a07a15220b5d8a447741e6ae1e576b53c99d'
+          print('PASS_W4B_POLYMARKET_CHUNKED_RUNTIME_FREEZE')
+          PY
+      - name: Restore exact cursor checkpoint if present
+        run: |
+          if git ls-remote --exit-code --heads origin w4b-polymarket-recensus-checkpoint-v1 >/dev/null 2>&1; then
+            git fetch origin w4b-polymarket-recensus-checkpoint-v1
+            git checkout origin/w4b-polymarket-recensus-checkpoint-v1 -- registry/w4b_pm_checkpoint_v1_0_1
+            git reset HEAD -- registry/w4b_pm_checkpoint_v1_0_1 || true
+          fi
+      - name: Collect next bounded segment of same keyset chain
+        run: python scripts/w4b_polymarket_recensus_chunked_v1_0_1.py collect --max-pages 1500
+      - name: Read runtime state
+        id: state
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          x=json.load(open('registry/w4b_pm_checkpoint_v1_0_1/state.json'))
+          print('terminal='+str(bool(x['terminal'])).lower())
+          print('page_no='+str(x['page_no']))
+          print('chunks='+str(len(x['chunks'])))
+          PY
+      - name: Persist checkpoint branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-polymarket-recensus-checkpoint-v1 main
+          git add registry/w4b_pm_checkpoint_v1_0_1
+          git commit -m "runtime: persist W4-B Polymarket cursor checkpoint page ${{ steps.state.outputs.page_no }}"
+          git push -f origin w4b-polymarket-recensus-checkpoint-v1
+      - name: Dispatch next collector chunk
+        if: steps.state.outputs.terminal != 'true'
+        run: |
+          curl --fail-with-body -L -X POST \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'Authorization: Bearer ${{ github.token }}' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            'https://api.github.com/repos/${{ github.repository }}/actions/workflows/w4b_polymarket_recensus_chunk_collector_v1_0_1.yml/dispatches' \
+            -d '{"ref":"main"}'
+      - name: Dispatch authoritative finalizer
+        if: steps.state.outputs.terminal == 'true'
+        run: |
+          curl --fail-with-body -L -X POST \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'Authorization: Bearer ${{ github.token }}' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            'https://api.github.com/repos/${{ github.repository }}/actions/workflows/w4b_polymarket_recensus_finalize_v1_0_1.yml/dispatches' \
+            -d '{"ref":"main"}'
