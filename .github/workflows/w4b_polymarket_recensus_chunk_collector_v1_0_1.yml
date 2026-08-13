@@ -42,8 +42,13 @@ jobs:
         run: |
           if git ls-remote --exit-code --heads origin w4b-polymarket-recensus-checkpoint-v1 >/dev/null 2>&1; then
             git fetch origin w4b-polymarket-recensus-checkpoint-v1
-            git checkout origin/w4b-polymarket-recensus-checkpoint-v1 -- registry/w4b_pm_checkpoint_v1_0_1
-            git reset HEAD -- registry/w4b_pm_checkpoint_v1_0_1 || true
+            if git cat-file -e origin/w4b-polymarket-recensus-checkpoint-v1:registry/w4b_pm_checkpoint_v1_0_1/state.json 2>/dev/null; then
+              git checkout origin/w4b-polymarket-recensus-checkpoint-v1 -- registry/w4b_pm_checkpoint_v1_0_1
+              git reset HEAD -- registry/w4b_pm_checkpoint_v1_0_1 || true
+              echo 'Restored validated checkpoint directory.'
+            else
+              echo 'Checkpoint branch exists without checkpoint payload; starting from empty cursor.'
+            fi
           fi
       - name: Collect next bounded segment of same keyset chain
         run: python scripts/w4b_polymarket_recensus_chunked_v1_0_1.py collect --max-pages 1500
