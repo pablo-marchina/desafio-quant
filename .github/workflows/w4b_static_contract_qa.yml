@@ -1,0 +1,58 @@
+name: W4-B Pre-Execution Static Contract QA
+on:
+  push:
+    paths:
+      - '.github/workflows/w4b_static_contract_qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  static-qa:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile every W4-B executor without executing data access
+        run: |
+          python -m py_compile \
+            scripts/w4b_kalshi_full_population_history_v1_0_3.py \
+            scripts/w4b_forecastex_census_v1.py \
+            scripts/w4b_forecastex_census_v1_0_1.py \
+            scripts/w4b_polymarket_recensus_v1.py \
+            scripts/w4b_cross_venue_dedup_v1.py \
+            scripts/w4b_cross_venue_dedup_v1_0_1.py \
+            scripts/w4b_official_event_truth_queue_v1.py \
+            scripts/w4b_official_event_truth_verify_v1.py \
+            scripts/w4b_attrition_table_v1.py
+      - name: Validate frozen protocol and firewall topology
+        run: |
+          python - <<'PY'
+          import json,os
+          sem=json.load(open('registry/w4b_semantic_canonicalization_protocol_v1.json'))
+          fx=json.load(open('registry/w4b_forecastex_census_protocol_v1.json'))
+          fxa=json.load(open('registry/w4b_forecastex_history_sequence_amendment_v1_0_1.json'))
+          pm=json.load(open('registry/w4b_polymarket_recensus_protocol_v1.json'))
+          xv=json.load(open('registry/w4b_cross_venue_dedup_protocol_v1.json'))
+          ot=json.load(open('registry/w4b_official_event_truth_protocol_v1.json'))
+          at=json.load(open('registry/w4b_attrition_table_protocol_v1.json'))
+          assert sem['performance_blind'] is True
+          assert fxa['scientific_contract_changes'] is False
+          assert fxa['forecastex_census_results_observed_before_amendment'] is False
+          assert pm['source_contract']['clob_price_history_read_in_this_stage'] is False
+          assert xv['governance']['official_event_truth_allowed_at_this_stage'] is False
+          assert ot['firewall']['linked_asset_realized_return_allowed'] is False
+          assert at['claim_limits']['n_final_backtestable_authorized'] is False
+          # Later-stage outputs must not already exist on main before their sequence prerequisites.
+          forbidden_now=[
+            'registry/w4b_forecastex_census_summary_v1.json',
+            'registry/w4b_polymarket_recensus_summary_v1.json',
+            'registry/w4b_cross_venue_dedup_summary_v1.json',
+            'registry/w4b_official_event_truth_summary_v1.json',
+            'registry/w4b_attrition_summary_v1.json'
+          ]
+          present=[p for p in forbidden_now if os.path.exists(p)]
+          assert not present, present
+          print('PASS_W4B_PRE_EXECUTION_STATIC_CONTRACT_QA')
+          PY
