@@ -1,7 +1,7 @@
 # ARGOS — Roadmap de extensão pós-freeze
 
-**Estado:** `W2_COMPLETE_IAS_SMAA_FROZEN_W3_FINAL_GATE_FROZEN_PENDING_REAL_COMBINATION`  
-**Plano machine-readable:** `PFEP-v3.0`  
+**Estado atual:** `W4_MAXIMAL_BACKTEST_RESEARCH_ACTIVE_PRE_OUTCOME_FREEZE`  
+**Plano machine-readable:** `PFEP-v4.0`  
 **Science reopened:** `false`  
 **Autoridade da submissão preservada:** `FST-v1.0 / SF-v3.0 / ART-029 / ART-030`
 
@@ -9,147 +9,104 @@
 
 A extensão não altera a submissão confirmatória. H1 continua `SUPPORTED_IN_TESTED_SAMPLE`; H2 continua `FAIL_UNDER_FROZEN_EXP07I`; H3/H4/H5 permanecem bloqueadas; `M2` continua champion probabilístico e `C0_NO_TRADE` continua champion econômico histórico.
 
-O frozen submission bundle permanece `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`. Nenhuma etapa abaixo pode reinterpretar H2, promover alpha pós-hoc ou substituir a decisão econômica congelada.
+A W4 é um novo programa pós-freeze de pesquisa de capacidade, dados e backtest. Ela não reinterpreta H2 e não autoriza resgate pós-hoc.
 
-## 2. Progresso consolidado
+## 2. Histórico consolidado
 
-| Frente | Estado | Resultado principal | Próxima autoridade permitida |
-|---|---|---|---|
-| W2-A funded accounting | **COMPLETO** | `NO_PROMOTION_R1` | Nenhuma promoção; preservar resultado |
-| W2-C discovery + semantic/adjudication | **COMPLETO** | 312/335 aceitos; 260 eventos em 3 famílias com n>=50 | Já consumido pelo PIT-v2.1 |
-| W2-C PIT-v2.1 + F1–F9 | **COMPLETO / FROZEN** | 3/3 famílias testadas = `NO_GO_CURRENT_PROTOCOL` | Somente combinação final congelada |
-| W2-B IAS evidence + SMAA | **COMPLETO / FROZEN** | `NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER` | Somente combinação final congelada |
-| W3 IAS × PIT gate | **FROZEN PRÉ-EXECUÇÃO** | Resultado real ainda não executado | Executar engine congelado exatamente uma vez |
-| W3 experimento | **NÃO AUTORIZADO** | Nenhum protocolo W3 existe | Só pode ser desenhado se o gate oficial retornar GO |
+| Frente | Estado | Resultado principal |
+|---|---|---|
+| W2-A funded accounting | **COMPLETO** | `NO_PROMOTION_R1` |
+| W2-C discovery + semantic/adjudication | **COMPLETO** | 312/335 aceitos; 260 eventos em 3 famílias PIT-v2.1 |
+| W2-C PIT-v2.1 + F1–F9 | **COMPLETO / FROZEN** | 3/3 famílias testadas = `NO_GO_CURRENT_PROTOCOL` |
+| W2-B IAS evidence + SMAA | **COMPLETO / FROZEN** | `NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER` |
+| W3 IAS × PIT gate | **FROZEN PRÉ-COMBINAÇÃO REAL** | Estado preservado; não implica autorização W3 |
+| W4 expansion research | **ATIVO / PERFORMANCE-BLIND** | Maximização de N, depth e breadth antes de outcomes |
 
-## 3. W2-A — funded portfolio accounting
+## 3. W2/W3 preservados
 
-A restrição histórica de Gate 0 foi resolvida por recuperação provenance-preserving do ledger original ART-025/DAT-007; não houve reconstrução com vendor novo. O contrato congelado foi então executado sobre o conjunto R1 exato.
+W2-A concluiu funded accounting e não promoveu R1. W2-C concluiu discovery/semantic/PIT-v2.1 nas famílias elegíveis. W2-B concluiu IAS/ECG/SMAA sem usar performance econômica. O gate W3 continua frozen antes da combinação real e permanece registrado como trilha separada.
 
-Resultado:
+Nenhum desses estados pode ser reescrito pela W4.
 
-- Gate 0: `PASS_GATE0_RECOVERED_ORIGINAL_ART025_AND_DAT007`;
-- terminal NAV: `1.0019679107011892`;
-- total return: `+0.196791%`;
-- matched-SPY total return: `+2.649834%`;
-- active terminal wealth: `-0.02453043084752604`;
-- max drawdown: `-6.384130%`;
-- HAC Sharpe lag 10: `0.0751533`;
-- decisão: `NO_PROMOTION_R1`.
+## 4. W4 — mudança de objetivo
 
-Interpretação: a contabilidade financiada foi concluída, mas não resgata a hipótese econômica. `C0_NO_TRADE` continua champion histórico e H2 continua FAIL.
+O objetivo anterior de simplesmente ampliar o backtest é substituído por:
 
-Registro: `../registry/w2a_funded_portfolio_run_v1.json`.
+> **maximal defensible information under PIT and independence constraints**.
 
-## 4. W2-C — discovery, semantic validation e PIT-v2.1
+A W4 maximiza simultaneamente:
 
-A cadeia válida é:
+- `N` de eventos independentes;
+- profundidade temporal pré-evento;
+- breadth de venues/contratos/ativos/horizontes/data layers;
+- profundidade de validação.
 
-1. discovery performance-blind materializado;
-2. semantic v1 invalidado por query-label leakage;
-3. PIT-A v1 invalidado upstream e proibido;
-4. semantic v2 congelado;
-5. adjudication v1.1 congelada;
-6. 312/335 candidatos aceitos;
-7. três famílias alcançaram o piso n>=50 e entraram no PIT-v2.1: `EARNINGS_EPS`, `FDA_FINAL_PDUFA_DECISION`, `MACRO_STATISTICAL_RELEASE`;
-8. PIT-v2.1 e F1–F9 foram executados e congelados.
+`N>=300`, `N>=500` e `N>=1000` são milestones, não stop rules.
 
-### Resultado F1–F9
+A coleta para somente por saturation gate: ganho marginal imaterial, falha de PIT/provenance/reprodutibilidade, ausência de justificativa econômica ou inviabilidade sob custo/tempo.
 
-As três famílias exatas testadas terminaram `NO_GO_CURRENT_PROTOCOL`.
+## 5. Regra de independência
 
-**EARNINGS_EPS**
-- FAIL: F1, F2, F3;
-- INDETERMINATE: F4, F7;
-- PASS: F5, F6, F8, F9.
+A unidade inferencial padrão é `canonical_event_id`.
 
-**FDA_FINAL_PDUFA_DECISION**
-- FAIL: F1, F2, F3;
-- INDETERMINATE: F4, F5, F6, F7;
-- PASS: F8, F9.
+Múltiplos contracts, strikes, venues, ativos, horizontes, quotes, trades e ticks podem aumentar informação por evento, mas não aumentam automaticamente N.
 
-**MACRO_STATISTICAL_RELEASE**
-- FAIL: F1, F2, F3;
-- INDETERMINATE: F4, F7;
-- PASS: F5, F6, F8, F9.
+## 6. Estado operacional W4
 
-As sete famílias restantes não recebem `FAIL` nem `PASS` por inferência. Seu estado correto para o gate final é `FEASIBILITY_NOT_ESTABLISHED` porque não existe F1–F9 PIT-v2.1 da família exata.
+A pesquisa `W4-BER-v1.0` já está preregistrada e performance-blind.
 
-Registro congelado: `../registry/w2c_pit_v2_1_family_gates.json`, blob `1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa`.
+O último workflow materializado na `main` é `W4 Kalshi Series-First Census`, commit `7fdb8cd`. O job falhou durante o census com HTTP 400 antes de persistir a evidência.
 
-## 5. W2-B — IAS + ECG + SMAA
+O reparo permitido é somente de coleta/API. O frozen family dictionary e o firewall contra linked-asset outcomes permanecem imutáveis.
 
-O IAS foi mantido estruturalmente separado de feasibility e de performance ARGOS. O protocolo congelado usa `PAC / LSO / SIB / TAW / PSI`, ECG A–D e SMAA com 200.000 draws, seed `20260812` e pesos `Dirichlet(1,1,1,1,1)`.
+## 7. Ordem de execução W4
 
-A matriz real de 50 células foi validada e congelada antes do scoring. O scorer real foi executado uma única vez sem ler F1–F9.
+1. **W4-R — Maximal Backtest Research**: mapear todas as fontes/venues/data layers candidatas e contribuição marginal potencial.
+2. **W4-A — Kalshi repair**: corrigir request/routing, validar paginação, live/historical, trades e candles, e materializar census determinístico.
+3. **W4-B — Exhaustive multi-venue census**: executar census por `venue × family × year`.
+4. **W4-C — Attrition + Saturation Audit**: medir `raw -> semantic -> independent -> PIT -> asset-mapped -> final-backtestable`.
+5. **W4-D — Canonical Data Lake**: materializar estrutura event-centric com provenance e hashes.
+6. **W4-E — Maximal Feature Materialization**: probability dynamics, liquidity, ladder/distribution, cross-venue, mappings multi-asset e demais features pré-evento justificadas.
+7. **W4-F — Outcome-blind adequacy/simulation**: missingness, redundancy, effective N, complexity, regularização, sizing, horizons e multiplicity usando apenas informação pré-outcome/sintética.
+8. **W4-G — Full protocol freeze**: congelar população, features, models, execution, custos, portfolio, inference, falsification e promotion/stop rules.
+9. **W4-H — Single controlled outcome reveal**: abrir outcomes uma única vez e gerar bundle imutável.
+10. **W4-I — Backtest battery**: BT-A, BT-B, BT-C, event-response surface e microstructure study quando viável, todos com funded accounting.
+11. **W4-J — Maximal validation battery**: walk-forward/OOS, clustered/bootstrap inference, multiplicity, stability, cost/liquidity stress e placebos/falsification.
+12. **W4-K — Scientific truth freeze**: congelar o resultado positivo, negativo ou data-limited.
 
-### Resultado comparativo
+## 8. Backtests planejados
 
-`NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER`.
+### BT-A — Expanded Discrete Replication
+Replica a regra histórica no universo expandido.
 
-- líder numérico: `MA_PRE_ANNOUNCEMENT_OR_RUMOR`;
-- rank-1 acceptability: `45.704%`;
-- runner-up: `FDA_FINAL_PDUFA_DECISION`;
-- rank-1 acceptability: `40.4465%`;
-- margem: `5.2575 p.p.`.
+### BT-B — Continuous All-Event Portfolio
+Todo evento PIT válido pode contribuir conforme regra contínua congelada, evitando desperdício artificial de eventos por threshold.
 
-A margem supera 5 p.p., mas o líder não alcança o gate absoluto preregistrado de rank-1 `>=50%`. Portanto a claim “esta é a família de maior assimetria” é proibida.
+### BT-C — Distributional Multi-Venue
+Usa ladder/distribution, temporal dynamics e cross-venue information com regularização e validação preregistradas.
 
-Exemplos de famílias `robust_high` não equivalem a viabilidade operacional. FDA/PDUFA, por exemplo, possui IAS estrutural alto, mas falha F1/F2/F3 no PIT-v2.1.
+### Event-response surface
+Múltiplos ativos e horizontes são respostas correlacionadas do mesmo evento; aumentam informação, não N independente.
 
-Resultado congelado: `../registry/w2b_ias_smaa_results_v1.json`, blob `360521ba7a2973ea1685a50c55ad5636abc631ba`.
+### Microstructure event study
+Somente onde quotes/trades/orderbook/options possuem histórico PIT e provenance suficientes.
 
-## 6. W3 — gate final IAS × PIT
+## 9. Proibições até o outcome reveal
 
-O último contrato de decisão já foi definido e congelado **antes da combinação real**.
+- não ler linked-asset realized returns para escolher fonte/família/feature;
+- não usar PnL ARGOS para priorizar expansão;
+- não mudar o frozen family dictionary para inflar N;
+- não contar contracts/assets/horizons/ticks como eventos independentes;
+- não selecionar modelos/features por performance antes do freeze.
 
-Objetos congelados:
+## 10. Próxima ação
 
-- contrato: `../registry/w3_go_no_go_contract_v1_0.json`;
-- engine: `../scripts/w3_go_no_go_v1.py`;
-- synthetic validator: `../scripts/w3_go_no_go_synthetic_v1.py`;
-- manifest: `../registry/w3_go_no_go_freeze_v1_0.json`;
-- bundle SHA-256: `c4db745a4c38a80743ec29779f638f5ebf79ff8f7f0df0a30c9ab682ae34aac2`;
-- freeze commit: `9742079892811413e56f4f0fb3486ab33fd4756b`.
+1. corrigir o request/routing Kalshi;
+2. reexecutar e materializar o series-first census;
+3. construir registry exaustivo de venues/fontes;
+4. fechar census multi-venue + attrition table;
+5. aplicar Saturation Gate;
+6. somente então avançar para data lake, features, adequacy e protocolo outcome-bearing.
 
-Inputs também estão travados:
-
-- IAS/SMAA blob `360521ba7a2973ea1685a50c55ad5636abc631ba`;
-- PIT F1–F9 blob `1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa`.
-
-Regra do gate: uma família só pode virar `W3_GO_CANDIDATE` se simultaneamente tiver IAS `robust_high` e **F1–F9 todos PASS para a mesma família exata**. `FEASIBILITY_NOT_ESTABLISHED` nunca é imputado como PASS.
-
-### O que já podemos inferir, sem chamar de resultado oficial
-
-Pelos inputs congelados, a consequência lógica é `NO_GO_NO_W3_PROTOCOL_CANDIDATE`: as três famílias PIT testadas falham F1/F2/F3 e as outras sete não possuem feasibility estabelecida.
-
-Essa conclusão permanece **não autoritativa até o engine congelado executar**. Não mudaremos o contrato para produzir uma conclusão diferente.
-
-## 7. Próxima transição permitida
-
-A próxima ação é única e objetiva:
-
-1. executar `W3-GATE-v1.0` sobre os dois blobs congelados;
-2. persistir o resultado em branch isolada;
-3. promover o mesmo blob para `main`, sem regeneração;
-4. congelar o resultado e validar byte identity;
-5. rodar repository hygiene;
-6. atualizar `PFEP` com a decisão oficial.
-
-Se o resultado for `NO_GO_NO_W3_PROTOCOL_CANDIDATE`, a extensão científica para aqui e o NO-GO deve ser preservado.
-
-Se — e somente se — o resultado for `GO_DRAFT_W3_PROTOCOL`, isso autoriza **desenhar** um W3. O desenho ainda precisará de hipótese/estimand, população, cutoffs, prospective power/precision ou simulation adequacy, features/modelos, benchmark, custos, inferência, multiplicidade, stop rules e promotion rules, todos congelados antes de qualquer outcome.
-
-## 8. Proibições vigentes
-
-- não reabrir H2;
-- não promover W2-A por métricas secundárias;
-- não usar P&L, Brier, log loss ou linked-asset realized returns para escolher família;
-- não modificar taxonomy/anchors/ECG/SMAA após observar ranking;
-- não baixar thresholds F1–F9;
-- não imputar feasibility de família adjacente;
-- não transformar `FEASIBILITY_NOT_ESTABLISHED` em PASS;
-- não alterar o engine W3 após observar sua saída;
-- não executar W3 experimental sem um freeze próprio posterior.
-
-**Fonte de estado atual:** `../registry/post_freeze_extension_plan.json` (`PFEP-v3.0`).
+**Plano detalhado:** `45_w4_maximal_backtest_research_plan.md`.  
+**Fonte machine-readable:** `../registry/w4_maximal_backtest_research_plan_v1.json`.

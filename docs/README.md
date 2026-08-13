@@ -26,74 +26,62 @@ FST-v1.0/SF-v3.0 continuam autoritativos. H2 permanece `FAIL_UNDER_FROZEN_EXP07I
 
 ## Extensão pós-freeze — estado atual
 
-Estado operacional: `W3_FINAL_GO_NO_GO_REAL_COMBINATION_PENDING`.
+Estado operacional: `W4_R_MAXIMAL_BACKTEST_RESEARCH_AND_CAPACITY_CENSUS`.
 
-Plano autoritativo da extensão: `../registry/post_freeze_extension_plan.json` (`PFEP-v3.0`).
+Plano autoritativo da extensão: `../registry/post_freeze_extension_plan.json` (`PFEP-v4.0`).
 
-- `35_post_freeze_extension_roadmap.md` — roadmap consolidado atualizado até o freeze do gate final W3.
+Plano W4 machine-readable: `../registry/w4_maximal_backtest_research_plan_v1.json` (`W4-MBRP-v1.0`).
+
+### Documentos principais
+
+- `35_post_freeze_extension_roadmap.md` — roadmap consolidado W2/W3 e transição para W4.
 - `36_w2a_portfolio_backtest_methodology_research.md` — pesquisa metodológica W2-A.
 - `37_w2b_ias_methodology_research.md` — pesquisa metodológica IAS.
 - `38_w2a_portfolio_accounting_contract_draft.md` — contrato matemático/executável W2-A.
 - `39_w2b_ias_feasibility_contract_draft.md` — anchors, ECG, SMAA, feasibility e GO/NO-GO.
 - `40_w2_protocol_adversarial_review.md` — ataques sintéticos 38/38.
 - `41_w2_protocol_byte_freeze.md` — byte-freeze original dos contracts W2.
-- `42_w2a_gate0_reconciliation.md` — registro histórico do primeiro Gate 0; posteriormente o ledger original ART-025/DAT-007 foi recuperado e W2-A foi concluído.
-- `43_w2c_performance_blind_discovery.md` — discovery W2-C inicial materializado; etapas posteriores estão nos registries machine-readable.
+- `42_w2a_gate0_reconciliation.md` — registro histórico do Gate 0 W2-A.
+- `43_w2c_performance_blind_discovery.md` — discovery W2-C inicial materializado.
+- `44_w4_quantitative_backtest_expansion_research.md` — pesquisa quantitativa inicial da expansão W4.
+- `45_w4_maximal_backtest_research_plan.md` — plano atual para maximizar N independente, temporal depth, breadth informacional e validação antes de outcomes.
 
 ## Estado das frentes
 
 ### W2-A — COMPLETO
 
-O ledger original ART-025/DAT-007 foi recuperado com provenance; Gate 0 passou e o funded-accounting foi executado.
-
-Resultado: `NO_PROMOTION_R1`. Terminal NAV `1.0019679107011892`, active terminal wealth `-0.02453043084752604`, portfolio MDD `-0.06384129727475374`. Não altera H2 nem `C0_NO_TRADE`.
-
-Autoridade operacional: `../registry/w2a_funded_portfolio_run_v1.json`.
+Funded accounting executado sobre o R1 congelado. Resultado: `NO_PROMOTION_R1`; `C0_NO_TRADE` permanece champion econômico histórico.
 
 ### W2-C — COMPLETO ATÉ F1–F9
 
-A sequência válida preserva as invalidações semantic v1/PIT-A v1, depois semantic v2 + adjudication v1.1. Foram aceitos 312/335 candidatos; 260 eventos em três famílias entraram em PIT-v2.1.
-
-F1–F9 foi executado e congelado para:
-
-- `EARNINGS_EPS` → `NO_GO_CURRENT_PROTOCOL`;
-- `FDA_FINAL_PDUFA_DECISION` → `NO_GO_CURRENT_PROTOCOL`;
-- `MACRO_STATISTICAL_RELEASE` → `NO_GO_CURRENT_PROTOCOL`.
-
-Todas falham F1/F2/F3. As demais sete famílias têm `FEASIBILITY_NOT_ESTABLISHED`, não PASS/FAIL imputado.
-
-Autoridade: `../registry/w2c_pit_v2_1_family_gates.json`.
+312/335 candidatos aceitos; 260 eventos em três famílias entraram em PIT-v2.1. `EARNINGS_EPS`, `FDA_FINAL_PDUFA_DECISION` e `MACRO_STATISTICAL_RELEASE` terminaram `NO_GO_CURRENT_PROTOCOL`. Famílias não testadas permanecem `FEASIBILITY_NOT_ESTABLISHED`.
 
 ### W2-B / IAS — COMPLETO E FROZEN
 
-Matriz de 50 células, ECG e SMAA foram congelados antes do scoring real. O run real usou 200.000 draws, seed `20260812`, sem ler F1–F9 ou ARGOS performance.
+200.000 SMAA draws, seed `20260812`, sem performance firewall violation. Resultado: `NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER`.
 
-Resultado: `NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER`.
+### W3 final gate — FROZEN PRÉ-COMBINAÇÃO REAL
 
-- `MA_PRE_ANNOUNCEMENT_OR_RUMOR`: rank-1 `45.704%`;
-- `FDA_FINAL_PDUFA_DECISION`: rank-1 `40.4465%`;
-- margem `5.2575 p.p.`;
-- claim bloqueada porque o líder não alcançou o gate absoluto de `50%`.
+O contrato IAS × PIT, engine e synthetic suite permanecem congelados. Esse estado é preservado separadamente e W4 não implica autorização W3.
 
-Autoridade: `../registry/w2b_ias_smaa_results_v1.json`.
+### W4 — ATIVA / PERFORMANCE-BLIND
 
-### W3 final gate — FROZEN, NÃO EXECUTADO
+Objetivo: construir o maior universo histórico defensável PIT possível sem pseudo-replicação.
 
-O contrato IAS × PIT, engine e synthetic suite já estão congelados antes da combinação real:
+- unidade inferencial: `canonical_event_id`;
+- `N>=300/500/1000`: milestones, não stop rules;
+- stop condition: saturation gate;
+- último blocker: Kalshi series-first census HTTP 400 antes da materialização;
+- próximo passo: corrigir request/routing sem alterar family dictionary nem abrir outcomes.
 
-- `../registry/w3_go_no_go_contract_v1_0.json`;
-- `../scripts/w3_go_no_go_v1.py`;
-- `../scripts/w3_go_no_go_synthetic_v1.py`;
-- `../registry/w3_go_no_go_freeze_v1_0.json`.
+Sequência W4:
 
-Bundle: `c4db745a4c38a80743ec29779f638f5ebf79ff8f7f0df0a30c9ab682ae34aac2`.
+`W4-R -> W4-A -> W4-B -> W4-C -> W4-D -> W4-E -> W4-F -> W4-G -> W4-H -> W4-I -> W4-J -> W4-K`
 
 ## Próxima ação válida
 
-Executar **somente** o engine W3 congelado sobre os blobs já congelados de IAS e F1–F9, persistir sua saída em branch isolada, promover o mesmo blob a `main`, congelar o resultado e rodar hygiene.
-
-A inferência pré-execução aponta para `NO_GO_NO_W3_PROTOCOL_CANDIDATE`, mas isso ainda não é o resultado oficial. Não alterar thresholds, taxonomy, IAS, PIT ou engine para tentar mudar a conclusão.
+Corrigir o census histórico Kalshi, materializar o resultado de capacidade, construir o registry exaustivo de venues/fontes e fechar o multi-venue attrition census antes de qualquer protocolo outcome-bearing.
 
 ## Histórico
 
-`09_project_history.md` e `11_...` a `43_...` preservam a sequência científica. Não deletar nem atualizar retroativamente protocolos pré-resultado; documentos históricos podem descrever um estado que posteriormente avançou, enquanto `35_post_freeze_extension_roadmap.md` e `PFEP-v3.0` descrevem o estado atual.
+`09_project_history.md` e os documentos numerados preservam a sequência científica. Não deletar nem atualizar retroativamente protocolos pré-resultado. Documentos históricos podem descrever estados posteriormente superados; o estado operacional atual está em `PFEP-v4.0`, `35_post_freeze_extension_roadmap.md` e `45_w4_maximal_backtest_research_plan.md`.
