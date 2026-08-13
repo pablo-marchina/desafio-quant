@@ -1,0 +1,49 @@
+{
+  "artifact": "W4B_OFFICIAL_MACRO_TRUTH_AUTOMATION_PROTOCOL",
+  "version": "W4B-OET-MACRO-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_BEFORE_OFFICIAL_TRUTH_QUEUE_OR_DECISIONS",
+  "parent_truth_protocol": "W4B-OET-v1.0",
+  "purpose": "Automate only high-confidence primary-source date/identity verification for recurring U.S. macro releases. Any non-unique, unavailable or contradictory match remains UNRESOLVED_OFFICIAL_TRUTH.",
+  "eligible_subjects": {
+    "US_CPI": {"family":"CPI_INFLATION_RELEASE","authority":"BLS","source":"BLS CPI archived release/schedule"},
+    "US_PAYROLLS": {"family":"PAYROLLS_JOBS_RELEASE","authority":"BLS","source":"BLS Employment Situation archived release/schedule"},
+    "US_UNEMPLOYMENT_RATE": {"family":"UNEMPLOYMENT_RELEASE","authority":"BLS","source":"BLS Employment Situation archived release/schedule"},
+    "US_INITIAL_JOBLESS_CLAIMS": {"family":"UNEMPLOYMENT_RELEASE","authority":"DOL_ETA","source":"U.S. DOL ETA Unemployment Insurance Weekly Claims"},
+    "US_GDP": {"family":"GDP_RELEASE","authority":"BEA","source":"BEA GDP news release/schedule"},
+    "US_PCE": {"family":"PCE_RELEASE","authority":"BEA","source":"BEA Personal Income and Outlays news release/schedule"},
+    "US_RETAIL_SALES": {"family":"RETAIL_SALES_RELEASE","authority":"CENSUS","source":"Census Advance Monthly Sales for Retail and Food Services"},
+    "US_FOMC": {"family":"FOMC_DECISION","authority":"FEDERAL_RESERVE","source":"Federal Reserve FOMC statement/calendar"}
+  },
+  "matching": {
+    "candidate_key": "resolved_family + normalized_subject_key",
+    "official_occurrence_date": "Date explicitly published by the primary authority for the release/decision, never inferred from prediction-market close or economic value.",
+    "maximum_absolute_date_distance_days": 3,
+    "accept_rule": "Exactly one official occurrence for the same eligible subject lies within +/-3 calendar days of the pretruth event reference date AND the authoritative source can be captured/referenced under W4B-OET-v1.0.",
+    "tie_rule": "Two or more candidate official occurrences in the window => UNRESOLVED_OFFICIAL_TRUTH.",
+    "no_match_rule": "Zero official occurrences in the window => UNRESOLVED_OFFICIAL_TRUTH.",
+    "date_delta_preserved": true,
+    "official_event_id": "Use frozen W4OT1 formula with the official occurrence date and the same eligible subject key."
+  },
+  "evidence": {
+    "persist": ["source_authority","source_url","retrieved_at_utc","source_body_sha256_or_document_hash_when_retrievable","structured release-date reference","pretruth_date","official_date","absolute_date_delta_days"],
+    "review_mode": "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH",
+    "release_values_read_or_persisted": false,
+    "prediction_market_outcomes_read": false,
+    "linked_asset_realized_returns_read": false
+  },
+  "scope_limits": {
+    "nonmacro_families_automatically_verified": false,
+    "fuzzy_entity_matching": false,
+    "nearest_date_without_unique_primary_source_candidate": false,
+    "fallback_to_secondary_media": false,
+    "selection_by_event_count_or_performance": false
+  },
+  "governance": {
+    "automation_may_only_fill_blank_decision_rows": true,
+    "existing_explicit_decisions_may_not_be_overwritten": true,
+    "all_automated_rows_must_pass_hardened_truth_verifier": true,
+    "protocol_changes_after_truth_counts_forbidden": true,
+    "unresolved_is_preferred_to_guessing": true
+  }
+}
