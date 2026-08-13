@@ -1,0 +1,74 @@
+{
+  "accepted_strict_event_rows": 668,
+  "accepted_unique_canonical_events": 391,
+  "ambiguous_rows": 0,
+  "api_error_count": 0,
+  "api_errors": [],
+  "artifact": "W4B_KALSHI_SEMANTIC_SUMMARY",
+  "boundary_candidate_series": 368,
+  "boundary_noncandidate_series_still_retrieved": 120,
+  "canonical_alias_rows_collapsed": 277,
+  "completeness_amendment_version": "W4B-SC-A1-v1.1",
+  "date_utc": "2026-08-13T05:20:57.613460+00:00",
+  "event_rows_examined": 1690,
+  "family_counts": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "accepted_event_rows": 2,
+      "canonical_unique_events": 2
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "accepted_event_rows": 28,
+      "canonical_unique_events": 28
+    },
+    "CPI_INFLATION_RELEASE": {
+      "accepted_event_rows": 347,
+      "canonical_unique_events": 113
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "accepted_event_rows": 12,
+      "canonical_unique_events": 12
+    },
+    "FOMC_DECISION": {
+      "accepted_event_rows": 29,
+      "canonical_unique_events": 24
+    },
+    "GDP_RELEASE": {
+      "accepted_event_rows": 72,
+      "canonical_unique_events": 36
+    },
+    "MA_PENDING_COMPLETION": {
+      "accepted_event_rows": 1,
+      "canonical_unique_events": 1
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "accepted_event_rows": 6,
+      "canonical_unique_events": 6
+    },
+    "PAYROLLS_JOBS_RELEASE": {
+      "accepted_event_rows": 5,
+      "canonical_unique_events": 4
+    },
+    "PCE_RELEASE": {
+      "accepted_event_rows": 23,
+      "canonical_unique_events": 23
+    },
+    "RETAIL_SALES_RELEASE": {
+      "accepted_event_rows": 14,
+      "canonical_unique_events": 13
+    },
+    "UNEMPLOYMENT_RELEASE": {
+      "accepted_event_rows": 129,
+      "canonical_unique_events": 129
+    }
+  },
+  "gate_decision": "PASS_SEMANTIC_MATERIALIZATION",
+  "interpretation": "Strict performance-blind semantic/canonical materialization. Counts are not PIT-history-certified, cross-venue-deduplicated, official-truth-certified, asset-mapped or N_final_backtestable.",
+  "linked_asset_realized_returns_read": false,
+  "performance_blind": true,
+  "protocol_version": "W4B-SC-v1.0",
+  "raw_classified_unique_series": 488,
+  "retrieved_candidate_series": 488,
+  "route_truncation_count": 0,
+  "route_truncations": [],
+  "version": "W4B-KSS-v1.1"
+}
