@@ -1,6 +1,6 @@
 # ARGOS — Desafio Itaú Asset Quant AI 2026
 
-Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0**. A fase histórica autorizada pelo freeze continua `FINAL_REPORT_AUTHORING_AND_QA`; a extensão pós-freeze é separada e não modifica a verdade científica.
+Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória da submissão permanece congelada em **FST-v1.0 / SF-v3.0 / ART-029 / ART-030**. A extensão pós-freeze é separada e não modifica a verdade científica.
 
 > **Anonimato:** este repositório identifica seus autores pelo GitHub e não deve ser citado/linkado no PDF final.
 
@@ -13,99 +13,109 @@ Repositório operacional e reprodutível do **ARGOS**. A ciência confirmatória
 - H5: `BLOCKED_BY_H4`
 - champion probabilístico: `M2`
 - champion econômico: `C0_NO_TRADE`
-- official EPS independente: 116/117; 116/116 validados concordantes; residual `BLSH|2025-09-17`
 - frozen bundle: `c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885`
 
-Autoridade primária: `registry/final_scientific_truth.json`, seguida por `registry/final_submission_answers_sf_v3.json`, claims/numbers/manifest e `registry/final_submission_freeze_validation.json`.
-
-O resultado congelado continua negativo para a incrementalidade H2. Nenhuma extensão pode transformar esse resultado em alpha pós-hoc.
-
-## PDF baseline preservado
-
-`registry/final_report_pdf_qa.json` registra `PASS_READY_FOR_SUBMISSION`. O PDF QA-approved possui SHA-256 `5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561`, 5 páginas, 16:9 e anonimato validado. Qualquer PDF futuro exige novo hash e QA completo.
-
-## W2 freeze
-
-Os contratos W2-A e W2-B/IAS estão congelados byte a byte em `W2PF-v1.0`:
-
-- W2-A blob: `639f900eb876d6e46ecbeb10c1b3b3e6c3621a28`
-- W2-B blob: `cb9a9638f236c6c61c97f86805de9bf666209b21`
-- freeze bundle: `e7b48d08f657aea7552f2a692f19c1b941ebd678aa03d8ff28b961c0b317777b`
-- synthetic validation pré-freeze: 38/38 PASS.
-
-Manifesto: `registry/w2_protocol_freeze_manifest.json`.
+O resultado H2 continua negativo. Nenhuma extensão abaixo pode ser usada como resgate pós-hoc.
 
 ## Extensão pós-freeze — estado atual
 
-`registry/post_freeze_extension_plan.json`: `PFEP-v1.5` / `W2A_GATE0_BLOCKED_W2C_DISCOVERY_MATERIALIZED`.
+`registry/post_freeze_extension_plan.json`: **`PFEP-v3.0`** / `W2_COMPLETE_IAS_SMAA_FROZEN_W3_FINAL_GATE_FROZEN_PENDING_REAL_COMBINATION`.
 
-### W2-A — Gate 0
+### W2-A — funded portfolio accounting
 
-Gate 0 foi executado e terminou em:
+Concluído sobre o R1 congelado após recuperação provenance-preserving do ledger original ART-025/DAT-007.
 
-`FAIL_GATE0_MISSING_AUTHORITATIVE_ART025_TRADE_LEVEL_LEDGER`.
+- terminal NAV: `1.0019679107011892`;
+- total return: `+0.196791%`;
+- matched-SPY total return: `+2.649834%`;
+- active terminal wealth: `-0.02453043084752604`;
+- max drawdown: `-6.384130%`;
+- HAC Sharpe lag 10: `0.0751533`;
+- decisão: `NO_PROMOTION_R1`.
 
-O workbook ART-025 autoritativo contém apenas resultados agregados/protocolo/auditoria e não preserva o ledger row-level exigido pelo contrato W2-A. ART-023 existe, mas usa semântica EXP-06 anterior e não pode ser relabelado como ART-025. Não houve reconstrução com vendor novo.
+`C0_NO_TRADE` continua champion econômico histórico.
 
-Consequência: **NAV financiada, Sharpe, Sortino, portfolio MDD, turnover e exposure path não foram calculados**. W2-A só pode retomar se a materialização row-level original de ART-025 for recuperada com provenance.
+### W2-C — discovery → semantic/adjudication → PIT-v2.1 → F1–F9
 
-- machine-readable: `registry/w2a_gate0_reconciliation.json`
-- humano: `docs/42_w2a_gate0_reconciliation.md`
+A cadeia válida está concluída. Semantic v1 e PIT-A v1 foram invalidados e preservados como histórico; semantic v2/adjudication v1.1 foram congelados. Foram aceitos 312/335 candidatos e 260 eventos nas três famílias com piso n>=50 entraram no PIT-v2.1.
 
-### W2-C — performance-blind discovery
+As três famílias exatas testadas terminaram `NO_GO_CURRENT_PROTOCOL`:
 
-O discovery foi materializado sob `W2C-DISC-v2.0` / `W2C-DF-v2.0` depois de duas tentativas pré-resultado que falharam por exigir exaustão do archive. O v2.0 foi congelado antes de abrir resultados de família e usa discovery bounded de **lower bounds**, com telemetria explícita de truncamento.
+- `EARNINGS_EPS`: FAIL F1/F2/F3;
+- `FDA_FINAL_PDUFA_DECISION`: FAIL F1/F2/F3;
+- `MACRO_STATISTICAL_RELEASE`: FAIL F1/F2/F3.
 
-Execução autoritativa: GitHub Actions run `31610392101` — hash gate, discovery, firewall e persistência: PASS.
+As outras sete famílias permanecem `FEASIBILITY_NOT_ESTABLISHED`; ausência de teste nunca equivale a PASS.
 
-Snapshot promovido a `main` sem regeneração:
+Registro: `registry/w2c_pit_v2_1_family_gates.json`.
 
-- 13.491 eventos únicos observados entre canais;
-- 4.364 candidate rows;
-- 154 rotas de paginação;
-- 4 rotas truncadas.
+### W2-B — IAS / ECG / SMAA
 
-Esses counts são **raw/unvalidated discovery candidates**, não population estimates, IAS, F1–F9 ou seleção de W3.
+Também concluído e congelado, mantendo firewall contra performance e F1–F9 durante o ranking.
 
-- materialização/provenance: `registry/w2c_discovery_materialization_v2_0.json`
-- summary: `registry/w2c_discovery_summary.json`
-- fila: `registry/w2c_discovery_validation_queue.csv.gz`
-- telemetria: `registry/w2c_discovery_pagination_telemetry.json`
-- humano: `docs/43_w2c_performance_blind_discovery.md`
+- 50 células `família × dimensão`;
+- 200.000 SMAA draws;
+- seed `20260812`;
+- resultado: `NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER`;
+- líder numérico: `MA_PRE_ANNOUNCEMENT_OR_RUMOR`, rank-1 `45.704%`;
+- runner-up: `FDA_FINAL_PDUFA_DECISION`, rank-1 `40.4465%`;
+- margem: `5.2575 p.p.`.
 
-### IAS / W3
+A margem passou 5 p.p., mas o líder não atingiu o gate preregistrado de rank-1 `>=50%`, portanto a claim de “maior assimetria” é proibida.
 
-Nenhum IAS real foi calculado e nenhum gate F1–F9 foi pontuado. W3 continua não autorizado.
+Resultado congelado: `registry/w2b_ias_smaa_results_v1.json`.
 
-A próxima ação válida é **congelar um protocolo outcome-blind de semantic validation** para a fila W2-C antes de transformar candidatos em evidência validada. Em paralelo, W2-A só admite busca por recuperação de provenance original — não reconstrução de mercado pós-hoc.
+### W3 — último gate antes de qualquer novo experimento
+
+O contrato que combina IAS e PIT foi congelado **antes da combinação real**:
+
+- `registry/w3_go_no_go_contract_v1_0.json`;
+- `scripts/w3_go_no_go_v1.py`;
+- `scripts/w3_go_no_go_synthetic_v1.py`;
+- `registry/w3_go_no_go_freeze_v1_0.json`;
+- bundle SHA-256 `c4db745a4c38a80743ec29779f638f5ebf79ff8f7f0df0a30c9ab682ae34aac2`.
+
+Inputs congelados:
+
+- IAS/SMAA blob `360521ba7a2973ea1685a50c55ad5636abc631ba`;
+- PIT F1–F9 blob `1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa`.
+
+A consequência lógica dos inputs é hoje `NO_GO_NO_W3_PROTOCOL_CANDIDATE`, mas isso ainda é **inferência pré-execução**, não o resultado oficial. O próximo ato válido é executar exatamente o engine congelado, persistir e congelar sua saída.
+
+Mesmo um eventual GO autorizaria apenas **draft de protocolo W3**, nunca execução W3 direta.
+
+## PDF baseline preservado
+
+`registry/final_report_pdf_qa.json` registra `PASS_READY_FOR_SUBMISSION`. O PDF QA-approved possui SHA-256 `5144f85f77d1f1d72ed06a9b867e92f47fd139f58729cf25c76e80bd9095a561`, 5 páginas, 16:9 e anonimato validado.
 
 ## Navegação
 
-- `STATUS.yaml` — estado científico/histórico do freeze.
+- `STATUS.yaml` — estado científico/histórico congelado.
+- `registry/post_freeze_extension_plan.json` — estado operacional atual (`PFEP-v3.0`).
+- `docs/35_post_freeze_extension_roadmap.md` — roadmap atualizado.
 - `docs/README.md` — mapa de documentação.
 - `registry/README.md` — precedência dos registries.
 - `scripts/README.md` — executáveis e validators.
 - `.github/workflows/README.md` — workflows/gates.
-- `docs/29_final_scientific_truth_submission_freeze.md` — freeze humano.
-- `docs/35_post_freeze_extension_roadmap.md` — roadmap pós-freeze.
-- `docs/36`–`41` — pesquisa, contracts, revisão adversarial e byte-freeze W2.
-- `docs/42` — W2-A Gate 0.
-- `docs/43` — W2-C discovery.
 
 ## Política de governança
 
-- nunca sobrescrever protocolo histórico para refletir resultado posterior;
-- nunca usar P&L/Brier/log loss/H2 para escolher família IAS;
-- nunca inferir IAS/F1–F9 de raw discovery counts;
-- não inventar ART-025 trade rows, borrow fee, L2 histórico ou dados PIT indisponíveis;
-- preservar resultados negativos, NO-GO e falhas;
-- qualquer W3 precisa de hipótese/estimand, população, cutoffs, adequacy prospectiva, modelos, benchmark, custos, inferência, multiplicidade, stop/promotion rules congelados antes dos outcomes.
+- protocolo pré-resultado nunca é reescrito para refletir resultado posterior;
+- resultado negativo, FAIL, INDETERMINATE e NO-GO são preservados;
+- não usar P&L/Brier/log loss/H2/realized linked-asset returns para seleção IAS;
+- `ECG-D` é unresolved, não score baixo;
+- `FEASIBILITY_NOT_ESTABLISHED` nunca equivale a PASS;
+- não imputar F1–F9 entre famílias adjacentes;
+- não alterar taxonomy, anchors, ECG, SMAA, thresholds ou W3 gate após observar outputs;
+- qualquer W3 experimental exige protocolo e adequacy prospectiva congelados antes de outcomes.
 
-## Validação do `main`
+## Health checks
 
 ```bash
 python scripts/repository_hygiene_validate.py
-python scripts/w2_protocol_freeze_validate.py
+python scripts/w2b_ias_frozen_bundle_integrity_v1.py
+python scripts/w2b_ias_smaa_result_freeze_validate_v1.py
+python scripts/w3_go_no_go_synthetic_v1.py
 ```
 
-`repository_hygiene_validate.py` continua verificando byte-identidade do frozen submission bundle. `w2_protocol_freeze_validate.py` protege os bytes de W2PF-v1.0.
+A autoridade científica continua sendo o freeze original; `PFEP-v3.0` apenas registra a extensão controlada.
