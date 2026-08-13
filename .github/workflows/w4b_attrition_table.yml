@@ -2,7 +2,7 @@ name: W4-B Final Attrition Table
 on:
   push:
     paths:
-      - 'registry/w4b_official_event_truth_closeout_v1.json'
+      - 'registry/w4b_attrition_path_erratum_v1_0_1.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -14,17 +14,28 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Validate sequence and frozen attrition identities
+      - name: Validate sequence, frozen attrition and path-only erratum
         run: |
           python - <<'PY'
           import json,subprocess,os
           c=json.load(open('registry/w4b_official_event_truth_closeout_v1.json'))
           f=json.load(open('registry/w4b_attrition_table_freeze_v1.json'))
+          e=json.load(open('registry/w4b_attrition_path_erratum_v1_0_1.json'))
           def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
           assert c['technical_gate_decision']=='PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED'
           assert f['status']=='FROZEN_BEFORE_W4B_FINAL_ATTRITION_EXECUTION'
-          assert blob('registry/w4b_attrition_table_protocol_v1.json')=='342d5a501ec5bde7f754df67c1899ead821a2669'
-          assert blob('scripts/w4b_attrition_table_v1.py')=='448ae7f66acda856458078ff5ae8906bcbf0f2af'
+          assert e['status']=='FROZEN_AFTER_PATH_RESOLUTION_FAILURE_BEFORE_ANY_ATTRITION_RESULT'
+          assert e['failed_run_id']==31739545514
+          assert e['failed_stage']=='KALSHI_CLOSEOUT_PATH_RESOLUTION'
+          assert e['scientific_contract_changes'] is False and e['science_reopened'] is False
+          assert e['attrition_results_observed_before_erratum'] is False
+          assert e['performance_blind'] is True and e['linked_asset_realized_returns_read'] is False
+          assert blob('registry/w4b_attrition_table_protocol_v1.json')==e['protocol_blob_sha1']=='342d5a501ec5bde7f754df67c1899ead821a2669'
+          assert blob('scripts/w4b_attrition_table_v1.py')==e['original_script_blob_sha1']=='448ae7f66acda856458078ff5ae8906bcbf0f2af'
+          assert blob('scripts/w4b_attrition_table_v1_0_1.py')==e['path_wrapper_blob_sha1']=='f63292dc71e05a4e736553d50297f24d12a33d08'
+          assert blob('registry/w4b_official_event_truth_closeout_v1.json')==e['official_truth_closeout_blob_sha1']=='3f6b042c7c7e83ea052a1383a9336bad6d31aa28'
+          assert blob('.github/workflows/w4b_attrition_table.yml')==e['workflow_blob_sha1']
+          assert not os.path.exists('registry/w4b_attrition_summary_v1.json')
           for p in [
             'registry/w4b_kalshi_history_closeout_authoritative.json',
             'registry/w4b_forecastex_census_summary_v1.json',
@@ -32,10 +43,10 @@ jobs:
             'registry/w4b_cross_venue_dedup_summary_v1.json',
             'registry/w4b_official_event_truth_summary_v1.json'
           ]: assert os.path.exists(p), p
-          print('PASS_W4B_ATTRITION_SEQUENCE_AND_FREEZE')
+          print('PASS_W4B_ATTRITION_PATH_ERRATUM_FREEZE')
           PY
-      - name: Execute frozen attrition accounting
-        run: python scripts/w4b_attrition_table_v1.py
+      - name: Execute frozen attrition accounting through path-only wrapper
+        run: python scripts/w4b_attrition_table_v1_0_1.py
       - name: Validate attrition gate and overclaim firewall
         run: |
           python - <<'PY'
@@ -60,7 +71,5 @@ jobs:
             registry/w4b_attrition_by_family_v1.csv \
             registry/w4b_attrition_exclusion_reasons_v1.csv \
             registry/w4b_attrition_summary_v1.json
-          git commit -m 'results: materialize W4-B final attrition table v1'
-          # Execution starts from the triggering main commit. A concurrent main
-          # change must fail the push instead of rebasing scientific outputs.
+          git commit -m 'results: materialize W4-B final attrition table v1 path-erratum'
           git push origin HEAD:main
