@@ -1,0 +1,45 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_CLOSEOUT",
+  "date": "2026-08-13",
+  "files": {
+    "w4b_official_event_truth_edge_adjudication_v1.csv.gz": {
+      "blob_sha1": "75808241d6f46d14b11fabba1a9034e0f2d3a554",
+      "sha256": "2b37202ef885b5246ec9c248c01ebf98e2dbd5f440798c8fb3362bed02c9e73a"
+    },
+    "w4b_official_event_truth_groups_v1.csv.gz": {
+      "blob_sha1": "87545636f502c0ff8b19475f84b22eaff2ea1b70",
+      "sha256": "2d4699adb1b7af7f14da03cb297410a9699707c08b2ffcda019bf51cdfc044fb"
+    },
+    "w4b_official_event_truth_records_v1.csv.gz": {
+      "blob_sha1": "07a8f445c47b2e6163d77dea2d639520fc5f7cce",
+      "sha256": "d729327422a94937e853ae439d8458c94a65344be20d976c71685c2c9321c8d0"
+    },
+    "w4b_official_event_truth_source_manifest_v1.csv.gz": {
+      "blob_sha1": "f39a8079bc0ad5ca812831429c6b007f2f593eab",
+      "sha256": "5f144ec10f0e755b364ba264305d60af5978b773eb8528bc6c8cbf1687c963f3"
+    },
+    "w4b_official_event_truth_summary_v1.json": {
+      "blob_sha1": "bdef6077e6d4ddc2ee111f4c0dbab39162af8d30",
+      "sha256": "94d23bba92e888fc304174cba62c13b2cf87cf2b333682d74e2b82b9401ab17d"
+    },
+    "w4b_official_event_truth_unresolved_v1.csv.gz": {
+      "blob_sha1": "ba1a8ca49ce7befdbffec9715fda34dcbfb295cd",
+      "sha256": "a5d5f980225b4b21a16fc95f758eb75c5b3e12999e825444b76d6b85fc31cd77"
+    }
+  },
+  "linked_asset_realized_returns_read": false,
+  "performance_blind": true,
+  "prediction_market_performance_read": false,
+  "pretruth_exact_groups": 2275,
+  "source_head_sha": "3ac2db2c47ea6406d0f6c5446d82cd1ffb4facf6",
+  "source_workflow_run_id": 31739503486,
+  "technical_gate_decision": "PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED",
+  "verification_state_counts": {
+    "NOT_HISTORICAL_YET": 100,
+    "UNRESOLVED_OFFICIAL_TRUTH": 1743,
+    "VERIFIED_OFFICIAL_TRUTH": 432
+  },
+  "verified_exact_groups": 432,
+  "verified_unique_official_events": 344,
+  "version": "W4B-OET-CLOSE-v1.0.2"
+}

@@ -1,0 +1,38 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_SUMMARY",
+  "candidate_edge_adjudication_counts": {
+    "CONFIRMED_SAME_OFFICIAL_EVENT": 91,
+    "UNRESOLVED_OFFICIAL_IDENTITY": 86
+  },
+  "date_utc": "2026-08-13T20:10:21.081828+00:00",
+  "decision_rows_accounted": 2275,
+  "gate_decision": "PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED",
+  "interpretation": "Only VERIFIED_OFFICIAL_TRUTH groups enter the truth-verified multi-venue event universe. Unresolved/rejected/not-historical rows remain explicit attrition and never increase verified N.",
+  "linked_asset_realized_returns_read": false,
+  "official_truth_alias_groups_collapsed": 88,
+  "performance_blind": true,
+  "prediction_market_performance_read": false,
+  "prediction_market_settlement_result_used": false,
+  "pretruth_exact_groups": 2275,
+  "protocol_version": "W4B-OET-v1.0",
+  "source_manifest_rows": 36,
+  "state_clarification_version": "W4B-OET-E1-v1.0.1",
+  "transitivity_or_identity_contradictions": [],
+  "verification_state_counts": {
+    "NOT_HISTORICAL_YET": 100,
+    "UNRESOLVED_OFFICIAL_TRUTH": 1743,
+    "VERIFIED_OFFICIAL_TRUTH": 432
+  },
+  "verified_exact_groups": 432,
+  "verified_family_counts": {
+    "CPI_INFLATION_RELEASE": 61,
+    "FOMC_DECISION": 36,
+    "GDP_RELEASE": 36,
+    "PAYROLLS_JOBS_RELEASE": 25,
+    "PCE_RELEASE": 22,
+    "RETAIL_SALES_RELEASE": 17,
+    "UNEMPLOYMENT_RELEASE": 147
+  },
+  "verified_unique_official_events": 344,
+  "version": "W4B-OET-RESULT-v1.0.2"
+}
