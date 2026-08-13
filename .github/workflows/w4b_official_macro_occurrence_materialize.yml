@@ -1,0 +1,54 @@
+name: W4-B Official Macro Occurrence Materialize
+on:
+  push:
+    paths: ['registry/w4b_official_macro_occurrence_materialization_freeze_v1.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  materialize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Validate frozen identities
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          f=json.load(open('registry/w4b_official_macro_occurrence_materialization_freeze_v1.json'))
+          b=lambda p:subprocess.check_output(['git','hash-object',p],text=True).strip()
+          assert f['status']=='FROZEN_BEFORE_OFFICIAL_MACRO_OCCURRENCE_MATERIALIZATION'
+          assert f['official_truth_decisions_observed_before_freeze'] is False and f['science_reopened'] is False
+          assert f['release_values_read_or_persisted'] is False
+          assert b('registry/w4b_official_macro_truth_automation_protocol_v1.json')==f['macro_protocol_blob_sha1']=='49ebc0d7888149833fd1c741ac172dcbd0b0413d'
+          for p,sha in f['executor_blobs'].items(): assert b(p)==sha,(p,b(p),sha)
+          assert b('.github/workflows/w4b_official_macro_occurrence_materialize.yml')==f['workflow_blob_sha1']
+          assert f['validated_source_probe_run_id']==31737014277 and f['validated_source_probe_workflow_blob_sha1']=='91a6567d22549a92ecacd9c38b8b9f0c0bc33a09'
+          assert not os.path.exists('registry/w4b_official_event_truth_decisions_v1.csv')
+          print('PASS_W4B_OFFICIAL_MACRO_OCCURRENCE_FREEZE')
+          PY
+      - run: python scripts/w4b_official_macro_occurrences_bls_v1.py
+      - run: python scripts/w4b_official_macro_occurrences_fed_bea_v1.py
+      - run: python scripts/w4b_official_macro_occurrences_census_dol_v1.py
+      - run: python scripts/w4b_official_macro_occurrences_merge_v1.py
+      - name: Validate occurrence firewall
+        run: |
+          python - <<'PY'
+          import json,os
+          x=json.load(open('registry/w4b_official_macro_occurrence_summary_v1.json'))
+          assert x['gate_decision']=='PASS_OFFICIAL_MACRO_OCCURRENCES_MATERIALIZED'
+          assert x['release_values_read_or_persisted'] is False and x['prediction_market_outcomes_read'] is False and x['linked_asset_realized_returns_read'] is False and x['performance_blind'] is True
+          assert not os.path.exists('registry/w4b_official_event_truth_decisions_v1.csv')
+          print(json.dumps(x,indent=2,sort_keys=True)); print('PASS_W4B_OFFICIAL_MACRO_OCCURRENCE_FIREWALL')
+          PY
+      - name: Persist evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-official-macro-occurrences-v1
+          git add registry/w4b_official_macro_*.csv.gz registry/w4b_official_macro_*summary_v1.json
+          git commit -m 'evidence: materialize W4-B official macro occurrences v1'
+          git push -f origin w4b-official-macro-occurrences-v1
