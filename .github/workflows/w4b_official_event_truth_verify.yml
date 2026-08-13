@@ -14,31 +14,38 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Validate truth freeze and sequence
+      - name: Validate truth freeze, hardening and sequence
         run: |
           python - <<'PY'
           import json,subprocess,os
           c=json.load(open('registry/w4b_cross_venue_dedup_closeout_v1.json'))
           f=json.load(open('registry/w4b_official_event_truth_freeze_v1.json'))
+          h=json.load(open('registry/w4b_official_event_truth_verifier_hardening_v1_0_2.json'))
           def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
           assert c['technical_gate_decision']=='PASS_CROSS_VENUE_PRETRUTH_DEDUP_MATERIALIZED'
           assert f['status']=='FROZEN_BEFORE_ANY_OFFICIAL_TRUTH_DECISIONS'
+          assert h['status']=='FROZEN_BEFORE_ANY_OFFICIAL_TRUTH_DECISIONS'
+          assert h['official_truth_decisions_observed_before_hardening'] is False
+          assert h['scientific_contract_changes'] is False
           assert os.path.exists('registry/w4b_official_event_truth_decisions_v1.csv')
           assert blob('registry/w4b_official_event_truth_protocol_v1.json')=='66001a06e1fd928d39a3f9d75672bd76158db735'
           assert blob('registry/w4b_official_event_truth_state_clarification_v1_0_1.json')=='6459e5407dcf331c13d6e84f7bb26244779b0c15'
           assert blob('scripts/w4b_official_event_truth_verify_v1.py')=='868cd5c52d202f0ea2543ebc3a43349bc7d88e91'
-          print('PASS_W4B_OFFICIAL_TRUTH_VERIFY_FREEZE')
+          assert blob('registry/w4b_official_event_truth_verifier_hardening_v1_0_2.json')=='f41420f6abb716e15b11c034202e5c59db100de3'
+          assert blob('scripts/w4b_official_event_truth_verify_v1_0_2.py')=='a9b54d4c4c54956f8a6ee916832b284672bb49d9'
+          print('PASS_W4B_OFFICIAL_TRUTH_HARDENED_VERIFY_FREEZE')
           PY
       - name: Verify evidence decisions and mint official event truth
         id: verify
         continue-on-error: true
-        run: python scripts/w4b_official_event_truth_verify_v1.py
+        run: python scripts/w4b_official_event_truth_verify_v1_0_2.py
       - name: Validate truth result firewall
         if: always()
         run: |
           python - <<'PY'
           import json
           x=json.load(open('registry/w4b_official_event_truth_summary_v1.json'))
+          assert x['version']=='W4B-OET-RESULT-v1.0.2'
           assert x['performance_blind'] is True
           assert x['linked_asset_realized_returns_read'] is False
           assert x['prediction_market_performance_read'] is False
@@ -62,7 +69,7 @@ jobs:
             registry/w4b_official_event_truth_groups_v1.csv.gz \
             registry/w4b_official_event_truth_unresolved_v1.csv.gz \
             registry/w4b_official_event_truth_summary_v1.json
-          git commit -m 'results: materialize W4-B official event truth v1'
+          git commit -m 'results: materialize W4-B official event truth v1.0.2'
           git push -f origin w4b-official-event-truth-v1
       - name: Enforce official truth gate
         if: always()
