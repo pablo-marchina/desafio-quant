@@ -1,126 +1,96 @@
 {
   "artifact": "W4_MAXIMAL_BACKTEST_RESEARCH_PLAN",
-  "version": "W4-MBRP-v1.0",
+  "version": "W4-MBRP-v1.1",
   "date": "2026-08-13",
-  "status": "ACTIVE_RESEARCH_PRE_OUTCOME_FREEZE",
+  "status": "ACTIVE_W4_C_R1_PRE_OUTCOME",
   "science_reopened": false,
   "performance_blind": true,
-  "objective": "Build the largest defensible PIT backtest universe and the richest event-level information set possible before any new linked-asset outcome reveal.",
-  "optimization_dimensions": {
-    "independent_event_n": "maximize economically independent canonical_event_id count",
-    "temporal_depth": "maximize PIT observations per event across venues/contracts/time",
-    "informational_breadth": "maximize justified venues, contracts, assets, horizons and data layers without pseudo-replication",
-    "validation_depth": "maximize pre-registered robustness, falsification and dependence-aware inference"
+  "objective": "Build the largest defensible PIT backtest universe and richest event-level information set possible before any new linked-asset outcome reveal.",
+  "independence_rule": "canonical_event_id remains the default inferential unit; contracts, venues, horizons, assets, quotes and ticks add information but never automatically add independent N.",
+  "milestones_not_stop_rules": {"minimum": 300, "preferred": 500, "stretch": 1000},
+  "stop_rule": "Stop expansion only when remaining routes are immaterial, fail PIT/provenance/reproducibility, are economically unjustified, or are infeasible under time/cost constraints.",
+  "current_state": {
+    "W4_A": "COMPLETE_PASS_TECHNICAL",
+    "W4_B": "COMPLETE_PASS_W4B_ATTRITION_MATERIALIZED",
+    "W4_C": "ACTIVE_CONTINUE_EXPANSION_NOT_SATURATED",
+    "saturation_gate": "PASS_W4C_SATURATION_GATE_CONTINUE",
+    "current_priority_route": "R1_OFFICIAL_TRUTH_EXTENSION",
+    "r1_state": "DESCRIPTIVE_PROFILE_FROZEN_PROTOCOL_FREEZE_NEXT",
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
   },
-  "milestones_not_stop_rules": {
-    "minimum_independent_events": 300,
-    "preferred_independent_events": 500,
-    "stretch_independent_events": 1000
+  "w4b_closeout": {
+    "kalshi_canonical_events": 391,
+    "kalshi_core_t10_to_t1h_events": 132,
+    "kalshi_full_ladder_events": 101,
+    "forecastex_canonical_census_events": 481,
+    "polymarket_canonical_census_events": 1591,
+    "pre_dedup_venue_record_sum": 2463,
+    "pretruth_exact_cross_venue_groups": 2275,
+    "pretruth_candidate_merge_lower_bound": 2130,
+    "verified_exact_groups": 432,
+    "truth_verified_unique_official_events": 344,
+    "unresolved_official_truth": 1743,
+    "not_historical_yet": 100,
+    "n_final_backtestable_authorized": false
   },
-  "stop_rule": "Do not stop solely because a milestone N is reached. Stop expansion only when additional sources/routes provide immaterial marginal gain, fail PIT/provenance/reproducibility gates, are economically unjustified, or are infeasible under time/cost constraints.",
-  "current_blocker": {
-    "component": "Kalshi series-first capacity census",
-    "workflow": "W4 Kalshi Series-First Census",
-    "run_id": 31664562033,
-    "head_sha": "7fdb8cd877dc11c523bc23616f87ca5f2ff0b77d",
-    "failure": "HTTP 400 from historical/markets when querying a series",
-    "policy": "Fix API-contract handling only; do not alter the frozen W4 family dictionary or read linked-asset outcomes."
+  "w4c_saturation": {
+    "decision": "CONTINUE_EXPANSION_NOT_SATURATED",
+    "gate_decision": "PASS_W4C_SATURATION_GATE_CONTINUE",
+    "open_material_routes": 7,
+    "route_order": [
+      "R1_OFFICIAL_TRUTH_EXTENSION",
+      "R2_POLYMARKET_PIT_HISTORY",
+      "R3_FORECASTEX_PIT_HISTORY",
+      "R4_P0_FAMILY_EXPANSION",
+      "R5_POLYMARKET_V1_ARCHIVE",
+      "R6_P1_PRIMARY_VENUE_ACCESS",
+      "R7_ROBUSTNESS_VENUE"
+    ]
+  },
+  "w4c_r1_frozen_profile": {
+    "artifact": "registry/w4c_r1_official_truth_unresolved_profile_v1.json",
+    "version": "W4C-R1-OTP-v1.0",
+    "eligible_groups": 1743,
+    "unique_group_ids": 1743,
+    "duplicate_group_ids": 0,
+    "sorted_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+    "review_mode_counts": {
+      "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 1456,
+      "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 287
+    },
+    "largest_family": {"resolved_family": "EARNINGS_EPS", "groups": 1355},
+    "new_official_sources_read": false,
+    "reclassification_performed": false,
+    "additional_verified_n_authorized": false
   },
   "execution_order": [
-    {
-      "id": "W4-R",
-      "name": "Maximal Backtest Research",
-      "goal": "Map all defensible venues, event families, PIT histories, linked-asset data layers and validation techniques that can expand N, depth or breadth.",
-      "outputs": ["venue/data-source registry", "access/PIT/granularity/cost matrix", "marginal-capacity hypotheses"],
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-A",
-      "name": "Repair and validate Kalshi census",
-      "goal": "Resolve the current HTTP 400, validate live/historical routing, pagination, trades and candles, and materialize a reproducible series-first capacity result.",
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-B",
-      "name": "Exhaustive multi-venue census",
-      "goal": "Census all approved venues/families/years using frozen performance-blind semantics.",
-      "primary_venues": ["Polymarket", "Kalshi"],
-      "robustness_or_candidate_venues": ["Manifold", "additional venues only after DATA_ACCESS_GATE"],
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-C",
-      "name": "Attrition and saturation audit",
-      "goal": "Measure raw -> semantic -> independent -> PIT -> asset-mapped -> final-backtestable attrition and marginal contribution of every expansion route.",
-      "primary_metric": "N_final_backtestable",
-      "secondary_metrics": ["unique date clusters", "PIT history depth", "ladder depth", "cross-venue overlap", "asset mapping coverage", "marginal source contribution"],
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-D",
-      "name": "Canonical data lake",
-      "goal": "Materialize event-centric tables keyed by canonical_event_id and preserve raw-response hashes/provenance.",
-      "tables": ["events", "markets", "contracts", "prediction_trades", "prediction_candles", "prediction_snapshots", "orderbooks_if_available", "assets", "asset_bars", "asset_quotes_if_available", "options_if_available", "fundamentals", "macro_releases", "event_evidence", "event_asset_mapping"],
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-E",
-      "name": "Maximal feature materialization",
-      "goal": "Extract probability level/dynamics, liquidity, ladder/distribution, cross-venue disagreement, multi-asset mappings and other pre-event features without treating correlated measurements as independent events.",
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-F",
-      "name": "Outcome-blind adequacy and simulation",
-      "goal": "Select complexity, regularization, portfolio constraints, horizons, multiplicity and inference using missingness/collinearity/effective-N analysis and synthetic outcomes only.",
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-G",
-      "name": "Full W4 protocol freeze",
-      "goal": "Freeze population, features, mappings, models, tuning process, execution, costs, portfolio accounting, benchmarks, inference, multiplicity, falsification, stop and promotion rules.",
-      "outcomes_allowed": false
-    },
-    {
-      "id": "W4-H",
-      "name": "Single controlled outcome reveal",
-      "goal": "Open linked-asset outcomes once for the frozen population and produce an immutable hashed outcome bundle.",
-      "outcomes_allowed": true
-    },
-    {
-      "id": "W4-I",
-      "name": "Backtest battery",
-      "goal": "Execute BT-A expanded discrete replication, BT-B continuous all-event portfolio, BT-C distributional multi-venue model, event-response surfaces and microstructure studies where data permits.",
-      "funded_accounting_required": true,
-      "outcomes_allowed": true
-    },
-    {
-      "id": "W4-J",
-      "name": "Maximal validation battery",
-      "goal": "Run temporal OOS, walk-forward/cross-fitting, clustered/bootstrap inference, multiplicity control, stability, cost/liquidity stress and falsification tests.",
-      "outcomes_allowed": true
-    },
-    {
-      "id": "W4-K",
-      "name": "W4 scientific truth freeze",
-      "goal": "Freeze the final W4 result whether positive, negative or data-limited, while preserving the original H2 FAIL and C0_NO_TRADE historical champion.",
-      "outcomes_allowed": true
-    }
+    "W4-R continuous support research",
+    "W4-A COMPLETE",
+    "W4-B COMPLETE",
+    "W4-C ACTIVE: R1 profile frozen -> R1 protocol freeze -> R1 execution -> marginal-capacity/saturation reassessment -> remaining R2-R7 only if justified",
+    "W4-D canonical data lake",
+    "W4-E maximal pre-outcome features",
+    "W4-F outcome-blind adequacy/simulation",
+    "W4-G full protocol freeze",
+    "W4-H single controlled outcome reveal",
+    "W4-I funded backtest battery",
+    "W4-J robustness/falsification/inference battery",
+    "W4-K scientific truth freeze"
   ],
-  "canonical_independence_rule": "canonical_event_id is the default inferential unit. Multiple markets, strikes, venues, assets, horizons, quotes, trades or ticks may increase information per event but never automatically increase independent N.",
   "saturation_gate": {
     "continue_if_any": [
       "material increase in independent canonical events",
       "material increase in PIT-valid coverage",
       "material increase in pre-event temporal depth",
-      "material increase in economically justified linked-asset breadth",
+      "material increase in economically justified breadth",
       "material increase in distributional/cross-venue information",
       "material improvement in provenance or reproducibility"
     ],
     "stop_if_all": [
       "remaining candidate sources add immaterial marginal coverage",
       "remaining sources fail PIT/provenance/reproducibility gates",
-      "remaining data are economically unjustified for the event family",
+      "remaining data are economically unjustified",
       "remaining acquisition is infeasible under challenge time/cost constraints"
     ]
   },
@@ -128,19 +98,20 @@
     "new linked-asset realized returns",
     "ARGOS PnL for route/family/source selection",
     "post-hoc feature selection using economic performance",
-    "changing the frozen W4-BER-v1.0 family dictionary to inflate counts",
-    "counting correlated contracts/assets/horizons/ticks as independent events"
+    "changing the frozen W4-B family dictionary to inflate counts",
+    "pseudo-replication",
+    "mutating frozen W4-B truth during W4-C extensions"
   ],
   "relationship_to_prior_science": {
     "original_h2": "FAIL_UNDER_FROZEN_EXP07I",
     "historical_economic_champion": "C0_NO_TRADE",
-    "rule": "W4 is a new post-freeze experiment program, not a rescue or reinterpretation of the frozen confirmatory result."
+    "rule": "W4 is a separate post-freeze experiment program, never a rescue or reinterpretation of the frozen confirmatory result."
   },
   "immediate_next_actions": [
-    "Correct Kalshi historical API request construction without changing frozen family semantics",
-    "Re-run and byte-materialize the Kalshi series-first capacity census",
-    "Build the exhaustive venue/data-source research registry",
-    "Run multi-venue capacity and attrition census",
-    "Apply the saturation gate before designing the outcome-bearing W4 protocol"
+    "Freeze a separate W4-C R1 truth-extension protocol bound to the exact 1,743-group ID set/hash",
+    "Only after that freeze collect new official-source evidence under fail-closed reproducible rules",
+    "Measure marginal verified unique-event gain without mutating W4-B truth",
+    "Reapply saturation logic before advancing to R2",
+    "Keep linked-asset realized outcomes closed until W4-H"
   ]
 }
