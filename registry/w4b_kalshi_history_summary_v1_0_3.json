@@ -1,0 +1,104 @@
+{
+  "api_unresolved_count": 0,
+  "api_unresolved_examples": [],
+  "artifact": "W4B_KALSHI_FULL_POPULATION_HISTORY_SUMMARY",
+  "canonical_events_audited": 391,
+  "canonical_events_expected": 391,
+  "date_utc": "2026-08-13T08:13:23.800756+00:00",
+  "distributional_core_events": 85,
+  "family_history_class_counts": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "FULL_LADDER": 2
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "CORE_T10_TO_T1H": 6,
+      "FULL_LADDER": 15,
+      "NO_NEAR_T0": 2,
+      "NO_T10D": 5
+    },
+    "CPI_INFLATION_RELEASE": {
+      "CORE_T10_TO_T1H": 15,
+      "FULL_LADDER": 17,
+      "NO_HISTORY": 1,
+      "NO_NEAR_T0": 34,
+      "NO_T10D": 46
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "CORE_T10_TO_T1H": 1,
+      "FULL_LADDER": 4,
+      "NO_NEAR_T0": 3,
+      "NO_T10D": 3,
+      "PARTIAL": 1
+    },
+    "FOMC_DECISION": {
+      "CORE_T10_TO_T1H": 1,
+      "FULL_LADDER": 8,
+      "NO_HISTORY": 2,
+      "NO_NEAR_T0": 5,
+      "NO_T10D": 8
+    },
+    "GDP_RELEASE": {
+      "CORE_T10_TO_T1H": 4,
+      "FULL_LADDER": 21,
+      "NO_NEAR_T0": 10,
+      "NO_T10D": 1
+    },
+    "MA_PENDING_COMPLETION": {
+      "PARTIAL": 1
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "CORE_T10_TO_T1H": 1,
+      "FULL_LADDER": 3,
+      "NO_T10D": 2
+    },
+    "PAYROLLS_JOBS_RELEASE": {
+      "FULL_LADDER": 1,
+      "NO_T10D": 3
+    },
+    "PCE_RELEASE": {
+      "CORE_T10_TO_T1H": 1,
+      "FULL_LADDER": 10,
+      "NO_NEAR_T0": 10,
+      "NO_T10D": 2
+    },
+    "RETAIL_SALES_RELEASE": {
+      "CORE_T10_TO_T1H": 1,
+      "FULL_LADDER": 9,
+      "NO_T10D": 3
+    },
+    "UNEMPLOYMENT_RELEASE": {
+      "CORE_T10_TO_T1H": 1,
+      "FULL_LADDER": 11,
+      "NO_NEAR_T0": 2,
+      "NO_T10D": 115
+    }
+  },
+  "history_class_counts": {
+    "CORE_T10_TO_T1H": 31,
+    "FULL_LADDER": 101,
+    "NO_HISTORY": 3,
+    "NO_NEAR_T0": 66,
+    "NO_T10D": 188,
+    "PARTIAL": 2
+  },
+  "horizon_event_counts": {
+    "t_minus_120h": 308,
+    "t_minus_12h": 309,
+    "t_minus_168h": 210,
+    "t_minus_1h": 279,
+    "t_minus_240h": 200,
+    "t_minus_24h": 331,
+    "t_minus_3h": 284,
+    "t_minus_48h": 326,
+    "t_minus_6h": 364,
+    "t_minus_72h": 312
+  },
+  "interpretation": "Venue-side pre-event candlestick availability relative to conservative operational Kalshi close-time T0. Not official event-time truth, not cross-venue unique N, not asset-mapped and not N_final_backtestable.",
+  "kalshi_settlement_results_persisted": false,
+  "linked_asset_realized_returns_read": false,
+  "performance_blind": true,
+  "protocol_version": "W4B-KH-v1.0",
+  "technical_gate_decision": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED",
+  "unique_market_tickers_audited": 5196,
+  "version": "W4B-KH-RESULT-v1.0.3"
+}
