@@ -1,0 +1,95 @@
+{
+  "artifact": "W4B_ATTRITION_TABLE_PROTOCOL",
+  "version": "W4B-AT-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_BEFORE_MULTIVENUE_FINAL_COUNTS",
+  "sequence_prerequisite": {
+    "required_prior_stage": "W4-B official event truth",
+    "required_closeout": "registry/w4b_official_event_truth_closeout_v1.json",
+    "required_decision": "PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED"
+  },
+  "objective": "Produce a fully auditable attrition accounting from venue discovery through semantic cleaning, within-venue canonicalization, Kalshi history availability, multi-venue census, exact/candidate dedup and official truth. Do not relabel census-only venues as backtestable.",
+  "unit_policy": {
+    "rule": "Every row must state its unit explicitly. Counts with different units may not be used as parent/child retention denominators.",
+    "units": ["venue_event_row", "venue_canonical_event", "cross_venue_exact_group", "official_event", "kalshi_canonical_event"],
+    "double_counting": "Raw family capacity upper bounds that may count the same event under multiple families are contextual diagnostics only and never an attrition denominator."
+  },
+  "tracks": {
+    "KALSHI_SEMANTIC": [
+      {"stage":"K0_RETRIEVED_CANDIDATE_EVENTS","unit":"venue_event_row","source":"w4b_kalshi_semantic_summary_v1_1.event_rows_examined"},
+      {"stage":"K1_STRICT_ACCEPTED_EVENT_ROWS","unit":"venue_event_row","source":"w4b_kalshi_semantic_summary_v1_1.accepted_strict_event_rows","parent":"K0_RETRIEVED_CANDIDATE_EVENTS"},
+      {"stage":"K2_WITHIN_VENUE_CANONICAL","unit":"venue_canonical_event","source":"w4b_kalshi_semantic_summary_v1_1.accepted_unique_canonical_events","bridge_note":"K1->K2 is alias/strike canonicalization; retention is reported but unit changes must be explicitly labeled."}
+    ],
+    "KALSHI_HISTORY": [
+      {"stage":"KH0_CANONICAL_AUDITED","unit":"kalshi_canonical_event","source":"authoritative W4B-KH result canonical_events_audited"},
+      {"stage":"KH1_FULL_LADDER","unit":"kalshi_canonical_event","definition":"all 10 horizons valid"},
+      {"stage":"KH2_CORE_T10_TO_T1H","unit":"kalshi_canonical_event","definition":"T-240h and T-1h valid and >=8/10 horizons"},
+      {"stage":"KH3_DISTRIBUTIONAL_CORE","unit":"kalshi_canonical_event","definition":">=50% market validity at T-240h and T-1h plus >=8/10 event horizons; descriptive only"},
+      {"stage":"KH4_PARTIAL_OR_MISSING","unit":"kalshi_canonical_event","definition":"all audited events not satisfying CORE_T10_TO_T1H, broken out by NO_T10D, NO_NEAR_T0, PARTIAL and NO_HISTORY reason"}
+    ],
+    "FORECASTEX_CENSUS": [
+      {"stage":"FX0_ARCHIVE_DATES","unit":"archive_date","source":"w4b_forecastex_census_summary_v1.archive_dates_with_summary","diagnostic_only":true},
+      {"stage":"FX1_UNIQUE_CONTRACT_IDENTIFIERS","unit":"venue_contract_identifier","source":"w4b_forecastex_census_summary_v1.unique_contract_identifier_rows","diagnostic_only":true},
+      {"stage":"FX2_WITHIN_VENUE_CANONICAL","unit":"venue_canonical_event","source":"w4b_forecastex_census_summary_v1.accepted_unique_canonical_events"}
+    ],
+    "POLYMARKET_RECENSUS": [
+      {"stage":"PM0_UNIQUE_GAMMA_EVENTS","unit":"venue_event_row","source":"w4b_polymarket_recensus_summary_v1.unique_gamma_event_ids"},
+      {"stage":"PM1_WITHIN_VENUE_CANONICAL","unit":"venue_canonical_event","source":"w4b_polymarket_recensus_summary_v1.accepted_unique_canonical_events"}
+    ],
+    "CROSS_VENUE": [
+      {"stage":"XV0_VENUE_CANONICAL_SUM","unit":"venue_canonical_event","source":"w4b_cross_venue_dedup_summary_v1.pre_dedup_venue_record_sum"},
+      {"stage":"XV1_EXACT_W4CE1_GROUPS","unit":"cross_venue_exact_group","source":"w4b_cross_venue_dedup_summary_v1.exact_dedup_n","bridge_note":"Exact identical W4CE1 aliases collapse here."},
+      {"stage":"XV2_PRETRUTH_LOWER_BOUND","unit":"cross_venue_exact_group_component","source":"w4b_cross_venue_dedup_summary_v1.candidate_merge_lower_bound_n","bound":"LOWER_IF_ALL_CANDIDATE_EDGES_CONFIRM"},
+      {"stage":"XV3_PRETRUTH_UPPER_BOUND","unit":"cross_venue_exact_group","source":"w4b_cross_venue_dedup_summary_v1.pretruth_upper_bound_n","bound":"UPPER_IF_ALL_NONEXACT_CANDIDATES_DISTINCT"}
+    ],
+    "OFFICIAL_TRUTH": [
+      {"stage":"OT0_PRETRUTH_EXACT_GROUPS","unit":"cross_venue_exact_group","source":"official truth input exact groups"},
+      {"stage":"OT1_VERIFIED_OFFICIAL_GROUPS","unit":"official_event","source":"w4b_official_event_truth_summary_v1.verified_unique_official_events"},
+      {"stage":"OT2_UNRESOLVED_EXCLUDED","unit":"cross_venue_exact_group_or_component","source":"w4b_official_event_truth_summary_v1 unresolved counts","exclusion":true}
+    ]
+  },
+  "family_breakdown": {
+    "required": true,
+    "rule": "For every stage whose records carry resolved_family, materialize N by family in addition to total N. Family totals must reconcile to stage total unless the stage is explicitly cross-family/unresolved.",
+    "retention": "Where parent and child share the same unit and family semantics, report child_N / parent_N. Otherwise retention_pct must be blank and a unit_transition_note required."
+  },
+  "exclusion_reasons": {
+    "required": [
+      "semantic_false_positive_or_zero_strict_family",
+      "semantic_ambiguous_multi_family",
+      "canonicalization_ambiguous",
+      "within_venue_alias_or_strike_collapse",
+      "history_no_t10d",
+      "history_no_near_t0",
+      "history_partial",
+      "history_no_history",
+      "cross_venue_exact_alias_collapse",
+      "cross_venue_candidate_duplicate_pending_before_truth",
+      "official_truth_unresolved",
+      "official_truth_reject_not_same_semantic_event",
+      "not_historical_yet"
+    ],
+    "conservation": "At each same-unit attrition transition, parent_N = child_N + mutually exclusive excluded_N. If exclusions overlap, provide separate non-additive diagnostic columns and do not claim conservation."
+  },
+  "outputs": {
+    "table": "registry/w4b_attrition_table_v1.csv",
+    "family_table": "registry/w4b_attrition_by_family_v1.csv",
+    "exclusions": "registry/w4b_attrition_exclusion_reasons_v1.csv",
+    "summary": "registry/w4b_attrition_summary_v1.json"
+  },
+  "claim_limits": {
+    "w4b_truth_verified_union": "May be reported as the official-truth-verified multi-venue event universe.",
+    "kalshi_history_qualified": "May be reported separately using frozen FULL_LADDER/CORE history definitions, subject to later official-time revalidation.",
+    "forecastex_backtestable": false,
+    "polymarket_recensus_backtestable": false,
+    "n_final_backtestable_authorized": false,
+    "reason": "W4-B as ordered audits full T-10d->T0 history for Kalshi before adding ForecastEx/Polymarket census. ForecastEx and Polymarket require their own subsequent PIT-history qualification before their events may enter N_final_backtestable."
+  },
+  "gate": {
+    "all_stage_counts_trace_to_frozen_artifacts": true,
+    "family_reconciliation_required": true,
+    "same_unit_conservation_required_where_applicable": true,
+    "no_backtestable_overclaim": true,
+    "required_decision": "PASS_W4B_ATTRITION_MATERIALIZED"
+  }
+}
