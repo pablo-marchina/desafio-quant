@@ -1,0 +1,23 @@
+{
+  "api_unresolved_count": 0,
+  "artifact": "W4B_KALSHI_HISTORY_CLOSEOUT",
+  "canonical_events_audited": 391,
+  "date": "2026-08-13",
+  "event_blob_sha1": "d8a0b4d173aa2340e355c6a894377a29b186bed4",
+  "event_path": "registry/w4b_kalshi_history_event_v1_0_3.csv.gz",
+  "event_sha256": "c5a78f4f004923bf37e961b86e12484969724bf21b39533059bd211dec1a732f",
+  "history_version": "W4B-KH-RESULT-v1.0.3",
+  "linked_asset_realized_returns_read": false,
+  "market_blob_sha1": "9ce67a23703d0215e9079db68b21c5c98e1d1bcc",
+  "market_path": "registry/w4b_kalshi_history_market_v1_0_3.csv.gz",
+  "market_sha256": "301d618dc9a451700f4290ec2c456cb952bd4ae40050fa2f8de5d08176daa87f",
+  "performance_blind": true,
+  "source_head_sha": "aa19e87beb32a0d4afbe459855c6e56bd855ad27",
+  "source_workflow_run_id": 31679332108,
+  "summary_blob_sha1": "6571a5bbe8f30eeda4b7c7a5e8fc94abbc2e67d0",
+  "summary_path": "registry/w4b_kalshi_history_summary_v1_0_3.json",
+  "summary_sha256": "bbd2910f3e36f7b2da68e6ed4e1fe9a4398da8cffd3662709047a09f0032913b",
+  "technical_gate_decision": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED",
+  "unique_market_tickers_audited": 5196,
+  "version": "W4B-KH-CLOSE-v1.0.3"
+}

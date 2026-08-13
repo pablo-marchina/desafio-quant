@@ -1,0 +1,11 @@
+{
+  "api_unresolved_count": 0,
+  "artifact": "W4B_KALSHI_HISTORY_AUTHORITATIVE_POINTER",
+  "closeout_path": "registry/w4b_kalshi_history_closeout_v1_0_3.json",
+  "date": "2026-08-13",
+  "event_path": "registry/w4b_kalshi_history_event_v1_0_3.csv.gz",
+  "history_version": "W4B-KH-RESULT-v1.0.3",
+  "market_path": "registry/w4b_kalshi_history_market_v1_0_3.csv.gz",
+  "summary_path": "registry/w4b_kalshi_history_summary_v1_0_3.json",
+  "technical_gate_decision": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED"
+}
