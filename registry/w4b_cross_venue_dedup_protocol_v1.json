@@ -1,0 +1,62 @@
+{
+  "artifact": "W4B_CROSS_VENUE_DEDUP_PROTOCOL",
+  "version": "W4B-XVD-v1.0",
+  "date": "2026-08-13",
+  "status": "PREREGISTERED_BEFORE_FORECASTEX_AND_POLYMARKET_CENSUS_RESULTS",
+  "sequence_prerequisite": {
+    "required_prior_stage": "W4-B Polymarket recensus",
+    "required_closeout": "registry/w4b_polymarket_recensus_closeout_v1.json",
+    "required_decision": "PASS_POLYMARKET_RECENSUS_MATERIALIZED"
+  },
+  "inputs": {
+    "KALSHI": "registry/w4b_kalshi_semantic_events_v1_1.csv.gz",
+    "FORECASTEX": "registry/w4b_forecastex_events_v1.csv.gz",
+    "POLYMARKET": "registry/w4b_polymarket_recensus_events_v1.csv.gz",
+    "required_fields": ["venue", "venue_local_id", "canonical_event_id", "resolved_family", "event_reference_date", "normalized_subject_key"]
+  },
+  "governance": {
+    "performance_blind": true,
+    "linked_asset_realized_returns_allowed": false,
+    "venue_price_volume_liquidity_allowed": false,
+    "official_event_truth_allowed_at_this_stage": false,
+    "post_result_threshold_changes_forbidden": true,
+    "ambiguous_duplicate_links_must_not_be_auto_merged": true,
+    "science_reopened": false
+  },
+  "exact_dedup": {
+    "rule": "Records with byte-identical W4CE1 canonical_event_id are automatically one provisional real-world event group, regardless of venue.",
+    "group_id": "canonical_event_id",
+    "same_venue_aliases": "Already-canonicalized same-venue aliases remain one record for independent-N purposes.",
+    "cross_venue_exact_match": "Auto-collapse only when resolved_family, event_reference_date and normalized_subject_key are also identical; any impossible signature disagreement under the same W4CE1 id is a hard collision and fails the gate."
+  },
+  "candidate_duplicate_queue": {
+    "purpose": "Catch likely same real-world occurrences whose venue reference dates or wording differ, without using official truth yet and without auto-merging them.",
+    "macro_families": ["CPI_INFLATION_RELEASE", "PAYROLLS_JOBS_RELEASE", "UNEMPLOYMENT_RELEASE", "GDP_RELEASE", "PCE_RELEASE", "RETAIL_SALES_RELEASE", "FOMC_DECISION"],
+    "macro_rule": "Different exact groups, different venues, same resolved_family, exact normalized_subject_key, absolute reference-date distance <= 3 calendar days.",
+    "nonmacro_exact_subject_rule": "Different exact groups, different venues, same resolved_family, exact normalized_subject_key, absolute reference-date distance <= 14 calendar days.",
+    "nonmacro_fuzzy_rule": "Different exact groups, different venues, same resolved_family, reference-date distance <= 14 calendar days, normalized-subject token Jaccard >= 0.80, and both subjects contain at least 2 tokens.",
+    "fuzzy_tokenization": "Split normalized_subject_key on underscores; discard empty tokens only. No embedding, LLM, edit-distance or outcome information is allowed.",
+    "edge_precedence": ["SAME_SUBJECT_NEAR_DATE", "HIGH_JACCARD_NEAR_DATE"],
+    "resolution": "Every candidate edge remains UNRESOLVED_PRE_OFFICIAL_TRUTH. The subsequent official-event-truth stage may confirm merge, confirm distinct, or leave unresolved with evidence."
+  },
+  "bounds": {
+    "exact_dedup_n": "Number of exact W4CE1 groups after automatic exact matching.",
+    "candidate_merge_lower_bound_n": "Number of connected components if every preregistered candidate duplicate edge were ultimately confirmed as same occurrence. This is a conservative lower bound, not a final N.",
+    "pretruth_upper_bound_n": "exact_dedup_n; treats every non-exact candidate as distinct.",
+    "final_unique_n": "Forbidden until official-event-truth adjudicates candidate links."
+  },
+  "outputs": {
+    "venue_records": "registry/w4b_cross_venue_records_v1.csv.gz",
+    "exact_groups": "registry/w4b_cross_venue_exact_groups_v1.csv.gz",
+    "candidate_edges": "registry/w4b_cross_venue_candidate_edges_v1.csv.gz",
+    "candidate_components": "registry/w4b_cross_venue_candidate_components_v1.csv.gz",
+    "summary": "registry/w4b_cross_venue_dedup_summary_v1.json"
+  },
+  "gate": {
+    "all_input_records_accounted": true,
+    "zero_w4ce1_signature_collisions": true,
+    "candidate_rules_applied_to_full_exact_group_population": true,
+    "no_candidate_edge_auto_merged": true,
+    "required_decision": "PASS_CROSS_VENUE_PRETRUTH_DEDUP_MATERIALIZED"
+  }
+}
