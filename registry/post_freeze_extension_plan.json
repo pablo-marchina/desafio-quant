@@ -1,9 +1,9 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v4.2",
+  "version": "PFEP-v4.3",
   "date": "2026-08-13",
-  "status": "W4_B_ACTIVE_FORECASTEX_CENSUS_PRE_OUTCOME",
-  "operational_phase": "W4_B_MULTI_VENUE_CENSUS_FORECASTEX_ACTIVE",
+  "status": "W4_C_R1_DESCRIPTIVE_PROFILE_FROZEN_PRE_TRUTH_EXTENSION",
+  "operational_phase": "W4_C_R1_PROTOCOL_FREEZE_NEXT",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0 / ART-029 / ART-030",
@@ -17,7 +17,7 @@
     "economic_champion_historical": "C0_NO_TRADE"
   },
   "W4": {
-    "status": "ACTIVE_PRE_OUTCOME_W4_B_FORECASTEX",
+    "status": "ACTIVE_PRE_OUTCOME_W4_C_R1",
     "science_reopened": false,
     "performance_blind": true,
     "goal": "Maximize defensible independent canonical_event_id N, PIT temporal depth, informational breadth and validation depth before any linked-asset outcome reveal.",
@@ -35,33 +35,65 @@
       "contract_400_errors": 0
     },
     "W4_B": {
-      "status": "ACTIVE_FORECASTEX_CENSUS",
+      "status": "COMPLETE_PASS_W4B_ATTRITION_MATERIALIZED",
       "stages": [
         {"id": "semantic_protocol_freeze", "status": "PASS_COMPLETE"},
         {"id": "kalshi_semantic_cleaning", "status": "PASS_COMPLETE", "raw_series_re_evaluated": 488, "candidate_events": 1690, "strict_acceptances": 668},
         {"id": "canonical_event_id", "status": "PASS_COMPLETE", "independent_canonical_events": 391, "collapsed_aliases": 277, "ambiguities": 0, "api_errors": 0},
-        {"id": "kalshi_full_population_T10d_T0", "status": "PASS_MATERIALIZED", "canonical_events_audited": 391, "market_tickers_audited": 5196, "api_unresolved": 0, "full_ladder_events": 101, "core_T10_to_T1h_events": 31, "distributional_core_events": 85},
-        {"id": "forecastex_census", "status": "IN_PROGRESS", "workflow_run": 31694324574, "current_step": "Execute official archive census"},
-        {"id": "polymarket_recensus", "status": "BLOCKED_BY_FORECASTEX_PASS"},
-        {"id": "cross_venue_dedup", "status": "BLOCKED_BY_POLYMARKET_PASS"},
-        {"id": "official_event_truth", "status": "BLOCKED_BY_DEDUP_PASS"},
-        {"id": "w4b_final_attrition", "status": "BLOCKED_BY_OFFICIAL_TRUTH_PASS"}
+        {"id": "kalshi_full_population_T10d_T0", "status": "PASS_MATERIALIZED", "canonical_events_audited": 391, "market_tickers_audited": 5196, "api_unresolved": 0, "full_ladder_events": 101, "core_T10_to_T1h_events": 132, "distributional_core_events": 85},
+        {"id": "forecastex_census", "status": "PASS_MATERIALIZED", "accepted_unique_canonical_events": 481, "calendar_days_accounted": 955, "archive_dates_with_summary": 589, "canonical_collisions": 0},
+        {"id": "polymarket_recensus", "status": "PASS_MATERIALIZED", "accepted_unique_canonical_events": 1591, "raw_event_rows": 810515, "pages_fetched": 8106, "canonical_collisions": 0},
+        {"id": "cross_venue_dedup", "status": "PASS_MATERIALIZED", "pre_dedup_venue_record_sum": 2463, "exact_dedup_n": 2275, "exact_alias_records_collapsed": 188, "candidate_duplicate_edges": 177, "candidate_merge_lower_bound_n": 2130},
+        {"id": "official_event_truth", "status": "PASS_MATERIALIZED", "decision_rows_accounted": 2275, "verified_exact_groups": 432, "verified_unique_official_events": 344, "unresolved_official_truth": 1743, "not_historical_yet": 100, "official_truth_alias_groups_collapsed": 88},
+        {"id": "w4b_final_attrition", "status": "PASS_MATERIALIZED", "kalshi_canonical_events": 391, "kalshi_core_T10_to_T1h_events": 132, "kalshi_full_ladder_events": 101, "forecastex_canonical_census_events": 481, "polymarket_canonical_census_events": 1591, "pretruth_exact_cross_venue_groups": 2275, "truth_verified_unique_official_events": 344, "n_final_backtestable_authorized": false}
       ],
       "promotion_chain_hardened": true,
-      "promotion_hardening_head": "ae9f51f1644ae76ef7d03f8e7630d40f591a0230",
-      "required_chain": "ForecastEx PASS -> hardened promotion -> Polymarket -> hardened promotion -> cross-venue dedup -> hardened promotion -> official truth -> hardened promotion -> W4-B final attrition",
       "overclaim_firewall": "W4-B final attrition does not authorize N_final_backtestable, linked-asset outcomes or economic claims."
     },
     "W4_C": {
-      "status": "PENDING_W4_B_CLOSEOUT",
-      "goal": "Apply marginal-capacity analysis and the saturation gate using the completed W4-B attrition evidence.",
-      "distinction_from_W4_B_attrition": "W4-B produces the auditable pre-outcome attrition table; W4-C evaluates marginal capacity and saturation."
+      "status": "ACTIVE_CONTINUE_EXPANSION_NOT_SATURATED",
+      "saturation_gate": {
+        "gate_decision": "PASS_W4C_SATURATION_GATE_CONTINUE",
+        "decision": "CONTINUE_EXPANSION_NOT_SATURATED",
+        "open_material_routes": 7,
+        "next_priority_route": "R1_OFFICIAL_TRUTH_EXTENSION",
+        "n_final_backtestable_authorized": false,
+        "outcome_reveal_authorized": false
+      },
+      "routes": [
+        {"id": "R1_OFFICIAL_TRUTH_EXTENSION", "priority_rank": 1, "status": "ACTIVE_PROFILE_FROZEN_PROTOCOL_FREEZE_NEXT"},
+        {"id": "R2_POLYMARKET_PIT_HISTORY", "priority_rank": 2, "status": "PENDING_R1_MARGINAL_CAPACITY_DECISION"},
+        {"id": "R3_FORECASTEX_PIT_HISTORY", "priority_rank": 3, "status": "PENDING"},
+        {"id": "R4_P0_FAMILY_EXPANSION", "priority_rank": 4, "status": "PENDING"},
+        {"id": "R5_POLYMARKET_V1_ARCHIVE", "priority_rank": 5, "status": "PENDING"},
+        {"id": "R6_P1_PRIMARY_VENUE_ACCESS", "priority_rank": 6, "status": "PENDING"},
+        {"id": "R7_ROBUSTNESS_VENUE", "priority_rank": 7, "status": "PENDING"}
+      ],
+      "R1": {
+        "descriptive_profile_status": "PASS_W4C_R1_DESCRIPTIVE_PROFILE_FROZEN",
+        "descriptive_profile_artifact": "registry/w4c_r1_official_truth_unresolved_profile_v1.json",
+        "eligible_groups": 1743,
+        "unique_group_ids": 1743,
+        "duplicate_group_ids": 0,
+        "sorted_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+        "review_mode_counts": {
+          "FAIL_CLOSED_NONMACRO_NOT_AUTOMATED": 1456,
+          "AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH": 287
+        },
+        "largest_family": {"resolved_family": "EARNINGS_EPS", "groups": 1355},
+        "new_official_sources_read": false,
+        "reclassification_performed": false,
+        "additional_verified_n_authorized": false,
+        "next_gate": "Freeze a separate W4-C R1 truth-extension protocol bound to the frozen 1,743-group universe before any new official-source lookup or verification-state reclassification."
+      }
     },
     "execution_order": [
       "W4-R maximal research (continuous support track)",
       "W4-A Kalshi technical validation (COMPLETE PASS)",
-      "W4-B semantic multi-venue census (ACTIVE: ForecastEx)",
-      "W4-C saturation and marginal-capacity audit",
+      "W4-B exhaustive multi-venue census/truth/attrition (COMPLETE PASS)",
+      "W4-C saturation gate (PASS CONTINUE; not saturated)",
+      "W4-C R1 official-truth extension (descriptive profile frozen; protocol freeze next)",
+      "W4-C remaining routes R2-R7 according to marginal-capacity/saturation decisions",
       "W4-D canonical event-centric data lake",
       "W4-E maximal pre-outcome feature materialization",
       "W4-F outcome-blind adequacy/simulation",
@@ -79,20 +111,36 @@
     "linked_asset_realized_returns_closed_until_W4_H": true,
     "original_w4_family_dictionary_immutable": true,
     "pseudo_replication_forbidden": true,
-    "canonical_event_id_default_inferential_unit": true
+    "canonical_event_id_default_inferential_unit": true,
+    "w4b_truth_immutable_during_w4c_extensions": true
   },
   "progress_summary": {
     "completed": [
       "W4-R first-pass source/family research materialized",
       "W4-A Kalshi technical validation passed",
-      "W4-B semantic protocol frozen",
-      "W4-B Kalshi semantic cleaning passed",
-      "W4-B 391 independent canonical_event_id materialized",
+      "W4-B semantic protocol frozen and Kalshi semantic/canonicalization completed",
       "W4-B Kalshi full-population T-10d to T0 passed for 391 events / 5,196 tickers / 0 API_UNRESOLVED",
-      "W4-B promotion chain hardened through final attrition"
+      "W4-B ForecastEx census passed with 481 canonical venue events",
+      "W4-B Polymarket exhaustive recensus passed with 1,591 canonical venue events",
+      "W4-B cross-venue exact dedup passed: 2,463 venue records -> 2,275 exact groups",
+      "W4-B official truth passed: 432 verified exact groups -> 344 unique official events; 1,743 unresolved; 100 not historical yet",
+      "W4-B final attrition passed without authorizing N_final_backtestable",
+      "W4-C saturation gate passed CONTINUE_EXPANSION_NOT_SATURATED with 7 open material routes",
+      "W4-C R1 frozen descriptive profile materialized for exactly 1,743 unique unresolved groups"
     ],
-    "active": ["W4-B ForecastEx official archive census run 31694324574", "W4-R support track"],
-    "blocked_next": ["Polymarket recensus", "cross-venue dedup", "official event truth", "W4-B final attrition", "W4-C saturation audit"]
+    "active": [
+      "W4-C R1 official-truth extension preparation: protocol freeze is the next gate",
+      "W4-R support track"
+    ],
+    "pending_after_r1": [
+      "R2 Polymarket PIT history",
+      "R3 ForecastEx PIT history",
+      "R4 P0 family expansion",
+      "R5 Polymarket-v1 archive",
+      "R6 P1 primary venue access",
+      "R7 robustness venue",
+      "W4-D through W4-K"
+    ]
   },
-  "next_action": "Close ForecastEx under frozen semantics; on PASS follow the hardened chain through Polymarket, dedup, official truth and W4-B final attrition; then start W4-C saturation analysis."
+  "next_action": "Freeze the separate W4-C R1 official-truth-extension protocol against the immutable 1,743-group ID set/hash. Only after that freeze may new official-source evidence be collected; then quantify marginal verified unique-event gain and reapply the W4-C saturation logic before moving to R2."
 }
