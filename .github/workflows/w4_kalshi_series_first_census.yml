@@ -1,0 +1,47 @@
+name: W4 Kalshi Series-First Census
+on:
+  push:
+    paths:
+      - 'registry/w4_backtest_expansion_research_protocol_v1.json'
+      - 'scripts/w4_kalshi_series_first_census_v1.py'
+      - '.github/workflows/w4_kalshi_series_first_census.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  census:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate immutable research dictionary
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w4_backtest_expansion_research_protocol_v1.json'))
+          assert p['version']=='W4-BER-v1.0' and p['performance_blind'] is True
+          assert len(p['frozen_family_dictionary'])==15
+          print('PASS_W4_DICTIONARY_GATE')
+          PY
+      - name: Execute series-first Kalshi capacity census
+        run: python scripts/w4_kalshi_series_first_census_v1.py
+      - name: Validate firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4_kalshi_series_first_capacity_v1.json'))
+          assert x['performance_blind'] is True
+          assert x['realized_linked_asset_returns_read'] is False
+          assert x['series_total_returned'] >= x['classified_unique_series']
+          print('PASS_W4_KALSHI_SERIES_FIRST')
+          PY
+      - name: Persist evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4-kalshi-series-first-v1
+          git add registry/w4_kalshi_series_first_capacity_v1.json
+          git commit -m 'results: materialize W4 Kalshi series-first capacity v1'
+          git push -f origin w4-kalshi-series-first-v1
