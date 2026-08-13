@@ -1,7 +1,7 @@
 name: W4-B Promote Polymarket Recensus
 on:
   workflow_run:
-    workflows: ['W4-B Polymarket Exhaustive Recensus']
+    workflows: ['W4-B Polymarket Exhaustive Recensus', 'W4-B Polymarket Exhaustive Recensus Finalize v1.0.1']
     types: [completed]
 permissions:
   contents: write
@@ -67,8 +67,6 @@ jobs:
             registry/w4b_polymarket_recensus_summary_v1.json \
             registry/w4b_polymarket_recensus_closeout_v1.json
           git commit -m 'results: promote passed W4-B Polymarket recensus v1'
-          # Promotion starts from current main. Keep the push fail-closed instead
-          # of rebasing through legacy worktree normalization changes.
           git push origin HEAD:main
       - name: Dispatch frozen cross-venue dedup
         run: |
