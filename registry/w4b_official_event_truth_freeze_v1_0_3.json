@@ -1,0 +1,32 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_FREEZE",
+  "version": "W4B-OETF-v1.0.3",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_ANY_OFFICIAL_TRUTH_DECISIONS",
+  "supersedes_verifier_binding": "W4B-OETF-v1.0.2",
+  "reason": "Pre-decision verifier hardening corrected OFFICIAL_COURT domain validation to fail closed: a hostname merely containing the token 'court' is not sufficient evidence of an official judiciary source.",
+  "protocol_blob_sha1": "66001a06e1fd928d39a3f9d75672bd76158db735",
+  "state_clarification_blob_sha1": "6459e5407dcf331c13d6e84f7bb26244779b0c15",
+  "queue_builder_blob_sha1": "500580822ee974475064a6a9f92a4eae63bd220e",
+  "base_verifier_blob_sha1": "868cd5c52d202f0ea2543ebc3a43349bc7d88e91",
+  "verifier_hardening_blob_sha1": "f41420f6abb716e15b11c034202e5c59db100de3",
+  "authoritative_verifier": {
+    "path": "scripts/w4b_official_event_truth_verify_v1_0_2.py",
+    "blob_sha1": "d0f491d68d3171b377433ed5b3871acb441755c9"
+  },
+  "workflow": {
+    "path": ".github/workflows/w4b_official_event_truth_verify.yml",
+    "blob_sha1": "94b07df9d44ee00ddc523e734bffad7b3c6fd0ab"
+  },
+  "review_mode_required": true,
+  "fixed_authority_domains_enforced": true,
+  "official_court_policy": "Host must end in .gov or verification_reason must contain an explicitly reviewed EXPLICIT_OFFICIAL_DOMAIN marker. Nonofficial aggregators cannot satisfy VERIFIED_OFFICIAL_TRUTH.",
+  "official_truth_decisions_observed": false,
+  "scientific_contract_changes": false,
+  "firewall": {
+    "linked_asset_realized_returns_closed": true,
+    "prediction_market_settlement_results_do_not_vote": true,
+    "prediction_market_prices_volume_liquidity_do_not_vote": true,
+    "unresolved_rejected_not_historical_do_not_increase_verified_n": true
+  }
+}
