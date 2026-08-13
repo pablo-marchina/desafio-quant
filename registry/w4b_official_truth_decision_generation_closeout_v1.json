@@ -1,0 +1,24 @@
+{
+  "artifact": "W4B_OFFICIAL_TRUTH_DECISION_GENERATION_CLOSEOUT",
+  "version": "W4B-OET-DECGEN-CLOSE-v1.0.2",
+  "date": "2026-08-13",
+  "technical_gate_decision": "PASS_W4B_OFFICIAL_TRUTH_DECISION_GENERATION_FIREWALL",
+  "source_workflow_run_id": 31739323787,
+  "source_head_sha": "4b067b52407b98232867c498ff704af598515625",
+  "evidence_branch": "w4b-official-truth-decisions-v1",
+  "evidence_commit": "f9f8fed02fc1b0655fd79bf27addb4c733416aa4",
+  "decision_rows": 2275,
+  "decision_state_counts": {
+    "VERIFIED_OFFICIAL_TRUTH": 432,
+    "UNRESOLVED_OFFICIAL_TRUTH": 1743,
+    "NOT_HISTORICAL_YET": 100
+  },
+  "decisions_blob_sha1": "d6920cb8d08647761539be90fe0844a646f44193",
+  "generation_summary_blob_sha1": "b1930c9ca0fafd6747640597e9c70ade2e4a67cd",
+  "performance_blind": true,
+  "prediction_market_performance_read": false,
+  "prediction_market_settlement_result_used": false,
+  "linked_asset_realized_returns_read": false,
+  "economic_release_values_read": false,
+  "science_reopened": false
+}
