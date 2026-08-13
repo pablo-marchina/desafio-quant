@@ -66,6 +66,6 @@ jobs:
             registry/w4b_cross_venue_dedup_summary_v1.json \
             registry/w4b_cross_venue_dedup_closeout_v1.json
           git commit -m 'results: promote passed W4-B cross-venue pre-truth dedup v1'
-          git fetch origin main
-          git rebase origin/main
+          # Promotion starts from current main; use the push itself as the
+          # fail-closed fast-forward concurrency guard.
           git push origin HEAD:main
