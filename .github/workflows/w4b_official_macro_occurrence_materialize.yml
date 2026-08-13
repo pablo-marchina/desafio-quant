@@ -1,7 +1,7 @@
 name: W4-B Official Macro Occurrence Materialize
 on:
   push:
-    paths: ['registry/w4b_official_macro_occurrence_materialization_freeze_v1.json']
+    paths: ['registry/w4b_official_macro_occurrence_materialization_erratum_v1_0_1.json']
   workflow_dispatch:
 permissions:
   contents: write
@@ -14,21 +14,26 @@ jobs:
         with: {fetch-depth: 0}
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
-      - name: Validate frozen identities
+      - name: Validate original freeze and technical erratum
         run: |
           python - <<'PY'
           import json,os,subprocess
           f=json.load(open('registry/w4b_official_macro_occurrence_materialization_freeze_v1.json'))
+          e=json.load(open('registry/w4b_official_macro_occurrence_materialization_erratum_v1_0_1.json'))
           b=lambda p:subprocess.check_output(['git','hash-object',p],text=True).strip()
           assert f['status']=='FROZEN_BEFORE_OFFICIAL_MACRO_OCCURRENCE_MATERIALIZATION'
-          assert f['official_truth_decisions_observed_before_freeze'] is False and f['science_reopened'] is False
-          assert f['release_values_read_or_persisted'] is False
-          assert b('registry/w4b_official_macro_truth_automation_protocol_v1.json')==f['macro_protocol_blob_sha1']=='49ebc0d7888149833fd1c741ac172dcbd0b0413d'
-          for p,sha in f['executor_blobs'].items(): assert b(p)==sha,(p,b(p),sha)
-          assert b('.github/workflows/w4b_official_macro_occurrence_materialize.yml')==f['workflow_blob_sha1']
-          assert f['validated_source_probe_run_id']==31737014277 and f['validated_source_probe_workflow_blob_sha1']=='91a6567d22549a92ecacd9c38b8b9f0c0bc33a09'
+          assert e['status']=='FROZEN_AFTER_PARSER_COVERAGE_FAIL_BEFORE_ANY_OCCURRENCE_RESULT_OR_DECISIONS'
+          assert e['failed_run_id']==31738056059 and e['failed_stage']=='BLS_DOM_TITLE_EXTRACTION'
+          assert e['scientific_contract_changes'] is False and e['science_reopened'] is False
+          assert e['official_truth_decisions_observed_before_erratum'] is False
+          assert e['release_values_read_or_persisted'] is False
+          assert f['workflow_blob_sha1']=='b56a69877c3e5ab1207de23d27ae7c6ade315c2f'
+          assert f['executor_blobs']['scripts/w4b_official_macro_occurrences_bls_v1.py']=='01bf6a7c5e0dd7ec1440d7316c6a7f3cbbfa0250'
+          assert b('registry/w4b_official_macro_truth_automation_protocol_v1.json')=='49ebc0d7888149833fd1c741ac172dcbd0b0413d'
+          for p,sha in e['executor_blobs'].items(): assert b(p)==sha,(p,b(p),sha)
+          assert b('.github/workflows/w4b_official_macro_occurrence_materialize.yml')==e['workflow_blob_sha1']
           assert not os.path.exists('registry/w4b_official_event_truth_decisions_v1.csv')
-          print('PASS_W4B_OFFICIAL_MACRO_OCCURRENCE_FREEZE')
+          print('PASS_W4B_OFFICIAL_MACRO_OCCURRENCE_ERRATUM_FREEZE')
           PY
       - run: python scripts/w4b_official_macro_occurrences_bls_v1.py
       - run: python scripts/w4b_official_macro_occurrences_fed_bea_v1.py
@@ -50,5 +55,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout -B w4b-official-macro-occurrences-v1
           git add registry/w4b_official_macro_*.csv.gz registry/w4b_official_macro_*summary_v1.json
-          git commit -m 'evidence: materialize W4-B official macro occurrences v1'
+          git commit -m 'evidence: materialize W4-B official macro occurrences v1.0.1'
           git push -f origin w4b-official-macro-occurrences-v1
