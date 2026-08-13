@@ -1,0 +1,28 @@
+{
+  "artifact": "W4B_FORECASTEX_ARCHIVE_COMPLETENESS_AMENDMENT",
+  "version": "W4B-FX-C-A1-v1.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_ANY_FORECASTEX_CENSUS_EXECUTION",
+  "parent_protocol": "W4B-FX-C-v1.0",
+  "scientific_contract_changes": true,
+  "change_scope": "ARCHIVE_ENUMERATION_RECALL_ONLY_PRE_RESULT",
+  "forecastex_census_results_observed_before_amendment": false,
+  "motivation": "The official ForecastEx /data page currently displays archive dates only through 2026-07-17 while W4-B executes on 2026-08-13. Treating the latest displayed UI date as the terminal archive date could create survivorship/access-page truncation if valid official files exist for later dates but are not listed by the UI.",
+  "old_end_date_rule": "latest date displayed by the official /data page at execution time",
+  "authoritative_end_date_rule": "UTC execution date minus one calendar day",
+  "enumeration_rule": "Probe the official summary download endpoint for every UTC calendar date from 2024-01-01 through D-1. HTTP 200 valid CSV means archive date exists; HTTP 404 is an explicitly accounted no-file date; any other unresolved response fails materialization.",
+  "prices_rule": "Fetch and hash the prices CSV only for every summary-existing date; missing/unresolved corresponding prices remains a materialization failure.",
+  "why_d_minus_1": "Avoid treating an intraday/current-day file that may still be refreshing as a required completed daily archive file.",
+  "unchanged": [
+    "official ForecastEx endpoint pattern",
+    "summary/prices schema rules",
+    "all frozen semantic family rules",
+    "canonical_event_id formula",
+    "same-event strike/subtype collapse",
+    "price volume open-interest settlement fields forbidden to vote",
+    "performance blindness",
+    "linked-asset outcomes closed",
+    "ForecastEx counts remain census capacity not N_final_backtestable"
+  ],
+  "governance": "This is a pre-result recall repair motivated solely by observable archive-page truncation. It cannot be revised again in response to ForecastEx event counts."
+}
