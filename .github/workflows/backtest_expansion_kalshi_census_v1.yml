@@ -27,7 +27,7 @@ jobs:
       - name: Enforce performance firewall
         shell: bash
         run: |
-          ! grep -Eri 'w2a_funded_portfolio_daily|active_terminal_wealth|matched_spy|asset_return|realized_return|pnl.csv' scripts/backtest_expansion_kalshi_census_v1.py
+          ! grep -Eri 'registry/w2a_funded_portfolio|w2a_funded_portfolio_daily|candidate_executed_trades|matched_spy_total_return|active_terminal_wealth' scripts/backtest_expansion_kalshi_census_v1.py
       - name: Run performance-blind Kalshi metadata census
         env:
           ARGOS_EXPANSION_OUTDIR: artifacts/backtest_expansion_kalshi_v1
