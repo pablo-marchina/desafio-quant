@@ -77,6 +77,8 @@ jobs:
             registry/w4b_kalshi_history_closeout_v1_0_3.json \
             registry/w4b_kalshi_history_closeout_authoritative.json
           git commit -m 'results: promote passed W4-B Kalshi history v1.0.3'
+          git reset --hard HEAD
+          git clean -fd
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
