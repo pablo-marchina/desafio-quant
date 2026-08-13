@@ -1,0 +1,101 @@
+name: W4-B Kalshi Full Population History v1.0.2
+on:
+  push:
+    paths:
+      - 'registry/w4b_kalshi_history_transport_recovery_amendment_v1_0_2.json'
+      - 'registry/w4b_kalshi_full_population_history_freeze_v1_0_2.json'
+      - 'scripts/w4b_kalshi_full_population_history_v1_0_2.py'
+      - '.github/workflows/w4b_kalshi_full_population_history_v1_0_2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  history:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen transport amendment and scientific identity
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          p=json.load(open('registry/w4b_kalshi_full_population_history_protocol_v1.json'))
+          e=json.load(open('registry/w4b_kalshi_history_input_identity_erratum_v1_0_1.json'))
+          a=json.load(open('registry/w4b_kalshi_history_transport_recovery_amendment_v1_0_2.json'))
+          f=json.load(open('registry/w4b_kalshi_full_population_history_freeze_v1_0_2.json'))
+          s=json.load(open('registry/w4b_kalshi_semantic_summary_v1_1.json'))
+          def blob(path): return subprocess.check_output(['git','hash-object',path],text=True).strip()
+          assert p['version']=='W4B-KH-v1.0'
+          assert e['authoritative_semantic_summary_count']==391
+          assert a['status']=='FROZEN_AFTER_INCOMPLETE_TRANSPORT_RESULT_BEFORE_RETRY'
+          assert a['scientific_contract_changes'] is False
+          assert a['transport_changes']['parallel_workers']['to']==4
+          assert a['transport_changes']['serial_recovery_rounds']==2
+          assert s['accepted_unique_canonical_events']==391
+          assert f['status']=='FROZEN_BEFORE_AUTHORITATIVE_HISTORY_V1_0_2_EXECUTION'
+          assert blob('registry/w4b_kalshi_full_population_history_protocol_v1.json')=='5cf4e3c9f81b9c88e7d9219864d45f826c9914f5'
+          assert blob('scripts/w4b_kalshi_full_population_history_v1.py')=='36fe13e884d0cb600be03edac6c0d730ab3d0009'
+          assert blob('registry/w4b_kalshi_semantic_events_v1_1.csv.gz')=='45c26c02c53a5f5d43c56775aae29ec8858b4f64'
+          assert blob('registry/w4b_kalshi_semantic_summary_v1_1.json')=='17f05eb601a7184e1a14f5230c73cf56cf730da0'
+          assert blob('registry/w4b_kalshi_history_transport_recovery_amendment_v1_0_2.json')=='315643867567271e77b8c7bc77806c7659f16c96'
+          assert blob('scripts/w4b_kalshi_full_population_history_v1_0_2.py')=='ee584a5d67bec9c5e3e7c9a659570228b1fdfd37'
+          print('PASS_W4B_HISTORY_V1_0_2_FREEZE')
+          PY
+      - name: Execute authoritative transport-recovered all-market history audit
+        id: execute
+        continue-on-error: true
+        run: python scripts/w4b_kalshi_full_population_history_v1_0_2.py
+      - name: Inspect result and firewall
+        if: always()
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          x=json.load(open('registry/w4b_kalshi_history_summary_v1_0_2.json'))
+          print(json.dumps({
+            'canonical_events_audited':x['canonical_events_audited'],
+            'unique_market_tickers_audited':x['unique_market_tickers_audited'],
+            'api_unresolved_count':x['api_unresolved_count'],
+            'api_unresolved_examples':x.get('api_unresolved_examples',[]),
+            'history_class_counts':x['history_class_counts'],
+            'horizon_event_counts':x['horizon_event_counts'],
+            'technical_gate_decision':x['technical_gate_decision']
+          },indent=2,sort_keys=True))
+          assert x['version']=='W4B-KH-RESULT-v1.0.2'
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['kalshi_settlement_results_persisted'] is False
+          assert x['canonical_events_expected']==391
+          assert x['canonical_events_audited']==391
+          assert x['unique_market_tickers_audited']==5196
+          with gzip.open('registry/w4b_kalshi_history_market_v1_0_2.csv.gz','rt') as f:
+              hdr=set(next(csv.reader(f)))
+          forbidden={'yes_price','no_price','price','close','open','settlement_result','result','linked_asset_return','ARGOS_PnL'}
+          assert not (forbidden & hdr)
+          print('PASS_W4B_HISTORY_RESULT_FIREWALL')
+          PY
+      - name: Persist result or diagnostic evidence branch
+        if: always()
+        run: |
+          test -f registry/w4b_kalshi_history_summary_v1_0_2.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-kalshi-history-v1-0-2
+          git add \
+            registry/w4b_kalshi_history_market_v1_0_2.csv.gz \
+            registry/w4b_kalshi_history_event_v1_0_2.csv.gz \
+            registry/w4b_kalshi_history_summary_v1_0_2.json
+          git commit -m 'results: materialize W4-B Kalshi history v1.0.2'
+          git push -f origin w4b-kalshi-history-v1-0-2
+      - name: Enforce zero-unresolved materialization gate
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_kalshi_history_summary_v1_0_2.json'))
+          assert x['api_unresolved_count']==0
+          assert x['technical_gate_decision']=='PASS_FULL_POPULATION_HISTORY_MATERIALIZED'
+          print('PASS_W4B_FULL_POPULATION_HISTORY_V1_0_2')
+          PY
