@@ -1,0 +1,89 @@
+{
+  "artifact": "W4B_KALSHI_FULL_POPULATION_HISTORY_PROTOCOL",
+  "date": "2026-08-13",
+  "version": "W4B-KH-v1.0",
+  "status": "PREREGISTERED_PRE_HISTORY_EXECUTION",
+  "input": {
+    "semantic_events_path": "registry/w4b_kalshi_semantic_events_v1_1.csv.gz",
+    "semantic_events_git_blob_sha1": "45c26c02c53a5f5d43c56775aae29ec8858b4f64",
+    "semantic_summary_path": "registry/w4b_kalshi_semantic_summary_v1_1.json",
+    "semantic_summary_git_blob_sha1": "17f05eb601a7184e1a14f5230c73cf56cf730da0",
+    "expected_accepted_unique_canonical_events": 387,
+    "input_filter": "semantic_status starts ACCEPT and canonicalization_status=PASS only"
+  },
+  "objective": "Measure full-population Kalshi pre-event market-history availability from T-10d to T-1h for every accepted canonical_event_id before any ForecastEx census, Polymarket recensus, linked-asset outcome read or official-event-truth attachment.",
+  "governance": {
+    "performance_blind": true,
+    "linked_asset_realized_returns_allowed": false,
+    "kalshi_settlement_result_read_or_persisted": false,
+    "market_selection_by_volume_price_or_performance_forbidden": true,
+    "all_constituent_market_tickers_audited": true,
+    "empty_200_is_scientific_missingness_not_api_failure": true,
+    "unresolved_api_error_fails_materialization": true,
+    "protocol_rewrite_after_real_history_result_forbidden": true,
+    "science_reopened": false
+  },
+  "operational_t0": {
+    "definition": "For each canonical_event_id, take the earliest parseable latest_close_time among its accepted Kalshi alias event rows. This is a conservative venue reference only.",
+    "reason": "Official event truth is intentionally later in the user-fixed W4-B sequence. Earliest alias close avoids selecting a later venue timestamp that could artificially improve measured pre-event coverage.",
+    "claim_limit": "No W4-B history result may call this official event time or final PIT truth. Official-truth stage must later revalidate timing."
+  },
+  "candlestick_contract": {
+    "period_interval_minutes": 60,
+    "window_start": "operational_t0 - 264 hours",
+    "window_end": "operational_t0",
+    "persist_price_fields": false,
+    "persist_only": [
+      "market_ticker",
+      "canonical_event_id",
+      "route_used",
+      "http_resolution_status",
+      "candlestick_count",
+      "first_end_period_ts",
+      "last_end_period_ts",
+      "horizon_validity",
+      "staleness_seconds"
+    ],
+    "route_resolution": [
+      "Attempt GET /historical/markets/{ticker}/candlesticks first.",
+      "If and only if historical returns HTTP 404, attempt GET /series/{series_ticker}/markets/{ticker}/candlesticks.",
+      "A 200 response, including an empty candlestick array, resolves the route.",
+      "Non-404 4xx, 5xx after retries, timeout exhaustion, invalid JSON, or 404 on both routes is API_UNRESOLVED and fails the technical materialization gate."
+    ],
+    "kalshi_contract_basis": "Official Kalshi documentation: settled markets older than historical cutoff and their candlesticks must use the historical namespace; valid single-market candlestick periods include 60 minutes."
+  },
+  "horizon_ladder": [
+    {"hours_before_t0": 240, "max_staleness_hours": 24},
+    {"hours_before_t0": 168, "max_staleness_hours": 24},
+    {"hours_before_t0": 120, "max_staleness_hours": 24},
+    {"hours_before_t0": 72, "max_staleness_hours": 24},
+    {"hours_before_t0": 48, "max_staleness_hours": 24},
+    {"hours_before_t0": 24, "max_staleness_hours": 24},
+    {"hours_before_t0": 12, "max_staleness_hours": 6},
+    {"hours_before_t0": 6, "max_staleness_hours": 6},
+    {"hours_before_t0": 3, "max_staleness_hours": 2},
+    {"hours_before_t0": 1, "max_staleness_hours": 2}
+  ],
+  "horizon_rule": "For a market/horizon, select the latest real 1h candlestick end_period_ts at or before T0-horizon. Valid iff target_ts - candle_ts is between 0 and the preregistered max_staleness. No synthetic latest-before-start candle is requested.",
+  "event_aggregation": {
+    "horizon_any_valid": "TRUE iff at least one constituent market ticker is valid at that horizon.",
+    "horizon_market_fraction_valid": "valid constituent markets / technically resolved constituent markets.",
+    "FULL_LADDER": "all 10 event-level horizons any-valid",
+    "CORE_T10_TO_T1H": "T-240h and T-1h any-valid and at least 8/10 horizons any-valid",
+    "PARTIAL": "at least one but not CORE_T10_TO_T1H",
+    "NO_T10D": "T-240h invalid but some later horizon valid",
+    "NO_NEAR_T0": "T-240h valid but T-1h invalid",
+    "NO_HISTORY": "no horizon valid",
+    "DISTRIBUTIONAL_CORE_FLAG": "descriptive only: >=50% market validity at T-240h and T-1h plus >=8/10 event-level horizons; never increases independent N"
+  },
+  "canonical_alias_policy": "All accepted Kalshi alias rows sharing canonical_event_id are pooled into that one canonical event; all unique constituent market_tickers across aliases are audited. Aliases and strikes never add independent N.",
+  "outputs": {
+    "market_level": "registry/w4b_kalshi_history_market_v1.csv.gz",
+    "event_level": "registry/w4b_kalshi_history_event_v1.csv.gz",
+    "summary": "registry/w4b_kalshi_history_summary_v1.json"
+  },
+  "gate": {
+    "technical_pass": "387/387 canonical events represented, every unique constituent ticker technically resolved through exactly one successful route, zero API_UNRESOLVED, deterministic outputs.",
+    "scientific_interpretation": "History classes quantify venue-side availability only. They do not establish official event timing, asset mapping, cross-venue uniqueness or N_final_backtestable."
+  }
+}

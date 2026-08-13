@@ -1,0 +1,70 @@
+name: W4-B Kalshi Full Population History
+on:
+  push:
+    paths:
+      - 'registry/w4b_kalshi_full_population_history_protocol_v1.json'
+      - 'registry/w4b_kalshi_full_population_history_freeze_v1.json'
+      - 'scripts/w4b_kalshi_full_population_history_v1.py'
+      - '.github/workflows/w4b_kalshi_full_population_history.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  history:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen history contract and input identity
+        run: |
+          python - <<'PY'
+          import hashlib,json,subprocess
+          p=json.load(open('registry/w4b_kalshi_full_population_history_protocol_v1.json'))
+          f=json.load(open('registry/w4b_kalshi_full_population_history_freeze_v1.json'))
+          s=json.load(open('registry/w4b_kalshi_semantic_summary_v1_1.json'))
+          assert p['version']=='W4B-KH-v1.0'
+          assert p['status']=='PREREGISTERED_PRE_HISTORY_EXECUTION'
+          assert f['status']=='FROZEN_BEFORE_FULL_POPULATION_HISTORY_EXECUTION'
+          assert p['governance']['performance_blind'] is True
+          assert p['governance']['linked_asset_realized_returns_allowed'] is False
+          assert p['governance']['all_constituent_market_tickers_audited'] is True
+          assert s['accepted_unique_canonical_events']==387
+          def blob(path): return subprocess.check_output(['git','hash-object',path],text=True).strip()
+          assert blob('registry/w4b_kalshi_semantic_events_v1_1.csv.gz')=='45c26c02c53a5f5d43c56775aae29ec8858b4f64'
+          assert blob('registry/w4b_kalshi_semantic_summary_v1_1.json')=='17f05eb601a7184e1a14f5230c73cf56cf730da0'
+          print('PASS_W4B_KALSHI_HISTORY_FREEZE')
+          PY
+      - name: Execute all-market T-10d to T0 history audit
+        run: python scripts/w4b_kalshi_full_population_history_v1.py
+      - name: Validate history outputs and firewall
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          x=json.load(open('registry/w4b_kalshi_history_summary_v1.json'))
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['kalshi_settlement_results_persisted'] is False
+          assert x['canonical_events_expected']==387
+          assert x['canonical_events_audited']==387
+          assert x['api_unresolved_count']==0
+          assert x['technical_gate_decision']=='PASS_FULL_POPULATION_HISTORY_MATERIALIZED'
+          with gzip.open('registry/w4b_kalshi_history_market_v1.csv.gz','rt') as f:
+              hdr=set(next(csv.reader(f)))
+          forbidden={'yes_price','no_price','price','close','open','settlement_result','result','linked_asset_return','ARGOS_PnL'}
+          assert not (forbidden & hdr)
+          print('PASS_W4B_FULL_POPULATION_HISTORY')
+          PY
+      - name: Persist evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-kalshi-history-v1
+          git add \
+            registry/w4b_kalshi_history_market_v1.csv.gz \
+            registry/w4b_kalshi_history_event_v1.csv.gz \
+            registry/w4b_kalshi_history_summary_v1.json
+          git commit -m 'results: materialize W4-B Kalshi full-population history v1'
+          git push -f origin w4b-kalshi-history-v1

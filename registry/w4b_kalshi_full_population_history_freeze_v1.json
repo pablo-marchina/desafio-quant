@@ -1,0 +1,24 @@
+{
+  "artifact": "W4B_KALSHI_FULL_POPULATION_HISTORY_FREEZE",
+  "version": "W4B-KHF-v1.0",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_FULL_POPULATION_HISTORY_EXECUTION",
+  "parent_main_commit": "fb901d88bfc27f67cbdd5c5b6c6a18bb30ee8083",
+  "frozen_input_blobs": {
+    "registry/w4b_kalshi_semantic_events_v1_1.csv.gz": "45c26c02c53a5f5d43c56775aae29ec8858b4f64",
+    "registry/w4b_kalshi_semantic_summary_v1_1.json": "17f05eb601a7184e1a14f5230c73cf56cf730da0"
+  },
+  "frozen_new_blobs": {
+    "registry/w4b_kalshi_full_population_history_protocol_v1.json": "5cf4e3c9f81b9c88e7d9219864d45f826c9914f5",
+    "scripts/w4b_kalshi_full_population_history_v1.py": "36fe13e884d0cb600be03edac6c0d730ab3d0009",
+    ".github/workflows/w4b_kalshi_full_population_history.yml": "5a5bd07c56dac0a38571bb60940267d59b406a8b"
+  },
+  "firewall": {
+    "real_history_result_observed_before_freeze": false,
+    "linked_asset_realized_returns_closed": true,
+    "kalshi_settlement_results_not_persisted": true,
+    "all_constituent_market_tickers_required": true,
+    "performance_blind": true,
+    "protocol_mutation_after_execution_forbidden": true
+  }
+}
