@@ -3,13 +3,17 @@ on:
   workflow_run:
     workflows: ['W4-B Cross-Venue Pre-Truth Dedup']
     types: [completed]
+  workflow_dispatch:
 permissions:
   contents: write
   actions: write
 jobs:
   promote:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-24.04
+    env:
+      SOURCE_RUN_ID: ${{ github.event_name == 'workflow_dispatch' && '31735189069' || github.event.workflow_run.id }}
+      SOURCE_HEAD_SHA: ${{ github.event_name == 'workflow_dispatch' && '2061b7019b93b292a74d789c6575cd0a7d4ae369' || github.event.workflow_run.head_sha }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,9 +29,6 @@ jobs:
             registry/w4b_cross_venue_candidate_components_v1.csv.gz \
             registry/w4b_cross_venue_dedup_summary_v1.json
       - name: Validate and create cross-venue closeout
-        env:
-          SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
-          SOURCE_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
           python - <<'PY'
           import hashlib,json,os,subprocess
@@ -67,8 +68,6 @@ jobs:
             registry/w4b_cross_venue_dedup_summary_v1.json \
             registry/w4b_cross_venue_dedup_closeout_v1.json
           git commit -m 'results: promote passed W4-B cross-venue pre-truth dedup v1'
-          # Promotion starts from current main; use the push itself as the
-          # fail-closed fast-forward concurrency guard.
           git push origin HEAD:main
       - name: Dispatch frozen official-truth queue
         run: |
