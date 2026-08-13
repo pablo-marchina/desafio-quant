@@ -1,0 +1,23 @@
+{
+  "artifact": "W4B_OFFICIAL_TRUTH_DECISION_GENERATION_ERRATUM",
+  "version": "W4B-OET-DECGEN-ERRATUM-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_PROVENANCE_SHA_TYPO_BEFORE_ANY_DECISION_RESULT",
+  "failed_run_id": 31739095110,
+  "failed_stage": "OCCURRENCE_EVIDENCE_COMMIT_PROVENANCE_CHECK",
+  "observed_failure": "The original decision freeze contained a mistyped occurrence evidence commit SHA. The run stopped before freeze validation and before any decision generation.",
+  "incorrect_occurrence_evidence_commit": "181bb80f28a0ab20e0524ab01e22c8bbb26f7963",
+  "correct_occurrence_evidence_commit": "181bb80efe3555aa91252faf856951908f55c9e8",
+  "occurrence_csv_blob_sha1": "6ceae579a62a54b6932a95b25cd0af34e3999f83",
+  "occurrence_summary_blob_sha1": "8bfa5342801245a630563656f3024fd5856b03e9",
+  "decision_generator_blob_sha1": "c30f5f6bccea970b03b8f9f06204f305c6cb625a",
+  "workflow_blob_sha1": "f5bf1a3d19a9a69a687626bd3c2017715633900c",
+  "scientific_contract_changes": false,
+  "science_reopened": false,
+  "decision_results_observed_before_erratum": false,
+  "performance_blind": true,
+  "linked_asset_realized_returns_read": false,
+  "prediction_market_outcomes_read": false,
+  "economic_release_values_read": false,
+  "policy": "This erratum corrects provenance metadata only. Occurrence blobs, queue, template, generator, frozen as-of date, family/subject eligibility and +/-3 day matching contract are unchanged."
+}
