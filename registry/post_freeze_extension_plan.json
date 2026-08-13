@@ -1,9 +1,9 @@
 {
   "artifact": "POST_FREEZE_EXTENSION_PLAN",
-  "version": "PFEP-v4.1",
+  "version": "PFEP-v4.2",
   "date": "2026-08-13",
-  "status": "W4_R_FIRST_PASS_MATERIALIZED_W4_A_TECHNICAL_PASS_W4_B_NEXT",
-  "operational_phase": "W4_B_SEMANTIC_MULTI_VENUE_CENSUS_PRE_OUTCOME",
+  "status": "W4_B_ACTIVE_FORECASTEX_CENSUS_PRE_OUTCOME",
+  "operational_phase": "W4_B_MULTI_VENUE_CENSUS_FORECASTEX_ACTIVE",
   "scientific_reopen": false,
   "submission_baseline": {
     "scientific_authority": "FST-v1.0 / SF-v3.0 / ART-029 / ART-030",
@@ -14,79 +14,54 @@
     "h4": "BLOCKED_BY_H2_FAIL",
     "h5": "BLOCKED_BY_H4",
     "probabilistic_champion": "M2",
-    "economic_champion_historical": "C0_NO_TRADE",
-    "frozen_bundle_sha256": "c83b0868f3b397832e16bbeaab00da5f6a0d7be3b0e29c40be9fea351b43d885"
-  },
-  "historical_extension_state": {
-    "W2A": "PASS_COMPLETE_FUNDED_BACKTEST_NO_PROMOTION",
-    "W2C": "PIT_V2_1_F1_F9_COMPLETE_FROZEN",
-    "W2B_IAS": "COMPLETE_FROZEN_NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER",
-    "W3": "FINAL_DECISION_GATE_FROZEN_PENDING_REAL_COMBINATION",
-    "relationship_to_W4": "W4 is a separate performance-blind capacity/data/backtest research program; it does not authorize W3 or reopen the frozen submission truth."
+    "economic_champion_historical": "C0_NO_TRADE"
   },
   "W4": {
-    "status": "ACTIVE_PRE_OUTCOME_W4_B_NEXT",
-    "research_protocol": "registry/w4_backtest_expansion_research_protocol_v1.json",
-    "maximal_research_plan": "registry/w4_maximal_backtest_research_plan_v1.json",
-    "maximal_data_source_registry": "registry/w4_maximal_data_source_registry_v1.json",
-    "family_expansion_research": "registry/w4_family_expansion_research_v1.json",
+    "status": "ACTIVE_PRE_OUTCOME_W4_B_FORECASTEX",
     "science_reopened": false,
     "performance_blind": true,
     "goal": "Maximize defensible independent canonical_event_id N, PIT temporal depth, informational breadth and validation depth before any linked-asset outcome reveal.",
     "milestones_not_stop_rules": {"minimum": 300, "preferred": 500, "stretch": 1000},
     "stop_condition": "Saturation gate, not fixed N.",
-    "canonical_independence_rule": "canonical_event_id remains the default inferential unit. Markets, strikes, venues, assets, horizons, trades, quotes and ticks add information but not independent N automatically.",
-    "W4_R": {
-      "status": "FIRST_PASS_MATERIALIZED_CONTINUES_IN_PARALLEL",
-      "registry": "registry/w4_maximal_data_source_registry_v1.json",
-      "document": "docs/49_w4_maximal_data_source_research.md",
-      "family_expansion_registry": "registry/w4_family_expansion_research_v1.json",
-      "family_expansion_document": "docs/52_w4_family_expansion_research.md",
-      "priority_routes": [
-        "Kalshi official historical market/trade/candle data",
-        "ForecastEx daily/intraday event-contract files",
-        "Polymarket official recensus plus reconciled large on-chain archives",
-        "official event-truth sources across SEC/BLS/BEA/Fed/Census/FDA/DOJ/FTC",
-        "systematic CFTC DCM DATA_ACCESS_GATE audit",
-        "cost-gated linked-asset microstructure/options data",
-        "separate outcome-blind family expansion including Housing Starts/Building Permits and high-frequency EIA candidates"
-      ]
-    },
+    "W4_R": {"status": "ACTIVE_SUPPORT_TRACK_FIRST_PASS_MATERIALIZED"},
     "W4_A": {
-      "status": "PASS_TECHNICAL_CAPACITY_AND_HISTORY_ENDPOINTS_SEMANTIC_VALIDATION_PENDING",
-      "closure_registry": "registry/w4a_kalshi_technical_closure_v1.json",
-      "capacity_result": "registry/w4_kalshi_series_first_capacity_v1.json",
-      "capacity_workflow_run": 31667723040,
+      "status": "COMPLETE_PASS_TECHNICAL",
       "series_total_returned": 12940,
       "classified_unique_series_raw": 488,
       "complete_live_historical_routes": 488,
       "route_errors": 0,
-      "history_probe_protocol": "registry/w4a_kalshi_history_probe_protocol_v1.json",
-      "history_probe_result": "registry/w4a_kalshi_history_probe_result_v1.json",
-      "history_probe_run": 31668356059,
       "endpoint_requests": 30,
       "endpoint_successes": 30,
-      "contract_400_errors": 0,
-      "semantic_warning": "Raw keyword counts contain confirmed false positives and are discovery upper bounds only; they are not semantic-valid or final-backtestable N."
+      "contract_400_errors": 0
     },
     "W4_B": {
-      "status": "NEXT_NOT_YET_OUTCOME_BEARING",
-      "required_sequence": [
-        "freeze separate semantic validation/adjudication protocol without editing W4-BER-v1.0",
-        "boundary-aware candidate generation plus family/entity/subject guards",
-        "materialize exact-family accept/reject evidence",
-        "canonicalize accepted markets/strikes/venues to canonical_event_id",
-        "run full-population Kalshi T-10d to T0 history-depth audit on accepted events",
-        "census ForecastEx and Polymarket under equivalent performance-blind semantics",
-        "attach official event-truth evidence",
-        "measure raw to semantic to independent to PIT to asset-mappable attrition"
-      ]
+      "status": "ACTIVE_FORECASTEX_CENSUS",
+      "stages": [
+        {"id": "semantic_protocol_freeze", "status": "PASS_COMPLETE"},
+        {"id": "kalshi_semantic_cleaning", "status": "PASS_COMPLETE", "raw_series_re_evaluated": 488, "candidate_events": 1690, "strict_acceptances": 668},
+        {"id": "canonical_event_id", "status": "PASS_COMPLETE", "independent_canonical_events": 391, "collapsed_aliases": 277, "ambiguities": 0, "api_errors": 0},
+        {"id": "kalshi_full_population_T10d_T0", "status": "PASS_MATERIALIZED", "canonical_events_audited": 391, "market_tickers_audited": 5196, "api_unresolved": 0, "full_ladder_events": 101, "core_T10_to_T1h_events": 31, "distributional_core_events": 85},
+        {"id": "forecastex_census", "status": "IN_PROGRESS", "workflow_run": 31694324574, "current_step": "Execute official archive census"},
+        {"id": "polymarket_recensus", "status": "BLOCKED_BY_FORECASTEX_PASS"},
+        {"id": "cross_venue_dedup", "status": "BLOCKED_BY_POLYMARKET_PASS"},
+        {"id": "official_event_truth", "status": "BLOCKED_BY_DEDUP_PASS"},
+        {"id": "w4b_final_attrition", "status": "BLOCKED_BY_OFFICIAL_TRUTH_PASS"}
+      ],
+      "promotion_chain_hardened": true,
+      "promotion_hardening_head": "ae9f51f1644ae76ef7d03f8e7630d40f591a0230",
+      "required_chain": "ForecastEx PASS -> hardened promotion -> Polymarket -> hardened promotion -> cross-venue dedup -> hardened promotion -> official truth -> hardened promotion -> W4-B final attrition",
+      "overclaim_firewall": "W4-B final attrition does not authorize N_final_backtestable, linked-asset outcomes or economic claims."
+    },
+    "W4_C": {
+      "status": "PENDING_W4_B_CLOSEOUT",
+      "goal": "Apply marginal-capacity analysis and the saturation gate using the completed W4-B attrition evidence.",
+      "distinction_from_W4_B_attrition": "W4-B produces the auditable pre-outcome attrition table; W4-C evaluates marginal capacity and saturation."
     },
     "execution_order": [
       "W4-R maximal research (continuous support track)",
-      "W4-A Kalshi technical validation (PASS)",
-      "W4-B semantic multi-venue census (NEXT)",
-      "W4-C attrition and saturation audit",
+      "W4-A Kalshi technical validation (COMPLETE PASS)",
+      "W4-B semantic multi-venue census (ACTIVE: ForecastEx)",
+      "W4-C saturation and marginal-capacity audit",
       "W4-D canonical event-centric data lake",
       "W4-E maximal pre-outcome feature materialization",
       "W4-F outcome-blind adequacy/simulation",
@@ -103,23 +78,21 @@
     "c0_no_trade_immutable_historical_champion": true,
     "linked_asset_realized_returns_closed_until_W4_H": true,
     "original_w4_family_dictionary_immutable": true,
-    "new_family_expansion_requires_separate_preregistration": true,
     "pseudo_replication_forbidden": true,
-    "canonical_event_id_default_inferential_unit": true,
-    "negative_and_no_go_results_preserved": true,
-    "w3_pending_state_preserved": true
+    "canonical_event_id_default_inferential_unit": true
   },
   "progress_summary": {
     "completed": [
-      "W4-R first source/venue/data-layer research registry materialized",
-      "W4-R separate outcome-blind family expansion research materialized",
-      "W4-A Kalshi historical request bug corrected without changing frozen semantics",
-      "W4-A series-first capacity run completed: 488/488 classified series complete across live+historical routes, zero route errors",
-      "W4-A preregistered trade/candle history probe completed: 30/30 endpoint calls successful, zero HTTP 400 contract errors",
-      "W4-A raw counts explicitly quarantined as semantic-unvalidated upper bounds"
+      "W4-R first-pass source/family research materialized",
+      "W4-A Kalshi technical validation passed",
+      "W4-B semantic protocol frozen",
+      "W4-B Kalshi semantic cleaning passed",
+      "W4-B 391 independent canonical_event_id materialized",
+      "W4-B Kalshi full-population T-10d to T0 passed for 391 events / 5,196 tickers / 0 API_UNRESOLVED",
+      "W4-B promotion chain hardened through final attrition"
     ],
-    "active": ["W4-R continuing source/family research as support track"],
-    "next": ["W4-B semantic multi-venue census and canonicalization"]
+    "active": ["W4-B ForecastEx official archive census run 31694324574", "W4-R support track"],
+    "blocked_next": ["Polymarket recensus", "cross-venue dedup", "official event truth", "W4-B final attrition", "W4-C saturation audit"]
   },
-  "next_action": "Preregister and freeze the W4-B semantic validation/adjudication layer without editing the original W4-BER-v1.0 dictionary; then materialize semantic-valid Kalshi canonical events, audit full-population T-10d to T0 history, and run equivalent ForecastEx/Polymarket multi-venue census before W4-C attrition/saturation."
+  "next_action": "Close ForecastEx under frozen semantics; on PASS follow the hardened chain through Polymarket, dedup, official truth and W4-B final attrition; then start W4-C saturation analysis."
 }
