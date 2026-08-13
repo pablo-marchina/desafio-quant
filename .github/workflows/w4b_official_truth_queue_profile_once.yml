@@ -18,7 +18,7 @@ jobs:
           with gzip.open(p,'rt',encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
           by=collections.defaultdict(list)
           for r in rows:
-              by[(r['resolved_family'],r['normalized_subject_key'])].append(r['event_reference_date'])
+              by[(r['resolved_family'],r['normalized_subject_key'])].append(r['pretruth_event_reference_date'])
           print('QUEUE_ROWS',len(rows))
           for (fam,sub),dates in sorted(by.items()):
               print(f'{fam}\t{sub}\t{len(dates)}\t{min(dates)}\t{max(dates)}')
