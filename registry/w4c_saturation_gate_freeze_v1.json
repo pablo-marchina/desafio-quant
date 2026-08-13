@@ -1,0 +1,25 @@
+{
+  "artifact": "W4C_SATURATION_GATE_FREEZE",
+  "version": "W4C-SAT-FREEZE-v1.0",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_W4C_SATURATION_GATE_EXECUTION",
+  "science_reopened": false,
+  "performance_blind": true,
+  "linked_asset_realized_returns_read": false,
+  "prediction_market_performance_read": false,
+  "n_final_backtestable_authorized": false,
+  "w4c_results_observed_before_freeze": false,
+  "protocol_blob_sha1": "f52385ecd92e91fa2545605ae21bdad8aaf77239",
+  "executor_blob_sha1": "8752ef679b93fbf3001626650ad4534e08a8ac48",
+  "workflow_blob_sha1": "70d43d71a2a46110b77892c567708a9b5016532a",
+  "input_blobs": {
+    "registry/w4_maximal_backtest_research_plan_v1.json": "b9338dac71db5fcbe08fb6ce57225b24ad1b416b",
+    "registry/w4_maximal_data_source_registry_v1.json": "522c1c0ee4fcc1b084bfe88951a2f49893eb79d3",
+    "registry/w4_family_expansion_research_v1.json": "2813d874c33e94f52c8c088d34b26323d0e76df4",
+    "registry/w4b_attrition_summary_v1.json": "a7cfb074a52bea7c38a5fcb33433e7db68440503",
+    "registry/w4b_official_event_truth_summary_v1.json": "bdef6077e6d4ddc2ee111f4c0dbab39162af8d30"
+  },
+  "immutable_w4b_truth_verified_unique_official_events": 344,
+  "decision_rule": "CONTINUE if any preregistered route test is open; STOP_SATURATED only if all seven are closed. This gate never authorizes outcome reveal or N_final_backtestable.",
+  "policy": "W4-C may identify separately versioned extension routes but may not rewrite any W4-B census, dedup, official-truth or attrition result."
+}
