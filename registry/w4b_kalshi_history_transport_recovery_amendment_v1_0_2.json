@@ -1,0 +1,43 @@
+{
+  "artifact": "W4B_KALSHI_HISTORY_TRANSPORT_RECOVERY_AMENDMENT",
+  "version": "W4B-KH-TR-v1.0.2",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_INCOMPLETE_TRANSPORT_RESULT_BEFORE_RETRY",
+  "parent_scientific_protocol": "W4B-KH-v1.0",
+  "parent_identity_erratum": "W4B-KH-E1-v1.0.1",
+  "failed_transport_run_id": 31670551830,
+  "observed_failure": {
+    "canonical_events_audited": 391,
+    "unique_market_tickers_audited": 5196,
+    "api_unresolved_count": 19,
+    "technical_gate_decision": "FAIL_HISTORY_MATERIALIZATION"
+  },
+  "amendment_scope": "TRANSPORT_COMPLETENESS_ONLY",
+  "scientific_contract_changes": false,
+  "transport_changes": {
+    "parallel_workers": {"from": 8, "to": 4},
+    "serial_recovery_rounds": 2,
+    "serial_recovery_scope": "Only requests whose immediately preceding result is API_UNRESOLVED",
+    "per_request_retry_function": "unchanged request_json retries/backoff from frozen v1.0 implementation",
+    "route_resolution": "unchanged historical-first; live only after historical 404",
+    "persist_failed_diagnostics": true
+  },
+  "unchanged": [
+    "391 authoritative canonical_event_id input set",
+    "all 5196 constituent market tickers requirement",
+    "operational T0 definition",
+    "264h request window",
+    "60-minute candlestick interval",
+    "T-240h through T-1h horizon ladder",
+    "all staleness tolerances",
+    "horizon latest-at-or-before rule",
+    "event aggregation",
+    "history classes",
+    "distributional-core rule",
+    "zero API_UNRESOLVED technical pass requirement",
+    "performance blindness",
+    "linked-asset outcomes closed",
+    "Kalshi settlement results not persisted"
+  ],
+  "governance": "The failed v1.0.1 run is retained as evidence of an incomplete transport attempt. v1.0.2 may only increase the probability that the same frozen requests resolve; it may not change inclusion, horizons, timing, thresholds, denominators, or interpretation in response to observed history availability."
+}
