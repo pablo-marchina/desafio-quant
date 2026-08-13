@@ -1,0 +1,54 @@
+name: Backtest Expansion Kalshi Census v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/backtest_expansion_kalshi_census_v1.py'
+      - '.github/workflows/backtest_expansion_kalshi_census_v1.yml'
+      - 'registry/backtest_expansion_research_v1.json'
+      - 'docs/44_backtest_expansion_quantitative_research.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile frozen census implementation
+        run: python -m py_compile scripts/backtest_expansion_kalshi_census_v1.py
+      - name: Enforce performance firewall
+        shell: bash
+        run: |
+          ! grep -Eri 'w2a_funded_portfolio_daily|active_terminal_wealth|matched_spy|asset_return|realized_return|pnl.csv' scripts/backtest_expansion_kalshi_census_v1.py
+      - name: Run performance-blind Kalshi metadata census
+        env:
+          ARGOS_EXPANSION_OUTDIR: artifacts/backtest_expansion_kalshi_v1
+        run: python scripts/backtest_expansion_kalshi_census_v1.py
+      - name: Validate output firewall
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('artifacts/backtest_expansion_kalshi_v1/kalshi_census_summary.json')
+          d=json.loads(p.read_text())
+          assert d['performance_blind'] is True
+          assert d['linked_asset_returns_read'] is False
+          assert d['pnl_read'] is False
+          assert d['series_total'] > 0
+          assert d['candidate_series_total'] > 0
+          print('PASS_KALSHI_EXPANSION_CENSUS_FIREWALL')
+          PY
+      - name: Upload census evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: backtest-expansion-kalshi-census-v1
+          path: artifacts/backtest_expansion_kalshi_v1
+          if-no-files-found: error
