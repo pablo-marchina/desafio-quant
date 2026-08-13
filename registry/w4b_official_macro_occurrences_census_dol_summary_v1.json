@@ -1,0 +1,12 @@
+{
+  "artifact": "W4B_OFFICIAL_MACRO_CENSUS_DOL_OCCURRENCES",
+  "counts": {
+    "RETAIL_SALES_RELEASE|US_RETAIL_SALES": 48,
+    "UNEMPLOYMENT_RELEASE|US_INITIAL_JOBLESS_CLAIMS": 238
+  },
+  "coverage_failures": {},
+  "gate_decision": "PASS",
+  "release_values_read_or_persisted": false,
+  "source_failures": [],
+  "version": "v1.0"
+}

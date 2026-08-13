@@ -1,0 +1,14 @@
+{
+  "artifact": "W4B_OFFICIAL_MACRO_BLS_OCCURRENCES",
+  "counts": {
+    "CPI_INFLATION_RELEASE|US_CPI": 71,
+    "PAYROLLS_JOBS_RELEASE|US_PAYROLLS": 71,
+    "UNEMPLOYMENT_RELEASE|US_UNEMPLOYMENT_RATE": 71
+  },
+  "coverage_failures": {},
+  "gate_decision": "PASS",
+  "parser_mode": "BLS_TABLE_ROW_DATE_AND_RELEASE_SAME_ROW",
+  "release_values_read_or_persisted": false,
+  "source_failures": [],
+  "version": "v1.0.2"
+}

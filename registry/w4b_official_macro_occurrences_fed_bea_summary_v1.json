@@ -1,0 +1,14 @@
+{
+  "artifact": "W4B_OFFICIAL_MACRO_FED_BEA_OCCURRENCES",
+  "bea_parser_mode": "BEA_TABLE_ROW_RELEASE_AND_DATE_SAME_ROW",
+  "counts": {
+    "FOMC_DECISION|US_FOMC": 46,
+    "GDP_RELEASE|US_GDP": 72,
+    "PCE_RELEASE|US_PCE": 71
+  },
+  "coverage_failures": {},
+  "gate_decision": "PASS",
+  "release_values_read_or_persisted": false,
+  "source_failures": [],
+  "version": "v1.0.1"
+}
