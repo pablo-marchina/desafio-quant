@@ -1,0 +1,35 @@
+{
+  "artifact": "W4B_FORECASTEX_CENSUS_FREEZE",
+  "version": "W4B-FX-CF-v1.0",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_FORECASTEX_CENSUS_EXECUTION",
+  "protocol": {
+    "path": "registry/w4b_forecastex_census_protocol_v1.json",
+    "blob_sha1": "598de7878784e4dcdede60bfbad2f992890c1dbd"
+  },
+  "executor": {
+    "path": "scripts/w4b_forecastex_census_v1.py",
+    "blob_sha1": "512bb2bc53fefb50a30baf90d1c2fe41db7d6327"
+  },
+  "semantic_parent": {
+    "protocol_path": "registry/w4b_semantic_canonicalization_protocol_v1.json",
+    "protocol_blob_sha1": "a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5",
+    "implementation_path": "scripts/w4b_kalshi_semantic_canonicalize_v1.py",
+    "implementation_blob_sha1": "b0e76b75e7c3c2b044dcbcb7982afaa7ec023b6c"
+  },
+  "access_probe": {
+    "workflow_run_id": 31675824049,
+    "evidence_branch": "w4b-forecastex-access-probe-v1",
+    "decision": "PASS_PUBLIC_CSV_ACCESS_IDENTIFIED",
+    "official_endpoint_pattern": "https://forecastex.com/api/download?type={type}&date={YYYYMMDD}",
+    "census_executed_by_probe": false
+  },
+  "sequence_lock": "Execution requires registry/w4b_kalshi_history_closeout_v1_0_2.json on main with W4B-KH-RESULT-v1.0.2 PASS and api_unresolved_count=0.",
+  "firewall": {
+    "performance_blind": true,
+    "linked_asset_realized_returns_closed": true,
+    "price_volume_oi_settlement_forbidden_to_vote": true,
+    "family_rules_frozen": true,
+    "canonical_id_formula_frozen": true
+  }
+}
