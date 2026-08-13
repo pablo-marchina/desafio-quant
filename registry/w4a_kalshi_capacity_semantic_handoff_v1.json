@@ -1,0 +1,87 @@
+{
+  "artifact": "W4A_KALSHI_CAPACITY_SEMANTIC_HANDOFF",
+  "version": "W4A-KSH-v1.0",
+  "date": "2026-08-13",
+  "status": "PASS_TECHNICAL_CAPACITY_NOT_SEMANTICALLY_VALIDATED",
+  "science_reopened": false,
+  "performance_blind": true,
+  "realized_linked_asset_returns_read": false,
+  "raw_capacity_authority": {
+    "workflow_run_id": 31667723040,
+    "evidence_branch": "w4-kalshi-series-first-v1",
+    "evidence_commit": "9ce56fb88166831d2867a2f6d8e812fb3f77d261",
+    "evidence_blob": "150f4ff84b1322d08eca0146fa7b85df5f542d6b",
+    "artifact_path": "registry/w4_kalshi_series_first_capacity_v1.json",
+    "artifact_version": "W4-KSF-v1.1"
+  },
+  "technical_route_gate": {
+    "decision": "PASS",
+    "series_total_returned": 12940,
+    "classified_unique_series": 488,
+    "complete_unique_series": 488,
+    "partial_unique_series": 0,
+    "failed_unique_series": 0,
+    "route_error_count": 0,
+    "historical_cutoff_market_ts": "2026-06-13T00:00:00Z",
+    "interpretation": "The corrected live/historical routing is operational at the series-first market-capacity layer. This does not establish semantic validity, PIT trade/candle coverage or backtestability."
+  },
+  "raw_discovery_capacity_upper_bounds": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {"unique_events": 2, "unique_markets": 3},
+    "CORPORATE_LITIGATION_BINARY": {"unique_events": 26, "unique_markets": 28},
+    "CPI_INFLATION_RELEASE": {"unique_events": 371, "unique_markets": 3568},
+    "EARNINGS_EPS": {"unique_events": 431, "unique_markets": 5437},
+    "FDA_ADVISORY_COMMITTEE": {"unique_events": 3, "unique_markets": 33},
+    "FDA_FINAL_PDUFA_DECISION": {"unique_events": 516, "unique_markets": 3578},
+    "FOMC_DECISION": {"unique_events": 78, "unique_markets": 352},
+    "GDP_RELEASE": {"unique_events": 72, "unique_markets": 721},
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {"unique_events": 23, "unique_markets": 53},
+    "PAYROLLS_JOBS_RELEASE": {"unique_events": 6, "unique_markets": 58},
+    "PCE_RELEASE": {"unique_events": 23, "unique_markets": 121},
+    "RETAIL_SALES_RELEASE": {"unique_events": 14, "unique_markets": 120},
+    "UNEMPLOYMENT_RELEASE": {"unique_events": 128, "unique_markets": 742}
+  },
+  "semantic_gate": {
+    "decision": "NOT_PASSED_RAW_KEYWORD_DISCOVERY_HAS_FALSE_POSITIVES",
+    "cause": [
+      "substring matching rather than phrase/token-boundary matching",
+      "ambiguous generic keywords such as approval and interest rate decision",
+      "series-level text classification without subject/entity/family semantic guards"
+    ],
+    "confirmed_examples": [
+      {
+        "raw_family": "EARNINGS_EPS",
+        "series_title": "Winter Olympics Total Podium Sweeps",
+        "failure_mode": "keyword EPS is a substring of sweeps"
+      },
+      {
+        "raw_family": "FDA_FINAL_PDUFA_DECISION",
+        "series_title": "jd vance approval rating",
+        "failure_mode": "generic approval keyword is not an FDA decision"
+      },
+      {
+        "raw_family": "FOMC_DECISION",
+        "series_title": "Bank Of CHINA policy interest rate decision",
+        "failure_mode": "generic interest-rate-decision keyword is not a Federal Reserve/FOMC event"
+      }
+    ]
+  },
+  "governance": {
+    "frozen_family_dictionary_unchanged": true,
+    "raw_counts_are_backtest_n": false,
+    "raw_counts_are_semantic_valid_n": false,
+    "raw_counts_are_pit_certified_n": false,
+    "raw_counts_are_cross_venue_deduplicated_n": false,
+    "raw_counts_are_linked_asset_mapped_n": false,
+    "policy": "Preserve the raw capacity artifact byte-identically as an upper-bound discovery result. Do not edit W4-BER-v1.0 keywords post-result to manufacture a cleaner or larger N. Instead add a separately frozen semantic validation/adjudication layer."
+  },
+  "w4b_handoff_requirements": [
+    "Generate boundary-aware phrase candidates from the frozen dictionary without changing the dictionary itself",
+    "Use event/market/series text plus rules/entity context for exact-family semantic validation",
+    "Freeze semantic protocol before final accept/reject materialization",
+    "Canonicalize accepted records to canonical_event_id and collapse same-event markets/strikes",
+    "Measure live/historical trade and candlestick PIT depth on semantically accepted events",
+    "Map official event-truth evidence before counting N_final_backtestable",
+    "Keep all linked-asset realized outcomes closed until W4-H"
+  ],
+  "next_decision": "W4-A routing capacity is complete. Continue W4-A history-depth validation only after semantic cleaning creates a defensible candidate set; in parallel start W4-B multi-venue semantic census."
+}
