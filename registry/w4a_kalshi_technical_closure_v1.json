@@ -1,0 +1,51 @@
+{
+  "artifact": "W4A_KALSHI_TECHNICAL_CLOSURE",
+  "version": "W4A-KTC-v1.0",
+  "date": "2026-08-13",
+  "status": "PASS_TECHNICAL_CAPACITY_AND_HISTORY_ENDPOINTS_SEMANTIC_VALIDATION_PENDING",
+  "science_reopened": false,
+  "performance_blind": true,
+  "linked_asset_outcomes_read": false,
+  "capacity_gate": {
+    "workflow_run_id": 31667723040,
+    "evidence_commit": "9ce56fb88166831d2867a2f6d8e812fb3f77d261",
+    "evidence_blob": "150f4ff84b1322d08eca0146fa7b85df5f542d6b",
+    "series_total_returned": 12940,
+    "classified_unique_series": 488,
+    "complete_live_historical_series": 488,
+    "partial_series": 0,
+    "failed_series": 0,
+    "route_errors": 0,
+    "decision": "PASS_TECHNICAL_CAPACITY"
+  },
+  "history_endpoint_gate": {
+    "protocol": "W4A-KHP-v1.0",
+    "workflow_run_id": 31668356059,
+    "evidence_branch": "w4a-kalshi-history-probe-v1",
+    "evidence_commit": "4283e69040ff6bc60a7e36a3b782969bd42ef840",
+    "evidence_blob": "8903c9993c255542843fd3c57db5f197c61c5b74",
+    "selected_unique_series": 15,
+    "market_probes": 15,
+    "attempted_endpoint_requests": 30,
+    "successful_endpoint_requests": 30,
+    "endpoint_success_rate": 1.0,
+    "contract_400_count": 0,
+    "selection_error_count": 0,
+    "decision": "PASS_TECHNICAL_HISTORY_ENDPOINT_GATE"
+  },
+  "not_established": [
+    "semantic validity of raw frozen-keyword candidates",
+    "full-population T-10d to T0 trade/candlestick coverage",
+    "canonical_event_id deduplication",
+    "official event-truth certification",
+    "linked-asset mapping",
+    "N_final_backtestable"
+  ],
+  "governance": {
+    "raw_capacity_counts_are_upper_bounds_only": true,
+    "frozen_family_dictionary_unchanged": true,
+    "semantic_layer_must_be_separately_frozen": true,
+    "linked_asset_outcomes_remain_closed_until": "W4-H"
+  },
+  "next_action": "Proceed to W4-B semantic multi-venue census. Freeze boundary/entity/family semantic adjudication before final acceptance, canonicalize accepted events, then run full-population Kalshi history-depth and official event-truth gates."
+}
