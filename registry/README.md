@@ -1,6 +1,6 @@
 # Registry map
 
-`registry/` é a camada machine-readable de governança, auditoria e freeze. Um arquivo novo nunca substitui silenciosamente um protocolo/resultados anteriores.
+`registry/` é a camada machine-readable de governança, auditoria e freeze. Um arquivo novo nunca substitui silenciosamente um protocolo ou resultado anterior.
 
 ## Autoridade da submissão
 
@@ -18,54 +18,90 @@ H2 permanece `FAIL_UNDER_FROZEN_EXP07I`; `C0_NO_TRADE` permanece champion econô
 
 ## Extensão pós-freeze — estado atual
 
-`post_freeze_extension_plan.json` está em `PFEP-v1.5` / `W2A_GATE0_BLOCKED_W2C_DISCOVERY_MATERIALIZED`.
+`post_freeze_extension_plan.json` está em **`PFEP-v3.0`** / `W2_COMPLETE_IAS_SMAA_FROZEN_W3_FINAL_GATE_FROZEN_PENDING_REAL_COMBINATION`.
 
-### W2 protocol freeze
+### W2-A — completo
 
-- `w2_protocol_freeze_manifest.json` — `W2PF-v1.0`, byte freeze autoritativo.
-- `w2a_portfolio_accounting_protocol_draft.json` — bytes autoritativos W2-A, blob `639f900e...`.
-- `w2b_ias_protocol_draft.json` — bytes autoritativos IAS/feasibility, blob `cb9a9638...`.
-- `w2_protocol_synthetic_validation_combined.json` — 38/38 pré-freeze.
+- `w2_protocol_freeze_manifest.json` — freeze original W2.
+- `w2a_portfolio_accounting_protocol_draft.json` — contrato W2-A congelado.
+- `w2a_funded_portfolio_run_v1.json` — execução financiada final.
 
-### W2-A
+Gate 0 acabou passando após recuperação provenance-preserving do ledger original ART-025/DAT-007. O resultado financiado foi `NO_PROMOTION_R1`; nenhuma métrica secundária reabre H2 ou substitui `C0_NO_TRADE`.
 
-- `w2a_gate0_reconciliation.json` — `FAIL_GATE0_MISSING_AUTHORITATIVE_ART025_TRADE_LEVEL_LEDGER`.
+### W2-C — discovery / semantic / adjudication / PIT-v2.1 / F1–F9
 
-Nenhum portfolio metric foi autorizado após essa falha. Não reconstruir ART-025 por vendor novo; somente provenance-preserving recovery pode reabrir Gate 0 sob o mesmo W2PF-v1.0.
+A lineage válida preserva tentativas invalidadas e as fases posteriores:
 
-### W2-C discovery
+- discovery performance-blind materializado;
+- semantic v1 invalidado por query-label leakage;
+- PIT-A v1 invalidado upstream e proibido;
+- semantic v2 congelado;
+- adjudication v1.1 congelada;
+- 312/335 candidatos aceitos;
+- 260 eventos em três famílias com n>=50;
+- PIT-v2.1 executado e congelado;
+- `w2c_pit_v2_1_family_gates.json` — F1–F9 autoritativo, blob `1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa`.
 
-Lineage preservada:
+Resultados exatos:
 
-- `w2c_discovery_protocol.json` / `w2c_discovery_v1_0_execution_failure.json` — v1.0 parou antes de family output no page bound.
-- `w2c_discovery_protocol_v1_1.json` / `w2c_discovery_v1_1_execution_failure.json` — v1.1 também parou antes de family output.
-- `w2c_discovery_protocol_v2_0.json` + `w2c_discovery_freeze_manifest_v2_0.json` — bounded lower-bound discovery congelado antes de resultados por família.
-- `w2c_discovery_materialization_v2_0.json` — provenance do snapshot autoritativo persistido pelo run `31610392101`.
-- `w2c_discovery_events.csv.gz` — raw candidate evidence.
-- `w2c_discovery_validation_queue.csv.gz` — fila ainda `PENDING` de semantic validation.
-- `w2c_discovery_summary.json` / `.csv` — summary raw, não IAS/F1–F9.
-- `w2c_discovery_query_audit.csv` — cobertura por query/canal.
-- `w2c_discovery_pagination_telemetry.json` — 154 rotas, 4 truncadas; rotas truncadas têm lower-bound semantics.
+- `EARNINGS_EPS` → `NO_GO_CURRENT_PROTOCOL`, FAIL F1/F2/F3;
+- `FDA_FINAL_PDUFA_DECISION` → `NO_GO_CURRENT_PROTOCOL`, FAIL F1/F2/F3;
+- `MACRO_STATISTICAL_RELEASE` → `NO_GO_CURRENT_PROTOCOL`, FAIL F1/F2/F3.
 
-### Firewall vigente
+As outras sete famílias são `FEASIBILITY_NOT_ESTABLISHED`; não existe imputação de PASS por família adjacente, raw discovery ou EUAS.
 
-W2-C materializado mantém:
+### W2-B / IAS — completo e congelado
 
-- `argos_performance_read=false`;
-- `realized_linked_asset_returns_read=false`;
-- `ias_scores_computed=false`;
-- `feasibility_gates_scored=false`;
-- `w3_family_selected=false`.
+Objetos principais:
 
-Raw candidate counts **não podem** ser tratados como população, IAS, F1–F9 ou escolha de W3.
+- `w2b_ias_protocol_draft.json` — protocolo IAS congelado, blob `cb9a9638f236c6c61c97f86805de9bf666209b21`;
+- `w2b_ias_real_scoring_contract_v1_0.json` — contrato de input/scoring;
+- `w2b_ias_evidence_matrix_v1.csv` — matriz real 50 células, blob `9797dd2ac6ed31ef9c0da6b9c7d290dd85bd656c`;
+- `w2b_ias_source_registry_v1.json` — provenance das fontes, blob `0508374770eb35ccbf54c83bef0206e175ce0986`;
+- `w2b_ias_smaa_results_v1.json` — resultado real, blob `360521ba7a2973ea1685a50c55ad5636abc631ba`.
+
+Freeze/digests:
+
+- protocolo bundle: `a008d1bcf45c200708f97d8ea7089a15a773a1a3590dc112633760ac3c13b0dd`;
+- evidence bundle: `0ce8200c4a3feb4f783f33f4e1caba78ea954ce0c36ac09438d46ddbfc93f91b`;
+- result freeze workflow: `31648848335` PASS.
+
+Resultado comparativo: `NO_DECISIVE_HIGHEST_ASYMMETRY_LEADER`. `MA_PRE_ANNOUNCEMENT_OR_RUMOR` liderou numericamente com rank-1 `45.704%`, contra `40.4465%` para `FDA_FINAL_PDUFA_DECISION`; o gate absoluto de 50% não foi atingido.
+
+### W3 — gate final IAS × PIT
+
+Já congelado **antes da combinação real**:
+
+- `w3_go_no_go_contract_v1_0.json` — contrato;
+- `w3_go_no_go_freeze_v1_0.json` — manifest de freeze;
+- engine em `../scripts/w3_go_no_go_v1.py`;
+- synthetic validator em `../scripts/w3_go_no_go_synthetic_v1.py`.
+
+Bundle SHA-256: `c4db745a4c38a80743ec29779f638f5ebf79ff8f7f0df0a30c9ab682ae34aac2`.
+
+Inputs frozen:
+
+- IAS blob `360521ba7a2973ea1685a50c55ad5636abc631ba`;
+- PIT F1–F9 blob `1dfbc01fe7bebfc6c2a1b09037285fef8159fbaa`.
+
+`real_combination_executed=false` e `w3_execution_authorized=false` permanecem autoritativos até a próxima transição.
 
 ## Próximo registry a criar
 
-Um protocolo de **semantic validation outcome-blind**, congelado antes de converter a fila W2-C em eventos validados. Ele deve definir inclusion/exclusion, multi-family resolution, event independence, deterministic review/sampling, evidence fields, uncertainty e truncation semantics.
+O próximo resultado machine-readable válido é **a saída do engine W3 já congelado**. Ela deve ser gerada sobre os dois blobs exatos acima, persistida em branch isolada, promovida byte-identicamente e então congelada.
 
-## Wave 1 / autoria
+A inferência pré-execução é `NO_GO_NO_W3_PROTOCOL_CANDIDATE`, mas não deve ser registrada como decisão oficial antes da execução do engine.
 
-Registries `model_complexity_*`, `economic_backtest_*`, `event_universe_*`, `wave1_*`, `report_*`, `argos_visual_identity_*` e `adversarial_report_*` registram a maximização editorial/audits sem alterar FST/SF.
+## Firewall vigente
+
+- `science_reopened=false`;
+- ARGOS performance não entra no IAS;
+- linked-asset realized returns não escolhem famílias;
+- missing evidence ≠ zero;
+- ECG-D = unresolved;
+- `FEASIBILITY_NOT_ESTABLISHED` ≠ PASS;
+- F1–F9 não é imputado entre famílias;
+- W3 GO, se existir, autoriza apenas drafting de protocolo futuro, nunca execução imediata.
 
 ## ART-028/029/030
 
@@ -73,15 +109,6 @@ Registries `model_complexity_*`, `economic_backtest_*`, `event_universe_*`, `wav
 - `art029_*` — protocolo confirmatório pré-outcome; não editar retroativamente.
 - `art030_*` — execução que decidiu `FAIL_H2`.
 
-## Política
+## Precedência
 
-- protocolo pré-resultado nunca é reescrito para refletir resultado posterior;
-- missing evidence ≠ zero;
-- `RETRIEVABLE` ≠ `DATA_READY`;
-- resultado negativo/NO-GO nunca é apagado;
-- W2-A não pode escolher capital/sizing usando realized outcomes;
-- IAS/discovery não pode ler ARGOS performance;
-- ECG-D é unresolved, não score baixo;
-- W2 GO autoriza apenas W3 protocol drafting; W3 exige freeze próprio.
-
-**Precedência:** submission freeze → PDF QA → W2PF-v1.0 → controlled W2 execution records → future semantic-validation freeze → future validated evidence/IAS/F1–F9.
+**submission freeze → PDF QA → W2 protocol freezes → controlled W2 execution records → IAS protocol/evidence/result freezes → W3 final gate freeze → future official W3 gate output**.
