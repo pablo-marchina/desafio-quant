@@ -1,0 +1,24 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_STATE_CLARIFICATION",
+  "version": "W4B-OET-E1-v1.0.1",
+  "date": "2026-08-13",
+  "status": "RECORDED_BEFORE_ANY_OFFICIAL_TRUTH_DECISIONS_OR_RESULTS",
+  "parent_protocol": "W4B-OET-v1.0",
+  "scientific_contract_changes": false,
+  "clarification": "The parent protocol already specifies NOT_HISTORICAL_YET in its future/not-yet-occurred rule but omitted that literal from the enumerated verification_states list. The authoritative verifier therefore recognizes NOT_HISTORICAL_YET as an accounting/exclusion state in addition to the three listed states.",
+  "authoritative_states": [
+    "VERIFIED_OFFICIAL_TRUTH",
+    "UNRESOLVED_OFFICIAL_TRUTH",
+    "REJECT_NOT_SAME_SEMANTIC_EVENT",
+    "NOT_HISTORICAL_YET"
+  ],
+  "n_policy": "Only VERIFIED_OFFICIAL_TRUTH may enter verified_unique_official_events. All other states are explicit attrition/exclusion categories.",
+  "unchanged": [
+    "source hierarchy",
+    "W4OT1 formula",
+    "candidate edge adjudication rules",
+    "linked-asset outcome firewall",
+    "prediction-market performance firewall",
+    "unresolved events excluded from verified final N"
+  ]
+}
