@@ -1,0 +1,287 @@
+{
+  "artifact": "W4B_SEMANTIC_CANONICALIZATION_PROTOCOL",
+  "candidate_generation": {
+    "event_gate": "Every non-MVE settled event under an advancing series is classified from series_title/category plus market title/subtitle/yes/no text using the separately frozen strict rules. Exactly one strict family => ACCEPT; same-mechanism precedence may resolve an overlap; cross-mechanism overlap => AMBIGUOUS; zero strict families => REJECT.",
+    "rule": "Start only from the 488 W4-A raw-classified series. Re-evaluate them with boundary-aware frozen semantic guards; do not add series because of real-result inspection.",
+    "same_event_markets": "All strikes/markets sharing event_ticker are one venue event before canonicalization.",
+    "series_gate": "A raw W4-A series advances to market/event retrieval if at least one frozen dictionary phrase matches with token/phrase boundaries. Frozen raw family labels do not vote for the final family."
+  },
+  "canonicalization": {
+    "collision_policy": "Same ID is one independent event. Distinct event_tickers mapping to same ID are aliases, not extra N.",
+    "cross_venue_policy": "ForecastEx and Polymarket must use the same signature function where fields are available. Later cross-venue reconciliation may add alias evidence but must not mint extra N for the same real-world occurrence.",
+    "event_reference_date": "First valid occurrence_datetime date across event markets; otherwise earliest close_time date. Missing date => CANONICALIZATION_AMBIGUOUS.",
+    "id_formula": "W4CE1- + first_20_hex(SHA256(resolved_family + '|' + event_reference_date + '|' + normalized_subject_key))",
+    "input_fields": [
+      "resolved_family",
+      "event_reference_date",
+      "normalized_subject_key"
+    ],
+    "normalized_subject_key": "Normalized event/market title with generic probability boilerplate, numeric strike/threshold tokens, month/day/year tokens and family boilerplate removed. For macro families, subject key is the family-specific US release key; date is the independent instance discriminator.",
+    "stage": "VENUE_AGNOSTIC_SIGNATURE_V1",
+    "unit": "canonical_event_id"
+  },
+  "date": "2026-08-13",
+  "downstream_gate": {
+    "history_audit_input": "Only ACCEPT_STRICT_FAMILY + canonicalization_status=PASS events.",
+    "n_claim": "No count from this stage is N_final_backtestable.",
+    "official_truth": "Not used to decide semantic inclusion at this stage; attached later in the user-specified W4-B sequence.",
+    "t_minus_10d_to_t0": "Full-population audit must run on every accepted canonical_event_id before ForecastEx census."
+  },
+  "family_rules": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": {
+      "context": "Single-name antitrust enforcement not primarily a merger-clearance event.",
+      "hard_exclude": [
+        "\\b(merger|acquisition|transaction|takeover)\\b"
+      ],
+      "require_all": [
+        "\\b(antitrust|ftc|doj|competition authority|competition regulator|monopoly)\\b",
+        "\\b(lawsuit|sue|settle|settlement|divest|investigation|enforcement|ruling|injunction|case|fine|challenge)\\b"
+      ]
+    },
+    "CORPORATE_LITIGATION_BINARY": {
+      "context": "Corporate civil litigation/court outcome.",
+      "hard_exclude": [
+        "championship",
+        "clay court",
+        "court lions",
+        "arrested",
+        "sentencing",
+        "supreme court vacancy",
+        "election",
+        "antitrust",
+        "ftc",
+        "doj"
+      ],
+      "require_any": [
+        "lawsuit",
+        "litigation",
+        "verdict",
+        "injunction",
+        "settlement",
+        "court ruling",
+        "court decision",
+        "appeal"
+      ]
+    },
+    "CPI_INFLATION_RELEASE": {
+      "context": "Official CPI statistical release/print.",
+      "hard_exclude": [
+        "sports",
+        "election",
+        "approval rating"
+      ],
+      "require_any": [
+        "\\bcpi\\b",
+        "consumer price index"
+      ]
+    },
+    "EARNINGS_EPS": {
+      "context": "Corporate periodic earnings/EPS event; generic speech/mention markets are excluded.",
+      "hard_exclude": [
+        "what will .* say",
+        "what .* mention",
+        "earnings call.*mention",
+        "mention.*earnings call",
+        "winter olympics",
+        "sweeps"
+      ],
+      "require_any": [
+        "\\beps\\b",
+        "earnings per share",
+        "\\bearnings\\b"
+      ]
+    },
+    "FDA_ADVISORY_COMMITTEE": {
+      "context": "FDA advisory committee meeting/recommendation/vote.",
+      "require_all": [
+        "\\b(fda|food and drug administration)\\b",
+        "\\b(advisory committee|adcom|advisory panel|panel vote)\\b"
+      ]
+    },
+    "FDA_FINAL_PDUFA_DECISION": {
+      "context": "Final FDA/PDUFA action, not generic approval.",
+      "hard_exclude": [
+        "\\b(advisory committee|adcom|advisory panel|panel vote)\\b"
+      ],
+      "require_all": [
+        "\\b(fda|food and drug administration|pdufa)\\b",
+        "\\b(approve|approval|approved|authorize|authorization|pdufa|action date|complete response|crl)\\b"
+      ]
+    },
+    "FOMC_DECISION": {
+      "context": "US Federal Reserve/FOMC monetary-policy decision.",
+      "hard_exclude": [
+        "bank of china",
+        "ecb",
+        "bank of england",
+        "boj",
+        "reserve bank of australia"
+      ],
+      "require_all": [
+        "\\b(fomc|federal reserve|fed)\\b",
+        "\\b(rate|target range|basis points|bps|decision|meeting|cut|hike|hold)\\b"
+      ]
+    },
+    "GDP_RELEASE": {
+      "context": "Official GDP statistical release.",
+      "hard_exclude": [
+        "sports",
+        "company gdp"
+      ],
+      "require_any": [
+        "\\bgdp\\b",
+        "gross domestic product"
+      ]
+    },
+    "MA_PENDING_COMPLETION": {
+      "context": "Already-announced transaction completion/termination event.",
+      "hard_exclude": [
+        "\\b(ftc|doj|antitrust|regulatory clearance|competition authority)\\b"
+      ],
+      "require_all": [
+        "\\b(merger|acquisition|takeover|transaction|deal)\\b",
+        "\\b(close|closing|complete|completion|shareholder vote|tender offer|outside date|terminate|termination)\\b"
+      ]
+    },
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": {
+      "context": "Pre-announcement/rumor M&A event.",
+      "hard_exclude": [
+        "\\b(close|closing|completion|complete|ftc|doj|antitrust|regulatory clearance|competition authority)\\b"
+      ],
+      "require_all": [
+        "\\b(merger|acquisition|acquire|takeover|buyout)\\b",
+        "\\b(announce|announced|announcement|rumou?r|bid|offer)\\b"
+      ]
+    },
+    "MA_REGULATORY_CLEARANCE": {
+      "context": "Regulatory clearance/blocking of a specific transaction.",
+      "require_all": [
+        "\\b(merger|acquisition|transaction|takeover|deal)\\b",
+        "\\b(ftc|doj|antitrust|regulatory|competition authority|competition regulator|european commission|\\bcma\\b)\\b",
+        "\\b(approve|approval|clear|clearance|block|challenge|second request|phase 2|remed(y|ies))\\b"
+      ]
+    },
+    "PAYROLLS_JOBS_RELEASE": {
+      "context": "Official employment/payroll statistical release.",
+      "hard_exclude": [
+        "cancel",
+        "cancellation",
+        "sports"
+      ],
+      "require_any": [
+        "nonfarm payroll",
+        "\\bpayrolls\\b",
+        "jobs report",
+        "employment situation",
+        "\\bjobs added\\b"
+      ]
+    },
+    "PCE_RELEASE": {
+      "context": "Official PCE statistical release.",
+      "hard_exclude": [
+        "sports"
+      ],
+      "require_any": [
+        "\\bpce\\b",
+        "personal consumption expenditures"
+      ]
+    },
+    "RETAIL_SALES_RELEASE": {
+      "context": "Official aggregate retail-sales statistical release.",
+      "hard_exclude": [
+        "company retail sales",
+        "sports"
+      ],
+      "require_any": [
+        "retail sales"
+      ]
+    },
+    "UNEMPLOYMENT_RELEASE": {
+      "context": "Official unemployment/claims statistical release.",
+      "hard_exclude": [
+        "approval rating",
+        "sports"
+      ],
+      "require_any": [
+        "unemployment rate",
+        "initial jobless claims",
+        "jobless claims",
+        "initial claims"
+      ]
+    }
+  },
+  "governance": {
+    "ambiguous_policy": "FAIL_CLOSED",
+    "argos_performance_allowed": false,
+    "frozen_family_dictionary_may_change": false,
+    "linked_asset_realized_returns_allowed": false,
+    "performance_blind": true,
+    "protocol_rewrite_after_real_results_forbidden": true,
+    "raw_keyword_hits_may_vote": false,
+    "science_reopened": false,
+    "semantic_precision_over_sample_size": true
+  },
+  "input": {
+    "kalshi_capacity_git_blob_sha1": "150f4ff84b1322d08eca0146fa7b85df5f542d6b",
+    "kalshi_capacity_path": "registry/w4_kalshi_series_first_capacity_v1.json",
+    "raw_classified_unique_series": 488,
+    "raw_family_dictionary_version": "W4-BER-v1.0"
+  },
+  "outputs": {
+    "ambiguous": "registry/w4b_kalshi_semantic_ambiguous_v1.csv.gz",
+    "events": "registry/w4b_kalshi_semantic_events_v1.csv.gz",
+    "series": "registry/w4b_kalshi_semantic_series_v1.csv",
+    "summary": "registry/w4b_kalshi_semantic_summary_v1.json"
+  },
+  "parent_protocol": "registry/w4_backtest_expansion_research_protocol_v1.json",
+  "precedence": {
+    "rule": "Precedence may resolve overlap only when the higher-priority rule independently passes. Cross-mechanism overlap is AMBIGUOUS.",
+    "same_mechanism": [
+      [
+        "MA_REGULATORY_CLEARANCE",
+        "MA_PENDING_COMPLETION",
+        "MA_PRE_ANNOUNCEMENT_OR_RUMOR"
+      ],
+      [
+        "FDA_FINAL_PDUFA_DECISION",
+        "FDA_ADVISORY_COMMITTEE"
+      ]
+    ]
+  },
+  "semantic_evidence": {
+    "audit_only_must_not_vote": [
+      "raw_family_hits",
+      "series_frequency",
+      "rules_primary",
+      "rules_secondary",
+      "event_ticker",
+      "market_ticker",
+      "open_time",
+      "close_time",
+      "occurrence_datetime"
+    ],
+    "forbidden": [
+      "settlement_result",
+      "settlement_value",
+      "linked_asset_return",
+      "linked_asset_price_after_event",
+      "ARGOS_signal",
+      "ARGOS_PnL",
+      "Brier",
+      "log_loss",
+      "H2_metrics",
+      "IAS",
+      "F1-F9"
+    ],
+    "may_vote_for_family": [
+      "series_title",
+      "series_category",
+      "market_title",
+      "market_subtitle",
+      "yes_sub_title",
+      "no_sub_title"
+    ]
+  },
+  "status": "PREREGISTERED_PRE_REAL_SEMANTIC_RESULTS",
+  "version": "W4B-SC-v1.0"
+}

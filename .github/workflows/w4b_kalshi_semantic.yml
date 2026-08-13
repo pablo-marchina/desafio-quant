@@ -1,0 +1,80 @@
+name: W4-B Kalshi Semantic Canonicalization
+on:
+  push:
+    paths:
+      - 'registry/w4b_semantic_canonicalization_protocol_v1.json'
+      - 'registry/w4b_semantic_canonicalization_freeze_v1.json'
+      - 'scripts/w4b_kalshi_semantic_canonicalize_v1.py'
+      - '.github/workflows/w4b_kalshi_semantic.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  semantic:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate preregistration firewall
+        run: |
+          python - <<'PY'
+          import json
+          p=json.load(open('registry/w4b_semantic_canonicalization_protocol_v1.json'))
+          f=json.load(open('registry/w4b_semantic_canonicalization_freeze_v1.json'))
+          assert p['version']=='W4B-SC-v1.0'
+          assert p['status']=='PREREGISTERED_PRE_REAL_SEMANTIC_RESULTS'
+          assert p['governance']['performance_blind'] is True
+          assert p['governance']['linked_asset_realized_returns_allowed'] is False
+          assert p['governance']['frozen_family_dictionary_may_change'] is False
+          assert p['governance']['ambiguous_policy']=='FAIL_CLOSED'
+          assert p['canonicalization']['unit']=='canonical_event_id'
+          assert f['status']=='FROZEN_BEFORE_REAL_SEMANTIC_EXECUTION'
+          print('PASS_W4B_SEMANTIC_PROTOCOL_FIREWALL')
+          PY
+      - name: Run adversarial semantic tests
+        run: |
+          python - <<'PY'
+          import importlib.util
+          spec=importlib.util.spec_from_file_location('m','scripts/w4b_kalshi_semantic_canonicalize_v1.py')
+          m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+          assert 'EARNINGS_EPS' not in m.boundary_candidates('Winter Olympics Total Podium Sweeps')
+          assert m.strict_families('jd vance approval rating') == []
+          assert m.strict_families('Bank of CHINA policy interest rate decision') == []
+          assert 'CPI_INFLATION_RELEASE' in m.strict_families('US CPI inflation release for June')
+          assert 'FDA_FINAL_PDUFA_DECISION' in m.strict_families('Will FDA approve Drug X by its PDUFA action date?')
+          assert 'FOMC_DECISION' in m.strict_families('Federal Reserve FOMC interest rate decision')
+          print('PASS_W4B_ADVERSARIAL_SEMANTIC_TESTS')
+          PY
+      - name: Execute Kalshi semantic cleaning and canonicalization
+        run: python scripts/w4b_kalshi_semantic_canonicalize_v1.py
+      - name: Validate semantic result
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          x=json.load(open('registry/w4b_kalshi_semantic_summary_v1.json'))
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['raw_classified_unique_series']==488
+          assert x['api_error_count']==0
+          assert x['route_truncation_count']==0
+          assert x['gate_decision']=='PASS_SEMANTIC_MATERIALIZATION'
+          with gzip.open('registry/w4b_kalshi_semantic_events_v1.csv.gz','rt') as f:
+              hdr=next(csv.reader(f))
+          forbidden={'settlement_result','settlement_value','linked_asset_return','linked_asset_price_after_event','ARGOS_PnL'}
+          assert not (forbidden & set(hdr))
+          print('PASS_W4B_KALSHI_SEMANTIC_MATERIALIZATION')
+          PY
+      - name: Persist evidence branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-kalshi-semantic-v1
+          git add \
+            registry/w4b_kalshi_semantic_series_v1.csv \
+            registry/w4b_kalshi_semantic_events_v1.csv.gz \
+            registry/w4b_kalshi_semantic_ambiguous_v1.csv.gz \
+            registry/w4b_kalshi_semantic_summary_v1.json
+          git commit -m 'results: materialize W4-B Kalshi semantic canonicalization v1'
+          git push -f origin w4b-kalshi-semantic-v1

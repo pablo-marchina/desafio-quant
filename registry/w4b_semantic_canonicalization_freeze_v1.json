@@ -1,0 +1,24 @@
+{
+  "artifact": "W4B_SEMANTIC_CANONICALIZATION_FREEZE",
+  "date": "2026-08-13",
+  "execution_boundary": "Real Kalshi semantic materialization may begin only from a commit containing this freeze and the exact frozen blobs above.",
+  "firewall": {
+    "linked_asset_realized_returns_read": false,
+    "performance_blind": true,
+    "protocol_mutation_after_real_results_forbidden": true,
+    "raw_family_dictionary_unchanged": true,
+    "real_semantic_results_seen_before_freeze": false
+  },
+  "frozen_inputs": {
+    "w4_ber_blob_sha1": "abea9c509428b67ca8178337963a310d26cc16a9",
+    "w4a_capacity_blob_sha1": "150f4ff84b1322d08eca0146fa7b85df5f542d6b"
+  },
+  "frozen_new_blobs": {
+    ".github/workflows/w4b_kalshi_semantic.yml": "5d05841ec88f6410a40e6331c91669196fc16242",
+    "registry/w4b_semantic_canonicalization_protocol_v1.json": "a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5",
+    "scripts/w4b_kalshi_semantic_canonicalize_v1.py": "b0e76b75e7c3c2b044dcbcb7982afaa7ec023b6c"
+  },
+  "parent_main_commit": "b728bea3b90abd23f6012ce6bedc1f0ea86ac986",
+  "status": "FROZEN_BEFORE_REAL_SEMANTIC_EXECUTION",
+  "version": "W4B-SCF-v1.0"
+}
