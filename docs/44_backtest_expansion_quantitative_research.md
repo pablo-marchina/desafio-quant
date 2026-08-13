@@ -1,7 +1,7 @@
 # ARGOS — Pesquisa quantitativa de expansão do backtest
 
 **Artifact:** `BACKTEST_EXPANSION_RESEARCH`  
-**Version:** `BERP-v1.0`  
+**Version:** `BERP-v1.1`  
 **Date:** `2026-08-12`  
 **Science reopened:** `false`  
 **Performance read for venue/family selection:** `forbidden`
@@ -38,6 +38,24 @@ Expansion factors versus the current 34-trade backtest:
 | Stretch target | 1,000 | 29.41x |
 
 The 260/312 rows are not automatically backtestable: current PIT-v2.1 F1/F2/F3 failures remain authoritative for that protocol. The table is a scale decomposition, not a performance claim.
+
+## Precision heuristic from the frozen ART-025 uncertainty
+
+The frozen ART-025 R1 mean market-adjusted net return per opportunity was about `-0.205%`, with CI95 roughly `[-0.972%, +0.559%]`. Its half-width is therefore about `0.765 percentage points` at `N=108` opportunities.
+
+As a **planning heuristic only**, if uncertainty shrank as `1/sqrt(N)` and dependence/distribution stayed similar, the N required for narrower CI95 half-widths would be approximately:
+
+| Desired half-width | Optimistic N |
+|---|---:|
+| 0.50 pp | 253 |
+| 0.40 pp | 396 |
+| 0.30 pp | 703 |
+| 0.25 pp | 1,012 |
+| 0.20 pp | 1,582 |
+
+An equally simplified 80%-power calculation, using the old CI to infer an effective noise scale, gives approximate N of ~517 to detect a `+0.50%` mean effect and ~807 to detect `+0.40%`, before adjusting for clustering/multiple testing. These are deliberately optimistic because event-date clustering and heterogeneous families reduce effective information. They motivate a mature target in the hundreds and a stretch target around 1,000 independent events rather than merely doubling 34 trades.
+
+These calculations are **not** a prospective power analysis for the future design. Once the census fixes the expanded population and dependence structure, a separate simulation-based adequacy study must replace this heuristic before any new OOS backtest.
 
 ## Research question
 
@@ -103,7 +121,7 @@ Official Polymarket architecture remains:
 
 Official sources:
 
-- https://docs.polymarket.com/api-reference/introduction
+- https://docs.polymarket.com/market-data/overview
 - https://docs.polymarket.com/api-reference/events/list-events-keyset-pagination
 - https://docs.polymarket.com/api-reference/markets/get-batch-prices-history
 
@@ -117,22 +135,35 @@ Official docs provide:
 - resolved binary-market search;
 - market-level probability, volume, liquidity and unique-bettor fields;
 - free historical markets/bets/comments dumps from December 2021, but the free dump is currently documented as last updated July 2024;
-- API is explicitly alpha.
+- API is explicitly alpha and documents 500 requests/min/IP.
 
-Use only if license/use conditions are compatible. Treat Manifold-derived signals as robustness or external-sensor evidence unless a later protocol promotes it prospectively.
+The free bulk dumps are documented for personal/non-commercial analysis, academic research and backtesting. Use only if this competition/project use is confirmed compatible with those terms; otherwise use the API only within its permitted scope or obtain a license. Treat Manifold-derived signals as robustness or external-sensor evidence unless a later protocol promotes it prospectively.
 
 Sources:
 
 - https://docs.manifold.markets/data
 - https://docs.manifold.markets/api
 
-## Expansion axis E — Metaculus as forecast-aggregator benchmark
+## Expansion axis E — Metaculus as permission-gated forecast benchmark
 
-Metaculus is not a prediction market, but can serve as an external forecasting benchmark if permission/data access permits. The current official API requires authentication and restricts broad historical Community Prediction access; research/commercial/AI uses may require explicit permission. Therefore it is **not** an automatic ingestion source for the primary expansion.
+Metaculus is explicitly a forecasting platform rather than a prediction market. Its current official API requires authentication and broad Community Prediction history is restricted. Its API documentation and Terms also restrict AI/ML model development/evaluation without prior written permission and direct research users to request expanded access.
 
-Source: https://www.metaculus.com/api/
+Therefore Metaculus is not an automatic ingestion source. It can become an external benchmark only after permission/data-access scope is resolved and frozen before use.
 
-## Expansion axis F — distributional ladders
+Sources:
+
+- https://www.metaculus.com/api/
+- https://www.metaculus.com/terms-of-use/
+
+## Expansion axis F — ForecastEx/CME event contracts as prospective-only sensor
+
+Interactive Brokers exposes ForecastEx and CME Event Contracts through its APIs, including event-contract discovery and historical-bar requests. However, IBKR documents a critical retrospective limitation: historical data for Event Contracts is available only while the specific instrument is still trading; after expiration it is no longer available through that path.
+
+Therefore ForecastEx/CME through IBKR should **not** be relied on for the retrospective expansion unless an independent lawful archive is found. Instead, launch a prospective collector now and persist instrument metadata + quotes/bars before expiration. Over time this creates an additional real-money event-contract venue without contaminating the retrospective study.
+
+Source: https://ibkrcampus.com/campus/ibkr-api-page/event-contracts/
+
+## Expansion axis G — distributional ladders
 
 Multiple threshold contracts about one release must not be counted as independent events. Instead, combine them into an implied event distribution.
 
@@ -148,7 +179,7 @@ For a scalar outcome `X`, contracts approximating `P(X > k_j)` define points on 
 
 Kalshi event/market hierarchy is especially suited to this. The economic observation remains one event.
 
-## Expansion axis G — multi-venue consensus and disagreement
+## Expansion axis H — multi-venue consensus and disagreement
 
 When the same canonical event exists in Polymarket and Kalshi, construct PIT-only features such as:
 
@@ -161,7 +192,7 @@ When the same canonical event exists in Polymarket and Kalshi, construct PIT-onl
 
 Cross-venue disagreement is a new information variable, not a new independent event.
 
-## Expansion axis H — multi-asset response
+## Expansion axis I — multi-asset response
 
 A single event can be mapped ex ante to multiple economically justified assets:
 
@@ -173,13 +204,13 @@ A single event can be mapped ex ante to multiple economically justified assets:
 
 This creates a richer response surface and better benchmark decomposition, but inferential clustering must remain at event/date level. Do not report `event x asset` rows as independent N.
 
-## Expansion axis I — multiple horizons as response surface
+## Expansion axis J — multiple horizons as response surface
 
 Use a preregistered horizon grid, for example intraday where trustworthy plus `+1/+2/+5/+10/+20` sessions. The objective is to estimate the timing of information incorporation, not to select the best horizon after seeing returns.
 
 All horizon tests must be jointly controlled/multiplicity-aware or summarized through a prespecified response model.
 
-## Expansion axis J — dependence-aware inference
+## Expansion axis K — dependence-aware inference
 
 Increasing rows is useless if dependence is ignored.
 
@@ -197,7 +228,7 @@ Relevant primary literature:
 
 - Kolari & Pynnonen (2010), *Event Study Testing with Cross-sectional Correlation of Abnormal Returns*, RFS, doi:10.1093/rfs/hhq072.
 - Hein & Westfall (2004), *Improving Tests of Abnormal Returns by Bootstrapping the Multivariate Regression Model with Event Parameters*, JFEconometrics, doi:10.1093/jjfinec/nbh018.
-- Lo (2002/2003), *The Statistics of Sharpe Ratios*, SSRN 377260.
+- Lo, *The Statistics of Sharpe Ratios*, SSRN 377260.
 
 ## Candidate backtests for the expansion
 
@@ -259,9 +290,10 @@ No threshold may be lowered because a family has attractive historical returns.
 4. All-event continuous portfolio design using only census/PIT properties.
 5. Distributional ladder extractor.
 6. Multi-asset mapping protocol.
-7. Manifold robustness census.
-8. Hierarchical/response-surface modeling after a sufficiently large PIT-valid population exists.
-9. Prospective collector running continuously for future events.
+7. Manifold robustness census subject to license/use classification.
+8. Start ForecastEx/CME prospective archiver immediately; do not wait for retrospective study.
+9. Hierarchical/response-surface modeling after a sufficiently large PIT-valid population exists.
+10. Permanent prospective multi-venue collector.
 
 ## Hard prohibitions
 
