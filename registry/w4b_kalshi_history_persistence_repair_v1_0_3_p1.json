@@ -1,0 +1,32 @@
+{
+  "artifact": "W4B_KALSHI_HISTORY_PERSISTENCE_REPAIR",
+  "version": "W4B-KH-PERSIST-v1.0.3-p1",
+  "date": "2026-08-13",
+  "status": "FROZEN_AFTER_SCIENTIFIC_GATE_PASS_BEFORE_IDENTICAL_PERSISTENCE_RERUN",
+  "prior_run_id": 31677292645,
+  "prior_run_head_sha": "2ca9986180eff1b3742518a49817d81296c5e514",
+  "prior_execution_step": "success",
+  "prior_result_firewall_step": "success",
+  "prior_zero_unresolved_gate_step": "success",
+  "prior_persistence_step": "failure",
+  "prior_persistence_failure": "GitHub Actions token refused creation/update of a workflow-containing evidence branch because the runner checkout was based on an older main commit. The result files existed and validated locally but were not pushed before runner teardown.",
+  "prior_scientific_gate_decision": "PASS_FULL_POPULATION_HISTORY_MATERIALIZED",
+  "prior_canonical_events_audited": 391,
+  "prior_unique_market_tickers_audited": 5196,
+  "prior_api_unresolved_count": 0,
+  "prior_history_class_counts": {
+    "FULL_LADDER": 101,
+    "CORE_T10_TO_T1H": 31,
+    "NO_HISTORY": 3,
+    "NO_NEAR_T0": 66,
+    "NO_T10D": 188,
+    "PARTIAL": 2
+  },
+  "prior_distributional_core_events": 85,
+  "scientific_contract_changes": false,
+  "rerun_executor_path": "scripts/w4b_kalshi_full_population_history_v1_0_3.py",
+  "rerun_executor_blob_sha1": "b2861fcf1e2e337bf7c98b9a4828bc1866737e90",
+  "rerun_policy": "Execute the byte-identical authoritative v1.0.3 data audit again solely because the validated result bytes were lost after a persistence-layer push rejection. Do not reuse the prior counts as current result data and do not alter any selection, T0, horizon, staleness, history class, semantic or denominator rule.",
+  "persistence_repair": "Before committing result files, copy them outside the worktree, reset/checkout the evidence branch from the latest origin/main, restore only the three result files, and push a branch whose only diff from current main is those result files.",
+  "governance": "The prior PASS is retained as audit evidence, but downstream stages remain blocked until a newly executed byte-identical v1.0.3 result is persisted and independently revalidates the same frozen gates."
+}
