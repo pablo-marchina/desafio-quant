@@ -1,0 +1,37 @@
+{
+  "artifact": "W4B_CROSS_VENUE_DEDUP_FREEZE",
+  "version": "W4B-XVDF-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_CROSS_VENUE_DEDUP_EXECUTION",
+  "protocol": {
+    "path": "registry/w4b_cross_venue_dedup_protocol_v1.json",
+    "blob_sha1": "5c9e727705d1e14d790f17a7fd76c334a90d0522"
+  },
+  "base_executor": {
+    "path": "scripts/w4b_cross_venue_dedup_v1.py",
+    "blob_sha1": "b8563416c5e9f8af4d13d3cac9151bfe5de39c7c"
+  },
+  "pre_execution_erratum": {
+    "path": "registry/w4b_cross_venue_dedup_implementation_erratum_v1_0_1.json",
+    "blob_sha1": "05425fc833a504c160bfcce760b4840726803487",
+    "scientific_contract_changes": false
+  },
+  "authoritative_executor": {
+    "path": "scripts/w4b_cross_venue_dedup_v1_0_1.py",
+    "blob_sha1": "d17f5ee080093a9fc5113c3df0e130d1b61d814b"
+  },
+  "semantic_parent": {
+    "protocol_blob_sha1": "a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5",
+    "implementation_blob_sha1": "b0e76b75e7c3c2b044dcbcb7982afaa7ec023b6c"
+  },
+  "sequence_lock": "Execution requires registry/w4b_polymarket_recensus_closeout_v1.json with PASS_POLYMARKET_RECENSUS_MATERIALIZED and all three venue event artifacts present on main.",
+  "firewall": {
+    "performance_blind": true,
+    "linked_asset_realized_returns_closed": true,
+    "official_event_truth_closed": true,
+    "price_volume_liquidity_closed": true,
+    "only_exact_w4ce1_auto_merges": true,
+    "near_date_or_fuzzy_edges_remain_unresolved": true,
+    "final_unique_n_forbidden": true
+  }
+}
