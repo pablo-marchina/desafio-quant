@@ -1,0 +1,1112 @@
+product_id,product_name,product_category,first_archive_date,last_archive_date,archive_days_seen
+ACD,Atmospheric Carbon Dioxide,Environmental,2025-01-02,2026-08-12,48
+ADDSP,Company Added to S&P 500,Financial Markets,2025-10-06,2026-08-12,29
+AEUSA,Average Electricity Price for All Sectors,Economic Indicators,2025-08-28,2026-08-12,71
+AIRTD,Domestic US Air Travel Passengers,Economic Indicators,2025-09-12,2026-08-10,15
+AIRTI,International US Air Travel Passengers,Economic Indicators,2025-08-31,2026-08-06,14
+AIRTT,Total US Air Travel Passengers,Economic Indicators,2025-09-12,2026-08-09,8
+AIRUS,Average Air Fares in the US,Economic Indicators,2025-09-18,2026-08-07,7
+AMOCW,AMOC Weakening,Environmental,2026-05-25,2026-06-05,2
+APMFE,Month over Month Change in Prices Paid by Farmers for Fertilizer,Economic Indicators,2025-07-12,2025-12-15,10
+APYFE,Year over Year Change in Prices Paid by Farmers for Fertilizer,Economic Indicators,2026-03-24,2026-08-08,31
+ARMEG,Month over Month Change in Prices Received by Farmers for Eggs,Economic Indicators,2025-07-12,2025-12-15,15
+ARYEG,Year over Year Change in Prices Received by Farmers for Eggs,Economic Indicators,2026-01-28,2026-08-08,32
+AUDEC,Reserve Bank of Australia Decision,Economic Indicators,2025-08-28,2026-03-17,32
+AXXAK,Alaska Senate General Election,Elections,2026-02-08,2026-08-12,18
+AXXAL,Alabama Senate General Election,Elections,2026-02-26,2026-06-28,9
+AXXAR,Arkansas Senate General Election,Elections,2026-03-06,2026-07-11,6
+AXXCO,Colorado Senate General Election,Elections,2026-03-22,2026-07-11,7
+AXXDE,Delaware Senate General Election,Elections,2026-03-06,2026-08-05,11
+AXXGA,Georgia Senate General Election,Elections,2026-05-05,2026-08-08,10
+AXXIA,Iowa Senate General Election,Elections,2026-03-30,2026-07-02,8
+AXXID,Idaho Senate General Election,Elections,2026-03-06,2026-03-30,3
+AXXIL,Illinois Senate General Election,Elections,2026-02-26,2026-02-26,1
+AXXKS,Kansas Senate General Election,Elections,2026-03-30,2026-03-30,1
+AXXKY,Kentucky Senate General Election,Elections,2026-05-08,2026-07-16,5
+AXXLA,Louisiana Senate General Election,Elections,2026-03-06,2026-07-23,22
+AXXMA,Massachusetts Senate General Election,Elections,2026-01-26,2026-08-05,10
+AXXME,Maine Senate General Election,Elections,2026-02-26,2026-08-12,55
+AXXMI,Michigan Senate General Election,Elections,2026-03-22,2026-08-12,29
+AXXMN,Minnesota Senate General Election,Elections,2026-04-08,2026-08-12,5
+AXXMS,Mississippi Senate General Election,Elections,2026-03-05,2026-05-06,6
+AXXMT,Montana Senate General Election,Elections,2026-03-05,2026-08-12,12
+AXXNC,North Carolina Senate General Election,Elections,2026-03-05,2026-08-12,17
+AXXNE,Nebraska Senate General Election,Elections,2026-03-05,2026-06-29,7
+AXXNH,New Hampshire Senate General Election,Elections,2026-03-05,2026-07-29,8
+AXXNJ,New Jersey Senate General Election,Elections,2026-03-05,2026-06-15,8
+AXXNM,New Mexico Senate General Election,Elections,2026-03-05,2026-07-17,5
+AXXOK,Oklahoma Senate General Election,Elections,2026-03-05,2026-07-08,4
+AXXOR,Oregon Senate General Election,Elections,2026-03-05,2026-08-12,5
+AXXRI,Rhode Island Senate General Election,Elections,2026-03-05,2026-04-20,5
+AXXSC,South Carolina Senate General Election,Elections,2026-03-05,2026-07-13,9
+AXXSD,South Dakota Senate General Election,Elections,2026-03-30,2026-07-11,3
+AXXTN,Tennessee Senate General Election,Elections,2026-03-06,2026-05-08,2
+AXXTX,Texas Senate General Election,Elections,2026-02-27,2026-08-10,38
+AXXVA,Virginia Senate General Election,Elections,2026-03-05,2026-07-31,8
+AXXWV,West Virginia Senate General Election,Elections,2026-03-06,2026-05-13,4
+AXXWY,Wyoming Senate General Election,Elections,2026-03-06,2026-05-08,3
+BAMCA,Ballot Measures in California,Elections,2025-09-18,2026-07-30,14
+BPMI,US Building Permits Initial,Economic Indicators,2025-01-02,2026-08-06,162
+BSTAI,Best AI Base Model,Technology,2025-09-16,2026-08-09,161
+BTGLY,Bitcoin vs. Gold,Financial Markets,2026-05-23,2026-05-28,3
+BXXCO,Colorado Senate Democratic Primary Election,Elections,2026-04-04,2026-07-01,9
+BXXFL,Florida Senate Democratic Primary Special Election,Elections,2026-05-15,2026-07-26,2
+BXXIA,Iowa Senate Democratic Primary Election,Elections,2026-04-02,2026-06-03,18
+BXXKS,Kansas Senate Democratic Primary Election,Elections,2026-04-20,2026-07-31,12
+BXXKY,Kentucky Senate Democratic Primary Election,Elections,2026-05-15,2026-05-20,4
+BXXLA,Louisiana Senate Democratic Primary Election,Elections,2026-05-08,2026-06-28,17
+BXXMA,Massachusetts Senate Democratic Primary Election,Elections,2026-04-15,2026-08-07,4
+BXXME,Maine Senate Democratic Primary Election,Elections,2026-04-08,2026-06-09,11
+BXXMI,Michigan Senate Democratic Primary Election,Elections,2026-04-15,2026-08-12,30
+BXXMN,Minnesota Senate Democratic Primary Election,Elections,2026-07-30,2026-08-12,5
+BXXOK,Oklahoma Senate Democratic Primary Election,Elections,2026-06-05,2026-06-23,8
+BXXWV,West Virginia Senate Democratic Primary Election,Elections,2026-04-16,2026-05-13,6
+CACPI,Canada Consumer Price Index,Economic Indicators,2025-03-21,2026-08-12,209
+CADEC,Bank of Canada Decision,Economic Indicators,2025-07-22,2026-08-12,122
+CAGDP,Canada Real GDP,Economic Indicators,2025-04-07,2026-08-12,72
+CANHI,Canada New Housing Price Index,Economic Indicators,2025-06-01,2026-08-08,79
+CAOR,Canada Overnight Rate,Economic Indicators,2025-03-14,2026-08-12,193
+CAREC,Canada Recession,Economic Indicators,2025-04-24,2026-05-29,42
+CAUNR,Canada Unemployment Rate,Economic Indicators,2025-04-11,2026-08-12,172
+CBADA,Cardano Price,Financial Markets,2025-07-30,2026-04-20,173
+CBBTC,BTC Price,Financial Markets,2025-06-26,2026-03-26,256
+CBETH,Ethereum Price,Financial Markets,2025-06-26,2026-03-26,236
+CBSOL,Solana Price,Financial Markets,2025-07-30,2026-02-06,157
+CBXRP,XRP Price,Financial Markets,2025-07-17,2026-02-06,140
+CENVD,NVIDIA CEO Appointment,Financial Markets,2026-01-27,2026-02-23,4
+CFBTC,Bitcoin Price,Financial Markets,2026-03-27,2026-08-12,138
+CFETH,Ethereum Price,Financial Markets,2026-03-27,2026-08-12,129
+CFSFP,CFS First Plasma,Financial Markets,2026-06-10,2026-06-10,1
+CFSOL,Solana Price,Financial Markets,2026-02-10,2026-08-12,166
+CFXRP,XRP Price,Financial Markets,2026-02-10,2026-08-07,133
+CHDE1,People's Bank of China One Year Loan Prime Rate,Economic Indicators,2025-09-04,2025-12-22,41
+CHDE5,People's Bank of China Five Year Loan Prime Rate,Economic Indicators,2025-09-07,2025-12-22,42
+CHICC,China Containerized Freight Index Value,Economic Indicators,2025-09-14,2026-08-12,76
+CMCAC,Total Consumption of Coal in California,Economic Indicators,2025-06-25,2026-08-12,96
+CMCAN,Total Consumption of Natural Gas in California,Economic Indicators,2025-06-23,2026-08-12,86
+CMUSC,Total Consumption of Coal in the US,Economic Indicators,2025-06-20,2026-08-10,114
+CMUSN,Total Consumption of Natural Gas in the US,Economic Indicators,2025-06-13,2026-08-07,69
+COMCO,WTI Crude Oil Price,Financial Markets,2026-03-01,2026-08-12,111
+COMCP,Copper Price,Financial Markets,2026-08-10,2026-08-12,3
+COMHH,Henry Hub Natural Gas Price,Financial Markets,2026-04-29,2026-08-12,4
+CP,US Corporate Profits,Economic Indicators,2025-01-31,2026-08-07,259
+CPCEY,US Core PCE Price Index,Economic Indicators,2025-09-10,2026-08-10,55
+CPIC,US Core CPI,Economic Indicators,2025-01-03,2026-08-12,416
+CPIGE,Consumer Price Index of Germany,Economic Indicators,2025-08-26,2026-08-12,108
+CPIIN,Consumer Price Index of India,Economic Indicators,2025-08-31,2026-08-12,90
+CPIJP,Consumer Price Index of Japan,Economic Indicators,2025-08-31,2026-08-12,100
+CPISP,Consumer Price Index of Spain,Economic Indicators,2025-08-26,2026-08-12,58
+CPIY,US Consumer Price Index Yearly,Economic Indicators,2025-01-01,2026-08-12,503
+CRUDB,Brent Crude Oil Price,Financial Markets,2025-11-07,2026-05-27,6
+CRUDW,WTI Crude Oil Price,Financial Markets,2026-03-30,2026-05-28,4
+CS,US Consumer Sentiment,Economic Indicators,2025-01-01,2026-08-12,265
+CTB1A,Bitcoin to $150k,Financial Markets,2025-10-03,2026-02-05,47
+CTB1C,Bitcoin to $175k,Financial Markets,2025-10-28,2026-02-01,21
+CTE2A,Ethereum to $5000,Financial Markets,2025-10-07,2026-01-25,24
+CTE2B,Ethereum to $5250,Financial Markets,2025-10-07,2026-01-27,22
+CTE2C,Ethereum to $5500,Financial Markets,2025-10-13,2025-12-26,16
+CXXAL,Alabama Senate Republican Primary Election,Elections,2026-03-27,2026-06-17,23
+CXXCO,Colorado Senate Republican Primary Election,Elections,2026-04-13,2026-07-01,25
+CXXDE,Delaware Senate Republican Primary Election,Elections,2026-04-14,2026-08-08,21
+CXXGA,Georgia Senate Republican Primary Election,Elections,2026-04-15,2026-06-17,19
+CXXKY,Kentucky Senate Republican Primary Election,Elections,2026-04-08,2026-05-20,10
+CXXLA,Louisiana Senate Republican Primary Election,Elections,2026-04-15,2026-06-28,11
+CXXMA,Massachusetts Senate Republican Primary Election,Elections,2026-04-16,2026-08-06,3
+CXXMN,Minnesota Senate Republican Primary Election,Elections,2026-04-17,2026-08-12,10
+CXXNH,New Hampshire Senate Republican Primary Election,Elections,2026-07-06,2026-08-07,5
+CXXNJ,New Jersey Senate Republican Primary Election,Elections,2026-03-26,2026-06-03,13
+CXXOR,Oregon Senate Republican Primary Election,Elections,2026-04-15,2026-05-26,11
+CXXRI,Rhode Island Senate Republican Primary Election,Elections,2026-07-03,2026-08-07,4
+CXXSC,South Carolina Senate Republican Primary Election,Elections,2026-05-06,2026-06-10,3
+CXXVA,Virginia Senate Republican Primary Election,Elections,2026-04-02,2026-08-03,18
+DHAUS,Austin Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DHBNA,Nashville Daily Temperature High,Environmental,2025-11-30,2026-01-29,2
+DHBOS,Boston Daily Temperature High,Environmental,2025-11-30,2025-12-01,2
+DHCLT,Charlotte Daily Temperature High,Environmental,2025-12-31,2025-12-31,1
+DHDCA,"Washington, D.C. Daily Temperature High",Environmental,2025-12-22,2026-02-10,48
+DHDEN,Denver Daily Temperature High,Environmental,2025-11-19,2026-02-11,85
+DHDFW,Dallas Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DHHOU,Houston Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DHJAX,Jacksonville Daily Temperature High,Environmental,2025-11-30,2025-11-30,1
+DHLAS,Las Vegas Daily Temperature High,Environmental,2026-01-10,2026-01-26,2
+DHLAX,LA Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DHMDW,Chicago Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DHMIA,Miami Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DHNYC,NYC Daily Temperature High,Environmental,2025-11-11,2026-02-11,88
+DHPHL,Philadelphia Daily Temperature High,Environmental,2025-12-01,2026-01-26,5
+DHSAT,San Antonio Daily Temperature High,Environmental,2025-11-30,2025-11-30,1
+DHSEA,Seattle Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DHSFO,San Francisco Daily Temperature High,Environmental,2025-11-18,2026-02-11,86
+DISSA,Any FOMC Members Dissent,Economic Indicators,2025-08-14,2026-04-16,52
+DISSN,Number of Dissenting FOMC Members,Economic Indicators,2025-08-17,2026-07-29,236
+EMCAC,California Coal Electricity Generation,Economic Indicators,2025-06-24,2026-08-12,116
+EMCAR,California Nuclear Energy Electricity Generation,Economic Indicators,2025-06-16,2026-08-08,149
+EMCAX,California Renewable Energy Electricity Generation,Economic Indicators,2025-06-16,2026-08-06,158
+EMUSA,US Total Electricity Generation,Economic Indicators,2025-06-19,2026-08-12,170
+EMUSC,US Coal Electricity Generation,Economic Indicators,2025-06-19,2026-08-08,150
+EMUSR,US Nuclear Energy Electricity Generation,Economic Indicators,2025-06-13,2026-08-11,190
+EMUSX,US Renewable Energy Electricity Generation,Economic Indicators,2025-06-13,2026-08-10,125
+ENATG,Attorney General Nomination,Government,2026-05-26,2026-06-09,2
+EOR,Elected Official Resignation,Elected Officials Resign,2025-03-19,2025-03-27,6
+EUAIA,EU AI Act Enforcement,Government,2026-01-07,2026-06-25,8
+EUCB,EU Central Bank Rate,Economic Indicators,2025-05-15,2026-08-12,197
+EUCHF,Euro to Swiss Franc Exchange Rate,Financial Markets,2025-08-11,2026-04-01,38
+EUDEC,ECB Decision,Economic Indicators,2025-09-02,2026-04-26,36
+EUHKD,Euro to Hong Kong Dollar Exchange Rate,Financial Markets,2025-08-01,2025-09-30,4
+EUJPY,Euro to Japanese Yen Exchange Rate,Financial Markets,2025-07-30,2025-09-30,12
+EXXFL,Florida Senate Special Election,Elections,2026-03-06,2026-07-30,5
+EXXOH,Ohio Senate Special Election,Elections,2026-04-12,2026-08-12,14
+EXXSC,South Carolina Republican Special Senate Primary,Elections,2026-07-17,2026-08-12,20
+EZGDP,Eurozone Real GDP,Economic Indicators,2025-07-09,2026-08-11,70
+EZICP,Eurozone Harmonized Index of Consumer Prices,Economic Indicators,2025-05-14,2026-08-11,156
+EZR,Eurozone Recession,Economic Indicators,2025-05-15,2026-07-15,40
+EZUNR,Eurozone Unemployment Rate,Economic Indicators,2025-05-06,2026-04-02,72
+FEDLG,Federal Legalization Decision,Government,2025-09-22,2025-12-30,10
+FEDRC,Number of Fed Rate Cuts,Economic Indicators,2025-09-23,2026-08-12,46
+FEDRO,Federal Race Outcomes,Elections,2025-09-04,2026-08-12,65
+FES,S&P 500 Futures Price | US 500 Forecast Contract,Financial Markets,2025-04-21,2026-08-12,434
+FF,US Fed Funds Target Rate,Economic Indicators,2025-01-01,2026-08-12,515
+FFDEC,Fed Decision,Economic Indicators,2025-06-13,2026-08-12,381
+FNQ,Nasdaq 100 Futures Price | US Tech 100 Forecast Contract,Financial Markets,2025-05-08,2026-08-12,359
+FRERC,Total Freight Traffic from Carloads,Economic Indicators,2025-10-24,2026-08-12,94
+FRERI,Total Freight Traffic from Intermodal Traffic,Economic Indicators,2025-10-08,2026-08-12,87
+FRTY,US Small Cap 2000,Financial Markets,2025-08-12,2026-08-06,96
+FUSGF,General Fusion Infuse Awards,Financial Markets,2026-06-10,2026-06-10,1
+FUSHE,Helion Energy Infuse Awards,Financial Markets,2026-05-14,2026-07-12,3
+FYM,US Industrial 30 Forecast Contract,Financial Markets,2025-05-09,2026-08-07,313
+G01AK,AK-01 General Election | AK-AL General Election,Elections,2026-03-06,2026-08-12,8
+G01AL,AL-01 General Election,Elections,2026-04-28,2026-07-11,4
+G01AR,AR-01 General Election,Elections,2026-03-07,2026-04-17,4
+G01AZ,AZ-01 General Election,Elections,2026-03-19,2026-08-06,14
+G01CA,CA-01 General Election,Elections,2026-05-20,2026-08-01,4
+G01CT,CT-01 General Election,Elections,2026-03-06,2026-08-12,12
+G01DE,DE-AL General Election,Elections,2026-04-15,2026-05-23,2
+G01FL,FL-01 General Election,Elections,2026-03-06,2026-05-10,3
+G01GA,GA-01 General Election,Elections,2026-03-06,2026-08-03,12
+G01HI,HI-01 General Election,Elections,2026-03-06,2026-08-10,4
+G01IA,IA-01 General Election,Elections,2026-03-06,2026-06-03,7
+G01ID,ID-01 General Election,Elections,2026-03-12,2026-05-14,5
+G01IL,IL-01 General Election,Elections,2026-03-06,2026-04-13,5
+G01IN,IN-01 General Election,Elections,2026-03-06,2026-05-07,4
+G01KS,KS-01 General Election,Elections,2026-03-06,2026-05-07,3
+G01KY,KY-01 General Election,Elections,2026-03-06,2026-08-04,6
+G01LA,LA-01 General Election,Elections,2026-03-06,2026-05-07,3
+G01MA,MA-01 General Election,Elections,2026-03-06,2026-05-09,2
+G01MD,MD-01 General Election,Elections,2026-05-26,2026-05-26,1
+G01ME,ME-01 General Election,Elections,2026-03-06,2026-04-20,3
+G01MI,MI-01 General Election,Elections,2026-03-06,2026-07-30,3
+G01MN,MN-01 General Election,Elections,2026-03-06,2026-08-12,4
+G01MO,MO-01 General Election,Elections,2026-03-06,2026-08-04,6
+G01MS,MS-01 General Election,Elections,2026-03-06,2026-03-06,1
+G01MT,MT-01 General Election,Elections,2026-03-06,2026-08-06,6
+G01NC,NC-01 General Election,Elections,2026-04-02,2026-08-04,4
+G01ND,ND-01 General Election | ND-AL General Election,Elections,2026-03-08,2026-05-07,3
+G01NE,NE-01 General Election,Elections,2026-03-06,2026-07-20,5
+G01NH,NH-01 General Election,Elections,2026-03-11,2026-07-01,5
+G01NJ,NJ-01 General Election,Elections,2026-03-06,2026-05-09,2
+G01NM,NM-01 General Election,Elections,2026-03-06,2026-08-03,5
+G01NV,NV-01 General Election,Elections,2026-03-06,2026-06-30,7
+G01NY,NY-01 General Election,Elections,2026-03-08,2026-06-30,5
+G01OH,OH-01 General Election,Elections,2026-03-11,2026-08-03,6
+G01OK,OK-01 General Election,Elections,2026-03-13,2026-05-06,6
+G01OR,OR-01 General Election,Elections,2026-05-07,2026-08-05,2
+G01PA,PA-01 General Election,Elections,2026-06-24,2026-06-24,1
+G01RI,RI-01 General Election,Elections,2026-05-07,2026-05-07,1
+G01SC,SC-01 General Election,Elections,2026-03-07,2026-07-04,7
+G01SD,SD-01 General Election | SD-AL General Election,Elections,2026-03-06,2026-07-08,6
+G01TN,TN-01 General Election,Elections,2026-03-07,2026-08-04,5
+G01TX,TX-01 General Election,Elections,2026-03-04,2026-08-06,5
+G01UT,UT-01 General Election,Elections,2026-04-14,2026-06-24,5
+G01VA,VA-01 General Election,Elections,2026-03-05,2026-06-16,10
+G01VT,VT-01 General Election | VT-AL General Election,Elections,2026-03-07,2026-06-08,5
+G01WA,WA-01 General Election,Elections,2026-04-15,2026-04-15,1
+G01WI,WI-01 General Election,Elections,2026-08-04,2026-08-12,3
+G01WV,WV-01 General Election,Elections,2026-03-06,2026-04-15,4
+G02AL,AL-02 General Election,Elections,2026-03-06,2026-08-12,15
+G02AR,AR-02 General Election,Elections,2026-03-07,2026-06-30,5
+G02AZ,AZ-02 General Election,Elections,2026-03-20,2026-06-26,3
+G02CA,CA-02 General Election,Elections,2026-03-06,2026-08-01,5
+G02CO,CO-02 General Election,Elections,2026-03-06,2026-07-01,4
+G02CT,CT-02 General Election,Elections,2026-03-06,2026-08-11,5
+G02FL,FL-02 General Election,Elections,2026-03-10,2026-04-19,2
+G02GA,GA-02 General Election,Elections,2026-03-06,2026-08-03,4
+G02HI,HI-02 General Election,Elections,2026-03-06,2026-08-09,5
+G02IA,IA-02 General Election,Elections,2026-06-03,2026-06-26,2
+G02ID,ID-02 General Election,Elections,2026-03-06,2026-06-15,5
+G02IL,IL-02 General Election,Elections,2026-04-02,2026-08-04,4
+G02IN,IN-02 General Election,Elections,2026-03-06,2026-04-20,3
+G02KS,KS-02 General Election,Elections,2026-03-06,2026-05-07,2
+G02KY,KY-02 General Election,Elections,2026-03-06,2026-08-04,5
+G02LA,LA-02 General Election,Elections,2026-03-06,2026-05-15,7
+G02MA,MA-02 General Election,Elections,2026-03-06,2026-05-09,3
+G02MD,MD-02 General Election,Elections,2026-03-06,2026-05-09,2
+G02ME,ME-02 General Election,Elections,2026-03-06,2026-04-16,3
+G02MI,MI-02 General Election,Elections,2026-03-06,2026-07-30,3
+G02MN,MN-02 General Election,Elections,2026-03-06,2026-08-12,10
+G02MO,MO-02 General Election,Elections,2026-05-09,2026-05-09,1
+G02MT,MT-02 General Election,Elections,2026-03-06,2026-05-09,2
+G02NC,NC-02 General Election,Elections,2026-05-30,2026-07-17,2
+G02NE,NE-02 General Election,Elections,2026-03-06,2026-08-06,9
+G02NH,NH-02 General Election,Elections,2026-05-09,2026-05-09,1
+G02NJ,NJ-02 General Election,Elections,2026-03-06,2026-08-08,6
+G02NM,NM-02 General Election,Elections,2026-03-08,2026-07-24,10
+G02NV,NV-02 General Election,Elections,2026-03-06,2026-07-08,3
+G02NY,NY-02 General Election,Elections,2026-03-08,2026-08-12,2
+G02OH,OH-02 General Election,Elections,2026-04-24,2026-08-01,3
+G02OK,OK-02 General Election,Elections,2026-03-08,2026-06-15,6
+G02OR,OR-02 General Election,Elections,2026-05-07,2026-08-05,2
+G02PA,PA-02 General Election,Elections,2026-03-12,2026-05-22,3
+G02RI,RI-02 General Election,Elections,2026-05-07,2026-05-07,1
+G02SC,SC-02 General Election,Elections,2026-05-07,2026-06-09,2
+G02TN,TN-02 General Election,Elections,2026-03-07,2026-05-11,10
+G02TX,TX-02 General Election,Elections,2026-03-04,2026-06-05,3
+G02UT,UT-02 General Election,Elections,2026-05-07,2026-05-07,1
+G02VA,VA-02 General Election,Elections,2026-03-08,2026-08-04,7
+G02WA,WA-02 General Election,Elections,2026-04-15,2026-08-06,3
+G02WI,WI-02 General Election,Elections,2026-03-11,2026-04-15,5
+G02WV,WV-02 General Election,Elections,2026-03-06,2026-08-06,8
+G03AL,AL-03 General Election,Elections,2026-03-06,2026-05-21,7
+G03AR,AR-03 General Election,Elections,2026-03-06,2026-04-20,5
+G03AZ,AZ-03 General Election,Elections,2026-03-30,2026-07-22,4
+G03CA,CA-03 General Election,Elections,2026-03-06,2026-03-12,3
+G03CO,CO-03 General Election,Elections,2026-03-06,2026-06-26,6
+G03CT,CT-03 General Election,Elections,2026-03-06,2026-06-20,7
+G03FL,FL-03 General Election,Elections,2026-03-06,2026-08-02,2
+G03GA,GA-03 General Election,Elections,2026-03-06,2026-08-03,4
+G03IA,IA-03 General Election,Elections,2026-03-06,2026-06-26,6
+G03IL,IL-03 General Election,Elections,2026-03-06,2026-04-13,3
+G03IN,IN-03 General Election,Elections,2026-03-06,2026-08-04,4
+G03KS,KS-03 General Election,Elections,2026-03-06,2026-07-30,4
+G03KY,KY-03 General Election,Elections,2026-03-06,2026-08-04,5
+G03LA,LA-03 General Election,Elections,2026-03-12,2026-05-07,2
+G03MA,MA-03 General Election,Elections,2026-03-06,2026-05-09,2
+G03MD,MD-03 General Election,Elections,2026-03-06,2026-03-06,1
+G03MI,MI-03 General Election,Elections,2026-03-06,2026-07-30,2
+G03MN,MN-03 General Election,Elections,2026-03-06,2026-08-12,4
+G03MO,MO-03 General Election,Elections,2026-03-06,2026-05-09,3
+G03MS,MS-03 General Election,Elections,2026-03-06,2026-03-06,1
+G03NC,NC-03 General Election,Elections,2026-05-07,2026-05-07,1
+G03NE,NE-03 General Election,Elections,2026-03-06,2026-08-06,5
+G03NJ,NJ-03 General Election,Elections,2026-03-06,2026-05-09,2
+G03NM,NM-03 General Election,Elections,2026-03-06,2026-07-23,3
+G03NY,NY-03 General Election,Elections,2026-03-06,2026-06-22,7
+G03OH,OH-03 General Election,Elections,2026-05-07,2026-08-01,2
+G03OK,OK-03 General Election,Elections,2026-05-07,2026-06-15,2
+G03OR,OR-03 General Election,Elections,2026-05-07,2026-08-05,3
+G03SC,SC-03 General Election,Elections,2026-03-07,2026-05-07,3
+G03TN,TN-03 General Election,Elections,2026-03-07,2026-08-07,11
+G03TX,TX-03 General Election,Elections,2026-03-04,2026-08-06,5
+G03UT,UT-03 General Election,Elections,2026-03-07,2026-04-20,4
+G03VA,VA-03 General Election,Elections,2026-03-22,2026-07-31,4
+G03WA,WA-03 General Election,Elections,2026-03-22,2026-08-06,2
+G03WI,WI-03 General Election,Elections,2026-03-11,2026-04-15,3
+G04AL,AL-04 General Election,Elections,2026-03-06,2026-05-07,5
+G04AR,AR-04 General Election,Elections,2026-03-06,2026-04-20,3
+G04AZ,AZ-04 General Election,Elections,2026-04-14,2026-07-22,3
+G04CA,CA-04 General Election,Elections,2026-03-06,2026-08-12,6
+G04CO,CO-04 General Election,Elections,2026-03-06,2026-03-30,3
+G04CT,CT-04 General Election,Elections,2026-03-06,2026-07-14,6
+G04FL,FL-04 General Election,Elections,2026-03-06,2026-08-03,5
+G04GA,GA-04 General Election,Elections,2026-03-06,2026-08-03,3
+G04IA,IA-04 General Election,Elections,2026-03-11,2026-07-11,5
+G04IL,IL-04 General Election,Elections,2026-03-11,2026-08-04,2
+G04IN,IN-04 General Election,Elections,2026-03-06,2026-03-06,1
+G04KS,KS-04 General Election,Elections,2026-03-06,2026-07-30,4
+G04KY,KY-04 General Election,Elections,2026-03-06,2026-08-06,11
+G04LA,LA-04 General Election,Elections,2026-03-06,2026-05-13,3
+G04MA,MA-04 General Election,Elections,2026-03-06,2026-05-09,3
+G04MD,MD-04 General Election,Elections,2026-03-06,2026-05-09,3
+G04MI,MI-04 General Election,Elections,2026-03-06,2026-08-04,6
+G04MN,MN-04 General Election,Elections,2026-05-21,2026-07-12,2
+G04MO,MO-04 General Election,Elections,2026-03-06,2026-03-12,2
+G04MS,MS-04 General Election,Elections,2026-03-06,2026-03-06,1
+G04NJ,NJ-04 General Election,Elections,2026-03-06,2026-05-09,2
+G04NV,NV-04 General Election,Elections,2026-04-20,2026-06-09,2
+G04NY,NY-04 General Election,Elections,2026-03-12,2026-06-19,12
+G04OH,OH-04 General Election,Elections,2026-05-07,2026-08-05,2
+G04OK,OK-04 General Election,Elections,2026-05-07,2026-06-15,3
+G04OR,OR-04 General Election,Elections,2026-05-07,2026-08-05,2
+G04PA,PA-04 General Election,Elections,2026-03-28,2026-08-04,3
+G04SC,SC-04 General Election,Elections,2026-03-12,2026-05-29,3
+G04TN,TN-04 General Election,Elections,2026-03-07,2026-05-14,4
+G04TX,TX-04 General Election,Elections,2026-03-04,2026-08-05,3
+G04UT,UT-04 General Election,Elections,2026-04-15,2026-04-15,1
+G04VA,VA-04 General Election,Elections,2026-03-22,2026-07-31,4
+G04WA,WA-04 General Election,Elections,2026-03-06,2026-08-04,6
+G04WI,WI-04 General Election,Elections,2026-04-15,2026-08-04,3
+G05AL,AL-05 General Election,Elections,2026-03-06,2026-05-22,6
+G05AZ,AZ-05 General Election,Elections,2026-05-09,2026-05-09,1
+G05CA,CA-05 General Election,Elections,2026-03-06,2026-04-15,3
+G05CO,CO-05 General Election,Elections,2026-03-06,2026-06-26,4
+G05CT,CT-05 General Election,Elections,2026-05-07,2026-07-14,2
+G05FL,FL-05 General Election,Elections,2026-03-06,2026-04-19,2
+G05GA,GA-05 General Election,Elections,2026-04-09,2026-08-03,4
+G05IL,IL-05 General Election,Elections,2026-03-30,2026-04-13,2
+G05IN,IN-05 General Election,Elections,2026-03-06,2026-08-12,3
+G05KY,KY-05 General Election,Elections,2026-03-06,2026-08-04,7
+G05MA,MA-05 General Election,Elections,2026-03-06,2026-03-06,1
+G05MD,MD-05 General Election,Elections,2026-03-11,2026-06-24,4
+G05MI,MI-05 General Election,Elections,2026-03-06,2026-07-30,2
+G05MN,MN-05 General Election,Elections,2026-03-06,2026-08-12,8
+G05MO,MO-05 General Election,Elections,2026-03-12,2026-07-27,12
+G05NJ,NJ-05 General Election,Elections,2026-03-06,2026-05-09,2
+G05NY,NY-05 General Election,Elections,2026-04-19,2026-04-19,1
+G05OH,OH-05 General Election,Elections,2026-05-07,2026-08-05,2
+G05OK,OK-05 General Election,Elections,2026-03-14,2026-05-07,2
+G05OR,OR-05 General Election,Elections,2026-05-07,2026-05-07,1
+G05PA,PA-05 General Election,Elections,2026-05-09,2026-08-04,3
+G05TN,TN-05 General Election,Elections,2026-05-07,2026-08-07,3
+G05TX,TX-05 General Election,Elections,2026-05-21,2026-08-05,3
+G05VA,VA-05 General Election,Elections,2026-03-08,2026-08-04,14
+G05WA,WA-05 General Election,Elections,2026-04-15,2026-06-01,2
+G05WI,WI-05 General Election,Elections,2026-04-15,2026-08-06,2
+G06AL,AL-06 General Election,Elections,2026-03-06,2026-08-03,6
+G06AZ,AZ-06 General Election,Elections,2026-03-06,2026-07-22,7
+G06CO,CO-06 General Election,Elections,2026-03-06,2026-06-29,3
+G06FL,FL-06 General Election,Elections,2026-03-06,2026-08-03,4
+G06GA,GA-06 General Election,Elections,2026-03-06,2026-08-03,6
+G06IL,IL-06 General Election,Elections,2026-03-06,2026-08-04,5
+G06IN,IN-06 General Election,Elections,2026-03-06,2026-08-04,2
+G06KY,KY-06 General Election,Elections,2026-04-21,2026-06-29,4
+G06LA,LA-06 General Election,Elections,2026-03-06,2026-06-28,5
+G06MA,MA-06 General Election,Elections,2026-03-11,2026-03-11,1
+G06MD,MD-06 General Election,Elections,2026-03-20,2026-06-24,3
+G06MI,MI-06 General Election,Elections,2026-03-06,2026-07-30,4
+G06MN,MN-06 General Election,Elections,2026-03-06,2026-07-12,3
+G06MO,MO-06 General Election,Elections,2026-03-06,2026-03-30,4
+G06NC,NC-06 General Election,Elections,2026-05-07,2026-05-07,1
+G06NJ,NJ-06 General Election,Elections,2026-03-06,2026-05-29,4
+G06NY,NY-06 General Election,Elections,2026-04-19,2026-04-19,1
+G06OH,OH-06 General Election,Elections,2026-05-07,2026-08-12,3
+G06OR,OR-06 General Election,Elections,2026-03-22,2026-08-05,3
+G06PA,PA-06 General Election,Elections,2026-03-28,2026-08-04,4
+G06SC,SC-06 General Election,Elections,2026-05-07,2026-07-13,7
+G06TN,TN-06 General Election,Elections,2026-05-07,2026-07-31,2
+G06TX,TX-06 General Election,Elections,2026-03-04,2026-08-06,5
+G06VA,VA-06 General Election,Elections,2026-03-08,2026-08-04,14
+G06WA,WA-06 General Election,Elections,2026-04-15,2026-08-06,2
+G06WI,WI-06 General Election,Elections,2026-04-15,2026-08-04,2
+G07AL,AL-07 General Election,Elections,2026-03-06,2026-05-07,3
+G07AZ,AZ-07 General Election,Elections,2026-03-12,2026-07-22,4
+G07CA,CA-07 General Election,Elections,2026-03-06,2026-08-12,11
+G07CO,CO-07 General Election,Elections,2026-03-06,2026-07-01,4
+G07FL,FL-07 General Election,Elections,2026-03-30,2026-08-03,7
+G07GA,GA-07 General Election,Elections,2026-03-06,2026-08-12,3
+G07IN,IN-07 General Election,Elections,2026-03-06,2026-08-04,3
+G07MA,MA-07 General Election,Elections,2026-03-06,2026-05-09,3
+G07MD,MD-07 General Election,Elections,2026-03-06,2026-05-09,3
+G07MI,MI-07 General Election,Elections,2026-05-22,2026-08-12,14
+G07MN,MN-07 General Election,Elections,2026-05-22,2026-08-11,3
+G07MO,MO-07 General Election,Elections,2026-03-06,2026-05-09,3
+G07NC,NC-07 General Election,Elections,2026-05-07,2026-05-07,1
+G07NJ,NJ-07 General Election,Elections,2026-02-15,2026-06-03,9
+G07NY,NY-07 General Election,Elections,2026-06-24,2026-06-24,1
+G07OH,OH-07 General Election,Elections,2026-05-07,2026-08-12,12
+G07PA,PA-07 General Election,Elections,2026-03-22,2026-05-20,10
+G07SC,SC-07 General Election,Elections,2026-03-07,2026-05-07,3
+G07TN,TN-07 General Election,Elections,2026-05-07,2026-05-13,3
+G07TX,TX-07 General Election,Elections,2026-04-22,2026-06-05,3
+G07VA,VA-07 General Election,Elections,2026-05-08,2026-05-08,1
+G07WA,WA-07 General Election,Elections,2026-04-15,2026-07-31,2
+G08AZ,AZ-08 General Election,Elections,2026-05-09,2026-05-09,1
+G08CA,CA-08 General Election,Elections,2026-03-06,2026-05-08,6
+G08CO,CO-08 General Election,Elections,2026-03-13,2026-08-05,8
+G08FL,FL-08 General Election,Elections,2026-03-06,2026-08-03,3
+G08GA,GA-08 General Election,Elections,2026-03-06,2026-08-03,4
+G08IN,IN-08 General Election,Elections,2026-03-06,2026-08-04,5
+G08MA,MA-08 General Election,Elections,2026-03-06,2026-05-09,2
+G08MD,MD-08 General Election,Elections,2026-03-06,2026-06-24,3
+G08MI,MI-08 General Election,Elections,2026-03-06,2026-07-30,6
+G08MN,MN-08 General Election,Elections,2026-03-06,2026-07-12,5
+G08MO,MO-08 General Election,Elections,2026-03-06,2026-05-09,3
+G08NJ,NJ-08 General Election,Elections,2026-03-06,2026-06-03,4
+G08NY,NY-08 General Election,Elections,2026-04-19,2026-05-29,2
+G08OH,OH-08 General Election,Elections,2026-03-12,2026-05-07,2
+G08PA,PA-08 General Election,Elections,2026-04-09,2026-04-09,1
+G08TN,TN-08 General Election,Elections,2026-03-07,2026-08-07,4
+G08TX,TX-08 General Election,Elections,2026-03-04,2026-08-06,7
+G08VA,VA-08 General Election,Elections,2026-01-27,2026-08-04,6
+G08WA,WA-08 General Election,Elections,2026-04-15,2026-04-15,1
+G08WI,WI-08 General Election,Elections,2026-04-15,2026-04-15,1
+G09AZ,AZ-09 General Election,Elections,2026-03-12,2026-07-22,4
+G09CA,CA-09 General Election,Elections,2026-03-06,2026-06-15,5
+G09FL,FL-09 General Election,Elections,2026-03-06,2026-08-05,21
+G09GA,GA-09 General Election,Elections,2026-03-06,2026-06-17,4
+G09IL,IL-09 General Election,Elections,2026-08-04,2026-08-04,1
+G09IN,IN-09 General Election,Elections,2026-03-06,2026-08-04,3
+G09MA,MA-09 General Election,Elections,2026-03-06,2026-05-09,2
+G09MI,MI-09 General Election,Elections,2026-03-06,2026-05-22,2
+G09NC,NC-09 General Election,Elections,2026-05-07,2026-05-07,1
+G09NJ,NJ-09 General Election,Elections,2026-05-09,2026-08-04,3
+G09NY,NY-09 General Election,Elections,2026-03-12,2026-06-15,4
+G09OH,OH-09 General Election,Elections,2026-04-14,2026-08-12,8
+G09PA,PA-09 General Election,Elections,2026-05-09,2026-08-04,3
+G09TN,TN-09 General Election,Elections,2026-05-09,2026-08-07,4
+G09TX,TX-09 General Election,Elections,2026-05-09,2026-05-27,3
+G09VA,VA-09 General Election,Elections,2026-04-15,2026-08-04,3
+G10CA,CA-10 General Election,Elections,2026-03-06,2026-08-01,7
+G10FL,FL-10 General Election,Elections,2026-03-06,2026-08-03,5
+G10GA,GA-10 General Election,Elections,2026-03-06,2026-08-03,5
+G10IL,IL-10 General Election,Elections,2026-03-06,2026-03-30,2
+G10MI,MI-10 General Election,Elections,2026-03-14,2026-08-04,4
+G10NC,NC-10 General Election,Elections,2026-05-07,2026-05-07,1
+G10NJ,NJ-10 General Election,Elections,2026-03-06,2026-06-03,4
+G10NY,NY-10 General Election,Elections,2026-04-09,2026-06-21,5
+G10OH,OH-10 General Election,Elections,2026-05-07,2026-05-07,1
+G10PA,PA-10 General Election,Elections,2026-03-22,2026-08-10,20
+G10TX,TX-10 General Election,Elections,2026-03-04,2026-08-06,4
+G10VA,VA-10 General Election,Elections,2026-04-15,2026-07-31,2
+G10WA,WA-10 General Election,Elections,2026-04-15,2026-06-15,2
+G11CA,CA-11 General Election,Elections,2026-06-01,2026-06-03,2
+G11FL,FL-11 General Election,Elections,2026-03-06,2026-08-12,7
+G11GA,GA-11 General Election,Elections,2026-03-06,2026-08-03,14
+G11IL,IL-11 General Election,Elections,2026-03-06,2026-08-04,5
+G11MI,MI-11 General Election,Elections,2026-03-11,2026-08-04,4
+G11NC,NC-11 General Election,Elections,2026-03-22,2026-08-06,9
+G11NJ,NJ-11 General Election,Elections,2026-03-06,2026-08-04,7
+G11NY,NY-11 General Election,Elections,2026-04-19,2026-08-12,2
+G11OH,OH-11 General Election,Elections,2026-05-07,2026-08-03,2
+G11PA,PA-11 General Election,Elections,2026-05-22,2026-07-12,2
+G11TX,TX-11 General Election,Elections,2026-03-04,2026-08-06,2
+G11VA,VA-11 General Election,Elections,2026-03-12,2026-07-31,4
+G12CA,CA-12 General Election,Elections,2026-03-06,2026-06-15,4
+G12FL,FL-12 General Election,Elections,2026-03-06,2026-04-19,3
+G12GA,GA-12 General Election,Elections,2026-03-06,2026-08-03,10
+G12IL,IL-12 General Election,Elections,2026-03-06,2026-05-07,4
+G12MI,MI-12 General Election,Elections,2026-03-06,2026-07-06,3
+G12NC,NC-12 General Election,Elections,2026-03-04,2026-03-12,2
+G12NJ,NJ-12 General Election,Elections,2026-03-06,2026-03-12,2
+G12OH,OH-12 General Election,Elections,2026-05-07,2026-08-03,2
+G12PA,PA-12 General Election,Elections,2026-05-09,2026-07-12,3
+G12TX,TX-12 General Election,Elections,2026-03-04,2026-08-06,2
+G13CA,CA-13 General Election,Elections,2026-03-06,2026-08-01,9
+G13FL,FL-13 General Election,Elections,2026-03-06,2026-08-04,8
+G13GA,GA-13 General Election,Elections,2026-03-06,2026-05-20,5
+G13IL,IL-13 General Election,Elections,2026-03-06,2026-08-04,3
+G13MI,MI-13 General Election,Elections,2026-03-06,2026-08-06,11
+G13NC,NC-13 General Election,Elections,2026-05-07,2026-05-07,1
+G13OH,OH-13 General Election,Elections,2026-05-07,2026-08-03,2
+G13PA,PA-13 General Election,Elections,2026-03-12,2026-07-12,4
+G13TX,TX-13 General Election,Elections,2026-03-04,2026-08-06,4
+G14FL,FL-14 General Election,Elections,2026-03-06,2026-08-12,6
+G14GA,GA-14 General Election,Elections,2026-03-10,2026-08-03,5
+G14IL,IL-14 General Election,Elections,2026-03-06,2026-08-04,4
+G14NC,NC-14 General Election,Elections,2026-03-04,2026-05-07,2
+G14NY,NY-14 General Election,Elections,2026-04-19,2026-05-23,2
+G14OH,OH-14 General Election,Elections,2026-05-07,2026-05-07,1
+G14PA,PA-14 General Election,Elections,2026-03-28,2026-07-12,4
+G14TX,TX-14 General Election,Elections,2026-03-04,2026-08-06,4
+G15CA,CA-15 General Election,Elections,2026-03-06,2026-08-01,8
+G15FL,FL-15 General Election,Elections,2026-03-06,2026-04-19,2
+G15IL,IL-15 General Election,Elections,2026-03-06,2026-03-06,1
+G15NY,NY-15 General Election,Elections,2026-04-19,2026-06-24,2
+G15OH,OH-15 General Election,Elections,2026-04-24,2026-04-24,1
+G15PA,PA-15 General Election,Elections,2026-03-28,2026-05-09,2
+G15TX,TX-15 General Election,Elections,2026-03-04,2026-08-06,4
+G16CA,CA-16 General Election,Elections,2026-03-06,2026-05-08,2
+G16FL,FL-16 General Election,Elections,2026-03-06,2026-04-21,7
+G16IL,IL-16 General Election,Elections,2026-03-06,2026-05-07,3
+G16NY,NY-16 General Election,Elections,2026-04-19,2026-04-19,1
+G16PA,PA-16 General Election,Elections,2026-05-09,2026-07-12,2
+G16TX,TX-16 General Election,Elections,2026-03-04,2026-08-06,2
+G17CA,CA-17 General Election,Elections,2026-03-06,2026-06-15,4
+G17FL,FL-17 General Election,Elections,2026-03-06,2026-04-19,3
+G17IL,IL-17 General Election,Elections,2026-03-06,2026-08-04,5
+G17NY,NY-17 General Election,Elections,2026-03-22,2026-06-30,6
+G17PA,PA-17 General Election,Elections,2026-05-09,2026-07-12,2
+G17TX,TX-17 General Election,Elections,2026-03-04,2026-03-04,1
+G18CA,CA-18 General Election,Elections,2026-03-06,2026-05-08,2
+G18FL,FL-18 General Election,Elections,2026-03-06,2026-05-26,3
+G18NY,NY-18 General Election,Elections,2026-04-19,2026-05-29,2
+G18TX,TX-18 General Election,Elections,2026-03-04,2026-05-27,13
+G19CA,CA-19 General Election,Elections,2026-03-06,2026-05-08,4
+G19FL,FL-19 General Election,Elections,2026-04-19,2026-04-19,1
+G19NY,NY-19 General Election,Elections,2026-03-06,2026-08-12,7
+G19TX,TX-19 General Election,Elections,2026-03-04,2026-04-03,3
+G20CA,CA-20 General Election,Elections,2026-03-06,2026-05-08,3
+G20FL,FL-20 General Election,Elections,2026-03-06,2026-08-02,12
+G20NY,NY-20 General Election,Elections,2026-04-19,2026-04-19,1
+G20TX,TX-20 General Election,Elections,2026-08-06,2026-08-06,1
+G21CA,CA-21 General Election,Elections,2026-03-06,2026-05-08,3
+G21FL,FL-21 General Election,Elections,2026-03-06,2026-08-03,3
+G21NY,NY-21 General Election,Elections,2026-04-02,2026-06-24,4
+G21TX,TX-21 General Election,Elections,2026-03-11,2026-03-12,2
+G22CA,CA-22 General Election,Elections,2026-03-10,2026-06-26,6
+G22FL,FL-22 General Election,Elections,2026-03-20,2026-08-12,12
+G22NY,NY-22 General Election,Elections,2026-04-19,2026-06-05,2
+G22TX,TX-22 General Election,Elections,2026-08-06,2026-08-06,1
+G23CA,CA-23 General Election,Elections,2026-03-06,2026-05-08,2
+G23FL,FL-23 General Election,Elections,2026-03-31,2026-08-04,12
+G23NY,NY-23 General Election,Elections,2026-04-19,2026-04-19,1
+G23TX,TX-23 General Election,Elections,2026-03-05,2026-03-30,3
+G24CA,CA-24 General Election,Elections,2026-03-06,2026-04-15,4
+G24FL,FL-24 General Election,Elections,2026-03-06,2026-05-29,4
+G24NY,NY-24 General Election,Elections,2026-04-19,2026-04-19,1
+G24TX,TX-24 General Election,Elections,2026-05-22,2026-08-07,3
+G25CA,CA-25 General Election,Elections,2026-03-06,2026-05-08,3
+G25FL,FL-25 General Election,Elections,2026-03-06,2026-08-04,12
+G25NY,NY-25 General Election,Elections,2026-04-19,2026-04-19,1
+G25TX,TX-25 General Election,Elections,2026-03-04,2026-08-06,2
+G26CA,CA-26 General Election,Elections,2026-03-11,2026-03-12,2
+G26FL,FL-26 General Election,Elections,2026-03-06,2026-08-03,3
+G26NY,NY-26 General Election,Elections,2026-04-19,2026-04-19,1
+G26TX,TX-26 General Election,Elections,2026-03-04,2026-03-12,3
+G27CA,CA-27 General Election,Elections,2026-03-06,2026-05-08,5
+G27FL,FL-27 General Election,Elections,2026-03-07,2026-08-03,7
+G27TX,TX-27 General Election,Elections,2026-03-04,2026-03-04,1
+G28CA,CA-28 General Election,Elections,2026-03-06,2026-05-08,3
+G28FL,FL-28 General Election,Elections,2026-03-06,2026-05-26,3
+G28TX,TX-28 General Election,Elections,2026-03-04,2026-08-10,8
+G29CA,CA-29 General Election,Elections,2026-03-06,2026-05-08,3
+G29TX,TX-29 General Election,Elections,2026-03-04,2026-08-06,2
+G30CA,CA-30 General Election,Elections,2026-03-06,2026-05-08,6
+G31CA,CA-31 General Election,Elections,2026-03-06,2026-05-08,4
+G31TX,TX-31 General Election,Elections,2026-03-04,2026-03-11,2
+G32CA,CA-32 General Election,Elections,2026-03-06,2026-05-08,4
+G32TX,TX-32 General Election,Elections,2026-03-04,2026-05-22,4
+G33CA,CA-33 General Election,Elections,2026-03-06,2026-05-08,2
+G33TX,TX-33 General Election,Elections,2026-03-04,2026-08-10,6
+G34CA,CA-34 General Election,Elections,2026-03-06,2026-08-12,12
+G34TX,TX-34 General Election,Elections,2026-03-04,2026-08-10,7
+G35CA,CA-35 General Election,Elections,2026-03-06,2026-08-12,4
+G35TX,TX-35 General Election,Elections,2026-03-04,2026-03-04,1
+G36CA,CA-36 General Election,Elections,2026-03-06,2026-04-15,5
+G36TX,TX-36 General Election,Elections,2026-03-11,2026-03-12,2
+G37CA,CA-37 General Election,Elections,2026-03-06,2026-05-08,2
+G37TX,TX-37 General Election,Elections,2026-08-06,2026-08-06,1
+G38CA,CA-38 General Election,Elections,2026-03-06,2026-04-23,4
+G38TX,TX-38 General Election,Elections,2026-04-02,2026-08-10,4
+G39CA,CA-39 General Election,Elections,2026-03-06,2026-05-08,2
+G40CA,CA-40 General Election,Elections,2026-03-06,2026-08-12,7
+G41CA,CA-41 General Election,Elections,2026-03-06,2026-03-06,1
+G42CA,CA-42 General Election,Elections,2026-03-06,2026-03-12,3
+G43CA,CA-43 General Election,Elections,2026-03-06,2026-05-08,2
+G44CA,CA-44 General Election,Elections,2026-03-06,2026-05-08,2
+G45CA,CA-45 General Election,Elections,2026-03-06,2026-05-08,2
+G46CA,CA-46 General Election,Elections,2026-03-06,2026-03-12,3
+G47CA,CA-47 General Election,Elections,2026-03-11,2026-03-11,1
+G48CA,CA-48 General Election,Elections,2026-03-10,2026-08-12,3
+G49CA,CA-49 General Election,Elections,2026-05-08,2026-05-08,1
+G50CA,CA-50 General Election,Elections,2026-05-08,2026-05-08,1
+G51CA,CA-51 General Election,Elections,2026-03-06,2026-05-08,3
+G52CA,CA-52 General Election,Elections,2026-03-06,2026-05-08,2
+GCE,Global Carbon Dioxide Emissions,Environmental,2025-01-01,2026-08-12,158
+GCYCO,Global Crop Yield of Corn,Environmental,2025-05-26,2026-08-12,30
+GCYRM,Global Crop Yield Rice,Environmental,2025-05-25,2026-08-07,19
+GCYWH,Global Crop Yield of Wheat,Environmental,2025-05-25,2026-06-26,32
+GDQCA,California GDP,Economic Indicators,2026-08-09,2026-08-09,1
+GDQFL,Florida GDP,Economic Indicators,2026-08-09,2026-08-09,1
+GDQGA,Georgia GDP,Economic Indicators,2026-08-07,2026-08-09,2
+GDQNY,New York GDP,Economic Indicators,2026-08-08,2026-08-08,1
+GPAKD,Alaska Governor Primary,Elections,2025-05-15,2026-03-06,11
+GPAKR,Alaska Governor Primary,Elections,2025-05-15,2026-08-06,24
+GPALR,Alabama Governor Republican Primary,Elections,2025-06-01,2026-05-20,15
+GPAZR,Arizona Governor Republican Primary,Elections,2025-03-28,2026-07-26,33
+GPCAD,California Governor Primary,Elections,2025-03-10,2026-06-16,66
+GPCOD,Colorado Governor Democratic Primary,Elections,2025-04-09,2026-07-01,39
+GPFLD,Florida Governor Democratic Primary,Elections,2025-03-28,2026-07-29,47
+GPFLR,Florida Governor Republican Primary,Elections,2025-03-10,2026-07-26,74
+GPGAD,Georgia Governor Democratic Primary,Elections,2025-03-10,2026-05-20,83
+GPGAR,Georgia Governor Republican Primary,Elections,2025-03-25,2026-06-18,85
+GPILR,Illinois Governor Republican Primary,Elections,2025-07-13,2026-03-18,30
+GPKSD,Kansas Governor Democratic Primary,Elections,2025-05-02,2026-08-05,70
+GPKSR,Kansas Governor Republican Primary,Elections,2025-03-10,2026-08-05,58
+GPMDR,Maryland Governor Republican Primary,Elections,2025-04-24,2026-06-24,35
+GPMED,Maine Governor Democratic Primary,Elections,2025-03-14,2026-06-19,56
+GPMER,Maine Governor Republican Primary,Elections,2025-04-01,2026-06-10,36
+GPMID,Michigan Governor Democratic Primary,Elections,2025-03-10,2026-07-23,23
+GPMIR,Michigan Governor Republican Primary,Elections,2025-03-10,2026-08-05,86
+GPNJD,New Jersey Governor Democratic Primary,Elections,2025-03-10,2025-06-11,22
+GPNJR,New Jersey Governor Republican Primary,Elections,2025-03-10,2025-06-11,20
+GPNMD,New Mexico Governor Democratic Primary,Elections,2025-06-03,2026-06-03,45
+GPNMR,New Mexico Governor Republican Primary,Elections,2025-06-12,2026-06-03,54
+GPNVD,Nevada Governor Democratic Primary,Elections,2025-07-13,2026-05-13,15
+GPNYD,New York Governor Democratic Primary,Elections,2025-03-14,2026-06-23,55
+GPNYR,New York Governor Republican Primary,Elections,2025-04-17,2026-06-22,38
+GPOHD,Ohio Governor Democratic Primary,Elections,2025-03-10,2026-04-15,49
+GPOHR,Ohio Governor Republican Primary,Elections,2025-03-10,2026-05-05,38
+GPOKR,Oklahoma Governor Republican Primary,Elections,2025-03-10,2026-08-11,51
+GPPAR,Pennsylvania Governor Republican Primary,Elections,2025-06-06,2026-05-15,19
+GPSCR,South Carolina Governor Republican Primary,Elections,2025-05-01,2026-06-20,76
+GPSDR,South Dakota Governor Republican Primary,Elections,2025-06-18,2026-07-29,68
+GPTNR,Tennessee Governor Republican Primary,Elections,2025-03-10,2026-08-07,27
+GPTXD,Texas Governor Democratic Primary,Elections,2025-08-05,2026-03-08,22
+GPTXR,Texas Governor Republican Primary,Elections,2026-01-30,2026-03-08,5
+GPVAD,Virginia Governor Democratic Primary,Elections,2025-03-13,2025-06-24,8
+GPVAR,Virginia Governor Republican Primary,Elections,2025-03-10,2025-04-15,8
+GPWID,Wisconsin Governor Democratic Primary,Elections,2025-04-01,2026-08-12,100
+GPWIR,Wisconsin Governor Republican Primary,Elections,2025-03-28,2026-07-23,33
+GRNJ,Governor Race in New Jersey,Elections,2025-03-17,2025-11-14,105
+GROH,Governor Race in Ohio | Ohio Governor General Election,Elections,2025-02-18,2026-08-12,48
+GRVA,Governor Race in Virginia,Elections,2025-03-12,2025-11-14,119
+GSCAL,Gas Prices in California,Economic Indicators,2026-05-26,2026-08-12,21
+GSL,Global Sea Level,Environmental,2025-01-10,2026-08-12,47
+GSNYK,Gas Prices in New York,Economic Indicators,2026-05-26,2026-08-12,18
+GSTXS,Gas Prices in Texas,Economic Indicators,2026-05-26,2026-08-12,19
+GT,Global Temperature,Environmental,2025-01-01,2026-08-12,111
+GTM,Monthly Average Global Temperature,Environmental,2025-01-10,2026-08-11,335
+GTTA,Annual Global Temperature Threshold,Environmental,2025-06-04,2026-08-11,73
+GTTM,Monthly Global Temperature Threshold,Environmental,2025-04-23,2025-12-31,7
+H01AZ,AZ-01 Democratic Primary Election,Elections,2026-05-09,2026-07-23,24
+H01CO,CO-01 Democratic Primary Election,Elections,2026-04-20,2026-07-01,13
+H01HI,HI-01 Democratic Primary Election,Elections,2026-04-20,2026-08-09,12
+H01MO,MO-01 Democratic Primary Election,Elections,2026-04-25,2026-08-05,15
+H01MT,MT-01 Democratic Primary Election,Elections,2026-05-09,2026-06-17,8
+H01NE,NE-01 Democratic Primary Election,Elections,2026-04-15,2026-05-13,4
+H01NH,NH-01 Democratic Primary Election,Elections,2026-05-20,2026-08-08,7
+H01SC,SC-01 Democratic Primary Election,Elections,2026-05-19,2026-06-24,9
+H01UT,UT-01 Democratic Primary Election,Elections,2026-04-14,2026-06-24,7
+H02KY,KY-02 Democratic Primary Election,Elections,2026-04-20,2026-05-26,4
+H02ME,ME-02 Democratic Primary Election,Elections,2026-04-13,2026-06-19,17
+H02MN,MN-02 Democratic Primary Election,Elections,2026-05-06,2026-08-12,19
+H02NE,NE-02 Democratic Primary Election,Elections,2026-04-08,2026-05-13,11
+H02OH,OH-02 Democratic Primary Election,Elections,2026-05-05,2026-06-09,4
+H02VA,VA-02 Democratic Primary Election,Elections,2026-04-13,2026-08-06,11
+H02WV,WV-02 Democratic Primary Election,Elections,2026-05-01,2026-05-13,6
+H03LA,LA-03 Democratic Primary Election,Elections,2026-04-20,2026-05-15,5
+H03PA,PA-03 Democratic Primary Election,Elections,2026-03-27,2026-06-05,16
+H04IN,IN-04 Democratic Primary Election,Elections,2026-03-27,2026-05-07,12
+H04LA,LA-04 Democratic Primary Election,Elections,2026-04-15,2026-05-15,4
+H04MO,MO-04 Democratic Primary Election,Elections,2026-08-06,2026-08-06,1
+H05LA,LA-05 Democratic Primary Election,Elections,2026-04-16,2026-05-15,4
+H05MA,MA-05 Democratic Primary Election,Elections,2026-07-23,2026-07-23,1
+H05MD,MD-05 Democratic Primary Election,Elections,2026-04-02,2026-06-24,10
+H06KY,KY-06 Democratic Primary Election,Elections,2026-04-02,2026-06-04,16
+H06MA,MA-06 Democratic Primary Election,Elections,2026-04-09,2026-05-31,5
+H06MD,MD-06 Democratic Primary Election,Elections,2026-03-29,2026-06-24,3
+H07GA,GA-07 Democratic Primary Election,Elections,2026-04-29,2026-06-17,10
+H07IN,IN-07 Democratic Primary Election,Elections,2026-04-05,2026-05-06,5
+H07MI,MI-07 Democratic Primary Election,Elections,2026-07-30,2026-08-05,3
+H07NJ,NJ-07 Democratic Primary Election,Elections,2026-04-13,2026-06-03,8
+H07NY,NY-07 Democratic Primary,Elections,2026-04-14,2026-06-24,5
+H07OH,OH-07 Democratic Primary Election,Elections,2026-04-15,2026-06-09,5
+H07PA,PA-07 Democratic Primary Election,Elections,2026-03-28,2026-06-05,13
+H08CO,CO-08 Democratic Primary Election,Elections,2026-03-31,2026-07-01,16
+H08IN,IN-08 Democratic Primary Election,Elections,2026-03-29,2026-05-07,7
+H08OH,OH-08 Democratic Primary Election,Elections,2026-04-13,2026-06-12,14
+H09IL,IL-09 Democratic Primary Election,Elections,2026-03-28,2026-03-28,1
+H09IN,IN-09 Democratic Primary Election,Elections,2026-04-05,2026-05-07,6
+H09TN,TN-09 Democratic Primary Election,Elections,2026-05-08,2026-08-07,8
+H10NY,NY-10 Democratic Primary,Elections,2026-04-09,2026-06-21,8
+H11MI,MI-11 Democratic Primary Election,Elections,2026-05-21,2026-08-04,3
+H11NJ,NJ-11 Democratic Primary Election,Elections,2026-04-17,2026-06-02,4
+H12NY,NY-12 Democratic Primary,Elections,2026-04-13,2026-06-24,24
+H13FL,FL-13 Democratic Primary Election,Elections,2026-05-22,2026-08-05,5
+H13GA,GA-13 Democratic Primary Election,Elections,2026-03-25,2026-05-20,8
+H13MI,MI-13 Democratic Primary Election,Elections,2026-04-02,2026-08-05,26
+H13NY,NY-13 Democratic Primary Election,Elections,2026-05-24,2026-06-24,14
+H15NY,NY-15 Democratic Primary Election,Elections,2026-06-13,2026-06-24,4
+H17NY,NY-17 Democratic Primary,Elections,2026-05-06,2026-06-24,27
+H20FL,FL-20 Democratic Primary Election,Elections,2026-08-12,2026-08-12,1
+H23FL,FL-23 Democratic Primary Election,Elections,2026-04-20,2026-08-12,10
+H24FL,FL-24 Democratic Primary Election,Elections,2026-07-31,2026-08-12,4
+H25FL,FL-25 Democratic Primary Election,Elections,2026-07-31,2026-08-08,5
+H33TX,TX-33 Democratic Primary Election,Elections,2026-04-20,2026-05-27,7
+H35TX,TX-35 Democratic Primary Election,Elections,2026-05-05,2026-05-27,9
+HCAB,Hurricane Count Atlantic Basin,Environmental,2025-05-02,2026-07-08,71
+HELPP,Helion Energy Plant Operation,Financial Markets,2026-03-11,2026-05-11,2
+HKCPI,Hong Kong Consumer Price Index,Economic Indicators,2025-01-01,2026-08-12,157
+HKGDP,Hong Kong Real GDP,Economic Indicators,2025-01-08,2026-08-06,114
+HLBTH,Bitcoin Highest Price,Financial Markets,2025-10-06,2025-12-23,42
+HLBTL,Bitcoin Lowest Price,Financial Markets,2025-10-12,2025-12-31,34
+HLETH,Ethereum Highest Price,Financial Markets,2025-10-14,2025-12-23,23
+HLF,Hurricane Landfall,Environmental,2025-05-01,2026-07-30,34
+HLFRE,Hurricane Landfall Count,Environmental,2025-09-29,2025-12-17,11
+HORC,US House of Representatives Control,Elections,2025-02-18,2026-08-11,417
+HS,US Housing Starts,Economic Indicators,2025-01-06,2026-08-09,218
+I01AZ,AZ-01 Republican Primary Election,Elections,2026-04-17,2026-07-24,13
+I01DE,DE-AL Republican Primary Election,Elections,2026-03-26,2026-08-12,19
+I01GA,GA-01 Republican Primary Election,Elections,2026-03-26,2026-06-04,9
+I01MT,MT-01 Republican Primary Election,Elections,2026-05-09,2026-06-03,5
+I01ND,ND-AL Republican Primary Election,Elections,2026-06-05,2026-06-10,4
+I01OH,OH-01 Republican Primary Election,Elections,2026-04-09,2026-06-09,9
+I01SC,SC-01 Republican Primary Election,Elections,2026-04-02,2026-06-24,15
+I02FL,FL-02 Republican Primary Election,Elections,2026-07-31,2026-08-12,6
+I02NV,NV-02 Republican Primary Election,Elections,2026-05-18,2026-06-10,10
+I03UT,UT-03 Republican Primary Election,Elections,2026-06-05,2026-06-24,10
+I04IA,IA-04 Republican Primary Election,Elections,2026-04-23,2026-06-03,2
+I04IN,IN-04 Republican Primary Election,Elections,2026-04-29,2026-05-07,5
+I04NY,NY-04 Republican Primary,Elections,2026-04-14,2026-06-22,11
+I05AZ,AZ-05 Republican Primary Election,Elections,2026-04-20,2026-07-22,26
+I05LA,LA-05 Republican Primary Election,Elections,2026-04-15,2026-05-18,8
+I06KY,KY-06 Republican Primary Election,Elections,2026-04-13,2026-05-20,11
+I07IN,IN-07 Republican Primary Election,Elections,2026-04-13,2026-05-07,7
+I09FL,FL-09 Republican Primary Election,Elections,2026-08-12,2026-08-12,1
+I09OH,OH-09 Republican Primary Election,Elections,2026-04-14,2026-06-09,8
+I09TX,TX-09 Republican Primary Election,Elections,2026-05-14,2026-05-27,4
+I10GA,GA-10 Republican Primary Election,Elections,2026-05-19,2026-05-20,2
+I11GA,GA-11 Republican Primary Election,Elections,2026-03-25,2026-06-17,21
+I13OH,OH-13 Republican Primary Election,Elections,2026-05-04,2026-06-09,4
+I19FL,FL-19 Republican Primary Election,Elections,2026-04-20,2026-08-12,17
+I22FL,FL-22 Republican Primary Election,Elections,2026-08-12,2026-08-12,1
+I23FL,FL-23 Republican Primary Election,Elections,2026-06-11,2026-08-06,16
+I25FL,FL-25 Republican Primary Election,Elections,2026-08-07,2026-08-07,1
+I37TX,TX-37 Republican Primary Election,Elections,2026-05-14,2026-05-27,5
+ICEBR,Brent Crude Oil Price,Financial Markets,2026-08-11,2026-08-11,1
+IJC,US Initial Jobless Claims,Economic Indicators,2025-01-01,2026-08-12,490
+INBDI,Baltic Dry Index Value,Economic Indicators,2025-08-29,2026-08-11,151
+INDAX,DAX 40 Index Price,Financial Markets,2025-08-28,2026-08-10,52
+INFLM,Inflation Compared to Last Month,Economic Indicators,2026-01-05,2026-01-05,1
+INHSI,Hang Seng Index Price,Financial Markets,2025-08-22,2026-06-23,47
+INMIB,FTSE MIB Price,Financial Markets,2025-08-26,2025-11-06,6
+INNKI,Nikkei Index Price,Financial Markets,2025-08-29,2026-07-23,64
+INSTI,Straits Times Index Price,Financial Markets,2026-07-27,2026-07-27,1
+INWEI,Weekly Economic Index,Economic Indicators,2025-09-16,2026-08-12,174
+IPOCO,Company IPO,Financial Markets,2025-10-03,2026-08-07,42
+ITNVD,NVIDIA Inference vs. Training Revenue,Financial Markets,2026-01-22,2026-06-10,8
+J04CA,CA-04 Primary,Elections,2026-04-09,2026-06-13,14
+J04WA,WA-04 Non-Partisan Primary Election,Elections,2026-05-09,2026-08-03,3
+J11CA,CA-11 Primary,Elections,2026-04-09,2026-06-10,11
+J22CA,CA-22 Primary,Elections,2026-03-26,2026-06-09,9
+J40CA,CA-40 Primary,Elections,2026-03-26,2026-06-09,15
+JOLT,JOLTS,Economic Indicators,2025-01-06,2026-08-11,154
+JPDEC,Bank of Japan Decision,Economic Indicators,2025-08-28,2026-06-16,95
+JPUSD,US Dollar to Japanese Yen Exchange Rate,Financial Markets,2025-09-08,2026-08-12,240
+K14GA,Georgia District 14 Runoff Special Election,Elections,2026-03-27,2026-04-07,2
+KY04R,KY-04 Republican Primary | Kentucky 4th Congressional District US House of Representatives Republican Primary Election,Elections,2025-07-01,2026-05-31,70
+LCBGL,Portrait of Gertrud Loew Auction Price,Financial Markets,2026-06-04,2026-06-24,5
+LEGCA,California Legalization Decision,Government,2025-09-28,2025-12-31,19
+MACD,Monthly Atmospheric Carbon Dioxide,Environmental,2025-01-07,2026-08-11,142
+MATLG,Mayoral General Election in Atlanta,Elections,2025-03-31,2025-10-31,14
+MBOSG,Mayoral General Election in Boston,Elections,2025-03-31,2025-11-19,32
+MDETN,Mayoral Primary Election in Detroit,Elections,2025-03-31,2025-08-06,32
+METLD,Palladium Price,Financial Markets,2026-02-09,2026-08-12,57
+METLG,Gold Price,Financial Markets,2026-02-05,2026-08-12,188
+METLP,Platinum Price,Financial Markets,2026-02-06,2026-08-12,161
+METLS,Silver Price,Financial Markets,2026-02-05,2026-08-12,181
+MHCMA,Atlantic Major Hurricanes,Environmental,2026-08-04,2026-08-06,2
+MHSP,Median New Home Sales Price,Economic Indicators,2025-02-10,2026-08-08,123
+MLAXG,Los Angeles Mayoral General Election,Elections,2026-05-07,2026-08-11,50
+MMCPI,Monthly CPI Change,Economic Indicators,2026-07-11,2026-07-14,3
+MMIAG,Mayoral General Election in Miami,Elections,2025-07-09,2025-11-14,25
+MMSPG,Mayoral General Election in Minneapolis,Elections,2025-04-10,2025-11-13,39
+MNYCD,Democratic Primary for New York City Mayor,Elections,2025-03-19,2025-07-02,58
+MNYCG,General Election for New York City Mayor,Elections,2025-06-30,2025-11-14,134
+MPITD,Mayoral Democratic Primary Election in Pittsburgh,Elections,2025-04-24,2025-05-21,2
+MRT,Monthly Record Temperature,Environmental,2025-01-06,2026-04-04,174
+MSATG,Mayoral General Election in San Antonio,Elections,2025-03-31,2025-05-20,11
+MSATN,Mayoral Runoff Election in San Antonio,Elections,2025-05-08,2025-06-08,13
+MSEAD,Mayoral Democratic Primary in Seattle,Elections,2025-03-31,2025-08-14,29
+MSTLG,Mayoral General Election in St. Louis,Elections,2025-04-01,2025-04-09,3
+MTSSX,Tesla SpaceX Merger,Financial Markets,2026-04-21,2026-07-15,20
+MXDEC,Bank of Mexico Decision,Economic Indicators,2025-08-28,2026-08-04,139
+MXXAK,Alaska Governor General Election,Elections,2026-02-11,2026-08-12,30
+MXXAL,Alabama Governor General Election,Elections,2026-02-03,2026-07-20,9
+MXXAR,Arkansas Governor General Election,Elections,2026-03-06,2026-04-17,5
+MXXAZ,Arizona Governor General Election,Elections,2026-03-05,2026-08-12,17
+MXXCA,California Governor General Election,Elections,2026-02-01,2026-08-11,77
+MXXCO,Colorado Governor General Election,Elections,2026-03-30,2026-07-01,11
+MXXCT,Connecticut Governor General Election,Elections,2026-03-06,2026-07-15,6
+MXXFL,Florida Governor General Election,Elections,2026-03-06,2026-08-10,11
+MXXGA,Georgia Governor General Election,Elections,2026-03-22,2026-08-03,12
+MXXHI,Hawaii Governor General Election,Elections,2026-03-06,2026-08-09,2
+MXXIA,Iowa Governor General Election,Elections,2026-04-21,2026-06-26,6
+MXXID,Idaho Governor General Election,Elections,2026-03-06,2026-05-20,3
+MXXIL,Illinois Governor General Election,Elections,2026-02-02,2026-07-12,12
+MXXKS,Kansas Governor General Election,Elections,2026-03-22,2026-08-05,11
+MXXMA,Massachusetts Governor General Election,Elections,2026-03-06,2026-07-23,4
+MXXMD,Maryland Governor General Election,Elections,2026-03-06,2026-06-08,4
+MXXME,Maine Governor General Election,Elections,2026-03-22,2026-07-24,6
+MXXMI,Michigan Governor General Election,Elections,2026-03-22,2026-07-30,13
+MXXMN,Minnesota Governor General Election,Elections,2026-03-06,2026-08-12,10
+MXXNE,Nebraska Governor General Election,Elections,2026-03-06,2026-06-10,4
+MXXNH,New Hampshire Governor General Election,Elections,2026-03-06,2026-04-03,3
+MXXNM,New Mexico Governor General Election,Elections,2026-04-03,2026-07-30,8
+MXXNV,Nevada Governor General Election,Elections,2026-03-06,2026-06-15,11
+MXXNY,New York Governor General Election,Elections,2026-03-06,2026-06-11,11
+MXXOK,Oklahoma Governor General Election,Elections,2026-03-11,2026-06-17,5
+MXXOR,Oregon Governor General Election,Elections,2026-03-30,2026-05-15,2
+MXXPA,Pennsylvania Governor General Election,Elections,2026-03-06,2026-07-26,11
+MXXRI,Rhode Island Governor General Election,Elections,2026-03-06,2026-08-11,9
+MXXSC,South Carolina Governor General Election,Elections,2026-03-11,2026-03-11,1
+MXXSD,South Dakota Governor General Election,Elections,2026-03-11,2026-07-29,10
+MXXTN,Tennessee Governor General Election,Elections,2026-03-14,2026-07-29,13
+MXXTX,Texas Governor General Election,Elections,2026-03-09,2026-05-29,8
+MXXVT,Vermont Governor General Election,Elections,2026-03-06,2026-06-08,2
+MXXWI,Wisconsin Governor General Election,Elections,2026-03-06,2026-08-12,14
+MXXWY,Wyoming Governor General Election,Elections,2026-03-22,2026-08-06,5
+NBAGW,Men's Pro Basketball Game Winner,Sports,2026-01-15,2026-02-13,12
+NC01R,NC-01 Republican Primary,Elections,2026-02-25,2026-03-11,8
+ND,US National Debt,Economic Indicators,2025-01-02,2026-08-12,200
+NFLGW,Pro Football Game Winner,Sports,2025-11-06,2026-01-19,66
+NGP,US Natural Gas Production,Economic Indicators,2025-01-01,2026-08-12,207
+NHS,New Home Sales,Economic Indicators,2025-01-06,2026-08-09,196
+NJ11D,NJ-11 Special Democratic Primary,Elections,2026-01-28,2026-02-12,8
+NXXID,Idaho Governor Democratic Primary Election,Elections,2026-05-05,2026-06-05,3
+NXXNH,New Hampshire Governor Democratic Primary Election,Elections,2026-04-20,2026-08-07,9
+NXXRI,Rhode Island Governor Democratic Primary Election,Elections,2026-04-20,2026-08-07,4
+NXXSC,South Carolina Governor Democratic Primary Election,Elections,2026-03-29,2026-06-10,16
+NXXSD,South Dakota Governor Democratic Primary Election,Elections,2026-04-20,2026-06-03,4
+NXXTN,Tennessee Governor Democratic Primary Election,Elections,2026-05-08,2026-08-06,18
+NXXVT,Vermont Governor Democratic Primary Election,Elections,2026-04-21,2026-08-12,14
+OP,US Oil Production,Economic Indicators,2025-01-06,2026-08-06,301
+OXXCO,Colorado Governor Republican Primary Election,Elections,2026-05-13,2026-07-03,13
+OXXCT,Connecticut Governor Republican Primary Election,Elections,2026-04-20,2026-08-12,9
+OXXIA,Iowa Governor Republican Primary Election,Elections,2026-04-01,2026-06-03,17
+OXXMA,Massachusetts Governor Republican Primary Election,Elections,2026-04-24,2026-07-26,15
+OXXMN,Minnesota Governor Republican Primary Election,Elections,2026-04-20,2026-08-12,34
+OXXOR,Oregon Governor Republican Primary Election,Elections,2026-04-04,2026-05-20,12
+OXXRI,Rhode Island Governor Republican Primary Election,Elections,2026-04-20,2026-07-30,12
+OXXVT,Vermont Governor Republican Primary Election,Elections,2026-04-27,2026-07-23,3
+OXXWY,Wyoming Governor Republican Primary Election,Elections,2026-07-03,2026-08-12,9
+PCD,US Presidential Candidate Democrat,Elections,2025-01-14,2026-08-06,267
+PCEY,Personal Consumption Expenditures Price Index,Economic Indicators,2025-01-01,2026-08-10,298
+PCR,US Presidential Candidate Republican,Elections,2025-01-03,2026-08-08,233
+PEACE,Nobel Peace Prize Winner,Elections,2025-08-05,2025-08-19,8
+PNFED,Presidential Nomination for Fed Chair,Government,2025-08-04,2026-05-18,168
+POPE,Elected Pope Forecast Contract,Elections,2025-05-05,2025-05-06,2
+PPIY,US Producer Price Index,Economic Indicators,2025-01-01,2026-08-12,210
+PRECO,Colombia Presidential Election,Elections,2026-05-08,2026-06-24,27
+PREMP,US Payroll Employment,Economic Indicators,2025-01-03,2026-08-12,379
+PREPE,Peru Presidential Election,Elections,2026-05-26,2026-07-06,17
+PRESH,US Presidential Election Kamala Harris,Elections,2025-01-01,2025-01-06,4
+PREST,US Presidential Election Donald Trump,Elections,2025-01-01,2025-01-06,4
+PRMIH,US State Presidential Race Michigan Harris,Elections,2025-01-06,2025-01-06,1
+PRPA,US Presidential Party,Elections,2025-01-07,2026-08-08,63
+PUSCF,Coffee Prices,Economic Indicators,2026-01-30,2026-08-12,21
+PUSEG,Egg Prices,Economic Indicators,2025-08-27,2026-08-12,171
+PWHNT,The Haunter Auction Price,Financial Markets,2026-06-23,2026-06-25,2
+RCATL,Atlanta CPI,Economic Indicators,2026-06-22,2026-08-12,22
+RCBOS,Boston CPI,Economic Indicators,2026-06-24,2026-08-11,18
+RCCHI,Chicago CPI,Economic Indicators,2026-06-24,2026-08-12,40
+RCDAL,Dallas CPI,Economic Indicators,2026-06-24,2026-08-11,9
+RCDET,Detroit CPI,Economic Indicators,2026-06-24,2026-08-11,12
+RCLAX,Los Angeles CPI,Economic Indicators,2026-06-19,2026-08-12,35
+RCMWE,Midwestern US CPI,Economic Indicators,2026-06-16,2026-08-12,32
+RCNET,Northeastern US CPI,Economic Indicators,2026-06-20,2026-08-12,37
+RCSEA,Seattle CPI,Economic Indicators,2026-07-17,2026-08-02,6
+RCSTH,Southern US CPI,Economic Indicators,2026-06-24,2026-08-12,26
+RCWDC,Washington DC CPI,Economic Indicators,2026-06-24,2026-08-10,12
+RCWST,Western US CPI,Economic Indicators,2026-06-21,2026-08-12,29
+RECAC,California Commercial Electricity Generation Sales Revenue,Economic Indicators,2025-06-27,2026-08-10,72
+RENYA,All New York Electricity Generation Sales Revenue,Economic Indicators,2025-06-27,2026-08-12,92
+RENYC,New York Commercial Electricity Generation Sales Revenue,Economic Indicators,2025-06-27,2026-08-11,60
+RETXC,Texas Commercial Electricity Generation Sales Revenue,Economic Indicators,2025-06-27,2026-08-10,52
+REUSA,All US Electricity Generation Sales Revenue,Economic Indicators,2025-06-27,2026-08-11,85
+REUSC,US Commercial Electricity Generation Sales Revenue,Economic Indicators,2025-06-27,2026-08-10,75
+RGDP,US Real GDP,Economic Indicators,2025-01-01,2026-08-10,261
+RKT12,SpaceX Starship Flight 12 Launch Date,Financial Markets,2026-05-18,2026-05-21,3
+RSM,US Retail Sales Monthly,Economic Indicators,2025-01-13,2026-08-12,210
+RT,Record Temperature,Environmental,2025-01-01,2026-07-13,79
+SCTTT,Supreme Court Ruling on Trump's Tariffs,Government,2025-09-15,2026-02-23,93
+SDPNC,North Carolina Democratic Senate Primary | North Carolina Democratic US Senate Primary,Elections,2025-07-03,2026-03-03,15
+SECOF,Company Secondary Offering,Financial Markets,2025-10-28,2025-12-31,11
+SENM,US Senate Majority,Elections,2025-01-03,2026-08-12,209
+SGCPI,Singapore Consumer Price Index,Economic Indicators,2025-01-03,2026-08-12,201
+SGGDP,Singapore Real GDP,Economic Indicators,2025-01-30,2026-08-12,129
+SGORA,Singapore Overnight Rate Average,Economic Indicators,2025-01-01,2026-08-02,212
+SHDDF,Frankfurt Daily Temperature High,Environmental,2026-07-09,2026-08-12,35
+SHFPO,Paris Daily Temperature High,Environmental,2026-07-06,2026-08-12,38
+SHJTT,Tokyo Daily Temperature High,Environmental,2026-07-01,2026-08-12,42
+SHNOR,Hormuz Return to Normal,Economic Indicators,2026-05-07,2026-08-12,55
+SHSSS,Singapore Daily Temperature High,Environmental,2026-03-24,2026-08-12,120
+SHSSY,Sydney Daily Temperature High,Environmental,2026-06-27,2026-08-12,37
+SHYHC,Vancouver Daily Temperature High,Environmental,2026-07-02,2026-08-12,38
+SHYUL,Montreal Daily Temperature High,Environmental,2026-08-04,2026-08-12,8
+SHYYZ,Toronto Daily Temperature High,Environmental,2026-07-02,2026-08-12,42
+SKDEC,Bank of Korea Decision,Economic Indicators,2025-10-08,2026-07-16,91
+SPDTX,Texas Democratic Senate Primary,Elections,2026-03-03,2026-03-04,2
+SPICA,California Personal Income,Economic Indicators,2026-07-30,2026-08-08,3
+SPIFL,Florida Personal Income,Economic Indicators,2026-07-30,2026-07-31,2
+SPIGA,Georgia Personal Income,Economic Indicators,2026-07-31,2026-07-31,1
+SPIIL,Illinois Personal Income,Economic Indicators,2026-07-31,2026-07-31,1
+SPINJ,New Jersey Personal Income,Economic Indicators,2026-07-31,2026-07-31,1
+SPINY,New York Personal Income,Economic Indicators,2026-07-31,2026-07-31,1
+SPIOH,Ohio Personal Income,Economic Indicators,2026-07-31,2026-07-31,1
+SPIPA,Pennsylvania Personal Income,Economic Indicators,2026-07-31,2026-07-31,1
+SPITX,Texas Personal Income,Economic Indicators,2026-07-30,2026-07-31,2
+SPIWA,Washington Personal Income,Economic Indicators,2026-07-31,2026-07-31,1
+SRPNC,North Carolina Republican Senate Primary | North Carolina Republican US Senate Primary,Elections,2025-07-03,2026-03-04,17
+SRPTX,Texas Republican Senate Primary | Texas Republican US Senate Primary,Elections,2025-05-08,2026-05-27,122
+SSRA,Social Security Retirement Age,Government,2025-01-24,2026-07-16,32
+STCCA,US Acquisition of Canada,Government,2026-02-19,2026-05-06,11
+STCGL,US Acquisition of Greenland,Government,2026-02-19,2026-06-28,20
+STCPN,US Acquisition of Panama,Government,2026-02-19,2026-05-29,14
+STFAL,Sovereignty Transfer of Alberta,Government,2025-07-02,2026-07-15,37
+STFCA,Sovereignty Transfer of Canada,Government,2025-08-12,2026-04-22,29
+STFGL,Sovereignty Transfer of Greenland,Government,2025-07-03,2026-08-11,105
+STFPA,Sovereignty Transfer of Panama,Government,2025-08-12,2026-07-20,39
+SWHUS,Severe Hailstorm events in the United States,Environmental,2025-07-11,2025-12-26,20
+SWTUS,Tornado events in the United States,Environmental,2025-07-11,2025-07-11,1
+TOPAI,Top AI Model,Technology,2025-12-07,2026-05-31,16
+TRNYC,NYC Monthly Rain | Total Monthly Rain in NYC,Environmental,2025-09-16,2026-08-01,122
+TRSIF,Freight Transportation Services Index,Economic Indicators,2025-09-14,2026-08-06,62
+TX13R,TX-13 Republican Primary,Elections,2026-03-03,2026-03-07,3
+TX18N,TX-18 Special Runoff,Elections,2026-01-29,2026-02-04,4
+UHATL,Atlanta Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHAUS,Austin Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHBKF,Denver Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHBNA,Nashville Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHBOS,Boston Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHCLT,Charlotte Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHDCA,Washington DC Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHDFW,Dallas Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHDTW,Detroit Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHHOU,Houston Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHJAX,Jacksonville Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHLAS,Las Vegas Daily Temperature High,Environmental,2026-02-04,2026-08-12,184
+UHLAX,Los Angeles Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHLGA,New York City Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHMAA,Abu Dhabi Daily Temperature High,Environmental,2026-02-04,2026-02-04,1
+UHMDW,Chicago Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHMIA,Miami Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHMSP,Minneapolis-Saint Paul Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHMSY,New Orleans Daily Temperature High,Environmental,2026-05-24,2026-08-12,17
+UHOKC,Oklahoma City Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHPHL,Philadelphia Daily Temperature High,Environmental,2026-02-04,2026-08-12,184
+UHPHX,Phoenix Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHSAT,San Antonio Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHSEA,Seattle Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+UHSFO,San Francisco Daily Temperature High,Environmental,2026-02-11,2026-08-12,183
+ULATL,Atlanta Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULAUS,Austin Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULBKF,Denver Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULBNA,Nashville Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULBOS,Boston Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULCLT,Charlotte Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULDCA,Washington DC Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULDFW,Dallas Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULDTW,Detroit Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULHOU,Houston Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULJAX,Jacksonville Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULLAS,Las Vegas Daily Temperature Low,Environmental,2026-05-05,2026-08-12,98
+ULLAX,Los Angeles Daily Temperature Low,Environmental,2026-02-14,2026-08-12,132
+ULLGA,New York City Daily Temperature Low,Environmental,2026-03-28,2026-08-12,101
+ULMDW,Chicago Daily Temperature Low,Environmental,2026-04-11,2026-08-12,120
+ULMIA,Miami Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULMSP,Minneapolis-Saint Paul Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULMSY,New Orleans Daily Temperature Low,Environmental,2026-08-03,2026-08-12,10
+ULOKC,Oklahoma City Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULPHL,Philadelphia Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULPHX,Phoenix Daily Temperature Low,Environmental,2026-05-05,2026-08-12,100
+ULSAT,San Antonio Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULSEA,Seattle Daily Temperature Low,Environmental,2026-05-05,2026-08-12,99
+ULSFO,San Francisco Daily Temperature Low,Environmental,2026-05-02,2026-08-12,101
+UNR,US Unemployment Rate,Economic Indicators,2025-01-01,2026-08-12,472
+UR441,US Retail Sales of Motor Vehicle and Parts Dealers,Economic Indicators,2025-05-30,2026-04-06,69
+UR442,US Retail Sales of Furniture and Home Furnishings Stores,Economic Indicators,2025-06-03,2026-04-06,25
+UR443,US Retail Sales of Electronics and Appliance Stores,Economic Indicators,2025-08-15,2026-04-06,14
+UR444,US Retail Sales of Building Material and Garden Eq. and Supplies Dealers,Economic Indicators,2025-05-28,2026-08-12,43
+UR445,US Retail Sales of Food and Beverage Stores,Economic Indicators,2025-05-29,2026-04-06,53
+UR446,US Retail Sales of Health and Personal Care Stores,Economic Indicators,2025-08-08,2026-04-06,19
+UR447,US Retail Sales of Gasoline Stations,Economic Indicators,2025-06-27,2026-04-06,23
+UR448,US Retail Sales of Clothing and Clothing Accessories Stores,Economic Indicators,2025-06-04,2026-04-06,24
+UR451,"US Retail Sales of Sporting Goods, Hobby, Musical Instrument, and Book Stores",Economic Indicators,2025-05-28,2026-08-12,51
+UR452,US Retail Sales of General Merchandise Stores,Economic Indicators,2025-06-04,2026-04-06,27
+UR453,US Retail Sales of Miscellaneous Store Retailers,Economic Indicators,2025-06-27,2026-08-12,53
+UR454,US Retail Sales of Nonstore Retailers,Economic Indicators,2025-06-12,2026-04-06,38
+UR722,US Retail Sales of Food Services and Drinking Places,Economic Indicators,2025-06-06,2026-04-06,36
+USAUD,Australian Dollar to US Dollar Exchange Rate,Financial Markets,2026-03-10,2026-08-12,72
+USCAD,Canadian Dollar to US Dollar Exchange Rate,Financial Markets,2025-06-04,2026-08-07,225
+USCCI,US Consumer Confidence Index,Economic Indicators,2025-05-16,2026-08-12,152
+USCE,United States Carbon Dioxide Emissions,Environmental,2025-01-01,2026-08-12,58
+USCT,US Corporate Tax,Government,2025-01-03,2026-07-28,68
+USDC,US Debt Ceiling,Government,2025-01-02,2025-07-29,52
+USDR,United States Drought,Environmental,2025-01-02,2026-08-12,135
+USEUR,Euro to US Dollar Exchange Rate,Financial Markets,2025-06-03,2026-08-12,293
+USGBP,Pound Sterling to US Dollar Exchange Rate,Financial Markets,2026-02-18,2026-08-12,117
+USGP,US Gasoline Prices,Economic Indicators,2025-01-03,2026-08-12,440
+USGS,US Government Shutdown,Government,2025-01-03,2026-01-30,130
+USGSE,US Government Shutdown End,Government,2025-10-06,2025-11-13,38
+USHKD,US Dollar to Hong Kong Dollar Exchange Rate,Financial Markets,2025-08-11,2026-08-07,104
+USIP,US Industrial Production,Economic Indicators,2025-01-03,2026-08-12,290
+USIT,US Top Marginal Income Tax,Government,2025-01-02,2026-08-03,53
+USJPY,Japanese Yen to US Dollar Exchange Rate,Financial Markets,2025-08-08,2025-08-08,1
+USLA,US Legislative Action,Government,2025-06-11,2026-07-29,17
+USR,US Recession,Economic Indicators,2025-01-02,2026-07-31,356
+UST,US Temperature,Environmental,2025-01-02,2026-07-28,35
+USTM,Monthly Average United States Temperature,Environmental,2025-01-06,2026-08-12,279
+USTRF,US Tariffs Enacted via Executive Order,Government,2025-06-04,2026-05-21,116
+UTCBO,UC Berkeley Out-of-State Tuition,Economic Indicators,2026-01-15,2026-08-12,127
+UTHVT,Harvard Tuition,Economic Indicators,2026-01-15,2026-08-12,198
+UTLAO,UCLA Out-of-State Tuition,Economic Indicators,2026-01-17,2026-08-12,194
+UTTAI,UT Austin In-State Tuition,Economic Indicators,2026-01-16,2026-08-12,121
+UTUMO,Michigan Out-of-State Tuition,Economic Indicators,2026-01-16,2026-01-26,8
+UVR1O,Top Overall College,Economic Indicators,2026-01-16,2026-08-12,172
+UVR1P,Top Public University,Economic Indicators,2026-01-15,2026-08-12,166
+XXXAL,Alabama Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXCO,Colorado Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXDE,Delaware Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXIA,Iowa Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXIL,Illinois Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXLA,Louisiana Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXMA,Massachusetts Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXME,Maine Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXMI,Michigan Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXNE,Nebraska Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXNH,New Hampshire Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXNM,New Mexico Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXOK,Oklahoma Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXRI,Rhode Island Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXTN,Tennessee Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXTX,Texas Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXVA,Virginia Senate General Election,Elections,2026-03-26,2026-03-26,1
+XXXWY,Wyoming Senate General Election,Elections,2026-03-26,2026-03-26,1
+Y01AL,AL-01 General Election,Elections,2026-03-26,2026-03-26,1
+Y01AZ,AZ-01 General Election,Elections,2026-03-26,2026-03-26,1
+Y01CA,CA-01 General Election,Elections,2026-03-26,2026-03-26,1
+Y01CO,CO-01 General Election,Elections,2026-03-26,2026-03-26,1
+Y01CT,CT-01 General Election,Elections,2026-03-26,2026-03-26,1
+Y01DE,DE-AL General Election,Elections,2026-03-26,2026-03-26,1
+Y01FL,FL-01 General Election,Elections,2026-03-26,2026-03-26,1
+Y02AL,AL-02 General Election,Elections,2026-03-26,2026-03-26,1
+Y02CA,CA-02 General Election,Elections,2026-03-26,2026-03-26,1
+Y02CO,CO-02 General Election,Elections,2026-03-26,2026-03-26,1
+Y02CT,CT-02 General Election,Elections,2026-03-26,2026-03-26,1
+Y02GA,GA-02 General Election,Elections,2026-03-26,2026-03-26,1
+Y03AZ,AZ-03 General Election,Elections,2026-03-26,2026-03-26,1
+Y03CO,CO-03 General Election,Elections,2026-03-26,2026-03-26,1
+Y03FL,FL-03 General Election,Elections,2026-03-26,2026-03-26,1
+Y03GA,GA-03 General Election,Elections,2026-03-26,2026-03-26,1
+Y04AR,AR-04 General Election,Elections,2026-03-26,2026-03-26,1
+Y04CO,CO-04 General Election,Elections,2026-03-26,2026-03-26,1
+Y04CT,CT-04 General Election,Elections,2026-03-26,2026-03-26,1
+Y05AL,AL-05 General Election,Elections,2026-03-26,2026-03-26,1
+Y05CO,CO-05 General Election,Elections,2026-03-26,2026-03-26,1
+Y06AZ,AZ-06 General Election,Elections,2026-03-26,2026-03-26,1
+Y06CO,CO-06 General Election,Elections,2026-03-26,2026-03-26,1
+Y06FL,FL-06 General Election,Elections,2026-03-26,2026-03-26,1
+Y07AL,AL-07 General Election,Elections,2026-03-26,2026-03-26,1
+Y07AZ,AZ-07 General Election,Elections,2026-03-26,2026-03-26,1
+Y07CA,CA-07 General Election,Elections,2026-03-26,2026-03-26,1
+Y07CO,CO-07 General Election,Elections,2026-03-26,2026-03-26,1
+Y07MI,MI-07 General Election,Elections,2026-03-26,2026-03-26,1
+Y08FL,FL-08 General Election,Elections,2026-03-26,2026-03-26,1
+Y09FL,FL-09 General Election,Elections,2026-03-26,2026-03-26,1
+Y11FL,FL-11 General Election,Elections,2026-03-26,2026-03-26,1
+Y12FL,FL-12 General Election,Elections,2026-03-26,2026-03-26,1
+Y13FL,FL-13 General Election,Elections,2026-03-26,2026-03-26,1
+Y14FL,FL-14 General Election,Elections,2026-03-26,2026-03-26,1
+Y16CA,CA-16 General Election,Elections,2026-03-26,2026-03-26,1
+Y17CA,CA-17 General Election,Elections,2026-03-26,2026-03-26,1
+Y17FL,FL-17 General Election,Elections,2026-03-26,2026-03-26,1
+Y18FL,FL-18 General Election,Elections,2026-03-26,2026-03-26,1
+Y20CA,CA-20 General Election,Elections,2026-03-26,2026-03-26,1
+Y20FL,FL-20 General Election,Elections,2026-03-26,2026-03-26,1
+Y21FL,FL-21 General Election,Elections,2026-03-26,2026-03-26,1
+Y22CA,CA-22 General Election,Elections,2026-03-26,2026-03-26,1
+Y22FL,FL-22 General Election,Elections,2026-03-26,2026-03-26,1
+Y25CA,CA-25 General Election,Elections,2026-03-26,2026-03-26,1
+Y25FL,FL-25 General Election,Elections,2026-03-26,2026-03-26,1
+Y27CA,CA-27 General Election,Elections,2026-03-26,2026-03-26,1
+Y33CA,CA-33 General Election,Elections,2026-03-26,2026-03-26,1
+Y35CA,CA-35 General Election,Elections,2026-03-26,2026-03-26,1
+Y37CA,CA-37 General Election,Elections,2026-03-26,2026-03-26,1
+Y39CA,CA-39 General Election,Elections,2026-03-26,2026-03-26,1
+Y41CA,CA-41 General Election,Elections,2026-03-26,2026-03-26,1
+Y47CA,CA-47 General Election,Elections,2026-03-26,2026-03-26,1
+Y49CA,CA-49 General Election,Elections,2026-03-26,2026-03-26,1
+Y50CA,CA-50 General Election,Elections,2026-03-26,2026-03-26,1
+Y51CA,CA-51 General Election,Elections,2026-03-26,2026-03-26,1
+Y52CA,CA-52 General Election,Elections,2026-03-26,2026-03-26,1
+YXHBT,Bitcoin Highest Price,Financial Markets,2026-01-14,2026-08-12,211
+YXHDG,Dogecoin Highest Price,Financial Markets,2026-01-14,2026-08-12,181
+YXHET,Ethereum Highest Price,Financial Markets,2026-01-15,2026-08-12,207
+YXHSO,Solana Highest Price,Financial Markets,2026-01-15,2026-08-09,187
+YXHXR,XRP Highest Price,Financial Markets,2026-01-15,2026-08-12,210
+YXLBT,Bitcoin Lowest Price,Financial Markets,2026-01-14,2026-08-12,211
+YXLDG,Dogecoin Lowest Price,Financial Markets,2026-01-15,2026-08-11,163
+YXLET,Ethereum Lowest Price,Financial Markets,2026-01-15,2026-08-12,210
+YXLSO,Solana Lowest Price,Financial Markets,2026-01-15,2026-08-12,178
+YXLXR,XRP Lowest Price,Financial Markets,2026-01-14,2026-08-12,197
+ZXXAZ,Arizona Governor General Election,Elections,2026-03-26,2026-03-26,1
