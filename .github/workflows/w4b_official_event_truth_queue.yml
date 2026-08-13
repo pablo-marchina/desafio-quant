@@ -40,5 +40,6 @@ jobs:
             registry/w4b_official_event_truth_decisions_template_v1.csv \
             registry/w4b_official_event_truth_queue_summary_v1.json
           git commit -m 'W4-B: materialize official truth evidence queue'
-          git pull --rebase origin main
+          # Execution starts from the triggering main commit. A concurrent main
+          # change must fail the push instead of rebasing queue outputs.
           git push origin HEAD:main
