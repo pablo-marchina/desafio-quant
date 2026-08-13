@@ -1,0 +1,235 @@
+name: W4-C R1 Frozen Unresolved Profile Once
+
+on:
+  push:
+    branches:
+      - ops/w4c-r1-profile-once
+    paths:
+      - .github/workflows/w4c_r1_profile_once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  profile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pinned W4-B closeout state
+        uses: actions/checkout@v4
+        with:
+          ref: 48f30548cc90cc3f968380d9b09ba0cfaa3c7053
+          fetch-depth: 1
+
+      - name: Generate descriptive profile only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "48f30548cc90cc3f968380d9b09ba0cfaa3c7053"
+          python - <<'PY'
+          import csv
+          import gzip
+          import hashlib
+          import json
+          import subprocess
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          ROOT = Path('.')
+          REG = ROOT / 'registry'
+          UNRES = REG / 'w4b_official_event_truth_unresolved_v1.csv.gz'
+          SUMMARY = REG / 'w4b_official_event_truth_summary_v1.json'
+          CLOSEOUT = REG / 'w4b_official_event_truth_closeout_v1.json'
+          OUT = REG / 'w4c_r1_official_truth_unresolved_profile_v1.json'
+          SOURCE_COMMIT = '48f30548cc90cc3f968380d9b09ba0cfaa3c7053'
+          EXPECTED_UNRESOLVED_BLOB = 'ba1a8ca49ce7befdbffec9715fda34dcbfb295cd'
+
+          def sha256_file(path: Path) -> str:
+              h = hashlib.sha256()
+              with path.open('rb') as f:
+                  for chunk in iter(lambda: f.read(1 << 20), b''):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          def blob(path: Path) -> str:
+              return subprocess.check_output(['git', 'hash-object', str(path)], text=True).strip()
+
+          def counts(values):
+              return dict(sorted(Counter(values).items()))
+
+          summary = json.loads(SUMMARY.read_text(encoding='utf-8'))
+          closeout = json.loads(CLOSEOUT.read_text(encoding='utf-8'))
+          assert summary['version'] == 'W4B-OET-RESULT-v1.0.2'
+          assert summary['gate_decision'] == 'PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED'
+          assert summary['verification_state_counts']['UNRESOLVED_OFFICIAL_TRUTH'] == 1743
+          assert summary['verification_state_counts']['NOT_HISTORICAL_YET'] == 100
+          assert summary['verified_exact_groups'] == 432
+          assert summary['verified_unique_official_events'] == 344
+          assert summary['performance_blind'] is True
+          assert summary['linked_asset_realized_returns_read'] is False
+          assert summary['prediction_market_performance_read'] is False
+          assert summary['prediction_market_settlement_result_used'] is False
+          assert closeout['technical_gate_decision'] == 'PASS_OFFICIAL_EVENT_TRUTH_MATERIALIZED'
+          assert blob(UNRES) == EXPECTED_UNRESOLVED_BLOB
+
+          with gzip.open(UNRES, 'rt', encoding='utf-8', newline='') as f:
+              reader = csv.DictReader(f)
+              schema = list(reader.fieldnames or [])
+              all_nonverified = list(reader)
+
+          eligible = [r for r in all_nonverified if (r.get('verification_state') or '').strip() == 'UNRESOLVED_OFFICIAL_TRUTH']
+          not_historical = [r for r in all_nonverified if (r.get('verification_state') or '').strip() == 'NOT_HISTORICAL_YET']
+          other_states = [r for r in all_nonverified if (r.get('verification_state') or '').strip() not in {'UNRESOLVED_OFFICIAL_TRUTH', 'NOT_HISTORICAL_YET'}]
+          assert len(all_nonverified) == 1843
+          assert len(eligible) == 1743
+          assert len(not_historical) == 100
+          assert not other_states
+
+          ids = [(r.get('exact_group_id') or '').strip() for r in eligible]
+          assert all(ids)
+          assert len(ids) == len(set(ids)) == 1743
+          canonical_id_bytes = ('\n'.join(sorted(ids)) + '\n').encode('utf-8')
+          id_digest = hashlib.sha256(canonical_id_bytes).hexdigest()
+
+          families = [(r.get('resolved_family') or '').strip() or '<MISSING>' for r in eligible]
+          reasons = [(r.get('verification_reason') or '').strip() or '<MISSING>' for r in eligible]
+          review_modes = [(r.get('review_mode') or '').strip() or '<MISSING>' for r in eligible]
+          venue_sets = [(r.get('venues') or '').strip() or '<MISSING>' for r in eligible]
+          dates = [(r.get('pretruth_event_reference_date') or '').strip() for r in eligible]
+          valid_dates = sorted(d for d in dates if d)
+          years = [d[:4] for d in valid_dates if len(d) >= 4]
+          subjects = [(r.get('pretruth_subject_key') or '').strip() for r in eligible]
+
+          family_review = defaultdict(Counter)
+          family_reason = defaultdict(Counter)
+          for fam, mode, reason in zip(families, review_modes, reasons):
+              family_review[fam][mode] += 1
+              family_reason[fam][reason] += 1
+
+          source_like_fields = [
+              'official_event_id', 'official_event_reference_date', 'official_event_timestamp_utc_if_published',
+              'official_subject_key', 'source_authority', 'source_url',
+              'source_body_sha256_or_document_hash', 'evidence_excerpt_hash_or_structured_field_reference'
+          ]
+          field_nonempty = {
+              field: sum(bool((r.get(field) or '').strip()) for r in eligible)
+              for field in source_like_fields
+          }
+
+          profile = {
+              'artifact': 'W4C_R1_OFFICIAL_TRUTH_UNRESOLVED_PROFILE',
+              'version': 'W4C-R1-OTP-v1.0',
+              'status': 'FROZEN_DESCRIPTIVE_PROFILE_ONLY',
+              'technical_gate_decision': 'PASS_W4C_R1_DESCRIPTIVE_PROFILE_FROZEN',
+              'science_reopened': False,
+              'purpose': 'Describe exactly the W4-B UNRESOLVED_OFFICIAL_TRUTH universe before any W4-C R1 truth extension. This artifact does not reclassify groups or read new truth sources.',
+              'source_bindings': {
+                  'source_main_commit': SOURCE_COMMIT,
+                  'w4b_official_truth_unresolved': {
+                      'path': str(UNRES),
+                      'git_blob_sha': blob(UNRES),
+                      'sha256_bytes': sha256_file(UNRES),
+                  },
+                  'w4b_official_truth_summary': {
+                      'path': str(SUMMARY),
+                      'git_blob_sha': blob(SUMMARY),
+                      'sha256_bytes': sha256_file(SUMMARY),
+                      'version': summary['version'],
+                      'gate_decision': summary['gate_decision'],
+                  },
+                  'w4b_official_truth_closeout': {
+                      'path': str(CLOSEOUT),
+                      'git_blob_sha': blob(CLOSEOUT),
+                      'sha256_bytes': sha256_file(CLOSEOUT),
+                  },
+              },
+              'scope': {
+                  'w4b_pretruth_exact_groups': summary['pretruth_exact_groups'],
+                  'w4b_nonverified_rows_in_source_file': len(all_nonverified),
+                  'eligible_verification_state': 'UNRESOLVED_OFFICIAL_TRUTH',
+                  'eligible_groups': len(eligible),
+                  'excluded_not_historical_yet_groups': len(not_historical),
+                  'w4b_verified_exact_groups_immutable_context': summary['verified_exact_groups'],
+                  'w4b_verified_unique_official_events_immutable_context': summary['verified_unique_official_events'],
+              },
+              'eligibility_invariants': {
+                  'group_id_column': 'exact_group_id',
+                  'unique_group_ids': len(set(ids)),
+                  'duplicate_group_ids': len(ids) - len(set(ids)),
+                  'sorted_group_ids_serialization': "UTF-8 exact_group_id values sorted lexicographically, joined by LF, with one terminal LF",
+                  'sorted_group_ids_sha256': id_digest,
+                  'source_row_schema': schema,
+              },
+              'descriptive_profile': {
+                  'by_resolved_family': counts(families),
+                  'by_review_mode': counts(review_modes),
+                  'by_verification_reason': counts(reasons),
+                  'by_venue_set': counts(venue_sets),
+                  'by_pretruth_reference_year': counts(years),
+                  'pretruth_reference_date_nonempty': len(valid_dates),
+                  'pretruth_reference_date_missing': len(eligible) - len(valid_dates),
+                  'pretruth_reference_date_min': valid_dates[0] if valid_dates else None,
+                  'pretruth_reference_date_max': valid_dates[-1] if valid_dates else None,
+                  'unique_pretruth_subject_keys': len({s for s in subjects if s}),
+                  'missing_pretruth_subject_keys': sum(not bool(s) for s in subjects),
+                  'source_and_official_field_nonempty_counts': field_nonempty,
+                  'by_family_and_review_mode': {
+                      fam: dict(sorted(counter.items())) for fam, counter in sorted(family_review.items())
+                  },
+                  'by_family_and_verification_reason': {
+                      fam: dict(sorted(counter.items())) for fam, counter in sorted(family_reason.items())
+                  },
+              },
+              'firewall': {
+                  'new_official_sources_read': False,
+                  'reclassification_performed': False,
+                  'official_identity_merge_performed': False,
+                  'w4b_artifacts_modified': False,
+                  'w4ce1_ids_rewritten': False,
+                  'w4ot1_ids_rewritten': False,
+                  'linked_asset_realized_returns_read': False,
+                  'prediction_market_performance_read': False,
+                  'prediction_market_settlement_results_read': False,
+                  'pnl_read': False,
+              },
+              'prohibitions_for_this_artifact': [
+                  'No new official-source lookup',
+                  'No verification-state reclassification',
+                  'No exact-group or official-event identity rewrite',
+                  'No mutation of W4-B artifacts',
+                  'No linked-asset realized outcomes',
+                  'No prediction-market performance, settlement results, or PnL',
+              ],
+              'interpretation': 'The 1,743 groups are the immutable W4-C R1 eligible backlog. Counts here are descriptive only and authorize no additional verified official truth N.',
+          }
+
+          assert sum(profile['descriptive_profile']['by_resolved_family'].values()) == 1743
+          assert sum(profile['descriptive_profile']['by_review_mode'].values()) == 1743
+          assert sum(profile['descriptive_profile']['by_verification_reason'].values()) == 1743
+          assert all(v is False for v in profile['firewall'].values())
+          OUT.write_text(json.dumps(profile, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          print(json.dumps({
+              'gate': profile['technical_gate_decision'],
+              'eligible_groups': len(eligible),
+              'sorted_group_ids_sha256': id_digest,
+              'by_resolved_family': profile['descriptive_profile']['by_resolved_family'],
+              'by_review_mode': profile['descriptive_profile']['by_review_mode'],
+              'by_verification_reason': profile['descriptive_profile']['by_verification_reason'],
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Publish only the frozen profile to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "48f30548cc90cc3f968380d9b09ba0cfaa3c7053"
+          test -f registry/w4c_r1_official_truth_unresolved_profile_v1.json
+          changes="$(git status --porcelain)"
+          echo "$changes"
+          test "$(printf '%s\n' "$changes" | sed '/^$/d' | wc -l)" -eq 1
+          echo "$changes" | grep -q '^?? registry/w4c_r1_official_truth_unresolved_profile_v1.json$'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-profile-publish
+          git add registry/w4c_r1_official_truth_unresolved_profile_v1.json
+          git commit -m 'registry: freeze W4-C R1 unresolved truth profile v1'
+          git push origin HEAD:main
