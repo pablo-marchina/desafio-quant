@@ -1,49 +1,54 @@
 # ARGOS — Roadmap de extensão pós-freeze
 
-**Estado atual:** `W4_B_MULTI_VENUE_CENSUS_FORECASTEX_ACTIVE`  
-**Plano machine-readable:** `PFEP-v4.2`  
+**Estado atual:** `W4_C_R1_PROTOCOL_FREEZE_NEXT`  
+**Plano machine-readable:** `PFEP-v4.3`  
 **Science reopened:** `false`
 
 ## Progresso consolidado
 
 | Frente | Estado | Resultado |
 |---|---|---|
-| W4-R | ATIVO | primeira wave de fontes/venues/famílias materializada |
-| W4-A Kalshi | PASS | 488/488 rotas live+historical; 30/30 probes; 0 HTTP 400 |
-| W4-B semantic freeze | PASS | protocolo congelado antes dos resultados |
-| W4-B Kalshi cleaning | PASS | 488 séries; 1.690 candidatos; 668 aceitações estritas |
-| W4-B canonicalization | PASS | 391 eventos canônicos; 277 aliases colapsados; 0 ambiguidades |
-| W4-B Kalshi T−10d→T0 | PASS | 391 eventos; 5.196 tickers; 0 `API_UNRESOLVED` |
-| W4-B ForecastEx | EM EXECUÇÃO | run `31694324574` |
-| W4-B Polymarket | BLOQUEADO | aguarda PASS ForecastEx |
-| W4-B cross-venue dedup | BLOQUEADO | aguarda PASS Polymarket |
-| W4-B official truth | BLOQUEADO | aguarda PASS dedup |
-| W4-B final attrition | BLOQUEADO | aguarda PASS official truth |
-| W4-C saturation | PENDENTE | começa após closeout W4-B |
+| W4-R | ATIVO | support track materializado |
+| W4-A | PASS | validação técnica Kalshi concluída |
+| W4-B | PASS / FECHADO | census multi-venue, dedup, official truth e attrition concluídos |
+| ForecastEx | PASS | 481 eventos canônicos de census |
+| Polymarket | PASS | 1.591 eventos canônicos de census |
+| Cross-venue | PASS | 2.463 registros → 2.275 exact groups |
+| Official truth | PASS | 432 grupos verificados → 344 eventos oficiais únicos; 1.743 unresolved; 100 not historical yet |
+| Final attrition | PASS | `PASS_W4B_ATTRITION_MATERIALIZED`; `N_final_backtestable` não autorizado |
+| W4-C saturation | PASS / CONTINUE | `CONTINUE_EXPANSION_NOT_SATURATED`; 7 rotas abertas |
+| W4-C R1 profile | PASS | 1.743 grupos congelados, 1.743 IDs únicos, 0 duplicados |
+| W4-C R1 extension | PRÓXIMO GATE | congelar protocolo separado antes da execução |
 
-## Cadeia autoritativa
+## Estado W4-C R1
 
-`ForecastEx PASS -> hardened promotion -> Polymarket -> hardened promotion -> cross-venue dedup -> hardened promotion -> official truth -> hardened promotion -> W4-B final attrition -> W4-C saturation gate`
+O perfil congelado está em `registry/w4c_r1_official_truth_unresolved_profile_v1.json`.
 
-## Distinção W4-B vs W4-C
+- universo: 1.743 `UNRESOLVED_OFFICIAL_TRUTH`;
+- hash dos IDs ordenados: `4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe`;
+- 1.456 `FAIL_CLOSED_NONMACRO_NOT_AUTOMATED`;
+- 287 `AUTOMATED_PRIMARY_SOURCE_SCHEDULE_MATCH`;
+- nenhuma nova fonte oficial consultada;
+- nenhuma reclassificação;
+- nenhum N adicional autorizado.
 
-W4-B produz evidência auditável de census, deduplicação, verdade oficial e attrition pré-outcome. W4-C usa esse closeout para medir contribuição marginal e decidir saturação antes da construção do data lake.
+## Cadeia atual
+
+`W4-B CLOSEOUT -> W4-C SATURATION CONTINUE -> R1 PROFILE FROZEN -> R1 PROTOCOL FREEZE -> R1 EXECUTION -> MARGINAL-CAPACITY / SATURATION REASSESSMENT -> R2-R7 IF JUSTIFIED`
 
 ## Ordem restante
 
-1. fechar ForecastEx;
-2. Polymarket recensus;
-3. cross-venue dedup;
-4. official event truth;
-5. W4-B final attrition;
-6. W4-C saturation/marginal-capacity;
-7. W4-D canonical data lake;
-8. W4-E maximal pre-outcome features;
-9. W4-F outcome-blind adequacy/simulation;
-10. W4-G full protocol freeze;
-11. W4-H controlled outcome reveal;
-12. W4-I backtest battery;
-13. W4-J validation battery;
-14. W4-K scientific truth freeze.
+1. freeze do protocolo separado de R1;
+2. execução R1 após o freeze;
+3. mensuração do ganho marginal e reaplicação do Saturation Gate;
+4. R2 Polymarket PIT history, depois R3-R7 conforme gates;
+5. W4-D canonical data lake;
+6. W4-E features;
+7. W4-F adequacy/simulation;
+8. W4-G full freeze;
+9. W4-H controlled reveal;
+10. W4-I backtests;
+11. W4-J validation;
+12. W4-K scientific truth freeze.
 
-A ciência original permanece preservada e a unidade inferencial padrão continua sendo `canonical_event_id`.
+A ciência original permanece preservada: H2 = `FAIL_UNDER_FROZEN_EXP07I`, probabilistic champion = `M2`, historical economic champion = `C0_NO_TRADE`.
