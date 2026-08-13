@@ -1,0 +1,35 @@
+{
+  "artifact": "W4B_OFFICIAL_EVENT_TRUTH_FREEZE",
+  "version": "W4B-OETF-v1.0.1",
+  "date": "2026-08-13",
+  "status": "FROZEN_BEFORE_ANY_OFFICIAL_TRUTH_DECISIONS",
+  "protocol": {
+    "path": "registry/w4b_official_event_truth_protocol_v1.json",
+    "blob_sha1": "66001a06e1fd928d39a3f9d75672bd76158db735"
+  },
+  "state_clarification": {
+    "path": "registry/w4b_official_event_truth_state_clarification_v1_0_1.json",
+    "blob_sha1": "6459e5407dcf331c13d6e84f7bb26244779b0c15",
+    "scientific_contract_changes": false
+  },
+  "queue_builder": {
+    "path": "scripts/w4b_official_event_truth_queue_v1.py",
+    "blob_sha1": "500580822ee974475064a6a9f92a4eae63bd220e",
+    "role": "DETERMINISTIC_EVIDENCE_QUEUE_ONLY"
+  },
+  "verifier": {
+    "path": "scripts/w4b_official_event_truth_verify_v1.py",
+    "blob_sha1": "868cd5c52d202f0ea2543ebc3a43349bc7d88e91",
+    "role": "AUTHORITATIVE_DECISION_VALIDATION_W4OT1_AND_EDGE_ADJUDICATION"
+  },
+  "sequence_lock": "Queue materialization requires PASS cross-venue closeout. Truth verification additionally requires one explicit evidence decision row for every exact group.",
+  "firewall": {
+    "performance_blind": true,
+    "linked_asset_realized_returns_closed": true,
+    "prediction_market_settlement_results_do_not_vote": true,
+    "prediction_market_prices_volume_liquidity_do_not_vote": true,
+    "source_authority_allowlist_frozen": true,
+    "W4OT1_formula_frozen": true,
+    "unresolved_rejected_not_historical_do_not_increase_verified_n": true
+  }
+}
