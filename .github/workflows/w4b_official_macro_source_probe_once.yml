@@ -20,25 +20,13 @@ jobs:
           import hashlib,re,time
           from urllib.request import Request,urlopen
           from urllib.error import HTTPError,URLError
-
           UA='ARGOS-W4B-official-truth-source-probe/1.0 research-contact'
           targets=[]
-          for y in range(2021,2027):
-              targets.append((f'BLS_{y}',f'https://www.bls.gov/schedule/{y}/home.htm',['Consumer Price Index','Employment Situation']))
-          targets += [
-              ('BLS_CPI_CURRENT','https://www.bls.gov/schedule/news_release/cpi.htm',['Consumer Price Index']),
-              ('BLS_EMPSIT_CURRENT','https://www.bls.gov/schedule/news_release/empsit.htm',['Employment Situation']),
-              ('FED_FOMC','https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm',['FOMC','Statement']),
-          ]
-          for y in range(2021,2026):
-              targets.append((f'BEA_{y}',f'https://www.bea.gov/news/schedule/full-{y}',['Gross Domestic Product','Personal Income and Outlays']))
-          targets += [
-              ('BEA_CURRENT','https://www.bea.gov/news/schedule/full',['Gross Domestic Product','Personal Income and Outlays']),
-              ('CENSUS_ECON_CAL','https://www.census.gov/economic-indicators/calendar-listview.html',['Advance Monthly Sales for Retail and Food Services']),
-              ('DOL_ETA_0','https://www.dol.gov/newsroom/releases/eta?page=0',['Unemployment Insurance Weekly Claims Report']),
-              ('DOL_ETA_1','https://www.dol.gov/newsroom/releases/eta?page=1',['Unemployment Insurance Weekly Claims Report']),
-          ]
-
+          for y in range(2021,2027): targets.append((f'BLS_{y}',f'https://www.bls.gov/schedule/{y}/home.htm',['Consumer Price Index','Employment Situation']))
+          targets += [('BLS_CPI_CURRENT','https://www.bls.gov/schedule/news_release/cpi.htm',['Consumer Price Index']),('BLS_EMPSIT_CURRENT','https://www.bls.gov/schedule/news_release/empsit.htm',['Employment Situation']),('FED_FOMC','https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm',['FOMC','Statement'])]
+          bea_hist={2021:'https://apps.bea.gov/scb/issues/2020/12-december/1220-news-releases-2021.htm',2022:'https://apps.bea.gov/scb/issues/2021/12-december/1221-news-releases-2022.htm',2023:'https://apps.bea.gov/scb/issues/2022/12-december/1222-news-releases-2023.htm',2024:'https://apps.bea.gov/scb/issues/2023/12-december/1223-news-releases-2024.htm',2025:'https://www.bea.gov/news/schedule/full-2025'}
+          for y,u in bea_hist.items(): targets.append((f'BEA_{y}',u,['Gross Domestic Product','Personal Income and Outlays']))
+          targets += [('BEA_CURRENT','https://www.bea.gov/news/schedule/full',['GDP','Personal Income and Outlays']),('CENSUS_ECON_CAL','https://www.census.gov/economic-indicators/calendar-listview.html',['Advance Monthly Sales for Retail and Food Services']),('DOL_ETA_0','https://www.dol.gov/newsroom/releases/eta?page=0',['Unemployment Insurance Weekly Claims Report']),('DOL_ETA_1','https://www.dol.gov/newsroom/releases/eta?page=1',['Unemployment Insurance Weekly Claims Report'])]
           def fetch(url):
               last=None
               for i in range(4):
@@ -49,20 +37,16 @@ jobs:
                   except HTTPError as e:
                       last=f'HTTP_{e.code}'
                       if e.code<500 and e.code!=429: return e.code,e.headers.get('Content-Type',''),e.read(),last
-                  except (URLError,TimeoutError,OSError) as e:
-                      last=type(e).__name__+':'+str(e)[:120]
+                  except (URLError,TimeoutError,OSError) as e: last=type(e).__name__+':'+str(e)[:120]
                   time.sleep(1.5*(i+1))
               return None,'',b'',last
-
-          ok=0
+          failures=[]
           for name,url,keywords in targets:
-              status,ctype,body,err=fetch(url)
-              text=body.decode('utf-8','ignore')
-              kw={k:text.lower().count(k.lower()) for k in keywords}
-              iso_dates=len(re.findall(r'\b20\d{2}-\d{2}-\d{2}\b',text))
-              month_dates=len(re.findall(r'\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},\s+20\d{2}\b',text,re.I))
-              if status==200 and any(kw.values()): ok+=1
-              print({'name':name,'status':status,'content_type':ctype.split(';')[0],'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest() if body else '', 'keyword_counts':kw,'iso_date_tokens':iso_dates,'month_date_tokens':month_dates,'error':err},flush=True)
-          print('PRIMARY_ROUTE_KEYWORD_PASS_COUNT',ok,'OF',len(targets))
-          assert ok>=10, f'insufficient_primary_source_routes:{ok}/{len(targets)}'
+              status,ctype,body,err=fetch(url); text=body.decode('utf-8','ignore'); kw={k:text.lower().count(k.lower()) for k in keywords}
+              good=status==200 and any(kw.values())
+              if not good: failures.append(name)
+              print({'name':name,'status':status,'content_type':ctype.split(';')[0],'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest() if body else '', 'keyword_counts':kw,'month_date_tokens':len(re.findall(r'\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2}(?:,\s+20\d{2})?\b',text,re.I)),'error':err},flush=True)
+          print('PRIMARY_ROUTE_FAILURES',failures)
+          assert not failures, failures
+          print('PASS_ALL_PRIMARY_SOURCE_ROUTES')
           PY
