@@ -1,0 +1,85 @@
+name: W4-B ForecastEx Census
+on:
+  push:
+    paths:
+      - 'registry/w4b_kalshi_history_closeout_v1_0_2.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate sequence gate and frozen identities
+        run: |
+          python - <<'PY'
+          import json,subprocess
+          h=json.load(open('registry/w4b_kalshi_history_closeout_v1_0_2.json'))
+          f=json.load(open('registry/w4b_forecastex_census_freeze_v1.json'))
+          p=json.load(open('registry/w4b_forecastex_census_protocol_v1.json'))
+          def blob(x): return subprocess.check_output(['git','hash-object',x],text=True).strip()
+          assert h['history_version']=='W4B-KH-RESULT-v1.0.2'
+          assert h['technical_gate_decision']=='PASS_FULL_POPULATION_HISTORY_MATERIALIZED'
+          assert h['api_unresolved_count']==0
+          assert f['status']=='FROZEN_BEFORE_FORECASTEX_CENSUS_EXECUTION'
+          assert p['version']=='W4B-FX-C-v1.0'
+          assert blob('registry/w4b_forecastex_census_protocol_v1.json')=='598de7878784e4dcdede60bfbad2f992890c1dbd'
+          assert blob('scripts/w4b_forecastex_census_v1.py')=='512bb2bc53fefb50a30baf90d1c2fe41db7d6327'
+          assert blob('registry/w4b_semantic_canonicalization_protocol_v1.json')=='a749ab108ce4c2d5a4bd14228c2f9e522eaa52e5'
+          assert blob('scripts/w4b_kalshi_semantic_canonicalize_v1.py')=='b0e76b75e7c3c2b044dcbcb7982afaa7ec023b6c'
+          print('PASS_W4B_FORECASTEX_SEQUENCE_AND_FREEZE')
+          PY
+      - name: Execute official archive census
+        id: census
+        continue-on-error: true
+        run: python scripts/w4b_forecastex_census_v1.py
+      - name: Validate result firewall
+        if: always()
+        run: |
+          python - <<'PY'
+          import csv,gzip,json
+          x=json.load(open('registry/w4b_forecastex_census_summary_v1.json'))
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['price_volume_oi_settlement_used_for_selection'] is False
+          for path in ['registry/w4b_forecastex_contracts_v1.csv.gz','registry/w4b_forecastex_events_v1.csv.gz']:
+              with gzip.open(path,'rt',encoding='utf-8') as f: hdr=set(next(csv.reader(f)))
+              forbidden={'start_price','high_price','low_price','end_price','settlement_price','pair_quantity','open_interest','vwap','linked_asset_return','ARGOS_PnL'}
+              assert not (hdr & forbidden)
+          print(json.dumps({k:x[k] for k in ['calendar_days_accounted','archive_dates_with_summary','products_observed','unique_contract_identifier_rows','accepted_unique_canonical_events','accepted_family_counts','ambiguous_contract_rows','gate_decision']},indent=2,sort_keys=True))
+          print('PASS_W4B_FORECASTEX_RESULT_FIREWALL')
+          PY
+      - name: Persist evidence branch
+        if: always()
+        run: |
+          test -f registry/w4b_forecastex_census_summary_v1.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4b-forecastex-census-v1
+          git add \
+            registry/w4b_forecastex_file_manifest_v1.csv.gz \
+            registry/w4b_forecastex_products_v1.csv \
+            registry/w4b_forecastex_contracts_v1.csv.gz \
+            registry/w4b_forecastex_events_v1.csv.gz \
+            registry/w4b_forecastex_ambiguous_v1.csv.gz \
+            registry/w4b_forecastex_census_summary_v1.json
+          git commit -m 'results: materialize W4-B ForecastEx census v1'
+          git push -f origin w4b-forecastex-census-v1
+      - name: Enforce census gate
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4b_forecastex_census_summary_v1.json'))
+          assert x['gate_decision']=='PASS_FORECASTEX_CENSUS_MATERIALIZED'
+          assert not x['summary_transport_unresolved']
+          assert not x['prices_transport_unresolved']
+          assert not x['schema_errors']
+          assert not x['canonical_collisions']
+          print('PASS_W4B_FORECASTEX_CENSUS')
+          PY
