@@ -12,6 +12,8 @@ jobs:
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -66,13 +68,24 @@ jobs:
           print(json.dumps({k:x[k] for k in ['calendar_days_accounted','archive_dates_with_summary','products_observed','unique_contract_identifier_rows','accepted_unique_canonical_events','accepted_family_counts','ambiguous_contract_rows','gate_decision']},indent=2,sort_keys=True))
           print('PASS_W4B_FORECASTEX_RESULT_FIREWALL')
           PY
-      - name: Persist evidence branch
+      - name: Persist evidence branch from current main
         if: always()
         run: |
           test -f registry/w4b_forecastex_census_summary_v1.json
+          mkdir -p /tmp/w4b-forecastex-v1
+          cp registry/w4b_forecastex_file_manifest_v1.csv.gz /tmp/w4b-forecastex-v1/
+          cp registry/w4b_forecastex_products_v1.csv /tmp/w4b-forecastex-v1/
+          cp registry/w4b_forecastex_contracts_v1.csv.gz /tmp/w4b-forecastex-v1/
+          cp registry/w4b_forecastex_events_v1.csv.gz /tmp/w4b-forecastex-v1/
+          cp registry/w4b_forecastex_ambiguous_v1.csv.gz /tmp/w4b-forecastex-v1/
+          cp registry/w4b_forecastex_census_summary_v1.json /tmp/w4b-forecastex-v1/
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git checkout -B w4b-forecastex-census-v1
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
+          git checkout -B w4b-forecastex-census-v1 origin/main
+          cp /tmp/w4b-forecastex-v1/* registry/
           git add \
             registry/w4b_forecastex_file_manifest_v1.csv.gz \
             registry/w4b_forecastex_products_v1.csv \
