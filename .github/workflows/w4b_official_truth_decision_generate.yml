@@ -1,7 +1,7 @@
 name: W4-B Official Truth Decision Generate
 on:
   push:
-    paths: ['registry/w4b_official_truth_decision_generation_erratum_v1_0_1.json']
+    paths: ['registry/w4b_official_truth_decision_generation_erratum_v1_0_2.json']
   workflow_dispatch:
 permissions:
   contents: write
@@ -19,32 +19,42 @@ jobs:
             registry/w4b_official_macro_occurrences_v1.csv.gz \
             registry/w4b_official_macro_source_manifest_v1.csv.gz \
             registry/w4b_official_macro_occurrence_summary_v1.json
-      - name: Validate decision freeze, provenance erratum and byte identities
+      - name: Validate decision freeze, provenance errata and byte identities
         run: |
           python - <<'PY'
           import json,os,subprocess
           f=json.load(open('registry/w4b_official_truth_decision_generation_freeze_v1.json'))
-          e=json.load(open('registry/w4b_official_truth_decision_generation_erratum_v1_0_1.json'))
+          e1=json.load(open('registry/w4b_official_truth_decision_generation_erratum_v1_0_1.json'))
+          e=json.load(open('registry/w4b_official_truth_decision_generation_erratum_v1_0_2.json'))
           b=lambda p:subprocess.check_output(['git','hash-object',p],text=True).strip()
           assert f['status']=='FROZEN_BEFORE_OFFICIAL_TRUTH_DECISION_GENERATION'
-          assert e['status']=='FROZEN_AFTER_PROVENANCE_SHA_TYPO_BEFORE_ANY_DECISION_RESULT'
-          assert e['failed_run_id']==31739095110 and e['scientific_contract_changes'] is False and e['science_reopened'] is False
+          assert e1['failed_run_id']==31739095110
+          assert e['status']=='FROZEN_AFTER_OCCURRENCE_SUMMARY_BLOB_PROVENANCE_MISMATCH_BEFORE_ANY_DECISION_RESULT'
+          assert e['failed_run_id']==31739222264 and e['scientific_contract_changes'] is False and e['science_reopened'] is False
           assert e['decision_results_observed_before_erratum'] is False
-          assert f['occurrence_evidence_commit']=='181bb80f28a0ab20e0524ab01e22c8bbb26f7963'
           assert e['correct_occurrence_evidence_commit']=='181bb80efe3555aa91252faf856951908f55c9e8'
           assert f['queue_rows_expected']==2275 and f['as_of_date']=='2026-08-13'
-          assert b('registry/w4b_official_macro_truth_automation_protocol_v1.json')=='49ebc0d7888149833fd1c741ac172dcbd0b0413d'
-          assert b('scripts/w4b_official_truth_decisions_from_occurrences_v1.py')=='c30f5f6bccea970b03b8f9f06204f305c6cb625a'
-          assert b('registry/w4b_official_event_truth_queue_v1.csv.gz')=='5757eae1a8ee8e3cdc3554459b2a2cbd48d378ae'
-          assert b('registry/w4b_official_event_truth_decisions_template_v1.csv')=='2993cb673645bac18ad2c71b8769d1a685892dad'
-          assert b('registry/w4b_official_macro_occurrences_v1.csv.gz')=='6ceae579a62a54b6932a95b25cd0af34e3999f83'
-          assert b('registry/w4b_official_macro_occurrence_summary_v1.json')=='8bfa5342801245a630563656f3024fd5856b03e9'
-          assert b('.github/workflows/w4b_official_truth_decision_generate.yml')==e['workflow_blob_sha1']
+          observed={
+            'macro_protocol':b('registry/w4b_official_macro_truth_automation_protocol_v1.json'),
+            'generator':b('scripts/w4b_official_truth_decisions_from_occurrences_v1.py'),
+            'queue':b('registry/w4b_official_event_truth_queue_v1.csv.gz'),
+            'template':b('registry/w4b_official_event_truth_decisions_template_v1.csv'),
+            'occurrence_csv':b('registry/w4b_official_macro_occurrences_v1.csv.gz'),
+            'occurrence_summary':b('registry/w4b_official_macro_occurrence_summary_v1.json'),
+            'workflow':b('.github/workflows/w4b_official_truth_decision_generate.yml')}
+          print(json.dumps(observed,indent=2,sort_keys=True))
+          assert observed['macro_protocol']=='49ebc0d7888149833fd1c741ac172dcbd0b0413d'
+          assert observed['generator']=='c30f5f6bccea970b03b8f9f06204f305c6cb625a'
+          assert observed['queue']=='5757eae1a8ee8e3cdc3554459b2a2cbd48d378ae'
+          assert observed['template']=='2993cb673645bac18ad2c71b8769d1a685892dad'
+          assert observed['occurrence_csv']=='6ceae579a62a54b6932a95b25cd0af34e3999f83'
+          assert observed['occurrence_summary']=='a19904873da2751c0e29943f9928e08c6e0cd85b'
+          assert observed['workflow']==e['workflow_blob_sha1']
           x=json.load(open('registry/w4b_official_macro_occurrence_summary_v1.json'))
           assert x['gate_decision']=='PASS_OFFICIAL_MACRO_OCCURRENCES_MATERIALIZED' and x['occurrence_rows']==688
           assert x['release_values_read_or_persisted'] is False and x['prediction_market_outcomes_read'] is False and x['linked_asset_realized_returns_read'] is False
           assert not os.path.exists('registry/w4b_official_event_truth_decisions_v1.csv')
-          print('PASS_W4B_OFFICIAL_TRUTH_DECISION_ERRATUM_FREEZE')
+          print('PASS_W4B_OFFICIAL_TRUTH_DECISION_ERRATUM_V1_0_2_FREEZE')
           PY
       - name: Generate deterministic fail-closed decisions
         run: python scripts/w4b_official_truth_decisions_from_occurrences_v1.py
@@ -69,5 +79,5 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout -B w4b-official-truth-decisions-v1 main
           git add registry/w4b_official_event_truth_decisions_v1.csv registry/w4b_official_truth_decision_generation_summary_v1.json
-          git commit -m 'evidence: generate W4-B official-truth decisions v1.0.1'
+          git commit -m 'evidence: generate W4-B official-truth decisions v1.0.2'
           git push -f origin w4b-official-truth-decisions-v1
