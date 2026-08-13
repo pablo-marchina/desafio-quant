@@ -1,0 +1,20 @@
+name: W4-B Dispatch Official Truth Queue Retry Once
+on:
+  push:
+    paths:
+      - '.github/workflows/w4b_dispatch_official_truth_queue_retry_once.yml'
+permissions:
+  actions: write
+jobs:
+  dispatch:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Dispatch frozen official-truth queue from current main
+        run: |
+          curl --fail-with-body -L \
+            -X POST \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'Authorization: Bearer ${{ github.token }}' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            'https://api.github.com/repos/${{ github.repository }}/actions/workflows/w4b_official_event_truth_queue.yml/dispatches' \
+            -d '{"ref":"main"}'
