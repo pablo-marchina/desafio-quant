@@ -1,0 +1,48 @@
+{
+  "ARGOS_PnL_read": false,
+  "artifact": "W4C_R1_OFFICIAL_TRUTH_EXTENSION_SUMMARY",
+  "combined_unique_official_events_after_r1": 350,
+  "date_utc": "2026-08-14T16:24:00.754502+00:00",
+  "decision_rows_accounted": 1743,
+  "eligible_groups": 1743,
+  "freeze_version": "W4C-R1-OTE-FREEZE-v1.0",
+  "gate_decision": "PASS_W4C_R1_OFFICIAL_TRUTH_EXTENSION_MATERIALIZED",
+  "identity_contradictions": [],
+  "interpretation": "R1 is separate W4-C extension evidence. W4-B remains immutable. New unique official-event gain is measured only from R1 W4OT1 identities not already present in frozen W4-B truth.",
+  "linked_asset_realized_returns_read": false,
+  "n_final_backtestable_authorized": false,
+  "outcome_reveal_authorized": false,
+  "performance_blind": true,
+  "prediction_market_performance_read": false,
+  "prediction_market_settlement_results_read": false,
+  "protocol_version": "W4C-R1-OTE-v1.0",
+  "r1_alias_groups_to_existing_w4b_official_events": 64,
+  "r1_new_unique_official_events": 6,
+  "r1_unique_official_events": 70,
+  "release_values_used_for_identity": false,
+  "remaining_unresolved_r1": 1564,
+  "review_mode_counts": {
+    "R1_FAIL_CLOSED_NON_EARNINGS_NONMACRO": 101,
+    "R1_REUSE_FROZEN_W4B_PRIMARY_SOURCE_OCCURRENCE": 287,
+    "R1_SEC_IDENTITY_ONLY": 1355
+  },
+  "sec_transport_manifest_rows": 1,
+  "source_manifest_rows": 9,
+  "verification_state_counts": {
+    "UNRESOLVED_R1_OFFICIAL_TRUTH": 1564,
+    "VERIFIED_R1_OFFICIAL_TRUTH": 179
+  },
+  "verified_exact_groups_r1": 179,
+  "verified_family_counts": {
+    "CPI_INFLATION_RELEASE": 94,
+    "FOMC_DECISION": 18,
+    "GDP_RELEASE": 10,
+    "PAYROLLS_JOBS_RELEASE": 5,
+    "PCE_RELEASE": 10,
+    "RETAIL_SALES_RELEASE": 14,
+    "UNEMPLOYMENT_RELEASE": 28
+  },
+  "version": "W4C-R1-OTE-RESULT-v1.0",
+  "w4b_artifacts_modified": false,
+  "w4b_verified_unique_official_events_immutable": 344
+}
