@@ -1,0 +1,171 @@
+{
+  "artifact": "W4C_R1_FDA_REVIEW_QUEUE",
+  "date": "2026-08-14",
+  "family": "FDA_FINAL_PDUFA_DECISION",
+  "gate_decision": "PASS_W4C_R1_FDA_QUEUE_FROZEN",
+  "groups": 22,
+  "new_source_reads_performed_by_this_artifact": false,
+  "review_contract": "Apply W4C-R1-OTE-v1.0 FDA rule exactly: deterministic sponsor/product/action identity plus authoritative FDA occurrence evidence; ambiguous or semantically incompatible rows remain unresolved. No outcome/performance/linked-return evidence.",
+  "rows": [
+    {
+      "exact_group_id": "W4CE1-03f3dcd691fc6f088896",
+      "pretruth_event_reference_date": "2022-02-08",
+      "pretruth_subject_key": "pfizer_covid_vaccine_first_receive_or_emergency_use_authorization_eua",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-1701db001866ac4c3a60",
+      "pretruth_event_reference_date": "2021-10-15",
+      "pretruth_subject_key": "any_covid_vaccination_children",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-3178d1877b75018d5dba",
+      "pretruth_event_reference_date": "2021-11-04",
+      "pretruth_subject_key": "covid_vaccine_kids_health_authorize_children_remains_unapproved",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-3329428279c962ba4474",
+      "pretruth_event_reference_date": "2026-07-01",
+      "pretruth_subject_key": "science_and_technology_gedatolisib_hr_her2_pik3ca_wild_type_advanced_breast_cancer",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-395545501db9c7a8b255",
+      "pretruth_event_reference_date": "2026-07-01",
+      "pretruth_subject_key": "science_and_technology_cytisinicline_smoking_cessation",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-39af71d84c68b3f07db9",
+      "pretruth_event_reference_date": "2021-12-01",
+      "pretruth_subject_key": "any_covid_vaccines_granted_full",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-486da7487d0a61ba4c50",
+      "pretruth_event_reference_date": "2026-06-01",
+      "pretruth_subject_key": "science_and_technology_baxdrostat_hard_control_hypertension",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-48b26b0e46d56fd6219e",
+      "pretruth_event_reference_date": "2025-07-31",
+      "pretruth_subject_key": "approvals_rp1_vusolimogene_oderparepvec_bla_blenrep_combinations_transcon_hgh_sbla_aficamten_nda_empaveli_snda_sepiapterin_odronextamab_ordspono_resubmitted",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-4ec7a0c0d2f0aadfe938",
+      "pretruth_event_reference_date": "2025-12-31",
+      "pretruth_subject_key": "vaccine_withdrawn_health_any_covid_lose_its_us",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-58053480f33eba228d4f",
+      "pretruth_event_reference_date": "2026-04-01",
+      "pretruth_subject_key": "eli_lily_science_and_technology_when_orforglipron",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-5f20939982fe4849b26c",
+      "pretruth_event_reference_date": "2021-05-01",
+      "pretruth_subject_key": "astrazeneca_covid_vaccine_receive_or_emergency_use_authorization_eua_astrazenecas",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-675799a7ac8f21886585",
+      "pretruth_event_reference_date": "2025-12-02",
+      "pretruth_subject_key": "new_drugs_health_novel_level",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-6afd222a24a2c57da2a9",
+      "pretruth_event_reference_date": "2026-06-01",
+      "pretruth_subject_key": "science_and_technology_camizestrant_hr_her2_advanced_breast_cancer_with_esr1_mutation",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-6d27d9a7a6b20f1a8da8",
+      "pretruth_event_reference_date": "2024-12-31",
+      "pretruth_subject_key": "vaccine_withdrawn_health_any_covid_lose_its_us_not",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-8a470988b3e13116f37f",
+      "pretruth_event_reference_date": "2025-07-16",
+      "pretruth_subject_key": "applications_science_and_technology_ux111_year_filspari_tnx_sl_obicetrapib_oxylanthanum_carbonate_leqembi_elinzanetant_donidalorsen_bumetanide_nasal_spray",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-9a7f187542a8054eb182",
+      "pretruth_event_reference_date": "2021-11-01",
+      "pretruth_subject_key": "any_covid_vaccination_children",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-aa7793077863f9ae4508",
+      "pretruth_event_reference_date": "2021-12-24",
+      "pretruth_subject_key": "approves_covid_pill_health_authorize_fight_remains_unapproved",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-ac036fdd8aa66afe5c5d",
+      "pretruth_event_reference_date": "2022-01-01",
+      "pretruth_subject_key": "give_emergency_use_authorization_or_otherwise_paxlovid",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-d5438224c60ec1e5a345",
+      "pretruth_event_reference_date": "2021-03-15",
+      "pretruth_subject_key": "johnson_and_covid_vaccine_receive_or_emergency_use_authorization_eua",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-d8db864f2e8d302bb686",
+      "pretruth_event_reference_date": "2026-07-01",
+      "pretruth_subject_key": "science_and_technology_cagrisema",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI"
+    },
+    {
+      "exact_group_id": "W4CE1-e9beea07148ba03307eb",
+      "pretruth_event_reference_date": "2021-09-01",
+      "pretruth_subject_key": "any_covid_vaccines_granted_full",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    },
+    {
+      "exact_group_id": "W4CE1-ef5ba75167837dedcd90",
+      "pretruth_event_reference_date": "2021-12-31",
+      "pretruth_subject_key": "give_emergency_use_authorization_or_otherwise_molnupiravir",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET"
+    }
+  ],
+  "science_reopened": false,
+  "sorted_group_ids_sha256": "7b0103594f80fdf438b7d002a8b3878a7d801750c7105a6fdb81728c4015b986",
+  "source_git_blob_sha": "82be733e844e7b2e99ad3c174370fe3fa214b807",
+  "source_path": "registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz",
+  "status": "FROZEN_QUEUE_FROM_POST_R1_UNRESOLVED_ONLY",
+  "version": "W4C-R1-FDA-Q-v1.0"
+}
