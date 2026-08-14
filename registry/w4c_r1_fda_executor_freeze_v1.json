@@ -1,0 +1,42 @@
+{
+  "artifact": "W4C_R1_FDA_EXECUTOR_FREEZE",
+  "version": "W4C-R1-FDA-EXECUTOR-FREEZE-v1.0",
+  "date": "2026-08-14",
+  "status": "FROZEN_BEFORE_FDA_EVIDENCE_BODY_CAPTURE",
+  "science_reopened": false,
+  "source_main_commit_before_freeze": "51bd8614a2929aef7cf26c70ebb22c84fd983a1d",
+  "fda_evidence_body_capture_performed_before_freeze_by_executor": false,
+  "manual_navigation_to_official_fda_urls_already_disclosed": true,
+  "executor_path": "scripts/w4c_r1_fda_evidence_v1.py",
+  "executor_git_blob_sha": "7efd64cf89cd505061fe84627011fb0f1215df61",
+  "workflow_path": ".github/workflows/w4c_r1_fda_evidence_v1.yml",
+  "workflow_git_blob_sha": "536eb24597d1e2b0a00b17a190d6ba2d0ea277a9",
+  "spec_path": "registry/w4c_r1_fda_manual_adjudication_spec_v1.json",
+  "spec_git_blob_sha": "cd08efc750486e0a978c5446682eddb75054250a",
+  "queue_path": "registry/w4c_r1_fda_review_queue_v1.json",
+  "queue_git_blob_sha": "f03552f31c9d18f5b2d4843380f9861a6d292da5",
+  "w4b_summary_path": "registry/w4b_official_event_truth_summary_v1.json",
+  "w4b_summary_git_blob_sha": "bdef6077e6d4ddc2ee111f4c0dbab39162af8d30",
+  "queue_groups": 22,
+  "candidate_verified_groups": 7,
+  "remaining_fail_closed_groups": 15,
+  "binding_invariants": {
+    "parent_r1_protocol_git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "queue_sorted_group_ids_sha256": "7b0103594f80fdf438b7d002a8b3878a7d801750c7105a6fdb81728c4015b986",
+    "w4b_verified_unique_official_events_immutable": 344,
+    "prior_r1_v1_marginal_unique_official_events": 6,
+    "family_reclassification_allowed": false,
+    "matching_rule_change_allowed": false,
+    "official_non_fda_body_may_vote": false,
+    "missing_body_or_required_identity_token_must_fail_closed": true
+  },
+  "firewall": {
+    "prediction_market_settlement_used": false,
+    "prediction_market_price_or_performance_used": false,
+    "linked_asset_realized_returns_used": false,
+    "pnl_or_model_performance_used": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_FDA_EXECUTOR_BYTES_FROZEN_PRE_BODY_CAPTURE"
+}
