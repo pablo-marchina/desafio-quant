@@ -1,0 +1,40 @@
+name: W4-C R1 Non-SEC Primary Transport Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/w4c_r1_nonsec_primary_transport_probe_v1.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe-primary-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Probe official primary-authority transport only
+        shell: bash
+        run: |
+          set -euo pipefail
+          UA='desafio-quant-w4c-r1/1.0 transport-probe'
+          probe() {
+            label="$1"; url="$2"
+            body="$(mktemp)"; headers="$(mktemp)"
+            code="$(curl --silent --show-error --location --max-time 30 --retry 1 --retry-delay 1 \
+              -A "$UA" -H 'Accept: application/json,text/html;q=0.9,*/*;q=0.1' \
+              -H 'Accept-Encoding: identity' -D "$headers" -o "$body" -w '%{http_code}' "$url" || true)"
+            ctype="$(awk 'BEGIN{IGNORECASE=1} /^content-type:/{gsub("\r",""); print substr($0,index($0,":")+2)}' "$headers" | tail -1)"
+            bytes="$(wc -c < "$body" | tr -d ' ')"
+            echo "PRIMARY_PROBE label=${label} status=${code} bytes=${bytes} content_type=${ctype}"
+            rm -f "$body" "$headers"
+            sleep 1
+          }
+          probe 'FDA_OPENFDA_DRUGSFDA' 'https://api.fda.gov/drug/drugsfda.json?limit=1'
+          probe 'FEDERAL_REGISTER_API' 'https://www.federalregister.gov/api/v1/documents.json?per_page=1'
+          probe 'FTC_CASES' 'https://www.ftc.gov/legal-library/browse/cases-proceedings'
+          probe 'DOJ_ANTITRUST_RELEASES' 'https://www.justice.gov/atr/press-releases'
+          probe 'USCOURTS_ROOT' 'https://www.uscourts.gov/'
+          echo 'PASS_W4C_R1_NONSECRET_PRIMARY_TRANSPORT_PROBE_NO_CLASSIFICATION'
