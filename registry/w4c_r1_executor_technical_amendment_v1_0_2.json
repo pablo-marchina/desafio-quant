@@ -1,0 +1,68 @@
+{
+  "artifact": "W4C_R1_EXECUTOR_TECHNICAL_AMENDMENT",
+  "version": "W4C-R1-EXECUTOR-TECH-v1.0.2",
+  "date": "2026-08-14",
+  "status": "FROZEN_TRANSPORT_FAIL_CLOSED_REPAIR_BEFORE_ANY_R1_SCIENTIFIC_RESULT",
+  "science_reopened": false,
+  "reason": "After the v1.0.1 provenance refreeze passed, the first authorized R1 external request to SEC company_tickers returned HTTP 403 on GitHub-hosted infrastructure. A separate transport-only probe then showed HTTP 403 for both www.sec.gov and data.sec.gov under both the original and a declared User-Agent. No R1 event was classified and no verified-count result was observed. This amendment changes only failure handling: SEC transport denial is recorded and the earnings stratum remains fail-closed unresolved, allowing the already-frozen macro stratum to materialize.",
+  "prior_r1_run": {
+    "workflow_run_id": 31818670150,
+    "workflow_job_id": 94826395301,
+    "head_commit": "e94dc72a273f84222f7e6e37cbdb87e488c33768",
+    "executor_freeze_gate_passed": true,
+    "macro_bundle_restore_passed": true,
+    "eligible_id_digest_gate_passed": true,
+    "first_external_request_authorized_after_freeze": true,
+    "failure": "SEC_TICKER_MAP_HTTP_403",
+    "r1_event_classifications_completed": 0,
+    "r1_verified_count_observed": false,
+    "r1_output_summary_materialized": false
+  },
+  "transport_probe": {
+    "workflow_path": ".github/workflows/w4c_r1_sec_transport_probe_v1.yml",
+    "workflow_run_id": 31818851630,
+    "workflow_job_id": 94827002743,
+    "classification_or_truth_voting_performed": false,
+    "www_sec_original_user_agent_http_status": 403,
+    "www_sec_declared_user_agent_http_status": 403,
+    "data_sec_declared_user_agent_http_status": 403,
+    "interpretation": "GitHub-hosted runner SEC access is unavailable independently of the tested User-Agent formatting; do not replace SEC authority with an unofficial mirror."
+  },
+  "unchanged_scientific_binding": {
+    "eligible_group_count": 1743,
+    "eligible_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+    "protocol_git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "scientific_freeze_git_blob_sha": "74c29cafb7cbaffcbf5f5f8de82919c40d5f15b2",
+    "profile_git_blob_sha": "12c19e9596429884e20e5ef7ceacde399dc2760b",
+    "macro_source_branch": "w4b-official-macro-occurrences-v1",
+    "macro_source_commit": "181bb80efe3555aa91252faf856951908f55c9e8",
+    "macro_source_path": "registry/w4b_official_macro_occurrences_v1.csv.gz",
+    "macro_source_git_blob_sha": "6ceae579a62a54b6932a95b25cd0af34e3999f83"
+  },
+  "executor_change_contract": {
+    "sec_company_index_http_non_200_must_be_recorded_in_transport_manifest": true,
+    "sec_company_index_http_non_200_must_not_verify_any_earnings_event": true,
+    "earnings_groups_without_official_SEC_identity_map_must_remain_UNRESOLVED_R1": true,
+    "macro_matching_rules_changed": false,
+    "earnings_matching_rules_changed": false,
+    "source_hierarchy_changed": false,
+    "authority_relaxed": false,
+    "unofficial_mirror_allowed_to_vote": false,
+    "time_windows_changed": false,
+    "identity_formula_changed": false,
+    "eligible_universe_changed": false
+  },
+  "immutability_and_firewall": {
+    "w4b_truth_immutable_verified_unique_official_events": 344,
+    "w4b_artifacts_may_be_modified": false,
+    "original_w4_family_dictionary_may_be_modified": false,
+    "linked_asset_realized_returns_read_before_w4h": false,
+    "prediction_market_performance_read_before_w4h": false,
+    "prediction_market_settlement_results_read_before_w4h": false,
+    "ARGOS_PnL_read_before_w4h": false,
+    "release_values_allowed_for_identity": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_SEC_TRANSPORT_FAIL_CLOSED_AMENDMENT_REFREEZE_REQUIRED"
+}
