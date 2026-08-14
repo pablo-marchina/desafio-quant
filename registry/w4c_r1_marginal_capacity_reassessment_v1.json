@@ -1,0 +1,77 @@
+{
+  "artifact": "W4C_R1_MARGINAL_CAPACITY_REASSESSMENT",
+  "version": "W4C-R1-MCR-v1.0",
+  "date": "2026-08-14",
+  "status": "R1_REMAINS_OPEN_NOT_SATURATED",
+  "science_reopened": false,
+  "performance_blind": true,
+  "inputs": {
+    "w4c_saturation_protocol": {
+      "path": "registry/w4c_saturation_gate_protocol_v1.json",
+      "git_blob_sha": "f52385ecd92e91fa2545605ae21bdad8aaf77239"
+    },
+    "r1_protocol": {
+      "path": "registry/w4c_r1_official_truth_extension_protocol_v1.json",
+      "git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919"
+    },
+    "r1_result": {
+      "path": "registry/w4c_r1_official_truth_extension_summary_v1.json",
+      "git_blob_sha": "35c8b047e67a3f83113b4db9f4e7c36d7eb3141",
+      "evidence_commit": "d745665f9a7f857811c0e653591e592a42d112d5",
+      "workflow_run_id": 31819123562,
+      "workflow_job_id": 94827878128
+    }
+  },
+  "r1_v1_result": {
+    "eligible_exact_groups": 1743,
+    "verified_exact_groups": 179,
+    "unresolved_exact_groups": 1564,
+    "r1_unique_official_events": 70,
+    "aliases_to_immutable_w4b_official_events": 64,
+    "marginal_new_unique_official_events_vs_w4b": 6,
+    "immutable_w4b_unique_official_events": 344,
+    "combined_official_truth_coverage_unique_events": 350,
+    "combined_count_is_n_final_backtestable": false,
+    "identity_contradictions": 0
+  },
+  "remaining_capacity_decomposition": {
+    "earnings_eps_unresolved_due_to_sec_transport_fail_closed": 1355,
+    "macro_schedule_unresolved_after_frozen_r1_rules": 108,
+    "non_earnings_nonmacro_unresolved_not_yet_implemented_in_v1_executor": 101,
+    "total_remaining_unresolved": 1564,
+    "conservation_check": "1355 + 108 + 101 = 1564"
+  },
+  "route_test_reapplication": {
+    "route": "R1_OFFICIAL_TRUTH_EXTENSION",
+    "frozen_continue_if": "W4-B contains any UNRESOLVED_OFFICIAL_TRUTH groups and the pre-outcome source registry contains primary corporate/event-truth authorities.",
+    "eligible_unresolved_remain": true,
+    "primary_authority_hierarchy_remains_unexhausted": true,
+    "sec_github_hosted_transport_block_is_route_saturation": false,
+    "reason_sec_block_is_not_saturation": "The frozen R1 authority hierarchy also contains issuer IR and non-SEC official FDA/regulator/court authorities, while 101 non-earnings nonmacro groups were not executed by v1 and the 1,355 earnings groups were fail-closed rather than adjudicated. A single execution environment's SEC 403 is therefore a transport constraint, not evidence of zero remaining marginal truth capacity.",
+    "automatic_transition_to_R2_allowed": false,
+    "decision": "CONTINUE_R1_OFFICIAL_TRUTH_EXTENSION"
+  },
+  "next_frozen_execution_scope": {
+    "priority": "R1_NONSEC_PRIMARY_SOURCE_ACCESS_AND_IDENTITY",
+    "purpose": "Test and execute already-preregistered non-SEC primary-authority routes without changing any post-result matching rule.",
+    "first_actions": [
+      "Probe official FDA, FTC, DOJ, Federal Register and deterministic official judiciary access for the 101 non-earnings nonmacro backlog without using event outcomes.",
+      "Assess issuer-IR transport/discovery feasibility for the 1,355 earnings backlog using only the issuer-IR fallback already frozen in W4C-R1-OTE-v1.0.",
+      "Do not widen macro windows or change family/identity rules after the observed R1 v1 result.",
+      "Quantify additional marginal unique W4OT1 gain separately and reapply this same saturation rule before R2."
+    ]
+  },
+  "immutability_and_firewall": {
+    "w4b_truth_immutable_verified_unique_official_events": 344,
+    "w4b_artifacts_modified": false,
+    "original_w4_family_dictionary_modified": false,
+    "linked_asset_realized_returns_read": false,
+    "prediction_market_performance_read": false,
+    "prediction_market_settlement_results_read": false,
+    "ARGOS_PnL_read": false,
+    "release_values_used_for_identity": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_CONTINUE_NOT_SATURATED"
+}
