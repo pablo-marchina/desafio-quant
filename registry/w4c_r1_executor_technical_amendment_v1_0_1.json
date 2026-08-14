@@ -1,0 +1,59 @@
+{
+  "artifact": "W4C_R1_EXECUTOR_TECHNICAL_AMENDMENT",
+  "version": "W4C-R1-EXECUTOR-TECH-v1.0.1",
+  "date": "2026-08-14",
+  "status": "FROZEN_TECHNICAL_PROVENANCE_REPAIR_PRE_R1_EXECUTION",
+  "science_reopened": false,
+  "reason": "The first post-freeze workflow run failed while restoring the already-frozen W4-B macro occurrence bundle, before the R1 executor ran and before any R1 external official-source request. The pinned W4-B branch/commit/path were correct, but the expected Git blob SHA transcribed into the workflow/executor-freeze was incorrect.",
+  "failed_run": {
+    "workflow_run_id": 31818240412,
+    "workflow_job_id": 94824967991,
+    "head_commit": "10e18b6cfdd4b9cbe4e7da5a5975e4be7b56a918",
+    "executor_freeze_gate_passed": true,
+    "failure_stage": "Restore pinned W4-B official macro occurrence evidence",
+    "r1_executor_started": false,
+    "r1_external_official_source_requests_performed": false,
+    "r1_scientific_results_observed": false
+  },
+  "unchanged_scientific_binding": {
+    "source_branch": "w4b-official-macro-occurrences-v1",
+    "source_commit": "181bb80efe3555aa91252faf856951908f55c9e8",
+    "source_path": "registry/w4b_official_macro_occurrences_v1.csv.gz",
+    "eligible_group_count": 1743,
+    "eligible_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+    "protocol_git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "scientific_freeze_git_blob_sha": "74c29cafb7cbaffcbf5f5f8de82919c40d5f15b2",
+    "profile_git_blob_sha": "12c19e9596429884e20e5ef7ceacde399dc2760b",
+    "executor_git_blob_sha": "726bd8bb553c319614f84e387c1d5fc4dea4181a"
+  },
+  "provenance_correction": {
+    "incorrect_expected_git_blob_sha": "6ceae57982d0517cfe60cf32ce5d61104822479e",
+    "correct_git_blob_sha_from_github_contents_at_frozen_branch": "6ceae579a62a54b6932a95b25cd0af34e3999f83",
+    "content_or_semantics_changed": false,
+    "matching_rules_changed": false,
+    "source_hierarchy_changed": false,
+    "identity_rules_changed": false,
+    "time_window_changed": false,
+    "eligible_universe_changed": false
+  },
+  "operational_repair": {
+    "restore_by_explicit_remote_ref_and_pinned_commit": true,
+    "verify_remote_ref_equals_pinned_commit": true,
+    "verify_restored_file_git_blob_equals_correct_blob": true,
+    "emit_actual_and_expected_commit_and_blob_for_audit": true,
+    "workflow_must_be_refrozen_before_any_retry": true
+  },
+  "immutability_and_firewall": {
+    "w4b_truth_immutable_verified_unique_official_events": 344,
+    "w4b_artifacts_may_be_modified": false,
+    "original_w4_family_dictionary_may_be_modified": false,
+    "linked_asset_realized_returns_read_before_w4h": false,
+    "prediction_market_performance_read_before_w4h": false,
+    "prediction_market_settlement_results_read_before_w4h": false,
+    "ARGOS_PnL_read_before_w4h": false,
+    "release_values_allowed_for_identity": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_TECHNICAL_PROVENANCE_CORRECTION_ONLY_REFREEZE_REQUIRED"
+}
