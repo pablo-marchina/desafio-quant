@@ -1,0 +1,44 @@
+name: W4-C R1 SEC Transport Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/w4c_r1_sec_transport_probe_v1.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe-sec-transport:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Probe SEC transport without scientific classification
+        shell: bash
+        run: |
+          set -euo pipefail
+          CURRENT_UA='ARGOS-W4C-R1/1.0 contact=research@users.noreply.github.com'
+          DECLARED_UA="desafio-quant/1.0 ${GITHUB_ACTOR}@users.noreply.github.com"
+          probe() {
+            label="$1"; ua="$2"; url="$3"
+            body="$(mktemp)"; headers="$(mktemp)"
+            code="$(curl --silent --show-error --location --max-time 30 --retry 0 \
+              -A "$ua" -H 'Accept: application/json' -H 'Accept-Encoding: identity' \
+              -D "$headers" -o "$body" -w '%{http_code}' "$url" || true)"
+            ctype="$(awk 'BEGIN{IGNORECASE=1} /^content-type:/{gsub("\r",""); print substr($0,index($0,":")+2)}' "$headers" | tail -1)"
+            bytes="$(wc -c < "$body" | tr -d ' ')"
+            echo "PROBE label=${label} status=${code} bytes=${bytes} content_type=${ctype}"
+            if [ "$code" != '200' ]; then
+              head -c 240 "$body" | tr '\n' ' ' | sed 's/[[:space:]]\+/ /g' | sed 's/^/ERROR_BODY /'
+              echo
+            fi
+            rm -f "$body" "$headers"
+          }
+          probe 'www_current_ua' "$CURRENT_UA" 'https://www.sec.gov/files/company_tickers.json'
+          sleep 1
+          probe 'www_declared_ua' "$DECLARED_UA" 'https://www.sec.gov/files/company_tickers.json'
+          sleep 1
+          probe 'data_declared_ua' "$DECLARED_UA" 'https://data.sec.gov/submissions/CIK0000320193.json'
+          echo 'PASS_SEC_TRANSPORT_PROBE_COMPLETED_NO_CLASSIFICATION'
