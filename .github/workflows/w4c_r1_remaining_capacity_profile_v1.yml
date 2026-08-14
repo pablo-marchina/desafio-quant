@@ -1,0 +1,93 @@
+name: W4-C R1 Remaining Capacity Profile
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/w4c_r1_remaining_capacity_profile_v1.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  profile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build descriptive remaining-capacity profile only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz)" = "82be733e844e7b2e99ad3c174370fe3fa214b807"
+          python - <<'PY'
+          import csv,gzip,hashlib,json,re
+          from collections import Counter,defaultdict
+          from pathlib import Path
+          P=Path('registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz')
+          with gzip.open(P,'rt',encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
+          assert len(rows)==1564
+          assert all(r['r1_verification_state']=='UNRESOLVED_R1_OFFICIAL_TRUTH' for r in rows)
+          ids=sorted(r['exact_group_id'] for r in rows)
+          digest=hashlib.sha256(('\n'.join(ids)+'\n').encode()).hexdigest()
+          fam=Counter(r['resolved_family'] for r in rows)
+          year=Counter((r['pretruth_event_reference_date'] or '')[:4] for r in rows)
+          venue=Counter(r.get('venues','') for r in rows)
+          byfam=defaultdict(list)
+          for r in rows: byfam[r['resolved_family']].append(r)
+          nonmacro_fams={
+            'CORPORATE_LITIGATION_BINARY','FDA_FINAL_PDUFA_DECISION',
+            'MA_PRE_ANNOUNCEMENT_OR_RUMOR','ANTITRUST_ENFORCEMENT_SINGLE_NAME',
+            'MA_PENDING_COMPLETION','MA_REGULATORY_CLEARANCE'
+          }
+          nonmacro=[]
+          for r in rows:
+            if r['resolved_family'] in nonmacro_fams:
+              nonmacro.append({k:r.get(k,'') for k in ['exact_group_id','resolved_family','pretruth_event_reference_date','pretruth_subject_key','venues','verification_reason']})
+          assert len(nonmacro)==101
+          earnings=byfam['EARNINGS_EPS']
+          assert len(earnings)==1355
+          subject_counts=Counter(r['pretruth_subject_key'] for r in earnings)
+          profile={
+            'artifact':'W4C_R1_REMAINING_CAPACITY_PROFILE',
+            'version':'W4C-R1-RCP-v1.0',
+            'date':'2026-08-14',
+            'status':'FROZEN_DESCRIPTIVE_ONLY_POST_R1_V1',
+            'science_reopened':False,
+            'source':{'path':str(P),'git_blob_sha':'82be733e844e7b2e99ad3c174370fe3fa214b807'},
+            'remaining_exact_groups':len(rows),
+            'unique_exact_group_ids':len(set(ids)),
+            'sorted_group_ids_sha256':digest,
+            'family_counts':dict(sorted(fam.items())),
+            'year_counts':dict(sorted(year.items())),
+            'venue_set_counts':dict(sorted(venue.items())),
+            'unique_pretruth_subject_keys_by_family':{k:len({r['pretruth_subject_key'] for r in v}) for k,v in sorted(byfam.items())},
+            'earnings_descriptive':{
+              'groups':len(earnings),
+              'unique_exact_pretruth_subject_keys':len(subject_counts),
+              'date_min':min(r['pretruth_event_reference_date'] for r in earnings),
+              'date_max':max(r['pretruth_event_reference_date'] for r in earnings),
+              'top_repeated_exact_subject_keys':[{'pretruth_subject_key':k,'groups':n} for k,n in subject_counts.most_common(50)]
+            },
+            'non_earnings_nonmacro_groups':nonmacro,
+            'prohibitions':{
+              'new_source_reads':False,'new_truth_votes':False,'reclassification':False,
+              'matching_rule_changes':False,'linked_returns':False,'prediction_market_performance':False,
+              'settlement_results':False,'pnl':False,'n_final_backtestable_authorized':False
+            },
+            'gate_decision':'PASS_W4C_R1_REMAINING_CAPACITY_PROFILE_MATERIALIZED'
+          }
+          Path('registry/w4c_r1_remaining_capacity_profile_v1.json').write_text(json.dumps(profile,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({k:profile[k] for k in ['remaining_exact_groups','family_counts','unique_pretruth_subject_keys_by_family','gate_decision']},indent=2,sort_keys=True))
+          PY
+      - name: Persist profile branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-remaining-capacity-profile-v1
+          git add registry/w4c_r1_remaining_capacity_profile_v1.json
+          git commit -m 'registry: materialize W4-C R1 remaining capacity profile v1'
+          git push -f origin w4c-r1-remaining-capacity-profile-v1
