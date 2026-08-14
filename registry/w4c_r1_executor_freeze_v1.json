@@ -1,0 +1,65 @@
+{
+  "artifact": "W4C_R1_EXECUTOR_FREEZE",
+  "version": "W4C-R1-EXECUTOR-FREEZE-v1.0",
+  "date": "2026-08-14",
+  "status": "FROZEN_BEFORE_FIRST_R1_EXTERNAL_REQUEST",
+  "science_reopened": false,
+  "source_main_commit_before_executor_freeze": "de1badc8142a592180317a3fb9eee560bc05708a",
+  "r1_scientific_results_observed_before_executor_freeze": false,
+  "r1_external_requests_performed_before_executor_freeze": false,
+  "executor": {
+    "path": "scripts/w4c_r1_official_truth_extension_v1.py",
+    "git_blob_sha": "726bd8bb553c319614f84e387c1d5fc4dea4181a"
+  },
+  "workflow": {
+    "path": ".github/workflows/w4c_r1_official_truth_extension.yml",
+    "git_blob_sha": "1840663e5164c34f31274beb9d586a81537e1647"
+  },
+  "workflow_git_blob_sha": "1840663e5164c34f31274beb9d586a81537e1647",
+  "protocol": {
+    "path": "registry/w4c_r1_official_truth_extension_protocol_v1.json",
+    "git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "version": "W4C-R1-OTE-v1.0"
+  },
+  "protocol_git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+  "scientific_freeze": {
+    "path": "registry/w4c_r1_official_truth_extension_freeze_v1.json",
+    "git_blob_sha": "74c29cafb7cbaffcbf5f5f8de82919c40d5f15b2",
+    "version": "W4C-R1-OTE-FREEZE-v1.0"
+  },
+  "scientific_freeze_git_blob_sha": "74c29cafb7cbaffcbf5f5f8de82919c40d5f15b2",
+  "frozen_profile": {
+    "path": "registry/w4c_r1_official_truth_unresolved_profile_v1.json",
+    "git_blob_sha": "12c19e9596429884e20e5ef7ceacde399dc2760b",
+    "version": "W4C-R1-OTP-v1.0"
+  },
+  "profile_git_blob_sha": "12c19e9596429884e20e5ef7ceacde399dc2760b",
+  "eligible_group_count": 1743,
+  "eligible_group_ids_sha256": "4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe",
+  "eligibility_serialization": "UTF-8 exact_group_id lexicographically sorted, LF joined, terminal LF",
+  "w4b_macro_occurrence_input": {
+    "branch": "w4b-official-macro-occurrences-v1",
+    "commit": "181bb80efe3555aa91252faf856951908f55c9e8",
+    "path": "registry/w4b_official_macro_occurrences_v1.csv.gz",
+    "git_blob_sha": "6ceae57982d0517cfe60cf32ce5d61104822479e"
+  },
+  "immutability_and_firewall": {
+    "w4b_truth_immutable_verified_unique_official_events": 344,
+    "w4b_artifacts_may_be_modified": false,
+    "original_w4_family_dictionary_may_be_modified": false,
+    "linked_asset_realized_returns_read_before_w4h": false,
+    "prediction_market_performance_read_before_w4h": false,
+    "prediction_market_settlement_results_read_before_w4h": false,
+    "ARGOS_PnL_read_before_w4h": false,
+    "release_values_allowed_for_identity": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "execution_authorization": {
+    "external_official_source_requests_authorized_only_after_this_freeze_commit": true,
+    "result_artifacts_must_remain_separate_w4c_r1_namespace": true,
+    "fail_closed_on_missing_or_ambiguous_primary_evidence": true,
+    "reapply_w4c_saturation_after_r1": true
+  },
+  "gate_decision": "PASS_W4C_R1_EXECUTOR_AND_WORKFLOW_BYTES_FROZEN_PRE_EVIDENCE"
+}
