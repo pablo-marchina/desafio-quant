@@ -1,0 +1,104 @@
+{
+  "artifact": "W4C_R1_FDA_MANUAL_ADJUDICATION_SPEC",
+  "version": "W4C-R1-FDA-MA-v1.0",
+  "date": "2026-08-14",
+  "status": "FROZEN_POST_R1_MANUAL_REVIEW_BEFORE_EVIDENCE_BODY_CAPTURE",
+  "science_reopened": false,
+  "review_mode": "MANUAL_REVIEW_WITH_PRIMARY_FDA_EVIDENCE_REQUIRED",
+  "parent_protocol": {
+    "path": "registry/w4c_r1_official_truth_extension_protocol_v1.json",
+    "git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "rule": "FDA verification requires deterministic sponsor/product/action identity and authoritative FDA occurrence evidence; ambiguous identity fails closed."
+  },
+  "queue": {
+    "path": "registry/w4c_r1_fda_review_queue_v1.json",
+    "git_blob_sha": "f03552f31c9d18f5b2d4843380f9861a6d292da5",
+    "groups": 22,
+    "sorted_group_ids_sha256": "7b0103594f80fdf438b7d002a8b3878a7d801750c7105a6fdb81728c4015b986"
+  },
+  "candidate_verified_groups": [
+    {
+      "exact_group_id": "W4CE1-03f3dcd691fc6f088896",
+      "official_event_reference_date": "2020-12-11",
+      "official_subject_key": "pfizer_biontech_covid19_vaccine_initial_eua",
+      "source_authority": "FDA",
+      "source_url": "https://www.fda.gov/emergency-preparedness-and-response/mcm-legal-regulatory-and-policy-framework/emergency-use-authorization-archived-information",
+      "required_all_text_tokens": ["pfizer-biontech covid-19 vaccine", "12/11/2020"],
+      "match_rule_used": "FDA deterministic product/action identity + authoritative archived EUA occurrence"
+    },
+    {
+      "exact_group_id": "W4CE1-3329428279c962ba4474",
+      "official_event_reference_date": "2026-07-14",
+      "official_subject_key": "gedatolisib_hr_positive_her2_negative_advanced_metastatic_breast_cancer",
+      "source_authority": "FDA",
+      "source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-gedatolisib-fulvestrant-or-without-palbociclib-hr-positive-her2-negative-locally",
+      "required_all_text_tokens": ["gedatolisib", "july 14, 2026", "hr-positive", "her2-negative"],
+      "match_rule_used": "FDA deterministic product/indication/action identity + authoritative FDA occurrence"
+    },
+    {
+      "exact_group_id": "W4CE1-486da7487d0a61ba4c50",
+      "official_event_reference_date": "2026-05-15",
+      "official_subject_key": "baxdrostat_hypertension",
+      "source_authority": "FDA",
+      "source_url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+      "required_all_text_tokens": ["baxdrostat", "5/15/2026", "hypertension"],
+      "match_rule_used": "FDA deterministic product/indication/action identity + authoritative FDA novel-drug occurrence"
+    },
+    {
+      "exact_group_id": "W4CE1-58053480f33eba228d4f",
+      "official_event_reference_date": "2026-04-01",
+      "official_subject_key": "orforglipron_obesity_overweight_weight_management",
+      "source_authority": "FDA",
+      "source_url": "https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program",
+      "required_all_text_tokens": ["orforglipron", "april 01, 2026", "weight"],
+      "match_rule_used": "FDA deterministic product/indication/action identity + authoritative FDA occurrence"
+    },
+    {
+      "exact_group_id": "W4CE1-ac036fdd8aa66afe5c5d",
+      "official_event_reference_date": "2021-12-22",
+      "official_subject_key": "paxlovid_initial_eua",
+      "source_authority": "FDA",
+      "source_url": "https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-authorizes-first-oral-antiviral-treatment-covid-19",
+      "required_all_text_tokens": ["paxlovid", "december 22, 2021", "emergency use authorization"],
+      "match_rule_used": "FDA deterministic named-product/action identity + authoritative FDA EUA occurrence"
+    },
+    {
+      "exact_group_id": "W4CE1-d5438224c60ec1e5a345",
+      "official_event_reference_date": "2021-02-27",
+      "official_subject_key": "janssen_covid19_vaccine_initial_eua",
+      "source_authority": "FDA",
+      "source_url": "https://www.fda.gov/news-events/congressional-testimony/leading-way-forward-biden-administration-actions-increase-covid-19-vaccinations-03172021",
+      "required_all_text_tokens": ["february 27, 2021", "janssen", "issued an eua"],
+      "match_rule_used": "FDA deterministic sponsor/product/action identity + authoritative FDA occurrence statement"
+    },
+    {
+      "exact_group_id": "W4CE1-ef5ba75167837dedcd90",
+      "official_event_reference_date": "2021-12-23",
+      "official_subject_key": "molnupiravir_initial_eua",
+      "source_authority": "FDA",
+      "source_url": "https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-authorizes-additional-oral-antiviral-treatment-covid-19-certain",
+      "required_all_text_tokens": ["molnupiravir", "december 23, 2021", "emergency use authorization"],
+      "match_rule_used": "FDA deterministic named-product/action identity + authoritative FDA EUA occurrence"
+    }
+  ],
+  "remaining_groups_policy": {
+    "count": 15,
+    "state": "UNRESOLVED_R1_OFFICIAL_TRUTH",
+    "reason": "Fail closed: frozen subject is generic/multi-product/semantically insufficient for deterministic sponsor-product-action identity, or no unique final FDA occurrence was materialized for the exact frozen identity. Absence of evidence is not converted into a negative event truth.",
+    "no_negative_truth_inference": true
+  },
+  "candidate_count": 7,
+  "unresolved_count": 15,
+  "source_navigation_disclosure": "Official FDA URLs were located during manual/model-assisted review. Only FDA bodies fetched and hashed by the evidence executor may vote; search snippets do not vote.",
+  "firewall": {
+    "prediction_market_settlement_used": false,
+    "prediction_market_price_or_performance_used": false,
+    "linked_asset_realized_returns_used": false,
+    "pnl_or_model_performance_used": false,
+    "family_reclassification_used": false,
+    "matching_rule_changed_after_r1_v1": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_FDA_MANUAL_ADJUDICATION_SPEC_FROZEN"
+}
