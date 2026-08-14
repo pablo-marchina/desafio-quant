@@ -1,0 +1,1091 @@
+{
+  "artifact": "W4C_R1_REMAINING_CAPACITY_PROFILE",
+  "date": "2026-08-14",
+  "earnings_descriptive": {
+    "date_max": "2026-08-13",
+    "date_min": "2025-02-28",
+    "groups": 1355,
+    "top_repeated_exact_subject_keys": [
+      {
+        "groups": 3,
+        "pretruth_subject_key": "zoominfo_technologies_gtm_nongaap_0pt26"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "warby_parker_wrby_gaap_0pt05"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "halliburton_hal_nongaap_0pt54"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "navitas_semiconductor_nvts_nongaap_neg0pt05"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "apollo_global_management_apo_nongaap_1pt9"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "pagerduty_pd_nongaap_0pt25"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "armour_uaa_nongaap_0pt02"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "samsara_iot_nongaap_0pt13"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "coursera_cour_nongaap_0pt08"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "playboy_plby_gaap_0pt01"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "semtech_smtc_nongaap_0pt45"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "tesla_tsla_nongaap_0pt5"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "yelp_gaap_0pt53"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "amplitude_ampl_nongaap_neg0pt01"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "lamb_weston_holdings_lw_nongaap_0pt63"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "beyond_meat_bynd_gaap_neg0pt08"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "grab_holdings_gaap_0pt01"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "cloudflare_net_nongaap_0pt27"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "rumble_rum_gaap_neg0pt1"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "cintas_ctas_gaap_1pt23"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "sprinklr_cxm_nongaap_0pt1"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "infosys_infy_gaap_0pt21"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "soundhound_ai_soun_nongaap_neg0pt04"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "mcdonald_mcd_nongaap_3pt33"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "ford_motor_nongaap_0pt18"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "rocket_lab_rklb_gaap_neg0pt08"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "waystar_way_nongaap_0pt4"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "okta_nongaap_0pt85"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "krispy_kreme_dnut_nongaap_neg0pt02"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "monster_beverage_mnst_gaap_0pt48"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "toast_tost_gaap_0pt12"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "charles_schwab_schw_nongaap_1pt36"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "opendoor_technologies_open_gaap_neg0pt07"
+      },
+      {
+        "groups": 2,
+        "pretruth_subject_key": "intel_intc_nongaap"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "allstate_all_nongaap_6pt04"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "anheuser_busch_inbev_bud_nongaap_1pt14"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "msc_industrial_direct_msm_nongaap_0pt84"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "nxp_semiconductors_nxpi_nongaap_3pt31"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "allstate_all_nongaap_9pt86"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "cboe_nongaap_3pt49"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "designer_brands_inc_dbi_nongaap_neg0pt51"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "docusign_docu_nongaap_0pt95"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "pinterest_pins_nongaap_0pt22"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "bj_wholesale_club_holdings_up_or_down_bjs"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "carmax_kmx_up_or_down"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "oatly_group_otly_gaap_neg0pt87"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "autozone_azo_gaap_36pt03"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "confluent_cflt_nongaap_0pt1"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "garmin_grmn_nongaap_2pt29"
+      },
+      {
+        "groups": 1,
+        "pretruth_subject_key": "campbell_cpb_up_or_down_campbells"
+      }
+    ],
+    "unique_exact_pretruth_subject_keys": 1320
+  },
+  "family_counts": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 6,
+    "CORPORATE_LITIGATION_BINARY": 56,
+    "CPI_INFLATION_RELEASE": 15,
+    "EARNINGS_EPS": 1355,
+    "FDA_FINAL_PDUFA_DECISION": 22,
+    "FOMC_DECISION": 1,
+    "GDP_RELEASE": 32,
+    "MA_PENDING_COMPLETION": 1,
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 15,
+    "MA_REGULATORY_CLEARANCE": 1,
+    "PAYROLLS_JOBS_RELEASE": 1,
+    "PCE_RELEASE": 3,
+    "RETAIL_SALES_RELEASE": 4,
+    "UNEMPLOYMENT_RELEASE": 52
+  },
+  "gate_decision": "PASS_W4C_R1_REMAINING_CAPACITY_PROFILE_MATERIALIZED",
+  "non_earnings_nonmacro_groups": [
+    {
+      "exact_group_id": "W4CE1-0206bc8cf4e8a9dcfbc7",
+      "pretruth_event_reference_date": "2026-01-01",
+      "pretruth_subject_key": "djt_msnbc_politics_trump_sue",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-032e6e4f439429e06ad1",
+      "pretruth_event_reference_date": "2025-11-06",
+      "pretruth_subject_key": "pumpfun_another_financials_pump_fun_announces_any_company",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-03f3dcd691fc6f088896",
+      "pretruth_event_reference_date": "2022-02-08",
+      "pretruth_subject_key": "pfizer_covid_vaccine_first_receive_or_emergency_use_authorization_eua",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-0a1b2c6c0004b688d441",
+      "pretruth_event_reference_date": "2025-10-28",
+      "pretruth_subject_key": "coinbase_another_financials_announces_any_company",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-0ae968f79f9b6a21b526",
+      "pretruth_event_reference_date": "2026-07-28",
+      "pretruth_subject_key": "what_paypal_say_their_next_earnings_call_quarter_times_consumer_merchant_stablecoin_or_stable_coin_ai_artificial_intelligence",
+      "resolved_family": "MA_REGULATORY_CLEARANCE",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-0c461c17b2fe1c514aaf",
+      "pretruth_event_reference_date": "2024-12-31",
+      "pretruth_subject_key": "elon_musk_settle_with_openai",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-0c47f5e118834de0ca95",
+      "pretruth_event_reference_date": "2026-06-17",
+      "pretruth_subject_key": "what_us_netflix_show_week_nemesis_boroughs_four_seasons_season_michael_jackson_witness_lawmen_bass_reeves_tony_man",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-0c52e900ab138b21fcbe",
+      "pretruth_event_reference_date": "2026-06-10",
+      "pretruth_subject_key": "what_global_netflix_show_week_nemesis_boroughs_four_seasons_season_grey_anatomy_michael_jackson_witness_lawmen_bass_reeves",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-0c8cf2de0bce51570bd3",
+      "pretruth_event_reference_date": "2025-10-10",
+      "pretruth_subject_key": "drake_umg_outcome_entertainment_win_his_against",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-0db2b400184e34a76c90",
+      "pretruth_event_reference_date": "2026-06-17",
+      "pretruth_subject_key": "what_top_global_netflix_show_week_nemesis_boroughs_four_seasons_season_michael_jackson_witness_lawmen_bass_reeves_tony",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-106d38a1fa85f664b102",
+      "pretruth_event_reference_date": "2024-06-30",
+      "pretruth_subject_key": "openai_with_elon_musk",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-13d497e9ec4f92350960",
+      "pretruth_event_reference_date": "2026-06-30",
+      "pretruth_subject_key": "glencore_and_rio_tinto_sale_announced",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-16deb2ff9ef5c5eba68e",
+      "pretruth_event_reference_date": "2026-06-10",
+      "pretruth_subject_key": "what_us_netflix_show_week_nemesis_boroughs_four_seasons_season_grey_anatomy_michael_jackson_witness_lawmen_bass_reeves",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-1701db001866ac4c3a60",
+      "pretruth_event_reference_date": "2021-10-15",
+      "pretruth_subject_key": "any_covid_vaccination_children",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-1e53fb1c4fcb28959801",
+      "pretruth_event_reference_date": "2025-07-01",
+      "pretruth_subject_key": "atlantic_politics_trump_administration_sue_or_jeffrey_goldberg",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-208e912dd1b325ae8f31",
+      "pretruth_event_reference_date": "2024-11-04",
+      "pretruth_subject_key": "trump_his_hush_money_conviction",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-226cfc56cc79513e24ae",
+      "pretruth_event_reference_date": "2026-06-17",
+      "pretruth_subject_key": "what_global_netflix_show_week_nemesis_boroughs_four_seasons_season_michael_jackson_witness_lawmen_bass_reeves_tony_man",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-2308c8580139136c2ac2",
+      "pretruth_event_reference_date": "2025-06-30",
+      "pretruth_subject_key": "baldoni_lively_dismissed",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-2610f496241810b3182d",
+      "pretruth_event_reference_date": "2026-06-16",
+      "pretruth_subject_key": "tesla_spacex_financials_cursor",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-264e922cfe220a627665",
+      "pretruth_event_reference_date": "2026-06-23",
+      "pretruth_subject_key": "what_top_us_netflix_show_week_four_seasons_season_michael_jackson_witness_sweet_magnolias_outlast_jungle_find_you",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-26c3303c00c90510aa7c",
+      "pretruth_event_reference_date": "2026-06-30",
+      "pretruth_subject_key": "paramount_warner_bros_announced_acquires_discovery",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-27a5874fc8febd757601",
+      "pretruth_event_reference_date": "2026-01-01",
+      "pretruth_subject_key": "suits_politics_launch_against_nvidia_microsoft",
+      "resolved_family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-281ed6da0dae885a678b",
+      "pretruth_event_reference_date": "2026-07-29",
+      "pretruth_subject_key": "dollar_index_move_fomc_day_economics_absolute_percentage_change_official_daily_price_front_month_ice_futures_contract",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-2845390826a185531e0c",
+      "pretruth_event_reference_date": "2024-12-31",
+      "pretruth_subject_key": "openai_with_nyt_end",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-2945c45fd49964423f92",
+      "pretruth_event_reference_date": "2025-01-31",
+      "pretruth_subject_key": "honda_and_nissan_announced_merge",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-297badb84e05c7ec69c5",
+      "pretruth_event_reference_date": "2026-02-05",
+      "pretruth_subject_key": "what_amazon_say_their_next_earnings_call_severance_cyber_monday_black_friday_margin_settle_or_settlement_redundancy_rainier",
+      "resolved_family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-2fa61b958106e9d0cb04",
+      "pretruth_event_reference_date": "2025-04-08",
+      "pretruth_subject_key": "ap_politics_win_their_against_white_house",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-3178d1877b75018d5dba",
+      "pretruth_event_reference_date": "2021-11-04",
+      "pretruth_subject_key": "covid_vaccine_kids_health_authorize_children_remains_unapproved",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-31baf384307dc25eb5b9",
+      "pretruth_event_reference_date": "2025-05-03",
+      "pretruth_subject_key": "perkins_coie_politics_win_their_against_trump",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-3329428279c962ba4474",
+      "pretruth_event_reference_date": "2026-07-01",
+      "pretruth_subject_key": "science_and_technology_gedatolisib_hr_her2_pik3ca_wild_type_advanced_breast_cancer",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-382db1ebf308380e9505",
+      "pretruth_event_reference_date": "2025-04-10",
+      "pretruth_subject_key": "openai_musk_science_and_technology_sue_elon_back",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-38e6c055e91395b7d490",
+      "pretruth_event_reference_date": "2025-11-01",
+      "pretruth_subject_key": "abc_or_disney_politics_donald_trump_federal_government_sue_american_broadcasting_company_walt",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-395545501db9c7a8b255",
+      "pretruth_event_reference_date": "2026-07-01",
+      "pretruth_subject_key": "science_and_technology_cytisinicline_smoking_cessation",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-39af71d84c68b3f07db9",
+      "pretruth_event_reference_date": "2021-12-01",
+      "pretruth_subject_key": "any_covid_vaccines_granted_full",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-3b53c08925f9474833e9",
+      "pretruth_event_reference_date": "2026-07-01",
+      "pretruth_subject_key": "liv_golf_announced_mergeracquisition",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-4753c3e87b6a9c24f88e",
+      "pretruth_event_reference_date": "2026-05-01",
+      "pretruth_subject_key": "company_financials_tesla_or_spacex_definitive_binding_agreement_two_entities_merge_combine_any_structure_that_transfer_controlling_interest",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-486da7487d0a61ba4c50",
+      "pretruth_event_reference_date": "2026-06-01",
+      "pretruth_subject_key": "science_and_technology_baxdrostat_hard_control_hypertension",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-48b26b0e46d56fd6219e",
+      "pretruth_event_reference_date": "2025-07-31",
+      "pretruth_subject_key": "approvals_rp1_vusolimogene_oderparepvec_bla_blenrep_combinations_transcon_hgh_sbla_aficamten_nda_empaveli_snda_sepiapterin_odronextamab_ordspono_resubmitted",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-4bdbe7ff3aa015f9f0e6",
+      "pretruth_event_reference_date": "2026-08-07",
+      "pretruth_subject_key": "when_ea_financials_electronic_arts_announce_its_take_private",
+      "resolved_family": "MA_PENDING_COMPLETION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-4ec7a0c0d2f0aadfe938",
+      "pretruth_event_reference_date": "2025-12-31",
+      "pretruth_subject_key": "vaccine_withdrawn_health_any_covid_lose_its_us",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-54dcefce6b511b684fa3",
+      "pretruth_event_reference_date": "2022-09-20",
+      "pretruth_subject_key": "ftx_robinhood_announced",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-55a1c2cc754cde015684",
+      "pretruth_event_reference_date": "2026-04-14",
+      "pretruth_subject_key": "jnj_mentions_what_johnson_say_their_next_earnings_call_vaccine_trufill_tariff_rybrevant_procedure_ottava_nipocalimab_lupus_halda",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-58053480f33eba228d4f",
+      "pretruth_event_reference_date": "2026-04-01",
+      "pretruth_subject_key": "eli_lily_science_and_technology_when_orforglipron",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-585cdf7c52d97bbe6b2c",
+      "pretruth_event_reference_date": "2026-07-31",
+      "pretruth_subject_key": "scttt_supreme_trump_tariffs_government_wu",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "FORECASTEX",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-590c52165f2edea753c2",
+      "pretruth_event_reference_date": "2026-06-23",
+      "pretruth_subject_key": "what_us_netflix_show_week_four_seasons_season_michael_jackson_witness_sweet_magnolias_outlast_jungle_find_you_america",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-5b698847b69b0f4e868e",
+      "pretruth_event_reference_date": "2025-12-31",
+      "pretruth_subject_key": "injunctions_senate_politics_bill_limiting_nationwide_district_judges_passes",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-5be453c8befc8c80032c",
+      "pretruth_event_reference_date": "2026-01-01",
+      "pretruth_subject_key": "new_york_times_settles_openai_science_and_technology_settle_its",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-5cec45cf8b792e68b179",
+      "pretruth_event_reference_date": "2025-07-01",
+      "pretruth_subject_key": "openai_settled_musk_science_and_technology_elon_settle_his_with",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-5f20939982fe4849b26c",
+      "pretruth_event_reference_date": "2021-05-01",
+      "pretruth_subject_key": "astrazeneca_covid_vaccine_receive_or_emergency_use_authorization_eua_astrazenecas",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-62bf669744a30d45d8f2",
+      "pretruth_event_reference_date": "2025-01-17",
+      "pretruth_subject_key": "tiktok_politics_supreme_grant_against_ban",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-646b8c1dcaeceb02a664",
+      "pretruth_event_reference_date": "2026-06-30",
+      "pretruth_subject_key": "reopens_powell_investigation",
+      "resolved_family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-675799a7ac8f21886585",
+      "pretruth_event_reference_date": "2025-12-02",
+      "pretruth_subject_key": "new_drugs_health_novel_level",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-69a8e025484c6b62b4a2",
+      "pretruth_event_reference_date": "2024-12-31",
+      "pretruth_subject_key": "drops",
+      "resolved_family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-6afd222a24a2c57da2a9",
+      "pretruth_event_reference_date": "2026-06-01",
+      "pretruth_subject_key": "science_and_technology_camizestrant_hr_her2_advanced_breast_cancer_with_esr1_mutation",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-6d27d9a7a6b20f1a8da8",
+      "pretruth_event_reference_date": "2024-12-31",
+      "pretruth_subject_key": "vaccine_withdrawn_health_any_covid_lose_its_us_not",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-74b31b0e7dc02d9e8c8d",
+      "pretruth_event_reference_date": "2025-06-30",
+      "pretruth_subject_key": "drake_vs_umg_dismissed_drakes",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-77d1dfb63f243b32cf88",
+      "pretruth_event_reference_date": "2026-03-30",
+      "pretruth_subject_key": "scttt_supreme_trump_tariffs_government_wu",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "FORECASTEX",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-77efa760457bb79d33a7",
+      "pretruth_event_reference_date": "2024-04-01",
+      "pretruth_subject_key": "new_york_times_settles_openai_science_and_technology_settle_its_wins_loses_or_drops_case",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-823ba05961b72ff5cd21",
+      "pretruth_event_reference_date": "2026-01-01",
+      "pretruth_subject_key": "djt_cnn_politics_trump_sue",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-8a3fa5a939357030bd34",
+      "pretruth_event_reference_date": "2025-02-28",
+      "pretruth_subject_key": "or_cia_personnel_accept",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-8a470988b3e13116f37f",
+      "pretruth_event_reference_date": "2025-07-16",
+      "pretruth_subject_key": "applications_science_and_technology_ux111_year_filspari_tnx_sl_obicetrapib_oxylanthanum_carbonate_leqembi_elinzanetant_donidalorsen_bumetanide_nasal_spray",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-8b8e93d11b4f77c2d4da",
+      "pretruth_event_reference_date": "2026-06-25",
+      "pretruth_subject_key": "what_darden_restaurants_say_their_next_earnings_call_revenue_times_quarter_olive_garden_menu_kitchen_drive_thru_doordash",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-8df1f7e7a1fd3891630a",
+      "pretruth_event_reference_date": "2026-07-19",
+      "pretruth_subject_key": "what_announcers_say_argentina_vs_spain_world_cup_match_goal_times_fifa_pressure_foul_bench_or_benches_golden",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-92a45ca25f3d60022646",
+      "pretruth_event_reference_date": "2026-01-01",
+      "pretruth_subject_key": "bill_repeal_senator_phone_provision_become_law_year_politics_becomes",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-92efb304964824fe4fa3",
+      "pretruth_event_reference_date": "2026-03-27",
+      "pretruth_subject_key": "live_nation_companies_win_their_against",
+      "resolved_family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-97e70e249a1c1943be87",
+      "pretruth_event_reference_date": "2026-03-31",
+      "pretruth_subject_key": "marine_le_pen_win_her_lift_ineligibility_ban",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-995c6bf2f9c0b9c6f0f3",
+      "pretruth_event_reference_date": "2024-03-31",
+      "pretruth_subject_key": "openai_with_nyt",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-9a7f187542a8054eb182",
+      "pretruth_event_reference_date": "2021-11-01",
+      "pretruth_subject_key": "any_covid_vaccination_children",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-9b95eea8fca00be272cb",
+      "pretruth_event_reference_date": "2026-06-23",
+      "pretruth_subject_key": "what_global_netflix_show_week_four_seasons_season_michael_jackson_witness_sweet_magnolias_outlast_jungle_find_you_america",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-9fdd1bcd57c6aa5ee1dc",
+      "pretruth_event_reference_date": "2022-06-01",
+      "pretruth_subject_key": "twitter_musk_agree",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-a1403ddd0cc1f3073d36",
+      "pretruth_event_reference_date": "2022-12-31",
+      "pretruth_subject_key": "there_negotiated_russia_and_ukraine",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-aa7793077863f9ae4508",
+      "pretruth_event_reference_date": "2021-12-24",
+      "pretruth_subject_key": "approves_covid_pill_health_authorize_fight_remains_unapproved",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-ac036fdd8aa66afe5c5d",
+      "pretruth_event_reference_date": "2022-01-01",
+      "pretruth_subject_key": "give_emergency_use_authorization_or_otherwise_paxlovid",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-ae864c11bfdb55ae2da8",
+      "pretruth_event_reference_date": "2025-01-01",
+      "pretruth_subject_key": "new_york_times_settles_openai_science_and_technology_settle_its_wins_loses_or_drops_case",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-b5b2420e23db550ec408",
+      "pretruth_event_reference_date": "2026-03-22",
+      "pretruth_subject_key": "what_trump_post_week_donald_truth_social_rino_ass_illinois_mutilization_ayatollah_or_khamenei_chairman_epic_fury_oscar",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-bb4b26fc2dc3db48e18a",
+      "pretruth_event_reference_date": "2026-06-30",
+      "pretruth_subject_key": "tesla_and_xai_officially_announced",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-bfdaf20e5480b7c1f791",
+      "pretruth_event_reference_date": "2025-12-31",
+      "pretruth_subject_key": "injunctions_law_politics_bill_limiting_nationwide_district_judges_becomes",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-c04a14fe67b71a92b93f",
+      "pretruth_event_reference_date": "2025-04-16",
+      "pretruth_subject_key": "transgender_lawsuits_against_states_politics_what_trump_sue_their_trans_sports_policies_minnesota_maine_california",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-c0abd621c1d351530f7f",
+      "pretruth_event_reference_date": "2025-07-01",
+      "pretruth_subject_key": "selzer_politics_trump_against_ann_dismissed",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-c35f81ba2d5aeff1a8f7",
+      "pretruth_event_reference_date": "2026-06-10",
+      "pretruth_subject_key": "what_top_global_netflix_show_week_nemesis_boroughs_four_seasons_season_grey_anatomy_michael_jackson_witness_lawmen_bass",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-c3874c2c10017d39ccc2",
+      "pretruth_event_reference_date": "2026-06-23",
+      "pretruth_subject_key": "what_top_global_netflix_show_week_four_seasons_season_michael_jackson_witness_sweet_magnolias_outlast_jungle_find_you",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-c4104028936435d7b16f",
+      "pretruth_event_reference_date": "2025-12-31",
+      "pretruth_subject_key": "sffa_politics_department_justice_sue_aau_university_failing_comply_with_students_fair_admission_harvard_year",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-c7648536b23174744666",
+      "pretruth_event_reference_date": "2025-01-01",
+      "pretruth_subject_key": "drake_lawsuits_entertainment_sue_not_like_us",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-c7803419045a505cdaa1",
+      "pretruth_event_reference_date": "2025-12-31",
+      "pretruth_subject_key": "meta_settle_with",
+      "resolved_family": "ANTITRUST_ENFORCEMENT_SINGLE_NAME",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-cb83a8e296e0dd6d64d4",
+      "pretruth_event_reference_date": "2026-06-17",
+      "pretruth_subject_key": "what_top_us_netflix_show_week_nemesis_boroughs_four_seasons_season_michael_jackson_witness_lawmen_bass_reeves_tony",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-ccec91fc4e60f7e5d371",
+      "pretruth_event_reference_date": "2026-01-14",
+      "pretruth_subject_key": "us_ny_politics_trump_win_his_against_new_york_its_sancutary_cities_law",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-ccfbeef6429db656b578",
+      "pretruth_event_reference_date": "2026-03-03",
+      "pretruth_subject_key": "congestion_pricing_politics_mta_win_its_against_trump",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-ce8ad8f0f1d734db8976",
+      "pretruth_event_reference_date": "2025-03-06",
+      "pretruth_subject_key": "musk_against_openai_companies_elon_win",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-cf4f9f4d5d716bfa9673",
+      "pretruth_event_reference_date": "2024-06-12",
+      "pretruth_subject_key": "elon_musk_openai_financials_wins_not",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-d5438224c60ec1e5a345",
+      "pretruth_event_reference_date": "2021-03-15",
+      "pretruth_subject_key": "johnson_and_covid_vaccine_receive_or_emergency_use_authorization_eua",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-d7f03240417ee009ea2d",
+      "pretruth_event_reference_date": "2025-07-31",
+      "pretruth_subject_key": "and_truth_social_announced",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-d8842f41f8afbaff72e7",
+      "pretruth_event_reference_date": "2026-01-31",
+      "pretruth_subject_key": "chubb_and_aig_announced",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-d8db864f2e8d302bb686",
+      "pretruth_event_reference_date": "2026-07-01",
+      "pretruth_subject_key": "science_and_technology_cagrisema",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-e3771b6fee05b351cbf2",
+      "pretruth_event_reference_date": "2025-04-10",
+      "pretruth_subject_key": "injunctions_house_politics_bill_limiting_nationwide_district_judges_passes",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "KALSHI",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-e5e646c85e7c912169cd",
+      "pretruth_event_reference_date": "2025-12-31",
+      "pretruth_subject_key": "german_government_files_ban_afd",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-e9beea07148ba03307eb",
+      "pretruth_event_reference_date": "2021-09-01",
+      "pretruth_subject_key": "any_covid_vaccines_granted_full",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-ea58f0601c133476cbd4",
+      "pretruth_event_reference_date": "2026-05-30",
+      "pretruth_subject_key": "what_mrbeast_say_his_next_youtube_video_hundred_or_thousand_million_times_dollar_cash_eliminate_eliminated_prize_island",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-eab57173b47d34ec385e",
+      "pretruth_event_reference_date": "2026-06-30",
+      "pretruth_subject_key": "spacex_and_xai_officially_announced_offcially",
+      "resolved_family": "MA_PRE_ANNOUNCEMENT_OR_RUMOR",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-edf3a73c6b0b92e1c7db",
+      "pretruth_event_reference_date": "2024-12-30",
+      "pretruth_subject_key": "trump_3m_reduced_83pt3m",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-ef5ba75167837dedcd90",
+      "pretruth_event_reference_date": "2021-12-31",
+      "pretruth_subject_key": "give_emergency_use_authorization_or_otherwise_molnupiravir",
+      "resolved_family": "FDA_FINAL_PDUFA_DECISION",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    },
+    {
+      "exact_group_id": "W4CE1-f74614cabc5294d74754",
+      "pretruth_event_reference_date": "2026-06-10",
+      "pretruth_subject_key": "what_top_us_netflix_show_week_nemesis_boroughs_four_seasons_season_grey_anatomy_michael_jackson_witness_lawmen_bass",
+      "resolved_family": "CORPORATE_LITIGATION_BINARY",
+      "venues": "POLYMARKET",
+      "verification_reason": "No deterministic primary-source identity match implemented under frozen R1 v1 executor; retained fail-closed"
+    }
+  ],
+  "prohibitions": {
+    "linked_returns": false,
+    "matching_rule_changes": false,
+    "n_final_backtestable_authorized": false,
+    "new_source_reads": false,
+    "new_truth_votes": false,
+    "pnl": false,
+    "prediction_market_performance": false,
+    "reclassification": false,
+    "settlement_results": false
+  },
+  "remaining_exact_groups": 1564,
+  "science_reopened": false,
+  "sorted_group_ids_sha256": "ce441b9f79587a3c95c362120d210180bdb52ceb6e5c6b913a86badf1ef9a5cc",
+  "source": {
+    "git_blob_sha": "82be733e844e7b2e99ad3c174370fe3fa214b807",
+    "path": "registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz"
+  },
+  "status": "FROZEN_DESCRIPTIVE_ONLY_POST_R1_V1",
+  "unique_exact_group_ids": 1564,
+  "unique_pretruth_subject_keys_by_family": {
+    "ANTITRUST_ENFORCEMENT_SINGLE_NAME": 6,
+    "CORPORATE_LITIGATION_BINARY": 54,
+    "CPI_INFLATION_RELEASE": 1,
+    "EARNINGS_EPS": 1320,
+    "FDA_FINAL_PDUFA_DECISION": 20,
+    "FOMC_DECISION": 1,
+    "GDP_RELEASE": 1,
+    "MA_PENDING_COMPLETION": 1,
+    "MA_PRE_ANNOUNCEMENT_OR_RUMOR": 15,
+    "MA_REGULATORY_CLEARANCE": 1,
+    "PAYROLLS_JOBS_RELEASE": 1,
+    "PCE_RELEASE": 1,
+    "RETAIL_SALES_RELEASE": 1,
+    "UNEMPLOYMENT_RELEASE": 2
+  },
+  "venue_set_counts": {
+    "FORECASTEX": 56,
+    "FORECASTEX|KALSHI": 9,
+    "FORECASTEX|POLYMARKET": 4,
+    "KALSHI": 68,
+    "KALSHI|POLYMARKET": 4,
+    "POLYMARKET": 1423
+  },
+  "version": "W4C-R1-RCP-v1.0",
+  "year_counts": {
+    "2021": 31,
+    "2022": 6,
+    "2024": 10,
+    "2025": 562,
+    "2026": 955
+  }
+}
