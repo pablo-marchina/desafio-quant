@@ -1,0 +1,81 @@
+name: W4-C R1 FDA Evidence v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - registry/w4c_r1_fda_executor_freeze_v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: w4c-r1-fda-evidence-v1
+  cancel-in-progress: false
+
+jobs:
+  evidence:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate FDA executor freeze
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,subprocess
+          f=json.load(open('registry/w4c_r1_fda_executor_freeze_v1.json'))
+          blob=lambda p: subprocess.check_output(['git','hash-object',p],text=True).strip()
+          assert f['status']=='FROZEN_BEFORE_FDA_EVIDENCE_BODY_CAPTURE'
+          assert blob('scripts/w4c_r1_fda_evidence_v1.py')==f['executor_git_blob_sha']=='7efd64cf89cd505061fe84627011fb0f1215df61'
+          assert blob('.github/workflows/w4c_r1_fda_evidence_v1.yml')==f['workflow_git_blob_sha']
+          assert blob('registry/w4c_r1_fda_manual_adjudication_spec_v1.json')==f['spec_git_blob_sha']=='cd08efc750486e0a978c5446682eddb75054250a'
+          assert blob('registry/w4c_r1_fda_review_queue_v1.json')==f['queue_git_blob_sha']=='f03552f31c9d18f5b2d4843380f9861a6d292da5'
+          assert blob('registry/w4b_official_event_truth_summary_v1.json')==f['w4b_summary_git_blob_sha']=='bdef6077e6d4ddc2ee111f4c0dbab39162af8d30'
+          assert f['queue_groups']==22 and f['candidate_verified_groups']==7
+          print('PASS_W4C_R1_FDA_EXECUTOR_FREEZE')
+          PY
+      - name: Materialize FDA primary evidence
+        run: python scripts/w4c_r1_fda_evidence_v1.py
+      - name: Enforce FDA result firewall
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4c_r1_fda_truth_extension_summary_v1.json'))
+          assert x['gate_decision']=='PASS_W4C_R1_FDA_TRUTH_EXTENSION_MATERIALIZED'
+          assert x['queue_groups']==22 and x['decision_rows_accounted']==22
+          assert x['verified_exact_groups']==x['verified_unique_official_events']
+          assert x['all_verified_rows_have_fda_body_hash'] is True
+          assert x['all_verified_rows_have_excerpt_hash'] is True
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['prediction_market_performance_read'] is False
+          assert x['prediction_market_settlement_results_read'] is False
+          assert x['ARGOS_PnL_read'] is False
+          assert x['family_reclassification_used'] is False
+          assert x['matching_rule_changed_after_r1_v1'] is False
+          assert x['w4b_artifacts_modified'] is False
+          assert x['n_final_backtestable_authorized'] is False
+          assert x['outcome_reveal_authorized'] is False
+          print('PASS_W4C_R1_FDA_RESULT_FIREWALL')
+          PY
+      - name: Persist FDA evidence branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-fda-truth-extension-v1
+          git add \
+            registry/w4c_r1_fda_truth_extension_records_v1.csv.gz \
+            registry/w4c_r1_fda_truth_extension_source_manifest_v1.csv.gz \
+            registry/w4c_r1_fda_truth_extension_summary_v1.json
+          git commit -m 'evidence: materialize W4-C R1 FDA truth extension v1'
+          git push -f origin w4c-r1-fda-truth-extension-v1
