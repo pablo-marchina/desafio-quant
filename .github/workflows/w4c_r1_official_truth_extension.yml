@@ -44,9 +44,11 @@ jobs:
           assert blob('registry/w4c_r1_official_truth_extension_protocol_v1.json')==f['protocol_git_blob_sha']=='add5c0251d13ee001227de13860d37851faa7919'
           assert blob('registry/w4c_r1_official_truth_extension_freeze_v1.json')==f['scientific_freeze_git_blob_sha']=='74c29cafb7cbaffcbf5f5f8de82919c40d5f15b2'
           assert blob('registry/w4c_r1_official_truth_unresolved_profile_v1.json')==f['profile_git_blob_sha']=='12c19e9596429884e20e5ef7ceacde399dc2760b'
+          assert blob('registry/w4c_r1_executor_technical_amendment_v1_0_1.json')==f['technical_amendment_git_blob_sha']=='8b3cce9df652df5876ea6fc2f2de4e9260c779e0'
           assert blob('.github/workflows/w4c_r1_official_truth_extension.yml')==f['workflow_git_blob_sha']
           assert f['eligible_group_count']==1743
           assert f['eligible_group_ids_sha256']=='4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe'
+          assert f['w4b_macro_occurrence_input']['git_blob_sha']=='6ceae579a62a54b6932a95b25cd0af34e3999f83'
           print('PASS_W4C_R1_EXECUTOR_FREEZE')
           PY
 
@@ -54,10 +56,21 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git fetch origin w4b-official-macro-occurrences-v1 --depth=1
-          test "$(git rev-parse FETCH_HEAD)" = "181bb80efe3555aa91252faf856951908f55c9e8"
-          git show FETCH_HEAD:registry/w4b_official_macro_occurrences_v1.csv.gz > registry/_r1_input_w4b_official_macro_occurrences_v1.csv.gz
-          test "$(git hash-object registry/_r1_input_w4b_official_macro_occurrences_v1.csv.gz)" = "6ceae57982d0517cfe60cf32ce5d61104822479e"
+          PINNED_REF='refs/heads/w4b-official-macro-occurrences-v1'
+          REMOTE_REF='refs/remotes/origin/w4b-official-macro-occurrences-v1'
+          PINNED_COMMIT='181bb80efe3555aa91252faf856951908f55c9e8'
+          EXPECTED_BLOB='6ceae579a62a54b6932a95b25cd0af34e3999f83'
+          SOURCE_PATH='registry/w4b_official_macro_occurrences_v1.csv.gz'
+          RESTORED_PATH='registry/_r1_input_w4b_official_macro_occurrences_v1.csv.gz'
+          git fetch origin "${PINNED_REF}:${REMOTE_REF}" --depth=1
+          ACTUAL_COMMIT="$(git rev-parse "${REMOTE_REF}")"
+          echo "macro registry pinned_commit=${PINNED_COMMIT} actual_commit=${ACTUAL_COMMIT}"
+          test "${ACTUAL_COMMIT}" = "${PINNED_COMMIT}"
+          git cat-file -e "${PINNED_COMMIT}^{commit}"
+          git show "${PINNED_COMMIT}:${SOURCE_PATH}" > "${RESTORED_PATH}"
+          ACTUAL_BLOB="$(git hash-object "${RESTORED_PATH}")"
+          echo "macro registry expected_blob=${EXPECTED_BLOB} actual_blob=${ACTUAL_BLOB}"
+          test "${ACTUAL_BLOB}" = "${EXPECTED_BLOB}"
 
       - name: Execute frozen R1 extension
         run: python scripts/w4c_r1_official_truth_extension_v1.py
