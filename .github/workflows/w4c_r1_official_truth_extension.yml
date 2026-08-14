@@ -1,0 +1,103 @@
+name: W4-C R1 Official Truth Extension
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - registry/w4c_r1_executor_freeze_v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: w4c-r1-official-truth-extension-v1
+  cancel-in-progress: false
+
+jobs:
+  execute-r1:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate executor freeze before any R1 source request
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          R=Path('registry')
+          f=json.loads((R/'w4c_r1_executor_freeze_v1.json').read_text())
+          blob=lambda p: subprocess.check_output(['git','hash-object',str(p)],text=True).strip()
+          assert f['status']=='FROZEN_BEFORE_FIRST_R1_EXTERNAL_REQUEST'
+          assert f['r1_scientific_results_observed_before_executor_freeze'] is False
+          assert f['r1_external_requests_performed_before_executor_freeze'] is False
+          assert f['executor']['git_blob_sha']=='726bd8bb553c319614f84e387c1d5fc4dea4181a'
+          assert blob(f['executor']['path'])==f['executor']['git_blob_sha']
+          assert blob('registry/w4c_r1_official_truth_extension_protocol_v1.json')==f['protocol_git_blob_sha']=='add5c0251d13ee001227de13860d37851faa7919'
+          assert blob('registry/w4c_r1_official_truth_extension_freeze_v1.json')==f['scientific_freeze_git_blob_sha']=='74c29cafb7cbaffcbf5f5f8de82919c40d5f15b2'
+          assert blob('registry/w4c_r1_official_truth_unresolved_profile_v1.json')==f['profile_git_blob_sha']=='12c19e9596429884e20e5ef7ceacde399dc2760b'
+          assert blob('.github/workflows/w4c_r1_official_truth_extension.yml')==f['workflow_git_blob_sha']
+          assert f['eligible_group_count']==1743
+          assert f['eligible_group_ids_sha256']=='4e008fddf2d24373272213810a595fcc4949731da592c28057c77e19ed0d2dfe'
+          print('PASS_W4C_R1_EXECUTOR_FREEZE')
+          PY
+
+      - name: Restore pinned W4-B official macro occurrence evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin w4b-official-macro-occurrences-v1 --depth=1
+          test "$(git rev-parse FETCH_HEAD)" = "181bb80efe3555aa91252faf856951908f55c9e8"
+          git show FETCH_HEAD:registry/w4b_official_macro_occurrences_v1.csv.gz > registry/_r1_input_w4b_official_macro_occurrences_v1.csv.gz
+          test "$(git hash-object registry/_r1_input_w4b_official_macro_occurrences_v1.csv.gz)" = "6ceae57982d0517cfe60cf32ce5d61104822479e"
+
+      - name: Execute frozen R1 extension
+        run: python scripts/w4c_r1_official_truth_extension_v1.py
+
+      - name: Enforce R1 result gate and firewall
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4c_r1_official_truth_extension_summary_v1.json'))
+          assert x['gate_decision']=='PASS_W4C_R1_OFFICIAL_TRUTH_EXTENSION_MATERIALIZED'
+          assert x['eligible_groups']==1743 and x['decision_rows_accounted']==1743
+          assert x['performance_blind'] is True
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['prediction_market_performance_read'] is False
+          assert x['prediction_market_settlement_results_read'] is False
+          assert x['ARGOS_PnL_read'] is False
+          assert x['release_values_used_for_identity'] is False
+          assert x['w4b_artifacts_modified'] is False
+          assert x['n_final_backtestable_authorized'] is False
+          assert x['outcome_reveal_authorized'] is False
+          print(json.dumps(x,indent=2,sort_keys=True))
+          print('PASS_W4C_R1_RESULT_FIREWALL')
+          PY
+
+      - name: Persist authoritative R1 evidence branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f registry/_r1_input_w4b_official_macro_occurrences_v1.csv.gz
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-official-truth-extension-v1
+          git add \
+            registry/w4c_r1_official_truth_extension_records_v1.csv.gz \
+            registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz \
+            registry/w4c_r1_official_truth_extension_groups_v1.csv.gz \
+            registry/w4c_r1_official_truth_extension_source_manifest_v1.csv.gz \
+            registry/w4c_r1_sec_transport_manifest_v1.csv.gz \
+            registry/w4c_r1_official_truth_extension_summary_v1.json
+          git commit -m 'evidence: materialize W4-C R1 official truth extension v1'
+          git push -f origin w4c-r1-official-truth-extension-v1
