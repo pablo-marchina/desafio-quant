@@ -1,37 +1,55 @@
 {
   "artifact": "W4C_R1_EXECUTOR_FREEZE",
-  "version": "W4C-R1-EXECUTOR-FREEZE-v1.0.1",
+  "version": "W4C-R1-EXECUTOR-FREEZE-v1.0.2",
   "date": "2026-08-14",
-  "status": "FROZEN_BEFORE_FIRST_R1_EXTERNAL_REQUEST",
+  "status": "REFROZEN_AFTER_TRANSPORT_ONLY_FAILURE_BEFORE_ANY_R1_SCIENTIFIC_RESULT",
   "science_reopened": false,
-  "supersedes_version": "W4C-R1-EXECUTOR-FREEZE-v1.0",
-  "supersedes_commit": "10e18b6cfdd4b9cbe4e7da5a5975e4be7b56a918",
-  "source_main_commit_before_executor_freeze": "75458c426e2a92fd15ff2890b5bf499e429495d4",
+  "supersedes_version": "W4C-R1-EXECUTOR-FREEZE-v1.0.1",
+  "supersedes_commit": "e94dc72a273f84222f7e6e37cbdb87e488c33768",
+  "source_main_commit_before_executor_freeze": "0bb0367e9fe82b2e9589a0949f8e771e1ac9e7d1",
   "r1_scientific_results_observed_before_executor_freeze": false,
-  "r1_external_requests_performed_before_executor_freeze": false,
-  "prior_failed_run": {
-    "workflow_run_id": 31818240412,
-    "workflow_job_id": 94824967991,
-    "failure_stage": "Restore pinned W4-B official macro occurrence evidence",
-    "executor_started": false,
-    "r1_external_requests_performed": false,
-    "scientific_results_observed": false
+  "r1_external_requests_performed_before_executor_freeze": true,
+  "pre_refreeze_external_requests_transport_only": true,
+  "pre_refreeze_transport_history": {
+    "failed_scientific_run": {
+      "workflow_run_id": 31818670150,
+      "workflow_job_id": 94826395301,
+      "executor_byte_gate_passed": true,
+      "macro_bundle_restore_passed": true,
+      "first_authorized_external_request_http_status": 403,
+      "r1_event_classifications_completed": 0,
+      "r1_verified_count_observed": false,
+      "summary_materialized": false
+    },
+    "transport_probe": {
+      "workflow_run_id": 31818851630,
+      "workflow_job_id": 94827002743,
+      "classification_or_truth_voting_performed": false,
+      "www_sec_original_ua_http_status": 403,
+      "www_sec_declared_ua_http_status": 403,
+      "data_sec_declared_ua_http_status": 403
+    }
   },
   "executor": {
     "path": "scripts/w4c_r1_official_truth_extension_v1.py",
     "git_blob_sha": "726bd8bb553c319614f84e387c1d5fc4dea4181a"
   },
+  "transport_wrapper": {
+    "path": "scripts/w4c_r1_sec_transport_failclosed_v1.py",
+    "git_blob_sha": "f9c97fcd16ef75ccd0265d5a3fb5dc6bbd5c4112",
+    "scope": "Record SEC HTTP denial and force the earnings stratum to remain unresolved; no authority, identity, family, or matching-rule relaxation."
+  },
   "workflow": {
     "path": ".github/workflows/w4c_r1_official_truth_extension.yml",
-    "git_blob_sha": "09671dd038e184bc9c24d525a8ce5d2477a24c5a"
+    "git_blob_sha": "85d51bebbd968e864f2b0eadb6fb3040084c7850"
   },
-  "workflow_git_blob_sha": "09671dd038e184bc9c24d525a8ce5d2477a24c5a",
+  "workflow_git_blob_sha": "85d51bebbd968e864f2b0eadb6fb3040084c7850",
   "technical_amendment": {
-    "path": "registry/w4c_r1_executor_technical_amendment_v1_0_1.json",
-    "git_blob_sha": "8b3cce9df652df5876ea6fc2f2de4e9260c779e0",
-    "version": "W4C-R1-EXECUTOR-TECH-v1.0.1"
+    "path": "registry/w4c_r1_executor_technical_amendment_v1_0_2.json",
+    "git_blob_sha": "5024110074ff6eacec2c8b40dc2e49e09cffed4f",
+    "version": "W4C-R1-EXECUTOR-TECH-v1.0.2"
   },
-  "technical_amendment_git_blob_sha": "8b3cce9df652df5876ea6fc2f2de4e9260c779e0",
+  "technical_amendment_git_blob_sha": "5024110074ff6eacec2c8b40dc2e49e09cffed4f",
   "protocol": {
     "path": "registry/w4c_r1_official_truth_extension_protocol_v1.json",
     "git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
@@ -72,10 +90,11 @@
     "outcome_reveal_authorized": false
   },
   "execution_authorization": {
-    "external_official_source_requests_authorized_only_after_this_refreeze_commit": true,
+    "scientific_result_materialization_authorized_only_after_this_refreeze_commit": true,
+    "sec_transport_denial_must_fail_closed": true,
+    "unofficial_mirror_may_vote": false,
     "result_artifacts_must_remain_separate_w4c_r1_namespace": true,
-    "fail_closed_on_missing_or_ambiguous_primary_evidence": true,
     "reapply_w4c_saturation_after_r1": true
   },
-  "gate_decision": "PASS_W4C_R1_EXECUTOR_WORKFLOW_TECHNICAL_REFREEZE_PRE_EVIDENCE"
+  "gate_decision": "PASS_W4C_R1_REFROZEN_AFTER_TRANSPORT_ONLY_FAILURE_PRE_SCIENTIFIC_RESULT"
 }
