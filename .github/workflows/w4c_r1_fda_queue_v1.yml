@@ -1,0 +1,55 @@
+name: W4-C R1 FDA Review Queue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/w4c_r1_fda_queue_v1.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  queue:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build FDA queue from frozen unresolved result only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz)" = "82be733e844e7b2e99ad3c174370fe3fa214b807"
+          python - <<'PY'
+          import csv,gzip,hashlib,json
+          from pathlib import Path
+          p=Path('registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz')
+          with gzip.open(p,'rt',encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
+          q=[{k:r.get(k,'') for k in ['exact_group_id','resolved_family','pretruth_event_reference_date','pretruth_subject_key','venues']} for r in rows if r['resolved_family']=='FDA_FINAL_PDUFA_DECISION']
+          assert len(q)==22
+          ids=sorted(r['exact_group_id'] for r in q)
+          out={
+            'artifact':'W4C_R1_FDA_REVIEW_QUEUE','version':'W4C-R1-FDA-Q-v1.0','date':'2026-08-14',
+            'status':'FROZEN_QUEUE_FROM_POST_R1_UNRESOLVED_ONLY','science_reopened':False,
+            'source_path':str(p),'source_git_blob_sha':'82be733e844e7b2e99ad3c174370fe3fa214b807',
+            'family':'FDA_FINAL_PDUFA_DECISION','groups':22,
+            'sorted_group_ids_sha256':hashlib.sha256(('\n'.join(ids)+'\n').encode()).hexdigest(),
+            'rows':sorted(q,key=lambda x:x['exact_group_id']),
+            'review_contract':'Apply W4C-R1-OTE-v1.0 FDA rule exactly: deterministic sponsor/product/action identity plus authoritative FDA occurrence evidence; ambiguous or semantically incompatible rows remain unresolved. No outcome/performance/linked-return evidence.',
+            'new_source_reads_performed_by_this_artifact':False,
+            'gate_decision':'PASS_W4C_R1_FDA_QUEUE_FROZEN'
+          }
+          Path('registry/w4c_r1_fda_review_queue_v1.json').write_text(json.dumps(out,indent=2,sort_keys=True)+'\n')
+          print(json.dumps({'groups':22,'digest':out['sorted_group_ids_sha256'],'gate':out['gate_decision']},sort_keys=True))
+          PY
+      - name: Persist queue branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-fda-review-queue-v1
+          git add registry/w4c_r1_fda_review_queue_v1.json
+          git commit -m 'registry: freeze W4-C R1 FDA review queue v1'
+          git push -f origin w4c-r1-fda-review-queue-v1
