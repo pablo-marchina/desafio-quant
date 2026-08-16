@@ -1,0 +1,29 @@
+name: W4-C R1 earnings IR official-domain failure diagnosis v1
+
+on:
+  push:
+    paths:
+      - scripts/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1.py
+      - registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1.json
+      - registry/w4c_r1_earnings_ir_official_domain_resolution_manifest_v1.csv.gz
+      - registry/w4c_r1_earnings_ir_official_domain_navigation_manifest_v1.csv.gz
+      - registry/w4c_r1_earnings_ir_official_domain_body_manifest_v1.csv.gz
+      - registry/w4c_r1_earnings_ir_probe_sample_v1.json
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose-official-domain-failures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run outcome-blind failure diagnosis
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1.py
+      - name: Commit diagnosis output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1.json
+          git commit -m 'registry: diagnose W4-C R1 official-domain conditional-route failures' || exit 0
+          git push
