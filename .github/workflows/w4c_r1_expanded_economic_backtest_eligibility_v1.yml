@@ -1,0 +1,43 @@
+name: W4-C R1 expanded economic backtest eligibility v1
+
+on:
+  push:
+    paths:
+      - 'registry/w4c_r1_expanded_economic_backtest_eligibility_execute_authorization_v1.json'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize-eligibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate expanded economic executor without outcome reads
+        env:
+          W4C_R1_EXPANDED_ECON_BACKTEST_VALIDATE_ONLY: YES
+        run: python3 scripts/w4c_r1_expanded_economic_backtest_executor_v1.py
+
+      - name: Materialize pre-PnL eligibility
+        env:
+          W4C_R1_EXPANDED_ECON_BACKTEST_MATERIALIZE_ELIGIBILITY: YES_FROZEN
+        run: python3 scripts/w4c_r1_expanded_economic_backtest_executor_v1.py
+
+      - name: Commit eligibility outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz \
+            registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json
+          git commit -m 'registry: materialize W4-C R1 expanded economic eligibility v1'
+          git reset --hard HEAD
+          git clean -fd
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
