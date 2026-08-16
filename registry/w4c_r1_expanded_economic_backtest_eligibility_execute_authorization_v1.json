@@ -1,8 +1,8 @@
 {
   "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_EXECUTE_AUTHORIZATION",
-  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-AUTH-v1.0",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-AUTH-v1.1",
   "date": "2026-08-16",
-  "status": "AUTHORIZED_TO_VALIDATE_AND_MATERIALIZE_PRE_PNL_ELIGIBILITY",
+  "status": "REAUTHORIZED_AFTER_OUTPUT_PUSH_FIX",
   "authorization_basis": {
     "protocol_freeze": "registry/w4c_r1_expanded_economic_backtest_protocol_freeze_v1.json",
     "protocol_gate": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_FROZEN_NO_OUTCOME_REVEAL",
@@ -10,6 +10,12 @@
     "concrete_executor_freeze": "registry/w4c_r1_expanded_economic_backtest_executor_concrete_freeze_v1.json",
     "executor_script": "scripts/w4c_r1_expanded_economic_backtest_executor_v1.py",
     "executor_script_blob_sha": "23041adf08e3d4ce418000cc0cb29cfa16389320",
+    "workflow_push_fix_commit": "c771c841b255b19456a8545e67f1d2033a279c3b",
+    "prior_run_id": 31962994098,
+    "prior_job_id": 95203732790,
+    "prior_validation_step": "success",
+    "prior_materialize_step": "success",
+    "prior_commit_step": "failure_REBASE_RESIDUAL_WORKTREE_AFTER_LOCAL_COMMIT",
     "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json"
   },
   "authorized_scope": {
@@ -38,5 +44,5 @@
     "argos_pnl_read": false,
     "backtest_execution_authorized": false
   },
-  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_MATERIALIZATION_AUTHORIZED_NO_PNL"
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_MATERIALIZATION_REAUTHORIZED_NO_PNL"
 }
