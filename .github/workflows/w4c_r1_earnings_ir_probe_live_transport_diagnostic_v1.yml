@@ -1,0 +1,29 @@
+name: W4-C R1 earnings IR live transport diagnostic v1
+
+on:
+  push:
+    paths:
+      - 'scripts/w4c_r1_earnings_ir_probe_live_transport_diagnostic_v1.py'
+      - '.github/workflows/w4c_r1_earnings_ir_probe_live_transport_diagnostic_v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose-live-transport:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Run four-case live transport/parser diagnostic
+        run: python3 scripts/w4c_r1_earnings_ir_probe_live_transport_diagnostic_v1.py
+
+      - name: Commit diagnosis artifact
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w4c_r1_earnings_ir_probe_live_transport_diagnosis_v1.json
+          git diff --cached --quiet || git commit -m 'registry: materialize live transport diagnosis'
+          git push
