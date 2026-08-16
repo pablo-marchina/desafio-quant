@@ -1,9 +1,13 @@
 name: W4-C R1 earnings IR input repair v1
 
 on:
-  push:
+  pull_request:
     paths:
+      - .github/workflows/w4c_r1_earnings_ir_input_repair_v1.yml
       - scripts/w4c_r1_earnings_ir_input_repair_v1.py
+      - scripts/w4c_r1_earnings_ir_official_domain_repaired_executor_v1.py
+      - registry/w4c_r1_earnings_ir_input_repair_v1.json
+      - registry/w4c_r1_earnings_ir_input_repair_executor_freeze_v1.json
       - registry/w4c_r1_earnings_ir_queue_v1.csv.gz
       - registry/w4c_r1_earnings_ir_probe_sample_v1.json
       - registry/w4c_r1_earnings_ticker_profile_v1.json
@@ -12,12 +16,14 @@ permissions:
   contents: read
 
 jobs:
-  inspect-repair-input:
+  validate-repair-input:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Inspect frozen sample/profile mismatch using frozen queue only
-        run: python scripts/w4c_r1_earnings_ir_input_repair_v1.py
+      - name: Validate deterministic repair without external requests
+        env:
+          W4C_R1_EARNINGS_IR_REPAIR_VALIDATE_ONLY: YES
+        run: python scripts/w4c_r1_earnings_ir_official_domain_repaired_executor_v1.py
