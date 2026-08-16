@@ -1,0 +1,40 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_QUEUE_FREEZE",
+  "version": "W4C-R1-EIR-Q-FREEZE-v1.0",
+  "date": "2026-08-15",
+  "status": "FROZEN_PRE_QUEUE_MATERIALIZATION_NO_EXTERNAL_LOOKUP",
+  "science_reopened": false,
+  "source_main_commit_before_freeze": "69b01a08b42ea62e9083a5480cd438751819e751",
+  "protocol_path": "registry/w4c_r1_earnings_ir_fallback_protocol_v1.json",
+  "protocol_git_blob_sha": "0802ac2fe38567f8d0054ebfdcdd5ed5b525c5b2",
+  "queue_builder_path": "scripts/w4c_r1_earnings_ir_queue_v1.py",
+  "queue_builder_git_blob_sha": "7b2bf44531ae7edce7430a1df238cd48c09e00d6",
+  "workflow_path": ".github/workflows/w4c_r1_earnings_ir_queue_v1.yml",
+  "workflow_git_blob_sha": "2e56a2766232461f0996c13587fe5352fcfda260",
+  "source_unresolved_path": "registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz",
+  "source_unresolved_git_blob_sha": "82be733e844e7b2e99ad3c174370fe3fa214b807",
+  "eligibility": {
+    "required_family": "EARNINGS_EPS",
+    "required_state": "UNRESOLVED_R1_OFFICIAL_TRUTH",
+    "expected_groups": 1355,
+    "new_group_ids_allowed": false,
+    "family_reclassification_allowed": false
+  },
+  "pre_queue_observation_declarations": {
+    "new_issuer_ir_lookup_performed": false,
+    "new_sec_lookup_performed": false,
+    "prediction_market_performance_read": false,
+    "prediction_market_settlement_read": false,
+    "linked_asset_realized_returns_read": false,
+    "ARGOS_PnL_read": false,
+    "model_performance_read": false
+  },
+  "execution_authorization": {
+    "descriptive_queue_materialization_authorized": true,
+    "external_source_lookup_authorized_by_this_freeze": false,
+    "issuer_ir_evidence_collection_authorized_by_this_freeze": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_QUEUE_BUILDER_FROZEN_PRE_SOURCE_LOOKUP"
+}
