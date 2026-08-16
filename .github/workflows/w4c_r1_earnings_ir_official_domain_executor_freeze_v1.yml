@@ -1,4 +1,5 @@
-# One-shot pre-request freeze validator; no external source requests are performed here.
+# Pre-request byte-freeze validator; no external source requests are performed here.
+# Triggered again after refreshing Git blob identities.
 name: W4-C R1 earnings IR official-domain executor freeze v1
 
 on:
