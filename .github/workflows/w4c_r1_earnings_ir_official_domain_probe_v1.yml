@@ -16,11 +16,13 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
 
-      - name: Validate frozen executor and inputs without network
-        run: python3 scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py --validate-only
+      - name: Validate repaired executor and inputs without network
+        env:
+          W4C_R1_EARNINGS_IR_REPAIR_VALIDATE_ONLY: YES
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_repaired_executor_v1.py
 
       - name: Execute frozen 40-event capacity probe
-        run: python3 scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py --execute
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_repaired_executor_v1.py
 
       - name: Commit probe outputs
         run: |
