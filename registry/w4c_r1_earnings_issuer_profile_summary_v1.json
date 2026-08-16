@@ -1,0 +1,244 @@
+{
+  "artifact": "W4C_R1_EARNINGS_ISSUER_PROFILE_SUMMARY",
+  "candidate_issuer_clusters": 1253,
+  "extraction_mode_counts": {
+    "LONG_PREFIX_TRUNCATED": 203,
+    "PREFIX_BEFORE_EARNINGS_MARKER": 1152
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_ISSUER_PROFILE_MATERIALIZED_DESCRIPTIVE_ONLY",
+  "issuer_ir_lookup_performed": false,
+  "largest_cluster_sizes": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "linked_asset_realized_returns_read": false,
+  "n_final_backtestable_authorized": false,
+  "new_external_source_reads": false,
+  "outcome_reveal_authorized": false,
+  "prediction_market_performance_read": false,
+  "queue_groups": 1355,
+  "science_reopened": false,
+  "status": "DESCRIPTIVE_WORK_ALLOCATION_ONLY",
+  "top_candidate_issuer_keys": [
+    {
+      "groups": 4,
+      "key": "advanced_micro_devices_amd_nongaap"
+    },
+    {
+      "groups": 4,
+      "key": "apollo_global_management_apo_nongaap"
+    },
+    {
+      "groups": 4,
+      "key": "bed_bath_beyond_bbby_nongaap"
+    },
+    {
+      "groups": 4,
+      "key": "delta_air_lines_dal_nongaap"
+    },
+    {
+      "groups": 4,
+      "key": "fidelity_national_financial_fnf_nongaap"
+    },
+    {
+      "groups": 4,
+      "key": "hilton_grand_vacations_hgv_nongaap"
+    },
+    {
+      "groups": 4,
+      "key": "united_natural_foods_unfi_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "academy_sports_and_outdoors_aso"
+    },
+    {
+      "groups": 3,
+      "key": "bath_body_works_bbwi_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "chipotle_mexican_grill_cmg_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "cracker_barrel_old_country_store"
+    },
+    {
+      "groups": 3,
+      "key": "dick_sporting_goods_dks_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "dupont_de_nemours_dd_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "factset_research_systems_fds_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "fidelity_national_information_services_fis"
+    },
+    {
+      "groups": 3,
+      "key": "goodyear_tire_rubber_gt_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "hewlett_packard_enterprise_hpe_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "international_business_machines_ibm_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "lamb_weston_holdings_lw_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "new_york_times_nyt_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "palo_alto_networks_panw_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "papa_john_international_pzza_nongaap"
+    },
+    {
+      "groups": 3,
+      "key": "penske_automotive_group_pag_gaap"
+    },
+    {
+      "groups": 3,
+      "key": "zoominfo_technologies_gtm_nongaap_0pt26"
+    },
+    {
+      "groups": 2,
+      "key": "american_eagle_outfitters_aeo_gaap"
+    },
+    {
+      "groups": 2,
+      "key": "amplitude_ampl_nongaap_neg0pt01"
+    },
+    {
+      "groups": 2,
+      "key": "armour_uaa_nongaap_0pt02"
+    },
+    {
+      "groups": 2,
+      "key": "bank_new_york_mellon_bk"
+    },
+    {
+      "groups": 2,
+      "key": "beyond_meat_bynd_gaap_neg0pt08"
+    },
+    {
+      "groups": 2,
+      "key": "build_bear_workshop_bbw_gaap"
+    },
+    {
+      "groups": 2,
+      "key": "casey_general_stores_casy_gaap"
+    },
+    {
+      "groups": 2,
+      "key": "charles_river_laboratories_crl_nongaap"
+    },
+    {
+      "groups": 2,
+      "key": "charles_schwab_schw_nongaap_1pt36"
+    },
+    {
+      "groups": 2,
+      "key": "cintas_ctas_gaap_1pt23"
+    },
+    {
+      "groups": 2,
+      "key": "circle_internet_group_crcl_gaap"
+    },
+    {
+      "groups": 2,
+      "key": "citizens_financial_group_cfg_nongaap"
+    },
+    {
+      "groups": 2,
+      "key": "cloudflare_net_nongaap_0pt27"
+    },
+    {
+      "groups": 2,
+      "key": "coursera_cour_nongaap_0pt08"
+    },
+    {
+      "groups": 2,
+      "key": "eli_lilly_and_company_lly"
+    },
+    {
+      "groups": 2,
+      "key": "epsom_ewell_fc_vs_chipstead"
+    },
+    {
+      "groups": 2,
+      "key": "ford_motor_nongaap_0pt18"
+    },
+    {
+      "groups": 2,
+      "key": "gambling_com_group_gamb_nongaap"
+    },
+    {
+      "groups": 2,
+      "key": "getty_images_holdings_gety_gaap"
+    },
+    {
+      "groups": 2,
+      "key": "grab_holdings_gaap_0pt01"
+    },
+    {
+      "groups": 2,
+      "key": "halliburton_hal_nongaap_0pt54"
+    },
+    {
+      "groups": 2,
+      "key": "howard_hughes_holdings_hhh_gaap"
+    },
+    {
+      "groups": 2,
+      "key": "infosys_infy_gaap_0pt21"
+    },
+    {
+      "groups": 2,
+      "key": "integra_lifesciences_holdings_iart_nongaap"
+    },
+    {
+      "groups": 2,
+      "key": "intel_intc_nongaap"
+    },
+    {
+      "groups": 2,
+      "key": "interactive_brokers_group_ibkr_nongaap"
+    }
+  ],
+  "unresolved_prefix_rows": 0,
+  "version": "W4C-R1-EIR-IP-SUM-v1.0"
+}
