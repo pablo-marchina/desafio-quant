@@ -1,9 +1,12 @@
 {
   "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_EXECUTION_AUTHORIZATION",
-  "version": "W4C-R1-EIR-ODD-V1-1-EXEC-AUTH-v1.0",
+  "version": "W4C-R1-EIR-ODD-V1-1-EXEC-AUTH-v1.1",
   "date": "2026-08-16",
   "authorized_workflow": "W4-C R1 earnings IR official-domain capacity probe v1.1 execute",
   "authorized_scope": "same frozen 40-case capacity probe only",
+  "rerun_reason": "rerun after stale pre-timeout run 31944237193 was cancelled via authorized one-shot cancellation workflow",
+  "cancelled_prior_run_id": 31944237193,
+  "bounded_timeout_required": true,
   "protocol_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1.json",
   "executor_freeze_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_executor_freeze_v1_1.json",
   "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
