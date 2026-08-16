@@ -1,0 +1,31 @@
+name: W4-C R1 earnings IR official-domain failure diagnosis v1.1.1
+
+on:
+  push:
+    paths:
+      - scripts/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1_1_1.py
+      - registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_1_1.json
+      - registry/w4c_r1_earnings_ir_official_domain_resolution_manifest_v1_1_1.csv.gz
+      - registry/w4c_r1_earnings_ir_official_domain_navigation_manifest_v1_1_1.csv.gz
+      - registry/w4c_r1_earnings_ir_official_domain_body_manifest_v1_1_1.csv.gz
+
+permissions:
+  contents: write
+
+jobs:
+  diagnose-v1-1-1-failures:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Run outcome-blind v1.1.1 failure diagnosis
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1_1_1.py
+
+      - name: Commit v1.1.1 failure diagnosis
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1_1_1.json
+          git commit -m 'registry: diagnose W4-C R1 official-domain v1.1.1 failures'
+          git push
