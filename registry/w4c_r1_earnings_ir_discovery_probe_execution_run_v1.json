@@ -1,0 +1,23 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_RUN",
+  "capacity_decision": "ROUTE_INFEASIBLE_CURRENT_PROTOCOL",
+  "event_truth_verification_authorized": false,
+  "execution_scope": "FROZEN_40_EVENT_CAPACITY_PROBE_ONLY",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_MATERIALIZED",
+  "github_actions_run_id": 31924073904,
+  "n_final_backtestable_authorized": false,
+  "outcome_reveal_authorized": false,
+  "output_sha256": {
+    "registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json": "30b3e84076208d52223004debf7ea652ba0ebc179c8fd72c6cd122592917ecb6",
+    "registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz": "f1023ced43404128553d3571a9d25e3590aeec83191574f7450b28baf2ef7dc2",
+    "registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz": "3d18453d66f06391e536af69882e1bbc5e2c4e6577c0ef9499f06d23c20fc9c4"
+  },
+  "probe_success_by_year": {
+    "2025": 0,
+    "2026": 0
+  },
+  "probe_success_total": 0,
+  "source_main_commit": "41bbd79e1338277ce1867f1a1d209bbc43c82268",
+  "status": "MATERIALIZED_FROM_FROZEN_EXECUTOR",
+  "version": "W4C-R1-EIR-DP-RUN-v1.0"
+}
