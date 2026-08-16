@@ -1,0 +1,85 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_FREEZE",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-PROTOCOL-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_PRE_OUTCOME_RETURN_READ",
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_FROZEN_PRE_OUTCOME_REVEAL",
+  "authorization_basis": {
+    "gate_authorization": "registry/w4c_r1_expanded_economic_backtest_gate_authorization_v1.json",
+    "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+    "full_expansion_output_commit_sha": "90e8021"
+  },
+  "objective": "Derive and execute the largest defensible EARNINGS_EPS economic backtest from the frozen full 1355 official-domain expansion without post-hoc selection.",
+  "primary_universe": {
+    "source": "registry/w4c_r1_earnings_ir_official_domain_full_resolution_manifest_v1.csv.gz",
+    "family": "EARNINGS_EPS",
+    "raw_groups": 1355,
+    "inclusion_policy": "Include every group from the frozen full expansion that satisfies pre-specified eligibility; no performance-conditioned filtering is allowed.",
+    "date_policy": "Use the earliest through latest eligible events available in the frozen manifests; do not select a date window based on returns or hit rate."
+  },
+  "eligibility_rules": [
+    "The group must come from the frozen full 1355 official-domain expansion.",
+    "The event must have a deterministic ticker or ticker candidate that maps to a tradable common equity or ADR when prices are requested.",
+    "The event must have a deterministic event reference date before any return calculation.",
+    "Official-domain identity evidence must be preserved; failures remain in the audit trail and cannot be silently dropped except by pre-specified eligibility failure code.",
+    "Prediction-market signal must be point-in-time prior to the trading cutoff; no settlement or realized outcome can define the signal.",
+    "Historical prices for the security and benchmark must exist for the entry and exit sessions.",
+    "If any required input is missing, the row is marked ineligible with a deterministic failure reason instead of being manually rescued."
+  ],
+  "economic_rule_family": {
+    "primary_rule": "M2 probability sensor translated into equal-notional long/short only through pre-specified signal thresholds inherited from the prior economic protocol when available; otherwise report no promoted strategy and use eligibility/backtest as expansion evidence only.",
+    "fallback_rule": "C0_NO_TRADE remains the default economic champion unless the expanded gate beats it under the pre-specified decision rule.",
+    "side_policy": "Long and short rules must be symmetric or explicitly justified before returns are read.",
+    "position_sizing": "Equal-notional per eligible trade; no leverage optimization; no retrospective portfolio weighting.",
+    "entry_exit": "Calendar/session deterministic around the event reference date; if exact session alignment is unavailable, mark the row ineligible rather than moving the window after observing returns."
+  },
+  "costs_and_benchmark": {
+    "benchmark": "SPY matched over the same entry/exit sessions unless a pre-specified ticker-specific benchmark is available before execution; SPY is default to preserve continuity with the prior economic audit.",
+    "long_round_trip_cost_bps": 20,
+    "short_round_trip_cost_bps": 35,
+    "slippage_policy": "No additional slippage optimization; sensitivity may be reported only if pre-registered and non-promotional.",
+    "return_metric": "market_adjusted_net_return = strategy_net_return - benchmark_return"
+  },
+  "metrics": {
+    "primary": [
+      "N_final_backtestable",
+      "executed_trades",
+      "trade_rate",
+      "mean_market_adjusted_net_return_per_opportunity",
+      "mean_market_adjusted_net_return_per_trade",
+      "median_market_adjusted_net_return_per_trade",
+      "hit_rate",
+      "confidence_interval"
+    ],
+    "secondary": [
+      "side_counts_long_short",
+      "year_counts",
+      "eligibility_failure_counts",
+      "additive_opportunity_path_drawdown"
+    ],
+    "forbidden_unless_portfolio_path_is_pre_frozen": [
+      "portfolio Sharpe claim",
+      "standard max drawdown claim",
+      "deployable strategy claim"
+    ]
+  },
+  "statistical_decision_rule": {
+    "null": "C0_NO_TRADE remains champion.",
+    "promotion_requires": [
+      "positive primary mean market-adjusted net return per opportunity",
+      "confidence interval lower bound above zero or pre-specified one-sided test passing after multiplicity correction",
+      "no stop-rule or leakage violation",
+      "economic result survives cost assumptions"
+    ],
+    "negative_or_null_policy": "Negative, null or inconclusive results must remain reportable and cannot be rescued by changing universe, horizon, threshold, benchmark, costs or metric after returns are read."
+  },
+  "scientific_firewall_before_execution": {
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "n_final_backtestable_authorized": false,
+    "backtest_execution_authorized": false
+  },
+  "execution_next_step": "Create/freeze executor; then create a separate execution authorization that explicitly opens only the reads needed to determine N_final_backtestable and compute the frozen economic metrics."
+}
