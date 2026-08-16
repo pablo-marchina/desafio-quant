@@ -1,6 +1,6 @@
 {
   "artifact": "FINAL_PDF_SUBMISSION_FREEZE",
-  "date_utc": "2026-08-16T22:49:11.274167Z",
+  "date_utc": "2026-08-16T22:50:01.581862Z",
   "funded_portfolio_accounting": {
     "active_terminal_wealth": -0.02453043084752604,
     "annualized_sortino_sqrt252": 0.09760953014186484,
@@ -31,10 +31,10 @@
     ],
     "pages": 5,
     "path": "dist/final_submission/ARGOS_final_submission.pdf",
-    "sha256": "b0d8113dedc647911604114eebd545e09827627e7ba6e7ea29e04b8a1e967bee",
+    "sha256": "2c5b7a21d26baf2ed932a82c7c2e7582fca56c01060d660e34ca1e3f76d47f35",
     "source_page_hashes": {
       "fig01_strategy_pipeline.svg": "b8fb59e5a6d3ea6832bd38dcd7ac3fd8b2a315fe56cb742d3e74f1a53ac90fce",
-      "fig02_model_reduction.svg": "c525334304bf2de8b1adbe300b40ef7d4ca545071280d8d5c8f0807d869755ea",
+      "fig02_model_reduction.svg": "1a88556c85f1eb0a15d126442bcaed9b9a7dd20b31a824d4e7ac2342fdc61f6b",
       "fig03_h2_results.svg": "6170d8bf1427c76d218232b99f65728bf91239681d6aa82a902404446abda29d",
       "fig04_economic_backtest.svg": "9b7b25bce7492779bbfc5405e51431ecb8da84b9d4bcc8c436f42daaa8bc5392",
       "fig05_genai_future.svg": "19d1a11e960f04463c8c92b00cc0f1218ef5d6c83b2a6846ef4842cd8e90ad48"
