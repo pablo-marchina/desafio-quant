@@ -1,0 +1,128 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL",
+  "version": "W4C-R1-EIR-ODD-v1.1",
+  "date": "2026-08-16",
+  "status": "FROZEN_PROTOCOL_PRE_EXTERNAL_REQUEST",
+  "parent_protocol": "W4C-R1-EIR-ODD-v1.0",
+  "purpose": "Pre-register a navigation/transport-only amendment after v1.0 achieved CONDITIONAL_ROUTE but not FULL_ROUTE_TECHNICALLY_VIABLE on the frozen 40-case probe.",
+  "triggering_evidence": {
+    "result_freeze_path": "registry/w4c_r1_earnings_ir_official_domain_result_freeze_v1.json",
+    "failure_diagnosis_path": "registry/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1.json",
+    "v1_0_capacity_decision": "CONDITIONAL_ROUTE",
+    "v1_0_sample_size": 40,
+    "v1_0_probe_success_total": 19,
+    "v1_0_probe_success_by_year": {"2025": 7, "2026": 12},
+    "v1_0_unique_wikidata_resolution_total": 27,
+    "v1_0_failure_split": {
+      "no_unique_wikidata_ticker_p856_resolution": 13,
+      "resolved_but_body_candidate_or_identity_failed": 8
+    },
+    "v1_0_failure_layer_counts": {
+      "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION": 13,
+      "RESOLVED_BODY_HTTP_NON_200_ONLY": 6,
+      "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED": 2
+    }
+  },
+  "scope_of_amendment": {
+    "allowed": [
+      "ticker/P856 navigation disambiguation when Wikidata returns multiple candidate entities",
+      "first-party official-domain transport hardening",
+      "first-party sitemap recursion and sitemap-index parsing",
+      "first-party homepage and investor-relations one-hop link expansion",
+      "official subdomain probes under an already accepted official P856 root",
+      "deterministic path-template expansion on accepted official domains"
+    ],
+    "forbidden": [
+      "changing the frozen 40-case sample",
+      "changing capacity thresholds",
+      "using earnings numeric outcomes",
+      "using prediction-market settlement",
+      "using realized returns or ARGOS PnL",
+      "using SEC, news, aggregators, search snippets, or third-party pages as truth voters",
+      "executing the 1,355-event earnings route before a v1.1 capacity result is frozen"
+    ]
+  },
+  "sample_binding": {
+    "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+    "sample_version": "W4C-R1-EIR-DP-SAMPLE-v1.0",
+    "sample_size": 40,
+    "allocation": {"2025": 20, "2026": 20},
+    "selection_change_allowed": false,
+    "resampling_allowed": false,
+    "rerun_scope": "same frozen 40 cases, not failure-only and not full 1355 queue"
+  },
+  "issuer_resolution_v1_1": {
+    "base_source": "Wikidata Query Service P249 ticker symbol and P856 official website",
+    "truth_voting": false,
+    "new_disambiguation_rule": "If P249/P856 returns multiple candidate entities for a ticker, accept a unique entity only when exactly one candidate's English label, alias text, or normalized P856 host is compatible with issuer identity tokens derived from the frozen pretruth_subject_key. If none or more than one candidate remains, fail closed as UNRESOLVED_NO_GUESS.",
+    "zero_entity_rule": "If no P249/P856 entity exists, do not guess an issuer. The case remains UNRESOLVED_NO_GUESS unless already covered by an explicitly frozen input-repair manifest created before external requests.",
+    "allowed_identity_inputs": ["ticker candidate", "frozen pretruth_subject_key issuer tokens", "Wikidata labels/aliases", "Wikidata P856 host"],
+    "disallowed_identity_inputs": ["earnings result values", "market settlement", "post-result news", "returns", "PnL"]
+  },
+  "official_domain_transport_v1_1": {
+    "allowed_roots": ["accepted P856 host after stripping leading www", "subdomains of the accepted normalized P856 host"],
+    "additional_first_party_entrypoints": [
+      "robots.txt sitemap URLs with sitemap-index recursion depth 2",
+      "sitemap.xml and sitemap_index.xml on accepted official host",
+      "homepage canonical/alternate links and first-party hrefs containing investor, ir, financial, results, newsroom, news, press, events, presentations, quarterly, earnings",
+      "one-hop crawl from first-party investor-relations landing pages only",
+      "official subdomain roots: investors.<host>, investor.<host>, ir.<host>, newsroom.<host>"
+    ],
+    "additional_path_templates": [
+      "/investors/news-events/press-releases",
+      "/investors/news-and-events/press-releases",
+      "/investor-relations/news-events/press-releases",
+      "/investor-relations/news-and-events/press-releases",
+      "/investors/financial-information/quarterly-results",
+      "/investor-relations/financial-information/quarterly-results",
+      "/investors/events-and-presentations",
+      "/investor-relations/events-and-presentations",
+      "/news-releases",
+      "/press-releases"
+    ],
+    "http_transport_hardening": {
+      "user_agent": "browser-like descriptive research UA",
+      "accept_language": "en-US,en;q=0.9",
+      "retry_policy": "up to 3 GET attempts with deterministic backoff for 0, 429, and 5xx statuses",
+      "success_http_status": 200,
+      "non_200_success_allowed": false,
+      "body_content_types": ["text/html", "application/xhtml+xml"]
+    },
+    "maximum_candidate_urls_per_group": 24,
+    "maximum_first_party_link_depth": 1
+  },
+  "candidate_acceptance_v1_1": {
+    "official_host_required": true,
+    "http_status_required": 200,
+    "issuer_identity_binding_required": true,
+    "identity_basis": "issuer core identity tokens from frozen pretruth_subject_key must bind to an official-domain body; earnings numeric values are not parsed, compared, or persisted",
+    "search_snippet_or_directory_text_can_pass": false,
+    "third_party_page_can_pass": false
+  },
+  "capacity_gate": {
+    "FULL_ROUTE_TECHNICALLY_VIABLE": {"total_min": 24, "year_min": 10},
+    "CONDITIONAL_ROUTE": {"total_min": 12, "year_min": 5},
+    "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "otherwise",
+    "thresholds_unchanged_from_v1_0": true,
+    "thresholds_frozen_before_external_requests": true
+  },
+  "required_outputs": [
+    "v1.1 resolution manifest",
+    "v1.1 navigation/candidate manifest",
+    "v1.1 official-body retrieval manifest",
+    "v1.1 capacity summary",
+    "v1.1 execution manifest"
+  ],
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_allowed": false,
+    "prediction_market_settlement_allowed": false,
+    "prediction_market_performance_allowed": false,
+    "realized_returns_allowed": false,
+    "argos_pnl_allowed": false,
+    "n_final_backtestable_authorized": false,
+    "event_truth_verification_authorized": false,
+    "economic_model_selection_authorized": false
+  },
+  "next_allowed_action": "Freeze an implementation executor bound to this protocol, then run exactly one v1.1 40-case capacity probe before considering any wider earnings execution.",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL_V1_1_FROZEN_PRE_REQUEST"
+}
