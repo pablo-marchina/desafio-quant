@@ -5,8 +5,8 @@
 </defs>
 <rect width="1600" height="900" fill="#07111F"/>
 <text x="80" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5">04 • BACKTEST</text>
-<text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="42" font-weight="700" fill="#F4F7FB">Backtest ampliado: gate bloqueou PnL com honestidade</text>
-<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="400" fill="#9FB0C3">A expansão chegou a 1.355 eventos, mas só 109 tinham sinal PIT antes do cutoff; preço/retorno não foi autorizado.</text>
+<text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="40" font-weight="700" fill="#F4F7FB">Portfólio financiado congelado: métrica de asset, decisão de disciplina</text>
+<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#9FB0C3">FP-v1 transforma os 34 trades R1 em NAV diária, Sharpe, drawdown, caixa, exposição e matched-SPY.</text>
 
 <path d="M 1411.5 85 Q 1450 57.5 1488.5 85" fill="none" stroke="#49C6E5" stroke-width="2.75"/>
 <path d="M 1421.4 89.4 Q 1450 111.4 1478.6 89.4" fill="none" stroke="#2DD4BF" stroke-width="2.75"/>
@@ -15,48 +15,51 @@
 <circle cx="1450" cy="87.75" r="2.75" fill="#49C6E5"/>
 <text x="1450" y="135.6" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="13.2" font-weight="700" fill="#F4F7FB" text-anchor="middle">ARGOS</text>
 
-<rect x="80" y="215" width="1440" height="120" rx="22" fill="#0E1B2B" stroke="#294158" stroke-width="2"/>
-<text x="120" y="260" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#F4F7FB">Funil congelado antes de PnL</text>
-<text x="120" y="305" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">official-domain universe → ticker/data determinísticos → sinal PIT pré-cutoff → autorização de preço/retorno</text>
-<line x1="760" y1="276" x2="980" y2="276" stroke="#F4BF4F" stroke-width="4" marker-end="url(#arrowAmber)"/>
-<text x="1010" y="284" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#F4BF4F">bloqueio no sinal PIT</text>
+<rect x="80" y="212" width="1440" height="145" rx="22" fill="#0E1B2B" stroke="#294158" stroke-width="2"/>
+<text x="120" y="258" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#F4F7FB">FP-v1 • contabilidade de portfólio financiado sobre R1 já congelado</text>
+<text x="120" y="300" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">Capital C0=1 • 10 sessões • 21 long / 13 short • custos 20/35 bps • cash gate sem alavancagem implícita</text>
+<line x1="1040" y1="285" x2="1240" y2="285" stroke="#49C6E5" stroke-width="4" marker-end="url(#arrowCyan)"/>
+<text x="1268" y="293" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#49C6E5">NAV diária real</text>
+<text x="120" y="335" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#F4BF4F">Objeto correto: diagnóstico financiado descritivo; não reabre H2 e não transforma R1 em alpha validado.</text>
 
-<rect x="80" y="375" width="330" height="170" rx="20" fill="#14283D" stroke="#294158" stroke-width="2"/>
-<text x="110" y="420" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#9FB0C3">Universo expandido</text>
-<text x="110" y="482" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="700" fill="#F4F7FB">1.355</text>
-<text x="110" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" fill="#9FB0C3">EARNINGS_EPS official-domain</text>
+<rect x="80" y="390" width="272" height="165" rx="20" fill="#14283D" stroke="#294158" stroke-width="2"/>
+<text x="110" y="430" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#9FB0C3">NAV terminal</text>
+<text x="110" y="488" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="44" font-weight="700" fill="#2DD4BF">1,00197</text>
+<text x="110" y="526" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">retorno +0,1968%</text>
 
-<rect x="440" y="375" width="330" height="170" rx="20" fill="#14283D" stroke="#294158" stroke-width="2"/>
-<text x="470" y="420" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#9FB0C3">Ticker/data</text>
-<text x="470" y="482" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="700" fill="#2DD4BF">1.339</text>
-<text x="470" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" fill="#9FB0C3">com ticker candidato; 1.355 com data</text>
+<rect x="382" y="390" width="272" height="165" rx="20" fill="#14283D" stroke="#294158" stroke-width="2"/>
+<text x="412" y="430" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#9FB0C3">Sharpe HAC</text>
+<text x="412" y="488" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="44" font-weight="700" fill="#F4BF4F">0,075</text>
+<text x="412" y="526" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">lag 10; vol anual 6,16%</text>
 
-<rect x="800" y="375" width="330" height="170" rx="20" fill="#14283D" stroke="#F4BF4F" stroke-width="2"/>
-<text x="830" y="420" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#9FB0C3">Sinal PIT v4</text>
-<text x="830" y="482" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="54" font-weight="700" fill="#F4BF4F">109</text>
-<text x="830" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" fill="#9FB0C3">abaixo do threshold de 300</text>
+<rect x="684" y="390" width="272" height="165" rx="20" fill="#241A20" stroke="#FF6B6B" stroke-width="2"/>
+<text x="714" y="430" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#9FB0C3">Max drawdown</text>
+<text x="714" y="488" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="44" font-weight="700" fill="#FF6B6B">−6,384%</text>
+<text x="714" y="526" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">136 sessões underwater</text>
 
-<rect x="1160" y="375" width="360" height="170" rx="20" fill="#241A20" stroke="#FF6B6B" stroke-width="2"/>
-<text x="1190" y="420" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#9FB0C3">Decisão do gate</text>
-<text x="1190" y="475" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="34" font-weight="700" fill="#FF6B6B">NÃO RODAR PnL</text>
-<text x="1190" y="520" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" fill="#9FB0C3">sem preço/retorno, sem settlement</text>
+<rect x="986" y="390" width="272" height="165" rx="20" fill="#14283D" stroke="#294158" stroke-width="2"/>
+<text x="1016" y="430" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#9FB0C3">Matched-SPY</text>
+<text x="1016" y="488" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="44" font-weight="700" fill="#F4F7FB">+2,650%</text>
+<text x="1016" y="526" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">active R1: −2,453 p.p.</text>
 
-<rect x="80" y="585" width="690" height="195" rx="20" fill="#0E1B2B" stroke="#294158" stroke-width="2"/>
-<text x="115" y="630" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="700" fill="#F4F7FB">Diagnóstico de elegibilidade v3</text>
-<text x="115" y="678" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#2DD4BF">109</text>
-<text x="180" y="678" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#9FB0C3">PASS_PRE_PRICE_ELIGIBILITY</text>
-<text x="115" y="718" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#F4BF4F">1.230</text>
-<text x="195" y="718" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#9FB0C3">NO_PIT_SIGNAL_BEFORE_CUTOFF</text>
-<text x="115" y="758" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#FF6B6B">16</text>
-<text x="165" y="758" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#9FB0C3">NO_DETERMINISTIC_TICKER</text>
+<rect x="1288" y="390" width="232" height="165" rx="20" fill="#14283D" stroke="#294158" stroke-width="2"/>
+<text x="1318" y="430" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#9FB0C3">Exposição</text>
+<text x="1318" y="488" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="44" font-weight="700" fill="#49C6E5">9</text>
+<text x="1378" y="488" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#49C6E5">pos.</text>
+<text x="1318" y="526" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">gross peak 101,6%</text>
 
-<rect x="830" y="585" width="690" height="195" rx="20" fill="#14283D" stroke="#F4BF4F" stroke-width="2"/>
-<text x="865" y="630" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="700" fill="#F4F7FB">Último backtest econômico completo permanece</text>
-<text x="865" y="678" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#9FB0C3">R1 • T−1 • 10 sessões • 108 oportunidades • 34 trades</text>
-<text x="865" y="720" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#FF6B6B">MA net −0,2050%</text>
-<text x="1105" y="720" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" fill="#9FB0C3">CI95 cruza zero; Holm p=1,0</text>
-<text x="865" y="760" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#F4BF4F">C0_NO_TRADE continua champion econômico</text>
+<rect x="80" y="590" width="690" height="190" rx="20" fill="#0E1B2B" stroke="#294158" stroke-width="2"/>
+<text x="115" y="632" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="700" fill="#F4F7FB">Interpretação econômica financiada</text>
+<text x="115" y="675" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#9FB0C3">O livro quase preserva capital em termos absolutos, mas perde para o pseudo-book SPY causalmente alinhado.</text>
+<text x="115" y="715" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#FF6B6B">Sem evidência robusta de active outperformance: IC95 bootstrap cruza zero.</text>
+<text x="115" y="755" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#F4BF4F">Decisão: NO_PROMOTION_R1 → C0_NO_TRADE preservado</text>
 
-<text x="80" y="835" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#2DD4BF">Análise: ARGOS expandiu o universo, mas recusou transformar cobertura insuficiente em claim de alpha.</text>
-<text x="80" y="865" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#9FB0C3">Política final: reportar 1.355 como infraestrutura official-domain e usar o backtest completo de 108/109 como evidência econômica, sem PnL ampliado.</text>
+<rect x="830" y="590" width="690" height="190" rx="20" fill="#14283D" stroke="#F4BF4F" stroke-width="2"/>
+<text x="865" y="632" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="700" fill="#F4F7FB">Expansão 1.355: gate ampliado continua bloqueado</text>
+<text x="865" y="675" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#9FB0C3">official-domain EARNINGS_EPS: 1.355 eventos • ticker/data: 1.339</text>
+<text x="865" y="715" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#F4BF4F">sinal PIT v4 final: 109 &lt; threshold 300 → sem preço/retorno ampliado</text>
+<text x="865" y="755" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#FF6B6B">NÃO RODAR PnL ampliado; não ler settlement/outcomes</text>
+
+<text x="80" y="835" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#2DD4BF">Resultado que maximiza rigor: backtest financiado completo + recusa explícita de capital onde a cobertura PIT é insuficiente.</text>
+<text x="80" y="865" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#9FB0C3">A banca vê Sharpe/equity/drawdown reais, mas a conclusão permanece científica: disciplina antes de promoção de estratégia.</text>
 </svg>
