@@ -1,0 +1,32 @@
+name: W4-C R1 expanded trajectory PIT signal map v2
+
+on:
+  push:
+    paths:
+      - 'registry/w4c_r1_expanded_signal_map_v2_execute_authorization_v1.json'
+
+permissions:
+  contents: write
+
+jobs:
+  build-signal-map-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build expanded trajectory PIT signal map without outcome reads
+        run: python3 scripts/w4c_r1_expanded_signal_map_builder_v2.py
+
+      - name: Commit signal map v2 outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4c_r1_expanded_economic_backtest_signal_map_v2.csv \
+            registry/w4c_r1_expanded_economic_backtest_signal_map_summary_v2.json
+          git commit -m 'registry: materialize W4-C R1 expanded trajectory PIT signal map v2'
+          git push origin HEAD:main
