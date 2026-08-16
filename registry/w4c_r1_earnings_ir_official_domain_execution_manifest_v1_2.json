@@ -1,0 +1,33 @@
+{
+  "amendment_scope": "targeted_resolution_and_transport_hardening_only",
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTION_MANIFEST",
+  "capacity_decision": "FULL_ROUTE_TECHNICALLY_VIABLE",
+  "executor": "w4c_r1_earnings_ir_official_domain_discovery_executor_v1_2.py",
+  "external_requests_performed": true,
+  "outputs": {
+    "navigation_sha256": "fc90ec7b5b1e21876fb51521a3b9b45ab4045b85e31e246c38da397dfaf9b919",
+    "official_body_sha256": "de709235bacafd83662de692a04495e238559fb222bc213b9b1b13b0f9e969aa",
+    "resolution_sha256": "e75264d3d8277c8cb9d83e6347870ecd9d66f129a20b6cadcb9aa8e1a9c01b10",
+    "summary_sha256": "13e59bed4ba9b88bba7269e9aa8cd59a7ff37116eb9326351d3b45aba7f71738"
+  },
+  "protocol": "w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_2.json",
+  "result_version": "W4C-R1-EIR-ODD-RESULT-v1.2",
+  "sample": "w4c_r1_earnings_ir_probe_sample_v1.json",
+  "sample_size": 40,
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "event_truth_verification_used": false,
+    "n_final_backtestable_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false
+  },
+  "transport_bounding": {
+    "http_attempts_per_candidate": 1,
+    "max_candidates_per_resolved_group": 12,
+    "recursive_sitemap_crawl_enabled": false,
+    "request_timeout_seconds": 8,
+    "timeout_or_transport_error_policy": "FAIL_CLOSED_NON_SUCCESS_AND_MATERIALIZE_OUTPUTS",
+    "wdqs_timeout_seconds": 25
+  }
+}

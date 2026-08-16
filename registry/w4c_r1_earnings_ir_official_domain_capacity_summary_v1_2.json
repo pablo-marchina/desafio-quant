@@ -1,0 +1,23 @@
+{
+  "amendment_scope": "targeted_resolution_and_transport_hardening_only",
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_CAPACITY_SUMMARY",
+  "candidate_navigation_rows": 131,
+  "capacity_decision": "FULL_ROUTE_TECHNICALLY_VIABLE",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_CAPACITY_PROBE_V1_2_MATERIALIZED",
+  "max_candidates_per_resolved_group": 12,
+  "n_final_backtestable_authorized": false,
+  "official_body_attempt_rows": 131,
+  "outcome_reveal_authorized": false,
+  "probe_success_by_year": {
+    "2025": 10,
+    "2026": 14
+  },
+  "probe_success_total": 24,
+  "protocol_version": "W4C-R1-EIR-ODD-v1.2",
+  "request_timeout_seconds": 8,
+  "sample_size": 40,
+  "thresholds_unchanged_from_v1_0": true,
+  "unique_wikidata_resolution_total": 31,
+  "version": "W4C-R1-EIR-ODD-RESULT-v1.2",
+  "wdqs_timeout_seconds": 25
+}
