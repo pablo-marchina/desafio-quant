@@ -2,8 +2,8 @@
 <defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#9FB0C3"/></marker><marker id="arrowAmber" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#F4BF4F"/></marker></defs>
 <rect width="1600" height="900" fill="#07111F"/>
 <text x="80" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5" text-anchor="start">04 • BACKTEST</text>
-<text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="40" font-weight="700" fill="#F4F7FB" text-anchor="start">Backtest financiado: quase flat, mas abaixo do benchmark</text>
-<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#9FB0C3" text-anchor="start">FP-v1 usa NAV diária, Sharpe e drawdown sobre os trades R1 já congelados.</text>
+<text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="40" font-weight="700" fill="#F4F7FB" text-anchor="start">Backtest financiado: quase neutro, mas abaixo do SPY</text>
+<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#9FB0C3" text-anchor="start">FP-v1 usa curva de capital diária, Sharpe e maior queda sobre trades R1 congelados.</text>
 <path d="M 1411.5 85 Q 1450 57.5 1488.5 85" fill="none" stroke="#49C6E5" stroke-width="2.75"/>
 <path d="M 1421.4 89.4 Q 1450 111.4 1478.6 89.4" fill="none" stroke="#2DD4BF" stroke-width="2.75"/>
 <path d="M 1403.8 94.9 Q 1430.75 125.7 1461.0 111.4" fill="none" stroke="#F4BF4F" stroke-width="2.2" stroke-dasharray="9,6"/>
@@ -13,34 +13,34 @@
 <text x="115" y="262" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#49C6E5" text-anchor="start">Portfólio financiado R1</text>
 <text x="115" y="300" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="500" fill="#9FB0C3" text-anchor="start">Capital contábil C0=1 • 34 trades • 10 sessões • sem reabrir H2</text>
 <rect x="115" y="335" width="250" height="115" rx="16" fill="#14283D" stroke="#2DD4BF" stroke-width="2"/>
-<text x="137" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">NAV final</text>
+<text x="137" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Capital final</text>
 <text x="137" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#2DD4BF" text-anchor="start">1,00197</text>
-<text x="137" y="437" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">+0,1968%</text>
+<text x="137" y="437" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">NAV +0,1968%</text>
 <rect x="395" y="335" width="250" height="115" rx="16" fill="#14283D" stroke="#49C6E5" stroke-width="2"/>
-<text x="417" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Matched-SPY</text>
+<text x="417" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">SPY alinhado</text>
 <text x="417" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#49C6E5" text-anchor="start">1,02650</text>
 <text x="417" y="437" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">+2,650%</text>
 <rect x="675" y="335" width="250" height="115" rx="16" fill="#14283D" stroke="#FF6B6B" stroke-width="2"/>
-<text x="697" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Active R1</text>
+<text x="697" y="373" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Diferença vs SPY</text>
 <text x="697" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#FF6B6B" text-anchor="start">-2,453 p.p.</text>
-<text x="697" y="437" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">abaixo do benchmark</text>
+<text x="697" y="437" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">abaixo da comparação</text>
 <rect x="115" y="480" width="250" height="115" rx="16" fill="#14283D" stroke="#F4BF4F" stroke-width="2"/>
-<text x="137" y="518" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Sharpe HAC</text>
+<text x="137" y="518" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Sharpe ajustado</text>
 <text x="137" y="555" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#F4BF4F" text-anchor="start">0,075</text>
 <text x="137" y="582" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">baixo / descritivo</text>
 <rect x="395" y="480" width="250" height="115" rx="16" fill="#14283D" stroke="#FF6B6B" stroke-width="2"/>
-<text x="417" y="518" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Max drawdown</text>
+<text x="417" y="518" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Maior queda</text>
 <text x="417" y="555" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#FF6B6B" text-anchor="start">-6,384%</text>
 <text x="417" y="582" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">23/02/2026</text>
 <rect x="675" y="480" width="250" height="115" rx="16" fill="#14283D" stroke="#294158" stroke-width="2"/>
 <text x="697" y="518" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="700" fill="#9FB0C3" text-anchor="start">Exposição máx.</text>
 <text x="697" y="555" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="700" fill="#F4F7FB" text-anchor="start">9 posições</text>
-<text x="697" y="582" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">gross peak 101,6%</text>
+<text x="697" y="582" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="14" font-weight="500" fill="#9FB0C3" text-anchor="start">pico 101,6%</text>
 <rect x="115" y="645" width="820" height="90" rx="16" fill="#07111F" stroke="#294158" stroke-width="1"/>
-<text x="145" y="680" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="start">Leitura econômica: quase flat em retorno absoluto, mas perdeu para o SPY alinhado.</text>
+<text x="145" y="680" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#F4F7FB" text-anchor="start">Leitura econômica: quase neutro em retorno absoluto, mas abaixo do SPY alinhado.</text>
 <text x="145" y="715" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" font-weight="700" fill="#F4BF4F" text-anchor="start">Portanto, NO_PROMOTION_R1 → preservar C0_NO_TRADE.</text>
 <rect x="1020" y="215" width="500" height="565" rx="22" fill="#0E1B2B" stroke="#294158" stroke-width="2"/>
-<text x="1055" y="262" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#F4BF4F" text-anchor="start">PnL ampliado: bloqueado</text>
+<text x="1055" y="262" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#F4BF4F" text-anchor="start">Lucro/prejuízo ampliado: bloqueado</text>
 <text x="1055" y="304" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#9FB0C3" text-anchor="start">Cobertura PIT abaixo do mínimo pré-definido.</text>
 <rect x="1080" y="310" width="360" height="90" rx="18" fill="#14283D" stroke="#49C6E5" stroke-width="2"/>
 <text x="1110" y="350" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="35" font-weight="700" fill="#49C6E5" text-anchor="start">1.355</text>
@@ -52,8 +52,8 @@
 <line x1="1260" y1="518" x2="1260" y2="523" stroke="#9FB0C3" stroke-width="3" marker-end="url(#arrow)"/>
 <rect x="1080" y="530" width="360" height="90" rx="18" fill="#14283D" stroke="#FF6B6B" stroke-width="2"/>
 <text x="1110" y="570" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="35" font-weight="700" fill="#FF6B6B" text-anchor="start">109 &lt; 300</text>
-<text x="1110" y="601" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">sem autorização de PnL</text>
+<text x="1110" y="601" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">sem autorização de retorno</text>
 <rect x="1055" y="685" width="410" height="55" rx="26" fill="#241A20" stroke="#FF6B6B" stroke-width="2"/>
-<text x="1260" y="722" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#FF6B6B" text-anchor="middle">sem preço/retorno, sem settlement</text>
-<text x="80" y="835" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#2DD4BF" text-anchor="start">Conclusão: o relatório ganha métricas de portfólio sem criar claim de promoção; o sistema sabe parar.</text>
+<text x="1260" y="722" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#FF6B6B" text-anchor="middle">sem preço/retorno, sem fechamento</text>
+<text x="80" y="835" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#2DD4BF" text-anchor="start">Conclusão: há métricas de portfólio, mas sem promoção da estratégia; o sistema sabe parar.</text>
 </svg>
