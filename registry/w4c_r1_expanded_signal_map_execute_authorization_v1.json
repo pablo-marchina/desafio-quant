@@ -1,0 +1,42 @@
+{
+  "artifact": "W4C_R1_EXPANDED_SIGNAL_MAP_EXECUTE_AUTHORIZATION",
+  "version": "W4C-R1-EXPANDED-SIGNAL-MAP-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_BUILD_PIT_SIGNAL_MAP_FROM_ART028_FEATURE_MATRIX",
+  "authorization_basis": {
+    "signal_source_inventory": "registry/w4c_r1_expanded_signal_source_inventory_v1.json",
+    "signal_source_inventory_gate": "PASS_SIGNAL_SOURCE_SCHEMA_INVENTORY_MATERIALIZED_PRE_PNL_WITH_DATA_DIR",
+    "selected_source": "data/art028_h2_feature_matrix.csv.gz",
+    "selected_source_reason": "contains frozen PIT signal fields p_cutoff, safe_cutoff_utc, movement features, ticker and company_event_date without settlement/returns/PNL columns",
+    "builder_script": "scripts/w4c_r1_expanded_signal_map_builder_v1.py",
+    "builder_script_commit": "0644da8aa1a2683f25cde23dff29d71633132027"
+  },
+  "authorized_scope": {
+    "read_pre_pnl_eligibility_manifest": true,
+    "read_art028_feature_matrix_pit_signal_fields": true,
+    "join_by_ticker_and_event_date": true,
+    "write_signal_map": true,
+    "write_signal_map_summary": true
+  },
+  "not_authorized": {
+    "read_settlement_values": true,
+    "read_earnings_outcomes": true,
+    "read_realized_returns": true,
+    "read_security_prices_or_price_returns": true,
+    "read_benchmark_returns": true,
+    "read_argos_pnl": true,
+    "compute_economic_backtest": true,
+    "promote_strategy": true
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false,
+    "benchmark_return_read": false,
+    "argos_pnl_read": false,
+    "economic_backtest_execution": false
+  },
+  "gate_decision": "PASS_W4C_R1_EXPANDED_SIGNAL_MAP_BUILD_AUTHORIZED_PRE_PNL"
+}
