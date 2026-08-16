@@ -1,0 +1,40 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_STATE",
+  "version": "W4C-R1-EIR-ODD-STATE-v1.1",
+  "date": "2026-08-16",
+  "status": "V1_1_PROTOCOL_FROZEN_PRE_RERUN",
+  "completed_steps": {
+    "freeze_v1_0_conditional_route_result": true,
+    "outcome_blind_failure_diagnosis_materialized": true,
+    "failure_split_materialized": true,
+    "technical_navigation_transport_amendment_v1_1_preregistered": true,
+    "v1_1_rerun_executed": false
+  },
+  "authoritative_v1_0_result": {
+    "capacity_decision": "CONDITIONAL_ROUTE",
+    "sample_size": 40,
+    "probe_success_total": 19,
+    "probe_success_by_year": {"2025": 7, "2026": 12},
+    "unique_wikidata_resolution_total": 27
+  },
+  "authoritative_failure_split": {
+    "failure_total": 21,
+    "no_unique_wikidata_ticker_p856_resolution": 13,
+    "resolved_but_body_candidate_or_identity_failed": 8,
+    "resolved_body_http_non_200_only": 6,
+    "resolved_body_retrieved_identity_binding_failed": 2
+  },
+  "frozen_artifacts": {
+    "v1_0_result_freeze": "registry/w4c_r1_earnings_ir_official_domain_result_freeze_v1.json",
+    "v1_0_failure_diagnosis": "registry/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1.json",
+    "v1_1_protocol": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1.json"
+  },
+  "next_allowed_action": "Implement and freeze a v1.1 executor bound to registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1.json, then rerun exactly the same 40-case capacity probe. Do not execute the 1,355 earnings queue before the v1.1 result is frozen.",
+  "forbidden_until_after_v1_1_result_freeze": [
+    "full 1355 earnings execution",
+    "sample replacement or resampling",
+    "threshold changes",
+    "outcome, settlement, realized-return, or ARGOS-PnL reads"
+  ],
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_STATE_FROZEN_PRE_RERUN"
+}
