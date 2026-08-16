@@ -1,0 +1,23 @@
+name: W4-C R1 earnings IR input repair v1
+
+on:
+  push:
+    paths:
+      - scripts/w4c_r1_earnings_ir_input_repair_v1.py
+      - registry/w4c_r1_earnings_ir_queue_v1.csv.gz
+      - registry/w4c_r1_earnings_ir_probe_sample_v1.json
+      - registry/w4c_r1_earnings_ticker_profile_v1.json
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-repair-input:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inspect frozen sample/profile mismatch using frozen queue only
+        run: python scripts/w4c_r1_earnings_ir_input_repair_v1.py
