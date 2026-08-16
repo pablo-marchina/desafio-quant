@@ -1,0 +1,79 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL",
+  "version": "W4C-R1-EIR-ODD-v1.2",
+  "date": "2026-08-16",
+  "status": "FROZEN_PROTOCOL_PRE_EXTERNAL_REQUEST",
+  "parent_protocol": "W4C-R1-EIR-ODD-v1.1.1",
+  "trigger_evidence": {
+    "v1_1_1_capacity_decision": "CONDITIONAL_ROUTE",
+    "v1_1_1_probe_success_total": 22,
+    "v1_1_1_probe_success_by_year": {
+      "2025": 8,
+      "2026": 14
+    },
+    "v1_1_1_failure_total": 18,
+    "dominant_failure_layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+    "failure_layer_counts": {
+      "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION": 9,
+      "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY": 6,
+      "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED": 3
+    },
+    "gap_to_full_total": 2,
+    "gap_to_full_2025": 2
+  },
+  "amendment_scope": "targeted_resolution_and_transport_hardening_only",
+  "sample_binding": {
+    "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+    "sample_size": 40,
+    "selection_change_allowed": false,
+    "resampling_allowed": false,
+    "failure_only_rerun_allowed": false,
+    "same_40_case_probe_required": true
+  },
+  "allowed_changes_from_v1_1_1": {
+    "max_candidates_per_resolved_group": 12,
+    "request_timeout_seconds": 8,
+    "wdqs_timeout_seconds": 25,
+    "http_attempts_per_candidate": 1,
+    "recursive_sitemap_crawl_enabled": false,
+    "candidate_expansion": "bounded first-party IR/news/earnings path expansion only",
+    "transport_error_policy": "fail_closed_non_success_and_materialize_outputs"
+  },
+  "forbidden_changes": {
+    "change_sample": false,
+    "change_thresholds": false,
+    "read_earnings_numeric_outcomes": false,
+    "read_prediction_market_settlement": false,
+    "read_realized_returns": false,
+    "read_argos_pnl": false,
+    "authorize_n_final_backtestable": false,
+    "execute_full_1355_before_result_freeze": false
+  },
+  "capacity_gate": {
+    "thresholds_unchanged_from_v1_0": true,
+    "full_route_technically_viable": {
+      "total_success_min": 24,
+      "per_year_success_min": 10
+    },
+    "conditional_route": {
+      "total_success_min": 12,
+      "per_year_success_min": 5
+    }
+  },
+  "required_outputs": [
+    "registry/w4c_r1_earnings_ir_official_domain_resolution_manifest_v1_2.csv.gz",
+    "registry/w4c_r1_earnings_ir_official_domain_navigation_manifest_v1_2.csv.gz",
+    "registry/w4c_r1_earnings_ir_official_domain_body_manifest_v1_2.csv.gz",
+    "registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_2.json",
+    "registry/w4c_r1_earnings_ir_official_domain_execution_manifest_v1_2.json"
+  ],
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_allowed": false,
+    "prediction_market_settlement_allowed": false,
+    "realized_returns_allowed": false,
+    "argos_pnl_allowed": false,
+    "event_truth_verification_allowed": false,
+    "n_final_backtestable_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL_V1_2_FROZEN_PRE_REQUEST"
+}
