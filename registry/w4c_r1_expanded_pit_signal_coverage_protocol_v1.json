@@ -1,0 +1,87 @@
+{
+  "artifact": "W4C_R1_EXPANDED_PIT_SIGNAL_COVERAGE_PROTOCOL",
+  "version": "W4C-R1-EXPANDED-PIT-SIGNAL-COVERAGE-PROTOCOL-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_PRE_EXTERNAL_PIT_SIGNAL_EXPANSION",
+  "gate_decision": "PASS_W4C_R1_EXPANDED_PIT_SIGNAL_COVERAGE_PROTOCOL_FROZEN_NO_OUTCOME_RETURN_SETTLEMENT_READS",
+  "authorization_basis": {
+    "signal_coverage_freeze": "registry/w4c_r1_expanded_economic_backtest_signal_coverage_freeze_v1.json",
+    "signal_coverage_gate": "PASS_SIGNAL_COVERAGE_DIAGNOSIS_FROZEN_NO_EXPANDED_PNL_AUTHORIZATION",
+    "blocker": "Existing frozen PIT signal coverage in main covers only 109 of 1355 official-domain earnings rows."
+  },
+  "objective": "Expand point-in-time prediction-market signal coverage for the frozen 1355 EARNINGS_EPS official-domain universe before any price/return/PnL execution.",
+  "primary_universe": {
+    "source": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+    "base_rows": 1355,
+    "family": "EARNINGS_EPS",
+    "date_min": "2025-02-28",
+    "date_max": "2026-08-13",
+    "join_keys_allowed": [
+      "exact_group_id",
+      "ticker + event_date",
+      "pretruth_subject_key + event_date",
+      "market_id/condition_id/token_id only when linked through frozen mapping evidence"
+    ]
+  },
+  "allowed_signal_sources": [
+    {
+      "source": "existing_repo_artifacts",
+      "examples": [
+        "data/ic04_yes_probability_trajectory.csv.gz",
+        "data/art028_h2_feature_matrix.csv.gz",
+        "registry/w2c_pit_v2_1_combined_events.csv",
+        "registry/w4b_kalshi_history_event_v1_0_3.csv.gz"
+      ],
+      "condition": "May be used only for point-in-time pre-cutoff probability/signal extraction, not outcome or return inspection."
+    },
+    {
+      "source": "public_prediction_market_history_endpoints_or_archives",
+      "condition": "Allowed only for historical pre-cutoff probability/price observations keyed to frozen event identifiers; settlement/outcome fields must not be read or stored."
+    }
+  ],
+  "forbidden_sources_and_fields": [
+    "prediction market settlement/outcome",
+    "earnings numeric outcomes",
+    "realized equity returns",
+    "security entry/exit prices",
+    "benchmark returns",
+    "ARGOS PnL",
+    "post-event return tables",
+    "manual performance-ranked filtering"
+  ],
+  "selection_rule": {
+    "signal_timestamp": "latest available prediction-market probability observation at or before the frozen safe cutoff timestamp; if multiple valid observations exist, choose the latest pre-cutoff deterministically",
+    "probability_field": "YES probability / YES price / normalized PM probability; field naming must be recorded in the signal map summary",
+    "fail_closed": "Rows without deterministic mapping or pre-cutoff PIT signal remain uncovered with reason codes; no manual rescue is permitted after seeing returns."
+  },
+  "minimum_outputs_before_pnl": [
+    "expanded PIT signal map keyed by exact_group_id",
+    "signal source inventory and SHA256 fingerprints",
+    "coverage summary: base rows, mapped rows, unique ticker-dates, date range, failure reasons",
+    "firewall assertion showing no settlement/outcome/return/PNL reads",
+    "eligibility rerun using the expanded signal map",
+    "explicit decision whether N_final_backtestable_candidate_pre_price is large enough to justify economic execution"
+  ],
+  "provisional_execution_threshold": {
+    "recommended_minimum_signal_covered_rows_before_price_return_backtest": 300,
+    "rationale": "The old completed financial backtest had 108 eligible opportunities; a materially expanded backtest should not be run and reported as expanded if signal coverage is only around the old sample size.",
+    "policy": "If coverage remains below this threshold, report the signal-coverage limitation instead of executing a small-N PnL as an expanded result."
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false,
+    "benchmark_return_read": false,
+    "argos_pnl_read": false,
+    "economic_backtest_execution": false
+  },
+  "next_required_artifacts": [
+    "signal coverage expansion executor freeze",
+    "signal coverage expansion execution authorization",
+    "expanded signal map result freeze",
+    "eligibility rerun result freeze",
+    "only then: price/return backtest execution authorization if coverage threshold is satisfied"
+  ]
+}
