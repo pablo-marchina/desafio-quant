@@ -1,25 +1,40 @@
 {
   "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_EXECUTE_AUTHORIZATION",
-  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-AUTH-v1.1",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-AUTH-v1.2",
   "date": "2026-08-16",
-  "status": "REAUTHORIZED_AFTER_OUTPUT_PUSH_FIX",
+  "status": "REAUTHORIZED_WITH_QUEUE_OVERLAY_EXECUTOR_V1_1",
   "authorization_basis": {
     "protocol_freeze": "registry/w4c_r1_expanded_economic_backtest_protocol_freeze_v1.json",
     "protocol_gate": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_FROZEN_NO_OUTCOME_REVEAL",
     "design_freeze": "registry/w4c_r1_expanded_economic_backtest_executor_freeze_v1.json",
     "concrete_executor_freeze": "registry/w4c_r1_expanded_economic_backtest_executor_concrete_freeze_v1.json",
-    "executor_script": "scripts/w4c_r1_expanded_economic_backtest_executor_v1.py",
-    "executor_script_blob_sha": "23041adf08e3d4ce418000cc0cb29cfa16389320",
-    "workflow_push_fix_commit": "c771c841b255b19456a8545e67f1d2033a279c3b",
-    "prior_run_id": 31962994098,
-    "prior_job_id": 95203732790,
-    "prior_validation_step": "success",
-    "prior_materialize_step": "success",
-    "prior_commit_step": "failure_REBASE_RESIDUAL_WORKTREE_AFTER_LOCAL_COMMIT",
-    "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json"
+    "executor_script": "scripts/w4c_r1_expanded_economic_backtest_executor_v1_1.py",
+    "executor_script_blob_sha": "6e3a770a1324f4392e2d9f2107f8ad637b619d45",
+    "executor_script_commit": "4fd6e5f71ad32104d6f543be10aa22beeebdd085",
+    "workflow_v1_1_commit": "0777b46a5ee8a4e94d384a05938ef302610f9861",
+    "prior_runs": [
+      {
+        "run_id": 31962994098,
+        "job_id": 95203732790,
+        "validation_step": "success",
+        "materialize_step": "success",
+        "commit_step": "failure_REBASE_RESIDUAL_WORKTREE_AFTER_LOCAL_COMMIT"
+      },
+      {
+        "run_id": 31963043594,
+        "job_id": 95203850566,
+        "validation_step": "success",
+        "materialize_step": "success",
+        "commit_step": "success",
+        "finding": "v1 materialized fail-closed eligibility but missed deterministic event dates because queue overlay was not used"
+      }
+    ],
+    "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+    "queue_overlay_source": "registry/w4c_r1_earnings_ir_queue_v1.csv.gz"
   },
   "authorized_scope": {
     "validate_protocol_and_manifests": true,
+    "use_frozen_queue_overlay_for_dates_and_subjects": true,
     "materialize_pre_pnl_eligibility": true,
     "write_eligibility_manifest": true,
     "write_eligibility_summary": true,
@@ -44,5 +59,5 @@
     "argos_pnl_read": false,
     "backtest_execution_authorized": false
   },
-  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_MATERIALIZATION_REAUTHORIZED_NO_PNL"
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_QUEUE_OVERLAY_REAUTHORIZED_NO_PNL"
 }
