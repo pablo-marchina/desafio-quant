@@ -1,0 +1,59 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_GATE_AUTHORIZATION",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-GATE-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_TO_FREEZE_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_ONLY",
+  "authorization_basis": {
+    "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+    "full_expansion_gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_RESULT_FROZEN_AUTHORITATIVE_OUTCOME_BLIND",
+    "full_expansion_output_commit_sha": "90e8021",
+    "full_expansion_freeze_commit_sha": "6fbc6cd7cee9db35180b9351065f5d7a2cc0336a"
+  },
+  "authorized_scope": {
+    "protocol_design": true,
+    "eligibility_schema_design": true,
+    "deterministic_join_key_design": true,
+    "cost_benchmark_sizing_metric_specification": true,
+    "multiplicity_and_stop_rule_specification": true,
+    "executor_design_without_outcome_reads": true,
+    "report_slot_preparation": true
+  },
+  "not_authorized_yet": {
+    "event_truth_verification_used": true,
+    "earnings_numeric_outcomes_read": true,
+    "prediction_market_settlement_read": true,
+    "realized_returns_read": true,
+    "argos_pnl_read": true,
+    "n_final_backtestable_authorized": true,
+    "backtest_execution_authorized": true,
+    "strategy_promotion_authorized": true,
+    "portfolio_sharpe_or_drawdown_claim_authorized": true
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "n_final_backtestable_authorized": false,
+    "backtest_execution_authorized": false
+  },
+  "required_next_artifacts_before_execution": [
+    "expanded economic backtest protocol freeze with exact universe, join keys, rule family, horizons, costs, benchmark, sizing, metrics, uncertainty, multiplicity and stop rules",
+    "eligibility materialization protocol specifying how N_final_backtestable will be determined without post-hoc selection",
+    "executor freeze proving no outcome/return/settlement reads before protocol freeze",
+    "separate execution authorization if and only if the protocol/executor freezes pass"
+  ],
+  "minimum_protocol_requirements": {
+    "universe_basis": "frozen full 1355 official-domain expansion outputs only",
+    "selection_rule": "pre-specified; no outcome-conditioned filtering",
+    "entry_exit": "point-in-time and calendar/session deterministic",
+    "benchmark": "pre-specified before returns are read",
+    "costs": "pre-specified and applied symmetrically by side or explicitly justified",
+    "sizing": "pre-specified; no retrospective overlap or leverage optimization",
+    "metrics": "pre-specified, including uncertainty and promotion/failure conditions",
+    "multiplicity": "pre-specified family-wise correction or explicit gate hierarchy",
+    "report_policy": "negative, null or no-trade result must remain reportable and cannot be rescued post-hoc"
+  },
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_GATE_AUTHORIZED_NO_OUTCOME_REVEAL"
+}
