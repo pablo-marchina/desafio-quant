@@ -1,0 +1,40 @@
+name: W4-C R1 earnings IR official-domain capacity probe v1.1 execute
+
+on:
+  push:
+    paths:
+      - registry/w4c_r1_earnings_ir_official_domain_v1_1_execute_authorization.json
+
+permissions:
+  contents: write
+
+env:
+  W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_EXECUTE: YES_FROZEN_OFFICIAL_DOMAIN_V1_1_PROBE
+
+jobs:
+  execute-frozen-v1-1-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Validate v1.1 executor and inputs without external requests
+        env:
+          W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_VALIDATE_ONLY: YES
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1_runner.py
+
+      - name: Execute frozen 40-case v1.1 capacity probe
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1_runner.py
+
+      - name: Commit v1.1 probe outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4c_r1_earnings_ir_official_domain_resolution_manifest_v1_1.csv.gz \
+            registry/w4c_r1_earnings_ir_official_domain_navigation_manifest_v1_1.csv.gz \
+            registry/w4c_r1_earnings_ir_official_domain_body_manifest_v1_1.csv.gz \
+            registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_1.json \
+            registry/w4c_r1_earnings_ir_official_domain_execution_manifest_v1_1.json
+          git commit -m 'registry: materialize W4-C R1 official-domain capacity probe v1.1'
+          git push
