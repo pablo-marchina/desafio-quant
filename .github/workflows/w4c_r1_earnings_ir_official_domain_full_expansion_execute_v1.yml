@@ -40,6 +40,8 @@ jobs:
             registry/w4c_r1_earnings_ir_official_domain_full_execution_manifest_v1.json
           git commit -m 'registry: materialize W4-C R1 official-domain full 1355 expansion v1'
           git status --short
-          git stash push --include-untracked -m 'workflow residual worktree changes before rebase' || true
-          git pull --rebase origin main
+          git reset --hard HEAD
+          git clean -fd
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
