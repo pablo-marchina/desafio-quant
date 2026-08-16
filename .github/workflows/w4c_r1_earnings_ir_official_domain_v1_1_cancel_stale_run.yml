@@ -1,0 +1,25 @@
+name: W4-C R1 official-domain v1.1 cancel stale run
+
+on:
+  push:
+    paths:
+      - registry/w4c_r1_earnings_ir_official_domain_v1_1_cancel_stale_run.json
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  cancel-stale-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel stale v1.1 run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_RUN_ID: '31944237193'
+        run: |
+          gh api \
+            --method POST \
+            repos/${{ github.repository }}/actions/runs/${TARGET_RUN_ID}/cancel
+          echo "PASS_W4C_R1_EIR_ODD_V1_1_STALE_RUN_CANCEL_REQUESTED"
+          echo "target_run_id=${TARGET_RUN_ID}"
