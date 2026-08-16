@@ -1,0 +1,61 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_RESULT_FREEZE",
+  "version": "W4C-R1-EIR-ODD-RESULT-FREEZE-v1.2",
+  "date": "2026-08-16",
+  "status": "FROZEN_RESULT_AUTHORITATIVE",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_RESULT_V1_2_FROZEN_AUTHORITATIVE",
+  "source_workflow": {
+    "workflow_name": "W4-C R1 earnings IR official-domain capacity probe v1.2 execute",
+    "workflow_id": 335584242,
+    "run_id": 31951167393,
+    "source_head_sha": "e7a752029a60bfc04ad88ad65d28d3d7f2569eef"
+  },
+  "result_files": {
+    "capacity_summary_path": "registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_2.json",
+    "execution_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_execution_manifest_v1_2.json",
+    "resolution_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_resolution_manifest_v1_2.csv.gz",
+    "navigation_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_navigation_manifest_v1_2.csv.gz",
+    "official_body_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_body_manifest_v1_2.csv.gz"
+  },
+  "protocol_version": "W4C-R1-EIR-ODD-v1.2",
+  "result_version": "W4C-R1-EIR-ODD-RESULT-v1.2",
+  "amendment_scope": "targeted_resolution_and_transport_hardening_only",
+  "sample_size": 40,
+  "sample_selection_changed": false,
+  "thresholds_changed": false,
+  "capacity_result": {
+    "capacity_decision": "FULL_ROUTE_TECHNICALLY_VIABLE",
+    "probe_success_total": 24,
+    "probe_success_by_year": {
+      "2025": 10,
+      "2026": 14
+    },
+    "unique_wikidata_resolution_total": 31,
+    "candidate_navigation_rows": 131,
+    "official_body_attempt_rows": 131,
+    "max_candidates_per_resolved_group": 12,
+    "request_timeout_seconds": 8,
+    "wdqs_timeout_seconds": 25
+  },
+  "output_hashes": {
+    "resolution_sha256": "e75264d3d8277c8cb9d83e6347870ecd9d66f129a20b6cadcb9aa8e1a9c01b10",
+    "navigation_sha256": "fc90ec7b5b1e21876fb51521a3b9b45ab4045b85e31e246c38da397dfaf9b919",
+    "official_body_sha256": "de709235bacafd83662de692a04495e238559fb222bc213b9b1b13b0f9e969aa",
+    "summary_sha256": "13e59bed4ba9b88bba7269e9aa8cd59a7ff37116eb9326351d3b45aba7f71738"
+  },
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "event_truth_verification_used": false,
+    "outcome_reveal_authorized": false,
+    "n_final_backtestable_authorized": false
+  },
+  "authorization_state": {
+    "full_route_technically_viable": true,
+    "full_1355_official_domain_expansion_governance_decision_required": true,
+    "full_1355_execution_authorized_by_this_freeze_alone": false,
+    "next_required_action": "Create an explicit governance authorization for full 1355 official-domain expansion, still outcome-blind and without N_final_backtestable reveal."
+  }
+}
