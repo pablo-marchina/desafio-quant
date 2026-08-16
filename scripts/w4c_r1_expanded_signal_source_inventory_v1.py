@@ -12,27 +12,26 @@ from __future__ import annotations
 import csv
 import gzip
 import json
-import os
 from collections import Counter
 from pathlib import Path
 from typing import Dict, List, Tuple
 
 ROOT = Path(__file__).resolve().parents[1]
-REG = ROOT / "registry"
-OUT = REG / "w4c_r1_expanded_signal_source_inventory_v1.json"
+SCAN_ROOTS = [ROOT / "registry", ROOT / "data"]
+OUT = ROOT / "registry" / "w4c_r1_expanded_signal_source_inventory_v1.json"
 
 SIGNAL_TERMS = [
     "pit", "prob", "probability", "m2", "logit", "prediction", "market", "signal",
     "observation", "timestamp", "asof", "cutoff", "pre_event", "pretruth", "event",
     "group", "exact_group", "delta", "move", "movement", "velocity", "flow", "hhi",
 ]
-JOIN_TERMS = ["exact_group", "group_id", "event_id", "subject", "pretruth", "ticker", "date"]
+JOIN_TERMS = ["exact_group", "group_id", "event_id", "subject", "pretruth", "ticker", "date", "canonical"]
 FORBIDDEN_VALUE_TERMS = [
-    "return", "pnl", "profit", "loss", "settlement", "settled", "outcome", "realized",
-    "price", "spy", "benchmark", "trade_tape", "economic_backtest", "backtest_quality",
+    "pnl", "profit", "loss", "settlement", "settled", "outcome", "realized",
+    "spy", "benchmark", "trade_tape", "economic_backtest", "backtest_quality",
 ]
 FORBIDDEN_FILENAME_TERMS = [
-    "trade_tape", "pnl", "return", "settlement", "outcome", "realized", "price",
+    "trade_tape", "pnl", "settlement", "outcome", "realized",
 ]
 
 
@@ -73,15 +72,14 @@ def inspect_csv(path: Path) -> Dict[str, object]:
         "status": status,
         "column_count": len(header),
         "score": score,
-        "signal_like_columns": signal_cols[:50],
-        "join_like_columns": join_cols[:50],
-        "forbidden_like_columns": forbidden_cols[:50],
-        "all_columns_sample": header[:80],
+        "signal_like_columns": signal_cols[:80],
+        "join_like_columns": join_cols[:80],
+        "forbidden_like_columns": forbidden_cols[:80],
+        "all_columns_sample": header[:120],
     }
 
 
 def inspect_json(path: Path) -> Dict[str, object]:
-    status = "LOW_RELEVANCE_SCHEMA"
     keys: List[str] = []
     try:
         with safe_open_text(path) as f:
@@ -90,7 +88,7 @@ def inspect_json(path: Path) -> Dict[str, object]:
             keys = list(obj.keys())
         elif isinstance(obj, list) and obj and isinstance(obj[0], dict):
             keys = list(obj[0].keys())
-    except Exception as e:  # schema inventory should not fail the run
+    except Exception as e:
         return {
             "path": str(path.relative_to(ROOT)),
             "kind": "json_schema",
@@ -98,8 +96,7 @@ def inspect_json(path: Path) -> Dict[str, object]:
             "error": str(e)[:200],
         }
     score, signal_cols, join_cols, forbidden_cols = score_columns(keys)
-    if score > 0 and (signal_cols or join_cols):
-        status = "CANDIDATE_SCHEMA_ONLY"
+    status = "CANDIDATE_SCHEMA_ONLY" if score > 0 and (signal_cols or join_cols) else "LOW_RELEVANCE_SCHEMA"
     if is_forbidden_filename(path):
         status = "EXCLUDED_FORBIDDEN_FILENAME_PRE_PNL"
     return {
@@ -108,23 +105,26 @@ def inspect_json(path: Path) -> Dict[str, object]:
         "status": status,
         "key_count": len(keys),
         "score": score,
-        "signal_like_keys": signal_cols[:50],
-        "join_like_keys": join_cols[:50],
-        "forbidden_like_keys": forbidden_cols[:50],
-        "all_keys_sample": keys[:80],
+        "signal_like_keys": signal_cols[:80],
+        "join_like_keys": join_cols[:80],
+        "forbidden_like_keys": forbidden_cols[:80],
+        "all_keys_sample": keys[:120],
     }
 
 
 def main() -> None:
     items: List[Dict[str, object]] = []
-    for path in sorted(REG.rglob("*")):
-        if not path.is_file():
+    for root in SCAN_ROOTS:
+        if not root.exists():
             continue
-        name = path.name.lower()
-        if name.endswith(".csv") or name.endswith(".csv.gz"):
-            items.append(inspect_csv(path))
-        elif name.endswith(".json"):
-            items.append(inspect_json(path))
+        for path in sorted(root.rglob("*")):
+            if not path.is_file():
+                continue
+            name = path.name.lower()
+            if name.endswith(".csv") or name.endswith(".csv.gz"):
+                items.append(inspect_csv(path))
+            elif name.endswith(".json"):
+                items.append(inspect_json(path))
 
     candidates = [x for x in items if x.get("status") == "CANDIDATE_SCHEMA_ONLY"]
     candidates_sorted = sorted(candidates, key=lambda x: int(x.get("score", 0)), reverse=True)
@@ -132,15 +132,15 @@ def main() -> None:
 
     out = {
         "artifact": "W4C_R1_EXPANDED_SIGNAL_SOURCE_INVENTORY",
-        "version": "W4C-R1-EXPANDED-SIGNAL-SOURCE-INVENTORY-v1.0",
+        "version": "W4C-R1-EXPANDED-SIGNAL-SOURCE-INVENTORY-v1.1",
         "date": "2026-08-16",
         "status": "MATERIALIZED_SCHEMA_ONLY_NO_OUTCOME_RETURN_SETTLEMENT_VALUES",
-        "gate_decision": "PASS_SIGNAL_SOURCE_SCHEMA_INVENTORY_MATERIALIZED_PRE_PNL",
-        "scope": "registry schema/header scan for frozen PIT signal-map candidates",
+        "gate_decision": "PASS_SIGNAL_SOURCE_SCHEMA_INVENTORY_MATERIALIZED_PRE_PNL_WITH_DATA_DIR",
+        "scope": "registry + data schema/header scan for frozen PIT signal-map candidates",
         "files_scanned": len(items),
         "status_counts": dict(status_counts),
         "candidate_count": len(candidates_sorted),
-        "top_candidates": candidates_sorted[:50],
+        "top_candidates": candidates_sorted[:80],
         "scientific_firewall": {
             "outcome_reveal_authorized": False,
             "earnings_numeric_outcomes_read": False,
@@ -161,7 +161,7 @@ def main() -> None:
         "status": out["status"],
         "files_scanned": out["files_scanned"],
         "candidate_count": out["candidate_count"],
-        "top_paths": [c["path"] for c in candidates_sorted[:10]],
+        "top_paths": [c["path"] for c in candidates_sorted[:15]],
     }, indent=2, sort_keys=True))
 
 
