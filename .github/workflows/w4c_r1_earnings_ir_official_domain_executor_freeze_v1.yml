@@ -1,3 +1,4 @@
+# One-shot pre-request freeze validator; no external source requests are performed here.
 name: W4-C R1 earnings IR official-domain executor freeze v1
 
 on:
