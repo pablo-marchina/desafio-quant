@@ -1,0 +1,30 @@
+name: W4-C R1 expanded PIT signal source inventory v1
+
+on:
+  push:
+    paths:
+      - 'registry/w4c_r1_expanded_signal_source_inventory_execute_authorization_v1.json'
+
+permissions:
+  contents: write
+
+jobs:
+  inventory-signal-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Materialize schema-only signal source inventory
+        run: python3 scripts/w4c_r1_expanded_signal_source_inventory_v1.py
+
+      - name: Commit signal source inventory
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/w4c_r1_expanded_signal_source_inventory_v1.json
+          git commit -m 'registry: materialize W4-C R1 expanded signal source inventory v1'
+          git push origin HEAD:main
