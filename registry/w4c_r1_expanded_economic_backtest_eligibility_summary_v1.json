@@ -3,20 +3,21 @@
   "base_rows": 1355,
   "date": "2026-08-16",
   "date_max_all_dated": "2026-08-13",
-  "date_max_eligible": null,
+  "date_max_eligible": "2026-07-28",
   "date_min_all_dated": "2025-02-28",
-  "date_min_eligible": null,
+  "date_min_eligible": "2025-10-09",
   "dated_rows": 1355,
   "failure_reason_counts": {
     "NO_DETERMINISTIC_TICKER": 16,
-    "NO_PIT_SIGNAL_BEFORE_CUTOFF": 1355
+    "NO_PIT_SIGNAL_BEFORE_CUTOFF": 1246,
+    "PASS_PRE_PRICE_ELIGIBILITY": 109
   },
   "gate_decision": "PASS_ELIGIBILITY_MATERIALIZED_QUEUE_OVERLAY_NO_OUTCOME_RETURN_SETTLEMENT_READS",
-  "n_final_backtestable_candidate_pre_price": 0,
+  "n_final_backtestable_candidate_pre_price": 109,
   "next_gate": "Materialize a frozen PIT signal map keyed by exact_group_id before any return/PnL execution; do not invent thresholds or use settlements/returns to choose signals.",
   "outputs": {
     "eligibility_manifest": "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz",
-    "eligibility_manifest_sha256": "744de511b3078f7a7629364f9d2859a9bf585f8355b9850ad3a5b9d630ae77fe"
+    "eligibility_manifest_sha256": "a0b572d223c2abe0cfef4ece109b58dd6331b35f7ce11e9fd337afae8ba38ff8"
   },
   "queue_rows": 1355,
   "resolution_rows": 1355,
@@ -29,12 +30,113 @@
     "prediction_market_settlement_read": false,
     "realized_returns_read": false
   },
-  "signal_map_present": false,
-  "signal_map_rows": 0,
+  "signal_map_present": true,
+  "signal_map_rows": 109,
   "status": "MATERIALIZED_PRE_PNL_ELIGIBILITY_WITH_QUEUE_OVERLAY_FAIL_CLOSED",
   "ticker_candidate_rows": 1339,
-  "top_tickers_eligible": [],
-  "unique_tickers_eligible": 0,
+  "top_tickers_eligible": [
+    [
+      "DG",
+      2
+    ],
+    [
+      "HOG",
+      2
+    ],
+    [
+      "PEP",
+      2
+    ],
+    [
+      "AXP",
+      2
+    ],
+    [
+      "TGT",
+      2
+    ],
+    [
+      "CRCL",
+      2
+    ],
+    [
+      "DBX",
+      2
+    ],
+    [
+      "CASY",
+      2
+    ],
+    [
+      "EBAY",
+      2
+    ],
+    [
+      "UNFI",
+      2
+    ],
+    [
+      "CSCO",
+      2
+    ],
+    [
+      "WRBY",
+      2
+    ],
+    [
+      "AMAT",
+      1
+    ],
+    [
+      "DPZ",
+      1
+    ],
+    [
+      "NVTS",
+      1
+    ],
+    [
+      "VIRT",
+      1
+    ],
+    [
+      "IOT",
+      1
+    ],
+    [
+      "AMZN",
+      1
+    ],
+    [
+      "CB",
+      1
+    ],
+    [
+      "COUR",
+      1
+    ],
+    [
+      "BA",
+      1
+    ],
+    [
+      "HAS",
+      1
+    ],
+    [
+      "PAG",
+      1
+    ],
+    [
+      "UNP",
+      1
+    ],
+    [
+      "BOX",
+      1
+    ]
+  ],
+  "unique_tickers_eligible": 97,
   "validation": {
     "economic_reads_performed": false,
     "external_requests_performed_in_full_expansion": true,
