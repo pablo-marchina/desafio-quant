@@ -5,6 +5,7 @@ on:
     paths:
       - 'registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1.json'
       - 'scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py'
+      - '.github/workflows/w4c_r1_earnings_ir_official_domain_executor_freeze_v1.yml'
   workflow_dispatch:
 
 permissions:
@@ -25,7 +26,6 @@ jobs:
           python3 - <<'PY'
           import hashlib, json
           from pathlib import Path
-          root = Path('.')
           paths = [
               'registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1.json',
               'scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py',
