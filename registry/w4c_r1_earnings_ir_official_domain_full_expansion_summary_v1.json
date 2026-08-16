@@ -1,0 +1,30 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_SUMMARY",
+  "backtest_authorized": false,
+  "candidate_navigation_rows": 3492,
+  "date": "2026-08-16",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_MATERIALIZED_OUTCOME_BLIND",
+  "input_queue_groups": 1355,
+  "n_final_backtestable_authorized": false,
+  "official_body_attempt_rows": 3492,
+  "official_body_identity_success_by_year": {
+    "UNKNOWN": 605
+  },
+  "official_body_identity_success_total": 605,
+  "outcome_reveal_authorized": false,
+  "resolution_rows": 1355,
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "event_truth_verification_used": false,
+    "n_final_backtestable_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false
+  },
+  "status": "MATERIALIZED_OUTCOME_BLIND_FULL_EXPANSION",
+  "unique_candidate_sets_materialized": 272,
+  "unique_http_requests_performed": 1187,
+  "unique_ticker_candidate_groups": 1179,
+  "unique_wikidata_resolution_total": 814,
+  "version": "W4C-R1-EIR-ODD-FULL-RESULT-v1.0"
+}

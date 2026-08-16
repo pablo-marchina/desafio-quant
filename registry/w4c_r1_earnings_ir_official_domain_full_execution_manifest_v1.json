@@ -1,0 +1,21 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXECUTION_MANIFEST",
+  "authorization": "w4c_r1_earnings_ir_official_domain_full_expansion_authorization_v1.json",
+  "executor": "w4c_r1_earnings_ir_official_domain_full_expansion_executor_v1.py",
+  "external_requests_performed": true,
+  "outputs": {
+    "navigation_sha256": "44c982359ca5871b7c2b75ffdc248ad35533d8b7af6e847b7c4e14c0df43a21f",
+    "official_body_sha256": "91f8950e4934f91f4962bf2e628c78cc1e1bbac8dbfe9741b9eb2f9f2cc72e86",
+    "resolution_sha256": "3496a88f89b383f2d050c4ca048fc9cf79c239b4876c8751404d7e51dd4f6894",
+    "summary_sha256": "b5049ef616fd0fda323a8214e3ec1142459a3c110b1d9b04852dc5bd3dbe3c36"
+  },
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "event_truth_verification_used": false,
+    "n_final_backtestable_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false
+  },
+  "version": "W4C-R1-EIR-ODD-FULL-EXECUTION-v1.0"
+}
