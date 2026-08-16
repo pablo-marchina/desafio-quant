@@ -21,12 +21,12 @@ jobs:
       - name: Validate expanded economic executor without outcome reads
         env:
           W4C_R1_EXPANDED_ECON_BACKTEST_VALIDATE_ONLY: YES
-        run: python3 scripts/w4c_r1_expanded_economic_backtest_executor_v1.py
+        run: python3 scripts/w4c_r1_expanded_economic_backtest_executor_v1_1.py
 
       - name: Materialize pre-PnL eligibility
         env:
           W4C_R1_EXPANDED_ECON_BACKTEST_MATERIALIZE_ELIGIBILITY: YES_FROZEN
-        run: python3 scripts/w4c_r1_expanded_economic_backtest_executor_v1.py
+        run: python3 scripts/w4c_r1_expanded_economic_backtest_executor_v1_1.py
 
       - name: Commit eligibility outputs
         run: |
@@ -35,5 +35,5 @@ jobs:
           git add \
             registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz \
             registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json
-          git commit -m 'registry: materialize W4-C R1 expanded economic eligibility v1'
+          git commit -m 'registry: materialize W4-C R1 expanded economic eligibility v1.1'
           git push origin HEAD:main
