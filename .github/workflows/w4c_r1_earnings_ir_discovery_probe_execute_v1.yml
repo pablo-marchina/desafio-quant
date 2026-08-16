@@ -1,0 +1,163 @@
+name: W4-C R1 Earnings IR Discovery Probe Execute v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - registry/w4c_r1_earnings_ir_discovery_probe_execute_authorization_v1.json
+
+permissions:
+  contents: write
+
+jobs:
+  execute-frozen-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate one-shot execution authorization and frozen bytes
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          ROOT = Path('.')
+          AUTH = ROOT / 'registry/w4c_r1_earnings_ir_discovery_probe_execute_authorization_v1.json'
+          FREEZE = ROOT / 'registry/w4c_r1_earnings_ir_discovery_probe_executor_freeze_v1.json'
+          WRAPPER = ROOT / '.github/workflows/w4c_r1_earnings_ir_discovery_probe_execute_v1.yml'
+
+          def blob(path: Path) -> str:
+              data = path.read_bytes()
+              return hashlib.sha1(f'blob {len(data)}\0'.encode() + data).hexdigest()
+
+          auth = json.loads(AUTH.read_text(encoding='utf-8'))
+          freeze = json.loads(FREEZE.read_text(encoding='utf-8'))
+
+          assert auth['artifact'] == 'W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_AUTHORIZATION'
+          assert auth['version'] == 'W4C-R1-EIR-DP-EXEC-AUTH-v1.0'
+          assert auth['status'] == 'AUTHORIZED_ONE_SHOT_EXECUTION_AFTER_FROZEN_EXECUTOR'
+          assert auth['gate_decision'] == 'PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_AUTHORIZED_POST_FREEZE'
+          assert auth['external_probe_requests_performed_before_authorization'] is False
+          assert auth['issuer_ir_lookup_performed_before_authorization'] is False
+          assert auth['event_truth_verification_authorized'] is False
+          assert auth['n_final_backtestable_authorized'] is False
+          assert auth['outcome_reveal_authorized'] is False
+          assert auth['execution_scope'] == 'FROZEN_40_EVENT_CAPACITY_PROBE_ONLY'
+
+          assert blob(WRAPPER) == auth['execution_wrapper_git_blob_sha']
+          assert blob(FREEZE) == auth['executor_freeze_git_blob_sha']
+          assert freeze['status'] == 'FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST'
+          assert freeze['gate_decision'] == 'PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTOR_FROZEN_PRE_REQUEST'
+          assert freeze['external_probe_requests_performed_before_freeze'] is False
+          assert freeze['issuer_ir_lookup_performed_before_freeze'] is False
+          for item in freeze['bound_files']:
+              p = ROOT / item['path']
+              assert p.is_file(), item['path']
+              assert blob(p) == item['git_blob_sha'], (item['path'], blob(p), item['git_blob_sha'])
+
+          print('PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_AUTHORIZATION_BYTE_GATE')
+          PY
+
+      - name: Execute frozen 40-event capacity probe
+        env:
+          W4C_R1_EARNINGS_IR_PROBE_EXECUTE: YES_FROZEN_CAPACITY_PROBE
+        run: python scripts/w4c_r1_earnings_ir_discovery_probe_executor_v1.py --execute
+
+      - name: Validate materialized capacity result and firewall
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json')
+          assert p.is_file()
+          s = json.loads(p.read_text(encoding='utf-8'))
+          assert s['artifact'] == 'W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_CAPACITY_SUMMARY'
+          assert s['version'] == 'W4C-R1-EIR-DP-RESULT-v1.0'
+          assert s['sample_size'] == 40
+          assert s['allocation'] == {'2025':20,'2026':20}
+          assert len(s['group_results']) == 40
+          assert s['gate_decision'] == 'PASS_W4C_R1_EARNINGS_IR_DISCOVERY_CAPACITY_PROBE_MATERIALIZED'
+          assert s['capacity_decision'] in {
+              'FULL_ROUTE_TECHNICALLY_VIABLE',
+              'CONDITIONAL_ROUTE',
+              'ROUTE_INFEASIBLE_CURRENT_PROTOCOL',
+          }
+          assert s['search_or_index_results_navigation_only'] is True
+          assert s['search_snippets_persisted'] is False
+          assert s['event_truth_verification_authorized'] is False
+          assert s['truth_verified_by_probe'] is False
+          assert s['numeric_eps_revenue_guidance_results_persisted'] is False
+          assert s['prediction_market_settlement_used'] is False
+          assert s['prediction_market_price_or_performance_used'] is False
+          assert s['linked_asset_realized_returns_used'] is False
+          assert s['ARGOS_PnL_used'] is False
+          assert s['model_performance_used'] is False
+          assert s['family_reclassification_allowed'] is False
+          assert s['w4b_artifacts_modified'] is False
+          assert s['n_final_backtestable_authorized'] is False
+          assert s['outcome_reveal_authorized'] is False
+          print('PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_RESULT_FIREWALL')
+          print(json.dumps({
+              'capacity_decision': s['capacity_decision'],
+              'probe_success_total': s['probe_success_total'],
+              'probe_success_by_year': s['probe_success_by_year'],
+              'navigation_found_total': s['navigation_found_total'],
+              'official_body_retrievable_total': s['official_body_retrievable_total'],
+              'identity_bindable_total': s['identity_bindable_total'],
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Materialize immutable execution-run manifest
+        env:
+          RUN_ID: ${{ github.run_id }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+
+          paths = [
+              'registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz',
+              'registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz',
+              'registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json',
+          ]
+          summary = json.loads(Path(paths[2]).read_text(encoding='utf-8'))
+          def sha256(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          out = {
+              'artifact': 'W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_RUN',
+              'version': 'W4C-R1-EIR-DP-RUN-v1.0',
+              'status': 'MATERIALIZED_FROM_FROZEN_EXECUTOR',
+              'source_main_commit': os.environ['HEAD_SHA'],
+              'github_actions_run_id': int(os.environ['RUN_ID']),
+              'execution_scope': 'FROZEN_40_EVENT_CAPACITY_PROBE_ONLY',
+              'output_sha256': {p: sha256(p) for p in paths},
+              'capacity_decision': summary['capacity_decision'],
+              'probe_success_total': summary['probe_success_total'],
+              'probe_success_by_year': summary['probe_success_by_year'],
+              'event_truth_verification_authorized': False,
+              'n_final_backtestable_authorized': False,
+              'outcome_reveal_authorized': False,
+              'gate_decision': 'PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_MATERIALIZED',
+          }
+          Path('registry/w4c_r1_earnings_ir_discovery_probe_execution_run_v1.json').write_text(
+              json.dumps(out, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Persist result on isolated branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-earnings-ir-discovery-probe-result-v1
+          git add \
+            registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz \
+            registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz \
+            registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json \
+            registry/w4c_r1_earnings_ir_discovery_probe_execution_run_v1.json
+          git commit -m 'registry: materialize W4-C R1 earnings IR discovery capacity probe result v1'
+          git push -f origin w4c-r1-earnings-ir-discovery-probe-result-v1
