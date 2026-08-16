@@ -1,0 +1,23 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_EXECUTOR_FREEZE",
+  "version": "W4C-R1-EIR-ODD-FULL-EXEC-FREEZE-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXECUTOR_FROZEN_PRE_REQUEST",
+  "executor_path": "scripts/w4c_r1_earnings_ir_official_domain_full_expansion_executor_v1.py",
+  "executor_git_blob_sha": "c121c8d4045a3554ab9c02bc635d4c86bb424189",
+  "authorization_path": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_authorization_v1.json",
+  "base_route_result": "registry/w4c_r1_earnings_ir_official_domain_result_freeze_v1_2.json",
+  "queue_path": "registry/w4c_r1_earnings_ir_queue_v1.csv.gz",
+  "ticker_profile_path": "registry/w4c_r1_earnings_ticker_profile_v1.json",
+  "expected_queue_groups": 1355,
+  "external_requests_performed_before_freeze": false,
+  "outcome_data_used": false,
+  "prediction_market_settlement_used": false,
+  "realized_returns_used": false,
+  "argos_pnl_used": false,
+  "n_final_backtestable_authorized": false,
+  "backtest_authorized": false,
+  "execution_env_token": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXECUTE=YES_FROZEN_OFFICIAL_DOMAIN_FULL_1355_EXPANSION",
+  "validate_only_env_token": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_VALIDATE_ONLY=YES"
+}
