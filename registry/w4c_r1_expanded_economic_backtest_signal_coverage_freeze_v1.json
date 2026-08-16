@@ -1,0 +1,53 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_SIGNAL_COVERAGE_FREEZE",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-SIGNAL-COVERAGE-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_SIGNAL_COVERAGE_LIMITATION_PRE_PNL",
+  "gate_decision": "PASS_SIGNAL_COVERAGE_DIAGNOSIS_FROZEN_NO_EXPANDED_PNL_AUTHORIZATION",
+  "basis": {
+    "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+    "full_expansion_base_rows": 1355,
+    "eligibility_summary_after_queue_overlay_and_signal_map_v1": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json",
+    "signal_map_v1_summary": "registry/w4c_r1_expanded_economic_backtest_signal_map_summary_v1.json",
+    "signal_map_v1_output_commit": "aa16cf2",
+    "trajectory_join_probe": "registry/w4c_r1_expanded_trajectory_signal_join_probe_v1.json",
+    "signal_map_v2_summary": "registry/w4c_r1_expanded_economic_backtest_signal_map_summary_v2.json",
+    "signal_map_v2_output_commit": "b9196b9"
+  },
+  "observations": {
+    "official_domain_expansion_rows": 1355,
+    "dated_rows_after_queue_overlay": 1355,
+    "ticker_candidate_rows_after_queue_overlay": 1339,
+    "signal_map_v1_rows_from_art028_feature_matrix": 109,
+    "trajectory_rows_scanned_for_v2": 1593454,
+    "trajectory_candidate_pre_cutoff_yes_rows": 1502692,
+    "signal_map_v2_rows_from_trajectory": 109,
+    "n_final_backtestable_candidate_pre_price_with_current_frozen_signals": 109,
+    "remaining_no_pit_signal_before_cutoff_rows": 1246,
+    "no_deterministic_ticker_rows": 16
+  },
+  "interpretation": [
+    "The W4-C/R1 official-domain expansion successfully enlarged the earnings universe to 1355 outcome-blind groups.",
+    "The queue overlay recovered deterministic event dates for all 1355 rows and ticker candidates for 1339 rows.",
+    "Existing frozen PIT signal sources in main currently cover only 109 rows, even after scanning the 1.59M-row IC04 YES probability trajectory file.",
+    "Therefore an immediate PnL run would not be a materially expanded financial backtest relative to the older 108-opportunity economic result.",
+    "Running price/return PnL now and calling it expanded would misrepresent the evidence and weaken the final report."
+  ],
+  "decision": {
+    "execute_price_return_backtest_now": false,
+    "reason": "Current frozen PIT signal coverage is too small to satisfy the intended expanded-backtest objective.",
+    "authorized_next_step": "PIT signal coverage expansion protocol or final-report disclosure of expanded official-domain infrastructure with small-N financial limitation.",
+    "report_policy": "Do not claim completed expanded financial backtest until PIT signal coverage is expanded and price/return execution is separately authorized and frozen."
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false,
+    "benchmark_return_read": false,
+    "argos_pnl_read": false,
+    "economic_backtest_execution": false
+  },
+  "next_gate": "W4C_R1_EXPANDED_PIT_SIGNAL_COVERAGE_PROTOCOL_GATE"
+}
