@@ -1,0 +1,89 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_EXECUTOR_DESIGN_FREEZE",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-EXECUTOR-DESIGN-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_DESIGN_NO_EXECUTION",
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_EXECUTOR_DESIGN_FROZEN_AWAITING_IMPLEMENTATION_OR_EXECUTION_AUTHORIZATION",
+  "protocol": "registry/w4c_r1_expanded_economic_backtest_protocol_freeze_v1.json",
+  "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+  "purpose": "Freeze the required executor behavior before any outcome, settlement, realized return, or ARGOS PnL read is permitted.",
+  "executor_requirements": {
+    "mode_validate_only": {
+      "required": true,
+      "allowed_reads": [
+        "protocol freeze",
+        "full expansion freeze",
+        "full expansion manifests",
+        "metadata schemas",
+        "PIT signal metadata without settlement/outcome",
+        "calendar metadata without realized return calculation"
+      ],
+      "forbidden_reads": [
+        "earnings numeric outcomes",
+        "prediction-market settlement",
+        "realized equity returns",
+        "ARGOS PnL summaries",
+        "performance tables"
+      ],
+      "required_output": "PASS/FAIL validation and deterministic missing-input report"
+    },
+    "mode_materialize_eligibility": {
+      "required": true,
+      "description": "Build N_final_backtestable candidates by deterministic joins only. Eligibility failures must be retained with reason codes.",
+      "must_output_before_pnl": [
+        "eligibility_manifest",
+        "failure_reason_counts",
+        "N_final_backtestable_candidate_count",
+        "date_min/date_max of eligible candidates",
+        "ticker coverage summary",
+        "join-key audit"
+      ]
+    },
+    "mode_execute_economic_backtest": {
+      "required": true,
+      "requires_separate_authorization": true,
+      "description": "Only after protocol and executor freezes pass, read prices/benchmark and compute pre-specified market-adjusted net opportunity returns.",
+      "must_output": [
+        "trade_tape",
+        "opportunity_level_returns",
+        "summary_metrics",
+        "statistical_uncertainty",
+        "multiplicity_adjustment",
+        "gate_decision",
+        "result_freeze"
+      ]
+    }
+  },
+  "deterministic_failure_reasons": [
+    "NOT_IN_FULL_FROZEN_UNIVERSE",
+    "NO_DETERMINISTIC_TICKER",
+    "NO_TRADABLE_EQUITY_MAPPING",
+    "NO_DETERMINISTIC_EVENT_DATE",
+    "NO_PIT_SIGNAL_BEFORE_CUTOFF",
+    "NO_ENTRY_SESSION",
+    "NO_EXIT_SESSION",
+    "NO_SECURITY_PRICE",
+    "NO_BENCHMARK_PRICE",
+    "DUPLICATE_OR_AMBIGUOUS_JOIN_KEY",
+    "FAMILY_NOT_EARNINGS_EPS",
+    "FIREWALL_VIOLATION"
+  ],
+  "required_assertions": [
+    "The executor must fail closed if the protocol freeze is missing or stale.",
+    "The executor must fail closed if the full expansion result freeze is missing or stale.",
+    "The executor must fail closed if any output attempts to summarize returns before execution authorization.",
+    "The executor must emit exact counts for included and excluded opportunities.",
+    "The executor must encode no-trade as zero return per eligible opportunity, not as row deletion.",
+    "The executor must preserve negative, null and no-trade results as reportable outcomes."
+  ],
+  "scientific_firewall_at_executor_design_freeze": {
+    "outcome_reveal_authorized": false,
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "n_final_backtestable_authorized": false,
+    "backtest_execution_authorized": false
+  },
+  "next_required_artifact": "execution authorization that names the concrete executor script/blob SHA and explicitly permits eligibility materialization and economic backtest execution under this frozen protocol"
+}
