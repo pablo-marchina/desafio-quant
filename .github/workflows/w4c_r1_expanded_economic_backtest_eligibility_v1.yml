@@ -36,8 +36,4 @@ jobs:
             registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz \
             registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json
           git commit -m 'registry: materialize W4-C R1 expanded economic eligibility v1'
-          git reset --hard HEAD
-          git clean -fd
-          git fetch origin main
-          git rebase origin/main
           git push origin HEAD:main
