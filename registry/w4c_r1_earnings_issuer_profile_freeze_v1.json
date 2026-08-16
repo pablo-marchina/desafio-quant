@@ -1,0 +1,41 @@
+{
+  "artifact": "W4C_R1_EARNINGS_ISSUER_PROFILE_FREEZE",
+  "version": "W4C-R1-EIR-IP-FREEZE-v1.0",
+  "date": "2026-08-15",
+  "status": "FROZEN_DESCRIPTIVE_PROFILE_PRE_EXTERNAL_LOOKUP",
+  "science_reopened": false,
+  "source_main_commit_before_freeze": "32d1c01cf5e0255dc34bcc1bb0f7c812a51687a4",
+  "profiler_path": "scripts/w4c_r1_earnings_issuer_profile_v1.py",
+  "profiler_git_blob_sha": "39e8ed93a0b321d7e4ad70650268284b1cbc366c",
+  "workflow_path": ".github/workflows/w4c_r1_earnings_issuer_profile_v1.yml",
+  "workflow_git_blob_sha": "0f287833ef7e8588471bc217ee61be13a0d7b40d",
+  "queue_path": "registry/w4c_r1_earnings_ir_queue_v1.csv.gz",
+  "queue_git_blob_sha": "395b56ada4b3be8412f2391957cfcde0c832cb84",
+  "queue_groups": 1355,
+  "queue_sorted_group_ids_sha256": "c9fd3a13e87ea720e961fa087098130fd20da74c96aa02419aaeebef1e64b05c",
+  "profile_scope": {
+    "descriptive_work_allocation_only": true,
+    "candidate_issuer_keys_are_not_truth_evidence": true,
+    "candidate_issuer_keys_may_not_vote": true,
+    "family_reclassification_allowed": false,
+    "group_exclusion_allowed": false
+  },
+  "pre_profile_observation_declarations": {
+    "new_external_source_reads": false,
+    "issuer_ir_lookup_performed": false,
+    "new_sec_lookup_performed": false,
+    "prediction_market_performance_read": false,
+    "prediction_market_settlement_read": false,
+    "linked_asset_realized_returns_read": false,
+    "ARGOS_PnL_read": false,
+    "model_performance_read": false
+  },
+  "execution_authorization": {
+    "descriptive_profile_materialization_authorized": true,
+    "external_issuer_lookup_authorized_by_this_freeze": false,
+    "issuer_ir_evidence_collection_authorized_by_this_freeze": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_ISSUER_PROFILE_FROZEN_PRE_EXTERNAL_LOOKUP"
+}
