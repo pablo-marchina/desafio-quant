@@ -1,0 +1,46 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_RESULT_FREEZE",
+  "version": "W4C-R1-EIR-DP-RESULT-v1.0",
+  "date": "2026-08-16",
+  "status": "PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_RESULT_FROZEN_AUTHORITATIVE",
+  "source_result_branch": "w4c-r1-earnings-ir-discovery-probe-result-v1",
+  "source_result_commit": "d92d303",
+  "promotion_commit": "e15e50d94f8ca0f6e2ced8f788521bce1e0baa6b",
+  "byte_identity_rule": "The four result outputs were promoted through a normal Git merge from the isolated result branch; no output bytes were rewritten during promotion.",
+  "sample_size": 40,
+  "allocation": {"2025": 20, "2026": 20},
+  "probe_success_total": 0,
+  "probe_success_by_year": {"2025": 0, "2026": 0},
+  "navigation_found_total": 0,
+  "official_body_retrievable_total": 0,
+  "identity_bindable_total": 0,
+  "capacity_decision": "ROUTE_INFEASIBLE_CURRENT_PROTOCOL",
+  "capacity_summary": {
+    "path": "registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json",
+    "sha256": "30b3e84076208d52223004debf7ea652ba0ebc179c8fd72c6cd122592917ecb6"
+  },
+  "navigation_manifest": {
+    "path": "registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz",
+    "sha256": "f1023ced43404128553d3571a9d25e3590aeec83191574f7450b28baf2ef7dc2"
+  },
+  "official_body_manifest": {
+    "path": "registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz",
+    "sha256": "3d18453d66f06391e536af69882e1bbc5e2c4e6577c0ef9499f06d23c20fc9c4"
+  },
+  "execution_manifest": {
+    "path": "registry/w4c_r1_earnings_ir_probe_execution_manifest_v1.json",
+    "github_actions_run_id": 31924073904,
+    "gate": "PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_MATERIALIZED"
+  },
+  "scientific_firewall": {
+    "performance_blind": true,
+    "event_truth_verification_used": false,
+    "earnings_numeric_outcomes_used": false,
+    "prediction_market_settlement_used": false,
+    "realized_returns_used": false,
+    "arg_os_pnl_used": false,
+    "n_final_backtestable_authorized": false
+  },
+  "interpretation": "This freezes a negative technical capacity result for the specific issuer-IR discovery/navigation protocol. It does not establish absence of issuer IR pages or absence of official earnings evidence.",
+  "next_gate": "OUTCOME_BLIND_TRANSPORT_NAVIGATION_DIAGNOSIS"
+}
