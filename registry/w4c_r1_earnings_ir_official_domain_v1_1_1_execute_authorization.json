@@ -1,0 +1,20 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_1_EXECUTION_AUTHORIZATION",
+  "version": "W4C-R1-EIR-ODD-V1-1-1-EXEC-AUTH-v1.0",
+  "date": "2026-08-16",
+  "authorized_workflow": "W4-C R1 earnings IR official-domain capacity probe v1.1.1 execute",
+  "authorized_scope": "same frozen 40-case capacity probe only",
+  "protocol_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1_1.json",
+  "executor_freeze_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_executor_freeze_v1_1_1.json",
+  "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+  "sample_size": 40,
+  "sample_selection_change_allowed": false,
+  "threshold_change_allowed": false,
+  "full_1355_execution_authorized": false,
+  "outcome_data_allowed": false,
+  "settlement_data_allowed": false,
+  "returns_or_pnl_allowed": false,
+  "n_final_backtestable_authorized": false,
+  "execution_env_token": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_1_EXECUTE=YES_FROZEN_OFFICIAL_DOMAIN_V1_1_1_PROBE",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_1_EXECUTION_AUTHORIZED_40_CASE_ONLY"
+}
