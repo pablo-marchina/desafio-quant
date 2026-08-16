@@ -1,0 +1,60 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_RESULT_FREEZE",
+  "version": "W4C-R1-EIR-ODD-FULL-FREEZE-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_AUTHORITATIVE",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_RESULT_FROZEN_AUTHORITATIVE_OUTCOME_BLIND",
+  "source_run": {
+    "workflow_id": 335589059,
+    "run_id": 31959496135,
+    "job_id": 95195182669,
+    "job_name": "execute-full-expansion",
+    "run_conclusion": "success",
+    "job_conclusion": "success",
+    "run_head_sha": "ecbc435d4aeb73ac6bdf64bde9e9697359ebcd41",
+    "output_commit_sha": "90e8021"
+  },
+  "source_artifacts": {
+    "summary_path": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_summary_v1.json",
+    "execution_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_full_execution_manifest_v1.json",
+    "resolution_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_full_resolution_manifest_v1.csv.gz",
+    "navigation_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_full_navigation_manifest_v1.csv.gz",
+    "official_body_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_full_body_manifest_v1.csv.gz"
+  },
+  "output_sha256": {
+    "summary_sha256": "b5049ef616fd0fda323a8214e3ec1142459a3c110b1d9b04852dc5bd3dbe3c36",
+    "resolution_sha256": "3496a88f89b383f2d050c4ca048fc9cf79c239b4876c8751404d7e51dd4f6894",
+    "navigation_sha256": "44c982359ca5871b7c2b75ffdc248ad35533d8b7af6e847b7c4e14c0df43a21f",
+    "official_body_sha256": "91f8950e4934f91f4962bf2e628c78cc1e1bbac8dbfe9741b9eb2f9f2cc72e86"
+  },
+  "summary_metrics": {
+    "input_queue_groups": 1355,
+    "resolution_rows": 1355,
+    "unique_ticker_candidate_groups": 1179,
+    "unique_wikidata_resolution_total": 814,
+    "unique_candidate_sets_materialized": 272,
+    "candidate_navigation_rows": 3492,
+    "official_body_attempt_rows": 3492,
+    "official_body_identity_success_total": 605,
+    "official_body_identity_success_by_year": {
+      "UNKNOWN": 605
+    },
+    "unique_http_requests_performed": 1187
+  },
+  "scientific_firewall": {
+    "event_truth_verification_used": false,
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "outcome_reveal_authorized": false,
+    "n_final_backtestable_authorized": false,
+    "backtest_execution_authorized": false
+  },
+  "authoritative_interpretation": [
+    "The full 1355 EARNINGS_EPS official-domain expansion was materialized under the W4-C/R1 official-domain discovery route.",
+    "The result is outcome-blind and can be used as the frozen official-domain coverage basis for the next economic-backtest protocol gate.",
+    "This freeze does not authorize earnings outcome reveal, prediction-market settlement reads, realized return reads, ARGOS PnL construction, N_final_backtestable claims, or economic backtest execution."
+  ],
+  "next_required_gate": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_GATE"
+}
