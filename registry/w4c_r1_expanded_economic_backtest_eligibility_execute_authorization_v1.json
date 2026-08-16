@@ -1,0 +1,42 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_EXECUTE_AUTHORIZATION",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_TO_VALIDATE_AND_MATERIALIZE_PRE_PNL_ELIGIBILITY",
+  "authorization_basis": {
+    "protocol_freeze": "registry/w4c_r1_expanded_economic_backtest_protocol_freeze_v1.json",
+    "protocol_gate": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_PROTOCOL_FROZEN_NO_OUTCOME_REVEAL",
+    "design_freeze": "registry/w4c_r1_expanded_economic_backtest_executor_freeze_v1.json",
+    "concrete_executor_freeze": "registry/w4c_r1_expanded_economic_backtest_executor_concrete_freeze_v1.json",
+    "executor_script": "scripts/w4c_r1_expanded_economic_backtest_executor_v1.py",
+    "executor_script_blob_sha": "23041adf08e3d4ce418000cc0cb29cfa16389320",
+    "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json"
+  },
+  "authorized_scope": {
+    "validate_protocol_and_manifests": true,
+    "materialize_pre_pnl_eligibility": true,
+    "write_eligibility_manifest": true,
+    "write_eligibility_summary": true,
+    "materialize_n_final_backtestable_candidate_count": true
+  },
+  "not_authorized": {
+    "event_truth_verification_used": true,
+    "earnings_numeric_outcomes_read": true,
+    "prediction_market_settlement_read": true,
+    "realized_returns_read": true,
+    "security_price_return_read": true,
+    "benchmark_return_read": true,
+    "argos_pnl_read": true,
+    "economic_backtest_execution": true,
+    "strategy_promotion": true
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "backtest_execution_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_MATERIALIZATION_AUTHORIZED_NO_PNL"
+}
