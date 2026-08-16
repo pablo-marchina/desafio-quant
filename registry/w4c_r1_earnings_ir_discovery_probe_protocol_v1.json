@@ -1,10 +1,12 @@
 {
   "artifact": "W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_PROTOCOL",
-  "version": "W4C-R1-EIR-DP-v1.0",
+  "version": "W4C-R1-EIR-DP-v1.0.1",
   "date": "2026-08-15",
   "status": "PREREGISTERED_BEFORE_ANY_ISSUER_IR_DISCOVERY_PROBE_REQUEST",
   "science_reopened": false,
   "performance_blind": true,
+  "supersedes": "W4C-R1-EIR-DP-v1.0_PRE_REQUEST_TEXT_CLARIFICATION_ONLY",
+  "pre_amendment_probe_requests_performed": false,
   "purpose": "Measure technical and provenance feasibility of scalable issuer-IR discovery and official-body capture for the frozen 1,355-group EARNINGS_EPS R1 queue. This probe does not authorize event-truth verification or marginal-N promotion.",
   "parent_protocol": {
     "path": "registry/w4c_r1_earnings_ir_fallback_protocol_v1.json",
@@ -42,9 +44,10 @@
     "truth_verified_by_probe": false
   },
   "capacity_decision_rule": {
-    "FULL_ROUTE_TECHNICALLY_VIABLE": "At least 24/40 sampled groups have probe_success and at least 16/20 succeed in neither year? false; instead require >=10/20 in each year to avoid a one-year-only route.",
-    "CONDITIONAL_ROUTE": "Overall probe_success is 12-23/40 or either year has 5-9/20 successes; redesign only transport/navigation, never matching semantics, before another frozen probe.",
-    "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "Fewer than 12/40 probe_success or either year has fewer than 5/20 successes after deterministic transport retries.",
+    "FULL_ROUTE_TECHNICALLY_VIABLE": "probe_success >=24/40 overall AND >=10/20 among 2025 sample rows AND >=10/20 among 2026 sample rows.",
+    "CONDITIONAL_ROUTE": "Not FULL_ROUTE_TECHNICALLY_VIABLE, but probe_success >=12/40 overall AND >=5/20 in each year. Redesign only transport/navigation under a separately frozen amendment; never alter event matching semantics based on probe results.",
+    "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "probe_success <12/40 overall OR <5/20 in either year after deterministic transport retries.",
+    "mutually_exclusive_priority": ["FULL_ROUTE_TECHNICALLY_VIABLE", "CONDITIONAL_ROUTE", "ROUTE_INFEASIBLE_CURRENT_PROTOCOL"],
     "note": "Thresholds govern technical route continuation only, not scientific truth or N promotion."
   },
   "retry_policy": {
