@@ -1,0 +1,18 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_INPUT_REPAIR_EXECUTOR_FREEZE",
+  "version": "W4C-R1-EIR-INPUT-REPAIR-EXEC-FREEZE-v1.0",
+  "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
+  "repair_manifest_path": "registry/w4c_r1_earnings_ir_input_repair_v1.json",
+  "executor_path": "scripts/w4c_r1_earnings_ir_official_domain_repaired_executor_v1.py",
+  "base_executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py",
+  "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+  "protocol_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1.json",
+  "external_requests_performed_before_freeze": false,
+  "outcome_data_used": false,
+  "sample_selection_changed": false,
+  "thresholds_changed": false,
+  "protocol_changed": false,
+  "unresolved_sample_case": "W4CE1-8642b204a5d2db51203c",
+  "unresolved_case_policy": "PRESERVE_UNRESOLVED_NO_GUESS_AND_COUNT_AS_NON_SUCCESS_WITHOUT_EXTERNAL_ISSUER_GUESS",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_INPUT_REPAIR_EXECUTOR_FROZEN_PRE_REQUEST"
+}
