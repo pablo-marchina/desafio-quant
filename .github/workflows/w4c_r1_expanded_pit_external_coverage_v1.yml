@@ -54,5 +54,7 @@ jobs:
             exit 0
           fi
           git commit -m 'registry: materialize W4-C R1 external PIT coverage v1'
+          git reset --hard HEAD
+          git clean -fd
           git pull --rebase origin main
           git push origin HEAD:main
