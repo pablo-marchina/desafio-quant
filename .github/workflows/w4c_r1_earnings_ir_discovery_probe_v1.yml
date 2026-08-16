@@ -1,0 +1,99 @@
+name: W4-C R1 Earnings IR Discovery Capacity Probe v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - registry/w4c_r1_earnings_ir_discovery_probe_executor_freeze_v1.json
+  workflow_dispatch:
+    inputs:
+      execute_probe:
+        description: "Execute the already-frozen 40-row issuer-IR capacity probe"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  validate-freeze:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen byte bindings
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+
+          root = Path('.')
+          freeze = json.load(open('registry/w4c_r1_earnings_ir_discovery_probe_executor_freeze_v1.json', encoding='utf-8'))
+
+          def blob(path):
+              data = Path(path).read_bytes()
+              return hashlib.sha1(f"blob {len(data)}\0".encode() + data).hexdigest()
+
+          assert freeze['status'] == 'FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST'
+          assert freeze['gate_decision'] == 'PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTOR_FROZEN_PRE_REQUEST'
+          assert freeze['external_probe_requests_performed_before_freeze'] is False
+          assert freeze['issuer_ir_lookup_performed_before_freeze'] is False
+          for item in freeze['bound_files']:
+              actual = blob(item['path'])
+              assert actual == item['git_blob_sha'], (item['path'], actual, item['git_blob_sha'])
+          print('PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTOR_BYTE_FREEZE')
+          PY
+      - name: Compile executor
+        run: python -m py_compile scripts/w4c_r1_earnings_ir_discovery_probe_executor_v1.py
+      - name: Validate executor without network
+        run: python scripts/w4c_r1_earnings_ir_discovery_probe_executor_v1.py --validate-only
+
+  execute-probe:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.execute_probe }}
+    needs: validate-freeze
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      W4C_R1_EARNINGS_IR_PROBE_EXECUTE: YES_FROZEN_CAPACITY_PROBE
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Execute frozen capacity probe
+        run: python scripts/w4c_r1_earnings_ir_discovery_probe_executor_v1.py --execute
+      - name: Validate capacity-only firewall
+        run: |
+          python - <<'PY'
+          import json
+          p='registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json'
+          x=json.load(open(p, encoding='utf-8'))
+          assert x['sample_size'] == 40
+          assert x['allocation'] == {'2025':20,'2026':20}
+          assert x['capacity_decision'] in {
+              'FULL_ROUTE_TECHNICALLY_VIABLE',
+              'CONDITIONAL_ROUTE',
+              'ROUTE_INFEASIBLE_CURRENT_PROTOCOL',
+          }
+          assert x['truth_verified_by_probe'] is False
+          assert x['event_truth_verification_authorized'] is False
+          assert x['numeric_eps_revenue_guidance_results_persisted'] is False
+          assert x['n_final_backtestable_authorized'] is False
+          assert x['outcome_reveal_authorized'] is False
+          print(x['capacity_decision'])
+          PY
+      - name: Persist result on isolated branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-earnings-ir-probe-result-v1
+          git add \
+            registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz \
+            registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz \
+            registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json
+          git commit -m 'evidence: materialize W4-C R1 earnings IR capacity probe v1'
+          git push -f origin w4c-r1-earnings-ir-probe-result-v1
