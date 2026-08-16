@@ -1,0 +1,15 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_EXECUTE_AUTHORIZATION",
+  "version": "W4C-R1-EIR-ODD-FULL-EXECUTE-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_TO_EXECUTE_ONCE",
+  "authorization_basis": "W4C-R1-EIR-ODD-v1.2 reached FULL_ROUTE_TECHNICALLY_VIABLE and result was frozen.",
+  "run_scope": "full 1355 official-domain expansion only",
+  "outcome_reveal_authorized": false,
+  "prediction_market_settlement_authorized": false,
+  "realized_returns_authorized": false,
+  "argos_pnl_authorized": false,
+  "n_final_backtestable_authorized": false,
+  "backtest_authorized": false,
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_EXECUTION_AUTHORIZED_OUTCOME_BLIND"
+}
