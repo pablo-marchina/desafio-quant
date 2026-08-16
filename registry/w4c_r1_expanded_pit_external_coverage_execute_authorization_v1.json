@@ -1,0 +1,45 @@
+{
+  "artifact": "W4C_R1_EXPANDED_PIT_EXTERNAL_COVERAGE_EXECUTE_AUTHORIZATION",
+  "version": "W4C-R1-EXPANDED-PIT-EXTERNAL-COVERAGE-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_PRE_PNL_EXTERNAL_PIT_COVERAGE_EXPANSION",
+  "authorization_basis": {
+    "protocol": "registry/w4c_r1_expanded_pit_signal_coverage_protocol_v1.json",
+    "protocol_gate": "PASS_W4C_R1_EXPANDED_PIT_SIGNAL_COVERAGE_PROTOCOL_FROZEN_NO_OUTCOME_RETURN_SETTLEMENT_READS",
+    "coverage_freeze": "registry/w4c_r1_expanded_economic_backtest_signal_coverage_freeze_v1.json",
+    "coverage_freeze_gate": "PASS_SIGNAL_COVERAGE_DIAGNOSIS_FROZEN_NO_EXPANDED_PNL_AUTHORIZATION",
+    "executor": "scripts/w4c_r1_expanded_pit_external_coverage_executor_v1.py",
+    "executor_commit": "142fb04aef6abd8d3af3d29d7b5b1af37861252d"
+  },
+  "authorized_scope": {
+    "read_existing_repo_signal_artifacts": true,
+    "query_polymarket_gamma_catalog_for_market_identity": true,
+    "query_polymarket_clob_pre_cutoff_yes_price_history": true,
+    "materialize_signal_map_v3": true,
+    "rerun_pre_pnl_eligibility_v2": true,
+    "write_price_return_authorization_candidate_only_if_threshold_met": true
+  },
+  "not_authorized": {
+    "read_prediction_market_settlement": true,
+    "read_earnings_numeric_outcomes": true,
+    "read_security_prices_or_returns": true,
+    "read_benchmark_returns": true,
+    "read_argos_pnl": true,
+    "execute_economic_backtest": true,
+    "promote_strategy": true
+  },
+  "execution_env": {
+    "W4C_R1_EXPANDED_PIT_EXTERNAL_COVERAGE_EXECUTE": "YES_FROZEN_PRE_PNL_EXTERNAL_PIT_COVERAGE"
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false,
+    "benchmark_return_read": false,
+    "argos_pnl_read": false,
+    "economic_backtest_execution": false
+  },
+  "gate_decision": "PASS_W4C_R1_EXPANDED_EXTERNAL_PIT_COVERAGE_EXECUTION_AUTHORIZED_PRE_PNL"
+}
