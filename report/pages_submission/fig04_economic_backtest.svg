@@ -20,7 +20,7 @@
 <text x="120" y="300" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">Capital C0=1 • 10 sessões • 21 long / 13 short • custos 20/35 bps • cash gate sem alavancagem implícita</text>
 <line x1="1040" y1="285" x2="1240" y2="285" stroke="#49C6E5" stroke-width="4" marker-end="url(#arrowCyan)"/>
 <text x="1268" y="293" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#49C6E5">NAV diária real</text>
-<text x="120" y="335" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#F4BF4F">Objeto correto: diagnóstico financiado descritivo; não reabre H2 e não transforma R1 em alpha validado.</text>
+<text x="120" y="335" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" fill="#F4BF4F">Objeto correto: diagnóstico financiado descritivo; não reabre H2 e não promove R1 nem valida alpha.</text>
 
 <rect x="80" y="390" width="272" height="165" rx="20" fill="#14283D" stroke="#294158" stroke-width="2"/>
 <text x="110" y="430" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="19" font-weight="700" fill="#9FB0C3">NAV terminal</text>
