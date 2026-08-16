@@ -1,0 +1,52 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_INPUT_REPAIR",
+  "version": "W4C-R1-EIR-INPUT-REPAIR-v1.0",
+  "status": "FROZEN_PRE_EXTERNAL_REQUEST",
+  "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+  "sample_size": 40,
+  "selection_change_allowed": false,
+  "resampling_allowed": false,
+  "external_source_reads_during_repair": false,
+  "outcome_data_used": false,
+  "repaired_rows": [
+    {
+      "exact_group_id": "W4CE1-255de5efc59b0a13cd48",
+      "pretruth_subject_key": "pathward_financial_cash_its_estimate_1pt29",
+      "ticker_candidate": "CASH",
+      "repair_rule": "EXACT_FROZEN_PRETRUTH_SUBJECT_TOKEN_CASH_BEFORE_ITS_ESTIMATE",
+      "status": "REPAIRED_DETERMINISTICALLY_FROM_FROZEN_SAMPLE"
+    },
+    {
+      "exact_group_id": "W4CE1-41656e7ed0dc094bc332",
+      "pretruth_subject_key": "dave_buster_entertainment_play_up_or_down_busters",
+      "ticker_candidate": "PLAY",
+      "repair_rule": "FROZEN_PROFILE_SAME_ISSUER_UNIQUE_TICKER",
+      "supporting_profile_group_id": "W4CE1-d408b814bd62167e0fd1",
+      "status": "REPAIRED_DETERMINISTICALLY_FROM_FROZEN_PROFILE"
+    },
+    {
+      "exact_group_id": "W4CE1-29ac4c9b8f8a339821f1",
+      "pretruth_subject_key": "victoria_secret_vsco_up_or_down_victorias",
+      "ticker_candidate": "VSCO",
+      "repair_rule": "FROZEN_PROFILE_SAME_ISSUER_UNIQUE_TICKER",
+      "supporting_profile_group_id": "W4CE1-07a013b1ecd9be56299a",
+      "status": "REPAIRED_DETERMINISTICALLY_FROM_FROZEN_PROFILE"
+    },
+    {
+      "exact_group_id": "W4CE1-8642b204a5d2db51203c",
+      "pretruth_subject_key": "nongaap_0pt54",
+      "ticker_candidate": "",
+      "repair_rule": "NO_DETERMINISTIC_ISSUER_OR_TICKER_PRESENT_IN_FROZEN_INPUTS",
+      "status": "PRESERVED_UNRESOLVED_NO_GUESS"
+    }
+  ],
+  "invariants": {
+    "sample_group_ids_unchanged": true,
+    "sample_selection_hashes_unchanged": true,
+    "sample_dates_unchanged": true,
+    "sample_year_allocation_unchanged": true,
+    "thresholds_unchanged": true,
+    "protocol_unchanged": true
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_INPUT_REPAIR_FROZEN_PRE_REQUEST"
+}
