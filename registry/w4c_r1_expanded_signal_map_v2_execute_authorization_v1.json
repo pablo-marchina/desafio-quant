@@ -1,0 +1,44 @@
+{
+  "artifact": "W4C_R1_EXPANDED_SIGNAL_MAP_V2_EXECUTE_AUTHORIZATION",
+  "version": "W4C-R1-EXPANDED-SIGNAL-MAP-V2-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_BUILD_EXPANDED_PIT_SIGNAL_MAP_FROM_TRAJECTORY",
+  "authorization_basis": {
+    "trajectory_join_probe": "registry/w4c_r1_expanded_trajectory_signal_join_probe_v1.json",
+    "trajectory_join_probe_gate": "PASS_TRAJECTORY_JOIN_PROBE_NO_OUTCOME_RETURN_SETTLEMENT_PNL_READS",
+    "probe_finding": "trajectory schema supports direct ticker+company_event_date join and contains safe_cutoff_utc, timestamp_utc, token_label and price",
+    "selected_source": "data/ic04_yes_probability_trajectory.csv.gz",
+    "builder_script": "scripts/w4c_r1_expanded_signal_map_builder_v2.py",
+    "builder_script_commit": "fc0602b312f2719c2746365499848bb1afd76d93"
+  },
+  "authorized_scope": {
+    "read_pre_pnl_eligibility_manifest": true,
+    "read_yes_probability_trajectory": true,
+    "filter_yes_token": true,
+    "select_latest_probability_at_or_before_safe_cutoff": true,
+    "join_by_ticker_and_company_event_date": true,
+    "write_signal_map_v2": true,
+    "write_signal_map_summary_v2": true
+  },
+  "not_authorized": {
+    "read_settlement_values": true,
+    "read_earnings_outcomes": true,
+    "read_realized_returns": true,
+    "read_security_prices_or_price_returns": true,
+    "read_benchmark_returns": true,
+    "read_argos_pnl": true,
+    "compute_economic_backtest": true,
+    "promote_strategy": true
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false,
+    "benchmark_return_read": false,
+    "argos_pnl_read": false,
+    "economic_backtest_execution": false
+  },
+  "gate_decision": "PASS_W4C_R1_EXPANDED_SIGNAL_MAP_V2_BUILD_AUTHORIZED_PRE_PNL"
+}
