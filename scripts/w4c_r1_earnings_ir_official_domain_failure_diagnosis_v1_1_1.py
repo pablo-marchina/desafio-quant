@@ -83,8 +83,6 @@ def main() -> int:
         elif body_count == 0:
             layer = "RESOLVED_NAVIGATION_NO_BODY_ATTEMPT"
         else:
-            status_counts = Counter(str(b.get("http_status", "")) for b in bodies)
-            error_counts = Counter(str(b.get("error_class", "")) or "NO_ERROR_CLASS" for b in bodies)
             any_200 = any(str(b.get("http_status", "")) == "200" for b in bodies)
             any_bindable = any(truthy(b.get("identity_bindable", "")) for b in bodies)
             if any_200 and not any_bindable:
@@ -151,3 +149,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+# Trigger-only comment: materialize v1.1.1 failure diagnosis after workflow registration.
