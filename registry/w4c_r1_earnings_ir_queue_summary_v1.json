@@ -1,0 +1,29 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_QUEUE_SUMMARY",
+  "family": "EARNINGS_EPS",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_QUEUE_MATERIALIZED_PRE_SOURCE_LOOKUP",
+  "groups": 1355,
+  "issuer_ir_lookup_performed": false,
+  "linked_asset_realized_returns_read": false,
+  "n_final_backtestable_authorized": false,
+  "new_external_source_reads": false,
+  "outcome_reveal_authorized": false,
+  "prediction_market_performance_read": false,
+  "science_reopened": false,
+  "sec_lookup_performed": false,
+  "serialization": "UTF-8 exact_group_id lexicographically sorted, LF joined, terminal LF",
+  "sorted_group_ids_sha256": "c9fd3a13e87ea720e961fa087098130fd20da74c96aa02419aaeebef1e64b05c",
+  "source_git_blob_sha_expected": "82be733e844e7b2e99ad3c174370fe3fa214b807",
+  "source_path": "registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz",
+  "status": "FROZEN_DESCRIPTIVE_QUEUE_ONLY",
+  "unique_exact_group_ids": 1355,
+  "unique_pretruth_subject_keys": 1320,
+  "venue_counts": {
+    "POLYMARKET": 1355
+  },
+  "version": "W4C-R1-EIR-Q-v1.0",
+  "year_counts": {
+    "2025": 483,
+    "2026": 872
+  }
+}
