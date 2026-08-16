@@ -1,0 +1,303 @@
+{
+  "allocation": {
+    "2025": 20,
+    "2026": 20
+  },
+  "artifact": "W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_SAMPLE",
+  "event_truth_verification_authorized": false,
+  "external_probe_requests_performed": false,
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_PROBE_SAMPLE_FROZEN_PRE_REQUEST",
+  "issuer_ir_lookup_performed": false,
+  "linked_asset_realized_returns_read": false,
+  "n_final_backtestable_authorized": false,
+  "outcome_reveal_authorized": false,
+  "prediction_market_performance_read": false,
+  "rows": [
+    {
+      "exact_group_id": "W4CE1-5d1d94c03b3f6dc4b817",
+      "pretruth_event_reference_date": "2025-11-25",
+      "pretruth_subject_key": "workday_wday_nongaap_2pt17",
+      "selection_hash": "00ccb86a8d1678d68b9666aeba23a31f469d764eb571264cfb4883ba76b193c8",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-1be9a4fed2080af1c931",
+      "pretruth_event_reference_date": "2025-10-14",
+      "pretruth_subject_key": "jpmorgan_chase_jpm_gaap_4pt72",
+      "selection_hash": "021bba01b0d32ddb61c6b15bf66238122818291fa26158e525fa784fc158d539",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-b2e15c794acb46dcf873",
+      "pretruth_event_reference_date": "2025-11-20",
+      "pretruth_subject_key": "intuit_intu_nongaap_3pt09",
+      "selection_hash": "02d722d65b97199ea2e6ae5732603993afd28b56700b44513443f76679c0f747",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-1df1ee1cb237dc4e7ae5",
+      "pretruth_event_reference_date": "2025-11-25",
+      "pretruth_subject_key": "best_buy_bby_nongaap_1pt31",
+      "selection_hash": "031fa69ae983e341cebcaacbee8b83b6ccf01803b545c62c8e1b58e59342903d",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-82448e12a442aa83281c",
+      "pretruth_event_reference_date": "2025-11-04",
+      "pretruth_subject_key": "hinge_health_hnge_gaap_neg0pt21",
+      "selection_hash": "03237a58ee568970b91829b4c8133bac5ec58ed47dcc7bd1911a39743967bc16",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-8642b204a5d2db51203c",
+      "pretruth_event_reference_date": "2025-10-22",
+      "pretruth_subject_key": "nongaap_0pt54",
+      "selection_hash": "03886e72f36b093ef4c60fb99d52648ed4366d37e95ab417877e4ea1fc87e81c",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-4737ee123438ae0d303d",
+      "pretruth_event_reference_date": "2025-11-05",
+      "pretruth_subject_key": "applovin_app_gaap_2pt39",
+      "selection_hash": "041f8506513a72a669c5fceb3ca7eeb8d60e6b35e290d3899f88e8004111d24a",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-255de5efc59b0a13cd48",
+      "pretruth_event_reference_date": "2025-10-22",
+      "pretruth_subject_key": "pathward_financial_cash_its_estimate_1pt29",
+      "selection_hash": "04737614d0e919557d08ddf736b20fae84b2bd6633d333d14b4b0f1c068c16d7",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-41656e7ed0dc094bc332",
+      "pretruth_event_reference_date": "2025-12-10",
+      "pretruth_subject_key": "dave_buster_entertainment_play_up_or_down_busters",
+      "selection_hash": "04cdab51cb0dffded3c47795f1bf8b334b34cdfbe127a578fa1de16e21c218c1",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-604bfe787b6857139101",
+      "pretruth_event_reference_date": "2025-10-07",
+      "pretruth_subject_key": "penguin_solutions_peng_nongaap_0pt37",
+      "selection_hash": "04dd6634f9cdf63a89371ea2e240d8244cb473cbf30ca8d882a7e87e584c9bb2",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-5a9b82d91baf85fcdedc",
+      "pretruth_event_reference_date": "2025-11-06",
+      "pretruth_subject_key": "eventbrite_eb_gaap_neg0pt04",
+      "selection_hash": "05160f8d3942639053e29e1788ecb9e827921306efdc65759d6ecdbda43aa18f",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-29ac4c9b8f8a339821f1",
+      "pretruth_event_reference_date": "2025-12-05",
+      "pretruth_subject_key": "victoria_secret_vsco_up_or_down_victorias",
+      "selection_hash": "0555bbd2e333777e2090177e0c9fb41dd6e3fd9ee26850c981a64cb2f0463384",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-d6fad74bbbe8c38c6a5d",
+      "pretruth_event_reference_date": "2025-11-06",
+      "pretruth_subject_key": "sandisk_sndk_nongaap_0pt88",
+      "selection_hash": "05a7a12470822646686f112487e5371147cee4a8e6acf745c0b378211d2f673f",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-360147b7325e16c31d6a",
+      "pretruth_event_reference_date": "2025-10-22",
+      "pretruth_subject_key": "sei_investments_seic_gaap_1pt26",
+      "selection_hash": "06246398b07ed712e21c2f28324d220c4849620f7b5143eaab4f5be79cbfa737",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-c1223591fec31d470f64",
+      "pretruth_event_reference_date": "2025-11-25",
+      "pretruth_subject_key": "pagerduty_pd_nongaap_0pt25",
+      "selection_hash": "063c0a0b1c9de58c9217cb6b3488ee788d55b23837255c84feea9638165fedf2",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-be1b3b7d9760925b8866",
+      "pretruth_event_reference_date": "2025-10-29",
+      "pretruth_subject_key": "teladoc_health_tdoc_gaap_neg0pt26",
+      "selection_hash": "072262bd175df376c0c905adca46ba55f168c3488e4e569ae0af150b330f284e",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-2c799df5eb04be30675b",
+      "pretruth_event_reference_date": "2025-12-09",
+      "pretruth_subject_key": "gamestop_gme_nongaap_0pt2",
+      "selection_hash": "07e8112b7405130ce7956c75ff3f0b76528d2334d6e0d9648f91b0a51a9fb18a",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-fa0c7f08f40e0d7f5125",
+      "pretruth_event_reference_date": "2025-10-28",
+      "pretruth_subject_key": "electronic_arts_ea_gaap_0pt35",
+      "selection_hash": "084fb638778366a6ae1ecebc7fb81c3dca67f52ccf6bc6245e081b58da247c74",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-8505cc1ba7cdfe411286",
+      "pretruth_event_reference_date": "2025-12-19",
+      "pretruth_subject_key": "carnival_ccl_nongaap_0pt25",
+      "selection_hash": "0894cfa146e620988d230d7ce6593f9bd7541bf2d8e1431e795a963003ff964d",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-dc3a07ff8984f9f116b9",
+      "pretruth_event_reference_date": "2025-10-23",
+      "pretruth_subject_key": "blackstone_bx_gaap_1pt23",
+      "selection_hash": "099145704605d8c561d19ba7d143b2ffecc11f6709a3642805708d3aac28272d",
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-69a6c7f7c513930cc069",
+      "pretruth_event_reference_date": "2026-01-13",
+      "pretruth_subject_key": "bny_bk_nongaap_1pt99",
+      "selection_hash": "004673837afdf7ee22eca3666a9a5ffd06353ae14fff4d2cbe877cd81808e5ef",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-bc6c3b1be95ee70723f2",
+      "pretruth_event_reference_date": "2026-08-04",
+      "pretruth_subject_key": "sysco_syy_nongaap_1pt51",
+      "selection_hash": "0068c3be838a6453dca5a038c66d7805553f2c8f32ddf1cd5689dd441289a14d",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-905ec0cae5bbd6ae5244",
+      "pretruth_event_reference_date": "2026-08-06",
+      "pretruth_subject_key": "yelp_gaap_0pt36",
+      "selection_hash": "007fa04e8773ee3fb8644ccd279baf779111bf39682a6d9add75c019548e7dab",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-d6524cab64e571d429b8",
+      "pretruth_event_reference_date": "2026-07-30",
+      "pretruth_subject_key": "teleflex_tfx_nongaap_1pt27",
+      "selection_hash": "009f56b5c31b6fa6d5f034ae6db87c9fca8551dafd94ac70ca993c940ec3eea1",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-d20e674efdfec3f67547",
+      "pretruth_event_reference_date": "2026-02-05",
+      "pretruth_subject_key": "ralph_lauren_rl_nongaap_5pt78",
+      "selection_hash": "00ebfbe7a88bed5b141b7cc4a1e62675ea211d9fd2211ef6998d8121f603e732",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-3abf9fe00092db67823c",
+      "pretruth_event_reference_date": "2026-02-19",
+      "pretruth_subject_key": "icu_medical_icui_nongaap_1pt69",
+      "selection_hash": "0102328a5504fbd45c812e46d54f3889cef431eba86a93e8b0b0532734936552",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-a8d51819d0be35abc771",
+      "pretruth_event_reference_date": "2026-03-31",
+      "pretruth_subject_key": "factset_research_systems_fds_nongaap_4pt37",
+      "selection_hash": "012c4d71939394fb7ea721bf96e25d833d921a35023f04195fd453791c0d91a4",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-89139bb22bb3c7942d07",
+      "pretruth_event_reference_date": "2026-05-05",
+      "pretruth_subject_key": "dupont_dd_nongaap_0pt49",
+      "selection_hash": "01594534a885e55da450ec1bd78ab9bdd5ac752e4e944d7613d59e51b0c4694a",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-3f6bb1902c5bd9cc0587",
+      "pretruth_event_reference_date": "2026-02-18",
+      "pretruth_subject_key": "booking_holdings_bkng_nongaap_48pt5",
+      "selection_hash": "016ac0a32e5aa8e659017f3ef23c3f7ac84b34b0ba9d12cd42e11657f211158d",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-0074f460ce6a2fed5453",
+      "pretruth_event_reference_date": "2026-07-30",
+      "pretruth_subject_key": "anheuser_busch_inbev_bud_nongaap_1pt14",
+      "selection_hash": "0196d6e75026388680fe8d08351c558b6e95fe4ed88c75b8c466916586f76638",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-eb36d1908c5f47a77d8e",
+      "pretruth_event_reference_date": "2026-04-23",
+      "pretruth_subject_key": "ss_technologies_ssnc_nongaap_1pt65",
+      "selection_hash": "02cfbccb29a9085692363225cce43b8272908bbd8da8c0301306d5bca261bae3",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-28af022000b7a555ffca",
+      "pretruth_event_reference_date": "2026-02-10",
+      "pretruth_subject_key": "coca_cola_ko_nongaap_0pt56",
+      "selection_hash": "02fa4cf31de3f9ab50309646df16efbdf0cc8d17d9d3033ca8c3caa549721960",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-11dd7d08d8dce429f54b",
+      "pretruth_event_reference_date": "2026-02-12",
+      "pretruth_subject_key": "airbnb_abnb_gaap_0pt66",
+      "selection_hash": "0372ce74b3017b7a0a2a284338b4e68e91f30204e2696469513a317373fe6cee",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-87a3700c0dd4eb66fa8e",
+      "pretruth_event_reference_date": "2026-01-22",
+      "pretruth_subject_key": "capital_one_cof_nongaap_4pt17",
+      "selection_hash": "03dc018826b4991cf1068944c08fcbc983865617f808c74f61d17ae975cc0b7a",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-ca7dcacb7e4f0d48db7d",
+      "pretruth_event_reference_date": "2026-07-23",
+      "pretruth_subject_key": "ss_ssnc_nongaap_1pt68",
+      "selection_hash": "041f1e6fe73f758115646dd62ae8825a6be32d1eca9daa968fcd781e8ca42f63",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-402cb40ef17bb46d6f97",
+      "pretruth_event_reference_date": "2026-07-16",
+      "pretruth_subject_key": "unitedhealth_group_unh_nongaap_4pt85",
+      "selection_hash": "04330beb5624c53f2ca060475b4d71cfa1b1d3664c87a247f300d8ded43adf7e",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-6f91ead44ca698d72ba3",
+      "pretruth_event_reference_date": "2026-04-14",
+      "pretruth_subject_key": "blackrock_blk_nongaap_12pt26",
+      "selection_hash": "048439a87f70fc113bf4da5aab14355fa5e7e918b6b5d609cf19cbdee8f7cb0e",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-25597e0bf6237bcf08ba",
+      "pretruth_event_reference_date": "2026-02-18",
+      "pretruth_subject_key": "moody_mco_nongaap_3pt44",
+      "selection_hash": "04889df638419edd1fc05018db4702a5a1eb147b7c311866d62307f2943ddd1b",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-b0bd3e12f353e881d686",
+      "pretruth_event_reference_date": "2026-07-30",
+      "pretruth_subject_key": "mastercard_ma_nongaap_4pt77",
+      "selection_hash": "04a6f98cbd15b36c3889d3889a61f892d716d6df3d9088d53b9cdae7f3b15c3c",
+      "year": "2026"
+    },
+    {
+      "exact_group_id": "W4CE1-59e6fdf7107cde665f5f",
+      "pretruth_event_reference_date": "2026-05-27",
+      "pretruth_subject_key": "marvell_tech_mrvl_nongaap_0pt79",
+      "selection_hash": "0550615c657216348d6c79f80ba9223619fdad16528083621b3bbebd5802012d",
+      "year": "2026"
+    }
+  ],
+  "sample_size": 40,
+  "science_reopened": false,
+  "selection_seed_prefix": "W4C-R1-EIR-DP-v1.0|",
+  "sorted_sample_group_ids_sha256": "d131cb10db8fb219f4cd4d07e274aa0c7c1941fa23e3165e091aaeccf64ae0f6",
+  "status": "FROZEN_SAMPLE_PRE_EXTERNAL_REQUEST",
+  "version": "W4C-R1-EIR-DP-SAMPLE-v1.0"
+}
