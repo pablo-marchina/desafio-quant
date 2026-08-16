@@ -1,24 +1,27 @@
 {
   "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_CONCRETE_EXECUTOR_FREEZE",
-  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-CONCRETE-EXECUTOR-v1.0",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-CONCRETE-EXECUTOR-v1.1",
   "date": "2026-08-16",
-  "status": "FROZEN_CONCRETE_EXECUTOR_PRE_PNL",
-  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_CONCRETE_EXECUTOR_FROZEN_VALIDATE_AND_ELIGIBILITY_ONLY",
-  "script_path": "scripts/w4c_r1_expanded_economic_backtest_executor_v1.py",
-  "script_blob_sha": "23041adf08e3d4ce418000cc0cb29cfa16389320",
-  "script_commit_sha": "10bb37caffd96ad7b51ab8920ada6d0d1fa1178d",
+  "status": "FROZEN_CONCRETE_EXECUTOR_PRE_PNL_QUEUE_OVERLAY",
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_CONCRETE_EXECUTOR_V1_1_FROZEN_VALIDATE_AND_ELIGIBILITY_ONLY",
+  "script_path": "scripts/w4c_r1_expanded_economic_backtest_executor_v1_1.py",
+  "script_blob_sha": "6e3a770a1324f4392e2d9f2107f8ad637b619d45",
+  "script_commit_sha": "4fd6e5f71ad32104d6f543be10aa22beeebdd085",
+  "previous_script_path": "scripts/w4c_r1_expanded_economic_backtest_executor_v1.py",
+  "previous_script_blob_sha": "23041adf08e3d4ce418000cc0cb29cfa16389320",
   "protocol": "registry/w4c_r1_expanded_economic_backtest_protocol_freeze_v1.json",
   "design_freeze": "registry/w4c_r1_expanded_economic_backtest_executor_freeze_v1.json",
   "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+  "queue_overlay_source": "registry/w4c_r1_earnings_ir_queue_v1.csv.gz",
   "authorized_modes_in_this_freeze": {
     "validate_only": true,
     "materialize_eligibility": true,
     "execute_economic_backtest": false
   },
   "executor_behavior": {
-    "validate_only": "Validates protocol, full expansion freeze, full expansion manifests and firewalls without outcome/settlement/return/PNL reads.",
-    "materialize_eligibility": "Creates pre-PnL eligibility manifest and summary using deterministic joins and failure reasons only.",
-    "execute_economic_backtest": "Fail-closed guard only in this v1 concrete executor; requires separate authorization plus frozen PIT signal map and follow-up return execution implementation before PnL claims."
+    "validate_only": "Validates protocol, full expansion freeze, full expansion manifests, queue overlay availability and firewalls without outcome/settlement/return/PNL reads.",
+    "materialize_eligibility": "Creates pre-PnL eligibility manifest and summary by overlaying frozen resolution rows with the frozen queue for deterministic pretruth date/subject recovery.",
+    "execute_economic_backtest": "Fail-closed guard only; requires separate authorization plus frozen PIT signal map and return execution implementation before PnL claims."
   },
   "expected_outputs_for_eligibility_run": [
     "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz",
@@ -33,5 +36,5 @@
     "n_final_backtestable_authorized": false,
     "backtest_execution_authorized": false
   },
-  "next_gate": "Run validate/materialize eligibility; if signal coverage is missing, freeze a PIT signal-map join before authorizing price/return execution."
+  "next_gate": "Run validate/materialize eligibility with queue overlay; then freeze a PIT signal-map join before authorizing price/return execution."
 }
