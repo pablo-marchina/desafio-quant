@@ -1,0 +1,23 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTION_MANIFEST",
+  "capacity_decision": "CONDITIONAL_ROUTE",
+  "executor": "w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py",
+  "external_requests_performed": true,
+  "outputs": {
+    "navigation_sha256": "ac838acaa24902a3160c499b939f838222d1cb8ee533437ed78d14510374c5d7",
+    "official_body_sha256": "99fefae404f6513df42d2ba3f9899024c9f54cfe594866ca4ae80bf88f5e5526",
+    "resolution_sha256": "9754cff1336c9f7cfd2053d61980b58d7de008af4fab545e10de4b48c8b19ccf",
+    "summary_sha256": "d58a6fa42f0e83bc0ba1d0abdebe6f2c8cb7368041ff1119a6ac36196d9a4d3a"
+  },
+  "protocol": "w4c_r1_earnings_ir_official_domain_discovery_protocol_v1.json",
+  "sample": "w4c_r1_earnings_ir_probe_sample_v1.json",
+  "sample_size": 40,
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "event_truth_verification_used": false,
+    "n_final_backtestable_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false
+  }
+}

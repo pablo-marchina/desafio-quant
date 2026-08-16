@@ -1,0 +1,16 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_CAPACITY_SUMMARY",
+  "candidate_navigation_rows": 114,
+  "capacity_decision": "CONDITIONAL_ROUTE",
+  "n_final_backtestable_authorized": false,
+  "official_body_attempt_rows": 114,
+  "outcome_reveal_authorized": false,
+  "probe_success_by_year": {
+    "2025": 7,
+    "2026": 12
+  },
+  "probe_success_total": 19,
+  "sample_size": 40,
+  "unique_wikidata_resolution_total": 27,
+  "version": "W4C-R1-EIR-ODD-RESULT-v1.0"
+}
