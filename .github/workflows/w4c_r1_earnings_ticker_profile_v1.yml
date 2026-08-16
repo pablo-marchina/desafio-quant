@@ -1,0 +1,58 @@
+name: W4-C R1 Earnings Ticker Profile v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - registry/w4c_r1_earnings_ticker_profile_freeze_v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  profile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate ticker profile freeze
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          f=json.load(open('registry/w4c_r1_earnings_ticker_profile_freeze_v1.json'))
+          blob=lambda p: subprocess.check_output(['git','hash-object',p],text=True).strip()
+          assert f['status']=='FROZEN_DESCRIPTIVE_TICKER_PROFILE_PRE_EXTERNAL_LOOKUP'
+          assert blob('scripts/w4c_r1_earnings_ticker_profile_v1.py')==f['profiler_git_blob_sha']=='fbdecf7140557cb01389c38b2877cb31217c0fa0'
+          assert blob('.github/workflows/w4c_r1_earnings_ticker_profile_v1.yml')==f['workflow_git_blob_sha']
+          assert blob('registry/w4c_r1_earnings_ir_queue_v1.csv.gz')==f['queue_git_blob_sha']=='395b56ada4b3be8412f2391957cfcde0c832cb84'
+          print('PASS_W4C_R1_EARNINGS_TICKER_PROFILE_FREEZE')
+          PY
+      - name: Materialize ticker profile
+        run: python scripts/w4c_r1_earnings_ticker_profile_v1.py
+      - name: Validate profile firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4c_r1_earnings_ticker_profile_v1.json'))
+          assert x['gate_decision']=='PASS_W4C_R1_EARNINGS_TICKER_PROFILE_DESCRIPTIVE_ONLY'
+          assert x['queue_groups']==1355
+          assert x['ticker_candidate_is_truth_evidence'] is False
+          assert x['ticker_candidate_may_vote'] is False
+          assert x['new_external_source_reads'] is False
+          assert x['issuer_ir_lookup_performed'] is False
+          assert x['sec_lookup_performed'] is False
+          assert x['n_final_backtestable_authorized'] is False
+          print('PASS_W4C_R1_EARNINGS_TICKER_PROFILE_FIREWALL')
+          PY
+      - name: Persist profile branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-earnings-ticker-profile-v1
+          git add registry/w4c_r1_earnings_ticker_profile_v1.json
+          git commit -m 'registry: materialize W4-C R1 earnings ticker profile v1'
+          git push -f origin w4c-r1-earnings-ticker-profile-v1
