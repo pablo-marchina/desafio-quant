@@ -1,0 +1,64 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_RESULT_FREEZE",
+  "version": "W4C-R1-EIR-ODD-RESULT-FREEZE-v1.1.1",
+  "date": "2026-08-16",
+  "status": "FROZEN_RESULT_AUTHORITATIVE",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_RESULT_V1_1_1_FROZEN_AUTHORITATIVE",
+  "source_workflow": {
+    "workflow_name": "W4-C R1 earnings IR official-domain capacity probe v1.1.1 execute",
+    "workflow_id": 335570777,
+    "run_id": 31949738465,
+    "job_id": 95171267988,
+    "run_conclusion": "success",
+    "source_head_sha": "feee0cb5e6dd6ff6cc8a128a54a1f9cfc4394f3d",
+    "result_commit_sha": "8cd5f6f"
+  },
+  "result_files": {
+    "capacity_summary_path": "registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_1_1.json",
+    "execution_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_execution_manifest_v1_1_1.json",
+    "resolution_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_resolution_manifest_v1_1_1.csv.gz",
+    "navigation_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_navigation_manifest_v1_1_1.csv.gz",
+    "official_body_manifest_path": "registry/w4c_r1_earnings_ir_official_domain_body_manifest_v1_1_1.csv.gz"
+  },
+  "protocol_version": "W4C-R1-EIR-ODD-v1.1.1",
+  "result_version": "W4C-R1-EIR-ODD-RESULT-v1.1.1",
+  "amendment_scope": "transport_bounding_only",
+  "sample_size": 40,
+  "sample_selection_changed": false,
+  "thresholds_changed": false,
+  "capacity_result": {
+    "capacity_decision": "CONDITIONAL_ROUTE",
+    "probe_success_total": 22,
+    "probe_success_by_year": {
+      "2025": 8,
+      "2026": 14
+    },
+    "unique_wikidata_resolution_total": 31,
+    "candidate_navigation_rows": 95,
+    "official_body_attempt_rows": 95,
+    "max_candidates_per_resolved_group": 8,
+    "request_timeout_seconds": 5,
+    "wdqs_timeout_seconds": 20
+  },
+  "output_hashes": {
+    "resolution_sha256": "a14f35670ab7a10e5e74f47e7d6bb3f356a955a1f40573317d2e512f343c7b43",
+    "navigation_sha256": "809b8e35c5decf975247eb6641baafd3c1d659a6edc78eb0fd5aca7559665c9b",
+    "official_body_sha256": "3435e87a4631b5ee221613347537591bd5b13aecaeea8b9208e0bfec99c10936",
+    "summary_sha256": "af588da8292c291e2066cb471c608a31535175eaf6dfce1ae025467c38d190cc"
+  },
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "event_truth_verification_used": false,
+    "outcome_reveal_authorized": false,
+    "n_final_backtestable_authorized": false
+  },
+  "authorization_state": {
+    "full_1355_execution_authorized": false,
+    "full_route_technically_viable": false,
+    "conditional_route_authorized_for_next_governance_decision": true,
+    "next_required_action": "Perform an outcome-blind v1.1.1 failure-layer diagnosis before any full 1355 execution decision."
+  }
+}
