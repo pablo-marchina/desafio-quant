@@ -1,0 +1,45 @@
+{
+  "artifact": "FINAL_PDF_SUBMISSION_FREEZE",
+  "date_utc": "2026-08-16T20:38:17.040656Z",
+  "pdf": {
+    "format": "16:9 widescreen from 1600x900 SVG pages",
+    "page_size_lines_from_pdfinfo": [
+      "Page size:       1200 x 675 pts"
+    ],
+    "pages": 5,
+    "path": "dist/final_submission/ARGOS_final_submission.pdf",
+    "sha256": "1c2d46eac9dfbf07c3ab7d0200a2e50659a2a90a1bdb8d9f1145984bdbbf6fd3",
+    "source_page_hashes": {
+      "fig01_strategy_pipeline.svg": "a6272770e054795f7265ba46c1455dfcc5db9bb5cd2888aa908793ee85e0b7e0",
+      "fig02_model_reduction.svg": "c525334304bf2de8b1adbe300b40ef7d4ca545071280d8d5c8f0807d869755ea",
+      "fig03_h2_results.svg": "6170d8bf1427c76d218232b99f65728bf91239681d6aa82a902404446abda29d",
+      "fig04_economic_backtest.svg": "56ae98a82a2e9baed6f83182084f435429e70f73429b95366a84e98c84834d43",
+      "fig05_genai_future.svg": "7fe4b16d39ffbb5cd967cdeac8cba95078c340673545416e710d0c1b82906bac"
+    },
+    "source_pages_dir": "report/pages_submission"
+  },
+  "qa": {
+    "anonymity_forbidden_matches": [],
+    "checks": {
+      "anonymous_text_scan_passed": true,
+      "exactly_5_pages": true,
+      "forbidden_claim_scan_passed": true,
+      "page_4_closeout_policy": "uses PIT coverage closeout: official-domain 1355, final PIT coverage 109, no expanded PnL claim",
+      "required_core_terms_present": true
+    },
+    "claim_forbidden_matches": [],
+    "failures": [],
+    "required_text_hints_missing": []
+  },
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "benchmark_return_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "expanded_price_return_backtest_executed": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false
+  },
+  "status": "PASS_FINAL_PDF_QA",
+  "submission_warning": "Official filename may need to be renamed to the challenge submission key before upload.",
+  "version": "FINAL-PDF-SUBMISSION-FREEZE-v1.0"
+}
