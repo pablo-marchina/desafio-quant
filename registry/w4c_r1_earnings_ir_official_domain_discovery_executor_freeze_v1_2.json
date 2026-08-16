@@ -1,0 +1,46 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_EXECUTOR_FREEZE",
+  "version": "W4C-R1-EIR-ODD-EXEC-FREEZE-v1.2",
+  "date": "2026-08-16",
+  "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTOR_V1_2_FROZEN_PRE_REQUEST",
+  "external_requests_performed_before_freeze": false,
+  "issuer_ir_lookup_performed_before_freeze": false,
+  "sample_selection_changed": false,
+  "thresholds_changed": false,
+  "outcome_data_used": false,
+  "settlement_data_used": false,
+  "returns_or_pnl_used": false,
+  "bound_files": [
+    {
+      "path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_2.json",
+      "git_blob_sha": "0db86b1642185ef8a49bad6367dcb21ff6a1c0f8"
+    },
+    {
+      "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_2.py",
+      "git_blob_sha": "ac92aaaca34491018d5382534f6114271ea65896"
+    },
+    {
+      "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1_1.py",
+      "git_blob_sha": "0bfc77bb875c26e0fc35f0a1563d31d16ac9aae3"
+    },
+    {
+      "path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+      "git_blob_sha": "6c0fb6de3ffa5c6f933ed009e94fa62c606c5cc9"
+    },
+    {
+      "path": "registry/w4c_r1_earnings_ticker_profile_v1.json",
+      "git_blob_sha": "7a7938bbc2dad050c4cae989d8c4ecf98dbfd945"
+    }
+  ],
+  "execution_env_token": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_2_EXECUTE=YES_FROZEN_OFFICIAL_DOMAIN_V1_2_PROBE",
+  "validate_only_env_token": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_2_VALIDATE_ONLY=YES",
+  "amendment_scope": "targeted_resolution_and_transport_hardening_only",
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_allowed": false,
+    "prediction_market_settlement_allowed": false,
+    "realized_returns_allowed": false,
+    "argos_pnl_allowed": false,
+    "n_final_backtestable_authorized": false
+  }
+}
