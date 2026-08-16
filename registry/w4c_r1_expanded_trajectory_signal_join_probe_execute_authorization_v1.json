@@ -1,0 +1,44 @@
+{
+  "artifact": "W4C_R1_EXPANDED_TRAJECTORY_SIGNAL_JOIN_PROBE_EXECUTE_AUTHORIZATION",
+  "version": "W4C-R1-EXPANDED-TRAJECTORY-SIGNAL-JOIN-PROBE-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_PRE_PNL_TRAJECTORY_SIGNAL_JOIN_PROBE",
+  "authorization_basis": {
+    "eligibility_summary": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json",
+    "current_signal_map_summary": "registry/w4c_r1_expanded_economic_backtest_signal_map_summary_v1.json",
+    "current_signal_map_rows": 109,
+    "blocker": "ART-028 feature matrix signal map is valid but too small for the intended expanded backtest",
+    "candidate_trajectory_source": "data/ic04_yes_probability_trajectory.csv.gz",
+    "candidate_event_map": "registry/w2c_pit_v2_1_combined_events.csv",
+    "probe_script": "scripts/w4c_r1_expanded_trajectory_signal_join_probe_v1.py",
+    "probe_script_commit": "695feb0abdb9207e42c9a36a721da0b2a789fe5e"
+  },
+  "authorized_scope": {
+    "read_prediction_market_probability_trajectory_metadata": true,
+    "read_prediction_market_probability_values_for_schema_and_join_probe": true,
+    "read_combined_event_mapping_keys": true,
+    "read_eligibility_keys": true,
+    "write_join_probe_summary": true
+  },
+  "not_authorized": {
+    "read_settlement_values": true,
+    "read_earnings_outcomes": true,
+    "read_realized_returns": true,
+    "read_security_prices_or_price_returns": true,
+    "read_benchmark_returns": true,
+    "read_argos_pnl": true,
+    "compute_economic_backtest": true,
+    "promote_strategy": true
+  },
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false,
+    "benchmark_return_read": false,
+    "argos_pnl_read": false,
+    "economic_backtest_execution": false
+  },
+  "gate_decision": "PASS_W4C_R1_EXPANDED_TRAJECTORY_SIGNAL_JOIN_PROBE_AUTHORIZED_PRE_PNL"
+}
