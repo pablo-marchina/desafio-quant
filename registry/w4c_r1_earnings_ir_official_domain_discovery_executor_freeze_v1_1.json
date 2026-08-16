@@ -1,0 +1,51 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_EXECUTOR_FREEZE",
+  "version": "W4C-R1-EIR-ODD-EXEC-v1.1",
+  "date": "2026-08-16",
+  "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
+  "protocol_version": "W4C-R1-EIR-ODD-v1.1",
+  "executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1.py",
+  "base_executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py",
+  "external_requests_performed_before_freeze": false,
+  "issuer_ir_lookup_performed_before_freeze": false,
+  "sample_selection_changed": false,
+  "thresholds_changed": false,
+  "amendment_scope": "navigation_transport_only",
+  "rerun_scope": "same frozen 40 cases, not failure-only and not full 1355 queue",
+  "execution_authorization_env": {
+    "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_EXECUTE": "YES_FROZEN_OFFICIAL_DOMAIN_V1_1_PROBE"
+  },
+  "bound_files": [
+    {
+      "path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1.json",
+      "git_blob_sha": "ccd60083f5aa99d5402c951fcb5c608462813bf2"
+    },
+    {
+      "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1.py",
+      "git_blob_sha": "75056e458438ba0828eaea0defb5cbfa62dd1774"
+    },
+    {
+      "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py",
+      "git_blob_sha": "1630c869e4ec4d6ea71d8493f119a6df2711d41a"
+    },
+    {
+      "path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+      "git_blob_sha": "6c0fb6de3ffa5c6f933ed009e94fa62c606c5cc9"
+    },
+    {
+      "path": "registry/w4c_r1_earnings_ticker_profile_v1.json",
+      "git_blob_sha": "7a7938bbc2dad050c4cae989d8c4ecf98dbfd945"
+    }
+  ],
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_allowed": false,
+    "prediction_market_settlement_allowed": false,
+    "prediction_market_performance_allowed": false,
+    "realized_returns_allowed": false,
+    "argos_pnl_allowed": false,
+    "n_final_backtestable_authorized": false,
+    "event_truth_verification_authorized": false,
+    "economic_model_selection_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTOR_V1_1_FROZEN_PRE_REQUEST"
+}
