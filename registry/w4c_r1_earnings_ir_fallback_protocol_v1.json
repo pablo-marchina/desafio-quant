@@ -1,0 +1,91 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_FALLBACK_PROTOCOL",
+  "version": "W4C-R1-EIR-v1.0",
+  "date": "2026-08-15",
+  "status": "PREREGISTERED_BEFORE_ANY_NEW_ISSUER_IR_LOOKUP",
+  "science_reopened": false,
+  "performance_blind": true,
+  "purpose": "Recover authoritative earnings-event identity for the unresolved W4-C R1 EARNINGS_EPS stratum using issuer investor-relations evidence already permitted by the frozen W4C-R1-OTE-v1.0 hierarchy, after SEC transport failed closed. No earnings values, prediction-market outcomes, linked-asset returns, PnL or model performance may be used.",
+  "source_main_commit_before_protocol": "5bc78bdde855bc75039415890b2da06aa9901591",
+  "parent_protocol": {
+    "path": "registry/w4c_r1_official_truth_extension_protocol_v1.json",
+    "git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "required_family": "EARNINGS_EPS",
+    "frozen_hierarchy": [
+      "SEC EDGAR 8-K/10-Q/10-K/6-K filing containing or attaching the earnings release",
+      "issuer investor-relations earnings release"
+    ],
+    "hierarchy_relaxed": false
+  },
+  "eligible_universe": {
+    "source_path": "registry/w4c_r1_official_truth_extension_unresolved_v1.csv.gz",
+    "source_git_blob_sha": "82be733e844e7b2e99ad3c174370fe3fa214b807",
+    "required_state": "UNRESOLVED_R1_OFFICIAL_TRUTH",
+    "required_family": "EARNINGS_EPS",
+    "expected_groups": 1355,
+    "new_group_ids_allowed": false,
+    "family_reclassification_allowed": false,
+    "queue_must_be_derived_before_external_lookup": true,
+    "queue_must_publish_sorted_group_id_sha256": true
+  },
+  "authority_contract": {
+    "eligible_authority": "ISSUER_IR",
+    "issuer_domain_binding_required": true,
+    "issuer_identity_must_be_deterministically_bound_to_frozen_subject": true,
+    "third_party_press_release_mirrors_may_vote": false,
+    "news_media_may_vote": false,
+    "search_snippets_may_vote": false,
+    "aggregators_may_vote": false,
+    "SEC_transport_failure_does_not_count_as_negative_truth": true
+  },
+  "identity_rule": {
+    "required": "One unique issuer earnings occurrence consistent with the frozen issuer and reporting event semantics.",
+    "reporting_period": "When a reporting period is present in frozen metadata or authoritative IR metadata, it must agree. If absent, require a unique issuer earnings event temporally and semantically supported by the frozen metadata.",
+    "numeric_values_used_for_identity": false,
+    "eps_value_persisted": false,
+    "revenue_value_persisted": false,
+    "guidance_value_persisted": false,
+    "ambiguity_policy": "FAIL_CLOSED_UNRESOLVED",
+    "official_event_id_formula": "W4OT1- + first_20_hex(SHA256(resolved_family + '|' + official_event_reference_date + '|' + official_subject_key))"
+  },
+  "queue_freeze_sequence": [
+    "Derive exactly the unresolved EARNINGS_EPS rows from the bound R1 unresolved artifact.",
+    "Assert count=1355, uniqueness of exact_group_id, and no family/state mismatch.",
+    "Publish deterministic lexicographically sorted exact_group_id digest and descriptive issuer/date profile only.",
+    "Freeze queue and executor bytes.",
+    "Only after queue/executor freeze may issuer IR discovery or evidence retrieval begin."
+  ],
+  "evidence_capture_required": [
+    "exact_group_id",
+    "pretruth_event_reference_date",
+    "pretruth_subject_key",
+    "issuer_identity",
+    "official_event_reference_date",
+    "official_subject_key",
+    "source_authority",
+    "source_url",
+    "retrieved_at_utc",
+    "source_body_sha256_or_document_hash_when_retrievable",
+    "evidence_excerpt_hash_or_structured_field_reference",
+    "verification_reason",
+    "match_rule_used"
+  ],
+  "marginal_gain_measurement": {
+    "primary": "new unique W4OT1 identities not already present in immutable W4-B or prior W4-C R1 evidence",
+    "aliases_to_existing_official_event_count_zero_marginal_n": true,
+    "combined_count_is_n_final_backtestable": false,
+    "reapply_w4c_saturation_after_subroute": true
+  },
+  "firewall": {
+    "w4b_artifacts_may_be_modified": false,
+    "original_w4_family_dictionary_may_be_modified": false,
+    "prediction_market_settlement_used": false,
+    "prediction_market_price_or_performance_used": false,
+    "linked_asset_realized_returns_used": false,
+    "ARGOS_PnL_used": false,
+    "model_performance_used": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_PROTOCOL_FROZEN_PRE_SOURCE_LOOKUP"
+}
