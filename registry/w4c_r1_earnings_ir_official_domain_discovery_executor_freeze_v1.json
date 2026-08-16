@@ -1,39 +1,17 @@
 {
   "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_EXECUTOR_FREEZE",
   "bound_files": [
-    {
-      "git_blob_sha": "96207c74038a8ef768064a96e8c789a446eea28f",
-      "path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1.json"
-    },
-    {
-      "git_blob_sha": "88a2df63d2fa525a4d328da728c1890920f3df8a",
-      "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py"
-    },
-    {
-      "git_blob_sha": "a4986f135d801148315c1d758df749c459295030",
-      "path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json"
-    },
-    {
-      "git_blob_sha": "1b9050b6a30578cd731d442909fe1e869b686377",
-      "path": "registry/w4c_r1_earnings_ticker_profile_v1.json"
-    }
+    {"git_blob_sha": "8ec9ae0642cb35006a6d817ae64684d6cefe2d69", "path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1.json"},
+    {"git_blob_sha": "88a2df63d2fa525a4d328da728c1890920f3df8a", "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py"},
+    {"git_blob_sha": "a4986f135d801148315c1d758df749c459295030", "path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json"},
+    {"git_blob_sha": "1b9050b6a30578cd731d442909fe1e869b686377", "path": "registry/w4c_r1_earnings_ticker_profile_v1.json"}
   ],
-  "execution_authorization": {
-    "env": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTE",
-    "manual_or_dispatch_only": true,
-    "token": "YES_FROZEN_OFFICIAL_DOMAIN_PROBE"
-  },
+  "execution_authorization": {"env": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTE", "manual_or_dispatch_only": true, "token": "YES_FROZEN_OFFICIAL_DOMAIN_PROBE"},
   "external_requests_performed_before_freeze": false,
   "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTOR_FROZEN_PRE_REQUEST",
   "issuer_ir_lookup_performed_before_freeze": false,
   "sample_size": 40,
-  "scientific_firewall": {
-    "argos_pnl_allowed": false,
-    "earnings_numeric_outcomes_allowed": false,
-    "n_final_backtestable_authorized": false,
-    "prediction_market_settlement_allowed": false,
-    "realized_returns_allowed": false
-  },
+  "scientific_firewall": {"argos_pnl_allowed": false, "earnings_numeric_outcomes_allowed": false, "n_final_backtestable_authorized": false, "prediction_market_settlement_allowed": false, "realized_returns_allowed": false},
   "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
   "version": "W4C-R1-EIR-ODD-EXEC-v1.0"
-}\n
+}
