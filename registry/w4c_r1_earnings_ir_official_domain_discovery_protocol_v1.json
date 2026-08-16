@@ -8,10 +8,7 @@
   "navigation_source": {
     "provider": "Wikidata Query Service",
     "endpoint": "https://query.wikidata.org/sparql",
-    "properties": {
-      "ticker_symbol": "P249",
-      "official_website": "P856"
-    },
+    "properties": {"ticker_symbol": "P249", "official_website": "P856"},
     "role": "navigation_only",
     "truth_voting": false,
     "outcome_data_allowed": false
@@ -32,7 +29,7 @@
     "missing_official_website": "UNRESOLVED_NO_GUESS"
   },
   "official_domain_crawl": {
-    "allowed_roots": ["official P856 host", "subdomains of the official P856 registrable host"],
+    "allowed_roots": ["official P856 host after stripping a leading www.", "subdomains of that normalized P856 host"],
     "disallowed": ["search-engine result pages", "third-party publishers", "aggregators", "SEC", "marketplaces", "news wires"],
     "entrypoints": ["official homepage", "official robots.txt", "official sitemap.xml", "sitemap URLs linked by robots.txt"],
     "fixed_path_hints": ["investor", "investors", "investor-relations", "ir", "newsroom", "press-release", "earnings", "financial-results", "quarterly-results", "results"],
@@ -41,7 +38,7 @@
   },
   "candidate_acceptance": {
     "http_status": 200,
-    "content_types": ["text/html", "application/xhtml+xml", "application/pdf"],
+    "content_types": ["text/html", "application/xhtml+xml"],
     "official_host_required": true,
     "issuer_identity_binding_required": true,
     "identity_basis": "issuer core identity tokens from frozen pre-truth subject key must match official-domain body; no earnings numeric value is used",
@@ -63,12 +60,6 @@
     "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "otherwise",
     "thresholds_frozen_before_external_requests": true
   },
-  "outputs": [
-    "official-domain resolution manifest",
-    "navigation/candidate manifest",
-    "official-body retrieval manifest",
-    "capacity summary",
-    "execution manifest"
-  ],
+  "outputs": ["official-domain resolution manifest", "navigation/candidate manifest", "official-body retrieval manifest", "capacity summary", "execution manifest"],
   "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL_FROZEN_PRE_REQUEST"
 }
