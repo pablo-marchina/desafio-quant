@@ -3,7 +3,7 @@
 <rect width="1600" height="900" fill="#07111F"/>
 <text x="80" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5" text-anchor="start">04 • BACKTEST</text>
 <text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="40" font-weight="700" fill="#F4F7FB" text-anchor="start">Backtest financiado: quase neutro, mas abaixo do SPY</text>
-<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#9FB0C3" text-anchor="start">FP-v1 usa curva de capital diária, Sharpe e maior queda sobre trades R1 congelados.</text>
+<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="400" fill="#9FB0C3" text-anchor="start">FP-v1 usa curva de capital diária, Sharpe e maior queda (drawdown) sobre trades R1 congelados.</text>
 <path d="M 1411.5 85 Q 1450 57.5 1488.5 85" fill="none" stroke="#49C6E5" stroke-width="2.75"/>
 <path d="M 1421.4 89.4 Q 1450 111.4 1478.6 89.4" fill="none" stroke="#2DD4BF" stroke-width="2.75"/>
 <path d="M 1403.8 94.9 Q 1430.75 125.7 1461.0 111.4" fill="none" stroke="#F4BF4F" stroke-width="2.2" stroke-dasharray="9,6"/>
