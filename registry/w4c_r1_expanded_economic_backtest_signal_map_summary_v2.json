@@ -1,0 +1,44 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_SIGNAL_MAP_SUMMARY",
+  "counts": {
+    "ambiguous_ticker_date_keys": 0,
+    "eligibility_rows": 1355,
+    "eligibility_unique_ticker_dates": 1314,
+    "latest_signal_ticker_dates": 107,
+    "signal_map_rows": 109,
+    "skipped_after_cutoff_rows": 0,
+    "skipped_bad_price_or_time_rows": 0,
+    "skipped_non_yes_rows": 0,
+    "trajectory_candidate_pre_cutoff_yes_rows": 1502692,
+    "trajectory_rows": 1593454
+  },
+  "date": "2026-08-16",
+  "gate_decision": "PASS_EXPANDED_SIGNAL_MAP_V2_MATERIALIZED_NO_OUTCOME_RETURN_SETTLEMENT_PNL_READS",
+  "next_gate": "Use this signal map as the frozen PIT signal source in eligibility; then decide whether price/return execution is justified by N_final_backtestable_candidate_pre_price.",
+  "outputs": {
+    "signal_map": "registry/w4c_r1_expanded_economic_backtest_signal_map_v2.csv",
+    "signal_map_sha256": "20ac30da319b906bd1194a73136e12c57951d3ba4e8d00860e5a5ed2bb85ce9d"
+  },
+  "reason_counts": {
+    "NO_PRE_CUTOFF_TRAJECTORY_SIGNAL_FOR_TICKER_DATE": 1230,
+    "NO_TICKER_ON_ELIGIBILITY": 16,
+    "PASS_SIGNAL_MAP_JOIN": 109
+  },
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "benchmark_return_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "economic_backtest_execution": false,
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false
+  },
+  "source": {
+    "eligibility_manifest": "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz",
+    "trajectory": "data/ic04_yes_probability_trajectory.csv.gz",
+    "trajectory_sha256": "2058dbdef714a378a0b8c117af2c68ef47b5caeea6aa6f4a0aa0094589dd8606"
+  },
+  "status": "MATERIALIZED_EXPANDED_PIT_SIGNAL_MAP_FROM_TRAJECTORY_FAIL_CLOSED",
+  "version": "W4C-R1-EXPANDED-SIGNAL-MAP-v2.0"
+}
