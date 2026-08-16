@@ -1,28 +1,27 @@
 {
   "artifact": "W4_MAXIMAL_BACKTEST_RESEARCH_PLAN",
-  "version": "W4-MBRP-v1.2",
+  "version": "W4-MBRP-v1.3",
   "date": "2026-08-16",
-  "status": "ACTIVE_W4_C_R1_POST_EARNINGS_IR_CAPACITY_PROBE_PROMOTION_PENDING",
+  "status": "ACTIVE_W4_C_R1_NEW_EIR_ROUTE_FROZEN_PRE_REQUEST",
   "science_reopened": false,
   "performance_blind": true,
   "objective": "Build the largest defensible PIT backtest universe and richest event-level information set possible before any new linked-asset outcome reveal.",
   "independence_rule": "canonical_event_id remains the default inferential unit; contracts, venues, horizons, assets, quotes and ticks add information but never automatically add independent N.",
-  "milestones_not_stop_rules": {
-    "minimum": 300,
-    "preferred": 500,
-    "stretch": 1000
-  },
+  "milestones_not_stop_rules": {"minimum": 300, "preferred": 500, "stretch": 1000},
   "stop_rule": "Stop expansion only when remaining routes are immaterial, fail PIT/provenance/reproducibility, are economically unjustified, or are infeasible under time/cost constraints.",
   "current_state": {
     "W4_A": "COMPLETE_PASS_TECHNICAL",
     "W4_B": "COMPLETE_PASS_W4B_ATTRITION_MATERIALIZED_IMMUTABLE",
-    "W4_C": "ACTIVE_R1_POST_EARNINGS_IR_CAPACITY_PROBE",
+    "W4_C": "ACTIVE_R1_NEW_EIR_ROUTE_FROZEN_PRE_REQUEST",
     "saturation_gate_last_authoritative": "PASS_W4C_SATURATION_GATE_CONTINUE",
     "current_priority_route": "R1_OFFICIAL_TRUTH_EXTENSION",
-    "r1_state": "EARNINGS_IR_CAPACITY_PROBE_RESULT_MATERIALIZED_PROMOTION_PENDING",
+    "r1_state": "NEW_EARNINGS_IR_OFFICIAL_DOMAIN_ROUTE_FROZEN_PRE_REQUEST",
     "r1_cumulative_marginal_new_unique_official_events_on_main": 13,
     "w4b_plus_r1_unique_official_events_on_main": 357,
-    "earnings_ir_capacity_probe_decision": "ROUTE_INFEASIBLE_CURRENT_PROTOCOL",
+    "earnings_ir_original_route_decision": "ROUTE_INFEASIBLE_CURRENT_PROTOCOL",
+    "earnings_ir_new_route_protocol": "W4C-R1-EIR-ODD-v1.0",
+    "earnings_ir_new_route_executor_frozen": true,
+    "earnings_ir_new_route_requests_performed": false,
     "earnings_ir_full_1355_execution_authorized": false,
     "n_final_backtestable_authorized": false,
     "outcome_reveal_authorized": false
@@ -46,15 +45,7 @@
     "last_authoritative_decision": "CONTINUE_EXPANSION_NOT_SATURATED",
     "last_authoritative_gate_decision": "PASS_W4C_SATURATION_GATE_CONTINUE",
     "reapplication_required_after_r1_current_subroute_closeout": true,
-    "route_order": [
-      "R1_OFFICIAL_TRUTH_EXTENSION",
-      "R2_POLYMARKET_PIT_HISTORY",
-      "R3_FORECASTEX_PIT_HISTORY",
-      "R4_P0_FAMILY_EXPANSION",
-      "R5_POLYMARKET_V1_ARCHIVE",
-      "R6_P1_PRIMARY_VENUE_ACCESS",
-      "R7_ROBUSTNESS_VENUE"
-    ]
+    "route_order": ["R1_OFFICIAL_TRUTH_EXTENSION", "R2_POLYMARKET_PIT_HISTORY", "R3_FORECASTEX_PIT_HISTORY", "R4_P0_FAMILY_EXPANSION", "R5_POLYMARKET_V1_ARCHIVE", "R6_P1_PRIMARY_VENUE_ACCESS", "R7_ROBUSTNESS_VENUE"]
   },
   "w4c_r1_progress": {
     "initial_profile": {
@@ -88,40 +79,46 @@
       "issuer_profile_frozen_pre_external_lookup": true,
       "ticker_profile_frozen_pre_external_lookup": true
     },
-    "earnings_ir_capacity_probe": {
+    "earnings_ir_original_capacity_probe": {
       "protocol_version": "W4C-R1-EIR-DP-v1.0.1",
       "sample_size": 40,
-      "allocation": {
-        "2025": 20,
-        "2026": 20
-      },
+      "allocation": {"2025": 20, "2026": 20},
       "executor_frozen_pre_request": true,
       "github_actions_run_id": 31924073904,
       "probe_success_total": 0,
-      "probe_success_by_year": {
-        "2025": 0,
-        "2026": 0
-      },
+      "probe_success_by_year": {"2025": 0, "2026": 0},
       "navigation_found_total": 0,
       "official_body_retrievable_total": 0,
       "identity_bindable_total": 0,
       "capacity_decision": "ROUTE_INFEASIBLE_CURRENT_PROTOCOL",
       "result_branch": "w4c-r1-earnings-ir-discovery-probe-result-v1",
       "result_commit": "d92d303",
-      "result_promoted_to_main": false,
-      "execution_manifest_gate": "PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTION_MATERIALIZED",
-      "capacity_summary_sha256": "30b3e84076208d52223004debf7ea652ba0ebc179c8fd72c6cd122592917ecb6",
-      "navigation_manifest_sha256": "f1023ced43404128553d3571a9d25e3590aeec83191574f7450b28baf2ef7dc2",
-      "official_body_manifest_sha256": "3d18453d66f06391e536af69882e1bbc5e2c4e6577c0ef9499f06d23c20fc9c4",
-      "interpretation": "The frozen issuer-IR discovery/navigation route failed its preregistered technical capacity gate. This does not establish absence of issuer IR or official earnings evidence.",
+      "result_promoted_to_main": true,
+      "result_freeze": "registry/w4c_r1_earnings_ir_discovery_probe_result_freeze_v1.json",
+      "failure_layer_diagnosis": "NO_OFFICIAL_BODY_ATTEMPTS_RECORDED; frozen navigation/parser route yielded no candidate into body layer",
+      "live_transport_diagnosis": "DuckDuckGo observed HTTP 202 with no result__a markers; Bing observed HTTP 200 with b_algo blocks parseable by the frozen regex on four later diagnostic cases; transport/HTML variability confirmed without outcomes.",
       "full_1355_execution_authorized": false
+    },
+    "earnings_ir_new_official_domain_route": {
+      "protocol_version": "W4C-R1-EIR-ODD-v1.0",
+      "protocol_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1.json",
+      "executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py",
+      "executor_freeze_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_executor_freeze_v1.json",
+      "executor_frozen_pre_request": true,
+      "sample_size": 40,
+      "sample_binding": "same frozen 40-event sample; no resampling",
+      "material_difference": "Wikidata P249/P856 navigation seed plus first-party official-domain sitemap/link crawl; no search-engine HTML transport/parser",
+      "external_requests_performed": false,
+      "capacity_thresholds_frozen": true,
+      "execution_authorized": false,
+      "next_gate": "RUN_FROZEN_40_EVENT_CAPACITY_PROBE"
     }
   },
   "execution_order": [
     "W4-R continuous support research",
     "W4-A COMPLETE",
     "W4-B COMPLETE",
-    "W4-C ACTIVE: R1 baseline + FDA extension materialized -> earnings IR capacity probe materialized negative -> promote exact result -> transport/navigation diagnosis -> preregister new technical route or close earnings subroute -> reapply saturation gate -> remaining R1/R2-R7 only if justified",
+    "W4-C ACTIVE: R1 baseline + FDA extension -> original earnings IR route frozen negative -> failure-layer diagnosis -> new official-domain route preregistered and executor frozen -> run 40-event capacity probe -> decide route -> reapply saturation gate -> remaining R1/R2-R7 only if justified",
     "W4-D canonical data lake",
     "W4-E maximal pre-outcome features",
     "W4-F outcome-blind adequacy/simulation",
@@ -132,34 +129,22 @@
     "W4-K scientific truth freeze"
   ],
   "saturation_gate": {
-    "continue_if_any": [
-      "material increase in independent canonical events",
-      "material increase in PIT-valid coverage",
-      "material increase in pre-event temporal depth",
-      "material increase in economically justified breadth",
-      "material increase in distributional/cross-venue information",
-      "material improvement in provenance or reproducibility"
-    ],
-    "stop_if_all": [
-      "remaining candidate sources add immaterial marginal coverage",
-      "remaining sources fail PIT/provenance/reproducibility gates",
-      "remaining data are economically unjustified",
-      "remaining acquisition is infeasible under challenge time/cost constraints"
-    ]
+    "continue_if_any": ["material increase in independent canonical events", "material increase in PIT-valid coverage", "material increase in pre-event temporal depth", "material increase in economically justified breadth", "material increase in distributional/cross-venue information", "material improvement in provenance or reproducibility"],
+    "stop_if_all": ["remaining candidate sources add immaterial marginal coverage", "remaining sources fail PIT/provenance/reproducibility gates", "remaining data are economically unjustified", "remaining acquisition is infeasible under challenge time/cost constraints"]
   },
   "immediate_next_actions": [
-    "Promote byte-identically the four frozen capacity-probe result outputs from w4c-r1-earnings-ir-discovery-probe-result-v1 to main and verify their recorded SHA-256 identities",
-    "Freeze the negative ROUTE_INFEASIBLE_CURRENT_PROTOCOL result as authoritative without changing the sample, thresholds, executor, or matching rules",
-    "Perform an outcome-blind transport/navigation diagnosis to determine whether the 0/40 result is caused by search transport/parser/ranking limitations rather than absence of issuer IR",
-    "If a materially different transport route is justified, preregister and byte-freeze it as a new protocol before any new external requests; otherwise close the earnings issuer-IR subroute under current capabilities",
-    "Reapply the W4-C Saturation Gate after the R1 subroute decision before advancing to another R1 subroute or R2",
+    "Run the frozen W4C-R1-EIR-ODD-v1.0 40-event capacity probe; do not modify protocol, sample, thresholds or executor before execution",
+    "Materialize resolution, navigation, official-body and capacity-summary outputs",
+    "Apply the preregistered full/conditional/infeasible thresholds without post-hoc adjustment",
+    "If viable, promote only officially verified new events; if infeasible, close the earnings issuer-IR subroute",
+    "Reapply the W4-C Saturation Gate after the new-route decision",
     "Keep linked-asset realized outcomes, prediction-market performance, ARGOS PnL, and n_final_backtestable closed until their authorized phase"
   ],
   "explicitly_forbidden_now": [
-    "running the frozen current issuer-IR executor across all 1355 earnings groups after a failed capacity gate",
-    "changing the 40-event sample after observing the capacity result",
-    "changing capacity thresholds after observing the result",
-    "using earnings numeric outcomes, prediction-market settlement/performance, realized returns, or ARGOS PnL to design the next transport route"
+    "running the original frozen search-engine HTML executor across all 1355 earnings groups",
+    "changing the 40-event sample after observing the original 0/40 result",
+    "changing capacity thresholds after observing results",
+    "using earnings numeric outcomes, prediction-market settlement/performance, realized returns, or ARGOS PnL to design or select the new route"
   ],
   "forbidden_before_W4_H": [
     "new linked-asset realized returns",
