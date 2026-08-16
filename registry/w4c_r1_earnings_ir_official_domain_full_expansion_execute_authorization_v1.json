@@ -1,9 +1,9 @@
 {
   "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_EXECUTE_AUTHORIZATION",
-  "version": "W4C-R1-EIR-ODD-FULL-EXECUTE-AUTH-v1.2",
+  "version": "W4C-R1-EIR-ODD-FULL-EXECUTE-AUTH-v1.3",
   "date": "2026-08-16",
-  "status": "REAUTHORIZED_AFTER_RESIDUAL_WORKTREE_PUSH_FAILURE",
-  "authorization_basis": "W4C-R1-EIR-ODD-v1.2 reached FULL_ROUTE_TECHNICALLY_VIABLE and result was frozen; prior full expansion runs executed successfully and failed only in output push/commit plumbing.",
+  "status": "REAUTHORIZED_AFTER_HARD_CLEAN_WORKFLOW_FIX",
+  "authorization_basis": "W4C-R1-EIR-ODD-v1.2 reached FULL_ROUTE_TECHNICALLY_VIABLE and result was frozen; prior full expansion runs executed successfully and failed only in output push/commit plumbing. Workflow now hard-cleans residual CRLF/LF worktree modifications after committing the five authorized outputs and before rebasing/pushing.",
   "prior_runs": [
     {
       "run_id": 31951680663,
@@ -16,6 +16,12 @@
       "job_id": 95184039192,
       "execution_step_conclusion": "success",
       "commit_step_conclusion": "failure_RESIDUAL_WORKTREE_BEFORE_REBASE"
+    },
+    {
+      "run_id": 31957218579,
+      "job_id": 95189560585,
+      "execution_step_conclusion": "success",
+      "commit_step_conclusion": "failure_RESIDUAL_CRLF_LF_WORKTREE_AFTER_STASH"
     }
   ],
   "run_scope": "full 1355 official-domain expansion only",
@@ -25,5 +31,5 @@
   "argos_pnl_authorized": false,
   "n_final_backtestable_authorized": false,
   "backtest_authorized": false,
-  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_REEXECUTION_AUTHORIZED_OUTCOME_BLIND_PUSH_RECOVERY_V2"
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_REEXECUTION_AUTHORIZED_OUTCOME_BLIND_HARD_CLEAN_PUSH_RECOVERY_V3"
 }
