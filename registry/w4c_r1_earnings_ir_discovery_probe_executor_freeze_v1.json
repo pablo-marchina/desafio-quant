@@ -1,0 +1,119 @@
+{
+  "ARGOS_PnL_used": false,
+  "artifact": "W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTOR_FREEZE",
+  "bound_files": [
+    {
+      "git_blob_sha": "5fdb4d7f33dd154ead94ee662f9af230bf90f13e",
+      "path": "scripts/w4c_r1_earnings_ir_discovery_probe_executor_v1.py",
+      "role": "executor"
+    },
+    {
+      "git_blob_sha": "968d206b119e9d7dd7782b5ee6d6e262d891bd7e",
+      "path": ".github/workflows/w4c_r1_earnings_ir_discovery_probe_v1.yml",
+      "role": "workflow"
+    },
+    {
+      "git_blob_sha": "6865a07eefbaa18124cc134c63e555425832af3e",
+      "path": "registry/w4c_r1_earnings_ir_discovery_probe_protocol_v1.json",
+      "role": "protocol"
+    },
+    {
+      "git_blob_sha": "6c0fb6de3ffa5c6f933ed009e94fa62c606c5cc9",
+      "path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+      "role": "frozen_sample"
+    },
+    {
+      "git_blob_sha": "a19aa8048d62f692ddaba49664fa213b44eed335",
+      "path": "registry/w4c_r1_earnings_ir_probe_sample_freeze_v1.json",
+      "role": "sample_builder_freeze"
+    },
+    {
+      "git_blob_sha": "7a7938bbc2dad050c4cae989d8c4ecf98dbfd945",
+      "path": "registry/w4c_r1_earnings_ticker_profile_v1.json",
+      "role": "descriptive_ticker_metadata"
+    },
+    {
+      "git_blob_sha": "395b56ada4b3be8412f2391957cfcde0c832cb84",
+      "path": "registry/w4c_r1_earnings_ir_queue_v1.csv.gz",
+      "role": "parent_queue"
+    }
+  ],
+  "capacity_rule_bound": {
+    "CONDITIONAL_ROUTE": "not FULL and probe_success >=12/40 overall AND >=5/20 in 2025 AND >=5/20 in 2026",
+    "FULL_ROUTE_TECHNICALLY_VIABLE": "probe_success >=24/40 overall AND >=10/20 in 2025 AND >=10/20 in 2026",
+    "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "probe_success <12/40 overall OR <5/20 in either year"
+  },
+  "date": "2026-08-16",
+  "event_truth_verification_authorized": false,
+  "executor_contract": {
+    "default_network_behavior": "REFUSE_UNLESS_EXPLICIT_EXECUTE_MODE",
+    "event_truth_verification_authorized": false,
+    "issuer_domain_binding_required": true,
+    "navigation_sources": [
+      "duckduckgo_html",
+      "bing_html"
+    ],
+    "network_execution_requires_cli": "--execute",
+    "network_execution_requires_env": "W4C_R1_EARNINGS_IR_PROBE_EXECUTE=YES_FROZEN_CAPACITY_PROBE",
+    "numeric_eps_revenue_guidance_results_persisted": false,
+    "numeric_eps_revenue_guidance_results_used_for_truth": false,
+    "official_body_fetch_required_for_probe_success": true,
+    "search_metadata_authority": "NAVIGATION_ONLY",
+    "search_snippets_persisted": false,
+    "validate_only_network_requests": 0
+  },
+  "external_probe_requests_performed_before_freeze": false,
+  "family_reclassification_allowed": false,
+  "future_execution_control": {
+    "automatic_execution_on_freeze_commit": false,
+    "result_branch": "w4c-r1-earnings-ir-probe-result-v1",
+    "workflow_dispatch_execute_probe_must_be_true": true,
+    "workflow_dispatch_required": true
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_EXECUTOR_FROZEN_PRE_REQUEST",
+  "issuer_ir_lookup_performed_before_freeze": false,
+  "linked_asset_realized_returns_used": false,
+  "model_performance_used": false,
+  "n_final_backtestable_authorized": false,
+  "outcome_reveal_authorized": false,
+  "parent_protocol": {
+    "git_blob_sha": "6865a07eefbaa18124cc134c63e555425832af3e",
+    "path": "registry/w4c_r1_earnings_ir_discovery_probe_protocol_v1.json",
+    "version": "W4C-R1-EIR-DP-v1.0.1"
+  },
+  "performance_blind": true,
+  "prediction_market_price_or_performance_used": false,
+  "prediction_market_settlement_used": false,
+  "purpose": "Freeze the exact issuer-IR capacity-probe executor and its execution workflow before any external discovery/search or issuer-IR request for the already-frozen 40-row sample.",
+  "required_execution_outputs": [
+    "registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz",
+    "registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz",
+    "registry/w4c_r1_earnings_ir_probe_capacity_summary_v1.json"
+  ],
+  "retry_policy_bound": {
+    "fail_closed": true,
+    "nonretryable": [
+      "HTTP_4XX_EXCEPT_429"
+    ],
+    "per_url_attempts": 3,
+    "retryable": [
+      "HTTP_429",
+      "HTTP_5XX",
+      "timeout_or_transport_exception"
+    ]
+  },
+  "sample": {
+    "allocation": {
+      "2025": 20,
+      "2026": 20
+    },
+    "git_blob_sha": "6c0fb6de3ffa5c6f933ed009e94fa62c606c5cc9",
+    "path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+    "sample_size": 40,
+    "sorted_sample_group_ids_sha256": "d131cb10db8fb219f4cd4d07e274aa0c7c1941fa23e3165e091aaeccf64ae0f6"
+  },
+  "science_reopened": false,
+  "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
+  "version": "W4C-R1-EIR-DP-EXEC-FREEZE-v1.0",
+  "w4b_artifacts_may_be_modified": false
+}
