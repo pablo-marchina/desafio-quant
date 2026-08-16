@@ -31,17 +31,21 @@ jobs:
           import json,subprocess
           f=json.load(open('registry/w4c_r1_fda_executor_freeze_v1.json'))
           blob=lambda p: subprocess.check_output(['git','hash-object',p],text=True).strip()
-          assert f['status']=='FROZEN_BEFORE_FDA_EVIDENCE_BODY_CAPTURE'
+          assert f['status']=='REFROZEN_AFTER_PRE_EVIDENCE_KEY_COMPAT_FAILURE'
+          assert f['r1_fda_scientific_results_observed_before_refreeze'] is False
+          assert f['r1_fda_external_requests_performed_before_failed_run'] is False
           assert blob('scripts/w4c_r1_fda_evidence_v1.py')==f['executor_git_blob_sha']=='7efd64cf89cd505061fe84627011fb0f1215df61'
+          assert blob('scripts/w4c_r1_fda_executor_compat_v1.py')==f['compat_wrapper_git_blob_sha']=='4ff4de72ea3b00de723ad894192a6925dee238aa'
           assert blob('.github/workflows/w4c_r1_fda_evidence_v1.yml')==f['workflow_git_blob_sha']
           assert blob('registry/w4c_r1_fda_manual_adjudication_spec_v1.json')==f['spec_git_blob_sha']=='cd08efc750486e0a978c5446682eddb75054250a'
           assert blob('registry/w4c_r1_fda_review_queue_v1.json')==f['queue_git_blob_sha']=='f03552f31c9d18f5b2d4843380f9861a6d292da5'
           assert blob('registry/w4b_official_event_truth_summary_v1.json')==f['w4b_summary_git_blob_sha']=='bdef6077e6d4ddc2ee111f4c0dbab39162af8d30'
+          assert blob('registry/w4c_r1_fda_technical_amendment_v1_0_1.json')==f['technical_amendment_git_blob_sha']
           assert f['queue_groups']==22 and f['candidate_verified_groups']==7
-          print('PASS_W4C_R1_FDA_EXECUTOR_FREEZE')
+          print('PASS_W4C_R1_FDA_EXECUTOR_REFREEZE')
           PY
       - name: Materialize FDA primary evidence
-        run: python scripts/w4c_r1_fda_evidence_v1.py
+        run: python scripts/w4c_r1_fda_executor_compat_v1.py
       - name: Enforce FDA result firewall
         shell: bash
         run: |
