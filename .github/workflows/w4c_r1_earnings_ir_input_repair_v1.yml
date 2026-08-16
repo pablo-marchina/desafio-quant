@@ -1,7 +1,7 @@
 name: W4-C R1 earnings IR input repair v1
 
 on:
-  push:
+  pull_request:
     paths:
       - scripts/w4c_r1_earnings_ir_input_repair_v1.py
       - registry/w4c_r1_earnings_ir_queue_v1.csv.gz
