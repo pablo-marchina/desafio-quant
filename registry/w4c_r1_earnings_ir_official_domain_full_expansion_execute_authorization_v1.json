@@ -1,13 +1,23 @@
 {
   "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_EXECUTE_AUTHORIZATION",
-  "version": "W4C-R1-EIR-ODD-FULL-EXECUTE-AUTH-v1.1",
+  "version": "W4C-R1-EIR-ODD-FULL-EXECUTE-AUTH-v1.2",
   "date": "2026-08-16",
-  "status": "REAUTHORIZED_AFTER_OUTPUT_PUSH_RACE_FAILURE",
-  "authorization_basis": "W4C-R1-EIR-ODD-v1.2 reached FULL_ROUTE_TECHNICALLY_VIABLE and result was frozen; prior full expansion run 31951680663 executed successfully but failed only at git push due non-fast-forward remote update.",
-  "prior_run_id": 31951680663,
-  "prior_job_id": 95175977744,
-  "prior_execution_step_conclusion": "success",
-  "prior_commit_step_conclusion": "failure_NON_FAST_FORWARD_PUSH_RACE",
+  "status": "REAUTHORIZED_AFTER_RESIDUAL_WORKTREE_PUSH_FAILURE",
+  "authorization_basis": "W4C-R1-EIR-ODD-v1.2 reached FULL_ROUTE_TECHNICALLY_VIABLE and result was frozen; prior full expansion runs executed successfully and failed only in output push/commit plumbing.",
+  "prior_runs": [
+    {
+      "run_id": 31951680663,
+      "job_id": 95175977744,
+      "execution_step_conclusion": "success",
+      "commit_step_conclusion": "failure_NON_FAST_FORWARD_PUSH_RACE"
+    },
+    {
+      "run_id": 31954944884,
+      "job_id": 95184039192,
+      "execution_step_conclusion": "success",
+      "commit_step_conclusion": "failure_RESIDUAL_WORKTREE_BEFORE_REBASE"
+    }
+  ],
   "run_scope": "full 1355 official-domain expansion only",
   "outcome_reveal_authorized": false,
   "prediction_market_settlement_authorized": false,
@@ -15,5 +25,5 @@
   "argos_pnl_authorized": false,
   "n_final_backtestable_authorized": false,
   "backtest_authorized": false,
-  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_REEXECUTION_AUTHORIZED_OUTCOME_BLIND_PUSH_RACE_RECOVERY"
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_REEXECUTION_AUTHORIZED_OUTCOME_BLIND_PUSH_RECOVERY_V2"
 }
