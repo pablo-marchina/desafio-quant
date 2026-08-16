@@ -1,0 +1,42 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_PROBE_TRANSPORT_DIAGNOSIS",
+  "candidate_count_counts": {
+    "<missing>": 78
+  },
+  "decision_rule": "Diagnose only transport/navigation/parser behavior from the frozen manifest; never inspect or use earnings outcomes, prediction-market settlement/performance, realized returns or PnL.",
+  "diagnosis": "NOT_ALL_NAVIGATION_CANDIDATES_ZERO",
+  "error_counts": {},
+  "external_requests_performed": false,
+  "fields": [
+    "exact_group_id",
+    "year",
+    "provider",
+    "navigation_query",
+    "navigation_query_sha256",
+    "request_url_sha256",
+    "http_status",
+    "attempts",
+    "error_class",
+    "search_body_sha256",
+    "search_metadata_navigation_only",
+    "search_snippet_persisted"
+  ],
+  "http_status_counts": {
+    "200": 39,
+    "202": 39
+  },
+  "input_manifest": "registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz",
+  "provider_counts": {
+    "bing_html": 39,
+    "duckduckgo_html": 39
+  },
+  "request_ok_counts": {},
+  "response_bytes_summary": {
+    "max": null,
+    "min": null,
+    "nonzero": 0,
+    "observed": false
+  },
+  "rows": 78,
+  "version": "W4C-R1-EIR-DP-DIAG-v1.0"
+}
