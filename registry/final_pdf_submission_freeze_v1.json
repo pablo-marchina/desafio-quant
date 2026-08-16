@@ -1,6 +1,6 @@
 {
   "artifact": "FINAL_PDF_SUBMISSION_FREEZE",
-  "date_utc": "2026-08-16T20:38:17.040656Z",
+  "date_utc": "2026-08-16T20:40:40.919301Z",
   "pdf": {
     "format": "16:9 widescreen from 1600x900 SVG pages",
     "page_size_lines_from_pdfinfo": [
@@ -8,13 +8,13 @@
     ],
     "pages": 5,
     "path": "dist/final_submission/ARGOS_final_submission.pdf",
-    "sha256": "1c2d46eac9dfbf07c3ab7d0200a2e50659a2a90a1bdb8d9f1145984bdbbf6fd3",
+    "sha256": "aed229e883b50286c0eaa3747a60308ce38ccf7a76e77a1858833e4a5ef44528",
     "source_page_hashes": {
       "fig01_strategy_pipeline.svg": "a6272770e054795f7265ba46c1455dfcc5db9bb5cd2888aa908793ee85e0b7e0",
       "fig02_model_reduction.svg": "c525334304bf2de8b1adbe300b40ef7d4ca545071280d8d5c8f0807d869755ea",
       "fig03_h2_results.svg": "6170d8bf1427c76d218232b99f65728bf91239681d6aa82a902404446abda29d",
       "fig04_economic_backtest.svg": "56ae98a82a2e9baed6f83182084f435429e70f73429b95366a84e98c84834d43",
-      "fig05_genai_future.svg": "7fe4b16d39ffbb5cd967cdeac8cba95078c340673545416e710d0c1b82906bac"
+      "fig05_genai_future.svg": "9bae73571364e547e01d9fadc7108f943192a4cfd15ac88d07bce28e0eeee656"
     },
     "source_pages_dir": "report/pages_submission"
   },
