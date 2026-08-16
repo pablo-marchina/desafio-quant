@@ -1,0 +1,37 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_CONCRETE_EXECUTOR_FREEZE",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-CONCRETE-EXECUTOR-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_CONCRETE_EXECUTOR_PRE_PNL",
+  "gate_decision": "PASS_W4C_R1_EXPANDED_ECONOMIC_BACKTEST_CONCRETE_EXECUTOR_FROZEN_VALIDATE_AND_ELIGIBILITY_ONLY",
+  "script_path": "scripts/w4c_r1_expanded_economic_backtest_executor_v1.py",
+  "script_blob_sha": "23041adf08e3d4ce418000cc0cb29cfa16389320",
+  "script_commit_sha": "10bb37caffd96ad7b51ab8920ada6d0d1fa1178d",
+  "protocol": "registry/w4c_r1_expanded_economic_backtest_protocol_freeze_v1.json",
+  "design_freeze": "registry/w4c_r1_expanded_economic_backtest_executor_freeze_v1.json",
+  "full_expansion_freeze": "registry/w4c_r1_earnings_ir_official_domain_full_expansion_result_freeze_v1.json",
+  "authorized_modes_in_this_freeze": {
+    "validate_only": true,
+    "materialize_eligibility": true,
+    "execute_economic_backtest": false
+  },
+  "executor_behavior": {
+    "validate_only": "Validates protocol, full expansion freeze, full expansion manifests and firewalls without outcome/settlement/return/PNL reads.",
+    "materialize_eligibility": "Creates pre-PnL eligibility manifest and summary using deterministic joins and failure reasons only.",
+    "execute_economic_backtest": "Fail-closed guard only in this v1 concrete executor; requires separate authorization plus frozen PIT signal map and follow-up return execution implementation before PnL claims."
+  },
+  "expected_outputs_for_eligibility_run": [
+    "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz",
+    "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json"
+  ],
+  "scientific_firewall": {
+    "outcome_reveal_authorized": false,
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "argos_pnl_read": false,
+    "n_final_backtestable_authorized": false,
+    "backtest_execution_authorized": false
+  },
+  "next_gate": "Run validate/materialize eligibility; if signal coverage is missing, freeze a PIT signal-map join before authorizing price/return execution."
+}
