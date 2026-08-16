@@ -1,0 +1,444 @@
+{
+  "ARGOS_PnL_used": false,
+  "allocation": {
+    "2025": 20,
+    "2026": 20
+  },
+  "artifact": "W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_CAPACITY_SUMMARY",
+  "capacity_decision": "ROUTE_INFEASIBLE_CURRENT_PROTOCOL",
+  "capacity_thresholds": {
+    "CONDITIONAL_ROUTE": "not FULL, but >=12/40 overall AND >=5/20 in each year",
+    "FULL_ROUTE_TECHNICALLY_VIABLE": ">=24/40 overall AND >=10/20 in each year",
+    "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "<12/40 overall OR <5/20 in either year"
+  },
+  "date_utc": "2026-08-16T03:22:19.973696+00:00",
+  "event_truth_verification_authorized": false,
+  "family_reclassification_allowed": false,
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_DISCOVERY_CAPACITY_PROBE_MATERIALIZED",
+  "group_results": [
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-5d1d94c03b3f6dc4b817",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-1be9a4fed2080af1c931",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-b2e15c794acb46dcf873",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-1df1ee1cb237dc4e7ae5",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-82448e12a442aa83281c",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "exact_group_id": "W4CE1-8642b204a5d2db51203c",
+      "failure_reason": "INSUFFICIENT_FROZEN_ISSUER_METADATA",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-4737ee123438ae0d303d",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-255de5efc59b0a13cd48",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-41656e7ed0dc094bc332",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-604bfe787b6857139101",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-5a9b82d91baf85fcdedc",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-29ac4c9b8f8a339821f1",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-d6fad74bbbe8c38c6a5d",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-360147b7325e16c31d6a",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-c1223591fec31d470f64",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-be1b3b7d9760925b8866",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-2c799df5eb04be30675b",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-fa0c7f08f40e0d7f5125",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-8505cc1ba7cdfe411286",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-dc3a07ff8984f9f116b9",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2025"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-69a6c7f7c513930cc069",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-bc6c3b1be95ee70723f2",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-905ec0cae5bbd6ae5244",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-d6524cab64e571d429b8",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-d20e674efdfec3f67547",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-3abf9fe00092db67823c",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-a8d51819d0be35abc771",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-89139bb22bb3c7942d07",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-3f6bb1902c5bd9cc0587",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-0074f460ce6a2fed5453",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-eb36d1908c5f47a77d8e",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-28af022000b7a555ffca",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-11dd7d08d8dce429f54b",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-87a3700c0dd4eb66fa8e",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-ca7dcacb7e4f0d48db7d",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-402cb40ef17bb46d6f97",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-6f91ead44ca698d72ba3",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-25597e0bf6237bcf08ba",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-b0bd3e12f353e881d686",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    },
+    {
+      "chosen_official_url": "",
+      "exact_group_id": "W4CE1-59e6fdf7107cde665f5f",
+      "failure_reason": "NO_ISSUER_CANDIDATE_FOUND",
+      "identity_bindable": false,
+      "navigation_found": false,
+      "official_body_retrievable": false,
+      "probe_success": false,
+      "year": "2026"
+    }
+  ],
+  "identity_bindable_total": 0,
+  "linked_asset_realized_returns_used": false,
+  "model_performance_used": false,
+  "n_final_backtestable_authorized": false,
+  "navigation_found_total": 0,
+  "navigation_manifest_path": "registry/w4c_r1_earnings_ir_probe_navigation_manifest_v1.csv.gz",
+  "numeric_eps_revenue_guidance_results_persisted": false,
+  "official_body_manifest_path": "registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz",
+  "official_body_retrievable_total": 0,
+  "outcome_reveal_authorized": false,
+  "performance_blind": true,
+  "prediction_market_price_or_performance_used": false,
+  "prediction_market_settlement_used": false,
+  "probe_success_by_year": {
+    "2025": 0,
+    "2026": 0
+  },
+  "probe_success_total": 0,
+  "sample_size": 40,
+  "science_reopened": false,
+  "search_or_index_results_navigation_only": true,
+  "search_snippets_persisted": false,
+  "truth_verified_by_probe": false,
+  "version": "W4C-R1-EIR-DP-RESULT-v1.0",
+  "w4b_artifacts_modified": false
+}
