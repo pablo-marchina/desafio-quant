@@ -1,0 +1,312 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FAILURE_DIAGNOSIS",
+  "capacity_decision": "CONDITIONAL_ROUTE",
+  "date": "2026-08-16",
+  "failure_layer_counts": {
+    "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION": 9,
+    "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED": 3,
+    "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY": 6
+  },
+  "failure_layer_counts_by_year": {
+    "2025": {
+      "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION": 7,
+      "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED": 1,
+      "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY": 4
+    },
+    "2026": {
+      "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION": 2,
+      "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED": 2,
+      "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY": 2
+    }
+  },
+  "failure_records": [
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-1df1ee1cb237dc4e7ae5",
+      "http_status_counts": {
+        "0": 8
+      },
+      "layer": "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "TimeoutError": 8
+      },
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-29ac4c9b8f8a339821f1",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-2c799df5eb04be30675b",
+      "http_status_counts": {
+        "403": 8
+      },
+      "layer": "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_403": 8
+      },
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-3f6bb1902c5bd9cc0587",
+      "http_status_counts": {
+        "403": 8
+      },
+      "layer": "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_403": 8
+      },
+      "year": "2026"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-402cb40ef17bb46d6f97",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2026"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-4737ee123438ae0d303d",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-5a9b82d91baf85fcdedc",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-5d1d94c03b3f6dc4b817",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-604bfe787b6857139101",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-82448e12a442aa83281c",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-8642b204a5d2db51203c",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 0,
+      "exact_group_id": "W4CE1-905ec0cae5bbd6ae5244",
+      "http_status_counts": {},
+      "layer": "NO_UNIQUE_WIKIDATA_TICKER_P856_RESOLUTION",
+      "navigation_rows": 0,
+      "resolution_statuses": [
+        "UNRESOLVED_UNIQUE_ENTITY_REQUIRED"
+      ],
+      "transport_error_counts": {},
+      "year": "2026"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-a8d51819d0be35abc771",
+      "http_status_counts": {
+        "0": 1,
+        "200": 2,
+        "404": 5
+      },
+      "layer": "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_404": 5,
+        "NO_ERROR_CLASS": 2,
+        "TimeoutError": 1
+      },
+      "year": "2026"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-b2e15c794acb46dcf873",
+      "http_status_counts": {
+        "429": 8
+      },
+      "layer": "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_429": 8
+      },
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-ca7dcacb7e4f0d48db7d",
+      "http_status_counts": {
+        "200": 1,
+        "404": 7
+      },
+      "layer": "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_404": 7,
+        "NO_ERROR_CLASS": 1
+      },
+      "year": "2026"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-d20e674efdfec3f67547",
+      "http_status_counts": {
+        "403": 8
+      },
+      "layer": "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_403": 8
+      },
+      "year": "2026"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-d6fad74bbbe8c38c6a5d",
+      "http_status_counts": {
+        "200": 1,
+        "404": 7
+      },
+      "layer": "RESOLVED_BODY_RETRIEVED_IDENTITY_BINDING_FAILED",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_404": 7,
+        "NO_ERROR_CLASS": 1
+      },
+      "year": "2025"
+    },
+    {
+      "body_attempt_rows": 8,
+      "exact_group_id": "W4CE1-dc3a07ff8984f9f116b9",
+      "http_status_counts": {
+        "403": 8
+      },
+      "layer": "RESOLVED_TRANSPORT_OR_TIMEOUT_ERROR_ONLY",
+      "navigation_rows": 8,
+      "resolution_statuses": [
+        "RESOLVED_UNIQUE_WIKIDATA_ENTITY_AND_P856"
+      ],
+      "transport_error_counts": {
+        "HTTP_403": 8
+      },
+      "year": "2025"
+    }
+  ],
+  "failure_total": 18,
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FAILURE_DIAGNOSIS_V1_1_1_OUTCOME_BLIND",
+  "input_result_version": "W4C-R1-EIR-ODD-RESULT-v1.1.1",
+  "next_decision_support": {
+    "current_2025_success_gap_to_full": 2,
+    "current_2026_success_gap_to_full": 0,
+    "current_total_success_gap_to_full": 2,
+    "diagnosis_supports_targeted_v1_2_amendment": true,
+    "full_1355_execution_authorized": false,
+    "full_route_threshold_each_year": 10,
+    "full_route_threshold_total": 24
+  },
+  "probe_success_by_year": {
+    "2025": 8,
+    "2026": 14
+  },
+  "probe_success_total": 22,
+  "sample_size": 40,
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "event_truth_verification_used": false,
+    "n_final_backtestable_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false
+  },
+  "status": "MATERIALIZED_OUTCOME_BLIND_DIAGNOSIS",
+  "version": "W4C-R1-EIR-ODD-FAILURE-DIAGNOSIS-v1.1.1"
+}
