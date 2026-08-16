@@ -4,7 +4,8 @@
   "date": "2026-08-16",
   "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
   "protocol_version": "W4C-R1-EIR-ODD-v1.1",
-  "executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1.py",
+  "executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1_runner.py",
+  "implementation_module_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1.py",
   "base_executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1.py",
   "external_requests_performed_before_freeze": false,
   "issuer_ir_lookup_performed_before_freeze": false,
@@ -19,6 +20,10 @@
     {
       "path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1.json",
       "git_blob_sha": "ccd60083f5aa99d5402c951fcb5c608462813bf2"
+    },
+    {
+      "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1_runner.py",
+      "git_blob_sha": "81d6a17108afc5dadb25dfdbccc67e505fa0f976"
     },
     {
       "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1.py",
