@@ -1,0 +1,40 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_SIGNAL_MAP_SUMMARY",
+  "counts": {
+    "eligibility_rows": 1355,
+    "feature_rows": 117,
+    "signal_map_rows": 109,
+    "unique_feature_ticker_date_keys": 117,
+    "unique_signal_ticker_date_keys": 107
+  },
+  "date": "2026-08-16",
+  "gate_decision": "PASS_SIGNAL_MAP_MATERIALIZED_NO_OUTCOME_RETURN_SETTLEMENT_PNL_READS",
+  "next_gate": "Re-run pre-PnL eligibility with this signal_map present; then decide whether signal coverage is enough for price/return execution or whether additional PIT signal collection is required.",
+  "outputs": {
+    "signal_map": "registry/w4c_r1_expanded_economic_backtest_signal_map_v1.csv",
+    "signal_map_sha256": "24eed6b1daebeb406517870bcaa553cbbce16831e76867a8fb74cbe3e3b5470c"
+  },
+  "reason_counts": {
+    "FEATURE_ROW_MISSING_SAFE_CUTOFF_OR_P_CUTOFF": 2,
+    "NO_ART028_FEATURE_ROW_FOR_TICKER_DATE": 1228,
+    "NO_TICKER_ON_ELIGIBILITY": 16,
+    "PASS_SIGNAL_MAP_JOIN": 109
+  },
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "benchmark_return_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "economic_backtest_execution": false,
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false
+  },
+  "source": {
+    "eligibility_manifest": "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz",
+    "feature_matrix": "data/art028_h2_feature_matrix.csv.gz",
+    "feature_matrix_sha256": "1295e7367396ccf493ba1e153bbec528fc215016e2631e9a37ea31772645658a"
+  },
+  "status": "MATERIALIZED_PIT_SIGNAL_MAP_FROM_ART028_FEATURE_MATRIX_FAIL_CLOSED",
+  "version": "W4C-R1-EXPANDED-SIGNAL-MAP-v1.0"
+}
