@@ -1,0 +1,134 @@
+{
+  "arg_os_pnl_read": false,
+  "artifact": "W4C_R1_EARNINGS_IR_PROBE_LIVE_TRANSPORT_DIAGNOSIS",
+  "earnings_outcomes_read": false,
+  "external_requests_performed": true,
+  "interpretation": "Compare HTTP/body availability with parser marker matches; this is not a new capacity probe and does not change the frozen 0/40 result.",
+  "prediction_market_settlement_read": false,
+  "purpose": "Outcome-blind diagnosis of the exact frozen search transports and parsers on four deterministic sample cases.",
+  "realized_returns_read": false,
+  "results": [
+    {
+      "body_bytes": 14352,
+      "content_type": "text/html; charset=UTF-8",
+      "exact_group_id": "W4CE1-1be9a4fed2080af1c931",
+      "http_status": 202,
+      "provider": "duckduckgo_html",
+      "structural": {
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_match_count": 0,
+        "result__a_marker_count": 0,
+        "uddg_marker_count": 0
+      },
+      "year": "2025"
+    },
+    {
+      "body_bytes": 118633,
+      "content_type": "text/html; charset=utf-8",
+      "exact_group_id": "W4CE1-1be9a4fed2080af1c931",
+      "http_status": 200,
+      "provider": "bing_html",
+      "structural": {
+        "b_algo_marker_count": 10,
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_block_count": 10,
+        "current_regex_match_count": 10
+      },
+      "year": "2025"
+    },
+    {
+      "body_bytes": 14341,
+      "content_type": "text/html; charset=UTF-8",
+      "exact_group_id": "W4CE1-1df1ee1cb237dc4e7ae5",
+      "http_status": 202,
+      "provider": "duckduckgo_html",
+      "structural": {
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_match_count": 0,
+        "result__a_marker_count": 0,
+        "uddg_marker_count": 0
+      },
+      "year": "2025"
+    },
+    {
+      "body_bytes": 119383,
+      "content_type": "text/html; charset=utf-8",
+      "exact_group_id": "W4CE1-1df1ee1cb237dc4e7ae5",
+      "http_status": 200,
+      "provider": "bing_html",
+      "structural": {
+        "b_algo_marker_count": 10,
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_block_count": 10,
+        "current_regex_match_count": 10
+      },
+      "year": "2025"
+    },
+    {
+      "body_bytes": 14329,
+      "content_type": "text/html; charset=UTF-8",
+      "exact_group_id": "W4CE1-d6524cab64e571d429b8",
+      "http_status": 202,
+      "provider": "duckduckgo_html",
+      "structural": {
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_match_count": 0,
+        "result__a_marker_count": 0,
+        "uddg_marker_count": 0
+      },
+      "year": "2026"
+    },
+    {
+      "body_bytes": 118439,
+      "content_type": "text/html; charset=utf-8",
+      "exact_group_id": "W4CE1-d6524cab64e571d429b8",
+      "http_status": 200,
+      "provider": "bing_html",
+      "structural": {
+        "b_algo_marker_count": 10,
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_block_count": 10,
+        "current_regex_match_count": 10
+      },
+      "year": "2026"
+    },
+    {
+      "body_bytes": 14333,
+      "content_type": "text/html; charset=UTF-8",
+      "exact_group_id": "W4CE1-eb36d1908c5f47a77d8e",
+      "http_status": 202,
+      "provider": "duckduckgo_html",
+      "structural": {
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_match_count": 0,
+        "result__a_marker_count": 0,
+        "uddg_marker_count": 0
+      },
+      "year": "2026"
+    },
+    {
+      "body_bytes": 118352,
+      "content_type": "text/html; charset=utf-8",
+      "exact_group_id": "W4CE1-eb36d1908c5f47a77d8e",
+      "http_status": 200,
+      "provider": "bing_html",
+      "structural": {
+        "b_algo_marker_count": 10,
+        "captcha_marker": false,
+        "consent_marker": false,
+        "current_regex_block_count": 10,
+        "current_regex_match_count": 10
+      },
+      "year": "2026"
+    }
+  ],
+  "selected_cases": 4,
+  "version": "W4C-R1-EIR-DP-LIVE-DIAG-v1.1"
+}
