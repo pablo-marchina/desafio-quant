@@ -1,0 +1,47 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_EXECUTOR_FREEZE",
+  "version": "W4C-R1-EIR-ODD-EXEC-v1.1.1",
+  "date": "2026-08-16",
+  "status": "FROZEN_EXECUTOR_PRE_EXTERNAL_REQUEST",
+  "parent_executor_freeze": "registry/w4c_r1_earnings_ir_official_domain_discovery_executor_freeze_v1_1.json",
+  "protocol_path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1_1.json",
+  "executor_path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1_1.py",
+  "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+  "ticker_profile_path": "registry/w4c_r1_earnings_ticker_profile_v1.json",
+  "bound_files": [
+    {
+      "path": "registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1_1.json",
+      "git_blob_sha": "b979be5dc7de53a081972c39905a7a4d6c688e66"
+    },
+    {
+      "path": "scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1_1.py",
+      "git_blob_sha": "0bfc77bb875c26e0fc35f0a1563d31d16ac9aae3"
+    },
+    {
+      "path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+      "git_blob_sha": "6c0fb6de3ffa5c6f933ed009e94fa62c606c5cc9"
+    },
+    {
+      "path": "registry/w4c_r1_earnings_ticker_profile_v1.json",
+      "git_blob_sha": "7a7938bbc2dad050c4cae989d8c4ecf98dbfd945"
+    }
+  ],
+  "transport_bounding": {
+    "max_candidates_per_resolved_group": 8,
+    "request_timeout_seconds": 5,
+    "wdqs_timeout_seconds": 20,
+    "http_attempts_per_candidate": 1,
+    "recursive_sitemap_crawl_enabled": false,
+    "timeout_or_transport_error_policy": "FAIL_CLOSED_NON_SUCCESS_AND_MATERIALIZE_OUTPUTS"
+  },
+  "external_requests_performed_before_freeze": false,
+  "sample_selection_changed": false,
+  "thresholds_changed": false,
+  "protocol_changed_after_freeze": false,
+  "outcome_data_used": false,
+  "settlement_data_used": false,
+  "returns_or_pnl_used": false,
+  "full_1355_execution_authorized": false,
+  "execution_env_token": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_1_EXECUTE=YES_FROZEN_OFFICIAL_DOMAIN_V1_1_1_PROBE",
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_EXECUTOR_V1_1_1_FROZEN_PRE_REQUEST"
+}
