@@ -1,0 +1,74 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL",
+  "version": "W4C-R1-EIR-ODD-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_PROTOCOL_PRE_EXTERNAL_REQUEST",
+  "purpose": "Test a materially different issuer-IR navigation route after the frozen search-engine HTML route failed its capacity gate, without using earnings outcomes or economic performance.",
+  "material_difference": "No DuckDuckGo/Bing HTML search transport or search-result HTML parser is used. Navigation is seeded by a structured ticker-to-official-website lookup in Wikidata, then constrained to the issuer's own web domain and first-party sitemap/link graph.",
+  "navigation_source": {
+    "provider": "Wikidata Query Service",
+    "endpoint": "https://query.wikidata.org/sparql",
+    "properties": {
+      "ticker_symbol": "P249",
+      "official_website": "P856"
+    },
+    "role": "navigation_only",
+    "truth_voting": false,
+    "outcome_data_allowed": false
+  },
+  "sample_binding": {
+    "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+    "sample_version": "W4C-R1-EIR-DP-SAMPLE-v1.0",
+    "sample_size": 40,
+    "allocation": {"2025": 20, "2026": 20},
+    "selection_change_allowed": false,
+    "resampling_allowed": false
+  },
+  "issuer_resolution": {
+    "input": "frozen unique pre-GAAP ticker candidate",
+    "accept_only": "exact ticker match to a unique Wikidata company entity with at least one P856 official website URL",
+    "multiple_entities": "UNRESOLVED_NO_GUESS",
+    "no_entity": "UNRESOLVED_NO_GUESS",
+    "missing_official_website": "UNRESOLVED_NO_GUESS"
+  },
+  "official_domain_crawl": {
+    "allowed_roots": ["official P856 host", "subdomains of the official P856 registrable host"],
+    "disallowed": ["search-engine result pages", "third-party publishers", "aggregators", "SEC", "marketplaces", "news wires"],
+    "entrypoints": ["official homepage", "official robots.txt", "official sitemap.xml", "sitemap URLs linked by robots.txt"],
+    "fixed_path_hints": ["investor", "investors", "investor-relations", "ir", "newsroom", "press-release", "earnings", "financial-results", "quarterly-results", "results"],
+    "candidate_generation": "deterministic URL/path filtering from first-party sitemap/link graph plus a fixed list of path templates on the official host",
+    "maximum_candidate_urls_per_group": 12
+  },
+  "candidate_acceptance": {
+    "http_status": 200,
+    "content_types": ["text/html", "application/xhtml+xml", "application/pdf"],
+    "official_host_required": true,
+    "issuer_identity_binding_required": true,
+    "identity_basis": "issuer core identity tokens from frozen pre-truth subject key must match official-domain body; no earnings numeric value is used",
+    "search_snippet_or_directory_text_can_pass": false
+  },
+  "firewall": {
+    "earnings_numeric_outcomes_allowed": false,
+    "prediction_market_settlement_allowed": false,
+    "prediction_market_performance_allowed": false,
+    "realized_returns_allowed": false,
+    "argos_pnl_allowed": false,
+    "n_final_backtestable_authorized": false,
+    "event_truth_verification_authorized": false,
+    "economic_model_selection_authorized": false
+  },
+  "capacity_gate": {
+    "FULL_ROUTE_TECHNICALLY_VIABLE": {"total_min": 24, "year_min": 10},
+    "CONDITIONAL_ROUTE": {"total_min": 12, "year_min": 5},
+    "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "otherwise",
+    "thresholds_frozen_before_external_requests": true
+  },
+  "outputs": [
+    "official-domain resolution manifest",
+    "navigation/candidate manifest",
+    "official-body retrieval manifest",
+    "capacity summary",
+    "execution manifest"
+  ],
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL_FROZEN_PRE_REQUEST"
+}
