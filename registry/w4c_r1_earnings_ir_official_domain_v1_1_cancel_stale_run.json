@@ -1,0 +1,12 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_STALE_RUN_CANCEL_AUTHORIZATION",
+  "date": "2026-08-16",
+  "target_run_id": 31944237193,
+  "reason": "stale v1.1 capacity probe attempt was launched before bounded-timeout workflow semantics were available",
+  "scientific_result_created_by_target_run": false,
+  "outcome_data_used": false,
+  "prediction_market_settlement_used": false,
+  "realized_returns_used": false,
+  "argos_pnl_used": false,
+  "gate_decision": "PASS_W4C_R1_EIR_ODD_V1_1_STALE_RUN_CANCEL_AUTHORIZED"
+}
