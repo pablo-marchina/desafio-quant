@@ -1,0 +1,36 @@
+{
+  "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_SUMMARY",
+  "base_rows": 1355,
+  "coverage_threshold_for_price_return_authorization": 300,
+  "date": "2026-08-16",
+  "failure_reason_counts": {
+    "NO_DETERMINISTIC_TICKER": 16,
+    "NO_PIT_SIGNAL_BEFORE_CUTOFF": 1230,
+    "PASS_PRE_PRICE_ELIGIBILITY": 109
+  },
+  "gate_decision": "PASS_ELIGIBILITY_V3_MATERIALIZED_NO_OUTCOME_RETURN_SETTLEMENT_READS",
+  "n_final_backtestable_candidate_pre_price": 109,
+  "outputs": {
+    "eligibility_manifest_v3": "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v3.csv.gz",
+    "eligibility_manifest_v3_sha256": "7ad8b4a7b6e09da0590ff9f815af3998eda093943682d0d07a5b6ebaba0e60b2",
+    "eligibility_summary_v3": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v3.json",
+    "internal_join_trace": "registry/w4c_r1_expanded_pit_internal_join_trace_v1.csv.gz",
+    "internal_join_trace_sha256": "6364d527fa3e398bc9c45856fa2c5d2520544ddcc2808871f99fa05b1965abc9",
+    "signal_map_v4": "registry/w4c_r1_expanded_economic_backtest_signal_map_v4.csv",
+    "signal_map_v4_sha256": "323184b827aa15335b6f1e1e12140a5a8d6e7098e894d29807ac1a73e1d2adec"
+  },
+  "price_return_authorization_candidate": false,
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "benchmark_return_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "economic_backtest_execution": false,
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false
+  },
+  "signal_map_rows": 109,
+  "status": "MATERIALIZED_PRE_PNL_ELIGIBILITY_WITH_SIGNAL_MAP_V4_FAIL_CLOSED",
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-v3.0"
+}

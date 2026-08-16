@@ -1,0 +1,28 @@
+{
+  "artifact": "W4C_R1_EXPANDED_PIT_SIGNAL_COVERAGE_CLOSEOUT",
+  "basis": {
+    "eligibility_summary_v3": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v3.json",
+    "internal_new_signal_rows": 0,
+    "internal_token_candidates_by_gid": 0,
+    "minimum_required_for_expanded_pnl": 300,
+    "n_final_backtestable_candidate_pre_price": 109,
+    "official_domain_expanded_universe_rows": 1355,
+    "signal_map_v4_rows": 109,
+    "summary": "registry/w4c_r1_expanded_pit_internal_join_summary_v1.json"
+  },
+  "date": "2026-08-16",
+  "gate_decision": "FAIL_EXPANDED_PRICE_RETURN_BACKTEST_AUTHORIZATION_COVERAGE_BELOW_THRESHOLD",
+  "report_page_4_policy": "Use official-domain expansion 1355 plus PIT coverage limitation and last complete economic backtest, not an expanded PnL claim.",
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "benchmark_return_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "economic_backtest_execution": false,
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false
+  },
+  "status": "FROZEN_FINAL_SIGNAL_COVERAGE_LIMITATION_PRE_PNL",
+  "version": "W4C-R1-EXPANDED-PIT-SIGNAL-COVERAGE-CLOSEOUT-v1.0"
+}

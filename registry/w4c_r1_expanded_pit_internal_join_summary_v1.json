@@ -1,0 +1,90 @@
+{
+  "artifact": "W4C_R1_EXPANDED_PIT_INTERNAL_JOIN_SUMMARY",
+  "counts": {
+    "combined_signal_rows_v4": 109,
+    "eligibility_rows": 1355,
+    "existing_signal_rows_v3": 109,
+    "internal_new_signal_rows": 0,
+    "internal_token_candidates_by_gid": 0,
+    "min_coverage_for_pnl": 300,
+    "n_final_backtestable_candidate_pre_price_v3": 109
+  },
+  "date": "2026-08-16",
+  "decision": {
+    "price_return_authorization_candidate": false,
+    "reason": "coverage_below_threshold_freeze_final_pit_coverage_closeout"
+  },
+  "eligibility_reason_counts_v3": {
+    "NO_DETERMINISTIC_TICKER": 16,
+    "NO_PIT_SIGNAL_BEFORE_CUTOFF": 1230,
+    "PASS_PRE_PRICE_ELIGIBILITY": 109
+  },
+  "gate_decision": "PASS_INTERNAL_PIT_SIGNAL_JOIN_MATERIALIZED_NO_OUTCOME_RETURN_SETTLEMENT_PNL_READS",
+  "join_stats": {
+    "flat_counts": {
+      "w2c_pit_v2_1_primary_asset_events.csv.gz:rows_scanned": 260,
+      "w2c_pit_v2_1_primary_asset_events.csv.gz:rows_without_token_candidate": 260,
+      "w2c_pit_v2_1_primary_source_queue.csv:rows_scanned": 260,
+      "w2c_pit_v2_1_primary_source_queue.csv:rows_without_token_candidate": 260,
+      "w4b_polymarket_recensus_venue_events_v1.csv.gz:rows_scanned": 810515,
+      "w4b_polymarket_recensus_venue_events_v1.csv.gz:rows_without_token_candidate": 810515,
+      "w4b_polymarket_w2_overlap_v1.csv.gz:rows_scanned": 810515,
+      "w4b_polymarket_w2_overlap_v1.csv.gz:rows_without_token_candidate": 810515
+    },
+    "missing_gid_count": 1230,
+    "missing_key_count": 1207,
+    "source_stats": {
+      "registry/w2c_pit_v2_1_primary_asset_events.csv.gz": {
+        "rows_scanned": 260,
+        "rows_without_token_candidate": 260
+      },
+      "registry/w2c_pit_v2_1_primary_source_queue.csv": {
+        "rows_scanned": 260,
+        "rows_without_token_candidate": 260
+      },
+      "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz": {
+        "rows_scanned": 810515,
+        "rows_without_token_candidate": 810515
+      },
+      "registry/w4b_polymarket_w2_overlap_v1.csv.gz": {
+        "rows_scanned": 810515,
+        "rows_without_token_candidate": 810515
+      }
+    }
+  },
+  "next_gate": "authorize_price_return_backtest_if_candidate_true_else_use_closeout_in_report_page_4",
+  "outputs": {
+    "eligibility_manifest_v3": "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v3.csv.gz",
+    "eligibility_manifest_v3_sha256": "7ad8b4a7b6e09da0590ff9f815af3998eda093943682d0d07a5b6ebaba0e60b2",
+    "eligibility_summary_v3": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v3.json",
+    "internal_join_trace": "registry/w4c_r1_expanded_pit_internal_join_trace_v1.csv.gz",
+    "internal_join_trace_sha256": "6364d527fa3e398bc9c45856fa2c5d2520544ddcc2808871f99fa05b1965abc9",
+    "signal_map_v4": "registry/w4c_r1_expanded_economic_backtest_signal_map_v4.csv",
+    "signal_map_v4_sha256": "323184b827aa15335b6f1e1e12140a5a8d6e7098e894d29807ac1a73e1d2adec"
+  },
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "benchmark_return_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "economic_backtest_execution": false,
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false
+  },
+  "status": "MATERIALIZED_INTERNAL_PRE_PNL_SIGNAL_COVERAGE",
+  "validation": {
+    "economic_backtest_execution": false,
+    "eligibility_rows": 1355,
+    "existing_signal_map_present": true,
+    "internal_source_presence": {
+      "registry/w2c_pit_v2_1_primary_asset_events.csv.gz": true,
+      "registry/w2c_pit_v2_1_primary_source_queue.csv": true,
+      "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz": true,
+      "registry/w4b_polymarket_w2_overlap_v1.csv.gz": true
+    },
+    "security_price_return_read": false,
+    "status": "PASS_INTERNAL_PIT_JOIN_VALIDATE_ONLY"
+  },
+  "version": "W4C-R1-EXPANDED-PIT-INTERNAL-JOIN-v1.0"
+}
