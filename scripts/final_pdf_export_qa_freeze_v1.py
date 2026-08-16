@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Final PDF export QA + freeze for ARGOS final submission.
 
-This script intentionally builds from the already-versioned 5 SVG pages in
-report/pages_submission. It does not read market outcomes, settlement, equity
-returns, benchmark returns, or ARGOS PnL.
+This script builds from the already-versioned 5 SVG pages in
+report/pages_submission. It may report a previously frozen W2A funded-portfolio
+accounting layer, but it does not compute new returns or reopen science during
+PDF export. The W4C/R1 expanded 1,355-event path remains blocked before expanded
+price/return/PnL execution.
 """
 from __future__ import annotations
 
@@ -44,8 +46,32 @@ CLAIM_FORBIDDEN = [
 ]
 
 REQUIRED_TEXT_HINTS = [
-    "ARGOS", "C0_NO_TRADE", "1.355", "109", "GenAI"
+    "ARGOS", "C0_NO_TRADE", "1.355", "109", "GenAI", "Sharpe", "drawdown"
 ]
+
+W2A_FUNDED_PORTFOLIO_ACCOUNTING = {
+    "source": "registry/w2a_results/w2a_funded_portfolio_summary.json",
+    "daily_ledger_source": "registry/w2a_results/w2a_funded_daily_ledger.csv",
+    "version": "W2A-FP-v1.0",
+    "status": "PASS_FUNDED_PORTFOLIO_ACCOUNTING",
+    "terminal_nav": 1.0019679107011892,
+    "total_return": 0.0019679107011891794,
+    "matched_spy_terminal_nav": 1.0264983415487152,
+    "matched_spy_total_return": 0.02649834154871522,
+    "active_terminal_wealth": -0.02453043084752604,
+    "max_drawdown": -0.06384129727475374,
+    "max_drawdown_date": "2026-02-23",
+    "time_under_water_max_sessions": 136,
+    "annualized_volatility_sqrt252": 0.061616644848371926,
+    "hac_sharpe_lag10": 0.07515329744169824,
+    "annualized_sortino_sqrt252": 0.09760953014186484,
+    "max_concurrent_positions": 9,
+    "peak_gross_mtm_exposure": 1.0158422697211948,
+    "strategy_promotion": "NO_PROMOTION_R1",
+    "historical_frozen_champion_unchanged": "C0_NO_TRADE",
+    "h2_unchanged": "FAIL_UNDER_FROZEN_EXP07I",
+    "science_reopened": False,
+}
 
 
 def run(cmd: list[str], cwd: Path = ROOT) -> str:
@@ -140,7 +166,7 @@ def main() -> None:
 
     freeze = {
         "artifact": "FINAL_PDF_SUBMISSION_FREEZE",
-        "version": "FINAL-PDF-SUBMISSION-FREEZE-v1.0",
+        "version": "FINAL-PDF-SUBMISSION-FREEZE-v1.1-FUNDED-PORTFOLIO",
         "date_utc": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "status": qa_status,
         "pdf": {
@@ -152,6 +178,7 @@ def main() -> None:
             "source_page_hashes": page_hashes,
             "page_size_lines_from_pdfinfo": sizes,
         },
+        "funded_portfolio_accounting": W2A_FUNDED_PORTFOLIO_ACCOUNTING,
         "qa": {
             "failures": failures,
             "anonymity_forbidden_matches": anon_hits,
@@ -162,16 +189,19 @@ def main() -> None:
                 "anonymous_text_scan_passed": not anon_hits,
                 "forbidden_claim_scan_passed": not claim_hits,
                 "required_core_terms_present": not required_missing,
-                "page_4_closeout_policy": "uses PIT coverage closeout: official-domain 1355, final PIT coverage 109, no expanded PnL claim",
+                "page_4_policy": "reports frozen W2A FP-v1 funded portfolio accounting and W4C/R1 PIT coverage closeout: official-domain 1355, final PIT coverage 109, no expanded PnL claim",
             },
         },
         "scientific_firewall": {
-            "prediction_market_settlement_read": False,
-            "earnings_numeric_outcomes_read": False,
-            "realized_returns_read": False,
-            "benchmark_return_read": False,
-            "argos_pnl_read": False,
-            "expanded_price_return_backtest_executed": False,
+            "w2a_funded_portfolio_accounting_reported": True,
+            "w2a_source_frozen_before_final_pdf": True,
+            "w2a_science_reopened": False,
+            "w4c_r1_expanded_price_return_backtest_executed": False,
+            "w4c_r1_expanded_realized_returns_read": False,
+            "w4c_r1_expanded_benchmark_returns_read": False,
+            "w4c_r1_expanded_argos_pnl_read": False,
+            "w4c_r1_expanded_prediction_market_settlement_read": False,
+            "w4c_r1_expanded_earnings_numeric_outcomes_read": False,
         },
         "submission_warning": "Official filename may need to be renamed to the challenge submission key before upload.",
     }
