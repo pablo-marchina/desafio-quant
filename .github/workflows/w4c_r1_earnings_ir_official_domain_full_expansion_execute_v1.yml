@@ -1,0 +1,40 @@
+name: W4-C R1 earnings IR official-domain full 1355 expansion v1 execute
+
+on:
+  push:
+    paths:
+      - 'registry/w4c_r1_earnings_ir_official_domain_full_expansion_execute_authorization_v1.json'
+
+permissions:
+  contents: write
+
+jobs:
+  execute-full-expansion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXECUTE: YES_FROZEN_OFFICIAL_DOMAIN_FULL_1355_EXPANSION
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Validate full executor and inputs without external requests
+        env:
+          W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_VALIDATE_ONLY: YES
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_full_expansion_executor_v1.py
+
+      - name: Execute outcome-blind full 1355 official-domain expansion
+        run: timeout 80m python3 scripts/w4c_r1_earnings_ir_official_domain_full_expansion_executor_v1.py
+
+      - name: Commit full expansion outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4c_r1_earnings_ir_official_domain_full_resolution_manifest_v1.csv.gz \
+            registry/w4c_r1_earnings_ir_official_domain_full_navigation_manifest_v1.csv.gz \
+            registry/w4c_r1_earnings_ir_official_domain_full_body_manifest_v1.csv.gz \
+            registry/w4c_r1_earnings_ir_official_domain_full_expansion_summary_v1.json \
+            registry/w4c_r1_earnings_ir_official_domain_full_execution_manifest_v1.json
+          git commit -m 'registry: materialize W4-C R1 official-domain full 1355 expansion v1'
+          git push
