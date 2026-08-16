@@ -1,0 +1,30 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_PROBE_FAILURE_LAYER_DIAGNOSIS",
+  "body_domain_identity_counts": {},
+  "body_error_counts": {},
+  "body_http_status_counts": {},
+  "body_identity_counts": {},
+  "body_ir_path_signal_counts": {},
+  "body_provider_counts": {},
+  "body_rows": 0,
+  "diagnosis": "NO_OFFICIAL_BODY_ATTEMPTS_RECORDED",
+  "external_requests_performed": false,
+  "failure_reason_counts": {},
+  "navigation_error_counts": {},
+  "navigation_http_status_counts": {
+    "200": 39,
+    "202": 39
+  },
+  "navigation_provider_counts": {
+    "bing_html": 39,
+    "duckduckgo_html": 39
+  },
+  "navigation_rows": 78,
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false
+  },
+  "version": "W4C-R1-EIR-DP-DIAG-v1.0"
+}
