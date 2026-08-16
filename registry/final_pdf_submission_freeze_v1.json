@@ -1,6 +1,29 @@
 {
   "artifact": "FINAL_PDF_SUBMISSION_FREEZE",
-  "date_utc": "2026-08-16T22:15:17.902330Z",
+  "date_utc": "2026-08-16T22:17:03.955801Z",
+  "funded_portfolio_accounting": {
+    "active_terminal_wealth": -0.02453043084752604,
+    "annualized_sortino_sqrt252": 0.09760953014186484,
+    "annualized_volatility_sqrt252": 0.061616644848371926,
+    "daily_ledger_source": "registry/w2a_results/w2a_funded_daily_ledger.csv",
+    "h2_unchanged": "FAIL_UNDER_FROZEN_EXP07I",
+    "hac_sharpe_lag10": 0.07515329744169824,
+    "historical_frozen_champion_unchanged": "C0_NO_TRADE",
+    "matched_spy_terminal_nav": 1.0264983415487152,
+    "matched_spy_total_return": 0.02649834154871522,
+    "max_concurrent_positions": 9,
+    "max_drawdown": -0.06384129727475374,
+    "max_drawdown_date": "2026-02-23",
+    "peak_gross_mtm_exposure": 1.0158422697211948,
+    "science_reopened": false,
+    "source": "registry/w2a_results/w2a_funded_portfolio_summary.json",
+    "status": "PASS_FUNDED_PORTFOLIO_ACCOUNTING",
+    "strategy_promotion": "NO_PROMOTION_R1",
+    "terminal_nav": 1.0019679107011892,
+    "time_under_water_max_sessions": 136,
+    "total_return": 0.0019679107011891794,
+    "version": "W2A-FP-v1.0"
+  },
   "pdf": {
     "format": "16:9 widescreen from 1600x900 SVG pages",
     "page_size_lines_from_pdfinfo": [
@@ -8,13 +31,13 @@
     ],
     "pages": 5,
     "path": "dist/final_submission/ARGOS_final_submission.pdf",
-    "sha256": "1fbaa420beec727a9d34d293ef29e1190ebf906db9b13b098cdca298cfc61940",
+    "sha256": "3c5bd9ff583162f651117543f8926319432c1a2aac697109b05b3c489be6f8c0",
     "source_page_hashes": {
       "fig01_strategy_pipeline.svg": "a6272770e054795f7265ba46c1455dfcc5db9bb5cd2888aa908793ee85e0b7e0",
       "fig02_model_reduction.svg": "c525334304bf2de8b1adbe300b40ef7d4ca545071280d8d5c8f0807d869755ea",
       "fig03_h2_results.svg": "6170d8bf1427c76d218232b99f65728bf91239681d6aa82a902404446abda29d",
       "fig04_economic_backtest.svg": "3abff4e0c365e2a1982abc49c6fcfed8d3d60e05c1e18916300d2a2d9a546296",
-      "fig05_genai_future.svg": "9bae73571364e547e01d9fadc7108f943192a4cfd15ac88d07bce28e0eeee656"
+      "fig05_genai_future.svg": "7fe4b16d39ffbb5cd967cdeac8cba95078c340673545416e710d0c1b82906bac"
     },
     "source_pages_dir": "report/pages_submission"
   },
@@ -24,7 +47,7 @@
       "anonymous_text_scan_passed": true,
       "exactly_5_pages": true,
       "forbidden_claim_scan_passed": true,
-      "page_4_closeout_policy": "uses PIT coverage closeout: official-domain 1355, final PIT coverage 109, no expanded PnL claim",
+      "page_4_policy": "reports frozen W2A FP-v1 funded portfolio accounting and W4C/R1 PIT coverage closeout: official-domain 1355, final PIT coverage 109, no expanded PnL claim",
       "required_core_terms_present": true
     },
     "claim_forbidden_matches": [],
@@ -32,14 +55,17 @@
     "required_text_hints_missing": []
   },
   "scientific_firewall": {
-    "argos_pnl_read": false,
-    "benchmark_return_read": false,
-    "earnings_numeric_outcomes_read": false,
-    "expanded_price_return_backtest_executed": false,
-    "prediction_market_settlement_read": false,
-    "realized_returns_read": false
+    "w2a_funded_portfolio_accounting_reported": true,
+    "w2a_science_reopened": false,
+    "w2a_source_frozen_before_final_pdf": true,
+    "w4c_r1_expanded_argos_pnl_read": false,
+    "w4c_r1_expanded_benchmark_returns_read": false,
+    "w4c_r1_expanded_earnings_numeric_outcomes_read": false,
+    "w4c_r1_expanded_prediction_market_settlement_read": false,
+    "w4c_r1_expanded_price_return_backtest_executed": false,
+    "w4c_r1_expanded_realized_returns_read": false
   },
   "status": "PASS_FINAL_PDF_QA",
   "submission_warning": "Official filename may need to be renamed to the challenge submission key before upload.",
-  "version": "FINAL-PDF-SUBMISSION-FREEZE-v1.0"
+  "version": "FINAL-PDF-SUBMISSION-FREEZE-v1.1-FUNDED-PORTFOLIO"
 }
