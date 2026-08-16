@@ -1,0 +1,75 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_PROTOCOL",
+  "version": "W4C-R1-EIR-DP-v1.0",
+  "date": "2026-08-15",
+  "status": "PREREGISTERED_BEFORE_ANY_ISSUER_IR_DISCOVERY_PROBE_REQUEST",
+  "science_reopened": false,
+  "performance_blind": true,
+  "purpose": "Measure technical and provenance feasibility of scalable issuer-IR discovery and official-body capture for the frozen 1,355-group EARNINGS_EPS R1 queue. This probe does not authorize event-truth verification or marginal-N promotion.",
+  "parent_protocol": {
+    "path": "registry/w4c_r1_earnings_ir_fallback_protocol_v1.json",
+    "git_blob_sha": "0802ac2fe38567f8d0054ebfdcdd5ed5b525c5b2",
+    "authority": "ISSUER_IR",
+    "search_or_index_results_navigation_only": true,
+    "official_issuer_body_required_to_vote_in_later_truth_executor": true
+  },
+  "population": {
+    "queue_path": "registry/w4c_r1_earnings_ir_queue_v1.csv.gz",
+    "queue_git_blob_sha": "395b56ada4b3be8412f2391957cfcde0c832cb84",
+    "groups": 1355,
+    "sorted_group_ids_sha256": "c9fd3a13e87ea720e961fa087098130fd20da74c96aa02419aaeebef1e64b05c",
+    "years": {"2025": 483, "2026": 872}
+  },
+  "sample": {
+    "size": 40,
+    "allocation": {"2025": 20, "2026": 20},
+    "selection_rule": "Within each year, rank rows ascending by SHA256('W4C-R1-EIR-DP-v1.0|' + exact_group_id) hex digest and take the first 20. No source, outcome, price, liquidity, linked-return, PnL or model information may enter selection.",
+    "replacement": false,
+    "sample_ids_must_be_frozen_before_external_requests": true
+  },
+  "probe_tasks": [
+    "Derive a navigation query only from frozen pretruth subject/date metadata.",
+    "Attempt to locate an issuer-controlled investor-relations or corporate-news URL using a general web index/search surface; search/index metadata is navigation-only and cannot vote.",
+    "Fetch the candidate official issuer body directly.",
+    "Record URL, final domain, HTTP status, retrieval timestamp, body hash when retrievable, and deterministic identity-token checks derived from frozen metadata.",
+    "Do not inspect or persist EPS/revenue/guidance numeric results for truth classification."
+  ],
+  "technical_success_definition": {
+    "navigation_found": "At least one candidate issuer-controlled URL is located.",
+    "official_body_retrievable": "Candidate issuer URL returns a retrievable body directly from the issuer-controlled domain.",
+    "identity_bindable": "Body/domain contains sufficient issuer identity tokens to bind the site to the frozen company subject without relying on a third-party snippet.",
+    "probe_success": "official_body_retrievable AND identity_bindable",
+    "truth_verified_by_probe": false
+  },
+  "capacity_decision_rule": {
+    "FULL_ROUTE_TECHNICALLY_VIABLE": "At least 24/40 sampled groups have probe_success and at least 16/20 succeed in neither year? false; instead require >=10/20 in each year to avoid a one-year-only route.",
+    "CONDITIONAL_ROUTE": "Overall probe_success is 12-23/40 or either year has 5-9/20 successes; redesign only transport/navigation, never matching semantics, before another frozen probe.",
+    "ROUTE_INFEASIBLE_CURRENT_PROTOCOL": "Fewer than 12/40 probe_success or either year has fewer than 5/20 successes after deterministic transport retries.",
+    "note": "Thresholds govern technical route continuation only, not scientific truth or N promotion."
+  },
+  "retry_policy": {
+    "per_url_attempts": 3,
+    "retryable": ["HTTP_429", "HTTP_5XX", "timeout", "connection_reset"],
+    "nonretryable": ["HTTP_4XX_EXCEPT_429", "robots_or_access_denial"],
+    "fail_closed": true
+  },
+  "required_outputs": [
+    "frozen sample manifest",
+    "request/navigation manifest",
+    "official-body capture manifest",
+    "capacity summary"
+  ],
+  "firewall": {
+    "event_truth_verification_authorized": false,
+    "w4b_artifacts_may_be_modified": false,
+    "family_reclassification_allowed": false,
+    "prediction_market_settlement_used": false,
+    "prediction_market_price_or_performance_used": false,
+    "linked_asset_realized_returns_used": false,
+    "ARGOS_PnL_used": false,
+    "model_performance_used": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_DISCOVERY_PROBE_PROTOCOL_FROZEN_PRE_REQUEST"
+}
