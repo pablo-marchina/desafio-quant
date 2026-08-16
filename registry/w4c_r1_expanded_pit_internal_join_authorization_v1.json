@@ -1,0 +1,37 @@
+{
+  "artifact": "W4C_R1_EXPANDED_PIT_INTERNAL_JOIN_AUTHORIZATION",
+  "version": "W4C-R1-EXPANDED-PIT-INTERNAL-JOIN-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "AUTHORIZED_TO_MATERIALIZE_INTERNAL_PRE_PNL_SIGNAL_COVERAGE_ONLY",
+  "purpose": "Attempt one final internal recovery of point-in-time prediction-market signal coverage using already collected repository artifacts before any security price, benchmark return, earnings outcome, settlement, or ARGOS PnL read.",
+  "authorized_inputs": [
+    "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz",
+    "registry/w4b_polymarket_w2_overlap_v1.csv.gz",
+    "registry/w2c_pit_v2_1_primary_source_queue.csv",
+    "registry/w2c_pit_v2_1_primary_asset_events.csv.gz",
+    "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v2.csv.gz",
+    "registry/w4c_r1_expanded_economic_backtest_signal_map_v3.csv"
+  ],
+  "authorized_operations": {
+    "schema_and_header_inspection": true,
+    "ticker_event_date_market_identity_join": true,
+    "condition_or_token_identifier_extraction": true,
+    "public_clob_history_pre_cutoff_fetch_for_new_tokens_only": true,
+    "signal_map_v4_materialization": true,
+    "eligibility_v3_materialization": true,
+    "price_return_authorization_candidate_if_coverage_threshold_satisfied": true,
+    "final_signal_coverage_closeout_if_threshold_not_satisfied": true
+  },
+  "not_authorized": {
+    "prediction_market_settlement_read": true,
+    "earnings_numeric_outcomes_read": true,
+    "event_truth_reveal": true,
+    "security_price_return_read": true,
+    "benchmark_return_read": true,
+    "argos_pnl_read": true,
+    "economic_backtest_execution": true,
+    "strategy_promotion": true
+  },
+  "minimum_signal_coverage_for_price_return_authorization": 300,
+  "gate_decision": "PASS_W4C_R1_EXPANDED_PIT_INTERNAL_JOIN_AUTHORIZED_NO_OUTCOME_RETURN_SETTLEMENT_PNL_READS"
+}
