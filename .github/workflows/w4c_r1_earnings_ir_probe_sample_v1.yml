@@ -1,0 +1,57 @@
+name: W4-C R1 Earnings IR Probe Sample v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - registry/w4c_r1_earnings_ir_probe_sample_freeze_v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sample:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate sample-builder freeze
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          f=json.load(open('registry/w4c_r1_earnings_ir_probe_sample_freeze_v1.json'))
+          blob=lambda p: subprocess.check_output(['git','hash-object',p],text=True).strip()
+          assert f['status']=='FROZEN_SAMPLE_BUILDER_PRE_EXTERNAL_REQUEST'
+          assert blob('scripts/w4c_r1_earnings_ir_probe_sample_v1.py')==f['sample_builder_git_blob_sha']=='26d539e8ac2dc24c9a32deec9997cebc934c9d53'
+          assert blob('registry/w4c_r1_earnings_ir_discovery_probe_protocol_v1.json')==f['protocol_git_blob_sha']=='6865a07eefbaa18124cc134c63e555425832af3e'
+          assert blob('.github/workflows/w4c_r1_earnings_ir_probe_sample_v1.yml')==f['workflow_git_blob_sha']
+          assert blob('registry/w4c_r1_earnings_ir_queue_v1.csv.gz')==f['queue_git_blob_sha']=='395b56ada4b3be8412f2391957cfcde0c832cb84'
+          print('PASS_W4C_R1_EARNINGS_IR_PROBE_SAMPLE_BUILDER_FREEZE')
+          PY
+      - name: Materialize frozen sample
+        run: python scripts/w4c_r1_earnings_ir_probe_sample_v1.py
+      - name: Validate no-request firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4c_r1_earnings_ir_probe_sample_v1.json'))
+          assert x['gate_decision']=='PASS_W4C_R1_EARNINGS_IR_PROBE_SAMPLE_FROZEN_PRE_REQUEST'
+          assert x['sample_size']==40 and x['allocation']=={'2025':20,'2026':20}
+          assert x['external_probe_requests_performed'] is False
+          assert x['issuer_ir_lookup_performed'] is False
+          assert x['event_truth_verification_authorized'] is False
+          assert x['n_final_backtestable_authorized'] is False
+          print('PASS_W4C_R1_EARNINGS_IR_PROBE_SAMPLE_FIREWALL')
+          PY
+      - name: Persist sample branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-earnings-ir-probe-sample-v1
+          git add registry/w4c_r1_earnings_ir_probe_sample_v1.json
+          git commit -m 'registry: materialize W4-C R1 earnings IR probe sample v1'
+          git push -f origin w4c-r1-earnings-ir-probe-sample-v1
