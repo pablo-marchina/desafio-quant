@@ -1,16 +1,30 @@
 {
   "artifact": "W4C_R1_FDA_EXECUTOR_FREEZE",
-  "version": "W4C-R1-FDA-EXECUTOR-FREEZE-v1.0",
-  "date": "2026-08-14",
-  "status": "FROZEN_BEFORE_FDA_EVIDENCE_BODY_CAPTURE",
+  "version": "W4C-R1-FDA-EXECUTOR-FREEZE-v1.0.1",
+  "date": "2026-08-15",
+  "status": "REFROZEN_AFTER_PRE_EVIDENCE_KEY_COMPAT_FAILURE",
   "science_reopened": false,
-  "source_main_commit_before_freeze": "51bd8614a2929aef7cf26c70ebb22c84fd983a1d",
-  "fda_evidence_body_capture_performed_before_freeze_by_executor": false,
-  "manual_navigation_to_official_fda_urls_already_disclosed": true,
+  "supersedes_version": "W4C-R1-FDA-EXECUTOR-FREEZE-v1.0",
+  "supersedes_commit": "635385b51b16541cf90a65a303f14cff97349499",
+  "source_main_commit_before_refreeze": "03d32a0ad8b05a0b68bda10b22e01850a28cf2ec",
+  "r1_fda_scientific_results_observed_before_refreeze": false,
+  "r1_fda_external_requests_performed_before_failed_run": false,
+  "failed_run": {
+    "workflow_run_id": 31820251813,
+    "workflow_job_id": 94831516390,
+    "executor_freeze_validation_passed": true,
+    "failed_step": "Materialize FDA primary evidence",
+    "failure_class": "PRE_EVIDENCE_RUNTIME_SCHEMA_KEY_MISMATCH",
+    "scientific_result_materialized": false
+  },
   "executor_path": "scripts/w4c_r1_fda_evidence_v1.py",
   "executor_git_blob_sha": "7efd64cf89cd505061fe84627011fb0f1215df61",
+  "compat_wrapper_path": "scripts/w4c_r1_fda_executor_compat_v1.py",
+  "compat_wrapper_git_blob_sha": "4ff4de72ea3b00de723ad894192a6925dee238aa",
   "workflow_path": ".github/workflows/w4c_r1_fda_evidence_v1.yml",
-  "workflow_git_blob_sha": "536eb24597d1e2b0a00b17a190d6ba2d0ea277a9",
+  "workflow_git_blob_sha": "4d4465c6ee0386ebca168936635a4569ce23d812",
+  "technical_amendment_path": "registry/w4c_r1_fda_technical_amendment_v1_0_1.json",
+  "technical_amendment_git_blob_sha": "d5a3b92bf9e9833fc83101215dffd609bb0e91f3",
   "spec_path": "registry/w4c_r1_fda_manual_adjudication_spec_v1.json",
   "spec_git_blob_sha": "cd08efc750486e0a978c5446682eddb75054250a",
   "queue_path": "registry/w4c_r1_fda_review_queue_v1.json",
@@ -30,6 +44,13 @@
     "official_non_fda_body_may_vote": false,
     "missing_body_or_required_identity_token_must_fail_closed": true
   },
+  "compatibility_invariants": {
+    "authoritative_r1_summary_field": "r1_new_unique_official_events",
+    "runtime_alias_expected_by_frozen_executor": "marginal_new_unique_official_events_vs_w4b",
+    "runtime_alias_value_must_equal_authoritative_field": true,
+    "runtime_copy_ephemeral": true,
+    "registry_input_mutation_allowed": false
+  },
   "firewall": {
     "prediction_market_settlement_used": false,
     "prediction_market_price_or_performance_used": false,
@@ -38,5 +59,12 @@
     "n_final_backtestable_authorized": false,
     "outcome_reveal_authorized": false
   },
-  "gate_decision": "PASS_W4C_R1_FDA_EXECUTOR_BYTES_FROZEN_PRE_BODY_CAPTURE"
+  "execution_authorization": {
+    "scientific_result_materialization_authorized_only_after_this_refreeze_commit": true,
+    "FDA_body_capture_may_begin_after_refreeze": true,
+    "unofficial_mirror_may_vote": false,
+    "result_artifacts_must_remain_separate_w4c_r1_namespace": true,
+    "reapply_w4c_saturation_after_r1_fda": true
+  },
+  "gate_decision": "PASS_W4C_R1_FDA_REFROZEN_AFTER_PRE_EVIDENCE_KEY_COMPAT_FAILURE"
 }
