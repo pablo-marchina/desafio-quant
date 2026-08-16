@@ -50,8 +50,8 @@
 
 <rect x="80" y="590" width="690" height="190" rx="20" fill="#0E1B2B" stroke="#294158" stroke-width="2"/>
 <text x="115" y="632" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="700" fill="#F4F7FB">Interpretação econômica financiada</text>
-<text x="115" y="675" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#9FB0C3">O livro quase preserva capital em termos absolutos, mas perde para o pseudo-book SPY causalmente alinhado.</text>
-<text x="115" y="715" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="21" fill="#FF6B6B">Sem evidência robusta de active outperformance: IC95 bootstrap cruza zero.</text>
+<text x="115" y="675" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#9FB0C3">Livro quase flat, mas atrás do pseudo-book SPY alinhado.</text>
+<text x="115" y="715" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" fill="#FF6B6B">Sem active outperformance robusta: IC95 cruza zero.</text>
 <text x="115" y="755" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#F4BF4F">Decisão: NO_PROMOTION_R1 → C0_NO_TRADE preservado</text>
 
 <rect x="830" y="590" width="690" height="190" rx="20" fill="#14283D" stroke="#F4BF4F" stroke-width="2"/>
