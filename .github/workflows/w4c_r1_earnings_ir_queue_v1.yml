@@ -1,0 +1,58 @@
+name: W4-C R1 Earnings IR Queue v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - registry/w4c_r1_earnings_ir_queue_freeze_v1.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  queue:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate queue freeze
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          f=json.load(open('registry/w4c_r1_earnings_ir_queue_freeze_v1.json'))
+          blob=lambda p: subprocess.check_output(['git','hash-object',p],text=True).strip()
+          assert f['status']=='FROZEN_PRE_QUEUE_MATERIALIZATION_NO_EXTERNAL_LOOKUP'
+          assert blob('scripts/w4c_r1_earnings_ir_queue_v1.py')==f['queue_builder_git_blob_sha']=='7b2bf44531ae7edce7430a1df238cd48c09e00d6'
+          assert blob('registry/w4c_r1_earnings_ir_fallback_protocol_v1.json')==f['protocol_git_blob_sha']
+          assert blob('.github/workflows/w4c_r1_earnings_ir_queue_v1.yml')==f['workflow_git_blob_sha']
+          print('PASS_W4C_R1_EARNINGS_QUEUE_FREEZE')
+          PY
+      - name: Materialize descriptive queue
+        run: python scripts/w4c_r1_earnings_ir_queue_v1.py
+      - name: Validate descriptive firewall
+        run: |
+          python - <<'PY'
+          import json
+          x=json.load(open('registry/w4c_r1_earnings_ir_queue_summary_v1.json'))
+          assert x['gate_decision']=='PASS_W4C_R1_EARNINGS_IR_QUEUE_MATERIALIZED_PRE_SOURCE_LOOKUP'
+          assert x['groups']==x['unique_exact_group_ids']==1355
+          assert x['new_external_source_reads'] is False
+          assert x['issuer_ir_lookup_performed'] is False
+          assert x['sec_lookup_performed'] is False
+          assert x['prediction_market_performance_read'] is False
+          assert x['linked_asset_realized_returns_read'] is False
+          assert x['n_final_backtestable_authorized'] is False
+          print('PASS_W4C_R1_EARNINGS_QUEUE_FIREWALL')
+          PY
+      - name: Persist queue branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B w4c-r1-earnings-ir-queue-v1
+          git add registry/w4c_r1_earnings_ir_queue_v1.csv.gz registry/w4c_r1_earnings_ir_queue_summary_v1.json
+          git commit -m 'registry: materialize W4-C R1 earnings IR queue v1'
+          git push -f origin w4c-r1-earnings-ir-queue-v1
