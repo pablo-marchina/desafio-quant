@@ -1,0 +1,56 @@
+{
+  "artifact": "W4C_R1_EXPANDED_PIT_EXTERNAL_COVERAGE_SUMMARY",
+  "counts": {
+    "clob_history_requests": 1132,
+    "combined_signal_rows_v3": 109,
+    "eligibility_rows": 1355,
+    "existing_signal_rows_v2": 109,
+    "external_new_signal_rows": 0,
+    "gamma_search_requests": 455,
+    "min_coverage_for_pnl": 300,
+    "missing_rows_considered": 1230,
+    "n_final_backtestable_candidate_pre_price_v2": 109,
+    "unique_missing_tickers_queried": 455,
+    "unique_missing_tickers_total": 455
+  },
+  "date": "2026-08-16",
+  "decision": {
+    "price_return_authorization_candidate": false,
+    "reason": "coverage_below_threshold_do_not_run_pnl_yet"
+  },
+  "eligibility_reason_counts_v2": {
+    "NO_DETERMINISTIC_TICKER": 16,
+    "NO_PIT_SIGNAL_BEFORE_CUTOFF": 1230,
+    "PASS_PRE_PRICE_ELIGIBILITY": 109
+  },
+  "gate_decision": "PASS_EXTERNAL_PIT_SIGNAL_COVERAGE_MATERIALIZED_NO_OUTCOME_RETURN_SETTLEMENT_PNL_READS",
+  "next_gate": "authorize_price_return_backtest_if_candidate_true_else_report_signal_coverage_limit",
+  "outputs": {
+    "eligibility_manifest_v2": "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v2.csv.gz",
+    "eligibility_manifest_v2_sha256": "31dfb71e725d7760a2ffa4e855b98b970019699166b437e074f16b3d2636374e",
+    "eligibility_summary_v2": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v2.json",
+    "signal_map_v3": "registry/w4c_r1_expanded_economic_backtest_signal_map_v3.csv",
+    "signal_map_v3_sha256": "e29ea54c08f35e35cadd77b3e788126538e79afc937b136a5ef22144b13902e1",
+    "trace": "registry/w4c_r1_expanded_pit_external_coverage_trace_v1.csv.gz",
+    "trace_sha256": "53c874832a758541275add61150857e336cde5b4780d5cdcf94810603e8e2dc0"
+  },
+  "scientific_firewall": {
+    "argos_pnl_read": false,
+    "benchmark_return_read": false,
+    "earnings_numeric_outcomes_read": false,
+    "economic_backtest_execution": false,
+    "outcome_reveal_authorized": false,
+    "prediction_market_settlement_read": false,
+    "realized_returns_read": false,
+    "security_price_return_read": false
+  },
+  "status": "MATERIALIZED_EXTERNAL_PRE_PNL_SIGNAL_COVERAGE",
+  "validation": {
+    "economic_backtest_execution": false,
+    "eligibility_rows": 1355,
+    "existing_signal_map_v2_present": true,
+    "security_price_return_read": false,
+    "status": "PASS_EXTERNAL_PIT_COVERAGE_VALIDATE_ONLY"
+  },
+  "version": "W4C-R1-EXPANDED-PIT-EXTERNAL-COVERAGE-v1.0"
+}
