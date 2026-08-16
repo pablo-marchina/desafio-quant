@@ -1,0 +1,56 @@
+name: W4-C R1 expanded PIT external coverage v1
+
+on:
+  push:
+    paths:
+      - 'scripts/w4c_r1_expanded_pit_external_coverage_executor_v1.py'
+      - 'registry/w4c_r1_expanded_pit_external_coverage_execute_authorization_v1.json'
+      - '.github/workflows/w4c_r1_expanded_pit_external_coverage_v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  external-pit-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate external PIT coverage executor without PnL reads
+        env:
+          W4C_R1_EXPANDED_PIT_EXTERNAL_COVERAGE_VALIDATE_ONLY: YES
+        run: python3 scripts/w4c_r1_expanded_pit_external_coverage_executor_v1.py
+
+      - name: Materialize external pre-PnL PIT coverage and eligibility v2
+        env:
+          W4C_R1_EXPANDED_PIT_EXTERNAL_COVERAGE_EXECUTE: YES_FROZEN_PRE_PNL_EXTERNAL_PIT_COVERAGE
+          W4C_R1_MAX_EXTERNAL_TICKERS: '900'
+          W4C_R1_MIN_SIGNAL_ROWS_FOR_PNL: '300'
+          W4C_R1_HISTORY_LOOKBACK_DAYS: '21'
+          W4C_R1_HISTORY_FIDELITY_MINUTES: '60'
+          W4C_R1_EXTERNAL_REQUEST_SLEEP: '0.04'
+        run: python3 scripts/w4c_r1_expanded_pit_external_coverage_executor_v1.py
+
+      - name: Commit external PIT coverage outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4c_r1_expanded_pit_external_coverage_trace_v1.csv.gz \
+            registry/w4c_r1_expanded_economic_backtest_signal_map_v3.csv \
+            registry/w4c_r1_expanded_pit_external_coverage_summary_v1.json \
+            registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v2.csv.gz \
+            registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v2.json \
+            registry/w4c_r1_expanded_price_return_authorization_candidate_v1.json || true
+          if git diff --cached --quiet; then
+            echo 'No external PIT coverage outputs changed.'
+            exit 0
+          fi
+          git commit -m 'registry: materialize W4-C R1 external PIT coverage v1'
+          git pull --rebase origin main
+          git push origin HEAD:main
