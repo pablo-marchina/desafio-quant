@@ -1,9 +1,9 @@
 {
   "artifact": "W4C_R1_EXPANDED_SIGNAL_SOURCE_INVENTORY",
-  "candidate_count": 288,
+  "candidate_count": 300,
   "date": "2026-08-16",
-  "files_scanned": 398,
-  "gate_decision": "PASS_SIGNAL_SOURCE_SCHEMA_INVENTORY_MATERIALIZED_PRE_PNL",
+  "files_scanned": 406,
+  "gate_decision": "PASS_SIGNAL_SOURCE_SCHEMA_INVENTORY_MATERIALIZED_PRE_PNL_WITH_DATA_DIR",
   "next_gate": "Select frozen PIT signal source(s) from top_candidates and build exact_group_id signal map without settlement/returns/PnL.",
   "scientific_firewall": {
     "argos_pnl_read": false,
@@ -15,14 +15,81 @@
     "realized_returns_read": false,
     "security_price_return_read": false
   },
-  "scope": "registry schema/header scan for frozen PIT signal-map candidates",
+  "scope": "registry + data schema/header scan for frozen PIT signal-map candidates",
   "status": "MATERIALIZED_SCHEMA_ONLY_NO_OUTCOME_RETURN_SETTLEMENT_VALUES",
   "status_counts": {
-    "CANDIDATE_SCHEMA_ONLY": 288,
+    "CANDIDATE_SCHEMA_ONLY": 300,
     "EXCLUDED_FORBIDDEN_FILENAME_PRE_PNL": 2,
-    "LOW_RELEVANCE_SCHEMA": 108
+    "LOW_RELEVANCE_SCHEMA": 104
   },
   "top_candidates": [
+    {
+      "all_columns_sample": [
+        "market_id",
+        "event_key",
+        "ticker",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "exchange_era",
+        "structurally_available",
+        "p_cutoff",
+        "delta_1h",
+        "delta_6h",
+        "delta_24h",
+        "velocity_6h_per_hour",
+        "acceleration_1h_vs_6h",
+        "sign_consistency_1_6_24h",
+        "baseline_hourly_scale",
+        "vol_scaled_delta_6h",
+        "jump_score_6h",
+        "cusum_score_6h",
+        "conformal_log_martingale_6h",
+        "matrix_profile_discord_6h",
+        "post_jump_half_life_hours",
+        "post_jump_eligible",
+        "trade_count_lifecycle",
+        "trade_count_24h",
+        "wallet_count_24h",
+        "signed_notional_imbalance_24h",
+        "wallet_hhi_notional_24h",
+        "same_direction_transition_share_24h",
+        "max_direction_run_share_24h",
+        "same_direction_transition_share_lifecycle",
+        "max_direction_run_share_lifecycle",
+        "prior_event_trade_notional_q90",
+        "large_trade_notional_share_24h",
+        "market_age_hours_at_cutoff",
+        "conditional_z_move_6h",
+        "multivariate_anomaly_distance",
+        "prequential_feature_distance"
+      ],
+      "column_count": 37,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "ticker",
+        "company_event_date"
+      ],
+      "kind": "csv_schema",
+      "path": "data/art028_h2_feature_matrix.csv.gz",
+      "score": 46,
+      "signal_like_columns": [
+        "market_id",
+        "event_key",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "p_cutoff",
+        "delta_1h",
+        "delta_6h",
+        "delta_24h",
+        "velocity_6h_per_hour",
+        "vol_scaled_delta_6h",
+        "wallet_hhi_notional_24h",
+        "prior_event_trade_notional_q90",
+        "market_age_hours_at_cutoff",
+        "conditional_z_move_6h"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
     {
       "all_columns_sample": [
         "canonical_event_id",
@@ -80,6 +147,145 @@
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
     {
+      "all_columns_sample": [
+        "event_id",
+        "resolved_family",
+        "independence_cluster_id",
+        "title",
+        "slug",
+        "semantic_end_utc",
+        "asof_state",
+        "jurisdiction",
+        "primary_source_route",
+        "linked_asset",
+        "linked_asset_mapping_state",
+        "linked_asset_mapping_basis",
+        "revelation_state",
+        "revelation_precision",
+        "public_revelation_utc",
+        "safe_cutoff_utc",
+        "revelation_source_type",
+        "revelation_source_url",
+        "revelation_response_sha256",
+        "resolution_state",
+        "resolution_source_type",
+        "resolution_source_url",
+        "resolution_response_sha256",
+        "resolution_ambiguous",
+        "asset_data_state",
+        "asset_data_first_date",
+        "asset_data_last_date",
+        "asset_data_rows",
+        "asset_data_response_sha256",
+        "mandatory_account_gated_dependency",
+        "mandatory_field_state",
+        "adjudication_notes",
+        "gamma_state",
+        "nested_market_count",
+        "pm_condition_ids",
+        "pm_token_ids",
+        "tokens_with_price_history",
+        "tokens_unresolved",
+        "pm_earliest_verified_history_utc",
+        "pm_latest_verified_history_utc",
+        "pm_platform_collection_state",
+        "linked_asset_mapping_source_url",
+        "safe_cutoff_state",
+        "pm_mapping_state",
+        "pm_mapping_conflict",
+        "layer_a_mapping_missing",
+        "pm_pre_cutoff_state",
+        "pm_24h_state",
+        "history_state",
+        "pre_cutoff_history_hours_lower_bound",
+        "f2_state",
+        "pm_price_witness_pre_cutoff",
+        "pm_price_witness_24h",
+        "pm_price_witness_pre_cutoff_utc",
+        "pm_price_witness_minus_24h_or_earlier_utc",
+        "f2_event_pass",
+        "pit_event_eligible_state",
+        "pit_event_eligible",
+        "network_unresolved_components"
+      ],
+      "column_count": 59,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "event_id",
+        "asset_data_first_date",
+        "asset_data_last_date"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w2c_pit_v2_1_combined_events.csv",
+      "score": 42,
+      "signal_like_columns": [
+        "event_id",
+        "asof_state",
+        "safe_cutoff_utc",
+        "nested_market_count",
+        "safe_cutoff_state",
+        "pm_pre_cutoff_state",
+        "pre_cutoff_history_hours_lower_bound",
+        "pm_price_witness_pre_cutoff",
+        "pm_price_witness_pre_cutoff_utc",
+        "f2_event_pass",
+        "pit_event_eligible_state",
+        "pit_event_eligible"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "event_key",
+        "market_id",
+        "ticker",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "exchange_era",
+        "prior_event_count",
+        "y",
+        "p_M2_RAW",
+        "p_M2_CAL",
+        "p_M_MOVE_CORE",
+        "p_M_MOVE_MP",
+        "p_R_VOL",
+        "p_R_SIGN",
+        "prequential_feature_distance",
+        "p_ABLATE_conditional_z_move_6h",
+        "p_ABLATE_velocity_6h_per_hour",
+        "p_ABLATE_signed_notional_imbalance_24h",
+        "p_ABLATE_wallet_hhi_notional_24h",
+        "p_ABLATE_same_direction_transition_share_lifecycle",
+        "p_ABLATE_jump_score_6h",
+        "temporal_tercile",
+        "drift_tercile"
+      ],
+      "column_count": 23,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "ticker",
+        "company_event_date"
+      ],
+      "kind": "csv_schema",
+      "path": "data/art030_exp07i_oos_predictions.csv.gz",
+      "score": 40,
+      "signal_like_columns": [
+        "event_key",
+        "market_id",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "prior_event_count",
+        "p_M2_RAW",
+        "p_M2_CAL",
+        "p_M_MOVE_CORE",
+        "p_M_MOVE_MP",
+        "p_ABLATE_conditional_z_move_6h",
+        "p_ABLATE_velocity_6h_per_hour",
+        "p_ABLATE_wallet_hhi_notional_24h"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
       "all_keys_sample": [
         "decision",
         "events",
@@ -123,6 +329,61 @@
         "era_by_safe_cutoff",
         "global_pre_cutoff_tape",
         "workflow_run"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "artifact",
+        "conservation_checks",
+        "exclusion_rows",
+        "family_rows",
+        "forecastex_backtestable_claim_authorized",
+        "forecastex_canonical_census_events",
+        "gate_decision",
+        "interpretation",
+        "kalshi_canonical_events",
+        "kalshi_core_t10_to_t1h_events",
+        "kalshi_full_ladder_events",
+        "linked_asset_realized_returns_read",
+        "n_final_backtestable_authorized",
+        "performance_blind",
+        "polymarket_backtestable_claim_authorized",
+        "polymarket_canonical_census_events",
+        "pretruth_candidate_merge_lower_bound",
+        "pretruth_exact_cross_venue_groups",
+        "pretruth_upper_bound",
+        "protocol_version",
+        "stage_rows",
+        "truth_verified_unique_official_events",
+        "version"
+      ],
+      "forbidden_like_keys": [
+        "linked_asset_realized_returns_read"
+      ],
+      "join_like_keys": [
+        "forecastex_canonical_census_events",
+        "kalshi_canonical_events",
+        "polymarket_canonical_census_events",
+        "pretruth_candidate_merge_lower_bound",
+        "pretruth_exact_cross_venue_groups",
+        "pretruth_upper_bound"
+      ],
+      "key_count": 23,
+      "kind": "json_schema",
+      "path": "registry/w4b_attrition_summary_v1.json",
+      "score": 38,
+      "signal_like_keys": [
+        "forecastex_canonical_census_events",
+        "kalshi_canonical_events",
+        "kalshi_core_t10_to_t1h_events",
+        "kalshi_full_ladder_events",
+        "polymarket_backtestable_claim_authorized",
+        "polymarket_canonical_census_events",
+        "pretruth_candidate_merge_lower_bound",
+        "pretruth_exact_cross_venue_groups",
+        "pretruth_upper_bound",
+        "truth_verified_unique_official_events"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -323,6 +584,67 @@
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
     {
+      "all_keys_sample": [
+        "accepted_family_counts",
+        "accepted_unique_canonical_events",
+        "ambiguous_venue_event_rows",
+        "artifact",
+        "canonical_alias_rows_collapsed",
+        "canonical_collisions",
+        "canonical_signature_collisions",
+        "clob_price_history_read",
+        "date_utc",
+        "duplicate_api_event_rows",
+        "gate_decision",
+        "interpretation",
+        "linked_asset_realized_returns_read",
+        "pages_fetched",
+        "pagination_unresolved",
+        "performance_blind",
+        "protocol_version",
+        "raw_event_rows",
+        "rejected_venue_event_rows",
+        "runtime_erratum_version",
+        "selection_by_volume_liquidity_or_price",
+        "unique_gamma_event_ids",
+        "venue_event_rows_classified",
+        "version",
+        "w2_accepted_keys_not_rediscovered",
+        "w2_accepted_rows",
+        "w2_new_gamma_events",
+        "w2_overlap_event_id",
+        "w2_overlap_slug_only"
+      ],
+      "forbidden_like_keys": [
+        "linked_asset_realized_returns_read"
+      ],
+      "join_like_keys": [
+        "accepted_unique_canonical_events",
+        "canonical_alias_rows_collapsed",
+        "canonical_collisions",
+        "canonical_signature_collisions",
+        "date_utc",
+        "unique_gamma_event_ids",
+        "w2_overlap_event_id"
+      ],
+      "key_count": 29,
+      "kind": "json_schema",
+      "path": "registry/w4b_polymarket_recensus_summary_v1.json",
+      "score": 37,
+      "signal_like_keys": [
+        "accepted_unique_canonical_events",
+        "ambiguous_venue_event_rows",
+        "duplicate_api_event_rows",
+        "raw_event_rows",
+        "rejected_venue_event_rows",
+        "unique_gamma_event_ids",
+        "venue_event_rows_classified",
+        "w2_new_gamma_events",
+        "w2_overlap_event_id"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
       "all_columns_sample": [
         "exact_group_id",
         "row_number",
@@ -459,58 +781,6 @@
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
     {
-      "all_keys_sample": [
-        "artifact",
-        "conservation_checks",
-        "exclusion_rows",
-        "family_rows",
-        "forecastex_backtestable_claim_authorized",
-        "forecastex_canonical_census_events",
-        "gate_decision",
-        "interpretation",
-        "kalshi_canonical_events",
-        "kalshi_core_t10_to_t1h_events",
-        "kalshi_full_ladder_events",
-        "linked_asset_realized_returns_read",
-        "n_final_backtestable_authorized",
-        "performance_blind",
-        "polymarket_backtestable_claim_authorized",
-        "polymarket_canonical_census_events",
-        "pretruth_candidate_merge_lower_bound",
-        "pretruth_exact_cross_venue_groups",
-        "pretruth_upper_bound",
-        "protocol_version",
-        "stage_rows",
-        "truth_verified_unique_official_events",
-        "version"
-      ],
-      "forbidden_like_keys": [
-        "linked_asset_realized_returns_read"
-      ],
-      "join_like_keys": [
-        "pretruth_candidate_merge_lower_bound",
-        "pretruth_exact_cross_venue_groups",
-        "pretruth_upper_bound"
-      ],
-      "key_count": 23,
-      "kind": "json_schema",
-      "path": "registry/w4b_attrition_summary_v1.json",
-      "score": 32,
-      "signal_like_keys": [
-        "forecastex_canonical_census_events",
-        "kalshi_canonical_events",
-        "kalshi_core_t10_to_t1h_events",
-        "kalshi_full_ladder_events",
-        "polymarket_backtestable_claim_authorized",
-        "polymarket_canonical_census_events",
-        "pretruth_candidate_merge_lower_bound",
-        "pretruth_exact_cross_venue_groups",
-        "pretruth_upper_bound",
-        "truth_verified_unique_official_events"
-      ],
-      "status": "CANDIDATE_SCHEMA_ONLY"
-    },
-    {
       "all_columns_sample": [
         "venue",
         "series_ticker",
@@ -537,6 +807,7 @@
       "join_like_columns": [
         "series_ticker",
         "event_ticker",
+        "canonicalization_status",
         "canonical_event_id",
         "event_reference_date",
         "event_reference_date_source",
@@ -545,7 +816,7 @@
       ],
       "kind": "csv_schema",
       "path": "registry/w4b_kalshi_semantic_ambiguous_v1_1.csv.gz",
-      "score": 32,
+      "score": 34,
       "signal_like_columns": [
         "event_ticker",
         "canonical_event_id",
@@ -582,6 +853,7 @@
       "join_like_columns": [
         "series_ticker",
         "event_ticker",
+        "canonicalization_status",
         "canonical_event_id",
         "event_reference_date",
         "event_reference_date_source",
@@ -590,7 +862,7 @@
       ],
       "kind": "csv_schema",
       "path": "registry/w4b_kalshi_semantic_events_v1_1.csv.gz",
-      "score": 32,
+      "score": 34,
       "signal_like_columns": [
         "event_ticker",
         "canonical_event_id",
@@ -598,6 +870,50 @@
         "event_reference_date_source",
         "market_count",
         "market_tickers"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "api_errors",
+        "bad_price_or_timestamp_rows",
+        "chunk_seconds",
+        "conflicting_chunk_duplicates",
+        "decision",
+        "dense_prices_sha256",
+        "events",
+        "max_last_yes_point_age_minutes_at_cutoff",
+        "median_last_yes_point_age_minutes_at_cutoff",
+        "median_yes_gap_minutes_across_events",
+        "median_yes_rows_per_available_event",
+        "no_events_with_history",
+        "raw_chunk_files",
+        "raw_manifest_sha256",
+        "retrieval_workers",
+        "structurally_unavailable_events",
+        "total_price_rows_both_tokens",
+        "total_yes_rows",
+        "yes_events_with_history",
+        "yes_trajectory_sha256",
+        "zero_yes_history_despite_open_market"
+      ],
+      "forbidden_like_keys": [],
+      "join_like_keys": [],
+      "key_count": 21,
+      "kind": "json_schema",
+      "path": "registry/ic04_summary.json",
+      "score": 30,
+      "signal_like_keys": [
+        "bad_price_or_timestamp_rows",
+        "events",
+        "max_last_yes_point_age_minutes_at_cutoff",
+        "median_last_yes_point_age_minutes_at_cutoff",
+        "median_yes_gap_minutes_across_events",
+        "median_yes_rows_per_available_event",
+        "no_events_with_history",
+        "structurally_unavailable_events",
+        "yes_events_with_history",
+        "zero_yes_history_despite_open_market"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -629,13 +945,14 @@
         "linked_asset_realized_returns_read"
       ],
       "join_like_keys": [
+        "canonical_events_audited",
         "date",
         "unique_market_tickers_audited"
       ],
       "key_count": 21,
       "kind": "json_schema",
       "path": "registry/w4b_kalshi_history_closeout_v1_0_3.json",
-      "score": 27,
+      "score": 29,
       "signal_like_keys": [
         "canonical_events_audited",
         "event_blob_sha1",
@@ -673,11 +990,12 @@
         "end_date",
         "event_reference_date",
         "normalized_subject_key",
+        "canonicalization_status",
         "canonical_event_id"
       ],
       "kind": "csv_schema",
       "path": "registry/w4b_polymarket_recensus_ambiguous_v1.csv.gz",
-      "score": 25,
+      "score": 27,
       "signal_like_columns": [
         "gamma_event_id",
         "event_reference_date",
@@ -711,17 +1029,68 @@
         "end_date",
         "event_reference_date",
         "normalized_subject_key",
+        "canonicalization_status",
         "canonical_event_id"
       ],
       "kind": "csv_schema",
       "path": "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz",
-      "score": 25,
+      "score": 27,
       "signal_like_columns": [
         "gamma_event_id",
         "event_reference_date",
         "associated_market_count",
         "market_ids",
         "canonical_event_id"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "artifact",
+        "base_rows",
+        "date",
+        "date_max_all_dated",
+        "date_max_eligible",
+        "date_min_all_dated",
+        "date_min_eligible",
+        "dated_rows",
+        "failure_reason_counts",
+        "gate_decision",
+        "n_final_backtestable_candidate_pre_price",
+        "next_gate",
+        "outputs",
+        "queue_rows",
+        "resolution_rows",
+        "scientific_firewall",
+        "signal_map_present",
+        "signal_map_rows",
+        "status",
+        "ticker_candidate_rows",
+        "top_tickers_eligible",
+        "unique_tickers_eligible",
+        "validation",
+        "version"
+      ],
+      "forbidden_like_keys": [],
+      "join_like_keys": [
+        "date",
+        "date_max_all_dated",
+        "date_max_eligible",
+        "date_min_all_dated",
+        "date_min_eligible",
+        "dated_rows",
+        "n_final_backtestable_candidate_pre_price",
+        "ticker_candidate_rows",
+        "top_tickers_eligible",
+        "unique_tickers_eligible"
+      ],
+      "key_count": 24,
+      "kind": "json_schema",
+      "path": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json",
+      "score": 26,
+      "signal_like_keys": [
+        "signal_map_present",
+        "signal_map_rows"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -864,6 +1233,59 @@
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
     {
+      "all_keys_sample": [
+        "artifact",
+        "candidate_components_total",
+        "candidate_duplicate_edges",
+        "candidate_edge_types",
+        "candidate_merge_lower_bound_n",
+        "candidate_multi_group_components",
+        "cross_venue_alias_records_collapsed_exactly",
+        "date_utc",
+        "exact_cross_venue_multi_venue_groups",
+        "exact_dedup_n",
+        "exact_match_counts_by_venue_pair",
+        "final_unique_n_authorized",
+        "gate_decision",
+        "interpretation",
+        "invalid_input_signature_records",
+        "linked_asset_realized_returns_read",
+        "official_event_truth_read",
+        "performance_blind",
+        "pre_dedup_venue_record_sum",
+        "pretruth_upper_bound_n",
+        "protocol_version",
+        "venue_canonical_record_counts",
+        "venue_price_volume_liquidity_read",
+        "version",
+        "w4ce1_signature_collisions"
+      ],
+      "forbidden_like_keys": [
+        "linked_asset_realized_returns_read"
+      ],
+      "join_like_keys": [
+        "candidate_components_total",
+        "candidate_duplicate_edges",
+        "candidate_edge_types",
+        "candidate_merge_lower_bound_n",
+        "candidate_multi_group_components",
+        "date_utc",
+        "pretruth_upper_bound_n",
+        "venue_canonical_record_counts"
+      ],
+      "key_count": 25,
+      "kind": "json_schema",
+      "path": "registry/w4b_cross_venue_dedup_summary_v1.json",
+      "score": 24,
+      "signal_like_keys": [
+        "candidate_multi_group_components",
+        "exact_cross_venue_multi_venue_groups",
+        "official_event_truth_read",
+        "pretruth_upper_bound_n"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
       "all_columns_sample": [
         "group_a",
         "group_b",
@@ -933,95 +1355,57 @@
     },
     {
       "all_columns_sample": [
-        "event_id",
-        "resolved_family",
-        "independence_cluster_id",
-        "title",
-        "slug",
-        "semantic_end_utc",
-        "asof_state",
-        "jurisdiction",
-        "primary_source_route",
-        "linked_asset",
-        "linked_asset_mapping_state",
-        "linked_asset_mapping_basis",
-        "revelation_state",
-        "revelation_precision",
-        "public_revelation_utc",
+        "market_id",
+        "event_key",
+        "ticker",
+        "company_event_date",
         "safe_cutoff_utc",
-        "revelation_source_type",
-        "revelation_source_url",
-        "revelation_response_sha256",
-        "resolution_state",
-        "resolution_source_type",
-        "resolution_source_url",
-        "resolution_response_sha256",
-        "resolution_ambiguous",
-        "asset_data_state",
-        "asset_data_first_date",
-        "asset_data_last_date",
-        "asset_data_rows",
-        "asset_data_response_sha256",
-        "mandatory_account_gated_dependency",
-        "mandatory_field_state",
-        "adjudication_notes",
-        "gamma_state",
-        "nested_market_count",
-        "pm_condition_ids",
-        "pm_token_ids",
-        "tokens_with_price_history",
-        "tokens_unresolved",
-        "pm_earliest_verified_history_utc",
-        "pm_latest_verified_history_utc",
-        "pm_platform_collection_state",
-        "linked_asset_mapping_source_url",
-        "safe_cutoff_state",
-        "pm_mapping_state",
-        "pm_mapping_conflict",
-        "layer_a_mapping_missing",
-        "pm_pre_cutoff_state",
-        "pm_24h_state",
-        "history_state",
-        "pre_cutoff_history_hours_lower_bound",
-        "f2_state",
-        "pm_price_witness_pre_cutoff",
-        "pm_price_witness_24h",
-        "pm_price_witness_pre_cutoff_utc",
-        "pm_price_witness_minus_24h_or_earlier_utc",
-        "f2_event_pass",
-        "pit_event_eligible_state",
-        "pit_event_eligible",
-        "network_unresolved_components"
+        "timestamp",
+        "tx_hash",
+        "block_number",
+        "exchange_version",
+        "exchange_address",
+        "proxy_wallet",
+        "condition_id",
+        "asset",
+        "outcome_token_label",
+        "side_canonical",
+        "price_canonical",
+        "token_amount_gross_canonical",
+        "collateral_notional_canonical",
+        "api_side_raw",
+        "api_price_raw",
+        "api_size_raw",
+        "api_size_relation",
+        "api_size_semantics",
+        "fee_module_taker_receive_amount",
+        "fee_module_taker_fee_amount",
+        "fee_rate_bps",
+        "direction_semantics_status",
+        "quantity_semantics_status",
+        "source_status"
       ],
-      "column_count": 59,
+      "column_count": 29,
       "forbidden_like_columns": [
-        "tokens_with_price_history",
-        "pm_price_witness_pre_cutoff",
-        "pm_price_witness_24h",
-        "pm_price_witness_pre_cutoff_utc",
-        "pm_price_witness_minus_24h_or_earlier_utc"
+        "outcome_token_label"
       ],
       "join_like_columns": [
-        "event_id",
-        "asset_data_first_date",
-        "asset_data_last_date"
+        "ticker",
+        "company_event_date",
+        "side_canonical",
+        "price_canonical",
+        "token_amount_gross_canonical",
+        "collateral_notional_canonical"
       ],
       "kind": "csv_schema",
-      "path": "registry/w2c_pit_v2_1_combined_events.csv",
-      "score": 22,
+      "path": "data/ic03_audit_ready_tape.csv.gz",
+      "score": 23,
       "signal_like_columns": [
-        "event_id",
-        "asof_state",
+        "market_id",
+        "event_key",
+        "company_event_date",
         "safe_cutoff_utc",
-        "nested_market_count",
-        "safe_cutoff_state",
-        "pm_pre_cutoff_state",
-        "pre_cutoff_history_hours_lower_bound",
-        "pm_price_witness_pre_cutoff",
-        "pm_price_witness_pre_cutoff_utc",
-        "f2_event_pass",
-        "pit_event_eligible_state",
-        "pit_event_eligible"
+        "timestamp"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -1057,54 +1441,112 @@
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
     {
-      "all_keys_sample": [
-        "artifact",
-        "base_rows",
-        "date",
-        "date_max_all_dated",
-        "date_max_eligible",
-        "date_min_all_dated",
-        "date_min_eligible",
-        "dated_rows",
-        "failure_reason_counts",
-        "gate_decision",
-        "n_final_backtestable_candidate_pre_price",
-        "next_gate",
-        "outputs",
-        "queue_rows",
-        "resolution_rows",
-        "scientific_firewall",
-        "signal_map_present",
-        "signal_map_rows",
-        "status",
-        "ticker_candidate_rows",
-        "top_tickers_eligible",
-        "unique_tickers_eligible",
-        "validation",
-        "version"
+      "all_columns_sample": [
+        "market_id",
+        "event_key",
+        "ticker",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "token_label",
+        "token_id",
+        "timestamp",
+        "timestamp_utc",
+        "price"
       ],
-      "forbidden_like_keys": [
-        "n_final_backtestable_candidate_pre_price"
+      "column_count": 10,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "ticker",
+        "company_event_date"
       ],
-      "join_like_keys": [
-        "date",
-        "date_max_all_dated",
-        "date_max_eligible",
-        "date_min_all_dated",
-        "date_min_eligible",
-        "dated_rows",
-        "n_final_backtestable_candidate_pre_price",
-        "ticker_candidate_rows",
-        "top_tickers_eligible",
-        "unique_tickers_eligible"
-      ],
-      "key_count": 24,
-      "kind": "json_schema",
-      "path": "registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v1.json",
+      "kind": "csv_schema",
+      "path": "data/ic04_dense_prices.csv.gz",
       "score": 22,
+      "signal_like_columns": [
+        "market_id",
+        "event_key",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "timestamp",
+        "timestamp_utc"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "market_id",
+        "event_key",
+        "ticker",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "token_label",
+        "token_id",
+        "timestamp",
+        "timestamp_utc",
+        "price"
+      ],
+      "column_count": 10,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "ticker",
+        "company_event_date"
+      ],
+      "kind": "csv_schema",
+      "path": "data/ic04_yes_probability_trajectory.csv.gz",
+      "score": 22,
+      "signal_like_columns": [
+        "market_id",
+        "event_key",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "timestamp",
+        "timestamp_utc"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "api_size_differs_from_canonical_gross_rows",
+        "api_size_equals_canonical_gross_rows",
+        "api_size_policy",
+        "audit_ready_tape_sha256",
+        "canonical_direction_field",
+        "canonical_notional_field",
+        "canonical_price_field",
+        "canonical_volume_field",
+        "decision",
+        "direction_status",
+        "era_matches",
+        "events_with_pre_cutoff_tape",
+        "fee_module_mismatch_rows_semantically_audited",
+        "fee_module_receive_matches_gross_rows",
+        "frozen_events",
+        "gross_minus_api_equals_two_times_fee_rows_descriptive",
+        "no_pre_cutoff_tape_events",
+        "price_matches",
+        "quantity_status",
+        "rows",
+        "side_matches",
+        "size_semantics_csv_sha256",
+        "source_signed_tape_sha256"
+      ],
+      "forbidden_like_keys": [],
+      "join_like_keys": [
+        "api_size_differs_from_canonical_gross_rows",
+        "api_size_equals_canonical_gross_rows",
+        "canonical_direction_field",
+        "canonical_notional_field",
+        "canonical_price_field",
+        "canonical_volume_field"
+      ],
+      "key_count": 23,
+      "kind": "json_schema",
+      "path": "registry/ic03_audit_ready_summary.json",
+      "score": 21,
       "signal_like_keys": [
-        "signal_map_present",
-        "signal_map_rows"
+        "events_with_pre_cutoff_tape",
+        "frozen_events",
+        "no_pre_cutoff_tape_events"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -1166,65 +1608,6 @@
         "pretruth_edge_type",
         "official_event_id_a",
         "official_event_id_b"
-      ],
-      "status": "CANDIDATE_SCHEMA_ONLY"
-    },
-    {
-      "all_keys_sample": [
-        "accepted_family_counts",
-        "accepted_unique_canonical_events",
-        "ambiguous_venue_event_rows",
-        "artifact",
-        "canonical_alias_rows_collapsed",
-        "canonical_collisions",
-        "canonical_signature_collisions",
-        "clob_price_history_read",
-        "date_utc",
-        "duplicate_api_event_rows",
-        "gate_decision",
-        "interpretation",
-        "linked_asset_realized_returns_read",
-        "pages_fetched",
-        "pagination_unresolved",
-        "performance_blind",
-        "protocol_version",
-        "raw_event_rows",
-        "rejected_venue_event_rows",
-        "runtime_erratum_version",
-        "selection_by_volume_liquidity_or_price",
-        "unique_gamma_event_ids",
-        "venue_event_rows_classified",
-        "version",
-        "w2_accepted_keys_not_rediscovered",
-        "w2_accepted_rows",
-        "w2_new_gamma_events",
-        "w2_overlap_event_id",
-        "w2_overlap_slug_only"
-      ],
-      "forbidden_like_keys": [
-        "clob_price_history_read",
-        "linked_asset_realized_returns_read",
-        "selection_by_volume_liquidity_or_price"
-      ],
-      "join_like_keys": [
-        "date_utc",
-        "unique_gamma_event_ids",
-        "w2_overlap_event_id"
-      ],
-      "key_count": 29,
-      "kind": "json_schema",
-      "path": "registry/w4b_polymarket_recensus_summary_v1.json",
-      "score": 21,
-      "signal_like_keys": [
-        "accepted_unique_canonical_events",
-        "ambiguous_venue_event_rows",
-        "duplicate_api_event_rows",
-        "raw_event_rows",
-        "rejected_venue_event_rows",
-        "unique_gamma_event_ids",
-        "venue_event_rows_classified",
-        "w2_new_gamma_events",
-        "w2_overlap_event_id"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -1323,49 +1706,52 @@
     },
     {
       "all_keys_sample": [
-        "api_errors",
-        "bad_price_or_timestamp_rows",
-        "chunk_seconds",
-        "conflicting_chunk_duplicates",
         "decision",
-        "dense_prices_sha256",
+        "direction_status",
+        "quantity_status",
         "events",
-        "max_last_yes_point_age_minutes_at_cutoff",
-        "median_last_yes_point_age_minutes_at_cutoff",
-        "median_yes_gap_minutes_across_events",
-        "median_yes_rows_per_available_event",
-        "no_events_with_history",
-        "raw_chunk_files",
-        "raw_manifest_sha256",
-        "retrieval_workers",
-        "structurally_unavailable_events",
-        "total_price_rows_both_tokens",
-        "total_yes_rows",
-        "yes_events_with_history",
-        "yes_trajectory_sha256",
-        "zero_yes_history_despite_open_market"
+        "events_with_pre_cutoff_tape",
+        "no_pre_cutoff_tape_events",
+        "pre_cutoff_trades",
+        "status_counts",
+        "exchange_version_rows",
+        "side_matches",
+        "side_mismatches",
+        "price_matches",
+        "era_mismatches",
+        "api_size_equals_canonical_gross_rows",
+        "api_size_differs_from_canonical_gross_rows",
+        "v1_fee_module_rows_semantically_audited",
+        "fee_module_receive_matches_onchain_gross_rows",
+        "api_size_policy",
+        "canonical_fields",
+        "ic02_raw_files_verified",
+        "ic02_manifest_sha256",
+        "receipts_sha256",
+        "signed_tape_sha256",
+        "audit_ready_tape_sha256",
+        "v1_exchange",
+        "v2_exchange",
+        "v1_topic",
+        "v2_topic",
+        "historical_fee_module",
+        "boundary"
       ],
-      "forbidden_like_keys": [
-        "bad_price_or_timestamp_rows",
-        "dense_prices_sha256",
-        "total_price_rows_both_tokens"
+      "forbidden_like_keys": [],
+      "join_like_keys": [
+        "api_size_equals_canonical_gross_rows",
+        "api_size_differs_from_canonical_gross_rows",
+        "canonical_fields"
       ],
-      "join_like_keys": [],
-      "key_count": 21,
+      "key_count": 30,
       "kind": "json_schema",
-      "path": "registry/ic04_summary.json",
+      "path": "registry/ic03_summary.json",
       "score": 18,
       "signal_like_keys": [
-        "bad_price_or_timestamp_rows",
         "events",
-        "max_last_yes_point_age_minutes_at_cutoff",
-        "median_last_yes_point_age_minutes_at_cutoff",
-        "median_yes_gap_minutes_across_events",
-        "median_yes_rows_per_available_event",
-        "no_events_with_history",
-        "structurally_unavailable_events",
-        "yes_events_with_history",
-        "zero_yes_history_despite_open_market"
+        "events_with_pre_cutoff_tape",
+        "no_pre_cutoff_tape_events",
+        "pre_cutoff_trades"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -1470,55 +1856,76 @@
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
     {
-      "all_keys_sample": [
-        "artifact",
-        "candidate_components_total",
-        "candidate_duplicate_edges",
-        "candidate_edge_types",
-        "candidate_merge_lower_bound_n",
-        "candidate_multi_group_components",
-        "cross_venue_alias_records_collapsed_exactly",
-        "date_utc",
-        "exact_cross_venue_multi_venue_groups",
-        "exact_dedup_n",
-        "exact_match_counts_by_venue_pair",
-        "final_unique_n_authorized",
-        "gate_decision",
-        "interpretation",
-        "invalid_input_signature_records",
-        "linked_asset_realized_returns_read",
-        "official_event_truth_read",
-        "performance_blind",
-        "pre_dedup_venue_record_sum",
-        "pretruth_upper_bound_n",
-        "protocol_version",
-        "venue_canonical_record_counts",
-        "venue_price_volume_liquidity_read",
-        "version",
-        "w4ce1_signature_collisions"
+      "all_columns_sample": [
+        "event_contract",
+        "subtype",
+        "expiration_date",
+        "product_id",
+        "product_name",
+        "product_category",
+        "strict_family_hits",
+        "resolved_family",
+        "semantic_status",
+        "normalized_subject_key",
+        "canonicalization_status",
+        "canonical_event_id",
+        "first_archive_date",
+        "last_archive_date",
+        "archive_days_seen"
       ],
-      "forbidden_like_keys": [
-        "linked_asset_realized_returns_read",
-        "venue_price_volume_liquidity_read"
+      "column_count": 15,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "expiration_date",
+        "normalized_subject_key",
+        "canonicalization_status",
+        "canonical_event_id",
+        "first_archive_date",
+        "last_archive_date"
       ],
-      "join_like_keys": [
-        "candidate_components_total",
-        "candidate_duplicate_edges",
-        "candidate_edge_types",
-        "candidate_merge_lower_bound_n",
-        "candidate_multi_group_components",
-        "date_utc",
-        "pretruth_upper_bound_n"
-      ],
-      "key_count": 25,
-      "kind": "json_schema",
-      "path": "registry/w4b_cross_venue_dedup_summary_v1.json",
+      "kind": "csv_schema",
+      "path": "registry/w4b_forecastex_ambiguous_v1.csv.gz",
       "score": 18,
-      "signal_like_keys": [
-        "candidate_multi_group_components",
-        "exact_cross_venue_multi_venue_groups",
-        "official_event_truth_read",
-        "pretruth_upper_bound_n"
+      "signal_like_columns": [
+        "event_contract",
+        "canonical_event_id"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "event_contract",
+        "subtype",
+        "expiration_date",
+        "product_id",
+        "product_name",
+        "product_category",
+        "strict_family_hits",
+        "resolved_family",
+        "semantic_status",
+        "normalized_subject_key",
+        "canonicalization_status",
+        "canonical_event_id",
+        "first_archive_date",
+        "last_archive_date",
+        "archive_days_seen"
+      ],
+      "column_count": 15,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "expiration_date",
+        "normalized_subject_key",
+        "canonicalization_status",
+        "canonical_event_id",
+        "first_archive_date",
+        "last_archive_date"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4b_forecastex_contracts_v1.csv.gz",
+      "score": 18,
+      "signal_like_columns": [
+        "event_contract",
+        "canonical_event_id"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -1633,6 +2040,61 @@
     },
     {
       "all_columns_sample": [
+        "market_id",
+        "event_key",
+        "ticker",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "timestamp",
+        "tx_hash",
+        "block_number",
+        "exchange_version",
+        "exchange_address",
+        "proxy_wallet",
+        "asset",
+        "condition_id",
+        "outcome",
+        "api_side",
+        "onchain_side",
+        "side_match",
+        "api_size",
+        "onchain_token_amount",
+        "size_abs_diff",
+        "size_match",
+        "api_price",
+        "onchain_price",
+        "price_abs_diff",
+        "price_match",
+        "onchain_collateral_amount",
+        "order_hash",
+        "log_index",
+        "candidate_count",
+        "era_match",
+        "status"
+      ],
+      "column_count": 31,
+      "forbidden_like_columns": [
+        "outcome"
+      ],
+      "join_like_columns": [
+        "ticker",
+        "company_event_date",
+        "candidate_count"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/ic03_unresolved.csv",
+      "score": 17,
+      "signal_like_columns": [
+        "market_id",
+        "event_key",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "timestamp"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
         "exact_group_id",
         "canonical_event_id",
         "resolved_family",
@@ -1659,6 +2121,54 @@
         "exact_group_id",
         "canonical_event_id",
         "event_reference_date"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "accepted_strict_event_rows",
+        "accepted_unique_canonical_events",
+        "ambiguous_rows",
+        "api_error_count",
+        "api_errors",
+        "artifact",
+        "boundary_candidate_series",
+        "boundary_noncandidate_series_still_retrieved",
+        "canonical_alias_rows_collapsed",
+        "completeness_amendment_version",
+        "date_utc",
+        "event_rows_examined",
+        "family_counts",
+        "gate_decision",
+        "interpretation",
+        "linked_asset_realized_returns_read",
+        "performance_blind",
+        "protocol_version",
+        "raw_classified_unique_series",
+        "retrieved_candidate_series",
+        "route_truncation_count",
+        "route_truncations",
+        "version"
+      ],
+      "forbidden_like_keys": [
+        "linked_asset_realized_returns_read"
+      ],
+      "join_like_keys": [
+        "accepted_unique_canonical_events",
+        "boundary_candidate_series",
+        "boundary_noncandidate_series_still_retrieved",
+        "canonical_alias_rows_collapsed",
+        "date_utc",
+        "retrieved_candidate_series"
+      ],
+      "key_count": 23,
+      "kind": "json_schema",
+      "path": "registry/w4b_kalshi_semantic_summary_v1_1.json",
+      "score": 17,
+      "signal_like_keys": [
+        "accepted_strict_event_rows",
+        "accepted_unique_canonical_events",
+        "event_rows_examined"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -1697,6 +2207,61 @@
         "source_workflow_run_id",
         "verified_exact_groups",
         "verified_unique_official_events"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "market_id",
+        "event_key",
+        "ticker",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "timestamp",
+        "tx_hash",
+        "block_number",
+        "exchange_version",
+        "exchange_address",
+        "proxy_wallet",
+        "asset",
+        "condition_id",
+        "outcome",
+        "api_side",
+        "onchain_side",
+        "side_match",
+        "api_size",
+        "onchain_token_amount",
+        "size_abs_diff",
+        "size_match",
+        "api_price",
+        "onchain_price",
+        "price_abs_diff",
+        "price_match",
+        "onchain_collateral_amount",
+        "order_hash",
+        "log_index",
+        "candidate_count",
+        "era_match",
+        "status"
+      ],
+      "column_count": 31,
+      "forbidden_like_columns": [
+        "outcome"
+      ],
+      "join_like_columns": [
+        "ticker",
+        "company_event_date",
+        "candidate_count"
+      ],
+      "kind": "csv_schema",
+      "path": "data/ic03_signed_tape.csv.gz",
+      "score": 17,
+      "signal_like_columns": [
+        "market_id",
+        "event_key",
+        "company_event_date",
+        "safe_cutoff_utc",
+        "timestamp"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -1768,78 +2333,6 @@
         "event_key",
         "company_event_date",
         "safe_cutoff_utc"
-      ],
-      "status": "CANDIDATE_SCHEMA_ONLY"
-    },
-    {
-      "all_columns_sample": [
-        "event_contract",
-        "subtype",
-        "expiration_date",
-        "product_id",
-        "product_name",
-        "product_category",
-        "strict_family_hits",
-        "resolved_family",
-        "semantic_status",
-        "normalized_subject_key",
-        "canonicalization_status",
-        "canonical_event_id",
-        "first_archive_date",
-        "last_archive_date",
-        "archive_days_seen"
-      ],
-      "column_count": 15,
-      "forbidden_like_columns": [],
-      "join_like_columns": [
-        "expiration_date",
-        "normalized_subject_key",
-        "canonical_event_id",
-        "first_archive_date",
-        "last_archive_date"
-      ],
-      "kind": "csv_schema",
-      "path": "registry/w4b_forecastex_ambiguous_v1.csv.gz",
-      "score": 16,
-      "signal_like_columns": [
-        "event_contract",
-        "canonical_event_id"
-      ],
-      "status": "CANDIDATE_SCHEMA_ONLY"
-    },
-    {
-      "all_columns_sample": [
-        "event_contract",
-        "subtype",
-        "expiration_date",
-        "product_id",
-        "product_name",
-        "product_category",
-        "strict_family_hits",
-        "resolved_family",
-        "semantic_status",
-        "normalized_subject_key",
-        "canonicalization_status",
-        "canonical_event_id",
-        "first_archive_date",
-        "last_archive_date",
-        "archive_days_seen"
-      ],
-      "column_count": 15,
-      "forbidden_like_columns": [],
-      "join_like_columns": [
-        "expiration_date",
-        "normalized_subject_key",
-        "canonical_event_id",
-        "first_archive_date",
-        "last_archive_date"
-      ],
-      "kind": "csv_schema",
-      "path": "registry/w4b_forecastex_contracts_v1.csv.gz",
-      "score": 16,
-      "signal_like_columns": [
-        "event_contract",
-        "canonical_event_id"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
     },
@@ -2201,7 +2694,784 @@
         "safe_cutoff_utc"
       ],
       "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "event_id",
+        "resolved_family",
+        "independence_cluster_id",
+        "title",
+        "slug",
+        "semantic_end_utc",
+        "asof_state",
+        "jurisdiction",
+        "primary_source_route",
+        "linked_asset",
+        "linked_asset_mapping_state",
+        "linked_asset_mapping_basis",
+        "revelation_state",
+        "revelation_precision",
+        "public_revelation_utc",
+        "safe_cutoff_utc",
+        "revelation_source_type",
+        "revelation_source_url",
+        "revelation_response_sha256",
+        "resolution_state",
+        "resolution_source_type",
+        "resolution_source_url",
+        "resolution_response_sha256",
+        "resolution_ambiguous",
+        "asset_data_state",
+        "asset_data_first_date",
+        "asset_data_last_date",
+        "asset_data_rows",
+        "asset_data_response_sha256",
+        "mandatory_account_gated_dependency",
+        "mandatory_field_state",
+        "adjudication_notes"
+      ],
+      "column_count": 32,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "event_id",
+        "asset_data_first_date",
+        "asset_data_last_date"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w2c_pit_v2_1_primary_source_queue.csv",
+      "score": 15,
+      "signal_like_columns": [
+        "event_id",
+        "asof_state",
+        "safe_cutoff_utc"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "artifact",
+        "version",
+        "date",
+        "status",
+        "prior_run_id",
+        "prior_run_head_sha",
+        "prior_execution_step",
+        "prior_result_firewall_step",
+        "prior_zero_unresolved_gate_step",
+        "prior_persistence_step",
+        "prior_persistence_failure",
+        "prior_scientific_gate_decision",
+        "prior_canonical_events_audited",
+        "prior_unique_market_tickers_audited",
+        "prior_api_unresolved_count",
+        "prior_history_class_counts",
+        "prior_distributional_core_events",
+        "scientific_contract_changes",
+        "rerun_executor_path",
+        "rerun_executor_blob_sha1",
+        "rerun_policy",
+        "persistence_repair",
+        "governance"
+      ],
+      "forbidden_like_keys": [],
+      "join_like_keys": [
+        "date",
+        "prior_canonical_events_audited",
+        "prior_unique_market_tickers_audited"
+      ],
+      "key_count": 23,
+      "kind": "json_schema",
+      "path": "registry/w4b_kalshi_history_persistence_repair_v1_0_3_p1.json",
+      "score": 15,
+      "signal_like_keys": [
+        "prior_canonical_events_audited",
+        "prior_unique_market_tickers_audited",
+        "prior_distributional_core_events"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "api_unresolved_count",
+        "api_unresolved_examples",
+        "artifact",
+        "canonical_events_audited",
+        "canonical_events_expected",
+        "date_utc",
+        "distributional_core_events",
+        "family_history_class_counts",
+        "history_class_counts",
+        "horizon_event_counts",
+        "interpretation",
+        "kalshi_settlement_results_persisted",
+        "linked_asset_realized_returns_read",
+        "performance_blind",
+        "protocol_version",
+        "technical_gate_decision",
+        "unique_market_tickers_audited",
+        "version"
+      ],
+      "forbidden_like_keys": [
+        "kalshi_settlement_results_persisted",
+        "linked_asset_realized_returns_read"
+      ],
+      "join_like_keys": [
+        "canonical_events_audited",
+        "canonical_events_expected",
+        "date_utc",
+        "unique_market_tickers_audited"
+      ],
+      "key_count": 18,
+      "kind": "json_schema",
+      "path": "registry/w4b_kalshi_history_summary_v1_0_3.json",
+      "score": 15,
+      "signal_like_keys": [
+        "canonical_events_audited",
+        "canonical_events_expected",
+        "distributional_core_events",
+        "horizon_event_counts",
+        "unique_market_tickers_audited"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "exact_group_id",
+        "verification_state",
+        "official_event_reference_date",
+        "official_event_timestamp_utc_if_published",
+        "official_subject_key",
+        "source_authority",
+        "source_url",
+        "retrieved_at_utc",
+        "source_body_sha256_or_document_hash",
+        "evidence_excerpt_hash_or_structured_field_reference",
+        "verification_reason",
+        "review_mode"
+      ],
+      "column_count": 12,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "exact_group_id",
+        "official_event_reference_date",
+        "official_subject_key"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4b_official_event_truth_decisions_template_v1.csv",
+      "score": 15,
+      "signal_like_columns": [
+        "exact_group_id",
+        "official_event_reference_date",
+        "official_event_timestamp_utc_if_published"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "exact_group_id",
+        "verification_state",
+        "official_event_reference_date",
+        "official_event_timestamp_utc_if_published",
+        "official_subject_key",
+        "source_authority",
+        "source_url",
+        "retrieved_at_utc",
+        "source_body_sha256_or_document_hash",
+        "evidence_excerpt_hash_or_structured_field_reference",
+        "verification_reason",
+        "review_mode"
+      ],
+      "column_count": 12,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "exact_group_id",
+        "official_event_reference_date",
+        "official_subject_key"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4b_official_event_truth_decisions_v1.csv",
+      "score": 15,
+      "signal_like_columns": [
+        "exact_group_id",
+        "official_event_reference_date",
+        "official_event_timestamp_utc_if_published"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "artifact",
+        "version",
+        "date",
+        "status",
+        "science_reopened",
+        "official_truth_decisions_observed_before_freeze",
+        "release_values_read_or_persisted",
+        "prediction_market_outcomes_read",
+        "linked_asset_realized_returns_read",
+        "performance_blind",
+        "macro_protocol_blob_sha1",
+        "workflow_blob_sha1",
+        "executor_blobs",
+        "validated_source_probe_run_id",
+        "validated_source_probe_workflow_blob_sha1",
+        "validated_source_probe_decision",
+        "predecision_main_sha",
+        "queue_rows_expected",
+        "policy"
+      ],
+      "forbidden_like_keys": [
+        "prediction_market_outcomes_read",
+        "linked_asset_realized_returns_read"
+      ],
+      "join_like_keys": [
+        "date",
+        "validated_source_probe_run_id",
+        "validated_source_probe_workflow_blob_sha1",
+        "validated_source_probe_decision"
+      ],
+      "key_count": 19,
+      "kind": "json_schema",
+      "path": "registry/w4b_official_macro_occurrence_materialization_freeze_v1.json",
+      "score": 15,
+      "signal_like_keys": [
+        "prediction_market_outcomes_read",
+        "workflow_blob_sha1",
+        "validated_source_probe_run_id",
+        "validated_source_probe_workflow_blob_sha1",
+        "validated_source_probe_decision"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "gamma_event_id",
+        "slug",
+        "w4_semantic_status",
+        "w4_resolved_family",
+        "w4_canonical_event_id",
+        "w2_overlap_type",
+        "w2_event_ids",
+        "w2_cluster_ids",
+        "w2_families_audit_only"
+      ],
+      "column_count": 9,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "gamma_event_id",
+        "w4_canonical_event_id",
+        "w2_event_ids"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4b_polymarket_w2_overlap_v1.csv.gz",
+      "score": 15,
+      "signal_like_columns": [
+        "gamma_event_id",
+        "w4_canonical_event_id",
+        "w2_event_ids"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "ARGOS_PnL_read",
+        "artifact",
+        "combined_unique_official_events_after_r1",
+        "date_utc",
+        "decision_rows_accounted",
+        "eligible_groups",
+        "freeze_version",
+        "gate_decision",
+        "identity_contradictions",
+        "interpretation",
+        "linked_asset_realized_returns_read",
+        "n_final_backtestable_authorized",
+        "outcome_reveal_authorized",
+        "performance_blind",
+        "prediction_market_performance_read",
+        "prediction_market_settlement_results_read",
+        "protocol_version",
+        "r1_alias_groups_to_existing_w4b_official_events",
+        "r1_new_unique_official_events",
+        "r1_unique_official_events",
+        "release_values_used_for_identity",
+        "remaining_unresolved_r1",
+        "review_mode_counts",
+        "sec_transport_manifest_rows",
+        "source_manifest_rows",
+        "verification_state_counts",
+        "verified_exact_groups_r1",
+        "verified_family_counts",
+        "version",
+        "w4b_artifacts_modified",
+        "w4b_verified_unique_official_events_immutable"
+      ],
+      "forbidden_like_keys": [
+        "ARGOS_PnL_read",
+        "linked_asset_realized_returns_read",
+        "outcome_reveal_authorized",
+        "prediction_market_settlement_results_read"
+      ],
+      "join_like_keys": [
+        "date_utc",
+        "verified_exact_groups_r1"
+      ],
+      "key_count": 31,
+      "kind": "json_schema",
+      "path": "registry/w4c_r1_official_truth_extension_summary_v1.json",
+      "score": 15,
+      "signal_like_keys": [
+        "combined_unique_official_events_after_r1",
+        "eligible_groups",
+        "prediction_market_performance_read",
+        "prediction_market_settlement_results_read",
+        "r1_alias_groups_to_existing_w4b_official_events",
+        "r1_new_unique_official_events",
+        "r1_unique_official_events",
+        "verified_exact_groups_r1",
+        "w4b_verified_unique_official_events_immutable"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "company_event_date",
+        "prior_event_count",
+        "batch_event_count",
+        "score_batch",
+        "event_keys"
+      ],
+      "column_count": 5,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "company_event_date"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/art029_evaluation_schedule.csv",
+      "score": 14,
+      "signal_like_columns": [
+        "company_event_date",
+        "prior_event_count",
+        "batch_event_count",
+        "event_keys"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "candidate_component_id",
+        "exact_group_count",
+        "exact_group_ids",
+        "resolved_families",
+        "venues",
+        "venue_count",
+        "all_candidate_links_unresolved"
+      ],
+      "column_count": 7,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "candidate_component_id",
+        "exact_group_count",
+        "exact_group_ids",
+        "all_candidate_links_unresolved"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4b_cross_venue_candidate_components_v1.csv.gz",
+      "score": 14,
+      "signal_like_columns": [
+        "exact_group_count",
+        "exact_group_ids"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "exact_group_id",
+        "year",
+        "provider",
+        "candidate_url",
+        "candidate_domain",
+        "final_url",
+        "final_domain",
+        "http_status",
+        "attempts",
+        "error_class",
+        "content_type",
+        "response_bytes_captured",
+        "body_truncated",
+        "source_body_sha256_or_document_hash_when_retrievable",
+        "domain_identity",
+        "body_identity",
+        "matched_identity_tokens",
+        "ir_path_signal",
+        "official_body_retrievable",
+        "identity_bindable",
+        "probe_success",
+        "retrieved_at_utc",
+        "numeric_outcome_fields_persisted",
+        "truth_verified_by_probe"
+      ],
+      "column_count": 24,
+      "forbidden_like_columns": [
+        "numeric_outcome_fields_persisted"
+      ],
+      "join_like_columns": [
+        "exact_group_id",
+        "candidate_url",
+        "candidate_domain"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4c_r1_earnings_ir_probe_official_body_manifest_v1.csv.gz",
+      "score": 14,
+      "signal_like_columns": [
+        "exact_group_id",
+        "ir_path_signal",
+        "probe_success",
+        "truth_verified_by_probe"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "artifact",
+        "version",
+        "date",
+        "status",
+        "science_reopened",
+        "sample_builder_path",
+        "sample_builder_git_blob_sha",
+        "protocol_path",
+        "protocol_git_blob_sha",
+        "workflow_path",
+        "workflow_git_blob_sha",
+        "queue_path",
+        "queue_git_blob_sha",
+        "queue_sorted_group_ids_sha256",
+        "selection_rule_frozen",
+        "sample_size",
+        "external_probe_requests_performed_before_freeze",
+        "issuer_ir_lookup_performed_before_freeze",
+        "event_truth_verification_authorized",
+        "prediction_market_performance_read",
+        "linked_asset_realized_returns_read",
+        "n_final_backtestable_authorized",
+        "outcome_reveal_authorized",
+        "gate_decision"
+      ],
+      "forbidden_like_keys": [
+        "linked_asset_realized_returns_read",
+        "outcome_reveal_authorized"
+      ],
+      "join_like_keys": [
+        "date",
+        "queue_sorted_group_ids_sha256"
+      ],
+      "key_count": 24,
+      "kind": "json_schema",
+      "path": "registry/w4c_r1_earnings_ir_probe_sample_freeze_v1.json",
+      "score": 14,
+      "signal_like_keys": [
+        "workflow_path",
+        "workflow_git_blob_sha",
+        "queue_sorted_group_ids_sha256",
+        "external_probe_requests_performed_before_freeze",
+        "event_truth_verification_authorized",
+        "prediction_market_performance_read"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "family",
+        "candidate_events",
+        "events_with_lead_hours",
+        "lead_hours_median",
+        "lead_ge_24h_count",
+        "lead_ge_24h_rate_unvalidated",
+        "events_with_volume",
+        "volume_ge_1k",
+        "volume_ge_10k",
+        "volume_ge_100k",
+        "manual_validation_required",
+        "feasibility_gate_status"
+      ],
+      "column_count": 12,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "candidate_events",
+        "lead_ge_24h_rate_unvalidated"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w2c_discovery_summary.csv",
+      "score": 13,
+      "signal_like_columns": [
+        "candidate_events",
+        "events_with_lead_hours",
+        "events_with_volume"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "artifact",
+        "family",
+        "gate_decision",
+        "groups",
+        "issuer_ir_lookup_performed",
+        "linked_asset_realized_returns_read",
+        "n_final_backtestable_authorized",
+        "new_external_source_reads",
+        "outcome_reveal_authorized",
+        "prediction_market_performance_read",
+        "science_reopened",
+        "sec_lookup_performed",
+        "serialization",
+        "sorted_group_ids_sha256",
+        "source_git_blob_sha_expected",
+        "source_path",
+        "status",
+        "unique_exact_group_ids",
+        "unique_pretruth_subject_keys",
+        "venue_counts",
+        "version",
+        "year_counts"
+      ],
+      "forbidden_like_keys": [
+        "linked_asset_realized_returns_read",
+        "outcome_reveal_authorized"
+      ],
+      "join_like_keys": [
+        "sorted_group_ids_sha256",
+        "unique_exact_group_ids",
+        "unique_pretruth_subject_keys"
+      ],
+      "key_count": 22,
+      "kind": "json_schema",
+      "path": "registry/w4c_r1_earnings_ir_queue_summary_v1.json",
+      "score": 13,
+      "signal_like_keys": [
+        "groups",
+        "prediction_market_performance_read",
+        "sorted_group_ids_sha256",
+        "unique_exact_group_ids",
+        "unique_pretruth_subject_keys"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "market_id",
+        "event_key",
+        "ticker",
+        "company_event_date",
+        "metric",
+        "contract_operator",
+        "contract_threshold_eps",
+        "official_eps_actual",
+        "validation_status",
+        "official_source_accession",
+        "reconstructed_outcome_label",
+        "polymarket_primary_label",
+        "matches_primary"
+      ],
+      "column_count": 13,
+      "forbidden_like_columns": [
+        "reconstructed_outcome_label"
+      ],
+      "join_like_columns": [
+        "ticker",
+        "company_event_date"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/official_eps_closeout_66.csv",
+      "score": 12,
+      "signal_like_columns": [
+        "market_id",
+        "event_key",
+        "company_event_date",
+        "polymarket_primary_label"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "venue",
+        "venue_record_id",
+        "canonical_event_id",
+        "resolved_family",
+        "event_reference_date",
+        "normalized_subject_key",
+        "venue_local_ids",
+        "same_venue_alias_rows",
+        "input_signature_count"
+      ],
+      "column_count": 9,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "canonical_event_id",
+        "event_reference_date",
+        "normalized_subject_key"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4b_cross_venue_records_v1.csv.gz",
+      "score": 12,
+      "signal_like_columns": [
+        "canonical_event_id",
+        "event_reference_date"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "canonical_event_id",
+        "series_ticker",
+        "market_ticker",
+        "operational_t0_ts",
+        "route_used",
+        "http_resolution_status",
+        "api_status",
+        "candlestick_count",
+        "first_end_period_ts",
+        "last_end_period_ts",
+        "t_minus_240h_valid",
+        "t_minus_240h_staleness_seconds",
+        "t_minus_168h_valid",
+        "t_minus_168h_staleness_seconds",
+        "t_minus_120h_valid",
+        "t_minus_120h_staleness_seconds",
+        "t_minus_72h_valid",
+        "t_minus_72h_staleness_seconds",
+        "t_minus_48h_valid",
+        "t_minus_48h_staleness_seconds",
+        "t_minus_24h_valid",
+        "t_minus_24h_staleness_seconds",
+        "t_minus_12h_valid",
+        "t_minus_12h_staleness_seconds",
+        "t_minus_6h_valid",
+        "t_minus_6h_staleness_seconds",
+        "t_minus_3h_valid",
+        "t_minus_3h_staleness_seconds",
+        "t_minus_1h_valid",
+        "t_minus_1h_staleness_seconds"
+      ],
+      "column_count": 30,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "canonical_event_id",
+        "series_ticker",
+        "market_ticker"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/w4b_kalshi_history_market_v1_0_3.csv.gz",
+      "score": 12,
+      "signal_like_columns": [
+        "canonical_event_id",
+        "market_ticker"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_keys_sample": [
+        "artifact",
+        "version",
+        "date",
+        "status",
+        "science_reopened",
+        "review_mode",
+        "parent_protocol",
+        "queue",
+        "candidate_verified_groups",
+        "remaining_groups_policy",
+        "candidate_count",
+        "unresolved_count",
+        "source_navigation_disclosure",
+        "firewall",
+        "gate_decision"
+      ],
+      "forbidden_like_keys": [],
+      "join_like_keys": [
+        "date",
+        "candidate_verified_groups",
+        "candidate_count"
+      ],
+      "key_count": 15,
+      "kind": "json_schema",
+      "path": "registry/w4c_r1_fda_manual_adjudication_spec_v1.json",
+      "score": 12,
+      "signal_like_keys": [
+        "candidate_verified_groups",
+        "remaining_groups_policy"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "company_event_date",
+        "prior_events",
+        "m2cal_theta",
+        "core_theta",
+        "mp_theta"
+      ],
+      "column_count": 5,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "company_event_date"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/art030_batch_coefficients.csv",
+      "score": 11,
+      "signal_like_columns": [
+        "company_event_date",
+        "prior_events",
+        "m2cal_theta"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
+    },
+    {
+      "all_columns_sample": [
+        "market_id",
+        "event_key",
+        "ticker",
+        "safe_cutoff_utc",
+        "gamma_start_utc",
+        "structurally_unavailable",
+        "yes_rows",
+        "no_rows",
+        "yes_raw_points",
+        "no_raw_points",
+        "yes_chunks",
+        "no_chunks",
+        "yes_boundary_duplicates",
+        "no_boundary_duplicates",
+        "yes_conflicting_duplicates",
+        "no_conflicting_duplicates",
+        "yes_bad_rows",
+        "no_bad_rows",
+        "yes_last_age_min",
+        "no_last_age_min",
+        "yes_first_delay_min",
+        "yes_median_gap_min",
+        "yes_p95_gap_min",
+        "yes_max_gap_min",
+        "yes_unique_prices",
+        "yes_status",
+        "no_status"
+      ],
+      "column_count": 27,
+      "forbidden_like_columns": [],
+      "join_like_columns": [
+        "ticker"
+      ],
+      "kind": "csv_schema",
+      "path": "registry/ic04_event_summary.csv",
+      "score": 11,
+      "signal_like_columns": [
+        "market_id",
+        "event_key",
+        "safe_cutoff_utc"
+      ],
+      "status": "CANDIDATE_SCHEMA_ONLY"
     }
   ],
-  "version": "W4C-R1-EXPANDED-SIGNAL-SOURCE-INVENTORY-v1.0"
+  "version": "W4C-R1-EXPANDED-SIGNAL-SOURCE-INVENTORY-v1.1"
 }
