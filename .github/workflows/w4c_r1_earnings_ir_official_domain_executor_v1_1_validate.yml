@@ -1,0 +1,24 @@
+name: W4-C R1 earnings IR official-domain executor v1.1 validate
+
+on:
+  push:
+    paths:
+      - .github/workflows/w4c_r1_earnings_ir_official_domain_executor_v1_1_validate.yml
+      - scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1.py
+      - registry/w4c_r1_earnings_ir_official_domain_discovery_executor_freeze_v1_1.json
+      - registry/w4c_r1_earnings_ir_official_domain_discovery_protocol_v1_1.json
+      - registry/w4c_r1_earnings_ir_probe_sample_v1.json
+      - registry/w4c_r1_earnings_ticker_profile_v1.json
+
+permissions:
+  contents: read
+
+jobs:
+  validate-v1-1-executor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate v1.1 executor without external requests
+        env:
+          W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_V1_1_VALIDATE_ONLY: YES
+        run: python3 scripts/w4c_r1_earnings_ir_official_domain_discovery_executor_v1_1.py
