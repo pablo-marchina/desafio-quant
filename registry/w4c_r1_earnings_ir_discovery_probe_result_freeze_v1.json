@@ -38,9 +38,10 @@
     "earnings_numeric_outcomes_used": false,
     "prediction_market_settlement_used": false,
     "realized_returns_used": false,
-    "arg_os_pnl_used": false,
+    "argos_pnl_used": false,
     "n_final_backtestable_authorized": false
   },
   "interpretation": "This freezes a negative technical capacity result for the specific issuer-IR discovery/navigation protocol. It does not establish absence of issuer IR pages or absence of official earnings evidence.",
-  "next_gate": "OUTCOME_BLIND_TRANSPORT_NAVIGATION_DIAGNOSIS"
+  "diagnosis": "The frozen run produced 78 search-navigation records (39 per provider) but zero official-body attempts. A post-hoc outcome-blind diagnosis found no parser-derived candidate reached the body layer. A four-case live diagnostic later observed provider/HTML variability: DuckDuckGo returned HTTP 202 with no result__a markers, while Bing returned HTTP 200 with b_algo blocks parseable by the frozen regex. Therefore the negative result is attributed to the frozen search-engine transport/parser/candidate-navigation route, not to absence of issuer IR evidence.",
+  "next_gate": "NEW_MATERIAL_ROUTE_PREREGISTERED_AND_EXECUTOR_FROZEN"
 }
