@@ -1,0 +1,50 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_AUTHORIZATION",
+  "version": "W4C-R1-EIR-ODD-FULL-AUTH-v1.0",
+  "date": "2026-08-16",
+  "status": "FROZEN_AUTHORIZATION_PRE_EXTERNAL_REQUEST",
+  "trigger_result": {
+    "v1_2_result_freeze_path": "registry/w4c_r1_earnings_ir_official_domain_result_freeze_v1_2.json",
+    "v1_2_capacity_summary_path": "registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_2.json",
+    "required_capacity_decision": "FULL_ROUTE_TECHNICALLY_VIABLE",
+    "observed_probe_success_total": 24,
+    "observed_probe_success_by_year": {"2025": 10, "2026": 14}
+  },
+  "scope": {
+    "queue_path": "registry/w4c_r1_earnings_ir_queue_v1.csv.gz",
+    "ticker_profile_path": "registry/w4c_r1_earnings_ticker_profile_v1.json",
+    "expected_queue_groups": 1355,
+    "route": "official-domain issuer-controlled identity materialization using W4C-R1-EIR-ODD-v1.2 transport policy",
+    "full_queue_execution_authorized": true,
+    "outcome_reveal_authorized": false,
+    "n_final_backtestable_authorized": false,
+    "backtest_authorized": false
+  },
+  "allowed_operations": [
+    "read frozen queue rows",
+    "read frozen ticker profile and deterministic repair map",
+    "resolve ticker to Wikidata entity and P856 official website",
+    "navigate accepted first-party official domains and subdomains",
+    "retrieve issuer-controlled bodies for identity binding only",
+    "materialize resolution/navigation/body manifests and summary"
+  ],
+  "forbidden_operations": [
+    "read earnings numeric outcomes",
+    "read prediction-market settlement",
+    "read realized returns",
+    "read ARGOS PnL",
+    "compute backtest results",
+    "authorize N_final_backtestable",
+    "use third-party pages as truth voters",
+    "change sample, thresholds, or queue membership after execution"
+  ],
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_allowed": false,
+    "prediction_market_settlement_allowed": false,
+    "realized_returns_allowed": false,
+    "argos_pnl_allowed": false,
+    "event_truth_verification_allowed": false,
+    "n_final_backtestable_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_AUTHORIZED_OUTCOME_BLIND"
+}
