@@ -2,21 +2,24 @@
   "artifact": "W4C_R1_EXPANDED_ECONOMIC_BACKTEST_ELIGIBILITY_SUMMARY",
   "base_rows": 1355,
   "date": "2026-08-16",
+  "date_max_all_dated": "2026-08-13",
   "date_max_eligible": null,
+  "date_min_all_dated": "2025-02-28",
   "date_min_eligible": null,
-  "dated_rows": 0,
+  "dated_rows": 1355,
   "failure_reason_counts": {
-    "NO_DETERMINISTIC_EVENT_DATE": 1355,
-    "NO_DETERMINISTIC_TICKER": 188,
+    "NO_DETERMINISTIC_TICKER": 16,
     "NO_PIT_SIGNAL_BEFORE_CUTOFF": 1355
   },
-  "gate_decision": "PASS_ELIGIBILITY_MATERIALIZED_NO_OUTCOME_RETURN_SETTLEMENT_READS",
+  "gate_decision": "PASS_ELIGIBILITY_MATERIALIZED_QUEUE_OVERLAY_NO_OUTCOME_RETURN_SETTLEMENT_READS",
   "n_final_backtestable_candidate_pre_price": 0,
-  "next_gate": "If n_final_backtestable_candidate_pre_price is nonzero, freeze/authorize price and benchmark execution. If zero, first materialize a frozen PIT signal map rather than inventing a rule.",
+  "next_gate": "Materialize a frozen PIT signal map keyed by exact_group_id before any return/PnL execution; do not invent thresholds or use settlements/returns to choose signals.",
   "outputs": {
     "eligibility_manifest": "registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v1.csv.gz",
-    "eligibility_manifest_sha256": "9214998ea63ae41fd85eaacd78ef0e00d29f0485eb6760c53400f600b11e9ec6"
+    "eligibility_manifest_sha256": "744de511b3078f7a7629364f9d2859a9bf585f8355b9850ad3a5b9d630ae77fe"
   },
+  "queue_rows": 1355,
+  "resolution_rows": 1355,
   "scientific_firewall": {
     "argos_pnl_read": false,
     "backtest_execution_authorized": false,
@@ -28,8 +31,8 @@
   },
   "signal_map_present": false,
   "signal_map_rows": 0,
-  "status": "MATERIALIZED_PRE_PNL_ELIGIBILITY_FAIL_CLOSED",
-  "ticker_candidate_rows": 1167,
+  "status": "MATERIALIZED_PRE_PNL_ELIGIBILITY_WITH_QUEUE_OVERLAY_FAIL_CLOSED",
+  "ticker_candidate_rows": 1339,
   "top_tickers_eligible": [],
   "unique_tickers_eligible": 0,
   "validation": {
@@ -37,8 +40,41 @@
     "external_requests_performed_in_full_expansion": true,
     "full_freeze_gate": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_FULL_EXPANSION_RESULT_FROZEN_AUTHORITATIVE_OUTCOME_BLIND",
     "protocol_version": "W4C-R1-EXPANDED-ECON-BACKTEST-PROTOCOL-v1.1",
+    "queue_columns_sample": [
+      "exact_group_id",
+      "resolved_family",
+      "pretruth_event_reference_date",
+      "pretruth_subject_key",
+      "venues",
+      "r1_verification_state",
+      "official_event_id",
+      "official_event_reference_date",
+      "official_event_timestamp_utc_if_published",
+      "official_subject_key",
+      "source_authority",
+      "source_url",
+      "retrieved_at_utc",
+      "source_body_sha256_or_document_hash",
+      "evidence_excerpt_hash_or_structured_field_reference",
+      "verification_reason",
+      "review_mode",
+      "match_rule_used",
+      "reference_date_delta_days",
+      "alias_to_existing_w4b_official_event"
+    ],
+    "queue_rows": 1355,
+    "resolution_columns_sample": [
+      "exact_group_id",
+      "year",
+      "ticker",
+      "resolution_status",
+      "candidate_entity_count",
+      "official_host",
+      "official_website"
+    ],
+    "resolution_rows": 1355,
     "rows": 1355,
-    "status": "PASS_VALIDATE_ONLY"
+    "status": "PASS_VALIDATE_ONLY_V1_1_QUEUE_OVERLAY"
   },
-  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-v1.0"
+  "version": "W4C-R1-EXPANDED-ECON-BACKTEST-ELIGIBILITY-v1.1"
 }
