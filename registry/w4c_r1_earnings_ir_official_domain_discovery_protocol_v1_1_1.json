@@ -1,0 +1,70 @@
+{
+  "artifact": "W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL",
+  "version": "W4C-R1-EIR-ODD-v1.1.1",
+  "date": "2026-08-16",
+  "status": "FROZEN_PROTOCOL_PRE_EXTERNAL_REQUEST",
+  "parent_protocol": "W4C-R1-EIR-ODD-v1.1",
+  "trigger_evidence": {
+    "bounded_run_id": 31946618771,
+    "bounded_run_conclusion": "failure",
+    "failure_layer": "EXECUTION_TIMEOUT_BEFORE_OUTPUT_MATERIALIZATION",
+    "validate_only_gate_passed": true,
+    "external_step_exit_code": 124,
+    "output_commit_step": "skipped"
+  },
+  "amendment_scope": "transport_bounding_only",
+  "allowed_changes": {
+    "per_request_timeout_seconds": true,
+    "single_attempt_http_fetches": true,
+    "candidate_count_cap": true,
+    "path_first_official_domain_navigation": true,
+    "fail_closed_on_timeout_or_transport_error": true,
+    "materialize_outputs_even_when_transport_capacity_is_low": true
+  },
+  "forbidden_changes": {
+    "sample_replacement_or_resampling": true,
+    "threshold_change": true,
+    "earnings_numeric_outcomes": true,
+    "prediction_market_settlement": true,
+    "realized_returns_or_argos_pnl": true,
+    "third_party_truth_voters": true,
+    "full_1355_execution_before_capacity_result_freeze": true
+  },
+  "sample_binding": {
+    "sample_path": "registry/w4c_r1_earnings_ir_probe_sample_v1.json",
+    "sample_size": 40,
+    "selection_change_allowed": false,
+    "resampling_allowed": false,
+    "same_frozen_sample_as_v1_0_and_v1_1": true
+  },
+  "capacity_gate": {
+    "thresholds_unchanged_from_v1_0": true,
+    "full_route_technically_viable": {
+      "total_success_minimum": 24,
+      "year_2025_success_minimum": 10,
+      "year_2026_success_minimum": 10
+    },
+    "conditional_route": {
+      "total_success_minimum": 12,
+      "year_2025_success_minimum": 5,
+      "year_2026_success_minimum": 5
+    },
+    "otherwise": "ROUTE_INFEASIBLE_CURRENT_PROTOCOL"
+  },
+  "scientific_firewall": {
+    "earnings_numeric_outcomes_allowed": false,
+    "prediction_market_settlement_allowed": false,
+    "realized_returns_allowed": false,
+    "argos_pnl_allowed": false,
+    "event_truth_verification_allowed": false,
+    "n_final_backtestable_authorized": false
+  },
+  "required_outputs": [
+    "registry/w4c_r1_earnings_ir_official_domain_resolution_manifest_v1_1_1.csv.gz",
+    "registry/w4c_r1_earnings_ir_official_domain_navigation_manifest_v1_1_1.csv.gz",
+    "registry/w4c_r1_earnings_ir_official_domain_body_manifest_v1_1_1.csv.gz",
+    "registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_1_1.json",
+    "registry/w4c_r1_earnings_ir_official_domain_execution_manifest_v1_1_1.json"
+  ],
+  "gate_decision": "PASS_W4C_R1_EARNINGS_IR_OFFICIAL_DOMAIN_DISCOVERY_PROTOCOL_V1_1_1_FROZEN_PRE_REQUEST"
+}
