@@ -45,8 +45,10 @@ jobs:
             registry/w4c_r1_expanded_economic_backtest_signal_map_v3.csv \
             registry/w4c_r1_expanded_pit_external_coverage_summary_v1.json \
             registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v2.csv.gz \
-            registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v2.json \
-            registry/w4c_r1_expanded_price_return_authorization_candidate_v1.json || true
+            registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v2.json
+          if [ -f registry/w4c_r1_expanded_price_return_authorization_candidate_v1.json ]; then
+            git add registry/w4c_r1_expanded_price_return_authorization_candidate_v1.json
+          fi
           if git diff --cached --quiet; then
             echo 'No external PIT coverage outputs changed.'
             exit 0
