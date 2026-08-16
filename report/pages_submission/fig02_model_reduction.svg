@@ -3,7 +3,7 @@
 <rect width="1600" height="900" fill="#07111F"/>
 <text x="80" y="72" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#49C6E5" text-anchor="start">02 • MODELAGEM</text>
 <text x="80" y="128" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="40" font-weight="700" fill="#F4F7FB" text-anchor="start">Reduzir complexidade antes de ver resultado</text>
-<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#9FB0C3" text-anchor="start">Cada filtro usa dados point-in-time; nenhuma etapa procura resultado futuro.</text>
+<text x="80" y="170" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="23" font-weight="400" fill="#9FB0C3" text-anchor="start">Cada filtro usa só dados disponíveis naquele momento; nada procura resultado futuro.</text>
 <path d="M 1411.5 85 Q 1450 57.5 1488.5 85" fill="none" stroke="#49C6E5" stroke-width="2.75"/>
 <path d="M 1421.4 89.4 Q 1450 111.4 1478.6 89.4" fill="none" stroke="#2DD4BF" stroke-width="2.75"/>
 <path d="M 1403.8 94.9 Q 1430.75 125.7 1461.0 111.4" fill="none" stroke="#F4BF4F" stroke-width="2.2" stroke-dasharray="9,6"/>
@@ -25,17 +25,17 @@
 <line x1="795" y1="380" x2="820" y2="380" stroke="#9FB0C3" stroke-width="3" marker-end="url(#arrow)"/>
 <rect x="820" y="305" width="195" height="150" rx="20" fill="#14283D" stroke="#2DD4BF" stroke-width="2"/>
 <text x="845" y="360" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="700" fill="#F4F7FB" text-anchor="start">6</text>
-<text x="845" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">features</text>
+<text x="845" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">variáveis</text>
 <text x="845" y="434" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">confirmatórias</text>
 <line x1="1025" y1="380" x2="1050" y2="380" stroke="#9FB0C3" stroke-width="3" marker-end="url(#arrow)"/>
 <rect x="1050" y="305" width="195" height="150" rx="20" fill="#14283D" stroke="#2DD4BF" stroke-width="2"/>
 <text x="1075" y="360" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="700" fill="#F4F7FB" text-anchor="start">8</text>
-<text x="1075" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">coeficientes</text>
-<text x="1075" y="434" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">ridge</text>
+<text x="1075" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">pesos</text>
+<text x="1075" y="434" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">regularizados</text>
 <line x1="1255" y1="380" x2="1280" y2="380" stroke="#9FB0C3" stroke-width="3" marker-end="url(#arrow)"/>
 <rect x="1280" y="305" width="195" height="150" rx="20" fill="#14283D" stroke="#F4BF4F" stroke-width="2"/>
 <text x="1305" y="360" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="52" font-weight="700" fill="#F4F7FB" text-anchor="start">1</text>
-<text x="1305" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">challenger</text>
+<text x="1305" y="410" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">teste</text>
 <text x="1305" y="434" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="16" font-weight="600" fill="#9FB0C3" text-anchor="start">não linear</text>
 <rect x="135" y="520" width="405" height="230" rx="18" fill="#07111F" stroke="#294158" stroke-width="1"/>
 <text x="165" y="563" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#49C6E5" text-anchor="start">O que a banca deve entender</text>
@@ -43,16 +43,16 @@
 <text x="165" y="640" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="500" fill="#F4F7FB" text-anchor="start">2. Primeiro veio a parcimônia; depois o teste.</text>
 <text x="165" y="675" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="500" fill="#F4F7FB" text-anchor="start">3. M2 é o baseline;</text>
 <text x="190" y="704" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="500" fill="#F4F7FB" text-anchor="start">movimento precisa vencer M2.</text>
-<text x="165" y="733" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="500" fill="#F4F7FB" text-anchor="start">4. Sem busca de hiperparâmetros.</text>
+<text x="165" y="733" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="18" font-weight="500" fill="#F4F7FB" text-anchor="start">4. Sem ajuste automático para vencer o teste.</text>
 <rect x="585" y="520" width="875" height="200" rx="18" fill="#07111F" stroke="#294158" stroke-width="1"/>
 <text x="620" y="563" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" fill="#2DD4BF" text-anchor="start">Controles contra overfit e vazamento</text>
 <circle cx="635" cy="604" r="5" fill="#2DD4BF"/>
 <text x="655" y="611" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">PIT = dado disponível naquele momento, não depois do evento.</text>
 <circle cx="635" cy="639" r="5" fill="#2DD4BF"/>
-<text x="655" y="646" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">Features de movimento foram congeladas antes da avaliação.</text>
+<text x="655" y="646" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">Variáveis de movimento foram congeladas antes da avaliação.</text>
 <circle cx="635" cy="674" r="5" fill="#2DD4BF"/>
-<text x="655" y="681" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">Unidade de teste: evento/data; clusters por data reduzem falsa confiança.</text>
+<text x="655" y="681" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">Unidade de teste: evento/data; grupos por data reduzem falsa confiança.</text>
 <circle cx="635" cy="709" r="5" fill="#2DD4BF"/>
-<text x="655" y="716" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">Challenger testa complexidade; não substitui a regra congelada.</text>
+<text x="655" y="716" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="17" font-weight="500" fill="#F4F7FB" text-anchor="start">Teste não linear mede complexidade; não troca a regra congelada.</text>
 <text x="115" y="835" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" font-weight="700" fill="#F4BF4F" text-anchor="start">Leitura simples: ARGOS ficou menor e mais auditável antes de saber se ganharia dinheiro.</text>
 </svg>
