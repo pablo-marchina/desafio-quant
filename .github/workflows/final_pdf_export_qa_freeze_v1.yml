@@ -1,0 +1,52 @@
+name: Final PDF export QA freeze v1
+
+on:
+  push:
+    paths:
+      - 'scripts/final_pdf_export_qa_freeze_v1.py'
+      - '.github/workflows/final_pdf_export_qa_freeze_v1.yml'
+      - 'report/pages_submission/*.svg'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  final-pdf-export-qa-freeze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PDF/SVG tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends librsvg2-bin poppler-utils
+
+      - name: Export PDF and run QA/freeze
+        run: python3 scripts/final_pdf_export_qa_freeze_v1.py
+
+      - name: Upload final PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ARGOS_final_submission_pdf
+          path: |
+            dist/final_submission/ARGOS_final_submission.pdf
+            dist/final_submission/ARGOS_final_submission_text.txt
+            registry/final_pdf_submission_freeze_v1.json
+          if-no-files-found: error
+
+      - name: Commit final PDF freeze
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/final_pdf_submission_freeze_v1.json
+          if git diff --cached --quiet; then
+            echo 'No final PDF freeze changed.'
+            exit 0
+          fi
+          git commit -m 'registry: freeze final PDF submission QA v1'
+          git push origin HEAD:main
