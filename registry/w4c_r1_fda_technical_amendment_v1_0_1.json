@@ -1,0 +1,51 @@
+{
+  "artifact": "W4C_R1_FDA_TECHNICAL_AMENDMENT",
+  "version": "W4C-R1-FDA-TECH-v1.0.1",
+  "date": "2026-08-15",
+  "status": "FROZEN_TECHNICAL_COMPATIBILITY_ONLY_PRE_RERUN",
+  "science_reopened": false,
+  "failed_run": {
+    "workflow_run_id": 31820251813,
+    "workflow_job_id": 94831516390,
+    "executor_freeze_validation_passed": true,
+    "failure_step": "Materialize FDA primary evidence",
+    "scientific_result_materialized": false,
+    "failure_class": "PRE_EVIDENCE_RUNTIME_SCHEMA_KEY_MISMATCH"
+  },
+  "root_cause": {
+    "frozen_executor_expected_field": "marginal_new_unique_official_events_vs_w4b",
+    "authoritative_r1_summary_field": "r1_new_unique_official_events",
+    "authoritative_value": 6,
+    "immutable_w4b_unique_official_events": 344,
+    "interpretation": "The two names refer to the same already-materialized R1 marginal unique-event gain. The compatibility shim derives the executor alias only in an ephemeral runtime copy and does not mutate registry data."
+  },
+  "frozen_scientific_inputs_unchanged": {
+    "parent_r1_protocol_git_blob_sha": "add5c0251d13ee001227de13860d37851faa7919",
+    "fda_spec_git_blob_sha": "cd08efc750486e0a978c5446682eddb75054250a",
+    "fda_queue_git_blob_sha": "f03552f31c9d18f5b2d4843380f9861a6d292da5",
+    "w4b_summary_git_blob_sha": "bdef6077e6d4ddc2ee111f4c0dbab39162af8d30",
+    "frozen_fda_executor_git_blob_sha": "7efd64cf89cd505061fe84627011fb0f1215df61"
+  },
+  "technical_change": {
+    "compat_wrapper_path": "scripts/w4c_r1_fda_executor_compat_v1.py",
+    "compat_wrapper_git_blob_sha": "4ff4de72ea3b00de723ad894192a6925dee238aa",
+    "workflow_path": ".github/workflows/w4c_r1_fda_evidence_v1.yml",
+    "workflow_git_blob_sha": "4d4465c6ee0386ebca168936635a4569ce23d812",
+    "registry_mutation_performed_by_wrapper": false,
+    "family_reclassification_allowed": false,
+    "matching_rule_change_allowed": false,
+    "source_authority_change_allowed": false,
+    "candidate_set_change_allowed": false
+  },
+  "pre_rerun_firewall": {
+    "r1_fda_external_requests_before_failed_run": false,
+    "r1_fda_verified_count_observed": false,
+    "prediction_market_settlement_used": false,
+    "prediction_market_price_or_performance_used": false,
+    "linked_asset_realized_returns_used": false,
+    "pnl_or_model_performance_used": false,
+    "n_final_backtestable_authorized": false,
+    "outcome_reveal_authorized": false
+  },
+  "gate_decision": "PASS_W4C_R1_FDA_TECHNICAL_KEY_COMPAT_AMENDMENT_PRE_RERUN"
+}
