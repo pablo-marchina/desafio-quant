@@ -1,0 +1,63 @@
+name: W4-C R1 expanded PIT internal join v1
+
+on:
+  push:
+    paths:
+      - 'scripts/w4c_r1_expanded_pit_internal_join_executor_v1.py'
+      - 'registry/w4c_r1_expanded_pit_internal_join_authorization_v1.json'
+      - '.github/workflows/w4c_r1_expanded_pit_internal_join_v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  internal-pit-join:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate internal PIT join without PnL reads
+        env:
+          W4C_R1_EXPANDED_PIT_INTERNAL_JOIN_VALIDATE_ONLY: YES
+        run: python3 scripts/w4c_r1_expanded_pit_internal_join_executor_v1.py
+
+      - name: Materialize internal pre-PnL PIT join and eligibility v3
+        env:
+          W4C_R1_EXPANDED_PIT_INTERNAL_JOIN_EXECUTE: YES_FROZEN_PRE_PNL_INTERNAL_PIT_JOIN
+          W4C_R1_MIN_SIGNAL_ROWS_FOR_PNL: '300'
+          W4C_R1_MAX_INTERNAL_NEW_TOKENS: '1200'
+          W4C_R1_HISTORY_LOOKBACK_DAYS: '21'
+          W4C_R1_HISTORY_FIDELITY_MINUTES: '60'
+          W4C_R1_INTERNAL_REQUEST_SLEEP: '0.03'
+        run: python3 scripts/w4c_r1_expanded_pit_internal_join_executor_v1.py
+
+      - name: Commit internal PIT join outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            registry/w4c_r1_expanded_pit_internal_join_trace_v1.csv.gz \
+            registry/w4c_r1_expanded_economic_backtest_signal_map_v4.csv \
+            registry/w4c_r1_expanded_pit_internal_join_summary_v1.json \
+            registry/w4c_r1_expanded_economic_backtest_eligibility_manifest_v3.csv.gz \
+            registry/w4c_r1_expanded_economic_backtest_eligibility_summary_v3.json
+          if [ -f registry/w4c_r1_expanded_price_return_authorization_candidate_v2.json ]; then
+            git add registry/w4c_r1_expanded_price_return_authorization_candidate_v2.json
+          fi
+          if [ -f registry/w4c_r1_expanded_pit_signal_coverage_closeout_v1.json ]; then
+            git add registry/w4c_r1_expanded_pit_signal_coverage_closeout_v1.json
+          fi
+          if git diff --cached --quiet; then
+            echo 'No internal PIT join outputs changed.'
+            exit 0
+          fi
+          git commit -m 'registry: materialize W4-C R1 internal PIT join v1'
+          git reset --hard HEAD
+          git clean -fd
+          git pull --rebase origin main
+          git push origin HEAD:main
