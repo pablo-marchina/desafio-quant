@@ -13,6 +13,8 @@ Este relatório documenta o estado científico do programa W4-C R1, cujo objetiv
 
 O avanço científico mais importante é que a rota saiu de 0/40 no protocolo baseado em HTML de mecanismos de busca, evoluiu para 19/40 na rota official-domain v1.0 e alcançou 22/40 na emenda bounded v1.1.1. O resultado ainda não autoriza a execução completa dos 1.355 grupos de earnings, mas mostra que a falha atual é marginal e tecnicamente localizada: faltam dois sucessos, ambos necessários no estrato de 2025.
 
+O diagnóstico outcome-blind dos 18 failures v1.1.1 já foi materializado. A camada dominante de falha é resolução ticker/P856 via Wikidata, com 9/18 failures; em 2025, há 7 falhas de resolução, 4 falhas de transporte/timeout e 1 falha de identity binding. Portanto, a emenda v1.2 deve atacar prioritariamente resolução determinística e transporte first-party, preservando a mesma amostra e os mesmos thresholds.
+
 ---
 
 ## 1. Problema de pesquisa
@@ -53,6 +55,17 @@ O probe v1.1.1 obteve:
 | Decisão | `CONDITIONAL_ROUTE` |
 
 A rota está a dois sucessos do gate total e a dois sucessos do gate de 2025.
+
+### 2.3 Diagnóstico dos failures v1.1.1
+
+| Camada de falha | Total | 2025 | 2026 |
+|---|---:|---:|---:|
+| Sem resolução única Wikidata/P856 | 9 | 7 | 2 |
+| Transporte/timeout em body attempts | 6 | 4 | 2 |
+| Body recuperado, mas identity binding falhou | 3 | 1 | 2 |
+| **Total** | **18** | **12** | **6** |
+
+O diagnóstico confirma que o gargalo para atingir `FULL_ROUTE_TECHNICALLY_VIABLE` está no estrato de 2025. Converter apenas dois dos 12 failures de 2025 seria suficiente para satisfazer simultaneamente o threshold total e o threshold anual.
 
 ---
 
@@ -141,21 +154,21 @@ O backtest completo ainda não foi iniciado. O status correto é:
 Full 1355 earnings execution: NÃO autorizada
 Backtest final com N atualizado: NÃO autorizado
 Estado científico atual: CONDITIONAL_ROUTE
-Próximo gate obrigatório: diagnóstico outcome-blind dos 18 failures v1.1.1
+Diagnóstico outcome-blind dos 18 failures: MATERIALIZADO
+Próximo gate obrigatório: v1.2 técnico ou decisão formal de não executar full 1355
 ```
 
 ---
 
 ## 7. Próxima ação científica
 
-A próxima etapa é diagnosticar os 18 failures do v1.1.1 sem ler outcome, settlement, retornos ou PnL. O diagnóstico deve separar falhas por camada:
+A próxima etapa deve ser uma emenda técnica v1.2 outcome-blind, com objetivo limitado de converter pelo menos dois failures de 2025. A emenda deve atacar:
 
-1. falta de resolução única ticker/P856;
-2. resolução existente, mas sem candidato first-party suficiente;
-3. candidato encontrado, mas HTTP/timeout/transporte falhou;
-4. body recuperado, mas identity binding falhou.
+1. resolução ticker/P856 ausente ou ambígua;
+2. transporte first-party com HTTP 403/timeout;
+3. identity binding quando o body foi recuperado mas a heurística não vinculou o emissor.
 
-A decisão seguinte deve ser uma emenda técnica v1.2 estritamente direcionada à camada dominante de falha, buscando converter pelo menos dois casos, especialmente no estrato de 2025.
+A v1.2 não pode alterar a amostra, os thresholds, os critérios de sucesso, nem acessar outcomes, settlement, returns ou PnL.
 
 ---
 
@@ -177,7 +190,7 @@ A v1.1 demonstrou que navegação first-party ampla pode travar. A v1.1.1 corrig
 
 ## 9. Conclusão preliminar
 
-O projeto está próximo de autorizar o backtest completo, mas ainda não atingiu o gate necessário. O resultado v1.1.1 é forte o suficiente para justificar uma emenda técnica v1.2 direcionada, mas não forte o suficiente para executar diretamente os 1.355 grupos. A prioridade absoluta é converter pelo menos dois failures, mantendo a mesma amostra, os mesmos thresholds e o mesmo firewall científico.
+O projeto está próximo de autorizar o backtest completo, mas ainda não atingiu o gate necessário. O resultado v1.1.1 é forte o suficiente para justificar uma emenda técnica v1.2 direcionada, mas não forte o suficiente para executar diretamente os 1.355 grupos. A prioridade absoluta é converter pelo menos dois failures de 2025, mantendo a mesma amostra, os mesmos thresholds e o mesmo firewall científico.
 
 ---
 
@@ -186,8 +199,18 @@ O projeto está próximo de autorizar o backtest completo, mas ainda não atingi
 - [x] Resultado v1.1.1 materializado.
 - [x] Freeze autoritativo v1.1.1 criado.
 - [x] Relatório acadêmico preliminar criado.
-- [ ] Diagnóstico outcome-blind dos 18 failures materializado.
-- [ ] Emenda v1.2 pré-registrada, se diagnóstico apontar caminho viável.
+- [x] Diagnóstico outcome-blind dos 18 failures materializado.
+- [ ] Emenda v1.2 pré-registrada.
 - [ ] Novo probe v1.2 executado, se autorizado.
 - [ ] Decisão final sobre full 1355.
 - [ ] Backtest completo somente se full route for autorizado.
+
+---
+
+## 11. Referências internas auditáveis
+
+1. `registry/w4c_r1_earnings_ir_official_domain_capacity_summary_v1_1_1.json`.
+2. `registry/w4c_r1_earnings_ir_official_domain_execution_manifest_v1_1_1.json`.
+3. `registry/w4c_r1_earnings_ir_official_domain_result_freeze_v1_1_1.json`.
+4. `registry/w4c_r1_earnings_ir_official_domain_failure_diagnosis_v1_1_1.json`.
+5. `registry/w4c_r1_earnings_ir_probe_sample_v1.json`.
