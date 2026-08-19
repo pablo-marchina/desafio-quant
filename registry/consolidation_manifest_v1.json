@@ -1,0 +1,107 @@
+{
+  "artifact": "ARGOS_DOCUMENTATION_CONSOLIDATION_MANIFEST",
+  "version": "v1.0",
+  "date": "2026-08-19",
+  "repository": "pablo-marchina/desafio-quant",
+  "purpose": "Consolidate project history, source inventory, scientific truth boundaries, post-freeze work and presentation references into one auditable GitHub entry point without reopening FST-v1.0.",
+  "scientific_authority": {
+    "final_scientific_truth": "registry/final_scientific_truth.json",
+    "freeze_version": "FST-v1.0",
+    "freeze_date": "2026-08-11",
+    "thesis_constitution": "ART-027_FREEZE_v1.0 / TF-v1.0",
+    "submission_freeze": "SF-v3.0",
+    "probabilistic_champion": "M2",
+    "economic_champion": "C0_NO_TRADE",
+    "H1": "SUPPORTED_IN_TESTED_SAMPLE",
+    "H2": "FAIL_UNDER_FROZEN_EXP07I",
+    "H3": "BLOCKED_BY_H2_FAIL_NO_RESCUE",
+    "H4": "BLOCKED_BY_H2_FAIL",
+    "H5": "BLOCKED_BY_H4"
+  },
+  "created_or_updated_by_this_consolidation": [
+    {
+      "path": "docs/30_complete_development_journey.md",
+      "role": "full chronological and methodological project history",
+      "class": "DOCUMENTATION"
+    },
+    {
+      "path": "docs/31_consolidated_source_artifact_inventory.md",
+      "role": "master index for official documents, Drive governance, experiments, registries and post-freeze layers",
+      "class": "DOCUMENTATION"
+    },
+    {
+      "path": "docs/reference/ONBOARDING_FINANCE_04_05_transcript.md",
+      "role": "text snapshot of presentation reference supplied in conversation",
+      "class": "PRESENTATION_REFERENCE_ONLY"
+    },
+    {
+      "path": "README.md",
+      "role": "consolidated repository entry point and scientific/post-freeze separation",
+      "class": "DOCUMENTATION"
+    },
+    {
+      "path": "registry/consolidation_manifest_v1.json",
+      "role": "machine-readable consolidation manifest",
+      "class": "REGISTRY"
+    }
+  ],
+  "drive_governance_sources": [
+    {
+      "title": "ARGOS — CURRENT TRUTH CT-v4.0 | FINAL SCIENTIFIC TRUTH",
+      "drive_id": "1MRWhaYaVkEwBVJTWTWtwziK7qQtFOtxJsvabzUV5Msw",
+      "class": "AUTHORITATIVE_GOVERNANCE"
+    },
+    {
+      "title": "ARGOS — Registro Mestre de Fontes, Evidências e Proveniência — SR-v3.0",
+      "drive_id": "12dGCC306uEVNC62qU8nUKL_jT__WKSD1jhzBT-VHXHk",
+      "class": "AUTHORITATIVE_PROVENANCE"
+    },
+    {
+      "title": "ARGOS — ART-027 | Constituição da Tese e Controle de Deriva — FREEZE v1.0",
+      "drive_id": "1WyH-cJ_BB42r0jJ1LlU6JC4PQZHj3ysJAOnKdKsjH9o",
+      "class": "THESIS_CONSTITUTION"
+    },
+    {
+      "title": "ARGOS — Matriz de Hipóteses, Freeze da Tese e Pré-Relatório",
+      "drive_id": "1h1JAzYdqFurIP17_69c1ZWqcKI1NzrAbChi-DGLC8io",
+      "class": "HYPOTHESIS_HISTORY"
+    },
+    {
+      "title": "ARGOS — Dossiê Mestre | CURRENT TRUTH CT-v3.0",
+      "drive_id": "16eXAZ2zi8VmPBnMCXg1j7QpB-PV6zWlsUg47CiVjhPA",
+      "class": "HISTORICAL_GOVERNANCE"
+    },
+    {
+      "title": "ARGOS — Dossiê Mestre | Arquivo Integral Pré-Reancoragem — 02-08-2026",
+      "drive_id": "1t3ezXqbe38bd93d17NUjsVL8i85aY0gmfyqjZqRAZ74",
+      "class": "ARCHIVED_HISTORY"
+    }
+  ],
+  "workspace_artifacts": {
+    "ART-016": "1hH0G91tUsN_tAr6LEcIdnxd_diJOSKuaM3yPYYuHnpI",
+    "ART-018": "19WVFoYzDX0FTAht4xti30DPvdZskseNquyUKNuJn2CY",
+    "ART-019": "12_1w7fvJGUBSw26HeQp47zOnh049S1lrcZiG0jA21FU",
+    "ART-020": "1mcqyokeXaWBvPW2ZIA92FxSoxVnJ2pmcxjP2ZAssoFg",
+    "ART-021": "1Hst0x_IszR2BjxsmnV-XO0W8ey4sC6QNencJz9kYnhA",
+    "ART-022": "1RhSm_K4UszP3phL6we7oF8YF2QisV5z4fWx-WK2ws7Y",
+    "ART-023": "1fNcVAW7OgqGrpAg_p9gbIoM6Y1fHgnuAIEvF80jvr6I",
+    "ART-024": "1ztvcEdAO4GVL2Oq_BWS0JprzJgn-tHJKsBU8yQmfuLg",
+    "ART-025": "16-SejsFJeyk6GJXHCimXAWRGCUqeiEB68qsp3ZpfbsA",
+    "ART-026": "19DjMY73v6HXZgREFd8-eLB5cwsz6Zlt3Vwv66akmFYc",
+    "ART-027": "1WyH-cJ_BB42r0jJ1LlU6JC4PQZHj3ysJAOnKdKsjH9o"
+  },
+  "post_freeze_boundaries": {
+    "W4": "POST_FREEZE_EXTENSION",
+    "W4_C_OFFICIAL_DOMAIN": "POST_FREEZE_EXTENSION",
+    "FP_v1_W2A": "POST_FREEZE_DESCRIPTIVE_ACCOUNTING",
+    "PRESENTATION_BACKTESTS_2026_08_19": "PRESENTATION_DEMO_ENGINEERING",
+    "may_change_FST_v1_0": false
+  },
+  "presentation_reference": {
+    "original_filename": "ONBOARDING FINANCE 04-05.pptx",
+    "repo_snapshot": "docs/reference/ONBOARDING_FINANCE_04_05_transcript.md",
+    "class": "PRESENTATION_REFERENCE_ONLY",
+    "scientific_evidence": false
+  },
+  "maintenance_rule": "After any execution, gate, audit, decision, scope change, material bug or plan change, record inputs, method, artifacts, results, limitations, decision, next step and evidence class. No post-hoc experiment may rewrite FST-v1.0 without a demonstrated factual/provenance error or conflicting authoritative source."
+}
