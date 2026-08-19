@@ -32,7 +32,11 @@ Interpretação central: a probabilidade point-in-time da Polymarket mostrou val
 
 - **Jornada completa:** [`docs/30_complete_development_journey.md`](docs/30_complete_development_journey.md)
 - **Inventário consolidado de documentos/fontes:** [`docs/31_consolidated_source_artifact_inventory.md`](docs/31_consolidated_source_artifact_inventory.md)
+- **Master provenance snapshot (OFF/EDU/R/DAT/ART):** [`docs/32_master_provenance_snapshot.md`](docs/32_master_provenance_snapshot.md)
+- **Snapshot CT-v4:** [`docs/drive_snapshots/CT_v4_final_scientific_truth.md`](docs/drive_snapshots/CT_v4_final_scientific_truth.md)
+- **Snapshot ART-027:** [`docs/drive_snapshots/ART_027_thesis_constitution_freeze_v1.md`](docs/drive_snapshots/ART_027_thesis_constitution_freeze_v1.md)
 - **Verdade científica final:** [`registry/final_scientific_truth.json`](registry/final_scientific_truth.json)
+- **Manifesto da consolidação:** [`registry/consolidation_manifest_v1.json`](registry/consolidation_manifest_v1.json)
 - **Freeze humano da submissão:** [`docs/29_final_scientific_truth_submission_freeze.md`](docs/29_final_scientific_truth_submission_freeze.md)
 - **Histórico resumido:** [`docs/09_project_history.md`](docs/09_project_history.md)
 - **Índice original de fontes:** [`docs/08_source_index.md`](docs/08_source_index.md)
