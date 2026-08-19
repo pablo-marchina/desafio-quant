@@ -1,0 +1,45 @@
+{
+  "artifact": "PRESENTATION_DEMO_FORECASTEX_BACKTEST_V2",
+  "created_at_utc": "2026-08-19T14:09:26+00:00",
+  "fee_per_executed_contract": 0.01,
+  "fetch_error_samples": [],
+  "guardrails": [
+    "presentation_demo_only",
+    "retrospective_non_confirmatory",
+    "does_not_replace_frozen_competition_protocol"
+  ],
+  "pricing_policy": "actual ForecastEx Yes and No daily close prices; no 1-p complement assumption for entry",
+  "schema_error_samples": [],
+  "selection_policy": "deterministic one complete Yes/No threshold contract per accepted canonical event before reading economic fields",
+  "settlement_policy": "official settlement_price from the daily prices archive; complementary settlement inferred only if one side is present",
+  "status": "MATERIALIZED_BACKTEST",
+  "summary": {
+    "abstained_neutral": 0,
+    "blocked_reason": "",
+    "buy_no": 108,
+    "buy_yes": 2,
+    "complete_yes_no_pairs_selected": 120,
+    "executed_trades": 110,
+    "fee_per_executed_contract": 0.01,
+    "group_stats": {
+      "complete_yes_no_pairs": 9953,
+      "not_expired": 4738,
+      "rows_seen": 467868,
+      "selected_groups": 120
+    },
+    "history_returned": 115,
+    "hit_rate": 0.9090909090909091,
+    "markets_considered": 120,
+    "mean_net_pnl_per_contract": 0.48954545454545456,
+    "median_net_pnl_per_contract": 0.11,
+    "no_entry": 5,
+    "no_settlement": 5,
+    "official_archive_dates_fetched": 142,
+    "official_archive_dates_planned": 142,
+    "route_id": "FORECASTEX_EVENT_CONTRACTS",
+    "settlement_resolved": 110,
+    "status": "MATERIALIZED_BACKTEST",
+    "total_net_pnl_per_1_contract_each": 53.85000000000003,
+    "trade_rows_total": 110
+  }
+}

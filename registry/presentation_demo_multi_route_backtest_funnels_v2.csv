@@ -1,0 +1,29 @@
+route_id,stage,count,notes
+PM_SOURCE,gamma_closed_markets_fetched,100,
+PM_ALL_POLYMARKET_CONTRACT_PNL,candidate_markets,100,Gamma closed markets filtered/normalized
+PM_ALL_POLYMARKET_CONTRACT_PNL,price_history_returned,99,44311756652055588440685018443862158389922949244484310992758163450991876928963: HTTPError: HTTP Error 400: Bad Request
+PM_ALL_POLYMARKET_CONTRACT_PNL,trade_rows_materialized,44,executed plus abstain-neutral rows
+PM_ALL_POLYMARKET_CONTRACT_PNL,executed_threshold_trades,32,BUY_YES >= 0.65; BUY_NO <= 0.35
+PM_POLYMARKET_MACRO_CONTRACT_PNL,candidate_markets,19,Gamma closed markets filtered/normalized
+PM_POLYMARKET_MACRO_CONTRACT_PNL,price_history_returned,19,
+PM_POLYMARKET_MACRO_CONTRACT_PNL,trade_rows_materialized,7,executed plus abstain-neutral rows
+PM_POLYMARKET_MACRO_CONTRACT_PNL,executed_threshold_trades,5,BUY_YES >= 0.65; BUY_NO <= 0.35
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,candidate_markets,2,Gamma closed markets filtered/normalized
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,price_history_returned,2,
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,trade_rows_materialized,2,executed plus abstain-neutral rows
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,executed_threshold_trades,1,BUY_YES >= 0.65; BUY_NO <= 0.35
+PM_KALSHI_CONTRACT_PNL,historical_cutoff_resolved,1,1781913600
+PM_KALSHI_CONTRACT_PNL,w4b_distributional_core_events,85,"{""distributional_core_events"": 85, ""event_rows_seen"": 391, ""events_with_resolved_data"": 85, ""market_rows_seen"": 5196, ""resolved_data_market_rows"": 770, ""selected_candidates"": 80}"
+PM_KALSHI_CONTRACT_PNL,candidate_markets,80,one pre-audited resolved-data ticker per W4-B distributional-core event; newest T0 first; no price/outcome/PnL used for selection
+PM_KALSHI_CONTRACT_PNL,settlement_detail_resolved,80,detail_errors=0
+PM_KALSHI_CONTRACT_PNL,candlestick_history_returned,80,live=12; historical=68; interval=60m; 
+PM_KALSHI_CONTRACT_PNL,trade_rows_materialized,78,correct tier-specific endpoint; 60m candles anchored to frozen W4-B operational T0
+PM_KALSHI_CONTRACT_PNL,executed_threshold_trades,57,BUY_YES >= 0.65; BUY_NO <= 0.35
+FORECASTEX_EVENT_CONTRACTS,accepted_complete_yes_no_pairs,120,"{""complete_yes_no_pairs"": 9953, ""not_expired"": 4738, ""rows_seen"": 467868, ""selected_groups"": 120}"
+FORECASTEX_EVENT_CONTRACTS,official_price_archive_dates_fetched,142,planned=142; errors=0
+FORECASTEX_EVENT_CONTRACTS,entry_history_returned,115,lookback_days=14
+FORECASTEX_EVENT_CONTRACTS,settlement_resolved,110,missing=5
+FORECASTEX_EVENT_CONTRACTS,trade_rows_materialized,110,uses actual Yes/No prices from official prices CSV
+FORECASTEX_EVENT_CONTRACTS,executed_threshold_trades,110,BUY_YES >= 0.65; BUY_NO <= 0.35; fee=$0.01
+LEGACY_EQUITY_RECONSTRUCTION,legacy_artifacts_found,4,registry/economic_backtest_quality_summary.json; registry/presentation_demo_legacy_backtest_package_v1.json; registry/presentation_demo_max_coverage_backtest_summary_v1.json; registry/w2a_results/w2a_funded_daily_ledger.csv
+LEGACY_EQUITY_RECONSTRUCTION,exp06_trade_level_rows_known,796,"baseline evidence, not new unrestricted route"
