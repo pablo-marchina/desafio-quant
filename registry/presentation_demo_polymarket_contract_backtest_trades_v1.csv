@@ -1,0 +1,1 @@
+market_id,condition_id,slug,question,category,volume_num,yes_token,entry_ts,entry_yes_price,terminal_yes_price,side,strategy,gross_pnl_per_contract,net_pnl_per_contract,return_on_stake,hit,history_points

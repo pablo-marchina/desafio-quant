@@ -1,0 +1,122 @@
+{
+  "artifact": "PRESENTATION_DEMO_POLYMARKET_CONTRACT_BACKTEST_SUMMARY",
+  "category_counts_executed": {},
+  "created_at_utc": "2026-08-19T13:09:18+00:00",
+  "data_sources": {
+    "clob_batch_prices_history": "https://clob.polymarket.com/batch-prices-history",
+    "gamma_markets": "https://gamma-api.polymarket.com/markets?closed=true",
+    "repo_context": {
+      "errors": [],
+      "files_seen": [
+        "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz",
+        "registry/w4b_polymarket_w2_overlap_v1.csv.gz",
+        "registry/presentation_demo_all_routes_polymarket_candidates_v1.csv"
+      ],
+      "normalized_with_tokens": 0,
+      "rows_scanned": 402500
+    }
+  },
+  "error_samples": {
+    "gamma": [],
+    "history": [
+      "batch 0: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 217426331434: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 692369236200: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 457148706340: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 412576708178: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 257140079602: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 530334382452: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 291618412020: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 103864131794: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 879357988308: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 118621655667: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 164196493540: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 500496421420: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 590469406952: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 188126491498: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 828550888939: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 540730863467: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 212710002918: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 740186467124: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "token 304997319474: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n"
+    ]
+  },
+  "funnel": [
+    {
+      "count": 100,
+      "notes": "",
+      "stage": "gamma_closed_markets_fetched"
+    },
+    {
+      "count": 100,
+      "notes": "parsed clobTokenIds/outcomes/outcomePrices",
+      "stage": "gamma_markets_with_binary_tokens"
+    },
+    {
+      "count": 402500,
+      "notes": "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz; registry/w4b_polymarket_w2_overlap_v1.csv.gz; registry/presentation_demo_all_routes_polymarket_candidates_v1.csv",
+      "stage": "repo_rows_scanned_for_tokens"
+    },
+    {
+      "count": 100,
+      "notes": "gamma plus repo token-normalized rows",
+      "stage": "combined_unique_token_markets"
+    },
+    {
+      "count": 100,
+      "notes": "closed market terminal outcomePrices/proxy available",
+      "stage": "terminal_yes_price_available"
+    },
+    {
+      "count": 0,
+      "notes": "batch 0: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n; token 217426331434: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n; token 692369236200: RuntimeError: HTTPError 400: {\"error\":\"invalid filters: 'startTs' and 'endTs' interval is too long\"}\n",
+      "stage": "price_history_returned"
+    },
+    {
+      "count": 0,
+      "notes": "includes executed plus abstain-neutral rows",
+      "stage": "trade_rows_materialized"
+    },
+    {
+      "count": 0,
+      "notes": "YES>=0.65; NO<=0.35",
+      "stage": "executed_threshold_trades"
+    }
+  ],
+  "guardrails": [
+    "presentation_demo_only",
+    "contract_pnl_not_equity_alpha",
+    "retrospective_non_confirmatory",
+    "does_not_replace_frozen_competition_protocol",
+    "not_deployable_without_separate_oos_liquidity_fee_slippage_controls"
+  ],
+  "metrics": {
+    "abstained_neutral": 0,
+    "buy_no": 0,
+    "buy_yes": 0,
+    "executed_trades": 0,
+    "trade_rows_total": 0
+  },
+  "mode": "RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY",
+  "outputs": {
+    "funnel": "registry/presentation_demo_polymarket_contract_backtest_funnel_v1.csv",
+    "history_sample": "registry/presentation_demo_polymarket_contract_price_history_sample_v1.csv",
+    "trades": "registry/presentation_demo_polymarket_contract_backtest_trades_v1.csv",
+    "universe": "registry/presentation_demo_polymarket_contract_backtest_universe_v1.csv"
+  },
+  "parameters": {
+    "batch_size": 20,
+    "history_fidelity": 1440,
+    "max_backtest_markets": 100,
+    "max_gamma_markets": 500,
+    "round_trip_cost_bps": 0.0,
+    "start_ts": 1577836800,
+    "threshold_no": 0.35,
+    "threshold_yes": 0.65
+  },
+  "presentation_one_liner": "Polymarket all-events moved from a census route to a computed contract-PnL demo backtest using Gamma clobTokenIds plus CLOB historical prices; this is not equity alpha and does not replace the frozen competition result.",
+  "route_id": "PM_ALL_POLYMARKET_CONTRACT_PNL",
+  "started_at_utc": "2026-08-19T13:08:42+00:00",
+  "status": "MATERIALIZED_FUNNEL_NO_EXECUTED_TRADES",
+  "version": "v1"
+}
