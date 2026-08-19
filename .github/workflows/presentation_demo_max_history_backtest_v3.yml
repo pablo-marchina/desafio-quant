@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - 'scripts/presentation_demo_max_history_backtest_v3.py'
+      - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
       - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
@@ -13,6 +14,7 @@ on:
       - main
     paths:
       - 'scripts/presentation_demo_max_history_backtest_v3.py'
+      - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
       - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
@@ -51,6 +53,7 @@ jobs:
       - name: Compile runner and retained v2 payload
         run: |
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3.py
+          python -m py_compile scripts/presentation_demo_max_history_backtest_v3_1.py
           python -m py_compile scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py
           python - <<'PY'
           import gzip
@@ -62,7 +65,7 @@ jobs:
           PY
 
       - name: Run complete max-history backtest
-        run: python scripts/presentation_demo_max_history_backtest_v3.py
+        run: python scripts/presentation_demo_max_history_backtest_v3_1.py
 
       - name: Upload v3 outputs
         uses: actions/upload-artifact@v4
@@ -93,7 +96,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "registry: materialize complete max-history backtest v3"
+            git commit -m "registry: materialize complete max-history backtest v3.1"
             git pull --rebase
             git push
           fi
