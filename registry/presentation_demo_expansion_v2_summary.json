@@ -19,7 +19,7 @@
       0.75
     ]
   },
-  "created_at_utc": "2026-08-19T23:11:53.972015+00:00",
+  "created_at_utc": "2026-08-19T23:19:25.905326+00:00",
   "deduplicated_counts": {
     "legacy_equity_rows_excluded_from_unique_market_count": 796,
     "prediction_venues_observed": [
@@ -28,9 +28,9 @@
       "Polymarket"
     ],
     "prior_v1_markets_considered_1011_is_not_a_unique_market_count": true,
-    "unique_executed_market_contract_keys_at_65_35": 718,
-    "unique_executed_venue_event_keys_at_65_35": 535,
-    "unique_price_outcome_joined_market_contract_keys": 8962,
+    "unique_executed_market_contract_keys_at_65_35": 710,
+    "unique_executed_venue_event_keys_at_65_35": 527,
+    "unique_price_outcome_joined_market_contract_keys": 8947,
     "unique_venue_event_keys": 1414,
     "unique_venue_market_contract_keys": 26147
   },
@@ -137,126 +137,126 @@
   ],
   "primary_65_35_zero_cost": {
     "COMBINED_UNIQUE_VENUE_OPPORTUNITIES": {
-      "available_price_outcome_records": 1325,
-      "average_loss": -0.7722241379310345,
-      "average_win": 0.12457724252491696,
-      "buy_no": 550,
-      "buy_yes": 168,
+      "available_price_outcome_records": 1310,
+      "average_loss": -0.7732434782608696,
+      "average_win": 0.12447142857142858,
+      "buy_no": 543,
+      "buy_yes": 167,
       "calibration": {
-        "auc": 0.7965713658196542,
+        "auc": 0.7949007088044051,
         "bins": [
           {
             "bin": "0.0-0.1",
-            "gap": 0.01840202702702702,
-            "mean_probability": 0.0255168918918919,
-            "n": 296,
-            "observed_rate": 0.04391891891891892
+            "gap": 0.019071428571428562,
+            "mean_probability": 0.02514625850340137,
+            "n": 294,
+            "observed_rate": 0.04421768707482993
           },
           {
             "bin": "0.1-0.2",
-            "gap": 0.06836021505376344,
-            "mean_probability": 0.14669354838709678,
-            "n": 93,
-            "observed_rate": 0.21505376344086022
+            "gap": 0.08867977528089888,
+            "mean_probability": 0.1472752808988764,
+            "n": 89,
+            "observed_rate": 0.23595505617977527
           },
           {
             "bin": "0.2-0.3",
-            "gap": 0.005851648351648364,
-            "mean_probability": 0.24689560439560437,
-            "n": 91,
-            "observed_rate": 0.25274725274725274
+            "gap": 0.008694444444444449,
+            "mean_probability": 0.2468611111111111,
+            "n": 90,
+            "observed_rate": 0.25555555555555554
           },
           {
             "bin": "0.3-0.4",
-            "gap": 0.02633333333333332,
-            "mean_probability": 0.3527516339869281,
-            "n": 153,
-            "observed_rate": 0.3790849673202614
+            "gap": 0.022460526315789486,
+            "mean_probability": 0.3525394736842105,
+            "n": 152,
+            "observed_rate": 0.375
           },
           {
             "bin": "0.4-0.5",
-            "gap": -0.0060578358208951966,
-            "mean_probability": 0.45381902985074596,
-            "n": 268,
-            "observed_rate": 0.44776119402985076
+            "gap": -0.0025413533834583446,
+            "mean_probability": 0.4536691729323305,
+            "n": 266,
+            "observed_rate": 0.45112781954887216
           },
           {
             "bin": "0.5-0.6",
-            "gap": 0.057471153846153866,
-            "mean_probability": 0.5290673076923077,
-            "n": 208,
-            "observed_rate": 0.5865384615384616
+            "gap": 0.043990196078431354,
+            "mean_probability": 0.5295392156862745,
+            "n": 204,
+            "observed_rate": 0.5735294117647058
           },
           {
             "bin": "0.6-0.7",
-            "gap": 0.015323863636363733,
-            "mean_probability": 0.6437670454545453,
+            "gap": 0.00401704545454562,
+            "mean_probability": 0.6437102272727271,
             "n": 88,
-            "observed_rate": 0.6590909090909091
+            "observed_rate": 0.6477272727272727
           },
           {
             "bin": "0.7-0.8",
-            "gap": 0.038854545454545475,
-            "mean_probability": 0.7429636363636364,
-            "n": 55,
-            "observed_rate": 0.7818181818181819
+            "gap": 0.07207407407407396,
+            "mean_probability": 0.7427407407407408,
+            "n": 54,
+            "observed_rate": 0.8148148148148148
           },
           {
             "bin": "0.8-0.9",
-            "gap": -0.04085365853658529,
-            "mean_probability": 0.8457317073170731,
-            "n": 41,
-            "observed_rate": 0.8048780487804879
+            "gap": -0.04487500000000022,
+            "mean_probability": 0.8448750000000003,
+            "n": 40,
+            "observed_rate": 0.8
           },
           {
             "bin": "0.9-1.0",
-            "gap": 0.013750000000000262,
-            "mean_probability": 0.9549999999999997,
-            "n": 32,
-            "observed_rate": 0.96875
+            "gap": 0.01515151515151536,
+            "mean_probability": 0.9545454545454544,
+            "n": 33,
+            "observed_rate": 0.9696969696969697
           }
         ],
-        "brier": 0.178190418490566,
-        "ece_10bin": 0.026825660377358437,
-        "log_loss": 0.5224437248886569,
-        "n": 1325
+        "brier": 0.1786344452290075,
+        "ece_10bin": 0.025867557251908355,
+        "log_loss": 0.5235667605676255,
+        "n": 1310
       },
-      "gross_loss_abs": 89.57799999999999,
-      "gross_profit": 74.99549999999996,
-      "hit_rate": 0.8384401114206128,
+      "gross_loss_abs": 88.92299999999999,
+      "gross_profit": 74.06049999999996,
+      "hit_rate": 0.8380281690140845,
       "hit_rate_wilson95": [
-        0.8097295604643437,
-        0.8635484759537926
+        0.8091210588476442,
+        0.8632971568062725
       ],
       "largest_gain": 0.35,
       "largest_loss": -0.99,
-      "losses": 116,
+      "losses": 115,
       "max_consecutive_losses": 3,
       "max_consecutive_wins": 38,
-      "max_drawdown_equal_contract_cumulative_pnl": -16.6555,
+      "max_drawdown_equal_contract_cumulative_pnl": -16.357500000000005,
       "mean_pnl_bootstrap95": [
-        -0.046370682451253475,
-        0.004596814066852337
+        -0.047086514084506995,
+        0.004521901408450638
       ],
-      "mean_pnl_per_contract": -0.020309888579387186,
-      "mean_return_on_stake": -0.023487365466353334,
-      "median_pnl_per_contract": 0.0495,
-      "median_return_on_stake": 0.052078144889036476,
-      "n": 718,
-      "p05_pnl": -0.82075,
+      "mean_pnl_per_contract": -0.020933098591549293,
+      "mean_return_on_stake": -0.023903786024079304,
+      "median_pnl_per_contract": 0.04725,
+      "median_return_on_stake": 0.04959335487051526,
+      "n": 710,
+      "p05_pnl": -0.825,
       "p05_return_on_stake": -1.0,
       "p25_pnl": 0.0025,
-      "p50_pnl": 0.0495,
-      "p75_pnl": 0.2,
-      "p95_pnl": 0.33,
-      "p95_return_on_stake": 0.4925373134328359,
-      "payoff_ratio_abs_avg_win_over_loss": 0.16132264766896298,
-      "profit_factor": 0.8372089129027214,
-      "std_pnl_per_contract": 0.34901817680952035,
-      "top3_losses_share_of_gross_loss": 0.0331554622786845,
+      "p50_pnl": 0.04725,
+      "p75_pnl": 0.20437499999999997,
+      "p95_pnl": 0.32774999999999976,
+      "p95_return_on_stake": 0.4875621890547259,
+      "payoff_ratio_abs_avg_win_over_loss": 0.16097313727285725,
+      "profit_factor": 0.8328610145856524,
+      "std_pnl_per_contract": 0.3498413696298413,
+      "top3_losses_share_of_gross_loss": 0.033399682871697985,
       "top3_losses_sum": -2.9699999999999998,
-      "total_pnl_per_1_contract_each": -14.582499999999987,
-      "wins": 602,
+      "total_pnl_per_1_contract_each": -14.862499999999981,
+      "wins": 595,
       "zeros": 0
     },
     "FORECASTEX_EVENT_REPRESENTATIVES": {
@@ -376,126 +376,126 @@
       "zeros": 0
     },
     "KALSHI_EVENT_REPRESENTATIVES": {
-      "available_price_outcome_records": 335,
-      "average_loss": -0.756875,
-      "average_win": 0.16084765625,
-      "buy_no": 103,
-      "buy_yes": 57,
+      "available_price_outcome_records": 320,
+      "average_loss": -0.7601612903225807,
+      "average_win": 0.16242561983471077,
+      "buy_no": 96,
+      "buy_yes": 56,
       "calibration": {
-        "auc": 0.7578498537072719,
+        "auc": 0.749540854206557,
         "bins": [
           {
             "bin": "0.0-0.1",
-            "gap": 0.016527777777777766,
-            "mean_probability": 0.039027777777777786,
-            "n": 36,
-            "observed_rate": 0.05555555555555555
+            "gap": 0.022205882352941166,
+            "mean_probability": 0.03661764705882354,
+            "n": 34,
+            "observed_rate": 0.058823529411764705
           },
           {
             "bin": "0.1-0.2",
-            "gap": -0.022777777777777813,
-            "mean_probability": 0.13388888888888892,
-            "n": 27,
-            "observed_rate": 0.1111111111111111
+            "gap": 0.03999999999999998,
+            "mean_probability": 0.13391304347826088,
+            "n": 23,
+            "observed_rate": 0.17391304347826086
           },
           {
             "bin": "0.2-0.3",
-            "gap": 0.009749999999999981,
-            "mean_probability": 0.24025000000000002,
-            "n": 20,
-            "observed_rate": 0.25
+            "gap": 0.023421052631578898,
+            "mean_probability": 0.2397368421052632,
+            "n": 19,
+            "observed_rate": 0.2631578947368421
           },
           {
             "bin": "0.3-0.4",
-            "gap": 0.142758620689655,
-            "mean_probability": 0.3400000000000002,
-            "n": 29,
-            "observed_rate": 0.4827586206896552
+            "gap": 0.12589285714285703,
+            "mean_probability": 0.3383928571428573,
+            "n": 28,
+            "observed_rate": 0.4642857142857143
           },
           {
             "bin": "0.4-0.5",
-            "gap": -0.020357142857143018,
-            "mean_probability": 0.44892857142857157,
-            "n": 49,
-            "observed_rate": 0.42857142857142855
+            "gap": -0.0010638297872341274,
+            "mean_probability": 0.447872340425532,
+            "n": 47,
+            "observed_rate": 0.44680851063829785
           },
           {
             "bin": "0.5-0.6",
-            "gap": 0.07384615384615367,
-            "mean_probability": 0.5223076923076925,
-            "n": 104,
-            "observed_rate": 0.5961538461538461
+            "gap": 0.04699999999999971,
+            "mean_probability": 0.5230000000000002,
+            "n": 100,
+            "observed_rate": 0.57
           },
           {
             "bin": "0.6-0.7",
-            "gap": 0.10958333333333348,
-            "mean_probability": 0.6404166666666665,
+            "gap": 0.06812500000000021,
+            "mean_probability": 0.6402083333333332,
             "n": 24,
-            "observed_rate": 0.75
+            "observed_rate": 0.7083333333333334
           },
           {
             "bin": "0.7-0.8",
-            "gap": -0.04182500000000022,
-            "mean_probability": 0.7418250000000002,
-            "n": 20,
-            "observed_rate": 0.7
+            "gap": 0.04834210526315774,
+            "mean_probability": 0.7411315789473686,
+            "n": 19,
+            "observed_rate": 0.7894736842105263
           },
           {
             "bin": "0.8-0.9",
-            "gap": 0.05674999999999997,
-            "mean_probability": 0.84325,
-            "n": 20,
-            "observed_rate": 0.9
+            "gap": 0.053421052631578925,
+            "mean_probability": 0.8413157894736842,
+            "n": 19,
+            "observed_rate": 0.8947368421052632
           },
           {
             "bin": "0.9-1.0",
-            "gap": -0.1383333333333333,
-            "mean_probability": 0.9716666666666667,
-            "n": 6,
-            "observed_rate": 0.8333333333333334
+            "gap": -0.1100000000000001,
+            "mean_probability": 0.9671428571428572,
+            "n": 7,
+            "observed_rate": 0.8571428571428571
           }
         ],
-        "brier": 0.19873760746268668,
-        "ece_10bin": 0.05866865671641789,
-        "log_loss": 0.5876859371518526,
-        "n": 335
+        "brier": 0.20151849140625006,
+        "ece_10bin": 0.046042187499999915,
+        "log_loss": 0.5953415931624673,
+        "n": 320
       },
-      "gross_loss_abs": 24.219999999999995,
-      "gross_profit": 20.588499999999996,
-      "hit_rate": 0.8,
+      "gross_loss_abs": 23.564999999999994,
+      "gross_profit": 19.653499999999994,
+      "hit_rate": 0.7960526315789473,
       "hit_rate_wilson95": [
-        0.7313149744396211,
-        0.8546173084574759
+        0.7250744001691157,
+        0.8524355941614105
       ],
       "largest_gain": 0.35,
       "largest_loss": -0.99,
-      "losses": 32,
+      "losses": 31,
       "max_consecutive_losses": 3,
       "max_consecutive_wins": 15,
-      "max_drawdown_equal_contract_cumulative_pnl": -5.211499999999998,
+      "max_drawdown_equal_contract_cumulative_pnl": -5.5115,
       "mean_pnl_bootstrap95": [
-        -0.08366195312500002,
-        0.034253437499999935
+        -0.08881990131578947,
+        0.03373050986842105
       ],
-      "mean_pnl_per_contract": -0.022696875,
-      "mean_return_on_stake": -0.031006490576498492,
-      "median_pnl_per_contract": 0.11249999999999999,
-      "median_return_on_stake": 0.12676950422141814,
-      "n": 160,
-      "p05_pnl": -0.8005000000000001,
+      "mean_pnl_per_contract": -0.025733552631578942,
+      "mean_return_on_stake": -0.033347356345357716,
+      "median_pnl_per_contract": 0.11,
+      "median_return_on_stake": 0.12359550561797752,
+      "n": 152,
+      "p05_pnl": -0.8190000000000001,
       "p05_return_on_stake": -1.0,
-      "p25_pnl": 0.01875,
-      "p50_pnl": 0.11249999999999999,
-      "p75_pnl": 0.21587500000000007,
-      "p95_pnl": 0.33,
-      "p95_return_on_stake": 0.4925373134328359,
-      "payoff_ratio_abs_avg_win_over_loss": 0.21251548307184145,
-      "profit_factor": 0.8500619322873658,
-      "std_pnl_per_contract": 0.3812944117446968,
-      "top3_losses_share_of_gross_loss": 0.1226259289843105,
+      "p25_pnl": 0.013750000000000002,
+      "p50_pnl": 0.11,
+      "p75_pnl": 0.21999999999999997,
+      "p95_pnl": 0.32725,
+      "p95_return_on_stake": 0.48645660585959083,
+      "payoff_ratio_abs_avg_win_over_loss": 0.21367257436350662,
+      "profit_factor": 0.8340123063865902,
+      "std_pnl_per_contract": 0.38638281619468623,
+      "top3_losses_share_of_gross_loss": 0.12603437301082115,
       "top3_losses_sum": -2.9699999999999998,
-      "total_pnl_per_1_contract_each": -3.6314999999999986,
-      "wins": 128,
+      "total_pnl_per_1_contract_each": -3.911499999999997,
+      "wins": 121,
       "zeros": 0
     },
     "POLYMARKET_ALL": {
@@ -652,8 +652,8 @@
     "kalshi": {
       "direct_ticker_metadata_errors": 1,
       "direct_ticker_metadata_resolved": 390,
-      "history_resolved": 336,
-      "price_and_terminal_joined": 335,
+      "history_resolved": 321,
+      "price_and_terminal_joined": 320,
       "representative_events_attempted": 391,
       "representative_selection": "max structural candlestick_count per canonical event; outcome-blind",
       "result_value_counts": {
@@ -677,6 +677,6 @@
     "H2": "FAIL_UNDER_FROZEN_EXP07I",
     "economic_champion": "C0_NO_TRADE"
   },
-  "started_at_utc": "2026-08-19T23:06:32.790038+00:00",
+  "started_at_utc": "2026-08-19T23:14:28.089464+00:00",
   "version": "v2"
 }

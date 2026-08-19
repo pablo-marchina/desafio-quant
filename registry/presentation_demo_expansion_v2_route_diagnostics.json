@@ -28,8 +28,8 @@
   "kalshi": {
     "direct_ticker_metadata_errors": 1,
     "direct_ticker_metadata_resolved": 390,
-    "history_resolved": 336,
-    "price_and_terminal_joined": 335,
+    "history_resolved": 321,
+    "price_and_terminal_joined": 320,
     "representative_events_attempted": 391,
     "representative_selection": "max structural candlestick_count per canonical event; outcome-blind",
     "result_value_counts": {
