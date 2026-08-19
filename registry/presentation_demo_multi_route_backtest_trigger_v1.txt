@@ -1,0 +1,4 @@
+triggered_at_local=2026-08-19T10:20:00-03:00
+purpose=materialize_all_six_requested_routes
+mode=retrospective_max_coverage_non_confirmatory
+routes=polymarket_all,polymarket_macro,polymarket_fda_biotech,kalshi,forecastex,legacy_equity
