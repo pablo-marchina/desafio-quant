@@ -1,0 +1,31 @@
+{
+  "artifact": "PRESENTATION_DEMO_MAX_COVERAGE_BACKTEST_AUTHORIZATION",
+  "version": "v1",
+  "created_for": "post_challenge_presentation",
+  "created_date_brt": "2026-08-18",
+  "status": "AUTHORIZED_FOR_PRESENTATION_DEMO_ONLY",
+  "mode": "RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY",
+  "objective": "Discover and summarize the oldest/legacy and largest already-materialized economic backtest evidence available in the repository for presentation of what was developed.",
+  "does_not_replace": [
+    "frozen competition scientific protocol",
+    "W4-C/R1 PIT coverage closeout",
+    "C0_NO_TRADE scientific/economic champion decision",
+    "final competition PDF claims"
+  ],
+  "allowed_scope": [
+    "scan repository registry/report/docs artifacts",
+    "read already-materialized legacy backtest, trade, return, cost and benchmark columns",
+    "rank candidate backtest artifacts by legacy/backtest evidence and coverage",
+    "materialize a presentation-only candidate table and JSON summary",
+    "compute descriptive retrospective statistics for presentation/demo use"
+  ],
+  "forbidden_claims": [
+    "scientific promotion",
+    "replacement of W4-C/R1 closeout",
+    "deployable strategy claim",
+    "validated alpha claim",
+    "portfolio Sharpe/equity curve/max drawdown claim unless supported by an explicit financed portfolio artifact"
+  ],
+  "firewall_note": "This demo track may read legacy realized return columns already materialized in the repository, but every output must be labelled retrospective, presentation-only and non-confirmatory.",
+  "presentation_positioning": "Use this to show the engineering pipeline and the maximum available legacy backtest coverage, not to change the scientific conclusion of the challenge."
+}
