@@ -1,0 +1,34 @@
+{
+  "artifact": "PRESENTATION_DEMO_POLYMARKET_CONTRACT_BACKTEST_AUTHORIZATION_V1",
+  "created_at_local": "2026-08-19T10:03:00-03:00",
+  "status": "AUTHORIZED_FOR_PRESENTATION_DEMO_EXECUTION",
+  "mode": "RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY",
+  "objective": "Run the missing post-challenge/demo Polymarket contract-PnL backtest route so the unrestricted expansion moves from execution map to computed demo trades.",
+  "scope": {
+    "primary_route": "PM_ALL_POLYMARKET_CONTRACT_PNL",
+    "data_sources": [
+      "Polymarket Gamma markets API for market metadata, clobTokenIds, outcomes and terminal/closed fields",
+      "Polymarket CLOB batch-prices-history/prices-history for token price history",
+      "existing repo census as provenance/context, not as sole token source when token columns are absent"
+    ],
+    "allowed": [
+      "fetch closed/resolved Polymarket markets",
+      "parse clobTokenIds/outcomes/outcomePrices",
+      "fetch token price history",
+      "compute presentation-only demo YES/NO contract PnL",
+      "materialize funnel, trades and summary artifacts"
+    ],
+    "not_allowed": [
+      "present as the frozen competition result",
+      "present as equity alpha",
+      "claim deployable strategy without separate out-of-sample, liquidity, fee and slippage controls",
+      "mix future settlement into signal construction"
+    ]
+  },
+  "guardrails": [
+    "presentation_demo_only",
+    "contract_pnl_not_equity_alpha",
+    "retrospective_non_confirmatory",
+    "does_not_replace_frozen_competition_protocol"
+  ]
+}
