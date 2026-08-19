@@ -1,0 +1,32 @@
+{
+  "artifact": "PRESENTATION_DEMO_ALL_ROUTES_BACKTEST_AUTHORIZATION",
+  "version": "v1",
+  "created_at_local": "2026-08-19T09:45:00-03:00",
+  "status": "AUTHORIZED_FOR_PRESENTATION_DEMO_ONLY",
+  "mode": "RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY",
+  "scope": "Run every practical post-challenge backtest expansion route, without limiting the demo to earnings, EPS, equities, or the frozen competition protocol.",
+  "authorized_routes": [
+    "PM_ALL_POLYMARKET_CONTRACT_PNL",
+    "PM_KALSHI_CONTRACT_PNL",
+    "MACRO_PM_OR_ETF_EVENT_BACKTEST",
+    "FDA_BIOTECH_EQUITY_OR_PM",
+    "FORECASTEX_EVENT_CONTRACTS",
+    "LEGACY_EQUITY_RECONSTRUCTION"
+  ],
+  "allowed_for_demo": [
+    "change event family",
+    "change traded object from equity/security return to prediction-market contract return",
+    "rank routes by maximum presentable N and engineering demonstrability",
+    "use repository-first offline scans and optional online probes",
+    "publish route scorecards, candidate manifests and funnel diagnostics"
+  ],
+  "not_allowed": [
+    "replace the frozen competition result",
+    "claim validated equity alpha from contract-PnL routes",
+    "hide that the route universe changed",
+    "mix terminal outcomes into signal construction",
+    "claim deployability without separate out-of-sample, fees, liquidity and capacity controls"
+  ],
+  "primary_objective": "Find and materialize the largest defensible presentation/demo backtest path across all available universes.",
+  "primary_expected_route": "PM_ALL_POLYMARKET_CONTRACT_PNL"
+}
