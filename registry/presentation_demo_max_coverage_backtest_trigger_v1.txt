@@ -1,0 +1,2 @@
+triggered_at_brt=2026-08-18T23:06:00-03:00
+purpose=run presentation_demo_max_coverage_backtest_v1 workflow after workflow file exists on main
