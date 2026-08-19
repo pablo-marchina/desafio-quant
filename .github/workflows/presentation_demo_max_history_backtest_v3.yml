@@ -8,6 +8,7 @@ on:
       - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
       - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
+      - 'scripts/materialize_max_history_backtest_snapshot_v3_2.py'
       - 'scripts/_payloads/max_history_analytics_v3_2/**'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
@@ -20,6 +21,7 @@ on:
       - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
       - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
+      - 'scripts/materialize_max_history_backtest_snapshot_v3_2.py'
       - 'scripts/_payloads/max_history_analytics_v3_2/**'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
@@ -66,6 +68,7 @@ jobs:
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3_1.py
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3_2.py
           python -m py_compile scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py
+          python -m py_compile scripts/materialize_max_history_backtest_snapshot_v3_2.py
           python -m py_compile scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py
           python - <<'PY'
           import gzip
@@ -81,21 +84,37 @@ jobs:
           print('analytics_source_compile_ok',len(parts),len(analytics))
           PY
 
+      - name: Prepare persistent snapshot directories
+        run: |
+          mkdir -p registry/backtests/max_history_v3_2/logs
+          mkdir -p registry/backtests/max_history_v3_2/environment
+          python -m pip freeze > registry/backtests/max_history_v3_2/environment/pip_freeze.txt
+
       - name: Run complete max-history backtest
-        run: python scripts/presentation_demo_max_history_backtest_v3_2.py
+        run: |
+          set -o pipefail
+          python scripts/presentation_demo_max_history_backtest_v3_2.py 2>&1 | tee registry/backtests/max_history_v3_2/logs/backtest_stdout.log
 
       - name: Run comprehensive analytics
-        run: python scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py
+        run: |
+          set -o pipefail
+          python scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py 2>&1 | tee registry/backtests/max_history_v3_2/logs/analytics_stdout.log
 
-      - name: Validate analytics package
+      - name: Materialize complete repository snapshot
+        run: python scripts/materialize_max_history_backtest_snapshot_v3_2.py
+
+      - name: Validate complete backtest and analytics package
         run: |
           python - <<'PY'
           import hashlib, json
           from pathlib import Path
           import pandas as pd
-          root=Path('registry/analytics/max_history_v3_2')
+
           registry=Path('registry')
-          required=[
+          analytics=registry/'analytics/max_history_v3_2'
+          backtest=registry/'backtests/max_history_v3_2'
+
+          analytics_required=[
             'README.md','REPORT.md','analytics_manifest.json','comprehensive_metrics.json',
             'performance_risk_metrics.csv','breakdowns.csv','calibration_summary.csv','calibration_bins.csv',
             'threshold_sensitivity.csv','cost_sensitivity.csv','daily_aggregates.csv.gz',
@@ -104,19 +123,36 @@ jobs:
             'temporal_diagnostics.csv','legacy_equity_metrics.json',
             'source_snapshot/max-history-backtest-v3.2-final.zip','source_snapshot/source_snapshot_manifest.json'
           ]
-          missing=[x for x in required if not (root/x).exists()]
-          assert not missing, missing
+          backtest_required=[
+            'README.md','summary.json','scorecard.csv','trades.csv','yearly.csv','funnels.csv','errors.csv','forecastex.json',
+            'runtime_config.json','run_provenance.json','code_manifest.json','backtest_manifest.json',
+            'environment/package_versions.json','environment/pip_freeze.txt',
+            'logs/backtest_stdout.log','logs/analytics_stdout.log'
+          ]
+          assert not [x for x in analytics_required if not (analytics/x).exists()]
+          assert not [x for x in backtest_required if not (backtest/x).exists()]
 
-          metrics=pd.read_csv(root/'performance_risk_metrics.csv')
+          raw_map={
+            'summary.json':'presentation_demo_max_history_backtest_summary_v3.json',
+            'scorecard.csv':'presentation_demo_max_history_backtest_scorecard_v3.csv',
+            'trades.csv':'presentation_demo_max_history_backtest_trades_v3.csv',
+            'yearly.csv':'presentation_demo_max_history_backtest_yearly_v3.csv',
+            'funnels.csv':'presentation_demo_max_history_backtest_funnels_v3.csv',
+            'errors.csv':'presentation_demo_max_history_backtest_errors_v3.csv',
+            'forecastex.json':'presentation_demo_max_history_forecastex_v3.json',
+          }
+          def sha(p):
+            return hashlib.sha256(p.read_bytes()).hexdigest()
+          for snap, raw in raw_map.items():
+            assert sha(backtest/snap)==sha(registry/raw), (snap,raw)
+
+          metrics=pd.read_csv(analytics/'performance_risk_metrics.csv')
           row=metrics.loc[metrics.label.eq('ALL_MAX_HISTORY')].iloc[0]
-          trades=pd.read_csv(registry/'presentation_demo_max_history_backtest_trades_v3.csv')
+          trades=pd.read_csv(backtest/'trades.csv')
           executed=trades[trades['side'].isin(['BUY_YES','BUY_NO'])].copy()
-          bt=json.loads((registry/'presentation_demo_max_history_backtest_summary_v3.json').read_text())
+          bt=json.loads((backtest/'summary.json').read_text())
           current=bt['prediction_max_history']
 
-          # Validate analytics against the freshly produced ledger/result, never a
-          # historical hard-coded PnL. Archived venue data can legitimately gain
-          # newly finalized candles while the code and candidate rules stay fixed.
           assert int(row.executed_trades)==len(executed)==int(current['executed_trades'])
           ledger_total=float(executed['net_pnl_per_contract'].sum())
           ledger_mean=float(executed['net_pnl_per_contract'].mean())
@@ -126,29 +162,46 @@ jobs:
           assert abs(float(current['mean_net_pnl_per_contract'])-ledger_mean)<1e-12
           assert int(row.unique_canonical_events_executed)==executed['canonical_event_id'].nunique()==int(current['canonical_events_executed'])
 
-          master=json.loads((root/'comprehensive_metrics.json').read_text())
-          manifest=json.loads((root/'analytics_manifest.json').read_text())
-          source_manifest=json.loads((root/'source_snapshot/source_snapshot_manifest.json').read_text())
-          quality=json.loads((root/'data_quality_coverage.json').read_text())
+          master=json.loads((analytics/'comprehensive_metrics.json').read_text())
+          analytics_manifest=json.loads((analytics/'analytics_manifest.json').read_text())
+          source_manifest=json.loads((analytics/'source_snapshot/source_snapshot_manifest.json').read_text())
+          quality=json.loads((analytics/'data_quality_coverage.json').read_text())
+          bt_manifest=json.loads((backtest/'backtest_manifest.json').read_text())
+          code_manifest=json.loads((backtest/'code_manifest.json').read_text())
+          provenance=json.loads((backtest/'run_provenance.json').read_text())
+
           assert master['artifact']=='MAX_HISTORY_V3_2_COMPREHENSIVE_ANALYTICS'
-          assert len(manifest['files']) >= 18
+          assert len(analytics_manifest['files']) >= 18
           assert 'max-history-backtest-v3.2-final.zip' in source_manifest['files']
+          assert bt_manifest['artifact']=='MAX_HISTORY_V3_2_BACKTEST_MANIFEST'
+          assert len(bt_manifest['files']) >= 15
+          assert len(code_manifest['files']) >= 10
+          assert provenance['artifact']=='MAX_HISTORY_V3_2_RUN_PROVENANCE'
           assert int(quality['row_integrity']['executed_rows'])==len(executed)
           assert int(quality['row_integrity']['duplicate_trade_keys'])==0
           assert int(quality['row_integrity']['missing_canonical_event_id'])==0
           assert int(quality['row_integrity']['entry_price_out_of_bounds'])==0
           assert int(quality['row_integrity']['terminal_price_out_of_bounds'])==0
-          print('analytics_validation_ok', {
-            'manifest_files':len(manifest['files']),
+
+          for rel, meta in bt_manifest['files'].items():
+            p=backtest/rel
+            assert p.exists(), rel
+            assert sha(p)==meta['sha256'], rel
+
+          print('complete_snapshot_validation_ok', {
+            'analytics_files':len(analytics_manifest['files']),
+            'backtest_files':len(bt_manifest['files'])+1,
             'executed':len(executed),
             'events':executed['canonical_event_id'].nunique(),
             'total_pnl':ledger_total,
             'mean_pnl':ledger_mean,
-            'master_sha256':hashlib.sha256((root/'comprehensive_metrics.json').read_bytes()).hexdigest(),
+            'ledger_sha256':sha(backtest/'trades.csv'),
+            'summary_sha256':sha(backtest/'summary.json'),
+            'analytics_master_sha256':sha(analytics/'comprehensive_metrics.json'),
           })
           PY
 
-      - name: Upload v3 outputs and analytics
+      - name: Upload complete v3.2 snapshot
         uses: actions/upload-artifact@v4
         with:
           name: presentation-demo-max-history-backtest-v3
@@ -160,22 +213,32 @@ jobs:
             registry/presentation_demo_max_history_backtest_funnels_v3.csv
             registry/presentation_demo_max_history_backtest_errors_v3.csv
             registry/presentation_demo_max_history_forecastex_v3.json
+            registry/backtests/max_history_v3_2/
             registry/analytics/max_history_v3_2/
 
-      - name: Commit analytics on PR branch
+      - name: Commit complete snapshot on PR branch
         if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add registry/analytics/max_history_v3_2
+          git add \
+            registry/presentation_demo_max_history_backtest_summary_v3.json \
+            registry/presentation_demo_max_history_backtest_scorecard_v3.csv \
+            registry/presentation_demo_max_history_backtest_trades_v3.csv \
+            registry/presentation_demo_max_history_backtest_yearly_v3.csv \
+            registry/presentation_demo_max_history_backtest_funnels_v3.csv \
+            registry/presentation_demo_max_history_backtest_errors_v3.csv \
+            registry/presentation_demo_max_history_forecastex_v3.json \
+            registry/backtests/max_history_v3_2 \
+            registry/analytics/max_history_v3_2
           if git diff --cached --quiet; then
-            echo "Analytics already materialized."
+            echo "Complete snapshot already materialized."
           else
-            git commit -m "analytics: materialize complete max-history v3.2 metrics"
+            git commit -m "registry: persist complete max-history v3.2 backtest snapshot"
             git push origin HEAD:${{ github.head_ref }}
           fi
 
-      - name: Commit backtest and analytics on main
+      - name: Commit complete snapshot on main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
@@ -188,11 +251,12 @@ jobs:
             registry/presentation_demo_max_history_backtest_funnels_v3.csv \
             registry/presentation_demo_max_history_backtest_errors_v3.csv \
             registry/presentation_demo_max_history_forecastex_v3.json \
+            registry/backtests/max_history_v3_2 \
             registry/analytics/max_history_v3_2
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "registry: materialize complete max-history backtest v3.2 analytics"
+            git commit -m "registry: persist complete max-history v3.2 backtest snapshot"
             git pull --rebase
             git push
           fi
