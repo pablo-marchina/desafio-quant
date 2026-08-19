@@ -1,0 +1,17 @@
+{
+  "artifact": "PRESENTATION_DEMO_FORECASTEX_ROUTE_BLOCKER",
+  "blocked_reason": "ForecastEx route has existing artifacts/data-page evidence, but no standardized runner yet resolved contract IDs to both historical prices and settlement/outcome in this repository.",
+  "created_at_utc": "2026-08-19T13:28:23+00:00",
+  "existing_repo_artifact_count": 14,
+  "existing_repo_rows_counted": 471043,
+  "forecastex_csv_links_detected": [],
+  "forecastex_data_page_status": "data_page_reachable",
+  "guardrails": [
+    "presentation_demo_only",
+    "explicit_blocker_not_backtest",
+    "does_not_replace_frozen_competition_protocol"
+  ],
+  "next_gate": "download official ForecastEx daily/intraday CSVs or broker/API contract data, normalize contract_id/date/yes_price/settlement, then run the same threshold rule.",
+  "route_id": "FORECASTEX_EVENT_CONTRACTS",
+  "status": "BLOCKED_PRICE_SETTLEMENT_JOIN_NOT_MATERIALIZED"
+}

@@ -1,0 +1,24 @@
+route_id,stage,count,notes
+PM_SOURCE,gamma_closed_markets_fetched,100,
+PM_ALL_POLYMARKET_CONTRACT_PNL,candidate_markets,100,Gamma closed markets filtered/normalized
+PM_ALL_POLYMARKET_CONTRACT_PNL,price_history_returned,99,44311756652055588440685018443862158389922949244484310992758163450991876928963: HTTPError: HTTP Error 400: Bad Request
+PM_ALL_POLYMARKET_CONTRACT_PNL,trade_rows_materialized,44,executed plus abstain-neutral rows
+PM_ALL_POLYMARKET_CONTRACT_PNL,executed_threshold_trades,32,BUY_YES >= 0.65; BUY_NO <= 0.35
+PM_POLYMARKET_MACRO_CONTRACT_PNL,candidate_markets,19,Gamma closed markets filtered/normalized
+PM_POLYMARKET_MACRO_CONTRACT_PNL,price_history_returned,19,
+PM_POLYMARKET_MACRO_CONTRACT_PNL,trade_rows_materialized,7,executed plus abstain-neutral rows
+PM_POLYMARKET_MACRO_CONTRACT_PNL,executed_threshold_trades,5,BUY_YES >= 0.65; BUY_NO <= 0.35
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,candidate_markets,2,Gamma closed markets filtered/normalized
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,price_history_returned,2,
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,trade_rows_materialized,2,executed plus abstain-neutral rows
+PM_POLYMARKET_FDA_BIOTECH_CONTRACT_PNL,executed_threshold_trades,1,BUY_YES >= 0.65; BUY_NO <= 0.35
+PM_KALSHI_CONTRACT_PNL,settled_markets_fetched,6000,
+PM_KALSHI_CONTRACT_PNL,candidate_markets,80,keyword-filtered settled markets with terminal settlement
+PM_KALSHI_CONTRACT_PNL,candlestick_history_returned,0,KXMVECROSSCATEGORY-SHARD1-S2026A2538E80AB2-FC45471056A: HTTPError: HTTP Error 404: Not Found; KXMVECROSSCATEGORY-SHARD1-S2026BB8D7D1D671-FBDB77194CF: HTTPError: HTTP Error 404: Not Found; KXMVECROSSCATEGORY-SHARD1-S202625D55D369FB-A0A90F35849: HTTPError: HTTP Error 404: Not Found
+PM_KALSHI_CONTRACT_PNL,trade_rows_materialized,0,executed plus abstain-neutral rows
+PM_KALSHI_CONTRACT_PNL,executed_threshold_trades,0,BUY_YES >= 0.65; BUY_NO <= 0.35
+FORECASTEX_EVENT_CONTRACTS,repo_forecastex_artifacts,14,rows_counted=471043
+FORECASTEX_EVENT_CONTRACTS,official_data_page_probe,0,data_page_reachable
+FORECASTEX_EVENT_CONTRACTS,price_settlement_join,0,"ForecastEx route has existing artifacts/data-page evidence, but no standardized runner yet resolved contract IDs to both historical prices and settlement/outcome in this repository."
+LEGACY_EQUITY_RECONSTRUCTION,legacy_artifacts_found,4,registry/economic_backtest_quality_summary.json; registry/presentation_demo_legacy_backtest_package_v1.json; registry/presentation_demo_max_coverage_backtest_summary_v1.json; registry/w2a_results/w2a_funded_daily_ledger.csv
+LEGACY_EQUITY_RECONSTRUCTION,exp06_trade_level_rows_known,796,"baseline evidence, not new unrestricted route"
