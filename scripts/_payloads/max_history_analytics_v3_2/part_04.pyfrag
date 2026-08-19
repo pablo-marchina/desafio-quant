@@ -1,0 +1,94 @@
+report.append(f"- Executed trades: **{int(A.executed_trades):,}** across **{int(A.unique_canonical_events_executed):,}** canonical events.\n- Total one-contract-each net PnL: **{A.total_net_pnl:+.6f}**; mean **{A.mean_net_pnl:+.6f}**; median **{A.median_net_pnl:+.6f}**.\n- Hit rate: **{pct(A.hit_rate)}** (Wilson 95% CI {pct(A.hit_rate_wilson95_low)}–{pct(A.hit_rate_wilson95_high)}).\n- Aggregate turnover ROI (`sum PnL / sum bought-side entry stake`): **{pct(A.aggregate_return_on_stake_total_pnl_over_total_stake)}**. This is not a portfolio return.\n- Profit factor: **{num(A.profit_factor,3)}**; average win/loss payoff ratio: **{num(A.payoff_ratio_avg_win_abs_avg_loss,3)}**.\n- Additive one-contract sequence max drawdown: **{A.max_additive_drawdown:+.6f}**, from {A.drawdown_start_date} to trough {A.drawdown_trough_date}; recovered={bool(A.recovered)}.\n")
+report.append('## Statistical uncertainty\n')
+report.append(f"- IID t-test mean PnL=0: t={A.iid_t_stat_mean_zero:.3f}, p={A.iid_ttest_p_two_sided:.4g}.\n- Bootstrap 95% CI for mean PnL: **[{A.bootstrap95_mean_pnl_low:+.6f}, {A.bootstrap95_mean_pnl_high:+.6f}]**.\n- HAC(10) t={A.hac10_t_mean_zero:.3f}, p={A.hac10_p_two_sided:.4g}; HAC(20) t={A.hac20_t_mean_zero:.3f}, p={A.hac20_p_two_sided:.4g}.\n- Canonical-event cluster-robust t={A.canonical_event_cluster_t_mean_zero:.3f}, p={A.canonical_event_cluster_p_two_sided:.4g}.\n- Break-even additional adverse cost is **{A.break_even_additional_cost_per_executed_contract:.6f} per executed contract**, or **{A.break_even_additional_cost_bps_of_total_stake:.1f} bps of aggregate stake turnover**.\n")
+report.append('## By venue\n\n'+venues_tbl.to_markdown(index=False)+'\n')
+report.append('## Calibration of entry Yes price\n\n'+cal[['n','brier_score','brier_skill_vs_climatology','log_loss_soft_settlement','roc_auc_binary_settlements','ece_10_equal_width','logistic_calibration_intercept','logistic_calibration_slope']].reset_index().to_markdown(index=False)+'\n')
+report.append('## Temporal diagnostics\n\n'+trenddf.reset_index().to_markdown(index=False)+'\n')
+report.append('## Files\n')
+for f in master['files']: report.append(f'- `{f}`\n')
+report.append('- `comprehensive_metrics.json` — master machine-readable package.\n- `README.md` — definitions, reproducibility and caveats.\n')
+(OUT/'REPORT.md').write_text('\n'.join(report))
+
+readme=f'''# Max-history v3.2 analytics package
+
+This directory contains deterministic post-backtest analytics calculated from the final v3.2 trade ledger.
+
+## Source identity
+
+- Backtest artifact: `PRESENTATION_DEMO_MAX_HISTORY_BACKTEST`, version `{summary.get('version')}`
+- Final trade rows: {len(trades)}
+- Executed trades: {len(ex)}
+- Reproducible executed-trade hash: `{repro.get('executed_trade_normalized_sha256') or 'see reproducibility report'}`
+- Analytics RNG seed: `{SEED}`
+
+## Directory contents
+
+- `comprehensive_metrics.json`: master machine-readable analytics object.
+- `performance_risk_metrics.csv`: performance, tail risk, significance, drawdown, streak and stake metrics for combined, venues, sides and event-dedup view.
+- `breakdowns.csv`: venue/year/month/quarter/side/category/probability-bin breakdowns.
+- `calibration_summary.csv` and `calibration_bins.csv`: Brier, log loss, AUC, ECE/MCE and calibration curve data.
+- `threshold_sensitivity.csv`: symmetric threshold grid from 0.50/0.50 through 0.90/0.10. **Sensitivity only, not model selection.**
+- `cost_sensitivity.csv`: incremental adverse execution-cost scenarios on the original v3.2 trades.
+- `daily_aggregates.csv.gz`: daily one-contract PnL/stake aggregates used for order-invariant daily drawdown checks.
+- `rolling_trade_windows.csv.gz`: full rolling 25/50/100/250-trade diagnostics.
+- `rolling_window_summary.csv`: worst, best and latest observation for each rolling metric/window/venue.
+- `cross_venue_overlap.csv`: same-canonical-event price/signal/PnL comparisons by venue pair.
+- `canonical_event_dedup.csv.gz`: equal-event event-cluster ledger.
+- `concentration_metrics.csv`: concentration of positive/negative and absolute PnL.
+- `data_quality_coverage.json`: source hashes, coverage funnels, error inventory and quote-integrity checks.
+- `temporal_diagnostics.csv`: trend and first-half/second-half diagnostics.
+- `legacy_equity_metrics.json`: separate derived metrics for the W2A funded equity baseline.
+- `REPORT.md`: concise human-readable interpretation.
+
+## Metric conventions
+
+1. **Prediction-market PnL is additive one-contract PnL**, not portfolio NAV.
+2. `aggregate_return_on_stake = sum(net PnL) / sum(entry price of bought side)` is a turnover-normalized diagnostic, not a time-weighted portfolio return.
+3. Additive drawdown is computed from the chronological cumulative one-contract PnL sequence; percentage drawdown is intentionally not invented because no funded bankroll/sizing rule is defined for the prediction-market suite.
+4. ForecastEx already includes the $0.01 executed-contract fee embedded in v3.2. `cost_sensitivity.csv` applies additional adverse cost on top of existing net PnL.
+5. Calibration uses actual entry Yes prices and terminal Yes payouts. Fractional settlements are retained for Brier/log-loss; AUC/logistic calibration use binary settlements only.
+6. Threshold sensitivity recomputes trade direction from the same fixed candidate ledger. It is retrospective robustness analysis and must not be used to claim a newly optimized out-of-sample threshold.
+7. Statistical tests are descriptive. IID, HAC and canonical-event clustered standard errors are all provided because dependence assumptions materially affect inference.
+8. The legacy funded-equity baseline remains economically separate and is never summed with prediction-market contract PnL.
+
+## Reproduction
+
+The repository script `scripts/presentation_demo_max_history_analytics_v3_2.py` is the canonical generator. It uses fresh v3.2 registry outputs when present; otherwise it falls back to `source_snapshot/max-history-backtest-v3.2-final.zip`, so the package remains reproducible directly from this branch.
+'''
+(OUT/'README.md').write_text(readme)
+
+# ---------- freeze source snapshot + manifests ----------
+import zipfile
+# If fresh root outputs exist, refresh the immutable source snapshot archive.
+if all((REG/n).exists() for n in CSV_INPUTS + JSON_INPUTS):
+    with zipfile.ZipFile(SNAP_ZIP,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+        for name in CSV_INPUTS + JSON_INPUTS:
+            z.write(REG/name,arcname=name)
+        for opt in ['presentation_demo_max_history_profile_v3.json','reproducibility_report_v3_2.json']:
+            candidates=[REG/opt,CACHE/opt]
+            q=next((x for x in candidates if x.exists()),None)
+            if q: z.write(q,arcname=opt)
+
+def file_record(p: Path):
+    rec={'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+    if p.name.endswith('.csv') or p.name.endswith('.csv.gz'):
+        try: rec['rows']=int(len(pd.read_csv(p)))
+        except Exception: pass
+    return rec
+source_manifest={'artifact':'MAX_HISTORY_V3_2_SOURCE_SNAPSHOT_MANIFEST','version':'1.0','files':{}}
+for p in sorted(SNAP.iterdir()):
+    if p.is_file() and p.name!='source_snapshot_manifest.json': source_manifest['files'][p.name]=file_record(p)
+(SNAP/'source_snapshot_manifest.json').write_text(json.dumps(source_manifest,indent=2,sort_keys=True)+'\n')
+analytics_manifest={'artifact':'MAX_HISTORY_V3_2_ANALYTICS_MANIFEST','version':'1.0','files':{}}
+for p in sorted(OUT.iterdir()):
+    if p.is_file() and p.name!='analytics_manifest.json': analytics_manifest['files'][p.name]=file_record(p)
+(OUT/'analytics_manifest.json').write_text(json.dumps(analytics_manifest,indent=2,sort_keys=True)+'\n')
+
+print('wrote',len(list(OUT.iterdir())),'files')
+print(metrics_df[['label','executed_trades','hit_rate','total_net_pnl','mean_net_pnl','profit_factor','aggregate_return_on_stake_total_pnl_over_total_stake','max_additive_drawdown','iid_ttest_p_two_sided','hac10_p_two_sided','canonical_event_cluster_p_two_sided']].to_string(index=False))
+print('\ncalibration')
+print(pd.DataFrame(cal_summary).to_string(index=False))
+print('\nthreshold best total')
+print(best_total)
+print('\nquality')
+print(json.dumps(quality['row_integrity'],indent=2))
