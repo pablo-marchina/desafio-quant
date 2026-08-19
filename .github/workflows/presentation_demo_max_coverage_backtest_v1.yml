@@ -1,0 +1,42 @@
+name: Presentation demo max coverage backtest discovery
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/presentation_demo_max_coverage_backtest_discovery_v1.py'
+      - 'registry/presentation_demo_max_coverage_backtest_authorization_v1.json'
+      - 'registry/presentation_demo_max_coverage_backtest_trigger_v1.txt'
+      - '.github/workflows/presentation_demo_max_coverage_backtest_v1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run presentation demo discovery
+        run: python scripts/presentation_demo_max_coverage_backtest_discovery_v1.py
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/presentation_demo_max_coverage_backtest_candidates_v1.csv registry/presentation_demo_max_coverage_backtest_summary_v1.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "registry: materialize presentation demo max coverage backtest v1"
+            git push
+          fi
