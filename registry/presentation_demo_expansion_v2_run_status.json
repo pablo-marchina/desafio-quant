@@ -1,0 +1,8 @@
+{
+  "artifact": "PRESENTATION_DEMO_EXPANSION_V2_RUN_STATUS",
+  "head_sha": "59e0bbfa952277abd7fab3c981624ba06f6ddd9e",
+  "run_id": 32311794364,
+  "scientific_firewall": "FST-v1.0 unchanged; H2 remains FAIL; C0_NO_TRADE unchanged.",
+  "started_at_utc": "2026-08-19T23:06:30.459145+00:00",
+  "status": "RUNNING"
+}
