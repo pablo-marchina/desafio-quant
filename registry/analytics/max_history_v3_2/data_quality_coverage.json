@@ -1,0 +1,154 @@
+{
+  "coverage": {
+    "FORECASTEX": {
+      "canonical_events_executed": 182,
+      "canonical_universe": 481,
+      "complete_yes_no_pairs_selected": 394,
+      "executed_trades": 182,
+      "execution_rate_of_trade_rows": 0.9837837837837838,
+      "history_coverage_of_canonical_universe": 0.8004158004158004,
+      "history_returned": 385,
+      "markets_considered": 481,
+      "non_executable_quote_pairs_excluded": 178,
+      "raw_trade_rows_before_execution_gate": 363,
+      "trade_row_coverage_of_canonical_universe": 0.38461538461538464,
+      "trade_rows_total": 185
+    },
+    "KALSHI": {
+      "canonical_events_executed": 229,
+      "canonical_universe": 391,
+      "executed_trades": 229,
+      "execution_rate_of_trade_rows": 0.6450704225352113,
+      "history_coverage_of_canonical_universe": 0.907928388746803,
+      "history_returned": 355,
+      "live_provisional_excluded": 34,
+      "markets_considered": 391,
+      "trade_row_coverage_of_canonical_universe": 0.907928388746803,
+      "trade_rows_total": 355
+    },
+    "POLYMARKET": {
+      "canonical_events_executed": 863,
+      "canonical_universe": 1591,
+      "executed_trades": 863,
+      "execution_rate_of_trade_rows": 0.6013937282229965,
+      "history_coverage_of_canonical_universe": 0.901948460087995,
+      "history_returned": 1435,
+      "market_detail_unresolved": 89,
+      "markets_considered": 1591,
+      "settled_binary_market_resolved": 1502,
+      "trade_row_coverage_of_canonical_universe": 0.901948460087995,
+      "trade_rows_total": 1435
+    },
+    "canonical_universes": {
+      "FORECASTEX": 481,
+      "KALSHI": 391,
+      "POLYMARKET": 1591
+    }
+  },
+  "error_inventory": {
+    "by_route_stage": {
+      "FORECASTEX_EVENT_CONTRACTS|coverage": 1,
+      "FORECASTEX_EVENT_CONTRACTS|non_executable_quote_pair": 178,
+      "PM_ALL_POLYMARKET_CONTRACT_PNL|entry_pair": 67,
+      "PM_ALL_POLYMARKET_CONTRACT_PNL|market_detail": 89,
+      "PM_KALSHI_CONTRACT_PNL|candidate": 2
+    },
+    "total_errors": 337
+  },
+  "quote_integrity": {
+    "FORECASTEX": {
+      "entry_quote_sum_abs_dev_from_1_mean": 0.008540540540540547,
+      "entry_quote_sum_max": 1.01,
+      "entry_quote_sum_mean": 1.0085405405405405,
+      "entry_quote_sum_min": 1.0,
+      "entry_quote_sum_outside_0_90_1_10": 0,
+      "history_points_max": 14,
+      "history_points_median": 12.0,
+      "history_points_min": 1,
+      "n": 185,
+      "terminal_quote_sum_abs_dev_from_1_mean": 0.0,
+      "terminal_quote_sum_mean": 1.0
+    },
+    "KALSHI": {
+      "entry_quote_sum_abs_dev_from_1_mean": 7.19299424405031e-18,
+      "entry_quote_sum_max": 1.0,
+      "entry_quote_sum_mean": 1.0,
+      "entry_quote_sum_min": 0.9999999999999999,
+      "entry_quote_sum_outside_0_90_1_10": 0,
+      "history_points_max": 263,
+      "history_points_median": 32.0,
+      "history_points_min": 1,
+      "n": 355,
+      "terminal_quote_sum_abs_dev_from_1_mean": 0.0,
+      "terminal_quote_sum_mean": 1.0
+    },
+    "POLYMARKET": {
+      "entry_quote_sum_abs_dev_from_1_mean": 2.787456445993034e-05,
+      "entry_quote_sum_max": 1.01,
+      "entry_quote_sum_mean": 1.00002787456446,
+      "entry_quote_sum_min": 1.0,
+      "entry_quote_sum_outside_0_90_1_10": 0,
+      "history_points_max": 16,
+      "history_points_median": 11.0,
+      "history_points_min": 1,
+      "n": 1435,
+      "terminal_quote_sum_abs_dev_from_1_mean": 7.736745816203181e-20,
+      "terminal_quote_sum_mean": 1.0
+    }
+  },
+  "row_integrity": {
+    "abstain_rows": 701,
+    "duplicate_full_rows": 0,
+    "duplicate_trade_keys": 0,
+    "entry_price_out_of_bounds": 0,
+    "executed_rows": 1274,
+    "history_points_zero_or_negative": 0,
+    "missing_canonical_event_id": 0,
+    "missing_entry_no": 0,
+    "missing_entry_yes": 0,
+    "terminal_price_out_of_bounds": 0,
+    "trade_rows": 1975
+  },
+  "source": {
+    "artifact_version": "v3.2",
+    "backtest_status": "MATERIALIZED_COMPLETE_MAX_HISTORY_BACKTEST",
+    "reproducibility": {},
+    "source_files": {
+      "presentation_demo_max_history_backtest_errors_v3.csv": {
+        "bytes": 36041,
+        "sha256": "62f1d155783fbb16738aa2d8cd4b59da80fe0ca5d6aab0ad760454ca02f5010d",
+        "stored_path": "registry/presentation_demo_max_history_backtest_errors_v3.csv"
+      },
+      "presentation_demo_max_history_backtest_funnels_v3.csv": {
+        "bytes": 2089,
+        "sha256": "993581c7dbb15fad049cc1a9ab58fcddf773f4a3eee1c249644dc595727c72ac",
+        "stored_path": "registry/presentation_demo_max_history_backtest_funnels_v3.csv"
+      },
+      "presentation_demo_max_history_backtest_scorecard_v3.csv": {
+        "bytes": 848,
+        "sha256": "33e9f85f110bf4f141bd15768007845c4f73a1567a9f4a85e95a95bd0203e276",
+        "stored_path": "registry/presentation_demo_max_history_backtest_scorecard_v3.csv"
+      },
+      "presentation_demo_max_history_backtest_summary_v3.json": {
+        "bytes": 9060,
+        "sha256": "0245651f84bfb1a4edd4b8b0d5b08caeda9270c561e9e906912c7ded70b4ce02",
+        "stored_path": "registry/presentation_demo_max_history_backtest_summary_v3.json"
+      },
+      "presentation_demo_max_history_backtest_trades_v3.csv": {
+        "bytes": 964406,
+        "sha256": "f9ccc5787fb0b19c151b47a0de03d6107e904abb24502b86ba8dff9a00998114",
+        "stored_path": "registry/presentation_demo_max_history_backtest_trades_v3.csv"
+      },
+      "presentation_demo_max_history_backtest_yearly_v3.csv": {
+        "bytes": 1619,
+        "sha256": "df15751617d1816d12b95f46bfb7b364896a8bb6656c8133646f6c4f3491cbfd",
+        "stored_path": "registry/presentation_demo_max_history_backtest_yearly_v3.csv"
+      },
+      "presentation_demo_max_history_forecastex_v3.json": {
+        "bytes": 1690,
+        "sha256": "e86674e27feff8afa6000c5f1a756ad186187af333a4dd7e9ee9d1ef469fb090",
+        "stored_path": "registry/presentation_demo_max_history_forecastex_v3.json"
+      }
+    }
+  }
+}

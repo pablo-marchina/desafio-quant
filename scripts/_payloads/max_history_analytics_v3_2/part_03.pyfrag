@@ -1,0 +1,144 @@
+                'latest_value':float(latest[metric]),'latest_start_date':latest['start_date'],'latest_end_date':latest['end_date'],
+                'window_count':int(len(valid)),
+            })
+pd.DataFrame(rolling_summary).to_csv(OUT/'rolling_window_summary.csv',index=False)
+
+# ---------- cross venue overlaps ----------
+pair_rows=[]
+venues=sorted(trades.venue.unique())
+for i,a in enumerate(venues):
+  for b in venues[i+1:]:
+    ga=trades[trades.venue==a].set_index('canonical_event_id'); gb=trades[trades.venue==b].set_index('canonical_event_id')
+    ids=sorted(set(ga.index)&set(gb.index)); rows=[]
+    for cid in ids:
+      ra=ga.loc[cid]; rb=gb.loc[cid]
+      if isinstance(ra,pd.DataFrame): ra=ra.iloc[0]
+      if isinstance(rb,pd.DataFrame): rb=rb.iloc[0]
+      rows.append((cid,ra,rb))
+    if not rows:
+      continue
+    pa=np.array([r[1].entry_yes_price for r in rows],float); pb=np.array([r[2].entry_yes_price for r in rows],float)
+    terminal_diff=np.array([abs(r[1].terminal_yes_price-r[2].terminal_yes_price) for r in rows],float)
+    both=[r for r in rows if r[1].executed and r[2].executed]
+    pcor=scor=pnlcor=None
+    if len(rows)>2:
+      pcor=float(stats.pearsonr(pa,pb).statistic); scor=float(stats.spearmanr(pa,pb).statistic)
+    if len(both)>2:
+      pnlcor=float(stats.pearsonr([r[1].net_pnl_per_contract for r in both],[r[2].net_pnl_per_contract for r in both]).statistic)
+    signal_dis=sum(str(r[1].side)!=str(r[2].side) for r in rows)
+    pair_rows.append({'venue_a':a,'venue_b':b,'overlap_canonical_events':len(rows),'both_executed':len(both),'mean_abs_entry_yes_diff':float(np.mean(abs(pa-pb))),'median_abs_entry_yes_diff':float(np.median(abs(pa-pb))),'pearson_entry_yes':pcor,'spearman_entry_yes':scor,'terminal_outcome_disagreement_gt_0_01':int((terminal_diff>.01).sum()),'signal_disagreement_count':signal_dis,'signal_disagreement_rate':signal_dis/len(rows),'pearson_pnl_both_executed':pnlcor})
+pd.DataFrame(pair_rows).to_csv(OUT/'cross_venue_overlap.csv',index=False)
+event_df.to_csv(OUT/'canonical_event_dedup.csv.gz',index=False,compression='gzip')
+
+# ---------- concentration ----------
+conc=[]
+for label,g in [('ALL',ex),*[(v,gg) for v,gg in ex.groupby('venue')]]:
+    pnl=g.net_pnl_per_contract.to_numpy(float); pos=np.sort(pnl[pnl>0])[::-1]; neg=np.sort(pnl[pnl<0])
+    total=pnl.sum(); abs_sum=np.abs(pnl).sum()
+    row={'label':label,'n':len(g),'total_pnl':float(total),'absolute_pnl_sum':float(abs_sum),'pnl_abs_hhi':float(np.sum((np.abs(pnl)/abs_sum)**2)) if abs_sum else None}
+    for n in [1,5,10,20,50,100]:
+      row[f'top_{n}_positive_pnl']=float(pos[:n].sum()) if len(pos) else 0.0
+      row[f'top_{n}_positive_share_of_total_pnl']=safe_div(pos[:n].sum(),total) if total!=0 else None
+      row[f'worst_{n}_negative_pnl']=float(neg[:n].sum()) if len(neg) else 0.0
+    conc.append(row)
+pd.DataFrame(conc).to_csv(OUT/'concentration_metrics.csv',index=False)
+
+# ---------- data quality / coverage ----------
+quality={
+ 'source':{
+  'artifact_version':summary.get('version'),'backtest_status':summary.get('status'),'reproducibility':repro,
+  'source_files':{}
+ },
+ 'row_integrity':{},'coverage':{},'quote_integrity':{},'error_inventory':{}
+}
+for name,p in INPUT_PATHS.items():
+ if p.is_file(): quality['source']['source_files'][name]={'stored_path':p.relative_to(ROOT).as_posix(),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'bytes':p.stat().st_size}
+if repro_path and repro_path.exists():
+ quality['source']['source_files']['reproducibility_report_v3_2.json']={'stored_path':repro_path.relative_to(ROOT).as_posix() if ROOT in repro_path.parents else repro_path.as_posix(),'sha256':hashlib.sha256(repro_path.read_bytes()).hexdigest(),'bytes':repro_path.stat().st_size}
+quality['row_integrity']={
+ 'trade_rows':len(trades),'executed_rows':int(trades.executed.sum()),'abstain_rows':int((~trades.executed).sum()),
+ 'duplicate_full_rows':int(trades.duplicated().sum()),'duplicate_trade_keys':int(trades.duplicated(['venue','canonical_event_id','market_id','entry_ts']).sum()),
+ 'missing_canonical_event_id':int(trades.canonical_event_id.isna().sum()),'missing_entry_yes':int(trades.entry_yes_price.isna().sum()),'missing_entry_no':int(trades.entry_no_price.isna().sum()),
+ 'entry_price_out_of_bounds':int(((trades.entry_yes_price<0)|(trades.entry_yes_price>1)|(trades.entry_no_price<0)|(trades.entry_no_price>1)).sum()),
+ 'terminal_price_out_of_bounds':int(((trades.terminal_yes_price<0)|(trades.terminal_yes_price>1)|(trades.terminal_no_price<0)|(trades.terminal_no_price>1)).sum()),
+ 'history_points_zero_or_negative':int((trades.history_points<=0).sum())
+}
+quality['quote_integrity']={}
+for v,g in trades.groupby('venue'):
+ quality['quote_integrity'][v]={
+  'n':len(g),'entry_quote_sum_mean':float(g.entry_quote_sum.mean()),'entry_quote_sum_min':float(g.entry_quote_sum.min()),'entry_quote_sum_max':float(g.entry_quote_sum.max()),
+  'entry_quote_sum_abs_dev_from_1_mean':float((g.entry_quote_sum-1).abs().mean()),'entry_quote_sum_outside_0_90_1_10':int(((g.entry_quote_sum<.9)|(g.entry_quote_sum>1.1)).sum()),
+  'terminal_quote_sum_mean':float(g.terminal_quote_sum.mean()),'terminal_quote_sum_abs_dev_from_1_mean':float((g.terminal_quote_sum-1).abs().mean()),
+  'history_points_min':int(g.history_points.min()),'history_points_median':float(g.history_points.median()),'history_points_max':int(g.history_points.max())
+ }
+quality['coverage']['canonical_universes']=summary['canonical_universes']
+for r in summary['route_summaries']:
+ quality['coverage'][r['venue']]={k:r.get(k) for k in ['canonical_universe','markets_considered','settled_binary_market_resolved','history_returned','trade_rows_total','executed_trades','canonical_events_executed','market_detail_unresolved','live_provisional_excluded','complete_yes_no_pairs_selected','raw_trade_rows_before_execution_gate','non_executable_quote_pairs_excluded'] if k in r}
+ u=float(r.get('canonical_universe') or r.get('markets_considered') or 0); h=float(r.get('history_returned') or 0); t=float(r.get('trade_rows_total') or 0); e=float(r.get('executed_trades') or 0)
+ quality['coverage'][r['venue']].update({'history_coverage_of_canonical_universe':h/u if u else None,'trade_row_coverage_of_canonical_universe':t/u if u else None,'execution_rate_of_trade_rows':e/t if t else None})
+quality['error_inventory']['total_errors']=len(errors)
+quality['error_inventory']['by_route_stage']=errors.groupby(['route_id','stage']).size().sort_values(ascending=False).to_dict()
+# tuple keys -> string
+quality['error_inventory']['by_route_stage']={f'{a}|{b}':int(n) for (a,b),n in errors.groupby(['route_id','stage']).size().items()}
+(OUT/'data_quality_coverage.json').write_text(json.dumps(quality,indent=2,sort_keys=True,default=py)+'\n')
+
+# ---------- statistical/temporal diagnostics ----------
+trend=[]
+for label,g0 in [('ALL',ex),*[(v,g) for v,g in ex.groupby('venue')]]:
+ g=g0.sort_values('entry_datetime_utc').copy(); x=np.arange(len(g),dtype=float); y=g.net_pnl_per_contract.to_numpy(float)
+ if len(g)>2:
+  lr=stats.linregress(x,y); sr=stats.spearmanr(x,y)
+  mid=len(g)//2
+  a=y[:mid]; b=y[mid:]
+  welch=stats.ttest_ind(a,b,equal_var=False)
+  trend.append({'label':label,'n':len(g),'linear_pnl_per_trade_index_slope':lr.slope,'linear_trend_p':lr.pvalue,'spearman_time_pnl_rho':sr.statistic,'spearman_time_pnl_p':sr.pvalue,'first_half_mean_pnl':a.mean(),'second_half_mean_pnl':b.mean(),'second_minus_first_mean':b.mean()-a.mean(),'welch_halves_p':welch.pvalue})
+pd.DataFrame(trend).to_csv(OUT/'temporal_diagnostics.csv',index=False)
+
+# ---------- legacy derived ----------
+legacy=summary['legacy_funded_equity_baseline']; fr=legacy.get('funded_result',{}); ident=legacy.get('input_identity',{})
+sessions=ident.get('calendar_sessions') or 199
+legacy_derived={
+ 'source_status':legacy.get('status'),'sessions':sessions,'trades':ident.get('trades'),'longs':ident.get('longs'),'shorts':ident.get('shorts'),
+ **fr,
+ 'active_total_return_terminal_nav_minus_spy':fr.get('terminal_nav',np.nan)-fr.get('matched_spy_terminal_nav',np.nan),
+ 'annualized_return_252_from_terminal_nav':fr.get('terminal_nav',1.0)**(252/sessions)-1 if sessions else None,
+ 'annualized_spy_return_252_from_terminal_nav':fr.get('matched_spy_terminal_nav',1.0)**(252/sessions)-1 if sessions else None,
+ 'calmar_annualized_return_over_abs_max_dd':safe_div(fr.get('terminal_nav',1.0)**(252/sessions)-1,abs(fr.get('max_drawdown',0))) if fr.get('max_drawdown') else None,
+ 'turnover_per_252_sessions':fr.get('gross_turnover_initial_capital',np.nan)*252/sessions if sessions else None,
+ 'trades_per_252_sessions':ident.get('trades',0)*252/sessions if sessions else None,
+}
+(OUT/'legacy_equity_metrics.json').write_text(json.dumps(legacy_derived,indent=2,sort_keys=True,default=py)+'\n')
+
+# ---------- master summary ----------
+allm=metrics_df.set_index('label').loc['ALL_MAX_HISTORY'].to_dict()
+threshold=pd.DataFrame(threshold_rows)
+orig=threshold[(threshold.label=='ALL') & np.isclose(threshold.threshold_yes,.65)].iloc[0].to_dict()
+best_total=threshold[threshold.label=='ALL'].sort_values('total_net_pnl',ascending=False).iloc[0].to_dict()
+best_roi=threshold[threshold.label=='ALL'].sort_values('aggregate_roi_on_stake',ascending=False).iloc[0].to_dict()
+master={
+ 'artifact':'MAX_HISTORY_V3_2_COMPREHENSIVE_ANALYTICS','version':'1.0','seed':SEED,
+ 'scope':'retrospective presentation/research-only analytics over v3.2 trade ledger; does not supersede frozen confirmatory protocol',
+ 'core_performance':{k:py(v) for k,v in allm.items()},
+ 'event_dedup':{k:py(v) for k,v in metrics_df.set_index('label').loc['EVENT_DEDUP_EQUAL_EVENT'].to_dict().items()},
+ 'original_threshold_recomputed':{k:py(v) for k,v in orig.items()},
+ 'threshold_sensitivity_descriptive_only':{'max_total_pnl_row':{k:py(v) for k,v in best_total.items()},'max_roi_row':{k:py(v) for k,v in best_roi.items()},'warning':'threshold grid is retrospective sensitivity, not a permitted model-selection result'},
+ 'calibration':pd.DataFrame(cal_summary).set_index('label').to_dict(orient='index'),
+ 'coverage_and_quality':quality,
+ 'legacy_equity_derived':legacy_derived,
+ 'files':[
+   'performance_risk_metrics.csv','breakdowns.csv','calibration_summary.csv','calibration_bins.csv','threshold_sensitivity.csv','cost_sensitivity.csv','daily_aggregates.csv.gz','rolling_trade_windows.csv.gz','rolling_window_summary.csv','cross_venue_overlap.csv','canonical_event_dedup.csv.gz','concentration_metrics.csv','data_quality_coverage.json','temporal_diagnostics.csv','legacy_equity_metrics.json'
+ ]
+}
+(OUT/'comprehensive_metrics.json').write_text(json.dumps(master,indent=2,sort_keys=True,default=py)+'\n')
+
+# ---------- human-readable report ----------
+def pct(x): return 'n/a' if x is None or pd.isna(x) else f'{100*x:.3f}%'
+def num(x,d=6): return 'n/a' if x is None or pd.isna(x) else f'{x:.{d}f}'
+A=metrics_df.set_index('label').loc['ALL_MAX_HISTORY']
+venues_tbl=metrics_df[metrics_df.label.str.startswith('VENUE:')][['label','executed_trades','hit_rate','total_net_pnl','mean_net_pnl','aggregate_return_on_stake_total_pnl_over_total_stake','max_additive_drawdown','profit_factor']]
+cal=pd.DataFrame(cal_summary).set_index('label')
+trenddf=pd.DataFrame(trend).set_index('label')
+report=[]
+report.append('# Max-history v3.2 — comprehensive analytics\n')
+report.append('> Retrospective presentation/research analytics. These calculations do not replace the frozen confirmatory competition protocol and should not be interpreted as deployable alpha without cost/liquidity/sizing validation.\n')
+report.append('## Core result\n')

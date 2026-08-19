@@ -1,0 +1,91 @@
+{
+  "artifact": "MAX_HISTORY_V3_2_ANALYTICS_MANIFEST",
+  "files": {
+    "README.md": {
+      "bytes": 3606,
+      "sha256": "21cb99f827d47151f8679e5997351ff448a6190c903052191e84f2ef9e68db99"
+    },
+    "REPORT.md": {
+      "bytes": 6736,
+      "sha256": "e9a7a469e9185b09dfe720dff01f5db75c9e44d9eb79eef9e35d3ebc43ff133a"
+    },
+    "breakdowns.csv": {
+      "bytes": 36870,
+      "rows": 180,
+      "sha256": "f3a1cef0598044c9e1c407e72439cb8be2cc1b850105f39ce8e52ad4e68a2577"
+    },
+    "calibration_bins.csv": {
+      "bytes": 8719,
+      "rows": 91,
+      "sha256": "072020096d3ad5aa0941b98ab9055e0b8b442712f18895d66af1a4c5f3f6f051"
+    },
+    "calibration_summary.csv": {
+      "bytes": 2714,
+      "rows": 10,
+      "sha256": "2c7e406448c09ba01b5ab78b60dd9865c48cb7e650c45553567f08568854ce94"
+    },
+    "canonical_event_dedup.csv.gz": {
+      "bytes": 27759,
+      "rows": 1193,
+      "sha256": "c0a21e4aa39857dee0d0c1e7ff3a478fd0a5df72f2bef166589900e6b57023cc"
+    },
+    "comprehensive_metrics.json": {
+      "bytes": 25333,
+      "sha256": "f9edaee8afed6501ef225ff7bd6dc4f0ac4cc3c971dc849b18649d5486f8fd10"
+    },
+    "concentration_metrics.csv": {
+      "bytes": 1805,
+      "rows": 4,
+      "sha256": "eb02c93f10bfc709d92676497cd38ff1db732c6740d9c7ea02bc226d389b93b2"
+    },
+    "cost_sensitivity.csv": {
+      "bytes": 4176,
+      "rows": 40,
+      "sha256": "3af13e43146d0a37dc3bf23b1588970600af69781a012a1db3861a0bf121b78e"
+    },
+    "cross_venue_overlap.csv": {
+      "bytes": 694,
+      "rows": 3,
+      "sha256": "6873704efb3b1d4b206c3abbb9a9a52be390964b88ba26804a396b7fc48628b7"
+    },
+    "daily_aggregates.csv.gz": {
+      "bytes": 14344,
+      "rows": 958,
+      "sha256": "25226550c5d1b692df89f4d96a2eee169a498be04ff70d7455c1199c344f4dc0"
+    },
+    "data_quality_coverage.json": {
+      "bytes": 5881,
+      "sha256": "a5d0116f6ed5102053aec7e71449d0792dfdfb96828ee69f89ed09226ea4b029"
+    },
+    "legacy_equity_metrics.json": {
+      "bytes": 1253,
+      "sha256": "6f3fde8a6f4020800294f050aa273ef0560bbaa34ef182c3e9f6a0ba68f42845"
+    },
+    "performance_risk_metrics.csv": {
+      "bytes": 20369,
+      "rows": 14,
+      "sha256": "2d47c7b67b1c8db8aa8539b23d9e18d3311f7bbfbe654d2a12b776c4e952cfda"
+    },
+    "rolling_trade_windows.csv.gz": {
+      "bytes": 228119,
+      "rows": 8595,
+      "sha256": "05d20c1989532efaf96937f3e9de77065032110dff1ea1d56f9ca368df448cc1"
+    },
+    "rolling_window_summary.csv": {
+      "bytes": 8419,
+      "rows": 56,
+      "sha256": "5a60f2d77d822a27dbcafd802ae11caf25b47c19e829a4ffbdf1972a5869d2ba"
+    },
+    "temporal_diagnostics.csv": {
+      "bytes": 890,
+      "rows": 4,
+      "sha256": "a5279741f5ef768b25d64682b61ee630f4ed685f2cecd8acacaab56b0f58b110"
+    },
+    "threshold_sensitivity.csv": {
+      "bytes": 11786,
+      "rows": 68,
+      "sha256": "e04203f6c7d90343a9e6b2c9bc63d8f5c86ae8938a5c11be34a3e882a82a30fc"
+    }
+  },
+  "version": "1.0"
+}

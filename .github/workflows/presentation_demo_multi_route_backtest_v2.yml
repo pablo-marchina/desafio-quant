@@ -1,0 +1,97 @@
+name: Presentation demo multi-route backtest v2
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
+      - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
+      - 'registry/presentation_demo_multi_route_backtest_trigger_v2.txt'
+      - '.github/workflows/presentation_demo_multi_route_backtest_v2.yml'
+
+concurrency:
+  group: presentation-demo-multi-route-v2-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  ARGOS_MULTI_PM_FETCH_MARKETS: '1200'
+  ARGOS_MULTI_PM_ALL_MARKETS: '160'
+  ARGOS_MULTI_PM_FILTERED_MARKETS: '120'
+  ARGOS_MULTI_KALSHI_MARKETS: '80'
+  ARGOS_MULTI_KALSHI_PAGES_PER_TIER: '6'
+  ARGOS_MULTI_FORECASTEX_CONTRACTS: '120'
+  ARGOS_MULTI_FORECASTEX_WORKERS: '8'
+  ARGOS_MULTI_FORECASTEX_FEE_PER_CONTRACT: '0.01'
+  ARGOS_MULTI_HISTORY_LOOKBACK_DAYS: '14'
+  ARGOS_MULTI_HISTORY_FIDELITY: '1440'
+  ARGOS_MULTI_HTTP_TIMEOUT_SECONDS: '20'
+  ARGOS_MULTI_REQUEST_SLEEP_SECONDS: '0.08'
+  ARGOS_MULTI_THRESHOLD_YES: '0.65'
+  ARGOS_MULTI_THRESHOLD_NO: '0.35'
+  ARGOS_MULTI_ROUND_TRIP_COST_BPS: '0'
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile bootstrap and payload
+        run: |
+          python -m py_compile scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py
+          python - <<'PY'
+          import gzip
+          from pathlib import Path
+          p = Path('scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz')
+          src = gzip.decompress(p.read_bytes()).decode('utf-8')
+          compile(src, 'presentation_demo_multi_route_backtest_suite_v2.py', 'exec')
+          print('payload_compile_ok', len(src))
+          PY
+
+      - name: Run multi-route backtest suite v2
+        run: python scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py
+
+      - name: Upload v2 outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-demo-multi-route-backtest-v2
+          path: |
+            registry/presentation_demo_multi_route_backtest_summary_v2.json
+            registry/presentation_demo_multi_route_backtest_scorecard_v2.csv
+            registry/presentation_demo_multi_route_backtest_trades_v2.csv
+            registry/presentation_demo_multi_route_backtest_funnels_v2.csv
+            registry/presentation_demo_multi_route_legacy_equity_baseline_v2.json
+            registry/presentation_demo_multi_route_forecastex_backtest_v2.json
+
+      - name: Commit outputs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            registry/presentation_demo_multi_route_backtest_summary_v2.json \
+            registry/presentation_demo_multi_route_backtest_scorecard_v2.csv \
+            registry/presentation_demo_multi_route_backtest_trades_v2.csv \
+            registry/presentation_demo_multi_route_backtest_funnels_v2.csv \
+            registry/presentation_demo_multi_route_legacy_equity_baseline_v2.json \
+            registry/presentation_demo_multi_route_forecastex_backtest_v2.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "registry: materialize multi-route presentation backtest v2"
+            git pull --rebase
+            git push
+          fi

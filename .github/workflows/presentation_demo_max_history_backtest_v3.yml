@@ -1,0 +1,262 @@
+name: Presentation demo max-history backtest v3
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/presentation_demo_max_history_backtest_v3.py'
+      - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
+      - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
+      - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
+      - 'scripts/materialize_max_history_backtest_snapshot_v3_2.py'
+      - 'scripts/_payloads/max_history_analytics_v3_2/**'
+      - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
+      - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
+      - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/presentation_demo_max_history_backtest_v3.py'
+      - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
+      - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
+      - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
+      - 'scripts/materialize_max_history_backtest_snapshot_v3_2.py'
+      - 'scripts/_payloads/max_history_analytics_v3_2/**'
+      - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
+      - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
+      - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
+
+concurrency:
+  group: presentation-demo-max-history-v3-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  ARGOS_MAX_HISTORY_THRESHOLD_YES: '0.65'
+  ARGOS_MAX_HISTORY_THRESHOLD_NO: '0.35'
+  ARGOS_MAX_HISTORY_PM_LOOKBACK_DAYS: '14'
+  ARGOS_MAX_HISTORY_KALSHI_LOOKBACK_HOURS: '264'
+  ARGOS_MAX_HISTORY_HTTP_TIMEOUT: '35'
+  ARGOS_MAX_HISTORY_PM_DETAIL_WORKERS: '12'
+  ARGOS_MAX_HISTORY_KALSHI_WORKERS: '4'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install analytics dependencies
+        run: python -m pip install --disable-pip-version-check numpy pandas scipy scikit-learn statsmodels tabulate
+
+      - name: Compile runners and pinned analytics source
+        run: |
+          python -m py_compile scripts/presentation_demo_max_history_backtest_v3.py
+          python -m py_compile scripts/presentation_demo_max_history_backtest_v3_1.py
+          python -m py_compile scripts/presentation_demo_max_history_backtest_v3_2.py
+          python -m py_compile scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py
+          python -m py_compile scripts/materialize_max_history_backtest_snapshot_v3_2.py
+          python -m py_compile scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py
+          python - <<'PY'
+          import gzip
+          from pathlib import Path
+          p=Path('scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz')
+          src=gzip.decompress(p.read_bytes()).decode('utf-8')
+          compile(src,p.with_suffix('').name,'exec')
+          parts=sorted(Path('scripts/_payloads/max_history_analytics_v3_2').glob('part_*.pyfrag'))
+          assert len(parts)==4, parts
+          analytics=''.join(x.read_text(encoding='utf-8') for x in parts)
+          compile(analytics,'presentation_demo_max_history_analytics_v3_2.py','exec')
+          print('payload_compile_ok',p,len(src))
+          print('analytics_source_compile_ok',len(parts),len(analytics))
+          PY
+
+      - name: Prepare persistent snapshot directories
+        run: |
+          mkdir -p registry/backtests/max_history_v3_2/logs
+          mkdir -p registry/backtests/max_history_v3_2/environment
+          python -m pip freeze > registry/backtests/max_history_v3_2/environment/pip_freeze.txt
+
+      - name: Run complete max-history backtest
+        run: |
+          set -o pipefail
+          python scripts/presentation_demo_max_history_backtest_v3_2.py 2>&1 | tee registry/backtests/max_history_v3_2/logs/backtest_stdout.log
+
+      - name: Run comprehensive analytics
+        run: |
+          set -o pipefail
+          python scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py 2>&1 | tee registry/backtests/max_history_v3_2/logs/analytics_stdout.log
+
+      - name: Materialize complete repository snapshot
+        run: python scripts/materialize_max_history_backtest_snapshot_v3_2.py
+
+      - name: Validate complete backtest and analytics package
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          import pandas as pd
+
+          registry=Path('registry')
+          analytics=registry/'analytics/max_history_v3_2'
+          backtest=registry/'backtests/max_history_v3_2'
+
+          analytics_required=[
+            'README.md','REPORT.md','analytics_manifest.json','comprehensive_metrics.json',
+            'performance_risk_metrics.csv','breakdowns.csv','calibration_summary.csv','calibration_bins.csv',
+            'threshold_sensitivity.csv','cost_sensitivity.csv','daily_aggregates.csv.gz',
+            'rolling_trade_windows.csv.gz','rolling_window_summary.csv','cross_venue_overlap.csv',
+            'canonical_event_dedup.csv.gz','concentration_metrics.csv','data_quality_coverage.json',
+            'temporal_diagnostics.csv','legacy_equity_metrics.json',
+            'source_snapshot/max-history-backtest-v3.2-final.zip','source_snapshot/source_snapshot_manifest.json'
+          ]
+          backtest_required=[
+            'README.md','summary.json','scorecard.csv','trades.csv','yearly.csv','funnels.csv','errors.csv','forecastex.json',
+            'runtime_config.json','run_provenance.json','code_manifest.json','backtest_manifest.json',
+            'environment/package_versions.json','environment/pip_freeze.txt',
+            'logs/backtest_stdout.log','logs/analytics_stdout.log'
+          ]
+          assert not [x for x in analytics_required if not (analytics/x).exists()]
+          assert not [x for x in backtest_required if not (backtest/x).exists()]
+
+          raw_map={
+            'summary.json':'presentation_demo_max_history_backtest_summary_v3.json',
+            'scorecard.csv':'presentation_demo_max_history_backtest_scorecard_v3.csv',
+            'trades.csv':'presentation_demo_max_history_backtest_trades_v3.csv',
+            'yearly.csv':'presentation_demo_max_history_backtest_yearly_v3.csv',
+            'funnels.csv':'presentation_demo_max_history_backtest_funnels_v3.csv',
+            'errors.csv':'presentation_demo_max_history_backtest_errors_v3.csv',
+            'forecastex.json':'presentation_demo_max_history_forecastex_v3.json',
+          }
+          def sha(p):
+            return hashlib.sha256(p.read_bytes()).hexdigest()
+          for snap, raw in raw_map.items():
+            assert sha(backtest/snap)==sha(registry/raw), (snap,raw)
+
+          metrics=pd.read_csv(analytics/'performance_risk_metrics.csv')
+          row=metrics.loc[metrics.label.eq('ALL_MAX_HISTORY')].iloc[0]
+          trades=pd.read_csv(backtest/'trades.csv')
+          executed=trades[trades['side'].isin(['BUY_YES','BUY_NO'])].copy()
+          bt=json.loads((backtest/'summary.json').read_text())
+          current=bt['prediction_max_history']
+
+          assert int(row.executed_trades)==len(executed)==int(current['executed_trades'])
+          ledger_total=float(executed['net_pnl_per_contract'].sum())
+          ledger_mean=float(executed['net_pnl_per_contract'].mean())
+          assert abs(float(row.total_net_pnl)-ledger_total)<1e-12
+          assert abs(float(row.mean_net_pnl)-ledger_mean)<1e-12
+          assert abs(float(current['total_net_pnl_per_1_contract_each'])-ledger_total)<1e-12
+          assert abs(float(current['mean_net_pnl_per_contract'])-ledger_mean)<1e-12
+          assert int(row.unique_canonical_events_executed)==executed['canonical_event_id'].nunique()==int(current['canonical_events_executed'])
+
+          master=json.loads((analytics/'comprehensive_metrics.json').read_text())
+          analytics_manifest=json.loads((analytics/'analytics_manifest.json').read_text())
+          source_manifest=json.loads((analytics/'source_snapshot/source_snapshot_manifest.json').read_text())
+          quality=json.loads((analytics/'data_quality_coverage.json').read_text())
+          bt_manifest=json.loads((backtest/'backtest_manifest.json').read_text())
+          code_manifest=json.loads((backtest/'code_manifest.json').read_text())
+          provenance=json.loads((backtest/'run_provenance.json').read_text())
+
+          assert master['artifact']=='MAX_HISTORY_V3_2_COMPREHENSIVE_ANALYTICS'
+          assert len(analytics_manifest['files']) >= 18
+          assert 'max-history-backtest-v3.2-final.zip' in source_manifest['files']
+          assert bt_manifest['artifact']=='MAX_HISTORY_V3_2_BACKTEST_MANIFEST'
+          assert len(bt_manifest['files']) >= 15
+          assert len(code_manifest['files']) >= 10
+          assert provenance['artifact']=='MAX_HISTORY_V3_2_RUN_PROVENANCE'
+          assert int(quality['row_integrity']['executed_rows'])==len(executed)
+          assert int(quality['row_integrity']['duplicate_trade_keys'])==0
+          assert int(quality['row_integrity']['missing_canonical_event_id'])==0
+          assert int(quality['row_integrity']['entry_price_out_of_bounds'])==0
+          assert int(quality['row_integrity']['terminal_price_out_of_bounds'])==0
+
+          for rel, meta in bt_manifest['files'].items():
+            p=backtest/rel
+            assert p.exists(), rel
+            assert sha(p)==meta['sha256'], rel
+
+          print('complete_snapshot_validation_ok', {
+            'analytics_files':len(analytics_manifest['files']),
+            'backtest_files':len(bt_manifest['files'])+1,
+            'executed':len(executed),
+            'events':executed['canonical_event_id'].nunique(),
+            'total_pnl':ledger_total,
+            'mean_pnl':ledger_mean,
+            'ledger_sha256':sha(backtest/'trades.csv'),
+            'summary_sha256':sha(backtest/'summary.json'),
+            'analytics_master_sha256':sha(analytics/'comprehensive_metrics.json'),
+          })
+          PY
+
+      - name: Upload complete v3.2 snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-demo-max-history-backtest-v3
+          path: |
+            registry/presentation_demo_max_history_backtest_summary_v3.json
+            registry/presentation_demo_max_history_backtest_scorecard_v3.csv
+            registry/presentation_demo_max_history_backtest_trades_v3.csv
+            registry/presentation_demo_max_history_backtest_yearly_v3.csv
+            registry/presentation_demo_max_history_backtest_funnels_v3.csv
+            registry/presentation_demo_max_history_backtest_errors_v3.csv
+            registry/presentation_demo_max_history_forecastex_v3.json
+            registry/backtests/max_history_v3_2/
+            registry/analytics/max_history_v3_2/
+
+      - name: Commit complete snapshot on PR branch
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            registry/presentation_demo_max_history_backtest_summary_v3.json \
+            registry/presentation_demo_max_history_backtest_scorecard_v3.csv \
+            registry/presentation_demo_max_history_backtest_trades_v3.csv \
+            registry/presentation_demo_max_history_backtest_yearly_v3.csv \
+            registry/presentation_demo_max_history_backtest_funnels_v3.csv \
+            registry/presentation_demo_max_history_backtest_errors_v3.csv \
+            registry/presentation_demo_max_history_forecastex_v3.json \
+            registry/backtests/max_history_v3_2 \
+            registry/analytics/max_history_v3_2
+          if git diff --cached --quiet; then
+            echo "Complete snapshot already materialized."
+          else
+            git commit -m "registry: persist complete max-history v3.2 backtest snapshot"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
+
+      - name: Commit complete snapshot on main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            registry/presentation_demo_max_history_backtest_summary_v3.json \
+            registry/presentation_demo_max_history_backtest_scorecard_v3.csv \
+            registry/presentation_demo_max_history_backtest_trades_v3.csv \
+            registry/presentation_demo_max_history_backtest_yearly_v3.csv \
+            registry/presentation_demo_max_history_backtest_funnels_v3.csv \
+            registry/presentation_demo_max_history_backtest_errors_v3.csv \
+            registry/presentation_demo_max_history_forecastex_v3.json \
+            registry/backtests/max_history_v3_2 \
+            registry/analytics/max_history_v3_2
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "registry: persist complete max-history v3.2 backtest snapshot"
+            git pull --rebase
+            git push
+          fi
