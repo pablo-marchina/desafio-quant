@@ -7,12 +7,18 @@ on:
       - 'scripts/presentation_demo_expansion_v2.py'
       - '.github/workflows/presentation_demo_expansion_v2.yml'
       - 'registry/presentation_demo_expansion_v2_trigger.json'
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'registry/presentation_demo_expansion_v2_pr_trigger.txt'
+      - 'scripts/presentation_demo_expansion_v2.py'
+      - '.github/workflows/presentation_demo_expansion_v2.yml'
 
 permissions:
   contents: write
 
 concurrency:
-  group: presentation-demo-expansion-v2
+  group: presentation-demo-expansion-v2-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -29,16 +35,19 @@ jobs:
       ARGOS_V2_SLEEP: '0.04'
       ARGOS_V2_RUN_ID: ${{ github.run_id }}
       ARGOS_V2_HEAD_SHA: ${{ github.sha }}
+      ARGOS_V2_TARGET_BRANCH: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
 
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Publish observable run status
+      - name: Publish observable run status for push/manual runs
+        if: github.event_name != 'pull_request'
         run: |
           python - <<'PY'
           import json, os
@@ -58,8 +67,8 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add registry/presentation_demo_expansion_v2_run_status.json
           git commit -m 'status: presentation expansion v2 running'
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git pull --rebase origin "$ARGOS_V2_TARGET_BRANCH"
+          git push origin HEAD:"$ARGOS_V2_TARGET_BRANCH"
 
       - name: Validate executor and required frozen inputs
         run: |
@@ -119,7 +128,7 @@ jobs:
           path: |
             registry/presentation_demo_expansion_v2_*
 
-      - name: Persist v2 result package on main
+      - name: Persist v2 result package on triggering branch
         run: |
           python - <<'PY'
           import json, os
@@ -144,5 +153,5 @@ jobs:
             exit 0
           fi
           git commit -m 'results: materialize presentation expansion v2'
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git pull --rebase origin "$ARGOS_V2_TARGET_BRANCH"
+          git push origin HEAD:"$ARGOS_V2_TARGET_BRANCH"
