@@ -1,0 +1,12 @@
+route_id,path,present,rows,metric,value
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,796,exp06.trade_level_rows,796
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,108,exp06r.opportunities,108
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,34,exp06r.trades,34
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,21,exp06r.longs,21
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,13,exp06r.shorts,13
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,,exp06r.mean_market_adjusted_net_per_opportunity,-0.002050335178338882
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,,exp06r.holm_p,1.0
+LEGACY_EQUITY_RECONSTRUCTION,registry/economic_backtest_quality_summary.json,True,,,
+LEGACY_EQUITY_RECONSTRUCTION,registry/presentation_demo_max_coverage_backtest_summary_v1.json,True,,,
+LEGACY_EQUITY_RECONSTRUCTION,registry/presentation_demo_legacy_backtest_package_v1.json,True,,,
+LEGACY_EQUITY_RECONSTRUCTION,registry/w2a_results/w2a_funded_daily_ledger.csv,True,199,row_count,199

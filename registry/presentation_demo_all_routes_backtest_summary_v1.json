@@ -1,0 +1,204 @@
+{
+  "artifact": "PRESENTATION_DEMO_ALL_ROUTES_BACKTEST_SUMMARY",
+  "created_at_utc": "2026-08-19T12:54:12+00:00",
+  "guardrails": [
+    "presentation_demo_only",
+    "does_not_replace_frozen_competition_protocol",
+    "route_universe_changes_are_explicit",
+    "contract_pnl_is_not_equity_alpha",
+    "no_deployable_trading_claim_without_separate_oos_fee_liquidity_controls"
+  ],
+  "mode": "RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY",
+  "online_probe_enabled": false,
+  "outputs": {
+    "fda_biotech_candidates": "registry/presentation_demo_all_routes_fda_biotech_candidates_v1.csv",
+    "forecastex_candidates": "registry/presentation_demo_all_routes_forecastex_candidates_v1.csv",
+    "kalshi_candidates": "registry/presentation_demo_all_routes_kalshi_candidates_v1.csv",
+    "legacy_equity_candidates": "registry/presentation_demo_all_routes_legacy_equity_candidates_v1.csv",
+    "macro_candidates": "registry/presentation_demo_all_routes_macro_candidates_v1.csv",
+    "polymarket_candidates": "registry/presentation_demo_all_routes_polymarket_candidates_v1.csv",
+    "scorecard": "registry/presentation_demo_all_routes_backtest_scorecard_v1.csv"
+  },
+  "presentation_one_liner": "Para apresentação, o ARGOS roda uma expansão irrestrita: equity/earnings vira baseline histórico, e a rota principal passa a ser contract PnL em prediction markets, cobrindo Polymarket, Kalshi, macro, FDA/biotech, ForecastEx e legado equity.",
+  "recommended_primary_route": "PM_ALL_POLYMARKET_CONTRACT_PNL",
+  "recommended_route_order": [
+    "PM_ALL_POLYMARKET_CONTRACT_PNL",
+    "MACRO_PM_OR_ETF_EVENT_BACKTEST",
+    "FDA_BIOTECH_EQUITY_OR_PM",
+    "FORECASTEX_EVENT_CONTRACTS",
+    "PM_KALSHI_CONTRACT_PNL",
+    "LEGACY_EQUITY_RECONSTRUCTION"
+  ],
+  "routes": [
+    {
+      "backtest_target": "prediction-market token/contract return or settlement return",
+      "candidate_sample_file": "registry/presentation_demo_all_routes_polymarket_candidates_v1.csv",
+      "candidate_sample_rows": 2500,
+      "category_counts": {
+        "corporate": 9113,
+        "crypto": 565804,
+        "fda_biotech": 8895,
+        "macro": 12397,
+        "other_or_unclassified": 982760,
+        "politics": 3754,
+        "sports": 38307
+      },
+      "condition_id_candidates": 0,
+      "explicit_token_candidates": 0,
+      "generic_long_id_candidates": 1675,
+      "input_files": [
+        "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz",
+        "registry/w4b_polymarket_w2_overlap_v1.csv.gz"
+      ],
+      "next_gate": "token id -> price history -> terminal settlement/close",
+      "online_probe": {
+        "enabled": false,
+        "status": "not_requested"
+      },
+      "presentation_positioning": "Largest route and primary demo; not equity alpha.",
+      "route_id": "PM_ALL_POLYMARKET_CONTRACT_PNL",
+      "route_name": "Polymarket all-event contract PnL",
+      "rows_scanned": 1621030,
+      "status": "CENSUS_READY_TOKEN_EXTRACTION_WEAK",
+      "top_keyword_counts": {
+        "bitcoin": 130634,
+        "btc": 196531,
+        "champions": 2421,
+        "earnings": 2934,
+        "election": 2070,
+        "eps": 3007,
+        "eth": 225080,
+        "ethereum": 127500,
+        "fda": 12146,
+        "fed": 12928,
+        "football": 361,
+        "house": 515,
+        "mlb": 13840,
+        "nba": 10226,
+        "nfl": 3473,
+        "nhl": 5990,
+        "oil": 825,
+        "president": 982,
+        "rates": 912,
+        "sec": 5674,
+        "senate": 394,
+        "soccer": 325,
+        "solana": 115286,
+        "ufc": 1282,
+        "world cup": 2150
+      },
+      "unique_market_like_keys": 810515
+    },
+    {
+      "backtest_target": "contract return first; ETF/futures proxy optional",
+      "candidate_rows": 2500,
+      "candidate_sample_file": "registry/presentation_demo_all_routes_macro_candidates_v1.csv",
+      "next_gate": "clean candidate universe, join price history and terminal result",
+      "presentation_positioning": "Finance-friendly route with lower N than all-event PM.",
+      "route_id": "MACRO_PM_OR_ETF_EVENT_BACKTEST",
+      "route_name": "Macro events: PM contract PnL or ETF proxy",
+      "rows_scanned": 1621030,
+      "status": "MATERIALIZED_CANDIDATE_UNIVERSE",
+      "top_keyword_counts": {
+        "cpi": 15,
+        "dollar": 312,
+        "fed": 12928,
+        "fomc": 188,
+        "gdp": 88,
+        "inflation": 274,
+        "interest rate": 40,
+        "oil": 825,
+        "opec": 30,
+        "payroll": 70,
+        "rate cut": 17,
+        "rate hike": 3,
+        "rates": 912,
+        "recession": 16,
+        "treasury": 78,
+        "unemployment": 128,
+        "yield": 64
+      },
+      "unique_market_like_keys": 14789
+    },
+    {
+      "backtest_target": "PM contract return or biotech equity event return",
+      "candidate_rows": 2500,
+      "candidate_sample_file": "registry/presentation_demo_all_routes_fda_biotech_candidates_v1.csv",
+      "next_gate": "clean candidate universe, join price history and terminal result",
+      "presentation_positioning": "Asymmetry narrative route; likely not largest N.",
+      "route_id": "FDA_BIOTECH_EQUITY_OR_PM",
+      "route_name": "FDA / biotech / regulatory events",
+      "rows_scanned": 1621030,
+      "status": "MATERIALIZED_CANDIDATE_UNIVERSE",
+      "top_keyword_counts": {
+        "biopharma": 4,
+        "fda": 12146,
+        "pdufa": 72,
+        "pharma": 22,
+        "phase 2": 43,
+        "phase ii": 1
+      },
+      "unique_market_like_keys": 12132
+    },
+    {
+      "backtest_target": "event-contract return/settlement",
+      "candidate_sample_file": "registry/presentation_demo_all_routes_forecastex_candidates_v1.csv",
+      "existing_artifact_count": 39,
+      "existing_rows_counted": 471004,
+      "next_gate": "resolve instrument IDs, price history and settlement/outcome",
+      "online_probe": {
+        "enabled": false,
+        "status": "not_requested"
+      },
+      "presentation_positioning": "Finance-native route; heavier instrument/settlement join.",
+      "route_id": "FORECASTEX_EVENT_CONTRACTS",
+      "route_name": "ForecastEx / event contracts",
+      "status": "MATERIALIZED_EXISTING_ARTIFACTS"
+    },
+    {
+      "backtest_target": "Kalshi contract candlestick/trade return and settlement",
+      "candidate_sample_file": "registry/presentation_demo_all_routes_kalshi_candidates_v1.csv",
+      "existing_artifact_count": 65,
+      "existing_rows_counted": 7765,
+      "next_gate": "resolve instrument IDs, price history and settlement/outcome",
+      "online_probe": {
+        "enabled": false,
+        "status": "not_requested"
+      },
+      "presentation_positioning": "Regulated venue route; secondary after Polymarket.",
+      "route_id": "PM_KALSHI_CONTRACT_PNL",
+      "route_name": "Kalshi all-event contract PnL",
+      "status": "MATERIALIZED_EXISTING_ARTIFACTS"
+    },
+    {
+      "artifacts": {
+        "registry/economic_backtest_quality_summary.json": {
+          "sha256": "badcd2d31a41a07df7d0d3400ff88a4349ab1d6638dab8691ecc4b25a1a3ef61"
+        },
+        "registry/presentation_demo_legacy_backtest_package_v1.json": {
+          "sha256": "188a933251957d01e1b0e713a46974b0beeec6a5a3e0b0edf2f41e2a71f9e4ff"
+        },
+        "registry/presentation_demo_max_coverage_backtest_summary_v1.json": {
+          "sha256": "c02f8cff37e622141048cfb3fca7664e461524b2de0af7e3245c5a4f8fa11d56"
+        },
+        "registry/w2a_results/w2a_funded_daily_ledger.csv": {
+          "rows": 199,
+          "sha256": "7c7cf5ea0792b478226522c45bfd20e3be55c16c1e570d65504766fb621f3b2b"
+        }
+      },
+      "backtest_target": "equity event-window return baseline",
+      "candidate_sample_file": "registry/presentation_demo_all_routes_legacy_equity_candidates_v1.csv",
+      "known_exp06_trade_level_rows": 796,
+      "known_exp06r_opportunities": null,
+      "known_exp06r_trades": null,
+      "next_gate": "recover raw EXP06 table only if full 796-row display is needed",
+      "presentation_positioning": "Baseline and governance proof; not the max-N expansion engine.",
+      "route_id": "LEGACY_EQUITY_RECONSTRUCTION",
+      "route_name": "Legacy equity reconstruction / baseline",
+      "status": "READY_BASELINE_PRESENTATION_PACKAGE"
+    }
+  ],
+  "scope": "unrestricted expansion across all event families/routes; not limited to earnings or equity returns",
+  "status": "MATERIALIZED_ALL_ROUTES_EXECUTION_MAP",
+  "version": "v1"
+}
