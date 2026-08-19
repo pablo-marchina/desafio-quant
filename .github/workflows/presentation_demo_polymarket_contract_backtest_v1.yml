@@ -6,6 +6,7 @@ on:
     paths:
       - 'scripts/presentation_demo_polymarket_contract_backtest_runner_v1.py'
       - 'scripts/presentation_demo_polymarket_contract_backtest_runner_v1_1.py'
+      - 'scripts/presentation_demo_polymarket_contract_backtest_runner_v1_2.py'
       - 'registry/presentation_demo_polymarket_contract_backtest_authorization_v1.json'
       - 'registry/presentation_demo_polymarket_contract_backtest_trigger_v1.txt'
       - '.github/workflows/presentation_demo_polymarket_contract_backtest_v1.yml'
@@ -19,8 +20,8 @@ env:
   ARGOS_PM_DEMO_MAX_GAMMA_MARKETS: '500'
   ARGOS_PM_DEMO_MAX_BACKTEST_MARKETS: '100'
   ARGOS_PM_DEMO_GAMMA_PAGE_LIMIT: '250'
-  ARGOS_PM_DEMO_BATCH_SIZE: '20'
   ARGOS_PM_DEMO_HISTORY_FIDELITY: '1440'
+  ARGOS_PM_DEMO_HISTORY_LOOKBACK_DAYS: '14'
   ARGOS_PM_DEMO_HTTP_TIMEOUT_SECONDS: '15'
   ARGOS_PM_DEMO_REQUEST_SLEEP_SECONDS: '0.10'
   ARGOS_PM_DEMO_ROUND_TRIP_COST_BPS: '0'
@@ -42,10 +43,10 @@ jobs:
           python-version: '3.11'
 
       - name: Compile runner
-        run: python -m py_compile scripts/presentation_demo_polymarket_contract_backtest_runner_v1_1.py
+        run: python -m py_compile scripts/presentation_demo_polymarket_contract_backtest_runner_v1_2.py
 
       - name: Run Polymarket contract demo backtest
-        run: python scripts/presentation_demo_polymarket_contract_backtest_runner_v1_1.py
+        run: python scripts/presentation_demo_polymarket_contract_backtest_runner_v1_2.py
 
       - name: Upload backtest outputs
         uses: actions/upload-artifact@v4
