@@ -4,6 +4,8 @@
 Loads the byte-validated v2.1 payload, then applies a small runtime policy layer:
 Kalshi live-tier observations remain supported/diagnostic, but only archived
 historical-tier markets enter the default retrospective score for reproducibility.
+Archived history uses the already-audited W4-B 264h window with bounded 429
+backoff, avoiding redundant fallback windows that amplify API throttling.
 """
 from __future__ import annotations
 
@@ -33,13 +35,42 @@ MAX_KALSHI = int(mod["MAX_KALSHI"])
 INCLUDE_LIVE = os.getenv("ARGOS_MULTI_KALSHI_INCLUDE_LIVE_PROVISIONAL", "0") == "1"
 
 
+def archived_kalshi_history(m: dict[str, Any]):
+    """Fetch the exact W4-B historical window with bounded retry on HTTP 429."""
+    ticker = str(m["ticker"])
+    anchor = int(m.get("history_anchor_ts") or m.get("end_ts") or mod["time"].time())
+    days = 11  # W4-B audit window = 264 hours before operational T0.
+    start = max(1, anchor - 264 * 3600)
+    params = {"start_ts": start, "end_ts": anchor, "period_interval": 60}
+    path = f"/historical/markets/{mod['urllib'].parse.quote(ticker, safe='')}/candlesticks"
+    url = f"{mod['KALSHI_BASE']}{path}?{mod['urllib'].parse.urlencode(params)}"
+    attempts: list[str] = []
+    for delay in (0.0, 1.0, 2.0, 4.0, 8.0):
+        if delay:
+            mod["time"].sleep(delay)
+        try:
+            data = NS["http_json"](url)
+            pts = mod["_parse_kalshi_candles"](data, days)
+            if pts:
+                return pts, None, "historical"
+            attempts.append("historical:no_points:264h")
+            break
+        except mod["urllib"].error.HTTPError as exc:
+            attempts.append(f"historical:HTTP {exc.code}:264h")
+            if exc.code != 429:
+                break
+        except Exception as exc:
+            attempts.append(f"historical:{type(exc).__name__}:{exc}")
+            break
+    return [], "; ".join(attempts), "historical"
+
+
 def run_kalshi_route_v22():
     cutoff_ts, cutoff_err = mod["_kalshi_cutoff"]()
     candidates, universe_stats, universe_errs = mod["_w4b_kalshi_candidates"](cutoff_ts)
 
-    # v2.1 returns at most MAX_KALSHI. This is enough to validate the stable
-    # policy while keeping its frozen candidate order and avoiding outcome-based
-    # reselection. No price/PnL field participates in this gate.
+    # Keep v2.1's frozen candidate order. No price, settlement or PnL field is
+    # used to choose which canonical event/ticker enters the candidate set.
     enriched: list[dict[str, Any]] = []
     detail_errors: list[str] = []
     for m in candidates:
@@ -64,7 +95,10 @@ def run_kalshi_route_v22():
         err_samples.append(f"cutoff:{cutoff_err}")
 
     for m in score_markets:
-        hist, err, used_tier = mod["_kalshi_history"](m)
+        if m.get("data_tier") == "historical":
+            hist, err, used_tier = archived_kalshi_history(m)
+        else:
+            hist, err, used_tier = mod["_kalshi_history"](m)
         if hist:
             hist_n += 1
             hist_by_tier[used_tier] += 1
@@ -73,7 +107,7 @@ def run_kalshi_route_v22():
         tr = NS["trade_from_history"]("PM_KALSHI_CONTRACT_PNL", m, hist)
         if tr:
             tr["data_tier"] = used_tier
-            tr["price_source"] = "kalshi_candlesticks_60m_w4b_universe"
+            tr["price_source"] = "kalshi_candlesticks_60m_w4b_264h_window"
             route_trades.append(tr)
 
     funnels = [
@@ -83,8 +117,8 @@ def run_kalshi_route_v22():
         {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "settlement_detail_resolved", "count": len(enriched), "notes": f"detail_errors={len(detail_errors)}"},
         {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "live_provisional_excluded", "count": 0 if INCLUDE_LIVE else len(live_provisional), "notes": "default reproducibility gate; live tier is diagnostic-only until archived"},
         {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "score_markets", "count": len(score_markets), "notes": f"historical_ready={len(historical_ready)}; include_live={INCLUDE_LIVE}"},
-        {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "candlestick_history_returned", "count": hist_n, "notes": f"historical={hist_by_tier.get('historical',0)}; live={hist_by_tier.get('live',0)}; interval=60m; " + "; ".join(err_samples[:3])},
-        {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "trade_rows_materialized", "count": len(route_trades), "notes": "tier-specific endpoint; 60m candles anchored to frozen W4-B operational T0"},
+        {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "candlestick_history_returned", "count": hist_n, "notes": f"historical={hist_by_tier.get('historical',0)}; live={hist_by_tier.get('live',0)}; interval=60m; archived_window=264h; " + "; ".join(err_samples[:3])},
+        {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "trade_rows_materialized", "count": len(route_trades), "notes": "tier-specific endpoint; archived score uses exact W4-B 264h window with bounded 429 backoff"},
         {"route_id": "PM_KALSHI_CONTRACT_PNL", "stage": "executed_threshold_trades", "count": sum(t.get("side") in {"BUY_YES", "BUY_NO"} for t in route_trades), "notes": f"BUY_YES >= {NS['TH_YES']}; BUY_NO <= {NS['TH_NO']}"},
     ]
 
@@ -101,6 +135,7 @@ def run_kalshi_route_v22():
         "include_live_provisional": INCLUDE_LIVE,
         "candidate_selection": "W4-B distributional-core availability universe; no economic-field ranking",
         "reproducibility_gate": "default score includes historical tier only; live tier remains supported but provisional",
+        "historical_fetch_policy": "single W4-B 264h window; period_interval=60; bounded 429 backoff",
     })
     return summary, route_trades, funnels
 
@@ -113,7 +148,7 @@ if summary_path.exists():
     doc = json.loads(summary_path.read_text(encoding="utf-8"))
     doc["version"] = "v2.2"
     doc.setdefault("v2_changes", {})["kalshi_reproducibility"] = (
-        "default retrospective score excludes live-tier Kalshi markets; live routing remains supported for diagnostics until archival"
+        "default retrospective score excludes live-tier Kalshi markets; archived markets use the exact W4-B 264h window with bounded HTTP-429 backoff"
     )
     doc.setdefault("parameters", {})["kalshi_include_live_provisional"] = INCLUDE_LIVE
     summary_path.write_text(json.dumps(doc, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
