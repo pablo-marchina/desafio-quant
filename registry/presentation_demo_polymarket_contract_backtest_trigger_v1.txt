@@ -1,8 +1,10 @@
 triggered_at_local=2026-08-19T10:03:00-03:00
 retriggered_at_local=2026-08-19T10:08:00-03:00
 retriggered_hardened_at_local=2026-08-19T10:12:00-03:00
-purpose=materialize_presentation_demo_polymarket_contract_backtest_v1_1_smoke
+retriggered_short_window_at_local=2026-08-19T10:16:00-03:00
+purpose=materialize_presentation_demo_polymarket_contract_backtest_v1_2_smoke
 mode=retrospective_max_coverage_non_confirmatory
 max_gamma_markets=500
 max_backtest_markets=100
-runner=presentation_demo_polymarket_contract_backtest_runner_v1_1.py
+runner=presentation_demo_polymarket_contract_backtest_runner_v1_2.py
+history_window=per_market_short_window
