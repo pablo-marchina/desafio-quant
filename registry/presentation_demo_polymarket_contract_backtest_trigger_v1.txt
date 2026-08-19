@@ -1,3 +1,6 @@
 triggered_at_local=2026-08-19T10:03:00-03:00
-purpose=materialize_presentation_demo_polymarket_contract_backtest_v1
+retriggered_at_local=2026-08-19T10:08:00-03:00
+purpose=materialize_presentation_demo_polymarket_contract_backtest_v1_smoke
 mode=retrospective_max_coverage_non_confirmatory
+max_gamma_markets=500
+max_backtest_markets=100
