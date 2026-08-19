@@ -8,7 +8,7 @@ on:
       - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
       - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
-      - 'scripts/_payloads/presentation_demo_max_history_analytics_v3_2.py.gz'
+      - 'scripts/_payloads/max_history_analytics_v3_2/**'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
       - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
@@ -20,7 +20,7 @@ on:
       - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
       - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
-      - 'scripts/_payloads/presentation_demo_max_history_analytics_v3_2.py.gz'
+      - 'scripts/_payloads/max_history_analytics_v3_2/**'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
       - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
@@ -60,7 +60,7 @@ jobs:
       - name: Install analytics dependencies
         run: python -m pip install --disable-pip-version-check numpy pandas scipy scikit-learn statsmodels tabulate
 
-      - name: Compile runners and pinned payloads
+      - name: Compile runners and pinned analytics source
         run: |
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3.py
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3_1.py
@@ -70,13 +70,15 @@ jobs:
           python - <<'PY'
           import gzip
           from pathlib import Path
-          for p in [
-              Path('scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'),
-              Path('scripts/_payloads/presentation_demo_max_history_analytics_v3_2.py.gz'),
-          ]:
-              src = gzip.decompress(p.read_bytes()).decode('utf-8')
-              compile(src, p.with_suffix('').name, 'exec')
-              print('payload_compile_ok', p, len(src))
+          p=Path('scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz')
+          src=gzip.decompress(p.read_bytes()).decode('utf-8')
+          compile(src,p.with_suffix('').name,'exec')
+          parts=sorted(Path('scripts/_payloads/max_history_analytics_v3_2').glob('part_*.pyfrag'))
+          assert len(parts)==4, parts
+          analytics=''.join(x.read_text(encoding='utf-8') for x in parts)
+          compile(analytics,'presentation_demo_max_history_analytics_v3_2.py','exec')
+          print('payload_compile_ok',p,len(src))
+          print('analytics_source_compile_ok',len(parts),len(analytics))
           PY
 
       - name: Run complete max-history backtest
@@ -110,9 +112,11 @@ jobs:
           assert abs(float(row.mean_net_pnl)-0.0062468596721057)<1e-12
           master=json.loads((root/'comprehensive_metrics.json').read_text())
           manifest=json.loads((root/'analytics_manifest.json').read_text())
+          source_manifest=json.loads((root/'source_snapshot/source_snapshot_manifest.json').read_text())
           assert master['artifact']=='MAX_HISTORY_V3_2_COMPREHENSIVE_ANALYTICS'
           assert len(manifest['files']) >= 18
-          print('analytics_validation_ok', len(manifest['files']), hashlib.sha256((root/'comprehensive_metrics.json').read_bytes()).hexdigest())
+          assert 'max-history-backtest-v3.2-final.zip' in source_manifest['files']
+          print('analytics_validation_ok',len(manifest['files']),hashlib.sha256((root/'comprehensive_metrics.json').read_bytes()).hexdigest())
           PY
 
       - name: Upload v3 outputs and analytics
