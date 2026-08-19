@@ -1,0 +1,74 @@
+name: Presentation demo Polymarket contract backtest v1
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/presentation_demo_polymarket_contract_backtest_runner_v1.py'
+      - 'registry/presentation_demo_polymarket_contract_backtest_authorization_v1.json'
+      - 'registry/presentation_demo_polymarket_contract_backtest_trigger_v1.txt'
+      - '.github/workflows/presentation_demo_polymarket_contract_backtest_v1.yml'
+
+permissions:
+  contents: write
+
+env:
+  ARGOS_PM_DEMO_MAX_GAMMA_MARKETS: '1500'
+  ARGOS_PM_DEMO_MAX_BACKTEST_MARKETS: '600'
+  ARGOS_PM_DEMO_GAMMA_PAGE_LIMIT: '500'
+  ARGOS_PM_DEMO_BATCH_SIZE: '35'
+  ARGOS_PM_DEMO_HISTORY_FIDELITY: '1440'
+  ARGOS_PM_DEMO_HTTP_TIMEOUT_SECONDS: '20'
+  ARGOS_PM_DEMO_REQUEST_SLEEP_SECONDS: '0.15'
+  ARGOS_PM_DEMO_ROUND_TRIP_COST_BPS: '0'
+  ARGOS_PM_DEMO_THRESHOLD_YES: '0.65'
+  ARGOS_PM_DEMO_THRESHOLD_NO: '0.35'
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile runner
+        run: python -m py_compile scripts/presentation_demo_polymarket_contract_backtest_runner_v1.py
+
+      - name: Run Polymarket contract demo backtest
+        run: python scripts/presentation_demo_polymarket_contract_backtest_runner_v1.py
+
+      - name: Upload backtest outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-demo-polymarket-contract-backtest-v1
+          path: |
+            registry/presentation_demo_polymarket_contract_backtest_summary_v1.json
+            registry/presentation_demo_polymarket_contract_backtest_trades_v1.csv
+            registry/presentation_demo_polymarket_contract_backtest_funnel_v1.csv
+            registry/presentation_demo_polymarket_contract_backtest_universe_v1.csv
+            registry/presentation_demo_polymarket_contract_price_history_sample_v1.csv
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            registry/presentation_demo_polymarket_contract_backtest_summary_v1.json \
+            registry/presentation_demo_polymarket_contract_backtest_trades_v1.csv \
+            registry/presentation_demo_polymarket_contract_backtest_funnel_v1.csv \
+            registry/presentation_demo_polymarket_contract_backtest_universe_v1.csv \
+            registry/presentation_demo_polymarket_contract_price_history_sample_v1.csv
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "registry: materialize Polymarket contract demo backtest v1"
+            git pull --rebase
+            git push
+          fi
