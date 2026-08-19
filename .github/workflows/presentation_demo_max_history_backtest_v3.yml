@@ -7,6 +7,8 @@ on:
       - 'scripts/presentation_demo_max_history_backtest_v3.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
+      - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
+      - 'scripts/_payloads/presentation_demo_max_history_analytics_v3_2.py.gz'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
       - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
@@ -17,6 +19,8 @@ on:
       - 'scripts/presentation_demo_max_history_backtest_v3.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_1.py'
       - 'scripts/presentation_demo_max_history_backtest_v3_2.py'
+      - 'scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py'
+      - 'scripts/_payloads/presentation_demo_max_history_analytics_v3_2.py.gz'
       - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
       - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
@@ -42,35 +46,76 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 55
     steps:
-      - name: Checkout
+      - name: Checkout branch
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Compile runner and retained v2 payload
+      - name: Install analytics dependencies
+        run: python -m pip install --disable-pip-version-check numpy pandas scipy scikit-learn statsmodels tabulate
+
+      - name: Compile runners and pinned payloads
         run: |
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3.py
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3_1.py
           python -m py_compile scripts/presentation_demo_max_history_backtest_v3_2.py
+          python -m py_compile scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py
           python -m py_compile scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py
           python - <<'PY'
           import gzip
           from pathlib import Path
-          p = Path('scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz')
-          src = gzip.decompress(p.read_bytes()).decode('utf-8')
-          compile(src, 'presentation_demo_multi_route_backtest_suite_v2.py', 'exec')
-          print('retained_v2_payload_compile_ok', len(src))
+          for p in [
+              Path('scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'),
+              Path('scripts/_payloads/presentation_demo_max_history_analytics_v3_2.py.gz'),
+          ]:
+              src = gzip.decompress(p.read_bytes()).decode('utf-8')
+              compile(src, p.with_suffix('').name, 'exec')
+              print('payload_compile_ok', p, len(src))
           PY
 
       - name: Run complete max-history backtest
         run: python scripts/presentation_demo_max_history_backtest_v3_2.py
 
-      - name: Upload v3 outputs
+      - name: Run comprehensive analytics
+        run: python scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py
+
+      - name: Validate analytics package
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          import pandas as pd
+          root=Path('registry/analytics/max_history_v3_2')
+          required=[
+            'README.md','REPORT.md','analytics_manifest.json','comprehensive_metrics.json',
+            'performance_risk_metrics.csv','breakdowns.csv','calibration_summary.csv','calibration_bins.csv',
+            'threshold_sensitivity.csv','cost_sensitivity.csv','daily_aggregates.csv.gz',
+            'rolling_trade_windows.csv.gz','rolling_window_summary.csv','cross_venue_overlap.csv',
+            'canonical_event_dedup.csv.gz','concentration_metrics.csv','data_quality_coverage.json',
+            'temporal_diagnostics.csv','legacy_equity_metrics.json',
+            'source_snapshot/max-history-backtest-v3.2-final.zip','source_snapshot/source_snapshot_manifest.json'
+          ]
+          missing=[x for x in required if not (root/x).exists()]
+          assert not missing, missing
+          metrics=pd.read_csv(root/'performance_risk_metrics.csv')
+          row=metrics.loc[metrics.label.eq('ALL_MAX_HISTORY')].iloc[0]
+          assert int(row.executed_trades)==1274
+          assert abs(float(row.total_net_pnl)-7.9584992222627)<1e-9
+          assert abs(float(row.mean_net_pnl)-0.0062468596721057)<1e-12
+          master=json.loads((root/'comprehensive_metrics.json').read_text())
+          manifest=json.loads((root/'analytics_manifest.json').read_text())
+          assert master['artifact']=='MAX_HISTORY_V3_2_COMPREHENSIVE_ANALYTICS'
+          assert len(manifest['files']) >= 18
+          print('analytics_validation_ok', len(manifest['files']), hashlib.sha256((root/'comprehensive_metrics.json').read_bytes()).hexdigest())
+          PY
+
+      - name: Upload v3 outputs and analytics
         uses: actions/upload-artifact@v4
         with:
           name: presentation-demo-max-history-backtest-v3
@@ -82,8 +127,22 @@ jobs:
             registry/presentation_demo_max_history_backtest_funnels_v3.csv
             registry/presentation_demo_max_history_backtest_errors_v3.csv
             registry/presentation_demo_max_history_forecastex_v3.json
+            registry/analytics/max_history_v3_2/
 
-      - name: Commit outputs on main only
+      - name: Commit analytics on PR branch
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/analytics/max_history_v3_2
+          if git diff --cached --quiet; then
+            echo "Analytics already materialized."
+          else
+            git commit -m "analytics: materialize complete max-history v3.2 metrics"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
+
+      - name: Commit backtest and analytics on main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           git config user.name "github-actions[bot]"
@@ -95,11 +154,12 @@ jobs:
             registry/presentation_demo_max_history_backtest_yearly_v3.csv \
             registry/presentation_demo_max_history_backtest_funnels_v3.csv \
             registry/presentation_demo_max_history_backtest_errors_v3.csv \
-            registry/presentation_demo_max_history_forecastex_v3.json
+            registry/presentation_demo_max_history_forecastex_v3.json \
+            registry/analytics/max_history_v3_2
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "registry: materialize complete max-history backtest v3.2"
+            git commit -m "registry: materialize complete max-history backtest v3.2 analytics"
             git pull --rebase
             git push
           fi
