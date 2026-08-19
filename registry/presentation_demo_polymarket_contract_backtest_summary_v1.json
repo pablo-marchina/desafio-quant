@@ -1,19 +1,17 @@
 {
   "artifact": "PRESENTATION_DEMO_POLYMARKET_CONTRACT_BACKTEST_SUMMARY",
-  "category_counts_executed": {},
-  "created_at_utc": "2026-08-19T13:11:10+00:00",
+  "category_counts_executed": {
+    "": 34
+  },
+  "created_at_utc": "2026-08-19T13:12:57+00:00",
   "data_sources": {
-    "clob_batch_prices_history": "https://clob.polymarket.com/batch-prices-history",
+    "clob_prices_history": "https://clob.polymarket.com/prices-history",
     "gamma_markets": "https://gamma-api.polymarket.com/markets?closed=true"
   },
   "error_samples": {
     "gamma": [],
     "history": [
-      "batch_start=0: HTTPError: HTTP Error 400: Bad Request",
-      "batch_start=20: HTTPError: HTTP Error 400: Bad Request",
-      "batch_start=40: HTTPError: HTTP Error 400: Bad Request",
-      "batch_start=60: HTTPError: HTTP Error 400: Bad Request",
-      "batch_start=80: HTTPError: HTTP Error 400: Bad Request"
+      "443117566520: no_history_points_or_interval_rejected"
     ]
   },
   "funnel": [
@@ -33,17 +31,17 @@
       "stage": "terminal_yes_price_available"
     },
     {
-      "count": 0,
-      "notes": "batch_start=0: HTTPError: HTTP Error 400: Bad Request; batch_start=20: HTTPError: HTTP Error 400: Bad Request; batch_start=40: HTTPError: HTTP Error 400: Bad Request",
+      "count": 99,
+      "notes": "443117566520: no_history_points_or_interval_rejected",
       "stage": "price_history_returned"
     },
     {
-      "count": 0,
+      "count": 43,
       "notes": "executed plus abstain-neutral rows",
       "stage": "trade_rows_materialized"
     },
     {
-      "count": 0,
+      "count": 34,
       "notes": "BUY_YES >= 0.65; BUY_NO <= 0.35",
       "stage": "executed_threshold_trades"
     }
@@ -56,11 +54,19 @@
     "not_deployable_without_separate_oos_liquidity_fee_slippage_controls"
   ],
   "metrics": {
-    "abstained_neutral": 0,
-    "buy_no": 0,
-    "buy_yes": 0,
-    "executed_trades": 0,
-    "trade_rows_total": 0
+    "abstained_neutral": 9,
+    "buy_no": 29,
+    "buy_yes": 5,
+    "executed_trades": 34,
+    "hit_rate": 0.7941176470588235,
+    "max_net_pnl": 0.35,
+    "mean_net_pnl_per_contract": -0.10379411764705883,
+    "mean_return_on_stake": -0.109758672590771,
+    "median_net_pnl_per_contract": 0.0375,
+    "median_return_on_stake": 0.038965524964992254,
+    "min_net_pnl": -0.9595,
+    "total_net_pnl_per_1_contract_each": -3.5289999999999986,
+    "trade_rows_total": 43
   },
   "mode": "RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY",
   "outputs": {
@@ -71,13 +77,15 @@
   },
   "parameters": {
     "history_fidelity": 1440,
+    "history_lookback_days_initial": 14,
     "max_backtest_markets": 100,
     "max_gamma_markets": 500,
     "round_trip_cost_bps": 0.0,
     "threshold_no": 0.35,
     "threshold_yes": 0.65
   },
+  "presentation_one_liner": "Polymarket contract-PnL demo backtest using Gamma clobTokenIds and per-market short-window CLOB price history; not equity alpha and not the frozen competition result.",
   "route_id": "PM_ALL_POLYMARKET_CONTRACT_PNL",
-  "status": "MATERIALIZED_FUNNEL_NO_EXECUTED_TRADES",
-  "version": "v1.1"
+  "status": "MATERIALIZED_BACKTEST",
+  "version": "v1.2"
 }

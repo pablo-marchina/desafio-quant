@@ -2,6 +2,6 @@ stage,count,notes
 gamma_closed_markets_fetched,100,
 markets_with_clob_tokens,100,parsed Gamma clobTokenIds/outcomes/outcomePrices
 terminal_yes_price_available,100,closed outcomePrices/terminal proxy available
-price_history_returned,0,batch_start=0: HTTPError: HTTP Error 400: Bad Request; batch_start=20: HTTPError: HTTP Error 400: Bad Request; batch_start=40: HTTPError: HTTP Error 400: Bad Request
-trade_rows_materialized,0,executed plus abstain-neutral rows
-executed_threshold_trades,0,BUY_YES >= 0.65; BUY_NO <= 0.35
+price_history_returned,99,443117566520: no_history_points_or_interval_rejected
+trade_rows_materialized,43,executed plus abstain-neutral rows
+executed_threshold_trades,34,BUY_YES >= 0.65; BUY_NO <= 0.35
