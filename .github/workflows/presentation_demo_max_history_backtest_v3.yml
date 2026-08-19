@@ -94,6 +94,7 @@ jobs:
           from pathlib import Path
           import pandas as pd
           root=Path('registry/analytics/max_history_v3_2')
+          registry=Path('registry')
           required=[
             'README.md','REPORT.md','analytics_manifest.json','comprehensive_metrics.json',
             'performance_risk_metrics.csv','breakdowns.csv','calibration_summary.csv','calibration_bins.csv',
@@ -105,18 +106,46 @@ jobs:
           ]
           missing=[x for x in required if not (root/x).exists()]
           assert not missing, missing
+
           metrics=pd.read_csv(root/'performance_risk_metrics.csv')
           row=metrics.loc[metrics.label.eq('ALL_MAX_HISTORY')].iloc[0]
-          assert int(row.executed_trades)==1274
-          assert abs(float(row.total_net_pnl)-7.9584992222627)<1e-9
-          assert abs(float(row.mean_net_pnl)-0.0062468596721057)<1e-12
+          trades=pd.read_csv(registry/'presentation_demo_max_history_backtest_trades_v3.csv')
+          executed=trades[trades['side'].isin(['BUY_YES','BUY_NO'])].copy()
+          bt=json.loads((registry/'presentation_demo_max_history_backtest_summary_v3.json').read_text())
+          current=bt['prediction_max_history']
+
+          # Validate analytics against the freshly produced ledger/result, never a
+          # historical hard-coded PnL. Archived venue data can legitimately gain
+          # newly finalized candles while the code and candidate rules stay fixed.
+          assert int(row.executed_trades)==len(executed)==int(current['executed_trades'])
+          ledger_total=float(executed['net_pnl_per_contract'].sum())
+          ledger_mean=float(executed['net_pnl_per_contract'].mean())
+          assert abs(float(row.total_net_pnl)-ledger_total)<1e-12
+          assert abs(float(row.mean_net_pnl)-ledger_mean)<1e-12
+          assert abs(float(current['total_net_pnl_per_1_contract_each'])-ledger_total)<1e-12
+          assert abs(float(current['mean_net_pnl_per_contract'])-ledger_mean)<1e-12
+          assert int(row.unique_canonical_events_executed)==executed['canonical_event_id'].nunique()==int(current['canonical_events_executed'])
+
           master=json.loads((root/'comprehensive_metrics.json').read_text())
           manifest=json.loads((root/'analytics_manifest.json').read_text())
           source_manifest=json.loads((root/'source_snapshot/source_snapshot_manifest.json').read_text())
+          quality=json.loads((root/'data_quality_coverage.json').read_text())
           assert master['artifact']=='MAX_HISTORY_V3_2_COMPREHENSIVE_ANALYTICS'
           assert len(manifest['files']) >= 18
           assert 'max-history-backtest-v3.2-final.zip' in source_manifest['files']
-          print('analytics_validation_ok',len(manifest['files']),hashlib.sha256((root/'comprehensive_metrics.json').read_bytes()).hexdigest())
+          assert int(quality['row_integrity']['executed_rows'])==len(executed)
+          assert int(quality['row_integrity']['duplicate_trade_keys'])==0
+          assert int(quality['row_integrity']['missing_canonical_event_id'])==0
+          assert int(quality['row_integrity']['entry_price_out_of_bounds'])==0
+          assert int(quality['row_integrity']['terminal_price_out_of_bounds'])==0
+          print('analytics_validation_ok', {
+            'manifest_files':len(manifest['files']),
+            'executed':len(executed),
+            'events':executed['canonical_event_id'].nunique(),
+            'total_pnl':ledger_total,
+            'mean_pnl':ledger_mean,
+            'master_sha256':hashlib.sha256((root/'comprehensive_metrics.json').read_bytes()).hexdigest(),
+          })
           PY
 
       - name: Upload v3 outputs and analytics
