@@ -1,0 +1,43 @@
+name: Presentation demo max-history profile v3
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/presentation_demo_max_history_profile_v3.py'
+      - '.github/workflows/presentation_demo_max_history_profile_v3.yml'
+
+concurrency:
+  group: presentation-demo-max-history-profile-v3-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  profile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile profiler
+        run: python -m py_compile scripts/presentation_demo_max_history_profile_v3.py
+
+      - name: Profile max history
+        run: python scripts/presentation_demo_max_history_profile_v3.py
+
+      - name: Upload profile
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-demo-max-history-profile-v3
+          path: |
+            registry/presentation_demo_max_history_profile_v3.json
+            registry/presentation_demo_max_history_profile_v3.csv
