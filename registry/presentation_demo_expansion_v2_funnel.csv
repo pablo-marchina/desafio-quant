@@ -1,0 +1,13 @@
+count,notes,stage,venue
+5000,configured maximum; actual eligible candidate count shown separately,gamma_closed_fetch_config_max,Polymarket
+100,,eligible_binary_settled_candidates,Polymarket
+49,,price_outcome_joined,Polymarket
+40,,executed_at_65_35,Polymarket
+391,existing full-population structural history,canonical_structural_events,Kalshi
+391,,representative_events_attempted,Kalshi
+0,BLOCKED_NO_PRICE_SETTLEMENT_JOIN,price_outcome_joined,Kalshi
+0,,executed_at_65_35,Kalshi
+481,pre-existing census,accepted_canonical_events_census,ForecastEx
+25126,,accepted_contract_rows,ForecastEx
+277,MATERIALIZED_BACKTEST,unique_event_representatives_joined,ForecastEx
+61,,executed_at_65_35,ForecastEx

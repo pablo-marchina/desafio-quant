@@ -1,0 +1,36 @@
+{
+  "forecastex": {
+    "accepted_contract_rows": 25126,
+    "accepted_contracts_seen_in_archives": 24556,
+    "archive_dates_attempted": 589,
+    "archive_error_examples": [],
+    "archive_errors": 0,
+    "census_unique_contract_rows": 467868,
+    "economic_headers_seen": {
+      "date": 589,
+      "end_price": 589,
+      "event_contract": 589,
+      "expiration_date": 589,
+      "high_price": 589,
+      "low_price": 589,
+      "open_interest": 589,
+      "pair_quantity": 589,
+      "settlement_price": 589,
+      "start_price": 589,
+      "subtype": 589,
+      "vwap": 589
+    },
+    "price_and_terminal_joined_contracts": 7914,
+    "representative_selection": "closest entry probability to 0.5 within each canonical event, outcome-blind",
+    "status": "MATERIALIZED_BACKTEST",
+    "unique_canonical_events_joined": 277
+  },
+  "kalshi": {
+    "history_resolved": 328,
+    "price_and_terminal_joined": 0,
+    "representative_events_attempted": 391,
+    "status": "BLOCKED_NO_PRICE_SETTLEMENT_JOIN",
+    "structural_events": 391,
+    "terminal_resolved": 0
+  }
+}

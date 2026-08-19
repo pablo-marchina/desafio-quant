@@ -1,0 +1,9 @@
+{
+  "artifact": "PRESENTATION_DEMO_EXPANSION_V2_RUN_STATUS",
+  "completed_at_utc": "2026-08-19T22:54:31.714216+00:00",
+  "head_sha": "6e4a0a8055f4c4a42b9eaeaee7ab4b0b1e7719eb",
+  "run_id": 32310610196,
+  "scientific_firewall": "FST-v1.0 unchanged; H2 remains FAIL; C0_NO_TRADE unchanged.",
+  "status": "COMPLETED",
+  "summary": "registry/presentation_demo_expansion_v2_summary.json"
+}

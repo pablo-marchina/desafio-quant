@@ -1,0 +1,525 @@
+{
+  "artifact": "PRESENTATION_DEMO_EXPANSION_V2_SUMMARY",
+  "configuration": {
+    "cost_bps_all_reported": [
+      0,
+      10,
+      25,
+      50
+    ],
+    "kalshi_event_limit": 391,
+    "lookback_days": 14,
+    "pm_candidate_limit": 1200,
+    "pm_fetch_max": 5000,
+    "thresholds_all_reported": [
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75
+    ]
+  },
+  "created_at_utc": "2026-08-19T22:54:30.029493+00:00",
+  "deduplicated_counts": {
+    "legacy_equity_rows_excluded_from_unique_market_count": 796,
+    "prediction_venues_observed": [
+      "ForecastEx",
+      "Kalshi",
+      "Polymarket"
+    ],
+    "prior_v1_markets_considered_1011_is_not_a_unique_market_count": true,
+    "unique_executed_market_contract_keys_at_65_35": 101,
+    "unique_executed_venue_event_keys_at_65_35": 82,
+    "unique_price_outcome_joined_market_contract_keys": 7963,
+    "unique_venue_event_keys": 913,
+    "unique_venue_market_contract_keys": 25047
+  },
+  "funded_equity_reference": {
+    "active_terminal_wealth": -0.02453043084752604,
+    "annualized_sortino": 0.09760953014186484,
+    "annualized_volatility": 0.061616644848371926,
+    "calendar_sessions": 199,
+    "gross_turnover_initial_capital": 7.587574751868107,
+    "hac_sharpe_lag10": 0.07515329744169824,
+    "holding_sessions": 10,
+    "longs": 21,
+    "matched_spy_total_return": 0.02649834154871522,
+    "max_concurrent_positions": 9,
+    "max_drawdown": -0.06384129727475374,
+    "mean_utilization_active_sessions": 0.2818038422047291,
+    "peak_abs_net_mtm_exposure": 0.5760078579074887,
+    "peak_gross_mtm_exposure": 1.0158422697211948,
+    "shorts": 13,
+    "terminal_nav": 1.0019679107011892,
+    "time_under_water_max_sessions": 136,
+    "total_cost_on_starting_capital": 0.009693142793840698,
+    "total_return": 0.0019679107011891794,
+    "trades": 34,
+    "uncertainty": {
+      "10": {
+        "mean_block_length": 10,
+        "mean_daily_active_pnl_ci95": [
+          -0.0006121491120992549,
+          0.0003495638538536168
+        ],
+        "mean_daily_active_pnl_observed": -0.00012326849672123638,
+        "replications": 20000,
+        "seed": 20260812,
+        "terminal_active_pnl_ci95": [
+          -0.12181767330775173,
+          0.06956320691686975
+        ],
+        "terminal_active_pnl_observed": -0.02453043084752604
+      },
+      "20": {
+        "mean_block_length": 20,
+        "mean_daily_active_pnl_ci95": [
+          -0.0006067102688316146,
+          0.0003513093207809343
+        ],
+        "mean_daily_active_pnl_observed": -0.00012326849672123638,
+        "replications": 20000,
+        "seed": 20260812,
+        "terminal_active_pnl_ci95": [
+          -0.12073534349749131,
+          0.06991055483540592
+        ],
+        "terminal_active_pnl_observed": -0.02453043084752604
+      },
+      "5": {
+        "mean_block_length": 5,
+        "mean_daily_active_pnl_ci95": [
+          -0.0006312904199379813,
+          0.0003381086047478592
+        ],
+        "mean_daily_active_pnl_observed": -0.00012326849672123638,
+        "replications": 20000,
+        "seed": 20260812,
+        "terminal_active_pnl_ci95": [
+          -0.12562679356765827,
+          0.06728361234482398
+        ],
+        "terminal_active_pnl_observed": -0.02453043084752604
+      }
+    }
+  },
+  "guardrails": [
+    "presentation_demo_only",
+    "retrospective_non_confirmatory",
+    "does_not_replace_frozen_competition_protocol",
+    "does_not_change_FST_v1_0_or_C0_NO_TRADE",
+    "contract_pnl_not_equity_alpha",
+    "all_threshold_sensitivities_reported_no_best_threshold_promotion",
+    "venue_and_event_deduplication_explicit",
+    "blocked_routes_reported_not_silently_omitted"
+  ],
+  "mode": "RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY",
+  "outputs": [
+    "registry/presentation_demo_expansion_v2_polymarket_universe.csv.gz",
+    "registry/presentation_demo_expansion_v2_polymarket_trades.csv.gz",
+    "registry/presentation_demo_expansion_v2_kalshi_universe.csv.gz",
+    "registry/presentation_demo_expansion_v2_kalshi_trades.csv.gz",
+    "registry/presentation_demo_expansion_v2_forecastex_universe.csv.gz",
+    "registry/presentation_demo_expansion_v2_forecastex_event_representatives.csv.gz",
+    "registry/presentation_demo_expansion_v2_forecastex_trades.csv.gz",
+    "registry/presentation_demo_expansion_v2_threshold_cost_sensitivity.csv",
+    "registry/presentation_demo_expansion_v2_funnel.csv"
+  ],
+  "polymarket_top_categories_by_joined_records": [
+    [
+      "Uncategorized",
+      49
+    ]
+  ],
+  "primary_65_35_zero_cost": {
+    "COMBINED_UNIQUE_VENUE_OPPORTUNITIES": {
+      "available_price_outcome_records": 326,
+      "average_loss": -0.7571153846153845,
+      "average_win": 0.15181250000000002,
+      "buy_no": 91,
+      "buy_yes": 10,
+      "calibration": {
+        "auc": 0.7006169154228856,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "gap": -0.008486486486486484,
+            "mean_probability": 0.03551351351351351,
+            "n": 37,
+            "observed_rate": 0.02702702702702703
+          },
+          {
+            "bin": "0.1-0.2",
+            "gap": 0.06385714285714283,
+            "mean_probability": 0.15042857142857144,
+            "n": 14,
+            "observed_rate": 0.21428571428571427
+          },
+          {
+            "bin": "0.2-0.3",
+            "gap": -0.06906249999999997,
+            "mean_probability": 0.25656249999999997,
+            "n": 16,
+            "observed_rate": 0.1875
+          },
+          {
+            "bin": "0.3-0.4",
+            "gap": -0.025984848484848555,
+            "mean_probability": 0.35931818181818187,
+            "n": 66,
+            "observed_rate": 0.3333333333333333
+          },
+          {
+            "bin": "0.4-0.5",
+            "gap": -0.0042586206896549905,
+            "mean_probability": 0.4525344827586205,
+            "n": 145,
+            "observed_rate": 0.4482758620689655
+          },
+          {
+            "bin": "0.5-0.6",
+            "gap": -0.02930645161290313,
+            "mean_probability": 0.5131774193548386,
+            "n": 31,
+            "observed_rate": 0.4838709677419355
+          },
+          {
+            "bin": "0.6-0.7",
+            "gap": 0.2421875,
+            "mean_probability": 0.6328125,
+            "n": 8,
+            "observed_rate": 0.875
+          },
+          {
+            "bin": "0.7-0.8",
+            "gap": 0.235,
+            "mean_probability": 0.765,
+            "n": 2,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.9-1.0",
+            "gap": 0.05264285714285699,
+            "mean_probability": 0.947357142857143,
+            "n": 7,
+            "observed_rate": 1.0
+          }
+        ],
+        "brier": 0.20188530368098162,
+        "ece_10bin": 0.02555214723926372,
+        "log_loss": 0.5786850216167957,
+        "n": 326
+      },
+      "gross_loss_abs": 9.8425,
+      "gross_profit": 13.359499999999997,
+      "hit_rate": 0.8712871287128713,
+      "hit_rate_wilson95": [
+        0.7921530010704891,
+        0.9232128555632813
+      ],
+      "largest_gain": 0.35,
+      "largest_loss": -0.959,
+      "losses": 13,
+      "max_consecutive_losses": 2,
+      "max_consecutive_wins": 23,
+      "max_drawdown_equal_contract_cumulative_pnl": -3.9330000000000007,
+      "mean_pnl_bootstrap95": [
+        -0.02963861386138613,
+        0.09460123762376231
+      ],
+      "mean_pnl_per_contract": 0.034821782178217825,
+      "mean_return_on_stake": 0.05101641989373799,
+      "median_pnl_per_contract": 0.0835,
+      "median_return_on_stake": 0.0911074740861975,
+      "n": 101,
+      "p05_pnl": -0.74,
+      "p05_return_on_stake": -1.0,
+      "p25_pnl": 0.0085,
+      "p50_pnl": 0.0835,
+      "p75_pnl": 0.26,
+      "p95_pnl": 0.34,
+      "p95_return_on_stake": 0.5151515151515152,
+      "payoff_ratio_abs_avg_win_over_loss": 0.2005143510287021,
+      "profit_factor": 1.357327914655829,
+      "std_pnl_per_contract": 0.32750906256192386,
+      "top3_losses_share_of_gross_loss": 0.2730505461010922,
+      "top3_losses_sum": -2.6875,
+      "total_pnl_per_1_contract_each": 3.5170000000000003,
+      "wins": 88,
+      "zeros": 0
+    },
+    "FORECASTEX_EVENT_REPRESENTATIVES": {
+      "available_price_outcome_records": 277,
+      "average_loss": -0.71375,
+      "average_win": 0.22094339622641512,
+      "buy_no": 56,
+      "buy_yes": 5,
+      "calibration": {
+        "auc": 0.6518508437670114,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "gap": -0.06555555555555556,
+            "mean_probability": 0.06555555555555556,
+            "n": 9,
+            "observed_rate": 0.0
+          },
+          {
+            "bin": "0.1-0.2",
+            "gap": -0.06,
+            "mean_probability": 0.1509090909090909,
+            "n": 11,
+            "observed_rate": 0.09090909090909091
+          },
+          {
+            "bin": "0.2-0.3",
+            "gap": -0.11642857142857144,
+            "mean_probability": 0.2592857142857143,
+            "n": 14,
+            "observed_rate": 0.14285714285714285
+          },
+          {
+            "bin": "0.3-0.4",
+            "gap": -0.021290322580645282,
+            "mean_probability": 0.3600000000000001,
+            "n": 62,
+            "observed_rate": 0.3387096774193548
+          },
+          {
+            "bin": "0.4-0.5",
+            "gap": -0.009647887323943671,
+            "mean_probability": 0.4533098591549296,
+            "n": 142,
+            "observed_rate": 0.44366197183098594
+          },
+          {
+            "bin": "0.5-0.6",
+            "gap": -0.027586206896551613,
+            "mean_probability": 0.5103448275862068,
+            "n": 29,
+            "observed_rate": 0.4827586206896552
+          },
+          {
+            "bin": "0.6-0.7",
+            "gap": 0.20500000000000007,
+            "mean_probability": 0.6283333333333333,
+            "n": 6,
+            "observed_rate": 0.8333333333333334
+          },
+          {
+            "bin": "0.7-0.8",
+            "gap": 0.235,
+            "mean_probability": 0.765,
+            "n": 2,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.9-1.0",
+            "gap": 0.08000000000000007,
+            "mean_probability": 0.9199999999999999,
+            "n": 2,
+            "observed_rate": 1.0
+          }
+        ],
+        "brier": 0.21714404332129975,
+        "ece_10bin": 0.029711191335740093,
+        "log_loss": 0.6189281322654454,
+        "n": 277
+      },
+      "gross_loss_abs": 5.71,
+      "gross_profit": 11.709999999999999,
+      "hit_rate": 0.8688524590163934,
+      "hit_rate_wilson95": [
+        0.7619811980700654,
+        0.932019227250999
+      ],
+      "largest_gain": 0.35,
+      "largest_loss": -0.85,
+      "losses": 8,
+      "max_consecutive_losses": 3,
+      "max_consecutive_wins": 16,
+      "max_drawdown_equal_contract_cumulative_pnl": -2.1100000000000003,
+      "mean_pnl_bootstrap95": [
+        0.009344262295081986,
+        0.1752499999999999
+      ],
+      "mean_pnl_per_contract": 0.09836065573770492,
+      "mean_return_on_stake": 0.13381197040312853,
+      "median_pnl_per_contract": 0.22,
+      "median_return_on_stake": 0.28205128205128205,
+      "n": 61,
+      "p05_pnl": -0.7,
+      "p05_return_on_stake": -1.0,
+      "p25_pnl": 0.09,
+      "p50_pnl": 0.22,
+      "p75_pnl": 0.3,
+      "p95_pnl": 0.35,
+      "p95_return_on_stake": 0.5384615384615384,
+      "payoff_ratio_abs_avg_win_over_loss": 0.30955291940653606,
+      "profit_factor": 2.050788091068301,
+      "std_pnl_per_contract": 0.33019706151877787,
+      "top3_losses_share_of_gross_loss": 0.4080560420315237,
+      "top3_losses_sum": -2.33,
+      "total_pnl_per_1_contract_each": 6.0,
+      "wins": 53,
+      "zeros": 0
+    },
+    "POLYMARKET_ALL": {
+      "available_price_outcome_records": 49,
+      "average_loss": -0.8265,
+      "average_win": 0.04712857142857142,
+      "buy_no": 35,
+      "buy_yes": 5,
+      "calibration": {
+        "auc": 0.9147058823529411,
+        "bins": [
+          {
+            "bin": "0.0-0.1",
+            "gap": 0.00985714285714286,
+            "mean_probability": 0.025857142857142853,
+            "n": 28,
+            "observed_rate": 0.03571428571428571
+          },
+          {
+            "bin": "0.1-0.2",
+            "gap": 0.518,
+            "mean_probability": 0.14866666666666667,
+            "n": 3,
+            "observed_rate": 0.6666666666666666
+          },
+          {
+            "bin": "0.2-0.3",
+            "gap": 0.2625,
+            "mean_probability": 0.2375,
+            "n": 2,
+            "observed_rate": 0.5
+          },
+          {
+            "bin": "0.3-0.4",
+            "gap": -0.09875,
+            "mean_probability": 0.34875,
+            "n": 4,
+            "observed_rate": 0.25
+          },
+          {
+            "bin": "0.4-0.5",
+            "gap": 0.2508333333333333,
+            "mean_probability": 0.41583333333333333,
+            "n": 3,
+            "observed_rate": 0.6666666666666666
+          },
+          {
+            "bin": "0.5-0.6",
+            "gap": -0.05425000000000002,
+            "mean_probability": 0.55425,
+            "n": 2,
+            "observed_rate": 0.5
+          },
+          {
+            "bin": "0.6-0.7",
+            "gap": 0.35375,
+            "mean_probability": 0.64625,
+            "n": 2,
+            "observed_rate": 1.0
+          },
+          {
+            "bin": "0.9-1.0",
+            "gap": 0.04169999999999996,
+            "mean_probability": 0.9583,
+            "n": 5,
+            "observed_rate": 1.0
+          }
+        ],
+        "brier": 0.11562671428571428,
+        "ece_10bin": 0.0923877551020408,
+        "log_loss": 0.3511882532560603,
+        "n": 49
+      },
+      "gross_loss_abs": 4.132499999999999,
+      "gross_profit": 1.6494999999999997,
+      "hit_rate": 0.875,
+      "hit_rate_wilson95": [
+        0.738878801611489,
+        0.945404997490546
+      ],
+      "largest_gain": 0.3385,
+      "largest_loss": -0.959,
+      "losses": 5,
+      "max_consecutive_losses": 2,
+      "max_consecutive_wins": 16,
+      "max_drawdown_equal_contract_cumulative_pnl": -3.7140000000000004,
+      "mean_pnl_bootstrap95": [
+        -0.16312656249999993,
+        0.02075374999999992
+      ],
+      "mean_pnl_per_contract": -0.062075000000000005,
+      "mean_return_on_stake": -0.07524679463308258,
+      "median_pnl_per_contract": 0.013499999999999979,
+      "median_return_on_stake": 0.013685785664283995,
+      "n": 40,
+      "p05_pnl": -0.8559249999999999,
+      "p05_return_on_stake": -1.0,
+      "p25_pnl": 0.0025,
+      "p50_pnl": 0.013499999999999979,
+      "p75_pnl": 0.04475,
+      "p95_pnl": 0.17802499999999977,
+      "p95_return_on_stake": 0.2170428518136707,
+      "payoff_ratio_abs_avg_win_over_loss": 0.05702186500734594,
+      "profit_factor": 0.3991530550514217,
+      "std_pnl_per_contract": 0.29836289879105277,
+      "top3_losses_share_of_gross_loss": 0.6503327283726559,
+      "top3_losses_sum": -2.6875,
+      "total_pnl_per_1_contract_each": -2.4829999999999997,
+      "wins": 35,
+      "zeros": 0
+    }
+  },
+  "route_status": {
+    "forecastex": {
+      "accepted_contract_rows": 25126,
+      "accepted_contracts_seen_in_archives": 24556,
+      "archive_dates_attempted": 589,
+      "archive_error_examples": [],
+      "archive_errors": 0,
+      "census_unique_contract_rows": 467868,
+      "economic_headers_seen": {
+        "date": 589,
+        "end_price": 589,
+        "event_contract": 589,
+        "expiration_date": 589,
+        "high_price": 589,
+        "low_price": 589,
+        "open_interest": 589,
+        "pair_quantity": 589,
+        "settlement_price": 589,
+        "start_price": 589,
+        "subtype": 589,
+        "vwap": 589
+      },
+      "price_and_terminal_joined_contracts": 7914,
+      "representative_selection": "closest entry probability to 0.5 within each canonical event, outcome-blind",
+      "status": "MATERIALIZED_BACKTEST",
+      "unique_canonical_events_joined": 277
+    },
+    "kalshi": {
+      "history_resolved": 328,
+      "price_and_terminal_joined": 0,
+      "representative_events_attempted": 391,
+      "status": "BLOCKED_NO_PRICE_SETTLEMENT_JOIN",
+      "structural_events": 391,
+      "terminal_resolved": 0
+    },
+    "polymarket": {
+      "candidate_markets": 100,
+      "price_outcome_joined": 49,
+      "status": "MATERIALIZED_BACKTEST"
+    }
+  },
+  "scientific_truth_unchanged": {
+    "H1": "SUPPORTED_IN_TESTED_SAMPLE",
+    "H2": "FAIL_UNDER_FROZEN_EXP07I",
+    "economic_champion": "C0_NO_TRADE"
+  },
+  "started_at_utc": "2026-08-19T22:50:20.558669+00:00",
+  "version": "v2"
+}
