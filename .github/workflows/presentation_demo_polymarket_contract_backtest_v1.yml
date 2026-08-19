@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/presentation_demo_polymarket_contract_backtest_runner_v1.py'
+      - 'scripts/presentation_demo_polymarket_contract_backtest_runner_v1_1.py'
       - 'registry/presentation_demo_polymarket_contract_backtest_authorization_v1.json'
       - 'registry/presentation_demo_polymarket_contract_backtest_trigger_v1.txt'
       - '.github/workflows/presentation_demo_polymarket_contract_backtest_v1.yml'
@@ -41,10 +42,10 @@ jobs:
           python-version: '3.11'
 
       - name: Compile runner
-        run: python -m py_compile scripts/presentation_demo_polymarket_contract_backtest_runner_v1.py
+        run: python -m py_compile scripts/presentation_demo_polymarket_contract_backtest_runner_v1_1.py
 
       - name: Run Polymarket contract demo backtest
-        run: python scripts/presentation_demo_polymarket_contract_backtest_runner_v1.py
+        run: python scripts/presentation_demo_polymarket_contract_backtest_runner_v1_1.py
 
       - name: Upload backtest outputs
         uses: actions/upload-artifact@v4
