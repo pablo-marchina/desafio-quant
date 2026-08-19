@@ -10,15 +10,9 @@ on:
       - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
       - 'registry/presentation_demo_multi_route_backtest_trigger_v2.txt'
       - '.github/workflows/presentation_demo_multi_route_backtest_v2.yml'
-  pull_request:
-    paths:
-      - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
-      - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
-      - 'registry/presentation_demo_multi_route_backtest_trigger_v2.txt'
-      - '.github/workflows/presentation_demo_multi_route_backtest_v2.yml'
 
 concurrency:
-  group: presentation-demo-multi-route-v2-${{ github.event.pull_request.number || github.ref }}
+  group: presentation-demo-multi-route-v2-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
