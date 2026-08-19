@@ -1,0 +1,217 @@
+from __future__ import annotations
+import json, math, hashlib, warnings
+from pathlib import Path
+from collections import defaultdict
+import numpy as np
+import pandas as pd
+from scipy import stats
+from sklearn.metrics import brier_score_loss, log_loss, roc_auc_score
+import statsmodels.api as sm
+
+ROOT = Path(__file__).resolve().parents[1]
+REG = ROOT / 'registry'
+OUT = REG / 'analytics' / 'max_history_v3_2'
+SNAP = OUT / 'source_snapshot'
+SNAP_ZIP = SNAP / 'max-history-backtest-v3.2-final.zip'
+CACHE = OUT / '.source_cache'
+OUT.mkdir(parents=True, exist_ok=True)
+SNAP.mkdir(parents=True, exist_ok=True)
+SEED=20260819
+rng=np.random.default_rng(SEED)
+
+CSV_INPUTS = [
+    'presentation_demo_max_history_backtest_trades_v3.csv',
+    'presentation_demo_max_history_backtest_errors_v3.csv',
+    'presentation_demo_max_history_backtest_funnels_v3.csv',
+    'presentation_demo_max_history_backtest_scorecard_v3.csv',
+    'presentation_demo_max_history_backtest_yearly_v3.csv',
+]
+JSON_INPUTS = [
+    'presentation_demo_max_history_backtest_summary_v3.json',
+    'presentation_demo_max_history_forecastex_v3.json',
+]
+
+def ensure_cache() -> None:
+    if CACHE.exists() and all((CACHE/n).exists() for n in CSV_INPUTS + JSON_INPUTS):
+        return
+    if not SNAP_ZIP.exists():
+        raise FileNotFoundError(f'missing source snapshot archive: {SNAP_ZIP}')
+    import zipfile
+    CACHE.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(SNAP_ZIP) as z:
+        z.extractall(CACHE)
+
+def input_path(name: str) -> Path:
+    root = REG / name
+    if root.exists():
+        return root
+    ensure_cache()
+    cached = CACHE / name
+    if cached.exists():
+        return cached
+    raise FileNotFoundError(f'missing analytics input: {name}')
+
+INPUT_PATHS = {name: input_path(name) for name in CSV_INPUTS + JSON_INPUTS}
+trades=pd.read_csv(INPUT_PATHS['presentation_demo_max_history_backtest_trades_v3.csv'])
+errors=pd.read_csv(INPUT_PATHS['presentation_demo_max_history_backtest_errors_v3.csv'])
+funnels=pd.read_csv(INPUT_PATHS['presentation_demo_max_history_backtest_funnels_v3.csv'])
+scorecard=pd.read_csv(INPUT_PATHS['presentation_demo_max_history_backtest_scorecard_v3.csv'])
+yearly_base=pd.read_csv(INPUT_PATHS['presentation_demo_max_history_backtest_yearly_v3.csv'])
+summary=json.loads(INPUT_PATHS['presentation_demo_max_history_backtest_summary_v3.json'].read_text())
+repro_candidates=[REG/'reproducibility_report_v3_2.json', CACHE/'reproducibility_report_v3_2.json']
+repro_path=next((x for x in repro_candidates if x.exists()), None)
+repro=json.loads(repro_path.read_text()) if repro_path else {}
+
+trades['entry_datetime_utc']=pd.to_datetime(trades['entry_datetime_utc'], utc=True)
+trades['entry_date']=pd.to_datetime(trades['entry_date'])
+trades['executed']=trades['side'].isin(['BUY_YES','BUY_NO'])
+trades['outcome_yes']=trades['terminal_yes_price'].clip(0,1)
+trades['bought_price']=np.where(trades['side'].eq('BUY_YES'), trades['entry_yes_price'], np.where(trades['side'].eq('BUY_NO'), trades['entry_no_price'], np.nan))
+trades['base_fee']=np.where(trades['venue'].eq('FORECASTEX'),0.01,0.0)
+trades['gross_alt_yes']=trades['terminal_yes_price']-trades['entry_yes_price']
+trades['gross_alt_no']=trades['terminal_no_price']-trades['entry_no_price']
+trades['entry_quote_sum']=trades['entry_yes_price']+trades['entry_no_price']
+trades['terminal_quote_sum']=trades['terminal_yes_price']+trades['terminal_no_price']
+trades['month']=trades['entry_date'].dt.to_period('M').astype(str)
+trades['quarter']=trades['entry_date'].dt.to_period('Q').astype(str)
+
+ex=trades[trades.executed].copy().sort_values(['entry_datetime_utc','venue','canonical_event_id','market_id']).reset_index(drop=True)
+
+# ---------- helpers ----------
+def py(x):
+    if isinstance(x,(np.integer,)): return int(x)
+    if isinstance(x,(np.floating,)): return None if not np.isfinite(x) else float(x)
+    if isinstance(x,(pd.Timestamp,)): return x.isoformat()
+    if pd.isna(x): return None
+    return x
+
+def safe_div(a,b):
+    return float(a/b) if b not in (0,None) and np.isfinite(b) else None
+
+def q(xs,p):
+    xs=np.asarray(xs,dtype=float)
+    return float(np.quantile(xs,p)) if len(xs) else None
+
+def wilson(k,n,alpha=.05):
+    if n==0: return (None,None)
+    z=stats.norm.ppf(1-alpha/2); ph=k/n; den=1+z*z/n
+    center=(ph+z*z/(2*n))/den
+    half=z*math.sqrt(ph*(1-ph)/n+z*z/(4*n*n))/den
+    return float(center-half),float(center+half)
+
+def bootstrap_mean_ci(xs, B=10000, alpha=.05):
+    x=np.asarray(xs,dtype=float); n=len(x)
+    if n==0: return (None,None,None)
+    means=[]
+    chunk=500
+    for _ in range(0,B,chunk):
+        b=min(chunk,B-len(means))
+        idx=rng.integers(0,n,size=(b,n))
+        means.extend(x[idx].mean(axis=1).tolist())
+    arr=np.asarray(means,float)
+    return float(np.quantile(arr,alpha/2)),float(np.quantile(arr,1-alpha/2)),float(np.mean(arr>0))
+
+def hac_mean_test(xs,maxlags=10):
+    x=np.asarray(xs,dtype=float)
+    if len(x)<3: return {'se':None,'t':None,'p':None}
+    X=np.ones((len(x),1))
+    fit=sm.OLS(x,X).fit(cov_type='HAC',cov_kwds={'maxlags':min(maxlags,len(x)-1)})
+    return {'se':float(fit.bse[0]),'t':float(fit.tvalues[0]),'p':float(fit.pvalues[0])}
+
+def cluster_mean_test(df):
+    if len(df)<3 or df['canonical_event_id'].nunique()<2: return {'se':None,'t':None,'p':None}
+    x=df['net_pnl_per_contract'].to_numpy(float); X=np.ones((len(x),1))
+    try:
+        fit=sm.OLS(x,X).fit(cov_type='cluster',cov_kwds={'groups':df['canonical_event_id'].astype(str).to_numpy()})
+        return {'se':float(fit.bse[0]),'t':float(fit.tvalues[0]),'p':float(fit.pvalues[0])}
+    except Exception:
+        return {'se':None,'t':None,'p':None}
+
+def additive_dd(df):
+    g=df.sort_values(['entry_datetime_utc','venue','canonical_event_id','market_id']).copy().reset_index(drop=True)
+    if not len(g): return {}
+    c=g['net_pnl_per_contract'].cumsum().to_numpy(float)
+    peak=np.maximum.accumulate(np.r_[0.0,c]) [1:]
+    dd=c-peak
+    i=int(np.argmin(dd)); mdd=float(dd[i])
+    # previous peak index; -1 means starting zero
+    prev=np.where(np.isclose(c[:i+1],peak[:i+1],atol=1e-12))[0]
+    pidx=int(prev[-1]) if len(prev) else -1
+    recovery=None
+    target=peak[i]
+    for j in range(i+1,len(c)):
+        if c[j]>=target-1e-12:
+            recovery=j; break
+    start_date = g.iloc[pidx]['entry_date'] if pidx>=0 else g.iloc[0]['entry_date']
+    trough_date=g.iloc[i]['entry_date']
+    end_date=g.iloc[recovery]['entry_date'] if recovery is not None else g.iloc[-1]['entry_date']
+    return {
+      'max_additive_drawdown':mdd,'peak_cum_pnl_before_drawdown':float(target),'trough_cum_pnl':float(c[i]),
+      'peak_trade_index':pidx,'trough_trade_index':i,'recovery_trade_index':recovery,
+      'drawdown_start_date':str(pd.Timestamp(start_date).date()),'drawdown_trough_date':str(pd.Timestamp(trough_date).date()),
+      'drawdown_recovery_or_end_date':str(pd.Timestamp(end_date).date()),
+      'drawdown_duration_trades':int((recovery if recovery is not None else len(c)-1)-pidx),
+      'drawdown_duration_calendar_days':int((pd.Timestamp(end_date)-pd.Timestamp(start_date)).days),
+      'recovered':recovery is not None,
+      'max_cumulative_pnl':float(c.max()),'min_cumulative_pnl':float(c.min()),'terminal_cumulative_pnl':float(c[-1])
+    }
+
+def daily_additive_dd(df):
+    if not len(df): return {}
+    d=df.groupby('entry_date',sort=True)['net_pnl_per_contract'].sum().reset_index()
+    d['entry_datetime_utc']=pd.to_datetime(d['entry_date'],utc=True)
+    d['venue']='DAILY_AGG'; d['canonical_event_id']=d['entry_date'].astype(str); d['market_id']=d['entry_date'].astype(str)
+    out=additive_dd(d)
+    return {f'daily_{k}':v for k,v in out.items()}
+
+def streaks(vals):
+    signs=np.sign(np.asarray(vals,float))
+    best_win=best_loss=cur_win=cur_loss=0
+    for s in signs:
+        if s>0: cur_win+=1; cur_loss=0
+        elif s<0: cur_loss+=1; cur_win=0
+        else: cur_win=cur_loss=0
+        best_win=max(best_win,cur_win); best_loss=max(best_loss,cur_loss)
+    return {'longest_win_streak':int(best_win),'longest_loss_streak':int(best_loss)}
+
+def metric_block(df, label):
+    g=df[df.executed] if 'executed' in df.columns else df
+    pnl=g['net_pnl_per_contract'].astype(float).to_numpy()
+    ros=g['return_on_stake'].dropna().astype(float).to_numpy()
+    stake=g['bought_price'].dropna().astype(float).to_numpy()
+    wins=pnl[pnl>0]; losses=pnl[pnl<0]; zeros=pnl[pnl==0]
+    n=len(pnl); k=len(wins)
+    lo,hi=wilson(k,n); b_lo,b_hi,b_pos=bootstrap_mean_ci(pnl) if n else (None,None,None)
+    t=stats.ttest_1samp(pnl,0,nan_policy='omit') if n>1 else None
+    sign=stats.binomtest(k,n,0.5,alternative='two-sided') if n else None
+    hac10=hac_mean_test(pnl,10); hac20=hac_mean_test(pnl,20)
+    cluster=cluster_mean_test(g)
+    q05=q(pnl,.05); q01=q(pnl,.01)
+    out={
+      'label':label,'trade_rows':int(len(df)),'executed_trades':int(n),'abstains':int(len(df)-n),
+      'unique_canonical_events_executed':int(g['canonical_event_id'].nunique()),
+      'date_min':str(g['entry_date'].min().date()) if n else None,'date_max':str(g['entry_date'].max().date()) if n else None,
+      'buy_yes':int((g['side']=='BUY_YES').sum()),'buy_no':int((g['side']=='BUY_NO').sum()),
+      'wins':int(len(wins)),'losses':int(len(losses)),'breakeven':int(len(zeros)),
+      'hit_rate':safe_div(len(wins),n),'hit_rate_wilson95_low':lo,'hit_rate_wilson95_high':hi,
+      'total_net_pnl':float(pnl.sum()) if n else 0.0,'mean_net_pnl':float(pnl.mean()) if n else None,'median_net_pnl':float(np.median(pnl)) if n else None,
+      'std_net_pnl_sample':float(pnl.std(ddof=1)) if n>1 else None,'variance_net_pnl_sample':float(pnl.var(ddof=1)) if n>1 else None,
+      'sem_net_pnl_iid':float(stats.sem(pnl)) if n>1 else None,
+      'min_net_pnl':float(pnl.min()) if n else None,'max_net_pnl':float(pnl.max()) if n else None,
+      'p01_net_pnl':q(pnl,.01),'p05_net_pnl':q05,'p10_net_pnl':q(pnl,.10),'p25_net_pnl':q(pnl,.25),'p75_net_pnl':q(pnl,.75),'p90_net_pnl':q(pnl,.90),'p95_net_pnl':q(pnl,.95),'p99_net_pnl':q(pnl,.99),
+      'skewness_bias_corrected':float(stats.skew(pnl,bias=False)) if n>2 else None,'excess_kurtosis_bias_corrected':float(stats.kurtosis(pnl,bias=False)) if n>3 else None,
+      'downside_deviation_zero':float(np.sqrt(np.mean(np.minimum(pnl,0)**2))) if n else None,
+      'expected_shortfall_lower_5pct':float(pnl[pnl<=q05].mean()) if n and np.any(pnl<=q05) else None,
+      'expected_shortfall_lower_1pct':float(pnl[pnl<=q01].mean()) if n and np.any(pnl<=q01) else None,
+      'gross_positive_pnl':float(wins.sum()) if len(wins) else 0.0,'gross_negative_pnl':float(losses.sum()) if len(losses) else 0.0,
+      'avg_win':float(wins.mean()) if len(wins) else None,'avg_loss':float(losses.mean()) if len(losses) else None,
+      'median_win':float(np.median(wins)) if len(wins) else None,'median_loss':float(np.median(losses)) if len(losses) else None,
+      'payoff_ratio_avg_win_abs_avg_loss':safe_div(wins.mean() if len(wins) else None,abs(losses.mean()) if len(losses) else None),
+      'profit_factor':safe_div(wins.sum() if len(wins) else None,abs(losses.sum()) if len(losses) else None),
+      'total_stake_turnover':float(stake.sum()) if len(stake) else None,'mean_stake':float(stake.mean()) if len(stake) else None,'median_stake':float(np.median(stake)) if len(stake) else None,
+      'aggregate_return_on_stake_total_pnl_over_total_stake':safe_div(pnl.sum(),stake.sum()) if len(stake) else None,
+      'mean_individual_return_on_stake':float(ros.mean()) if len(ros) else None,'median_individual_return_on_stake':float(np.median(ros)) if len(ros) else None,
+      'std_individual_return_on_stake':float(ros.std(ddof=1)) if len(ros)>1 else None,
+      'bootstrap95_mean_pnl_low':b_lo,'bootstrap95_mean_pnl_high':b_hi,'bootstrap_probability_mean_gt_zero':b_pos,
+      'iid_t_stat_mean_zero':float(t.statistic) if t else None,'iid_ttest_p_two_sided':float(t.pvalue) if t else None,
+      'binomial_hit_rate_vs_50_p_two_sided':float(sign.pvalue) if sign else None,
