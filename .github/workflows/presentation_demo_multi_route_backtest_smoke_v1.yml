@@ -1,0 +1,59 @@
+name: Presentation demo multi-route backtest smoke v1
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'registry/presentation_demo_multi_route_backtest_smoke_trigger_v1.txt'
+      - '.github/workflows/presentation_demo_multi_route_backtest_smoke_v1.yml'
+
+permissions:
+  contents: write
+
+env:
+  ARGOS_MULTI_PM_FETCH_MARKETS: '500'
+  ARGOS_MULTI_PM_ALL_MARKETS: '100'
+  ARGOS_MULTI_PM_FILTERED_MARKETS: '60'
+  ARGOS_MULTI_KALSHI_MARKETS: '25'
+  ARGOS_MULTI_HISTORY_LOOKBACK_DAYS: '14'
+  ARGOS_MULTI_HISTORY_FIDELITY: '1440'
+  ARGOS_MULTI_HTTP_TIMEOUT_SECONDS: '12'
+  ARGOS_MULTI_REQUEST_SLEEP_SECONDS: '0.05'
+  ARGOS_MULTI_THRESHOLD_YES: '0.65'
+  ARGOS_MULTI_THRESHOLD_NO: '0.35'
+  ARGOS_MULTI_ROUND_TRIP_COST_BPS: '0'
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile bootstrap
+        run: python -m py_compile scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v1.py
+      - name: Run multi-route smoke backtest suite
+        run: python scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v1.py
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            registry/presentation_demo_multi_route_backtest_summary_v1.json \
+            registry/presentation_demo_multi_route_backtest_scorecard_v1.csv \
+            registry/presentation_demo_multi_route_backtest_trades_v1.csv \
+            registry/presentation_demo_multi_route_backtest_funnels_v1.csv \
+            registry/presentation_demo_multi_route_legacy_equity_baseline_v1.json \
+            registry/presentation_demo_multi_route_forecastex_blocker_v1.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "registry: materialize multi-route presentation backtest smoke v1"
+            git pull --rebase
+            git push
+          fi
