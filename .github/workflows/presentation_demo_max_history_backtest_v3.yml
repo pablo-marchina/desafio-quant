@@ -1,0 +1,99 @@
+name: Presentation demo max-history backtest v3
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/presentation_demo_max_history_backtest_v3.py'
+      - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
+      - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
+      - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/presentation_demo_max_history_backtest_v3.py'
+      - 'scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py'
+      - 'scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz'
+      - '.github/workflows/presentation_demo_max_history_backtest_v3.yml'
+
+concurrency:
+  group: presentation-demo-max-history-v3-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+env:
+  ARGOS_MAX_HISTORY_THRESHOLD_YES: '0.65'
+  ARGOS_MAX_HISTORY_THRESHOLD_NO: '0.35'
+  ARGOS_MAX_HISTORY_PM_LOOKBACK_DAYS: '14'
+  ARGOS_MAX_HISTORY_KALSHI_LOOKBACK_HOURS: '264'
+  ARGOS_MAX_HISTORY_HTTP_TIMEOUT: '35'
+  ARGOS_MAX_HISTORY_PM_DETAIL_WORKERS: '12'
+  ARGOS_MAX_HISTORY_KALSHI_WORKERS: '4'
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile runner and retained v2 payload
+        run: |
+          python -m py_compile scripts/presentation_demo_max_history_backtest_v3.py
+          python -m py_compile scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py
+          python - <<'PY'
+          import gzip
+          from pathlib import Path
+          p = Path('scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz')
+          src = gzip.decompress(p.read_bytes()).decode('utf-8')
+          compile(src, 'presentation_demo_multi_route_backtest_suite_v2.py', 'exec')
+          print('retained_v2_payload_compile_ok', len(src))
+          PY
+
+      - name: Run complete max-history backtest
+        run: python scripts/presentation_demo_max_history_backtest_v3.py
+
+      - name: Upload v3 outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-demo-max-history-backtest-v3
+          path: |
+            registry/presentation_demo_max_history_backtest_summary_v3.json
+            registry/presentation_demo_max_history_backtest_scorecard_v3.csv
+            registry/presentation_demo_max_history_backtest_trades_v3.csv
+            registry/presentation_demo_max_history_backtest_yearly_v3.csv
+            registry/presentation_demo_max_history_backtest_funnels_v3.csv
+            registry/presentation_demo_max_history_backtest_errors_v3.csv
+            registry/presentation_demo_max_history_forecastex_v3.json
+
+      - name: Commit outputs on main only
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            registry/presentation_demo_max_history_backtest_summary_v3.json \
+            registry/presentation_demo_max_history_backtest_scorecard_v3.csv \
+            registry/presentation_demo_max_history_backtest_trades_v3.csv \
+            registry/presentation_demo_max_history_backtest_yearly_v3.csv \
+            registry/presentation_demo_max_history_backtest_funnels_v3.csv \
+            registry/presentation_demo_max_history_backtest_errors_v3.csv \
+            registry/presentation_demo_max_history_forecastex_v3.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "registry: materialize complete max-history backtest v3"
+            git pull --rebase
+            git push
+          fi
