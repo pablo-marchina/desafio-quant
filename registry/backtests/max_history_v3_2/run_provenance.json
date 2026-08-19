@@ -1,0 +1,27 @@
+{
+  "artifact": "MAX_HISTORY_V3_2_RUN_PROVENANCE",
+  "git_branch": "backtest-expansion-kalshi-forecastex-v2",
+  "git_head": "4b2e3ef042407ab28e94be42d8472b106fe3b6da",
+  "github": {
+    "GITHUB_ACTION": "__run_6",
+    "GITHUB_ACTIONS": "true",
+    "GITHUB_ACTOR": "pablo-marchina",
+    "GITHUB_EVENT_NAME": "pull_request",
+    "GITHUB_HEAD_REF": "backtest-expansion-kalshi-forecastex-v2",
+    "GITHUB_JOB": "backtest",
+    "GITHUB_REF": "refs/pull/9/merge",
+    "GITHUB_REF_NAME": "9/merge",
+    "GITHUB_REPOSITORY": "pablo-marchina/desafio-quant",
+    "GITHUB_RUN_ATTEMPT": "1",
+    "GITHUB_RUN_ID": "32295068607",
+    "GITHUB_RUN_NUMBER": "19",
+    "GITHUB_SHA": "9f13426e643e30d0f528726d8359b56871de7f3e",
+    "GITHUB_WORKFLOW": "Presentation demo max-history backtest v3"
+  },
+  "materialized_at_utc": "2026-08-19T20:00:55.982145+00:00",
+  "python": {
+    "implementation": "CPython",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "version": "3.11.15 (main, Jun 16 2026, 21:41:52) [GCC 13.3.0]"
+  }
+}

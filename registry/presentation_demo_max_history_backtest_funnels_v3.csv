@@ -1,0 +1,21 @@
+route_id,stage,count,notes
+PM_ALL_POLYMARKET_CONTRACT_PNL,canonical_events,1591,full W4-B Polymarket canonical universe
+PM_ALL_POLYMARKET_CONTRACT_PNL,settled_binary_market_resolved,1502,deterministic market id; actual outcome token ids
+PM_ALL_POLYMARKET_CONTRACT_PNL,batch_history_failures,68,recovered per market instead of dropping entire poisoned batch
+PM_ALL_POLYMARKET_CONTRACT_PNL,single_fallback_markets,686,successful_actual_yes_no=621; token_errors=0
+PM_ALL_POLYMARKET_CONTRACT_PNL,actual_yes_no_history_returned,1435,official prices-history; 14d pre-settlement window
+PM_ALL_POLYMARKET_CONTRACT_PNL,trade_rows_materialized,1435,actual Yes/No entry prices
+PM_ALL_POLYMARKET_CONTRACT_PNL,executed_threshold_trades,863,YES>=0.65; NO signal when YES<=0.35
+PM_KALSHI_CONTRACT_PNL,canonical_events,391,full W4-B Kalshi canonical universe
+PM_KALSHI_CONTRACT_PNL,events_with_pre_audited_data_market,389,market_rows=5196
+PM_KALSHI_CONTRACT_PNL,live_provisional_excluded,34,excluded from reproducible score until archival
+PM_KALSHI_CONTRACT_PNL,historical_candlestick_history_returned,355,60m; 264h pre-operational-T0
+PM_KALSHI_CONTRACT_PNL,trade_rows_materialized,355,one technical-history representative per canonical event
+PM_KALSHI_CONTRACT_PNL,executed_threshold_trades,229,YES>=0.65; NO signal when YES<=0.35
+FORECASTEX_EVENT_CONTRACTS,canonical_events,481,full W4-B ForecastEx canonical universe
+FORECASTEX_EVENT_CONTRACTS,complete_yes_no_pairs_selected,394,actual Yes and No identifiers
+FORECASTEX_EVENT_CONTRACTS,official_price_history_returned,385,official daily Prices CSV archive
+FORECASTEX_EVENT_CONTRACTS,raw_settlement_trade_rows,363,before execution-quality quote gate
+FORECASTEX_EVENT_CONTRACTS,non_executable_quote_pairs_excluded,178,both-side zero/malformed or incoherent actual closing pair; never treated as free executable contract
+FORECASTEX_EVENT_CONTRACTS,trade_rows_materialized,185,actual positive Yes/No closes with 0.90<=Yes+No<=1.10
+FORECASTEX_EVENT_CONTRACTS,executed_threshold_trades,182,YES>=0.65; NO signal when YES<=0.35; fee=$0.01

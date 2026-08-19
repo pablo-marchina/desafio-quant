@@ -1,0 +1,53 @@
+{
+  "artifact": "MAX_HISTORY_V3_2_CODE_MANIFEST",
+  "files": {
+    ".github/workflows/presentation_demo_max_history_backtest_v3.yml": {
+      "bytes": 13668,
+      "sha256": "86f8b91ba7554bfe7d69e65057d7e6de2e416099f197f13ef0d6cebf0c4bb6ec"
+    },
+    "scripts/_payloads/max_history_analytics_v3_2/part_01.pyfrag": {
+      "bytes": 11982,
+      "sha256": "493659862b88134047b09d82b1a8bc3f8e53e1f891ef02534283be62937046aa"
+    },
+    "scripts/_payloads/max_history_analytics_v3_2/part_02.pyfrag": {
+      "bytes": 11955,
+      "sha256": "f117508efb2a4e50176155beef30f416811e70b718403d4177411975b00d1e65"
+    },
+    "scripts/_payloads/max_history_analytics_v3_2/part_03.pyfrag": {
+      "bytes": 11552,
+      "sha256": "dd1c16901918ec34bc8dd88c8dd9eaac27275240348d16daf376a198a4603167"
+    },
+    "scripts/_payloads/max_history_analytics_v3_2/part_04.pyfrag": {
+      "bytes": 8257,
+      "sha256": "12a635fdec45d47de69e5daba517fa592eef22b218ae8eb5c38782fa7d019c95"
+    },
+    "scripts/_payloads/presentation_demo_multi_route_backtest_suite_v2.py.gz": {
+      "bytes": 9501,
+      "sha256": "432317cb32da356b52e41791f9e8a498a6082c85ec91ddd26d7bfced3a6c4750"
+    },
+    "scripts/materialize_max_history_backtest_snapshot_v3_2.py": {
+      "bytes": 10272,
+      "sha256": "37f15047f61ca89758319cf66453f4fb223a99b0d1e4afdfe95b8dbab81f091b"
+    },
+    "scripts/presentation_demo_max_history_analytics_v3_2_bootstrap.py": {
+      "bytes": 722,
+      "sha256": "d496cc4eab11937029725d3bd84e743fa2aad17cc82b8c4d0ea8d610a0b888c3"
+    },
+    "scripts/presentation_demo_max_history_backtest_v3.py": {
+      "bytes": 43688,
+      "sha256": "ae6ca3e6f3802ab618f95ee428b6af22afd2765cfc99421a9fd699ca134a6cc9"
+    },
+    "scripts/presentation_demo_max_history_backtest_v3_1.py": {
+      "bytes": 8393,
+      "sha256": "0ae4273194161a7a9fcaab1596d53b992fd9fd9f421555b616ab6be677e48ff1"
+    },
+    "scripts/presentation_demo_max_history_backtest_v3_2.py": {
+      "bytes": 5060,
+      "sha256": "2416eab33cb2bb8c500624001922eba31c9511352ab83e85e90cdc87fdaf3a0e"
+    },
+    "scripts/presentation_demo_multi_route_backtest_suite_bootstrap_v2.py": {
+      "bytes": 8025,
+      "sha256": "ea27bc1638a4f19c56d013908f0b67e6ba4e0be28c2c8a336c6a6b9bc7f45781"
+    }
+  }
+}

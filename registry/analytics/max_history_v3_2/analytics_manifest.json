@@ -20,18 +20,18 @@
       "sha256": "072020096d3ad5aa0941b98ab9055e0b8b442712f18895d66af1a4c5f3f6f051"
     },
     "calibration_summary.csv": {
-      "bytes": 2712,
+      "bytes": 2714,
       "rows": 10,
-      "sha256": "eefcc3317029ffc37013da0f29c2d76a07a320548acadeee80e3b4f8bc337431"
+      "sha256": "2c7e406448c09ba01b5ab78b60dd9865c48cb7e650c45553567f08568854ce94"
     },
     "canonical_event_dedup.csv.gz": {
       "bytes": 27759,
       "rows": 1193,
-      "sha256": "2efb24e16eef778f327f3301c1a9a7cc23a8ddca57fbcacf5e4d11eca019ad27"
+      "sha256": "c0a21e4aa39857dee0d0c1e7ff3a478fd0a5df72f2bef166589900e6b57023cc"
     },
     "comprehensive_metrics.json": {
-      "bytes": 25330,
-      "sha256": "fab43c99ba49d71705c0d7f758657c92ad6c64621f704308e76c920fb1798bd2"
+      "bytes": 25333,
+      "sha256": "f9edaee8afed6501ef225ff7bd6dc4f0ac4cc3c971dc849b18649d5486f8fd10"
     },
     "concentration_metrics.csv": {
       "bytes": 1805,
@@ -44,32 +44,32 @@
       "sha256": "3af13e43146d0a37dc3bf23b1588970600af69781a012a1db3861a0bf121b78e"
     },
     "cross_venue_overlap.csv": {
-      "bytes": 691,
+      "bytes": 694,
       "rows": 3,
-      "sha256": "305f064c3dd23791a06267750855c1295aa4966d5ec04c88bedb61b548d88bc2"
+      "sha256": "6873704efb3b1d4b206c3abbb9a9a52be390964b88ba26804a396b7fc48628b7"
     },
     "daily_aggregates.csv.gz": {
       "bytes": 14344,
       "rows": 958,
-      "sha256": "dd4c16eb904cd6a16aabc215636c5b64d859160466e7e211c107ca28b083bb76"
+      "sha256": "25226550c5d1b692df89f4d96a2eee169a498be04ff70d7455c1199c344f4dc0"
     },
     "data_quality_coverage.json": {
       "bytes": 5881,
-      "sha256": "9fa5b3387cb0e1c95e95fb03a572bddd2801322200ffb43d9c213db64dde0d28"
+      "sha256": "a5d0116f6ed5102053aec7e71449d0792dfdfb96828ee69f89ed09226ea4b029"
     },
     "legacy_equity_metrics.json": {
       "bytes": 1253,
       "sha256": "6f3fde8a6f4020800294f050aa273ef0560bbaa34ef182c3e9f6a0ba68f42845"
     },
     "performance_risk_metrics.csv": {
-      "bytes": 20370,
+      "bytes": 20369,
       "rows": 14,
-      "sha256": "47abbe4a029753fadfa7ae8cc1135a4c32d264bfc3e023dd7545b106510a349b"
+      "sha256": "2d47c7b67b1c8db8aa8539b23d9e18d3311f7bbfbe654d2a12b776c4e952cfda"
     },
     "rolling_trade_windows.csv.gz": {
       "bytes": 228119,
       "rows": 8595,
-      "sha256": "2b148dffb7d06440d18ebad25f93a179ae0f9fd06eccc170bac691e023590516"
+      "sha256": "05d20c1989532efaf96937f3e9de77065032110dff1ea1d56f9ca368df448cc1"
     },
     "rolling_window_summary.csv": {
       "bytes": 8419,
@@ -77,9 +77,9 @@
       "sha256": "5a60f2d77d822a27dbcafd802ae11caf25b47c19e829a4ffbdf1972a5869d2ba"
     },
     "temporal_diagnostics.csv": {
-      "bytes": 891,
+      "bytes": 890,
       "rows": 4,
-      "sha256": "63b4495a0cd58fd9e398829e8d9f72fa51cd4a1b6ed971f18cfd841c056831ee"
+      "sha256": "a5279741f5ef768b25d64682b61ee630f4ed685f2cecd8acacaab56b0f58b110"
     },
     "threshold_sensitivity.csv": {
       "bytes": 11786,
