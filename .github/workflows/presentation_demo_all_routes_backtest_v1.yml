@@ -1,0 +1,82 @@
+name: Presentation demo all-routes backtest suite
+
+on:
+  workflow_dispatch:
+    inputs:
+      online_probe:
+        description: "Enable fail-soft online probes for public APIs where available"
+        required: false
+        default: "NO"
+        type: choice
+        options:
+          - "NO"
+          - "YES"
+  push:
+    paths:
+      - 'scripts/presentation_demo_all_routes_backtest_suite_v1.py'
+      - 'registry/presentation_demo_all_routes_backtest_authorization_v1.json'
+      - 'registry/presentation_demo_all_routes_backtest_trigger_v1.txt'
+      - 'docs/presentation_demo_all_routes_backtest_execution_v1.md'
+      - '.github/workflows/presentation_demo_all_routes_backtest_v1.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    env:
+      ARGOS_DEMO_ONLINE_PROBE: ${{ github.event.inputs.online_probe || 'NO' }}
+      ARGOS_DEMO_MAX_SAMPLE_ROWS: '2500'
+      ARGOS_DEMO_HTTP_TIMEOUT_SECONDS: '12'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile all-routes suite
+        run: python -m py_compile scripts/presentation_demo_all_routes_backtest_suite_v1.py
+
+      - name: Run all-routes suite
+        run: python scripts/presentation_demo_all_routes_backtest_suite_v1.py
+
+      - name: Upload all-routes artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: presentation-demo-all-routes-backtest-v1
+          path: |
+            registry/presentation_demo_all_routes_backtest_summary_v1.json
+            registry/presentation_demo_all_routes_backtest_scorecard_v1.csv
+            registry/presentation_demo_all_routes_polymarket_candidates_v1.csv
+            registry/presentation_demo_all_routes_kalshi_candidates_v1.csv
+            registry/presentation_demo_all_routes_macro_candidates_v1.csv
+            registry/presentation_demo_all_routes_fda_biotech_candidates_v1.csv
+            registry/presentation_demo_all_routes_forecastex_candidates_v1.csv
+            registry/presentation_demo_all_routes_legacy_equity_candidates_v1.csv
+          if-no-files-found: error
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            registry/presentation_demo_all_routes_backtest_summary_v1.json \
+            registry/presentation_demo_all_routes_backtest_scorecard_v1.csv \
+            registry/presentation_demo_all_routes_polymarket_candidates_v1.csv \
+            registry/presentation_demo_all_routes_kalshi_candidates_v1.csv \
+            registry/presentation_demo_all_routes_macro_candidates_v1.csv \
+            registry/presentation_demo_all_routes_fda_biotech_candidates_v1.csv \
+            registry/presentation_demo_all_routes_forecastex_candidates_v1.csv \
+            registry/presentation_demo_all_routes_legacy_equity_candidates_v1.csv
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "registry: materialize all-routes presentation backtest suite v1"
+            git push
+          fi
