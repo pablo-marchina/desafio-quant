@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'scripts/presentation_demo_expansion_v2.py'
+      - 'scripts/presentation_demo_expansion_v2_patch.py'
       - '.github/workflows/presentation_demo_expansion_v2.yml'
       - 'registry/presentation_demo_expansion_v2_trigger.json'
   pull_request:
@@ -12,6 +13,7 @@ on:
     paths:
       - 'registry/presentation_demo_expansion_v2_pr_trigger.txt'
       - 'scripts/presentation_demo_expansion_v2.py'
+      - 'scripts/presentation_demo_expansion_v2_patch.py'
       - '.github/workflows/presentation_demo_expansion_v2.yml'
 
 permissions:
@@ -72,7 +74,7 @@ jobs:
 
       - name: Validate executor and required frozen inputs
         run: |
-          python -m py_compile scripts/presentation_demo_expansion_v2.py
+          python -m py_compile scripts/presentation_demo_expansion_v2.py scripts/presentation_demo_expansion_v2_patch.py
           python - <<'PY'
           from pathlib import Path
           import json
@@ -97,7 +99,7 @@ jobs:
           PY
 
       - name: Run expanded multi-venue retrospective suite
-        run: python scripts/presentation_demo_expansion_v2.py
+        run: python scripts/presentation_demo_expansion_v2_patch.py
 
       - name: Validate outputs and scientific firewall
         run: |
