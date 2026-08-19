@@ -1,0 +1,172 @@
+      'hac10_se_mean':hac10['se'],'hac10_t_mean_zero':hac10['t'],'hac10_p_two_sided':hac10['p'],
+      'hac20_se_mean':hac20['se'],'hac20_t_mean_zero':hac20['t'],'hac20_p_two_sided':hac20['p'],
+      'canonical_event_cluster_se_mean':cluster['se'],'canonical_event_cluster_t_mean_zero':cluster['t'],'canonical_event_cluster_p_two_sided':cluster['p'],
+      'break_even_additional_cost_per_executed_contract':float(max(pnl.mean(),0)) if n else None,
+      'break_even_additional_cost_bps_of_total_stake':float(max(pnl.sum()/stake.sum(),0)*10000) if n and stake.sum()>0 else None,
+    }
+    out.update(streaks(pnl)); out.update(additive_dd(g)); out.update(daily_additive_dd(g))
+    return out
+
+# main blocks
+blocks=[]
+blocks.append(metric_block(trades,'ALL_MAX_HISTORY'))
+blocks.append(metric_block(trades[trades.entry_date>=pd.Timestamp('2025-01-01')],'COMMON_OVERLAP_FROM_2025_01_01'))
+for v,g in trades.groupby('venue',sort=True): blocks.append(metric_block(g,f'VENUE:{v}'))
+for s,g in trades.groupby('side',sort=True):
+    if s in ['BUY_YES','BUY_NO']: blocks.append(metric_block(g.assign(executed=True),f'SIDE:{s}'))
+for v,g in trades[trades.executed].groupby(['venue','side'],sort=True): blocks.append(metric_block(g.assign(executed=True),f'VENUE_SIDE:{v[0]}:{v[1]}'))
+
+# event-dedup metrics
+event_rows=[]
+for cid,g in ex.groupby('canonical_event_id'):
+    event_rows.append({
+      'canonical_event_id':cid,'venue_count':g['venue'].nunique(),'venues':'|'.join(sorted(g['venue'].unique())),
+      'trade_count':len(g),'mean_net_pnl':g['net_pnl_per_contract'].mean(),'sum_net_pnl':g['net_pnl_per_contract'].sum(),
+      'mean_return_on_stake':g['return_on_stake'].mean(),'all_hits':bool(g['hit'].astype(str).str.lower().eq('true').all()),
+      'any_hit':bool(g['hit'].astype(str).str.lower().eq('true').any()),'entry_date_min':g['entry_date'].min().date().isoformat(),'entry_date_max':g['entry_date'].max().date().isoformat(),
+    })
+event_df=pd.DataFrame(event_rows)
+event_metric_df=event_df.rename(columns={'mean_net_pnl':'net_pnl_per_contract','mean_return_on_stake':'return_on_stake'}).copy()
+event_metric_df['executed']=True; event_metric_df['bought_price']=np.nan; event_metric_df['side']='EVENT_AVG'; event_metric_df['venue']='EVENT_DEDUP'; event_metric_df['market_id']=event_metric_df['canonical_event_id']; event_metric_df['entry_date']=pd.to_datetime(event_metric_df['entry_date_min']); event_metric_df['entry_datetime_utc']=pd.to_datetime(event_metric_df['entry_date_min'],utc=True); event_metric_df['canonical_event_id']=event_metric_df['canonical_event_id']
+blocks.append(metric_block(event_metric_df,'EVENT_DEDUP_EQUAL_EVENT'))
+
+metrics_df=pd.DataFrame(blocks)
+metrics_df.to_csv(OUT/'performance_risk_metrics.csv',index=False)
+
+# ---------- breakdowns ----------
+def summarize_group(g):
+    ge=g[g.executed]
+    pnl=ge.net_pnl_per_contract.to_numpy(float); st=ge.bought_price.dropna().to_numpy(float)
+    return pd.Series({
+      'trade_rows':len(g),'executed_trades':len(ge),'abstains':len(g)-len(ge),'unique_events':ge.canonical_event_id.nunique(),
+      'wins':int((pnl>0).sum()),'losses':int((pnl<0).sum()),'hit_rate':float((pnl>0).mean()) if len(pnl) else np.nan,
+      'total_net_pnl':float(pnl.sum()),'mean_net_pnl':float(pnl.mean()) if len(pnl) else np.nan,'median_net_pnl':float(np.median(pnl)) if len(pnl) else np.nan,
+      'std_net_pnl':float(pnl.std(ddof=1)) if len(pnl)>1 else np.nan,'min_net_pnl':float(pnl.min()) if len(pnl) else np.nan,'max_net_pnl':float(pnl.max()) if len(pnl) else np.nan,
+      'total_stake':float(st.sum()) if len(st) else np.nan,'aggregate_roi_on_stake':float(pnl.sum()/st.sum()) if len(st) and st.sum()>0 else np.nan,
+      'avg_entry_yes':float(ge.entry_yes_price.mean()) if len(ge) else np.nan,'avg_history_points':float(ge.history_points.mean()) if len(ge) else np.nan,
+    })
+
+breakdowns=[]
+def add_break(df, dims, name):
+    if not dims:
+        x=summarize_group(df).to_dict(); x['breakdown']=name; breakdowns.append(x); return
+    for keys,g in df.groupby(dims,dropna=False,sort=True,observed=True):
+        if not isinstance(keys,tuple): keys=(keys,)
+        x=summarize_group(g).to_dict(); x['breakdown']=name
+        for d,k in zip(dims,keys): x[d]=k
+        breakdowns.append(x)
+add_break(trades,['venue'],'venue')
+add_break(trades,['entry_year'],'year')
+add_break(trades,['venue','entry_year'],'venue_year')
+add_break(trades,['month'],'month')
+add_break(trades,['quarter'],'quarter')
+add_break(trades,['side'],'side')
+add_break(trades,['venue','side'],'venue_side')
+add_break(trades,['category'],'category')
+add_break(trades,['venue','category'],'venue_category')
+# entry probability deciles/bins
+trades['entry_yes_bin']=pd.cut(trades.entry_yes_price,bins=np.linspace(0,1,11),include_lowest=True)
+add_break(trades,['venue','entry_yes_bin'],'venue_entry_probability_bin')
+breakdown_df=pd.DataFrame(breakdowns)
+breakdown_df.to_csv(OUT/'breakdowns.csv',index=False)
+
+# ---------- calibration ----------
+cal_summary=[]; cal_bins=[]
+def calibration_for(g,label):
+    p=g.entry_yes_price.clip(1e-6,1-1e-6).to_numpy(float); y=g.outcome_yes.to_numpy(float)
+    n=len(g)
+    brier=float(np.mean((p-y)**2)) if n else None
+    base=float(np.mean((np.mean(y)-y)**2)) if n else None
+    ll=float(-np.mean(y*np.log(p)+(1-y)*np.log(1-p))) if n else None
+    binary=np.isclose(y,0,atol=1e-6)|np.isclose(y,1,atol=1e-6)
+    auc=None; intercept=slope=None
+    if binary.sum()>5 and len(np.unique(y[binary].round()))==2:
+        try: auc=float(roc_auc_score(y[binary].round(),p[binary]))
+        except: pass
+        try:
+            X=sm.add_constant(np.log(p[binary]/(1-p[binary])))
+            fit=sm.GLM(y[binary].round(),X,family=sm.families.Binomial()).fit()
+            intercept=float(fit.params[0]); slope=float(fit.params[1])
+        except: pass
+    bins=np.linspace(0,1,11); ids=np.digitize(p,bins[1:-1],right=False)
+    ece=mce=0.0
+    for i in range(10):
+        m=ids==i
+        if not m.any(): continue
+        mp=float(p[m].mean()); my=float(y[m].mean()); gap=abs(mp-my); w=float(m.mean())
+        ece+=w*gap; mce=max(mce,gap)
+        cal_bins.append({'label':label,'bin':i,'bin_left':bins[i],'bin_right':bins[i+1],'n':int(m.sum()),'mean_predicted_yes':mp,'mean_realized_yes':my,'calibration_gap':my-mp,'abs_gap':gap})
+    cal_summary.append({
+      'label':label,'n':n,'mean_predicted_yes':float(p.mean()) if n else None,'mean_realized_yes':float(y.mean()) if n else None,
+      'bias_realized_minus_predicted':float(y.mean()-p.mean()) if n else None,'brier_score':brier,'climatology_brier':base,
+      'brier_skill_vs_climatology':1-brier/base if base and base>0 else None,'log_loss_soft_settlement':ll,'roc_auc_binary_settlements':auc,
+      'ece_10_equal_width':ece,'mce_10_equal_width':mce,'logistic_calibration_intercept':intercept,'logistic_calibration_slope':slope,
+      'fractional_settlement_rows':int((~binary).sum())
+    })
+calibration_for(trades,'ALL')
+for v,g in trades.groupby('venue'): calibration_for(g,v)
+for y,g in trades.groupby('entry_year'): calibration_for(g,f'YEAR:{y}')
+pd.DataFrame(cal_summary).to_csv(OUT/'calibration_summary.csv',index=False)
+pd.DataFrame(cal_bins).to_csv(OUT/'calibration_bins.csv',index=False)
+
+# ---------- threshold sensitivity ----------
+threshold_rows=[]
+def threshold_calc(g,t,label):
+    yes=g.entry_yes_price>=t; no=g.entry_yes_price<=1-t; side=np.where(yes,'BUY_YES',np.where(no,'BUY_NO','ABSTAIN'))
+    gross=np.where(yes,g.gross_alt_yes,np.where(no,g.gross_alt_no,0.0))
+    fee=np.where(side!='ABSTAIN',g.base_fee,0.0); net=gross-fee
+    execmask=side!='ABSTAIN'; st=np.where(yes,g.entry_yes_price,np.where(no,g.entry_no_price,np.nan))
+    n=int(execmask.sum()); p=net[execmask]
+    return {'label':label,'threshold_yes':t,'threshold_no':1-t,'trade_rows':len(g),'executed_trades':n,'execution_rate':n/len(g) if len(g) else None,
+            'buy_yes':int((side=='BUY_YES').sum()),'buy_no':int((side=='BUY_NO').sum()),'hit_rate':float((p>0).mean()) if n else None,
+            'total_net_pnl':float(p.sum()),'mean_net_pnl':float(p.mean()) if n else None,'median_net_pnl':float(np.median(p)) if n else None,
+            'total_stake':float(np.nansum(st[execmask])) if n else 0.0,'aggregate_roi_on_stake':float(p.sum()/np.nansum(st[execmask])) if n and np.nansum(st[execmask])>0 else None}
+for t in [round(0.50 + i*0.025, 3) for i in range(17)]:
+    threshold_rows.append(threshold_calc(trades,t,'ALL'))
+    for v,g in trades.groupby('venue'): threshold_rows.append(threshold_calc(g,t,v))
+pd.DataFrame(threshold_rows).to_csv(OUT/'threshold_sensitivity.csv',index=False)
+
+# ---------- additional cost/slippage sensitivity ----------
+cost_rows=[]
+for label,g in [('ALL',ex),*[(v,gg) for v,gg in ex.groupby('venue')]]:
+    for c in [0,0.001,0.0025,0.005,0.0075,0.01,0.015,0.02,0.03,0.05]:
+        p=g.net_pnl_per_contract.to_numpy(float)-c
+        stake=g.bought_price.to_numpy(float)
+        cost_rows.append({'label':label,'additional_cost_per_contract':c,'executed_trades':len(g),'total_net_pnl_after_additional_cost':float(p.sum()),'mean_net_pnl_after_additional_cost':float(p.mean()),'hit_rate_after_additional_cost':float((p>0).mean()),'aggregate_roi_on_stake_after_additional_cost':float(p.sum()/stake.sum())})
+pd.DataFrame(cost_rows).to_csv(OUT/'cost_sensitivity.csv',index=False)
+
+# ---------- daily aggregates ----------
+daily_rows=[]
+for label,g0 in [('ALL',ex),*[(v,g) for v,g in ex.groupby('venue')]]:
+    for dt,g in g0.groupby('entry_date',sort=True):
+        pnl=g.net_pnl_per_contract.to_numpy(float); st=g.bought_price.to_numpy(float)
+        daily_rows.append({'label':label,'date':pd.Timestamp(dt).date().isoformat(),'executed_trades':len(g),'unique_events':g.canonical_event_id.nunique(),'total_net_pnl':float(pnl.sum()),'mean_net_pnl':float(pnl.mean()),'hit_rate':float((pnl>0).mean()),'total_stake':float(st.sum()),'aggregate_roi_on_stake':float(pnl.sum()/st.sum()) if st.sum()>0 else None})
+pd.DataFrame(daily_rows).to_csv(OUT/'daily_aggregates.csv.gz',index=False,compression='gzip')
+
+# ---------- rolling ----------
+rolling=[]
+for label,g0 in [('ALL',ex),*[(v,g) for v,g in ex.groupby('venue')]]:
+    g=g0.sort_values(['entry_datetime_utc','canonical_event_id','market_id']).reset_index(drop=True)
+    for w in [25,50,100,250]:
+        if len(g)<w: continue
+        pnl=g.net_pnl_per_contract.astype(float); hit=(pnl>0).astype(float); stake=g.bought_price.astype(float)
+        for i in range(w-1,len(g)):
+            s=i-w+1; pp=pnl.iloc[s:i+1]; ss=stake.iloc[s:i+1]
+            rolling.append({'label':label,'window_trades':w,'start_index':s,'end_index':i,'start_date':g.iloc[s].entry_date.date().isoformat(),'end_date':g.iloc[i].entry_date.date().isoformat(),'window_total_pnl':pp.sum(),'window_mean_pnl':pp.mean(),'window_hit_rate':hit.iloc[s:i+1].mean(),'window_roi_on_stake':pp.sum()/ss.sum() if ss.sum()>0 else np.nan})
+rolling_df=pd.DataFrame(rolling)
+rolling_df.to_csv(OUT/'rolling_trade_windows.csv.gz',index=False,compression='gzip')
+rolling_summary=[]
+if not rolling_df.empty:
+    for (label,w),g in rolling_df.groupby(['label','window_trades'],sort=True):
+        g=g.sort_values(['end_index','start_index']).reset_index(drop=True)
+        for metric in ['window_total_pnl','window_mean_pnl','window_hit_rate','window_roi_on_stake']:
+            vals=pd.to_numeric(g[metric],errors='coerce')
+            valid=g.loc[vals.notna()].copy()
+            if valid.empty: continue
+            lo=valid.loc[pd.to_numeric(valid[metric],errors='coerce').idxmin()]
+            hi=valid.loc[pd.to_numeric(valid[metric],errors='coerce').idxmax()]
+            latest=valid.iloc[-1]
+            rolling_summary.append({
+                'label':label,'window_trades':int(w),'metric':metric,
+                'min_value':float(lo[metric]),'min_start_date':lo['start_date'],'min_end_date':lo['end_date'],
+                'max_value':float(hi[metric]),'max_start_date':hi['start_date'],'max_end_date':hi['end_date'],
