@@ -1,0 +1,180 @@
+{
+  "artifact": "PRESENTATION_DEMO_UNRESTRICTED_BACKTEST_EXPANSION_AUDIT_V1",
+  "created_at_local": "2026-08-18T23:33:00-03:00",
+  "status": "MATERIALIZED_AUDIT_NO_EXECUTION_YET",
+  "objective": "Find the largest defensible post-challenge/demo backtest expansion across any event universe, not limited to earnings, equities, or the original competition protocol.",
+  "scope_change": {
+    "old_scope": "EARNINGS_EPS / equity-return economic backtest / scientific competition protocol",
+    "new_scope": "unrestricted presentation/demo expansion across prediction-market, macro, corporate, regulatory, political, sports, crypto, and other event families",
+    "allowed_changes_for_demo": [
+      "change event family",
+      "change from equity-return PnL to prediction-market-contract PnL",
+      "use market-internal token price history instead of external security prices",
+      "prioritize N and demonstrability over confirmatory scientific purity",
+      "keep clear labeling that this is a post-challenge demo/backtest expansion"
+    ],
+    "still_not_allowed": [
+      "present demo results as the frozen competition result",
+      "claim deployable alpha without out-of-sample/fee/liquidity controls",
+      "mix outcome data into signal construction",
+      "hide that the universe/objective changed"
+    ]
+  },
+  "current_repo_evidence": {
+    "legacy_equity_backtest": {
+      "best_ready_artifact": "registry/economic_backtest_quality_summary.json",
+      "exp06_trade_level_rows": 796,
+      "exp06r_primary_opportunities": 108,
+      "exp06r_primary_trades": 34,
+      "status": "ready_for_presentation_but_not_large_expansion"
+    },
+    "demo_daily_ledger": {
+      "best_ready_artifact": "registry/w2a_results/w2a_funded_daily_ledger.csv",
+      "rows": 199,
+      "date_min": "2025-10-13",
+      "date_max": "2026-07-29",
+      "status": "ready_for_visual_demo"
+    },
+    "earnings_expansion": {
+      "official_domain_rows": 1355,
+      "final_pit_signal_rows": 109,
+      "status": "large_event_universe_but_insufficient_pit_signal_coverage_for_large_equity_backtest"
+    },
+    "polymarket_census": {
+      "venue_events_rows": 810515,
+      "w2_overlap_rows": 810515,
+      "status": "largest_existing_event_source; not yet backtest because price/settlement/history join is needed"
+    },
+    "forecastex_contracts": {
+      "contract_rows": 467868,
+      "status": "large existing contract source; likely harder to backtest because contract discovery/market data route is broker/API-dependent"
+    },
+    "fda_truth_extension": {
+      "rows": 22,
+      "status": "domain-interesting but not a large-N demo route"
+    }
+  },
+  "route_ranking": [
+    {
+      "rank": 1,
+      "route_id": "PM_ALL_POLYMARKET_CONTRACT_PNL",
+      "short_name": "Polymarket all-event contract PnL",
+      "universe": "All tradable/resolved Polymarket markets from the existing W4B census, across categories",
+      "expected_n_potential": "highest among existing repo sources; starts from 810515 census rows before filters",
+      "backtest_target": "prediction-market contract/token return or settlement return",
+      "why_it_expands": "Removes ticker/equity-price bottleneck; every market can be evaluated from its own token price history when CLOB token IDs and history are available.",
+      "required_joins": [
+        "market/event id -> condition/token ids",
+        "token id -> price history before decision timestamp",
+        "token id/market -> close/settlement/resolution or terminal proxy",
+        "timestamped signal snapshot -> later contract return"
+      ],
+      "presentation_strength": "Shows the ARGOS architecture working at platform scale; largest-N demo path.",
+      "main_caveat": "This is no longer equity alpha; it is prediction-market contract PnL/calibration.",
+      "recommendation": "PRIMARY_EXECUTION_ROUTE"
+    },
+    {
+      "rank": 2,
+      "route_id": "PM_KALSHI_CONTRACT_PNL",
+      "short_name": "Kalshi all-event contract PnL",
+      "universe": "Kalshi markets/events using current and historical endpoints",
+      "expected_n_potential": "high, but requires fresh platform-specific collection",
+      "backtest_target": "Kalshi contract return/candlestick/trade-based PnL",
+      "why_it_expands": "Uses direct event-contract market data instead of equity tickers; supports historical trades/candlesticks.",
+      "required_joins": [
+        "series/event/market discovery",
+        "market/ticker -> historical trades or candlesticks",
+        "market -> settlement/status",
+        "PIT observation -> later contract return"
+      ],
+      "presentation_strength": "Regulated prediction-market venue and clean historical endpoints.",
+      "main_caveat": "Less already materialized in repo than Polymarket; may require API auth/limits handling.",
+      "recommendation": "SECONDARY_EXECUTION_ROUTE"
+    },
+    {
+      "rank": 3,
+      "route_id": "MACRO_PM_OR_ETF_EVENT_BACKTEST",
+      "short_name": "Macro events: CPI/FOMC/NFP/rates",
+      "universe": "Recurring macro announcements and/or prediction-market contracts around macro releases",
+      "expected_n_potential": "medium; many recurring events but lower than all-market PM census",
+      "backtest_target": "PM contract return or ETF/futures proxy return",
+      "why_it_expands": "Generalizes beyond earnings while staying financially interpretable.",
+      "required_joins": [
+        "event calendar",
+        "forecast/signal source",
+        "asset or contract price history",
+        "post-event return window"
+      ],
+      "presentation_strength": "Finance-friendly narrative.",
+      "main_caveat": "More collection work and lower N than all-event PM route.",
+      "recommendation": "TERTIARY_IF_FINANCE_NARRATIVE_REQUIRED"
+    },
+    {
+      "rank": 4,
+      "route_id": "FDA_BIOTECH_EQUITY_OR_PM",
+      "short_name": "FDA/biotech regulatory events",
+      "universe": "FDA approvals, advisory committees, biotech milestones, related PM contracts or equities",
+      "expected_n_potential": "low-to-medium from current repo; only 22 rows in existing truth extension",
+      "backtest_target": "biotech equity return or PM contract return",
+      "why_it_expands": "Strong information-asymmetry story, but small current sample.",
+      "required_joins": [
+        "FDA event -> ticker/issuer or PM market",
+        "PIT market signal",
+        "official outcome",
+        "equity/contract price return"
+      ],
+      "presentation_strength": "Conceptually aligned with asymmetric information.",
+      "main_caveat": "Not the largest-N route with current data.",
+      "recommendation": "NOT_PRIMARY_FOR_MAX_N"
+    },
+    {
+      "rank": 5,
+      "route_id": "FORECASTEX_EVENT_CONTRACTS",
+      "short_name": "ForecastEx event contracts",
+      "universe": "ForecastEx/IBKR event contracts from existing W4B contract census",
+      "expected_n_potential": "high in raw rows; execution harder",
+      "backtest_target": "event contract return/settlement",
+      "why_it_expands": "Large contract listing source exists in repo.",
+      "required_joins": [
+        "contract listing -> instrument/conid",
+        "historical data discovery",
+        "contract price history",
+        "settlement/outcome"
+      ],
+      "presentation_strength": "Regulated/finance-native event contracts.",
+      "main_caveat": "Data access route is more broker/API dependent than Polymarket/Kalshi.",
+      "recommendation": "LOWER_PRIORITY_UNLESS_POLYMARKET_BLOCKED"
+    },
+    {
+      "rank": 6,
+      "route_id": "LEGACY_EQUITY_RECONSTRUCTION",
+      "short_name": "Reconstruct/extend legacy equity backtest",
+      "universe": "Original W2A/EXP06 equity-event pipeline plus possible non-earnings event families",
+      "expected_n_potential": "bounded unless original raw EXP06 artifacts are recovered or full pipeline is rerun",
+      "backtest_target": "equity return around event windows",
+      "why_it_expands": "Closest to original story, but bottlenecked by event->ticker->PIT->price joins.",
+      "required_joins": [
+        "recover raw EXP06/EXP06R files or rerun W2A pipeline",
+        "event family -> ticker mapping",
+        "PIT signal",
+        "entry/exit price history"
+      ],
+      "presentation_strength": "Most consistent with original equity alpha framing.",
+      "main_caveat": "Not the max-N route.",
+      "recommendation": "KEEP_AS_BASELINE_NOT_EXPANSION_ENGINE"
+    }
+  ],
+  "recommended_next_execution": {
+    "route": "PM_ALL_POLYMARKET_CONTRACT_PNL",
+    "deliverable_name": "ARGOS_PM_DEMO_ALL_EVENTS_V1",
+    "steps": [
+      "Use existing W4B Polymarket census as the broad universe.",
+      "Extract market/event IDs, condition IDs, token IDs, end/resolution timestamps, category metadata where available.",
+      "Fetch/derive token price history before observation cutoff using Polymarket CLOB price-history or batch-prices-history where IDs are available.",
+      "Define simple pre-registered demo rules: buy YES/NO or abstain from probability threshold, hold to close/settlement or fixed horizon.",
+      "Report N at every funnel stage: census rows, unique markets, markets with token ID, markets with pre-cutoff price history, markets with terminal outcome/price, executable demo trades.",
+      "Keep separate from competition artifacts and label as post-challenge demo expansion."
+    ],
+    "expected_story_if_successful": "The original equity backtest was constrained by ticker/PIT coverage; the unrestricted demo shows the same ARGOS event-signal-backtest machinery scaling across prediction-market contracts directly."
+  }
+}
