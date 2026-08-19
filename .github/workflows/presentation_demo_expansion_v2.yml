@@ -69,7 +69,6 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add registry/presentation_demo_expansion_v2_run_status.json
           git commit -m 'status: presentation expansion v2 running'
-          git pull --rebase origin "$ARGOS_V2_TARGET_BRANCH"
           git push origin HEAD:"$ARGOS_V2_TARGET_BRANCH"
 
       - name: Validate executor and required frozen inputs
@@ -155,5 +154,4 @@ jobs:
             exit 0
           fi
           git commit -m 'results: materialize presentation expansion v2'
-          git pull --rebase origin "$ARGOS_V2_TARGET_BRANCH"
           git push origin HEAD:"$ARGOS_V2_TARGET_BRANCH"
