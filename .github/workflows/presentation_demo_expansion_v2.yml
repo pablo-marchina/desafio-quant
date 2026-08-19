@@ -1,0 +1,108 @@
+name: ARGOS Presentation Demo Expansion v2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/presentation_demo_expansion_v2.py'
+      - '.github/workflows/presentation_demo_expansion_v2.yml'
+      - 'registry/presentation_demo_expansion_v2_trigger.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: presentation-demo-expansion-v2
+  cancel-in-progress: false
+
+jobs:
+  expand:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      ARGOS_V2_PM_FETCH: '5000'
+      ARGOS_V2_PM_LIMIT: '1200'
+      ARGOS_V2_KALSHI_EVENTS: '391'
+      ARGOS_V2_LOOKBACK_DAYS: '14'
+      ARGOS_V2_HTTP_TIMEOUT: '30'
+      ARGOS_V2_WORKERS: '8'
+      ARGOS_V2_SLEEP: '0.04'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate executor and required frozen inputs
+        run: |
+          python -m py_compile scripts/presentation_demo_expansion_v2.py
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          required = [
+              'registry/w4b_kalshi_history_market_v1_0_3.csv.gz',
+              'registry/w4b_kalshi_history_closeout_v1_0_3.json',
+              'registry/w4b_forecastex_contracts_v1.csv.gz',
+              'registry/w4b_forecastex_file_manifest_v1.csv.gz',
+              'registry/w4b_forecastex_census_summary_v1.json',
+              'registry/w2a_results/w2a_funded_portfolio_summary.json',
+          ]
+          missing=[p for p in required if not Path(p).exists()]
+          if missing:
+              raise SystemExit(f'missing_required_inputs:{missing}')
+          k=json.load(open('registry/w4b_kalshi_history_closeout_v1_0_3.json'))
+          f=json.load(open('registry/w4b_forecastex_census_summary_v1.json'))
+          assert k['technical_gate_decision']=='PASS_FULL_POPULATION_HISTORY_MATERIALIZED'
+          assert int(k['api_unresolved_count'])==0
+          assert int(k['canonical_events_audited'])==391
+          assert int(f['accepted_unique_canonical_events'])==481
+          print('PASS_PRESENTATION_V2_INPUTS')
+          PY
+
+      - name: Run expanded multi-venue retrospective suite
+        run: python scripts/presentation_demo_expansion_v2.py
+
+      - name: Validate outputs and scientific firewall
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('registry/presentation_demo_expansion_v2_summary.json')
+          assert p.exists()
+          x=json.load(open(p))
+          assert x['mode']=='RETROSPECTIVE_MAX_COVERAGE_NON_CONFIRMATORY'
+          assert x['scientific_truth_unchanged']['H2']=='FAIL_UNDER_FROZEN_EXP07I'
+          assert x['scientific_truth_unchanged']['economic_champion']=='C0_NO_TRADE'
+          assert x['deduplicated_counts']['prior_v1_markets_considered_1011_is_not_a_unique_market_count'] is True
+          assert x['configuration']['thresholds_all_reported']==[0.55,0.6,0.65,0.7,0.75]
+          print(json.dumps({
+              'deduplicated_counts':x['deduplicated_counts'],
+              'route_status':x['route_status'],
+              'primary_65_35_zero_cost':x['primary_65_35_zero_cost'],
+          },indent=2,sort_keys=True))
+          PY
+
+      - name: Upload full v2 evidence package
+        uses: actions/upload-artifact@v4
+        with:
+          name: argos-presentation-demo-expansion-v2
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            registry/presentation_demo_expansion_v2_*
+
+      - name: Persist v2 result package on main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add registry/presentation_demo_expansion_v2_*
+          if git diff --cached --quiet; then
+            echo 'No generated changes to commit.'
+            exit 0
+          fi
+          git commit -m 'results: materialize presentation expansion v2'
+          git pull --rebase origin main
+          git push origin HEAD:main
