@@ -1,0 +1,96 @@
+{
+  "artifact": "PRESENTATION_DEMO_LEGACY_BACKTEST_PACKAGE",
+  "version": "v1",
+  "created_at_brt": "2026-08-18T23:06:00-03:00",
+  "status": "READY_FOR_PRESENTATION_USE",
+  "mode": "RETROSPECTIVE_DEMO_NON_CONFIRMATORY",
+  "purpose": "Post-challenge presentation: show the oldest/legacy economic backtest work and the largest recoverable demo backtest coverage without changing the frozen scientific conclusion.",
+  "source_outputs": {
+    "automatic_discovery_summary": "registry/presentation_demo_max_coverage_backtest_summary_v1.json",
+    "automatic_candidate_inventory": "registry/presentation_demo_max_coverage_backtest_candidates_v1.csv",
+    "legacy_economic_quality_summary": "registry/economic_backtest_quality_summary.json"
+  },
+  "recommended_presentation_stack": [
+    {
+      "slot": "max_recoverable_demo_portfolio_ledger",
+      "source": "registry/w2a_results/w2a_funded_daily_ledger.csv",
+      "rows": 199,
+      "date_min": "2025-10-13",
+      "date_max": "2026-07-29",
+      "return_column": "daily_return",
+      "mean_daily_return_raw": 0.000017382027554326395,
+      "mean_daily_return_pct_if_decimal_return": 0.0017382027554326395,
+      "median_daily_return_raw": 0.0,
+      "hit_rate": 0.3316582914572864,
+      "why_use": "Largest automatically selected recoverable portfolio-ledger style backtest artifact in the repository with return, benchmark/SPY and position evidence.",
+      "presentation_use": "Use as the visual demo of portfolio/backtest continuity over time. Label as retrospective demo, not scientific promotion."
+    },
+    {
+      "slot": "oldest_authoritative_event_trade_backtest",
+      "source": "registry/economic_backtest_quality_summary.json / EXP06",
+      "trade_level_rows": 796,
+      "entry_rule": "first exchange-session open strictly after observation_utc",
+      "exit_rule": "adjusted close of first exchange session strictly after company_event_date",
+      "benchmark": "SPY matched dates",
+      "sizing": "equal notional per event trade; no leverage; no cross-event optimization",
+      "long_cost_bps_round_trip": 20,
+      "short_cost_bps_round_trip": 35,
+      "multiplicity": "Holm across eligible non-null candidate-horizon tests",
+      "decision": "COMPLETED_NO_ECONOMIC_PROMOTION",
+      "why_use": "This is the oldest/richest documented economic backtest layer: 796 trade-level rows with PIT entry/exit, costs and benchmark rules.",
+      "presentation_use": "Use to explain that ARGOS reached a real economic testing layer, while keeping the conservative conclusion."
+    },
+    {
+      "slot": "complete_primary_event_backtest_metrics",
+      "source": "registry/economic_backtest_quality_summary.json / EXP06R primary R1 T-1 10 sessions",
+      "opportunities": 108,
+      "trades": 34,
+      "longs": 21,
+      "shorts": 13,
+      "trade_rate": 0.3148148148148148,
+      "mean_market_adjusted_net_per_opportunity": -0.002050335178338882,
+      "mean_market_adjusted_net_per_opportunity_pct": -0.20503351783388823,
+      "mean_market_adjusted_net_per_trade": -0.006512829390017625,
+      "mean_market_adjusted_net_per_trade_pct": -0.6512829390017625,
+      "median_market_adjusted_net_per_trade": -0.005441099185813339,
+      "median_market_adjusted_net_per_trade_pct": -0.5441099185813339,
+      "trade_hit_rate": 0.4117647058823529,
+      "ci95_market_adjusted_net_per_opportunity": [-0.009719144951331745, 0.00559016443962192],
+      "ci95_market_adjusted_net_per_opportunity_pct": [-0.9719144951331745, 0.559016443962192],
+      "one_sided_p": 0.6879312068793121,
+      "holm_p": 1.0,
+      "decision": "FAIL_R1_C0_NO_TRADE_REMAINS_CHAMPION",
+      "presentation_use": "Use as the cleanest numerical result table: conservative, transparent and defensible."
+    },
+    {
+      "slot": "maximum_raw_data_context_not_backtest",
+      "source": "registry/w4b_polymarket_recensus_venue_events_v1.csv.gz and registry/w4b_polymarket_w2_overlap_v1.csv.gz",
+      "rows_each": 810515,
+      "role": "raw/re-census market-event context, not a return/PnL backtest artifact",
+      "presentation_use": "Use only as data-scale context before explaining why not every row becomes economically backtestable."
+    }
+  ],
+  "final_recommendation": {
+    "for_slide_title": "Backtest retrospectivo máximo: 796 trades legados + ledger diária de 199 pontos",
+    "one_sentence": "Para a apresentação pós-desafio, mostramos a camada econômica mais antiga e rica já documentada: EXP06 com 796 linhas trade-level, complementada por uma ledger diária recuperada de 199 pontos; ambos são demo retrospectiva e não alteram a conclusão científica conservadora.",
+    "what_to_say": [
+      "O desafio acabou, então separamos uma trilha de apresentação: ela mostra a engenharia completa, não uma nova claim científica.",
+      "O backtest legado mais rico documentado é o EXP06, com 796 linhas trade-level, entrada/saída PIT, SPY matched, custos e controle de multiplicidade.",
+      "A ledger diária recuperável no repo dá uma visão contínua de 199 dias entre 2025-10-13 e 2026-07-29.",
+      "A conclusão final continua honesta: o teste econômico não promoveu estratégia; C0_NO_TRADE permaneceu a decisão disciplinada."
+    ],
+    "what_not_to_say": [
+      "Não dizer que o backtest ampliado W4-C/R1 foi executado.",
+      "Não dizer que existe alpha validado.",
+      "Não dizer que há estratégia pronta para operar.",
+      "Não usar a ledger demo para substituir o protocolo congelado da competição."
+    ]
+  },
+  "guardrails": [
+    "presentation_demo_only",
+    "retrospective_non_confirmatory",
+    "does_not_replace_frozen_scientific_protocol",
+    "legacy_exp06_is_documented_in_summary_not_refetched_from_drive_in_this_run",
+    "no_deployable_trading_claim"
+  ]
+}
