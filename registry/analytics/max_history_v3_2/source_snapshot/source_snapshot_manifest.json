@@ -1,0 +1,10 @@
+{
+  "artifact": "MAX_HISTORY_V3_2_SOURCE_SNAPSHOT_MANIFEST",
+  "files": {
+    "max-history-backtest-v3.2-final.zip": {
+      "bytes": 264683,
+      "sha256": "dcd19e4745fba952be176a7329f67555b6daa7a60083c3dd2980bc0848d10250"
+    }
+  },
+  "version": "1.0"
+}

@@ -7,7 +7,7 @@ This directory contains deterministic post-backtest analytics calculated from th
 - Backtest artifact: `PRESENTATION_DEMO_MAX_HISTORY_BACKTEST`, version `v3.2`
 - Final trade rows: 1975
 - Executed trades: 1274
-- Reproducible executed-trade hash: `89c4ba8cf085cac194d5d1ca57c2549f07cef803f12378075918b23c0ffdc1af`
+- Reproducible executed-trade hash: `see reproducibility report`
 - Analytics RNG seed: `20260819`
 
 ## Directory contents
@@ -28,10 +28,6 @@ This directory contains deterministic post-backtest analytics calculated from th
 - `temporal_diagnostics.csv`: trend and first-half/second-half diagnostics.
 - `legacy_equity_metrics.json`: separate derived metrics for the W2A funded equity baseline.
 - `REPORT.md`: concise human-readable interpretation.
-
-## Repository storage layout
-
-The PR stores the analytics **expanded and browsable**, not only as an Actions artifact. Large deterministic tables are compressed with gzip; the exact final v3.2 source ledger is preserved under `source_snapshot/`. The generator and CI workflow reproduce/refresh every file in this directory after a valid backtest run.
 
 ## Metric conventions
 

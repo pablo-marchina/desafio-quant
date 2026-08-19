@@ -54,19 +54,34 @@
 ## Files
 
 - `performance_risk_metrics.csv`
+
 - `breakdowns.csv`
+
 - `calibration_summary.csv`
+
 - `calibration_bins.csv`
+
 - `threshold_sensitivity.csv`
+
 - `cost_sensitivity.csv`
+
 - `daily_aggregates.csv.gz`
+
 - `rolling_trade_windows.csv.gz`
+
 - `rolling_window_summary.csv`
+
 - `cross_venue_overlap.csv`
+
 - `canonical_event_dedup.csv.gz`
+
 - `concentration_metrics.csv`
+
 - `data_quality_coverage.json`
+
 - `temporal_diagnostics.csv`
+
 - `legacy_equity_metrics.json`
+
 - `comprehensive_metrics.json` — master machine-readable package.
 - `README.md` — definitions, reproducibility and caveats.
