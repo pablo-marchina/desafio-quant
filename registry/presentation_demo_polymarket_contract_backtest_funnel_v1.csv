@@ -1,12 +1,7 @@
 stage,count,notes
 gamma_closed_markets_fetched,100,
-gamma_markets_with_binary_tokens,100,parsed clobTokenIds/outcomes/outcomePrices
-repo_rows_scanned_for_tokens,402500,registry/w4b_polymarket_recensus_venue_events_v1.csv.gz; registry/w4b_polymarket_w2_overlap_v1.csv.gz; registry/presentation_demo_all_routes_polymarket_candidates_v1.csv
-combined_unique_token_markets,100,gamma plus repo token-normalized rows
-terminal_yes_price_available,100,closed market terminal outcomePrices/proxy available
-price_history_returned,0,"batch 0: RuntimeError: HTTPError 400: {""error"":""invalid filters: 'startTs' and 'endTs' interval is too long""}
-; token 217426331434: RuntimeError: HTTPError 400: {""error"":""invalid filters: 'startTs' and 'endTs' interval is too long""}
-; token 692369236200: RuntimeError: HTTPError 400: {""error"":""invalid filters: 'startTs' and 'endTs' interval is too long""}
-"
-trade_rows_materialized,0,includes executed plus abstain-neutral rows
-executed_threshold_trades,0,YES>=0.65; NO<=0.35
+markets_with_clob_tokens,100,parsed Gamma clobTokenIds/outcomes/outcomePrices
+terminal_yes_price_available,100,closed outcomePrices/terminal proxy available
+price_history_returned,0,batch_start=0: HTTPError: HTTP Error 400: Bad Request; batch_start=20: HTTPError: HTTP Error 400: Bad Request; batch_start=40: HTTPError: HTTP Error 400: Bad Request
+trade_rows_materialized,0,executed plus abstain-neutral rows
+executed_threshold_trades,0,BUY_YES >= 0.65; BUY_NO <= 0.35
